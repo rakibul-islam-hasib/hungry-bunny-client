@@ -36,7 +36,7 @@ const NavBar = () => {
                         {navLinnks.map(link => <li key={link.id}>{link.name}</li>)}
                     </ul>
                 </div>
-                <div className="search-and-others">
+                <div className="search-and-others flex items-center space-x-2">
                     <div className="relative">
                         <input
                             ref={inputRef}
@@ -47,6 +47,9 @@ const NavBar = () => {
                         <div onClick={() => inputRef.current.focus()} className="absolute top-[9px] right-3">
                             <BsSearch />
                         </div>
+                    </div>
+                    <div className="">
+                        <button className='bg-orange-300 px-3 py-1 rounded-full'>Login</button>
                     </div>
                 </div>
             </div>
