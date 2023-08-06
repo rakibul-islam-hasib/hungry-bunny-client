@@ -1,29 +1,30 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import { BsSearch } from 'react-icons/bs';
+const navLinnks = [
+    {
+        id: 1,
+        name: 'Home',
+        path: '/'
+    },
+    {
+        id: 2,
+        name: 'About',
+        path: '/about'
+    },
+    {
+        id: 3,
+        name: 'Contact',
+        path: '/contact'
+    },
+    {
+        id: 4,
+        name: 'Login',
+        path: '/login'
+    },
 
+]
 const NavBar = () => {
-    const navLinnks = [
-        {
-            id: 1,
-            name: 'Home',
-            path: '/'
-        },
-        {
-            id: 2,
-            name: 'About',
-            path: '/about'
-        },
-        {
-            id: 3,
-            name: 'Contact',
-            path: '/contact'
-        },
-        {
-            id: 4,
-            name: 'Login',
-            path: '/login'
-        },
-        
-    ]
+    const inputRef = useRef(null);
     return (
         <nav className=' py-3'>
             <div className="w-[90%] mx-auto flex justify-between items-center ">
@@ -36,9 +37,17 @@ const NavBar = () => {
                     </ul>
                 </div>
                 <div className="search-and-others">
-                        <div className="">
-                            <input type="text" className='outline-none' placeholder='Search...' />
+                    <div className="relative">
+                        <input
+                            ref={inputRef}
+                            type="text"
+                            onFocus={()=> inputRef.current.placeholder = 'Search here...'}
+                            onBlur={()=> inputRef.current.placeholder = ''}
+                            className='outline-none w-[40px] duration-300 focus:w-[200px] border-orange-300 border px-3 py-1 rounded-full' />
+                        <div onClick={() => inputRef.current.focus()} className="absolute top-[9px] right-3">
+                            <BsSearch />
                         </div>
+                    </div>
                 </div>
             </div>
         </nav>
