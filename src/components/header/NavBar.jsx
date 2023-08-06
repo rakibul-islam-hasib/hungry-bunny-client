@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import { BsSearch } from 'react-icons/bs';
+import cartImg from '../../assets/icons/cart.svg'; 
 const navLinnks = [
     {
         id: 1,
@@ -49,7 +50,10 @@ const NavBar = () => {
                         </div>
                     </div>
                     <div className="">
-                        <button className='bg-orange-300 px-3 py-1 rounded-full'>Login</button>
+                        <button className='px-3 relative py-1 rounded-full'>
+                            <img className='w-9' src={cartImg} alt="" />
+                            <div className='px-2 py-2 absolute -top-5 right-2 bg-red-700 rounded-full  blur-xl'><span className=''>0</span></div>
+                        </button>
                     </div>
                 </div>
             </div>
