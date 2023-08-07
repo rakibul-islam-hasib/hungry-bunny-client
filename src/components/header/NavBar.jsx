@@ -51,7 +51,7 @@ const NavBar = () => {
             animate();
         } else {
             gsap.to('.side-md', {
-                duration: 1,
+                duration: 2,
                 left: '-1000px',
                 ease: 'power4.out'
             })
