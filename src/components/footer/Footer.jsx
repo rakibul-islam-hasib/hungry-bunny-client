@@ -86,7 +86,7 @@ const Footer = () => {
 
             </footer>
 
-            <div className='bg-red-600 p-3 text-white pl-14'>
+            <div className='bg-orange-400 p-3 text-white pl-14'>
                 <p>@All Right Reserved by Hunny Bunny</p>
             </div>
 
