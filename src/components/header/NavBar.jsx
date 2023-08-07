@@ -52,7 +52,7 @@ const NavBar = () => {
         } else {
             gsap.to('.side-md', {
                 duration: 1,
-                left: '-500px',
+                left: '-1000px',
                 ease: 'power4.out'
             })
         }
