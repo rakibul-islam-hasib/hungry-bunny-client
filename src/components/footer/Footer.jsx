@@ -6,7 +6,7 @@ const Footer = () => {
 
         <>
             <footer style={{backgroundImage : `url(${bgImg})`}} className='mt-5 bg-cover bg-fixed '>
-                <div className="w-full h-full bg-black pr-10 md:p-10 bg-opacity-70">
+                <div className="w-full h-full bg-gray-900 pr-10 md:p-10 bg-opacity-70">
                     <div className='grid md:grid-cols-3 lg:grid-cols-4 pl-8 max-w-screen-xl mx-auto text-gray-300'>
                         <div className='mt-7'>
                             <h2 className='font-bold text-2xl'>About Hungry Bunny</h2>
