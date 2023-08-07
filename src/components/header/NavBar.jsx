@@ -35,7 +35,7 @@ const NavBar = () => {
                     <div className="logo">
                         <h1 className='font-bold text-xl'>Foo</h1>
                     </div>
-                    <div className="links">
+                    <div className="links hidden md:block">
                         <ul className='flex space-x-6 '>
                             {navLinnks.map(link => <li key={link.id}>{link.name}</li>)}
                         </ul>
