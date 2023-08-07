@@ -2,9 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-.p-sidebar-close { 
+.p-sidebar-close {
     @apply border
 }
-.p-sidebar-close-icon { 
+
+.p-sidebar-close-icon {
     @apply text-red-500 text-4xl h-6 w-6
 }
