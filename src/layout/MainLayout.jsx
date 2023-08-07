@@ -10,9 +10,11 @@ const MainLayout = () => {
     if (loading) return <Loader />
 
     return (
-        <main style={{ background: 'linear-gradient(329deg, #F4ECE1 0%, #FCFBF7 100%)' }} className='min-h-screen'>
+        <main style={{ background: 'linear-gradient(329deg, #F4ECE1 0%, #FCFBF7 100%)' }} className=''>
             <NavBar />
-            <Outlet />
+            <div className="max-w-screen-xl">
+                <Outlet />
+            </div>
             <Footer />
         </main>
     );
