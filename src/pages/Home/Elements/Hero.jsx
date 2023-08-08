@@ -2,8 +2,8 @@ import React from 'react';
 
 const Hero = () => {
     return (
-        <div className='w-full h-screen' >
-            <h1>This is Hero</h1>
+        <div className='w-full flex justify-center items-center h-screen' >
+            <h1 className='text-8xl italic font-bold'>Coming Soon</h1>
         </div>
     );
 };
