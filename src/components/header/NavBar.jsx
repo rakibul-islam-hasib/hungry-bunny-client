@@ -3,6 +3,7 @@ import { BsSearch } from 'react-icons/bs';
 import cartImg from '../../assets/icons/cart.svg';
 import CheckoutBar from '../cart/CheckoutBar';
 import { AiOutlineBars, AiOutlineClose } from 'react-icons/ai';
+import { NavLink } from 'react-router-dom';
 import './css/style.css';
 import { gsap } from 'gsap';
 const navLinks = [
@@ -72,7 +73,20 @@ const NavBar = () => {
                     </div>
                     <div className="links hidden md:block">
                         <ul className='flex space-x-6 nav-links'>
-                            {navLinks.map(link => <li key={link.id}>{link.name}</li>)}
+                            {
+                                navLinks.map(link => <li key={link.id}>
+                                    <NavLink
+                                        to={link.path}
+                                        className={({ isActive, isPending }) =>
+                                            isActive
+                                                ? "active-link"
+                                                :''
+                                        }
+                                    >
+                                        {link.name}
+                                    </NavLink>
+                                </li>)
+                            }
                         </ul>
                     </div>
                     <div className="search-and-others flex items-center space-x-2">

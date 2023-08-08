@@ -1,4 +1,4 @@
-.nav-links li {
+.nav-links a {
     display: inline-block;
     position: relative;
     cursor: pointer;
@@ -6,11 +6,11 @@
     margin-right: 10px;
 }
 
-.nav-links li:last-child {
+.nav-links a:last-child {
     margin-right: 0;
 }
 
-.nav-links li:after {
+.nav-links a:after , .active-link:after {
     content: '';
     display: block;
     margin: auto;
@@ -20,11 +20,18 @@
     transition: width .2s ease, background-color .5s ease;
 }
 
-.nav-links li:hover:after {
+.nav-links a.active-link:after,
+.nav-links a:hover:after {
     width: 100%;
-    background: blue;
+    /* background: blue; */
+    @apply bg-orange-500;
 }
 
-.active-link:after {
-    background: blue;
+
+.active-link {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    padding-bottom: 3px;
+    margin-right: 10px;
 }
