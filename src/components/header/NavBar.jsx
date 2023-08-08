@@ -3,6 +3,8 @@ import { BsSearch } from 'react-icons/bs';
 import cartImg from '../../assets/icons/cart.svg';
 import CheckoutBar from '../cart/CheckoutBar';
 import { AiOutlineBars, AiOutlineClose } from 'react-icons/ai';
+import { NavLink } from 'react-router-dom';
+import './css/style.css';
 import { gsap } from 'gsap';
 const navLinks = [
     {
@@ -41,7 +43,7 @@ const NavBar = () => {
         timeline.to('.side-md', {
             duration: 1,
             left: 0,
-            ease: 'power4.out'
+            ease: 'power4.out',
         })
     }
 
@@ -53,6 +55,7 @@ const NavBar = () => {
             gsap.to('.side-md', {
                 duration: 2,
                 left: '-1000px',
+                top: 0,
                 ease: 'power4.out'
             })
         }
@@ -69,8 +72,21 @@ const NavBar = () => {
                         <h1 className='font-bold text-xl'>Foo</h1>
                     </div>
                     <div className="links hidden md:block">
-                        <ul className='flex space-x-6 '>
-                            {navLinks.map(link => <li key={link.id}>{link.name}</li>)}
+                        <ul className='flex space-x-6 nav-links'>
+                            {
+                                navLinks.map(link => <li key={link.id}>
+                                    <NavLink
+                                        to={link.path}
+                                        className={({ isActive, isPending }) =>
+                                            isActive
+                                                ? "active-link"
+                                                :''
+                                        }
+                                    >
+                                        {link.name}
+                                    </NavLink>
+                                </li>)
+                            }
                         </ul>
                     </div>
                     <div className="search-and-others flex items-center space-x-2">
@@ -96,7 +112,7 @@ const NavBar = () => {
                         </div>
                     </div>
                 </div>
-                <div className="md:hidden block side-md absolute top-0 -left-[500px] h-screen w-full bg-blue-300">
+                <div className="md:hidden top-0 block side-md absolute  -left-[500px] h-screen w-full bg-blue-300">
                     <div className="w-full border">
                         <div className="flex justify-end">
                             <AiOutlineClose onClick={() => setShowNav(false)} className='text-3xl' />
