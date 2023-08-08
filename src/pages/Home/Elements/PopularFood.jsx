@@ -18,7 +18,10 @@ const PopularFood = () => {
                     responsible. To order your food from your favorite shop, just sign up
                     and order your favorite one.
                 </p>
-                <div className="custom-btn">
+                <div className="custom-btn flex mt-6">
+                    <button> Explore Now
+                        <span></span>
+                    </button>
                     <button> Explore Now
                         <span></span>
                     </button>
