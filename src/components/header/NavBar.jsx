@@ -92,7 +92,7 @@ const NavBar = () => {
     return (
         <>
             <div
-            className={isFixed ? 'fixed top-0 w-full duration-[2s] bg-white backdrop-blur-xl bg-opacity-60' : 'static top-0'}
+            className={isFixed ? 'fixed top-0 z-[999] w-full duration-[2s] bg-white backdrop-blur-xl bg-opacity-60' : 'static top-0'}
                 // className='nav-container'
             >
                 <nav className=' py-3 relative'>
