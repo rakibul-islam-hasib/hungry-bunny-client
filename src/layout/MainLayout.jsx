@@ -12,7 +12,7 @@ const MainLayout = () => {
     return (
         <main style={{ background: 'linear-gradient(329deg, #F4ECE1 0%, #FCFBF7 100%)' }} className=''>
             <NavBar />
-            <div className="max-w-screen-xl">
+            <div className="max-w-screen-xl mx-auto">
                 <Outlet />
             </div>
             <Footer />

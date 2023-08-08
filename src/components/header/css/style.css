@@ -1,0 +1,30 @@
+.nav-links li {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    padding-bottom: 3px;
+    margin-right: 10px;
+}
+
+.nav-links li:last-child {
+    margin-right: 0;
+}
+
+.nav-links li:after {
+    content: '';
+    display: block;
+    margin: auto;
+    height: 3px;
+    width: 0px;
+    background: transparent;
+    transition: width .2s ease, background-color .5s ease;
+}
+
+.nav-links li:hover:after {
+    width: 100%;
+    background: blue;
+}
+
+.active-link:after {
+    background: blue;
+}

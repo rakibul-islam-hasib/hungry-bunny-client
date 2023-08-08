@@ -17,6 +17,7 @@
     "framer-motion": "^10.15.0",
     "gsap": "^3.12.2",
     "localforage": "^1.10.0",
+    "lottie-web": "^5.12.2",
     "match-sorter": "^6.3.1",
     "primereact": "^9.6.1",
     "react": "^18.2.0",
