@@ -6,8 +6,7 @@ import './css/PopularFood.css'
 const PopularFood = () => {
     return (
         <div
-            className='flex flex-col md:flex-row justify-center mx-auto w-[90%] py-4 border rounded-lg shadow-lg  from-blue-500 to-purple-500'
-            style={{ maxWidth: '1200px' }}
+            className='flex flex-col md:flex-row justify-between mx-auto w-[90%] py-4'
         >
             <div className='w-full md:w-1/2 p-8'>
                 <h1 className='text-5xl font-bold  mb-4'>
@@ -22,14 +21,14 @@ const PopularFood = () => {
                     <button className="w-full md:w-auto md:mr-4"> Explore Now
                         <span></span>
                     </button>
-                    <button className="w-full md:w-auto"> Explore Now
+                    <button className="w-full md:w-auto"> Learn More
                         <span></span>
                     </button>
                 </div>
             </div>
-            <div className='w-full md:w-1/2 p-8'>
+            <div className='w-full md:ml-20 md:w-1/2 p-8'>
                 <img
-                    className='h-[350px] rounded-full shadow-xl transform hover:scale-110 transition duration-500 ease-in-out'
+                    className='h-[350px] transform hover:scale-110 transition duration-500 ease-in-out'
                     src={delivery_boy}
                     alt='Delivery Boy'
                 />
