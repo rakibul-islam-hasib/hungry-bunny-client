@@ -20,7 +20,7 @@ const Hero = () => {
 
         </div>
         <div className="">
-          <p className="">This is the home page</p>
+          <p className="">Twe</p>
         </div>
       </div>
     </section>
