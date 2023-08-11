@@ -3,6 +3,7 @@ import Hero from "./Elements/Hero";
 import CheckoutBar from "../../components/cart/CheckoutBar";
 import Card from "../../components/Card/Card";
 import PopularFood from "./Elements/PopularFood";
+import HomeBlog from "./Elements/HomeBlog";
 
 const Home = () => {
   return (
@@ -10,6 +11,7 @@ const Home = () => {
       <Hero />
       <Card />
       <PopularFood />
+      <HomeBlog/>
       <CheckoutBar />
     </section>
   );
