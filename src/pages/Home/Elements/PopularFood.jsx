@@ -6,10 +6,10 @@ import './css/PopularFood.css'
 const PopularFood = () => {
     return (
         <div
-            className='flex justify-center mx-auto w-[90%] py-4 border rounded-lg shadow-lg  from-blue-500 to-purple-500'
+            className='flex flex-col md:flex-row justify-center mx-auto w-[90%] py-4 border rounded-lg shadow-lg  from-blue-500 to-purple-500'
             style={{ maxWidth: '1200px' }}
         >
-            <div className='w-1/2 p-8'>
+            <div className='w-full md:w-1/2 p-8'>
                 <h1 className='text-5xl font-bold  mb-4'>
                     Super Fast Delivery Time
                 </h1>
@@ -19,15 +19,15 @@ const PopularFood = () => {
                     and order your favorite one.
                 </p>
                 <div className="custom-btn flex mt-6">
-                    <button> Explore Now
+                    <button className="w-full md:w-auto md:mr-4"> Explore Now
                         <span></span>
                     </button>
-                    <button> Explore Now
+                    <button className="w-full md:w-auto"> Explore Now
                         <span></span>
                     </button>
                 </div>
             </div>
-            <div className='p-8'>
+            <div className='w-full md:w-1/2 p-8'>
                 <img
                     className='h-[350px] rounded-full shadow-xl transform hover:scale-110 transition duration-500 ease-in-out'
                     src={delivery_boy}
