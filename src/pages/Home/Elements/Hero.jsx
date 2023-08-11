@@ -1,12 +1,12 @@
 import React from 'react';
 import './css/Hero.css';
 import playIcon from '../../../assets/icons/play.svg';
-
+import fastFood from '../../../assets/img/fast-food.png';
 
 const Hero = () => {
   return (
     <section className='h-screen'>
-      <div className="grid grid-cols-2 w-[90%] mx-auto">
+      <div className="grid mg:grid-cols-2 lg:grid-cols-2 w-[90%] mx-auto">
         <div className="flex flex-col mt-14 justify-center items-start h-full space-y-4">
           <div className="flex">
             <h1 className='text-8xl text-orange-500 font-bold'>Fast</h1>
@@ -28,8 +28,8 @@ const Hero = () => {
 
 
         </div>
-        <div className="">
-          <p className="">Twe</p>
+        <div className="mt-20">
+          <img src={fastFood} alt="" />
         </div>
       </div>
     </section>
