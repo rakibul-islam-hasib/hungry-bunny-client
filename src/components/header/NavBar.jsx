@@ -7,6 +7,7 @@ import { NavLink } from 'react-router-dom';
 import Switch from '@mui/material/Switch';
 import './css/style.css';
 import { gsap } from 'gsap';
+import clickSound from '../../assets/audio/click.mp3';
 
 const navLinks = [
     {
@@ -40,6 +41,8 @@ const NavBar = () => {
     const [isDarkMode, setIsDarkMode] = useState(
         localStorage.getItem('isDarkMode') === 'true'
     );
+
+    const click = new Audio(clickSound);
 
     const animate = () => {
         const timeline = gsap.timeline({
@@ -105,6 +108,13 @@ const NavBar = () => {
         localStorage.setItem('isDarkMode', isDarkMode);
     }, [isDarkMode]);
 
+
+    const onPathChange = () => {
+        click.play();
+    }
+
+
+
     return (
         <>
             <div
@@ -120,10 +130,11 @@ const NavBar = () => {
                             <h1 className={isFixed ? 'font-bold dark:text-gray-200 text-xl' : 'font-bold dark:text-black text-xl'}>Foo</h1>
                         </div>
                         <div className="links hidden md:block">
-                            <ul className="flex dark:text-gray-100 space-x-6 nav-links">
+                            <ul className={isFixed ? 'flex dark:text-gray-100 space-x-6 nav-links' : 'flex dark:text-black space-x-6 nav-links'}>
                                 {navLinks.map((link) => (
                                     <li key={link.id}>
                                         <NavLink
+                                            onClick={() => onPathChange()}
                                             to={link.path}
                                             className={({ isActive }) =>
                                                 isActive ? 'active-link' : ''
