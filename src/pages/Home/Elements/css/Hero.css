@@ -1,0 +1,87 @@
+.hero-btn {
+    font-weight: bold;
+    color: white;
+    border-radius: 2rem;
+    width: 95.02px;
+    height: 42.66px;
+    border: none;
+    background-color: #3653F8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-btn .span-mother {
+    display: flex;
+    overflow: hidden;
+}
+
+.hero-btn:hover .span-mother {
+    position: absolute;
+}
+
+.hero-btn:hover .span-mother span {
+    transform: translateY(1.2em);
+}
+
+.hero-btn .span-mother span:nth-child(1) {
+    transition: .2s;
+}
+
+.hero-btn .span-mother span:nth-child(2) {
+    transition: .3s;
+}
+
+.hero-btn .span-mother span:nth-child(3) {
+    transition: .4s;
+}
+
+.hero-btn .span-mother span:nth-child(4) {
+    transition: .5s;
+}
+
+.hero-btn .span-mother span:nth-child(5) {
+    transition: .6s;
+}
+
+.hero-btn .span-mother span:nth-child(6) {
+    transition: .7s;
+}
+
+.hero-btn .span-mother2 {
+    display: flex;
+    position: absolute;
+    overflow: hidden;
+}
+
+.hero-btn .span-mother2 span {
+    transform: translateY(-1.2em);
+}
+
+.hero-btn:hover .span-mother2 span {
+    transform: translateY(0);
+}
+
+.hero-btn .span-mother2 span {
+    transition: .2s;
+}
+
+.hero-btn .span-mother2 span:nth-child(2) {
+    transition: .3s;
+}
+
+.hero-btn .span-mother2 span:nth-child(3) {
+    transition: .4s;
+}
+
+.hero-btn .span-mother2 span:nth-child(4) {
+    transition: .5s;
+}
+
+.hero-btn .span-mother2 span:nth-child(5) {
+    transition: .6s;
+}
+
+.hero-btn .span-mother2 span:nth-child(6) {
+    transition: .7s;
+}

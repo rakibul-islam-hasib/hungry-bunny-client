@@ -55,10 +55,10 @@ const Card = () => {
           Discover the essence of our culinary artistry with our signature dishes. From the savoriness of our perfectly grilled steaks to the delicate balance of flavors in our artisanal pasta, these creations are the epitome of gastronomic excellence.
         </p>
       </div>
-      <div className="grid grid-cols-3 mt-10 mx-auto gap-y-8">
+      <div className="grid md:grid-cols-2 space-x-8 lg:grid-cols-3 mt-10 mx-auto gap-y-8">
         {fakeData.map((item) => (
-          <div key={item.id} className="max-w-sm overflow-hidden shadow-lg rounded-md">
-            <img className="w-full h-48 object-cover" src={item.image} alt="Food Image" />
+          <div key={item.id} className=" p-2 border overflow-hidden shadow-lg rounded-md">
+            <img className="w-full rounded h-48 object-cover" src={item.image} alt="Food Image" />
             <div className="px-6 py-4">
               <div className="font-bold text-xl mb-2">{item.name}</div>
               <p className="text-gray-700 text-base">{item.description}</p>
