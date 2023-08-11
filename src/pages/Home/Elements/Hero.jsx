@@ -15,27 +15,12 @@ const Hero = () => {
           </div>
           <p className='text-gray-500'>Imagine your hunger being met at warp speed. Our &quot;Supper First Delivery&quot; isn&apos;t just about delivering food; it&apos;s about delivering delight.</p>
           <button className='hero-btn'>
-            <span className="span-mother">
-              <span>B</span>
-              <span>u</span>
-              <span>t</span>
-              <span>t</span>
-              <span>o</span>
-              <span>n</span>
-            </span>
-            <span className="span-mother2">
-              <span>B</span>
-              <span>u</span>
-              <span>t</span>
-              <span>t</span>
-              <span>o</span>
-              <span>n</span>
-            </span>
+            <span className='text-white'>Order Now</span>
           </button>
 
         </div>
         <div className="">
-          <p className="">This is the home page</p>
+          <p className="">Twe</p>
         </div>
       </div>
     </section>
