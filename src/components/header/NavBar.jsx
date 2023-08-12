@@ -37,7 +37,8 @@ const NavBar = () => {
     const [showSidebar, setShowSidebar] = useState(false);
     const [showNav, setShowNav] = useState(false);
     const [scrollPosition, setScrollPosition] = useState(0);
-    const [isFixed, setIsFixed] = useState(false);
+    const [isFixeds, setIsFixed] = useState(false);
+    const isFixed = false;
     const [isDarkMode, setIsDarkMode] = useState(
         localStorage.getItem('isDarkMode') === 'true'
     );
