@@ -3,6 +3,9 @@ import './css/Stack.css'
 import { animate } from '../../../utils/stackAnimate';
 import deliveryMen from '../../../assets/img/delivery.jpg';
 import { useInView } from 'react-intersection-observer';
+import freshFood from '../../../assets/img/food.jpg';
+import freshFood1 from '../../../assets/img/food-1.jpg';
+
 const Stacks = () => {
 
     useEffect(() => {
@@ -14,7 +17,7 @@ const Stacks = () => {
 
     useEffect(() => {
         if (inView) {
-            document.body.style.background = 'blue';
+            document.body.style.backgroundColor = 'blue';
         }
         if (inView) {
             console.log('in view')
@@ -23,91 +26,52 @@ const Stacks = () => {
             console.log('not in view')
         }
     }, [inView]);
-
-
-
-    const cardData = [
+    const stackCards = [
         {
-            title: "Card One",
-            description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-            imageSrc: "assets/img/img-1.jpg",
-            theme: "default",
-            color: "bg-blue-400",
+            bgColor: "bg-orange-300",
+            title: "Our delivery speed....",
+            subtitle: "We offer supper first delivery at your door step . Maximum delivery time is 30 minutes",
+            description: "No time to waste, order now and get your food in 30 minutes",
+            image: deliveryMen
         },
         {
-            title: "Card Two",
-            description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-            imageSrc: "assets/img/img-2.jpg",
-            theme: "default",
-            color: "bg-blue-600",
+            bgColor: "bg-lime-500",
+            title: "Fresh Food....",
+            subtitle: "Need fresh food? We got you covered . We offer fresh food at your door step . Just remember to order",
+            description: "We have a wide range of fresh food to choose from many shop. We also offer fresh fruits and vegetables",
+            image: freshFood
         },
         {
-            title: "Card Three",
-            description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-            imageSrc: "assets/img/img-3.jpg",
-            theme: "default",
-            color: "bg-red-400",
-        },
-        {
-            title: "Card Four",
-            description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-            imageSrc: "assets/img/img-3.jpg",
-            theme: "default",
-            color: "bg-blue-700",
-        },
+            bgColor: "bg-cyan-500",
+            title: "Any Kind of food",
+            subtitle: "Let us know what you want and we will deliver it to you. We have a wide range of food to choose from",
+            description: "Nothing is impossible with us. Just order and we will deliver it to you within 30 minutes",
+            image: freshFood1
+        }
     ];
     return (
-        <div ref={ref} className="container stack mx-auto w-[70%] mb-4">
+        <div ref={ref} className="container stack mx-auto md:w-[70%] mb-4">
             <ul className="stack-cards mb-3 js-stack-cards">
-                <li className={`stack-cards__item bg-blue-200 rounded-2xl shadow-md  h-[30px] js-stack-cards__item`}>
-                    <div className="grid grid-cols-2">
-                        <div className=" flex h-full items-center height-100%">
-                            <div className="">
-                                <h2>Hi this is card 1</h2>
-                                <p className="display@xs"></p>
-                                <p><a href="#0" className="btn btn--accent">Read more</a></p>
+                {stackCards.map((card, index) => (
+                    <li key={index} className={`stack-cards__item rounded-2xl shadow-md js-stack-cards__item`}>
+                        <div className="grid grid-cols-3">
+                            <div className={`flex w-full h-full ${card.bgColor} col-span-2 px-4 py-2`}>
+                                <div className="">
+                                    <h6 className='text-xl font-bold'>{card.title}</h6>
+                                    <h1 className="text-3xl font-bold mt-5">
+                                        {card.subtitle}
+                                    </h1>
+                                    <p>
+                                        {card.description}
+                                    </p>
+                                </div>
+                            </div>
+                            <div className="col-span-1 h-full w-full border">
+                                <img src={card.image} className='h-full' alt="" />
                             </div>
                         </div>
-                        <div className="">
-                            <img src={deliveryMen} alt="" />
-                        </div>
-                    </div>
-                </li>
-                <li className={`stack-cards__item  rounded-2xl shadow-md  h-[30px] js-stack-cards__item`}>
-                    <div className="grid grid-cols-3">
-                        <div
-                            style={{ background: 'linear-gradient(90deg, rgba(214,169,110,1) 1%, rgba(232,237,97,0.7651435574229692) 54%, rgba(154,231,35,0.6138830532212884) 80%, rgba(0,255,188,0.20211834733893552) 99%)' }}
-                            className=" flex h-full col-span-2 px-4 py-2 ">
-                            <div className="">
-                                <h6 className='text-xl'>Our delivery speed....</h6>
-                                <h1 className="text-3xl mt-5">
-                                    We offer supper first delivery at your door step . Maximum delivery time is 30 minutes
-                                </h1>
-                                <p>
-                                    No time to waste, order now and get your food in 30 minutes
-                                </p>
-                            </div>
-                        </div>
-                        <div className="col-span-1 h-full w-full border">
-                            <img src={deliveryMen} className='h-full' alt="" />
-                        </div>
-                    </div>
-                </li>
-                <li className={`stack-cards__item bg-blue-200 rounded-2xl shadow-md  h-[30px] js-stack-cards__item`}>
-                    <div className="grid grid-cols-2">
-                        <div className=" flex h-full border-4 border-blue-700">
-                            <div className="px-4 py-3">
-                                <h2>Hi this is card 1</h2>
-                                <p className="display@xs">lorem50   </p>
-                                <p><a href="#0" className="btn btn--accent">Read more</a></p>
-                            </div>
-                        </div>
-                        <div className="">
-                            <img src={deliveryMen} alt="" />
-                        </div>
-                    </div>
-                </li>
-
+                    </li>
+                ))}
             </ul>
         </div>
     );
