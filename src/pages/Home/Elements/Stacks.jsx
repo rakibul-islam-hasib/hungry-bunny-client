@@ -1,155 +1,28 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './css/Stack.css'
+import { animate } from '../../../utils/stackAnimate';
+import deliveryMen from '../../../assets/img/delivery.jpg';
+import { useInView } from 'react-intersection-observer';
 const Stacks = () => {
 
-
-
     useEffect(() => {
-        /* eslint-disable */
-        /* JS Utility Classes */
-
-        // Tutorial - https://codyhouse.co/tutorials/how-stacking-cards
-        function animate() {
-            var StackCards = function (element) {
-                this.element = element;
-                this.items = this.element.getElementsByClassName('js-stack-cards__item');
-                this.scrollingFn = false;
-                this.scrolling = false;
-                initStackCardsEffect(this);
-                initStackCardsResize(this);
-            };
-
-            function initStackCardsEffect(element) { // use Intersection Observer to trigger animation
-                setStackCards(element); // store cards CSS properties
-                var observer = new IntersectionObserver(stackCardsCallback.bind(element), { threshold: [0, 1] });
-                observer.observe(element.element);
-            };
-
-            function initStackCardsResize(element) { // detect resize to reset gallery
-                element.element.addEventListener('resize-stack-cards', function () {
-                    setStackCards(element);
-                    animateStackCards.bind(element);
-                });
-            };
-
-            function stackCardsCallback(entries) { // Intersection Observer callback
-                if (entries[0].isIntersecting) {
-                    if (this.scrollingFn) return; // listener for scroll event already added
-                    stackCardsInitEvent(this);
-                } else {
-                    if (!this.scrollingFn) return; // listener for scroll event already removed
-                    window.removeEventListener('scroll', this.scrollingFn);
-                    this.scrollingFn = false;
-                }
-            };
-
-            function stackCardsInitEvent(element) {
-                element.scrollingFn = stackCardsScrolling.bind(element);
-                window.addEventListener('scroll', element.scrollingFn);
-            };
-
-            function stackCardsScrolling() {
-                if (this.scrolling) return;
-                this.scrolling = true;
-                window.requestAnimationFrame(animateStackCards.bind(this));
-            };
-
-            function setStackCards(element) {
-                // store wrapper properties
-                element.marginY = getComputedStyle(element.element).getPropertyValue('--stack-cards-gap');
-                getIntegerFromProperty(element); // convert element.marginY to integer (px value)
-                element.elementHeight = element.element.offsetHeight;
-
-                // store card properties
-                var cardStyle = getComputedStyle(element.items[0]);
-                element.cardTop = Math.floor(parseFloat(cardStyle.getPropertyValue('top')));
-                element.cardHeight = Math.floor(parseFloat(cardStyle.getPropertyValue('height')));
-
-                // store window property
-                element.windowHeight = window.innerHeight;
-
-                // reset margin + translate values
-                if (isNaN(element.marginY)) {
-                    element.element.style.paddingBottom = '0px';
-                } else {
-                    element.element.style.paddingBottom = (element.marginY * (element.items.length - 1)) + 'px';
-                }
-
-                for (var i = 0; i < element.items.length; i++) {
-                    if (isNaN(element.marginY)) {
-                        element.items[i].style.transform = 'none;';
-                    } else {
-                        element.items[i].style.transform = 'translateY(' + element.marginY * i + 'px)';
-                    }
-                }
-            };
-
-            function getIntegerFromProperty(element) {
-                var node = document.createElement('div');
-                node.setAttribute('style', 'opacity:0; visbility: hidden;position: absolute; height:' + element.marginY);
-                element.element.appendChild(node);
-                element.marginY = parseInt(getComputedStyle(node).getPropertyValue('height'));
-                element.element.removeChild(node);
-            };
-
-            function animateStackCards() {
-                if (isNaN(this.marginY)) { // --stack-cards-gap not defined - do not trigger the effect
-                    this.scrolling = false;
-                    return;
-                }
-
-                var top = this.element.getBoundingClientRect().top;
-
-                if (this.cardTop - top + this.element.windowHeight - this.elementHeight - this.cardHeight + this.marginY + this.marginY * this.items.length > 0) {
-                    this.scrolling = false;
-                    return;
-                }
-
-                for (var i = 0; i < this.items.length; i++) { // use only scale
-                    var scrolling = this.cardTop - top - i * (this.cardHeight + this.marginY);
-                    if (scrolling > 0) {
-                        var scaling = i == this.items.length - 1 ? 1 : (this.cardHeight - scrolling * 0.05) / this.cardHeight;
-                        this.items[i].style.transform = 'translateY(' + this.marginY * i + 'px) scale(' + scaling + ')';
-                    } else {
-                        this.items[i].style.transform = 'translateY(' + this.marginY * i + 'px)';
-                    }
-                }
-
-                this.scrolling = false;
-            };
-
-            // initialize StackCards object
-            var stackCards = document.getElementsByClassName('js-stack-cards'),
-                intersectionObserverSupported = ('IntersectionObserver' in window && 'IntersectionObserverEntry' in window && 'intersectionRatio' in window.IntersectionObserverEntry.prototype),
-                reducedMotion = Util.osHasReducedMotion();
-
-            if (stackCards.length > 0 && intersectionObserverSupported && !reducedMotion) {
-                var stackCardsArray = [];
-                for (var i = 0; i < stackCards.length; i++) {
-                    (function (i) {
-                        stackCardsArray.push(new StackCards(stackCards[i]));
-                    })(i);
-                }
-
-                var resizingId = false,
-                    customEvent = new CustomEvent('resize-stack-cards');
-
-                window.addEventListener('resize', function () {
-                    clearTimeout(resizingId);
-                    resizingId = setTimeout(doneResizing, 500);
-                });
-
-                // eslint-disable-next-line no-inner-declarations
-                function doneResizing() {
-                    for (var i = 0; i < stackCardsArray.length; i++) {
-                        (function (i) { stackCardsArray[i].element.dispatchEvent(customEvent) })(i);
-                    };
-                };
-            }
-        };
-        
         return () => animate();
     }, []);
+    const { ref, inView } = useInView({
+        triggerOnce: false, // Only trigger once when the component comes into view
+    });
+
+    useEffect(() => {
+        if (inView) {
+            document.body.style.background = 'blue';
+        }
+        if (inView) {
+            console.log('in view')
+        }
+        else {
+            console.log('not in view')
+        }
+    }, [inView]);
 
 
 
@@ -184,29 +57,56 @@ const Stacks = () => {
         },
     ];
     return (
-        <div className="container stack mx-auto w-[70%] mb-4">
+        <div ref={ref} className="container stack mx-auto w-[70%] mb-4">
             <ul className="stack-cards mb-3 js-stack-cards">
-                {
-                    cardData.map((card, index) => {
-                        return (
-                            <li data-theme={card.theme} className={`stack-cards__item ${card.color} rounded-2xl shadow-md  h-[30px] js-stack-cards__item`} key={index}>
-                                <div className="grid grid-cols-2">
-                                    <div className=" flex h-full items-center height-100%">
-                                        <div className="">
-                                            <h2>{card.title}</h2>
-                                            <p className="display@xs">{card.description}</p>
-                                            <p><a href="#0" className="btn btn--accent">Read more</a></p>
-                                        </div>
-                                    </div>
-
-                                    <div className="col-6 height-100%">
-                                        {/* <img className="block width-100% height-100% object-cover" src={card.imageSrc} alt="Image description" /> */}
-                                    </div>
-                                </div>
-                            </li>
-                        )
-                    })
-                }
+                <li className={`stack-cards__item bg-blue-200 rounded-2xl shadow-md  h-[30px] js-stack-cards__item`}>
+                    <div className="grid grid-cols-2">
+                        <div className=" flex h-full items-center height-100%">
+                            <div className="">
+                                <h2>Hi this is card 1</h2>
+                                <p className="display@xs"></p>
+                                <p><a href="#0" className="btn btn--accent">Read more</a></p>
+                            </div>
+                        </div>
+                        <div className="">
+                            <img src={deliveryMen} alt="" />
+                        </div>
+                    </div>
+                </li>
+                <li className={`stack-cards__item  rounded-2xl shadow-md  h-[30px] js-stack-cards__item`}>
+                    <div className="grid grid-cols-3">
+                        <div
+                            style={{ background: 'linear-gradient(90deg, rgba(214,169,110,1) 1%, rgba(232,237,97,0.7651435574229692) 54%, rgba(154,231,35,0.6138830532212884) 80%, rgba(0,255,188,0.20211834733893552) 99%)' }}
+                            className=" flex h-full col-span-2 px-4 py-2 ">
+                            <div className="">
+                                <h6 className='text-xl'>Our delivery speed....</h6>
+                                <h1 className="text-3xl mt-5">
+                                    We offer supper first delivery at your door step . Maximum delivery time is 30 minutes
+                                </h1>
+                                <p>
+                                    No time to waste, order now and get your food in 30 minutes
+                                </p>
+                            </div>
+                        </div>
+                        <div className="col-span-1 h-full w-full border">
+                            <img src={deliveryMen} className='h-full' alt="" />
+                        </div>
+                    </div>
+                </li>
+                <li className={`stack-cards__item bg-blue-200 rounded-2xl shadow-md  h-[30px] js-stack-cards__item`}>
+                    <div className="grid grid-cols-2">
+                        <div className=" flex h-full border-4 border-blue-700">
+                            <div className="px-4 py-3">
+                                <h2>Hi this is card 1</h2>
+                                <p className="display@xs">lorem50   </p>
+                                <p><a href="#0" className="btn btn--accent">Read more</a></p>
+                            </div>
+                        </div>
+                        <div className="">
+                            <img src={deliveryMen} alt="" />
+                        </div>
+                    </div>
+                </li>
 
             </ul>
         </div>
