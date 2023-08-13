@@ -176,3 +176,28 @@ const cardData = [
         color: "bg-blue-700",
     },
 ];
+
+
+
+
+{
+    cardData.map((card, index) => {
+        return (
+            <li data-theme={card.theme} className={`stack-cards__item ${card.color} rounded-2xl shadow-md  h-[30px] js-stack-cards__item`} key={index}>
+                <div className="grid grid-cols-2">
+                    <div className=" flex h-full items-center height-100%">
+                        <div className="">
+                            <h2>{card.title}</h2>
+                            <p className="display@xs">{card.description}</p>
+                            <p><a href="#0" className="btn btn--accent">Read more</a></p>
+                        </div>
+                    </div>
+
+                    <div className="col-6 height-100%">
+                        {/* <img className="block width-100% height-100% object-cover" src={card.imageSrc} alt="Image description" /> */}
+                    </div>
+                </div>
+            </li>
+        )
+    })
+}
