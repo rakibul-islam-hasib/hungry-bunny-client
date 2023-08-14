@@ -2,8 +2,10 @@ import React from 'react';
 
 const NewPost = () => {
     return (
-        <div>
-            <h1>New Post</h1>
+        <div className='bg-gray-100'>
+            <div className="">
+                <h1>This is hasib </h1>
+            </div>
         </div>
     );
 };
