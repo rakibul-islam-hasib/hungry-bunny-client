@@ -30,7 +30,7 @@ const CnavBar = () => {
     const location = useLocation();
     return (
         <nav>
-            <div className="w-[85%] mx-auto py-6 flex justify-between">
+            <div className="w-[90%] mx-auto py-6 flex justify-between">
                 <div className="logo">
                     <Link to='/'>
                         <h1 className='text-2xl font-bold'>Hungry <span className='text-primary'>Bunny</span> </h1>
