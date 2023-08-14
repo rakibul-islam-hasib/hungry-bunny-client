@@ -1,0 +1,634 @@
+[
+    {
+        "Barisal": {
+            "Barguna": [
+                "Amtali",
+                "Bamna",
+                "Barguna Sadar",
+                "Betagi",
+                "Patharghata",
+                "Taltali"
+            ],
+            "Barisal": [
+                "Agailjhara",
+                "Babuganj",
+                "Bakerganj",
+                "Banaripara",
+                "Barisal Sadar",
+                "Gaurnadi",
+                "Hizla",
+                "Mehendiganj",
+                "Muladi",
+                "Wazirpur"
+            ],
+            "Bhola": [
+                "Bhola Sadar",
+                "Burhanuddin",
+                "Char Fasson",
+                "Daulatkhan",
+                "Lalmohan",
+                "Manpura",
+                "Tazumuddin"
+            ],
+            "Jhalokati": [
+                "Jhalokati Sadar",
+                "Kathalia",
+                "Nalchity",
+                "Rajapur"
+            ],
+            "Patuakhali": [
+                "Bauphal",
+                "Dashmina",
+                "Galachipa",
+                "Kalapara",
+                "Mirzaganj",
+                "Patuakhali Sadar",
+                "Rangabali"
+            ],
+            "Pirojpur": [
+                "Bhandaria",
+                "Kaukhali",
+                "Mathbaria",
+                "Nazirpur",
+                "Nesarabad (Swarupkati)",
+                "Pirojpur Sadar"
+            ]
+        }
+    },
+    {
+        "Chittagong": {
+            "Bandarban": [
+                "Alikadam",
+                "Bandarban Sadar",
+                "Lama",
+                "Rowangchhari",
+                "Ruma",
+                "Thanchi"
+            ],
+            "Brahmanbaria": [
+                "Akhaura",
+                "Bancharampur",
+                "Brahmanbaria Sadar",
+                "Kasba",
+                "Nabinagar",
+                "Nasirnagar",
+                "Sarail"
+            ],
+            "Chandpur": [
+                "Chandpur Sadar",
+                "Faridganj",
+                "Haimchar",
+                "Haziganj",
+                "Kachua",
+                "Matlab Dakshin",
+                "Matlab Uttar",
+                "Shahrasti"
+            ],
+            "Chittagong": [
+                "Anwara",
+                "Banshkhali",
+                "Boalkhali",
+                "Chandanaish",
+                "Chittagong Sadar",
+                "Fatikchhari",
+                "Hathazari",
+                "Lohagara",
+                "Mirsharai",
+                "Patiya",
+                "Rangunia",
+                "Raozan",
+                "Sandwip",
+                "Satkania"
+            ],
+            "Comilla": [
+                "Barura",
+                "Brahmanpara",
+                "Burichang",
+                "Chandina",
+                "Chauddagram",
+                "Comilla Sadar Dakshin",
+                "Comilla Sadar Uttar",
+                "Daudkandi",
+                "Davidhar",
+                "Homna",
+                "Laksam",
+                "Langalkot",
+                "Muradnagar",
+                "Nangalkot",
+                "Titas"
+            ],
+            "Cox's Bazar": [
+                "Chakaria",
+                "Cox's Bazar Sadar",
+                "Kutubdia",
+                "Maheshkhali",
+                "Ramu",
+                "Teknaf",
+                "Ukhia"
+            ],
+            "Feni": [
+                "Chhagalnaiya",
+                "Daganbhuiyan",
+                "Feni Sadar",
+                "Parshuram",
+                "Sonagazi"
+            ],
+            "Khagrachari": [
+                "Dighinala",
+                "Khagrachhari Sadar",
+                "Lakshmichhari",
+                "Mahalchhari",
+                "Manikchhari",
+                "Matiranga",
+                "Panchhari",
+                "Ramgarh"
+            ],
+            "Lakshmipur": [
+                "Lakshmipur Sadar",
+                "Raipur",
+                "Ramganj",
+                "Ramgati"
+            ],
+            "Noakhali": [
+                "Begumganj",
+                "Chatkhil",
+                "Companiganj",
+                "Hatiya",
+                "Kabirhat",
+                "Senbagh",
+                "Sonaimuri",
+                "Subarnachar"
+            ],
+            "Rangamati": [
+                "Bagaichhari",
+                "Barkal",
+                "Kaptai",
+                "Kaokhali",
+                "Longachh",
+                "Marishya",
+                "Naniarchar",
+                "Rajasthali",
+                "Rangamati Sadar"
+            ]
+        }
+    },
+    {
+        "Dhaka": {
+            "Dhaka": [
+                "Dhamrai",
+                "Dhanmondi",
+                "Gazipur City",
+                "Gulshan",
+                "Keraniganj",
+                "Lalbagh",
+                "Mirpur",
+                "Mohammadpur",
+                "Motijheel",
+                "Nawabganj",
+                "Pallabi",
+                "Ramna",
+                "Sabujbagh",
+                "Savar",
+                "Sutrapur",
+                "Tejgaon",
+                "Uttara"
+            ],
+            "Faridpur": [
+                "Alfadanga",
+                "Bhanga",
+                "Boalmari",
+                "Charbhadrasan",
+                "Faridpur Sadar",
+                "Madhukhali",
+                "Nagarkanda",
+                "Sadarpur",
+                "Saltha"
+            ],
+            "Gazipur": [
+                "Gazipur Sadar",
+                "Kaliakair",
+                "Kaliganj",
+                "Kapasia",
+                "Sreepur"
+            ],
+            "Gopalganj": [
+                "Gopalganj Sadar",
+                "Kashiani",
+                "Kotalipara",
+                "Muksudpur",
+                "Tungipara"
+            ],
+            "Kishoreganj": [
+                "Austagram",
+                "Bajitpur",
+                "Bhairab",
+                "Hossainpur",
+                "Itna",
+                "Karimganj",
+                "Katiadi",
+                "Kishoreganj Sadar",
+                "Kuliarchar",
+                "Mithamain",
+                "Nikli",
+                "Pakundia",
+                "Tarail"
+            ],
+            "Madaripur": [
+                "Barhamganj",
+                "Kalkini",
+                "Madaripur Sadar",
+                "Rajoir"
+            ],
+            "Manikganj": [
+                "Daulatpur",
+                "Ghior",
+                "Harirampur",
+                "Manikganj Sadar",
+                "Saturia",
+                "Shibalaya",
+                "Singair"
+            ],
+            "Munshiganj": [
+                "Gazaria",
+                "Lohajang",
+                "Munshiganj Sadar",
+                "Sirajdikhan",
+                "Sreenagar",
+                "Tongibari"
+            ],
+            "Narayanganj": [
+                "Araihazar",
+                "Bandar",
+                "Narayanganj Sadar",
+                "Rupganj",
+                "Sonargaon"
+            ],
+            "Narsingdi": [
+                "Belabo",
+                "Monohardi",
+                "Narsingdi Sadar",
+                "Palash",
+                "Raipura",
+                "Shibpur"
+            ],
+            "Rajbari": [
+                "Baliakandi",
+                "Goalandaghat",
+                "Kalukhali",
+                "Pangsha",
+                "Rajbari Sadar"
+            ],
+            "Shariatpur": [
+                "Bhedarganj",
+                "Damudya",
+                "Gosairhat",
+                "Jajira",
+                "Naria",
+                "Shariatpur Sadar",
+                "Zanjira"
+            ]
+        }
+    },
+    {
+        "Khulna": {
+            "Bagerhat": [
+                "Bagerhat Sadar",
+                "Chitalmari",
+                "Fakirhat",
+                "Kachua",
+                "Mollahat",
+                "Mongla",
+                "Morrelganj",
+                "Rampal",
+                "Sarankhola"
+            ],
+            "Chuadanga": [
+                "Alamdanga",
+                "Chuadanga Sadar",
+                "Damurhuda",
+                "Jiban Nagar"
+            ],
+            "Jessore": [
+                "Abhaynagar",
+                "Bagherpara",
+                "Chaugachha",
+                "Jessore Sadar",
+                "Jhikargachha",
+                "Keshabpur",
+                "Manirampur",
+                "Sharsha"
+            ],
+            "Jhenaidah": [
+                "Harinakunda",
+                "Jhenaidah Sadar",
+                "Kaliganj",
+                "Kotchandpur",
+                "Maheshpur",
+                "Shailkupa"
+            ],
+            "Khulna": [
+                "Batiaghata",
+                "Dacope",
+                "Dighalia",
+                "Dumuria",
+                "Khalishpur",
+                "Khan Jahan Ali",
+                "Khulna Sadar",
+                "Koyra",
+                "Paikgachha",
+                "Phultala",
+                "Rupsha",
+                "Terokhada"
+            ],
+            "Kushtia": [
+                "Bheramara",
+                "Daulatpur",
+                "Khoksa",
+                "Kumarkhali",
+                "Kushtia Sadar",
+                "Mirpur"
+            ],
+            "Magura": [
+                "Magura Sadar",
+                "Mohammadpur",
+                "Shalikha",
+                "Sreepur"
+            ],
+            "Meherpur": [
+                "Gangni",
+                "Meherpur Sadar",
+                "Mujib Nagar"
+            ],
+            "Narail": [
+                "Kalia",
+                "Lohagara",
+                "Narail Sadar"
+            ],
+            "Satkhira": [
+                "Assasuni",
+                "Debhata",
+                "Kalaroa",
+                "Kaliganj",
+                "Satkhira Sadar",
+                "Shyamnagar",
+                "Tala"
+            ]
+        }
+    },
+    {
+        "Rajshahi": {
+            "Bogra": [
+                "Adamdighi",
+                "Bogra Sadar",
+                "Dhunat",
+                "Dhupchanchia",
+                "Gabtali",
+                "Kahaloo",
+                "Nandigram",
+                "Sariakandi",
+                "Sherpur",
+                "Shibganj",
+                "Sonatola"
+            ],
+            "Chapainawabganj": [
+                "Bholahat",
+                "Chapainawabganj Sadar",
+                "Gomastapur",
+                "Nachole",
+                "Rohanpur",
+                "Shibganj"
+            ],
+            "Joypurhat": [
+                "Akkelpur",
+                "Joypurhat Sadar",
+                "Kalai",
+                "Khetlal",
+                "Panchbibi"
+            ],
+            "Naogaon": [
+                "Atrai",
+                "Badalgachhi",
+                "Dhamoirhat",
+                "Manda",
+                "Naogaon Sadar",
+                "Niamatpur",
+                "Patnitala",
+                "Porsha",
+                "Raninagar",
+                "Sapahar"
+            ],
+            "Natore": [
+                "Bagatipara",
+                "Baraigram",
+                "Gurudaspur",
+                "Lalpur",
+                "Naldanga",
+                "Natore Sadar",
+                "Singra"
+            ],
+            "Pabna": [
+                "Atgharia",
+                "Bera",
+                "Bhangura",
+                "Chatmohar",
+                "Faridpur",
+                "Ishwardi",
+                "Pabna Sadar",
+                "Santhia",
+                "Sujanagar"
+            ],
+            "Rajshahi": [
+                "Bagha",
+                "Bagmara",
+                "Charghat",
+                "Durgapur",
+                "Godagari",
+                "Paba",
+                "Puthia",
+                "Rajshahi Sadar",
+                "Tanore"
+            ],
+            "Sirajganj": [
+                "Belkuchi",
+                "Chauhali",
+                "Kamarkhanda",
+                "Kazipur",
+                "Raiganj",
+                "Shahjadpur",
+                "Sirajganj Sadar",
+                "Tarash",
+                "Ullahpara"
+            ]
+        }
+    },
+    {
+        "Rangpur": {
+            "Dinajpur": [
+                "Birampur",
+                "Birganj",
+                "Biral",
+                "Bochaganj",
+                "Chirirbandar",
+                "Dinajpur Sadar",
+                "Fulbari",
+                "Ghoraghat",
+                "Hakimpur",
+                "Kaharole",
+                "Khansama",
+                "Nawabganj",
+                "Parbatipur"
+            ],
+            "Gaibandha": [
+                "Fulchhari",
+                "Gaibandha Sadar",
+                "Gobindaganj",
+                "Palashbari",
+                "Sadullapur",
+                "Saghata",
+                "Sundarganj"
+            ],
+            "Kurigram": [
+                "Bhurungamari",
+                "Char Rajibpur",
+                "Chilmari",
+                "Kurigram Sadar",
+                "Nageshwari",
+                "Phulbari",
+                "Raomari",
+                "Rajibpur",
+                "Ulipur"
+            ],
+            "Lalmonirhat": [
+                "Aditmari",
+                "Hatibandha",
+                "Kaliganj",
+                "Lalmonirhat Sadar",
+                "Patgram"
+            ],
+            "Nilphamari": [
+                "Dimla",
+                "Domar",
+                "Jaldhaka",
+                "Kishoreganj",
+                "Nilphamari Sadar",
+                "Saidpur"
+            ],
+            "Panchagarh": [
+                "Atwari",
+                "Boda",
+                "Debiganj",
+                "Panchagarh Sadar",
+                "Tetulia"
+            ],
+            "Rangpur": [
+                "Badarganj",
+                "Gangachara",
+                "Kaunia",
+                "Mithapukur",
+                "Pirgachha",
+                "Pirganj",
+                "Rangpur Sadar"
+            ],
+            "Thakurgaon": [
+                "Baliadangi",
+                "Haripur",
+                "Pirganj",
+                "Ranisankail",
+                "Thakurgaon Sadar"
+            ]
+        }
+    },
+    {
+        "Sylhet": {
+            "Habiganj": [
+                "Ajmiriganj",
+                "Bahubal",
+                "Baniachong",
+                "Chunarughat",
+                "Habiganj Sadar",
+                "Lakhai",
+                "Madhabpur",
+                "Nabiganj"
+            ],
+            "Moulvibazar": [
+                "Barlekha",
+                "Juri",
+                "Kamalganj",
+                "Kulaura",
+                "Moulvibazar Sadar",
+                "Rajnagar",
+                "Sreemangal"
+            ],
+            "Sunamganj": [
+                "Bishwamvarpur",
+                "Chhatak",
+                "Derai",
+                "Dharampasha",
+                "Dowarabazar",
+                "Jagannathpur",
+                "Jamalganj",
+                "Sunamganj Sadar",
+                "Tahirpur"
+            ],
+            "Sylhet": [
+                "Balaganj",
+                "Beanibazar",
+                "Bishwanath",
+                "Companiganj",
+                "Fenchuganj",
+                "Golapganj",
+                "Gowainghat",
+                "Jaintiapur",
+                "Kanaighat",
+                "Sylhet Sadar",
+                "Zakiganj"
+            ]
+        }
+    },
+    {
+        "Mymensingh": {
+            "Jamalpur": [
+                "Bakshiganj",
+                "Dewanganj",
+                "Islampur",
+                "Jamalpur Sadar",
+                "Madarganj",
+                "Melandaha",
+                "Sarishabari"
+            ],
+            "Mymensingh": [
+                "Bhaluka",
+                "Dhobaura",
+                "Fulbaria",
+                "Gaffargaon",
+                "Gauripur",
+                "Haluaghat",
+                "Ishwarganj",
+                "Muktagachha",
+                "Mymensingh Sadar",
+                "Nandail",
+                "Phulpur",
+                "Trishal"
+            ],
+            "Netrokona": [
+                "Atpara",
+                "Barhatta",
+                "Durgapur",
+                "Kalmakanda",
+                "Kendua",
+                "Khaliajuri",
+                "Madan",
+                "Mohanganj",
+                "Netrokona Sadar",
+                "Purbadhala"
+            ],
+            "Sherpur": [
+                "Jhenaigati",
+                "Nakla",
+                "Nalitabari",
+                "Sherpur Sadar",
+                "Sreebardi"
+            ]
+        }
+    }
+]
