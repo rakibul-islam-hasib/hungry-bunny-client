@@ -15,7 +15,7 @@ const Footer = () => {
                                 <br />
                                 +088 01673-000000
                             </p>
-                            <p>hunny_bunny@gmail.com</p>
+                            <p>hungry_bunny@gmail.com</p>
                         </div>
                     </div>
                     <div className='md:pl-8'>
@@ -87,7 +87,7 @@ const Footer = () => {
             </footer>
 
             <div className='bg-red-600 p-3 text-white pl-14'>
-                <p>@All Right Reserved by Hunny Bunny</p>
+                <p>@All Right Reserved by Hungry Bunny</p>
             </div>
 
         </>
