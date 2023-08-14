@@ -3,9 +3,11 @@ import NewPost from '../../components/header/Community/NewPost';
 
 const Community = () => {
     return (
-        <div>
-            <NewPost />
-        </div>
+        <section>
+            <div className="w-[80%] mx-auto">
+                <NewPost />
+            </div>
+        </section>
     );
 };
 
