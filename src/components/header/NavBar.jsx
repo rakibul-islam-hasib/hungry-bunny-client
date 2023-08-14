@@ -30,6 +30,11 @@ const navLinks = [
         name: 'Login',
         path: '/login',
     },
+    {
+        id: 5,
+        name: 'Community',
+        path: '/community',
+    },
 ];
 
 const NavBar = () => {
