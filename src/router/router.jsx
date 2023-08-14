@@ -4,6 +4,8 @@ import Home from "../pages/Home/Home";
 import Login from "../pages/auth/Login";
 import About from "../pages/about/About";
 import Contact from "../pages/contact/Contact";
+import CommunityLayout from "../layout/CommunityLayout";
+import Community from "../pages/community/Community";
 
 export const router = createBrowserRouter([
   {
@@ -29,4 +31,14 @@ export const router = createBrowserRouter([
 
     ],
   },
+  {
+    path: '/community',
+    element: <CommunityLayout />,
+    children: [
+      {
+        index: true,
+        element: <Community />
+      }
+    ]
+  }
 ]);
