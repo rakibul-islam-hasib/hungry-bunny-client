@@ -2,9 +2,13 @@ import React from 'react';
 
 const CnavBar = () => {
     return (
-        <div>
-            <h1>Community Nav Bar</h1>
-        </div>
+        <nav>
+            <div className="">
+                <div className="logo">
+                    <h1 className='text-2xl font-bold'>Hungry <span className='text-orange-500'>Bunny</span></h1>
+                </div>
+            </div>
+        </nav>
     );
 };
 
