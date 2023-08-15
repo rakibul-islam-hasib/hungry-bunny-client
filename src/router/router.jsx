@@ -7,11 +7,13 @@ import Contact from "../pages/contact/Contact";
 import CommunityLayout from "../layout/CommunityLayout";
 import Community from "../pages/community/Community";
 import Register from "../pages/auth/Register";
+import Error404 from "../layout/Error404";
 
 export const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout />,
+    errorElement: <Error404/>,
     children: [
       {
         path: "/",
