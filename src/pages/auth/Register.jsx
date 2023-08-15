@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 
 const Register = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="bg-white p-8 shadow-md rounded-md w-96">
+    <div className="min-h-screen flex items-center justify-center bg-gray-100 dark:bg-gray-900">
+      <div className="bg-white dark:bg-gray-800 p-8 shadow-md rounded-md w-96">
         <h1 className="text-2xl font-semibold mb-4">Join Us</h1>
         <div className="mb-4">
           <label htmlFor="email" className="block text-gray-600 mb-2">
@@ -44,7 +44,7 @@ const Register = () => {
         </p>
         <button
           type="submit"
-          className=" rounded-full bg-orange-500 text-white  px-4 py-2 w-full hover:bg-orange-600 focus:outline-none focus:ring focus:ring-blue-300"
+          className="rounded-full bg-orange-500 text-white px-4 py-2 w-full hover:bg-orange-600 focus:outline-none focus:ring focus:ring-blue-300"
         >
           Register
         </button>

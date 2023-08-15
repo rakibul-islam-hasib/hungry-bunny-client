@@ -15,17 +15,17 @@ const Stacks = () => {
         triggerOnce: false, // Only trigger once when the component comes into view
     });
 
-    useEffect(() => {
-        if (inView) {
-            document.body.style.backgroundColor = 'blue';
-        }
-        if (inView) {
-            console.log('in view')
-        }
-        else {
-            console.log('not in view')
-        }
-    }, [inView]);
+    // useEffect(() => {
+    //     if (inView) {
+    //         document.body.style.backgroundColor = 'blue';
+    //     }
+    //     if (inView) {
+    //         console.log('in view')
+    //     }
+    //     else {
+    //         console.log('not in view')
+    //     }
+    // }, [inView]);
     const stackCards = [
         {
             bgColor: "bg-orange-300",
