@@ -1,10 +1,13 @@
 import React from 'react';
+import NewPost from '../../components/header/Community/NewPost';
 
 const Community = () => {
     return (
-        <div>
-            <h1>Community</h1>
-        </div>
+        <section>
+            <div className="w-[80%] mx-auto">
+                <NewPost />
+            </div>
+        </section>
     );
 };
 
