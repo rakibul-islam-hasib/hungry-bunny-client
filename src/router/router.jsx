@@ -6,6 +6,7 @@ import About from "../pages/about/About";
 import Contact from "../pages/contact/Contact";
 import CommunityLayout from "../layout/CommunityLayout";
 import Community from "../pages/community/Community";
+import Register from "../pages/SignUp/Register";
 
 export const router = createBrowserRouter([
   {
@@ -27,8 +28,11 @@ export const router = createBrowserRouter([
       {
         path: '/contact',
         element: <Contact />
-      }
-
+      },
+      {
+        path: "/register",
+        element: <Register />,
+      },
     ],
   },
   {
