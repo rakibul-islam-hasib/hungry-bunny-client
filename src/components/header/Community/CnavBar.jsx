@@ -37,7 +37,7 @@ const CnavBar = () => {
                         <p><span className='text-lime-500 text-xl font-bold'>Community</span></p>
                     </Link>
                 </div>
-                <div className="">
+                <div className="hidden md:block">
                     <ul className={isFixed ? 'flex dark:text-gray-100 mt-2 space-x-6 nav-links' : 'flex mt-2 dark:text-black space-x-6 nav-links'}>
                         {navLinks.map((link) => (
                             <li key={link.id}>
