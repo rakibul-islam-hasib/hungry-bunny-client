@@ -6,7 +6,8 @@
 
 body { 
     font-family: 'Josefin Sans', sans-serif;
-    background-color: #f7fafc;
+    /* background-color: #f7fafc; */
+    @apply bg-[#f7fafc] dark:bg-[#1a202c]
 }
 
 .p-sidebar-close {
