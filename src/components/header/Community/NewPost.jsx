@@ -7,9 +7,9 @@ const NewPost = () => {
     return (
         <div className='bg-gray-100 rounded-xl px-10 py-7'>
             <div className="border-b-[2px] border-gray-400 pb-3">
-                <h1 className='uppercase text-xl font-semibold'>New Post</h1>
+                <h1 className='uppercase text-xl text-center md:text-left font-semibold'>New Post</h1>
             </div>
-            <div className="mt-3 flex items-center gap-5">
+            <div className="mt-3 flex md:flex-row flex-col items-center gap-5">
                 <input
                     type="text"
                     placeholder='What do you think about us ?'

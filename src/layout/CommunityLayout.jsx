@@ -7,11 +7,11 @@ const CommunityLayout = () => {
         <section className=' h-full'>
             <CnavBar />
             <section className='max-w-screen-xl mx-auto'>
-                <div className="grid grid-cols-5">
+                <div className="grid md:grid-cols-5">
                     <div className="col-span-4">
                         <Outlet />
                     </div>
-                    <div className="col-span-1">
+                    <div className="col-span-1 hidden md:block">
                         <h1>This is sidebar here</h1>
                     </div>
                 </div>
