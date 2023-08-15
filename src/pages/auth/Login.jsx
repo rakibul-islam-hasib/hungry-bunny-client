@@ -29,7 +29,7 @@ const Login = () => {
         <p className="my-4">
           Create an account{" "}
           <span className="text-orange-500 font-semibold">
-            <Link to="/signup">Register Here</Link>
+            <Link to="/register">Register Here</Link>
           </span>{" "}
         </p>
         <button

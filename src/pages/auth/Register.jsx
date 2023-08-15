@@ -39,7 +39,7 @@ const Register = () => {
         <p className="my-4">
           Already have an account{" "}
           <span className="text-orange-500 font-semibold">
-            <Link to="/signin">Login</Link>
+            <Link to="/login">Login</Link>
           </span>{" "}
         </p>
         <button

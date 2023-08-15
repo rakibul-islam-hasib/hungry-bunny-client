@@ -6,7 +6,7 @@ import About from "../pages/about/About";
 import Contact from "../pages/contact/Contact";
 import CommunityLayout from "../layout/CommunityLayout";
 import Community from "../pages/community/Community";
-import Register from "../pages/SignUp/Register";
+import Register from "../pages/auth/Register";
 
 export const router = createBrowserRouter([
   {
