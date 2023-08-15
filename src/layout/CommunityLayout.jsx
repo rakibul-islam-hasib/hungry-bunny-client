@@ -1,6 +1,7 @@
 import React from 'react';
 import CnavBar from '../components/header/Community/CnavBar';
 import { Outlet } from 'react-router-dom';
+import CSideBar from '../components/sidebar/CSideBar';
 
 const CommunityLayout = () => {
     return (
@@ -12,7 +13,7 @@ const CommunityLayout = () => {
                         <Outlet />
                     </div>
                     <div className="col-span-1 hidden md:block">
-                        <h1>This is sidebar here</h1>
+                        <CSideBar />
                     </div>
                 </div>
             </section>
