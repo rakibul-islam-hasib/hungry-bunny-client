@@ -162,21 +162,6 @@ const NavBar = () => {
                             </ul>
                         </div>
                         <div className="search-and-others flex items-center space-x-2">
-                            <div className="relative">
-                                <input
-                                    ref={inputRef}
-                                    type="text"
-                                    onFocus={() => (inputRef.current.placeholder = 'Search here...')}
-                                    onBlur={() => (inputRef.current.placeholder = '')}
-                                    className="outline-none w-[40px] duration-300 focus:w-[200px] border-orange-300 border px-3 py-1 rounded-full"
-                                />
-                                <div
-                                    onClick={() => inputRef.current.focus()}
-                                    className="absolute top-[9px] right-3"
-                                >
-                                    <BsSearch />
-                                </div>
-                            </div>
                             <div className="">
                                 <button
                                     onClick={() => setShowSidebar(!showSidebar)}
@@ -202,6 +187,9 @@ const NavBar = () => {
                                     <span className="slider"></span>
                                 </label>
                             </div>
+                            
+
+
                         </div>
                     </div>
                     <div className="md:hidden top-0 block side-md absolute  -left-[500px] h-screen w-full bg-blue-300">
