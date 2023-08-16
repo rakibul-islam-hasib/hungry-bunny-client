@@ -6,7 +6,7 @@ import Loader from '../components/loader/Loader';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { app } from '../config/firebase/firebase.config';
 import { useDispatch } from 'react-redux';
-import { setLoading, setUser } from '../redux/store/authSlice';
+import { setLoading, setUser } from '../redux/slices/authSlice';
 import { useSelector } from 'react-redux';
 
 const MainLayout = () => {

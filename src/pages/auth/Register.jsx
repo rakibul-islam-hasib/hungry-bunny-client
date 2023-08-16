@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
-import { registerUser } from "../../redux/store/authThunks";
-import { setUser } from "../../redux/store/authSlice";
+import { registerUser } from "../../redux/slices/authThunks";
+import { setUser } from "../../redux/slices/authSlice";
 const Register = () => {
   const dispatch = useDispatch();
   const { user, loading, error } = useSelector((state) => state.auth);
