@@ -4,10 +4,10 @@ import { getAuth } from 'firebase/auth';
 import { app } from '../../config/firebase/firebase.config';
 
 const auth = getAuth(app);
-export const registerUser = (email, password) => (dispatch) => {
+export const registerUser = (email, password) => async (dispatch) => {
     dispatch(setLoading(true));
     try {
-        const userCredential = createUserWithEmailAndPassword(auth, email, password);
+        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
         dispatch(setUser(userCredential.user));
         return userCredential;
     } catch (error) {

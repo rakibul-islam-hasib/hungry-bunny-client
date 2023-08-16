@@ -2,22 +2,25 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
 import { registerUser } from "../../redux/store/authThunks";
+import { setUser } from "../../redux/store/authSlice";
 const Register = () => {
   const dispatch = useDispatch();
   const { user, loading, error } = useSelector((state) => state.auth);
+  // console.log(user, loading, error)
+  console.log(user, 'user', loading, 'loading', error, 'error')
 
-  const handleFromSubmit = e => {
+  const handleFromSubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
     const data = Object.fromEntries(formData);
     // console.log(data);
-    dispatch(registerUser(data.email, data.password))
-      .then((res) => {
-        console.log(res);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    try {
+      const res = await dispatch(registerUser(data.email, data.password));
+      dispatch(setUser(res));
+      console.log(res);
+    } catch (err) {
+      console.log(err);
+    }
   }
 
 
