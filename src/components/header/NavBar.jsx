@@ -7,6 +7,8 @@ import { NavLink } from 'react-router-dom';
 import './css/style.css';
 import { gsap } from 'gsap';
 import clickSound from '../../assets/audio/click.mp3';
+import LogoutBtn from '../buttons/LogoutBtn';
+import { useAuth } from '../../hooks/useAuth';
 
 const navLinks = [
     {
@@ -47,16 +49,14 @@ const navLinks = [
 ];
 
 const NavBar = () => {
-    const inputRef = useRef(null);
     const [showSidebar, setShowSidebar] = useState(false);
     const [showNav, setShowNav] = useState(false);
     const [scrollPosition, setScrollPosition] = useState(0);
     const [isFixed, setIsFixed] = useState(false);
-    // const isFixed = false;
     const [isDarkMode, setIsDarkMode] = useState(
         localStorage.getItem('isDarkMode') === 'true'
     );
-
+    const { user } = useAuth();
     const click = new Audio(clickSound);
 
     const animate = () => {
@@ -162,21 +162,6 @@ const NavBar = () => {
                             </ul>
                         </div>
                         <div className="search-and-others flex items-center space-x-2">
-                            <div className="relative">
-                                <input
-                                    ref={inputRef}
-                                    type="text"
-                                    onFocus={() => (inputRef.current.placeholder = 'Search here...')}
-                                    onBlur={() => (inputRef.current.placeholder = '')}
-                                    className="outline-none w-[40px] duration-300 focus:w-[200px] border-orange-300 border px-3 py-1 rounded-full"
-                                />
-                                <div
-                                    onClick={() => inputRef.current.focus()}
-                                    className="absolute top-[9px] right-3"
-                                >
-                                    <BsSearch />
-                                </div>
-                            </div>
                             <div className="">
                                 <button
                                     onClick={() => setShowSidebar(!showSidebar)}
@@ -201,6 +186,9 @@ const NavBar = () => {
                                     <input defaultChecked={isDarkMode} onChange={() => setIsDarkMode(!isDarkMode)} type="checkbox" className="input" />
                                     <span className="slider"></span>
                                 </label>
+                            </div>
+                            <div className="">
+                                {user && <LogoutBtn />}
                             </div>
                         </div>
                     </div>
