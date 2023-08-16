@@ -10,7 +10,6 @@ import { setLoading, setUser } from '../redux/slices/authSlice';
 import { useSelector } from 'react-redux';
 
 const MainLayout = () => {
-    const loader = false;
     const auth = getAuth(app);
     const dispatch = useDispatch();
     const { loading } = useSelector(state => state.auth);
