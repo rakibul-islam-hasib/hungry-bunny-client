@@ -33,8 +33,10 @@
     display: inline-block;
     position: relative;
     cursor: pointer;
+    
     padding-bottom: 3px;
     margin-right: 10px;
+    @apply dark:text-primary text-black;
 }
 
 /* Toggle button css */

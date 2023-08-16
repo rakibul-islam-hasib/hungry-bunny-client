@@ -10,6 +10,7 @@ import Register from "../pages/auth/Register";
 import Error404 from "../layout/Error404";
 import Restaurant from "../pages/Restaurant/Restaurant";
 import Menu from "../pages/Menu/Menu";
+import Faq from "../pages/faq/Faq";
 
 export const router = createBrowserRouter([
   {
@@ -44,6 +45,10 @@ export const router = createBrowserRouter([
       {
         path: '/menu',
         element: <Menu />
+      },
+      {
+        path: '/faq',
+        element : <Faq />
       }
     ],
   },
