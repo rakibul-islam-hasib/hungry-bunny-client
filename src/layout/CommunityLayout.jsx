@@ -1,13 +1,9 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import CnavBar from '../components/header/Community/CnavBar';
 import { Outlet, ScrollRestoration } from 'react-router-dom';
 import CSideBar from '../components/sidebar/CSideBar';
 import { useAuth } from '../hooks/useAuth';
 import Loader from '../components/loader/Loader';
-import { getAuth, onAuthStateChanged } from 'firebase/auth';
-import { app } from '../config/firebase/firebase.config';
-import { setLoading, setUser } from '../redux/slices/authSlice';
-import { useDispatch } from 'react-redux';
 const CommunityLayout = () => {
     const { loading } = useAuth();
 

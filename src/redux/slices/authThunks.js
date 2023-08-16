@@ -1,7 +1,8 @@
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from 'firebase/auth';
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, updateProfile } from 'firebase/auth';
 import { setUser, setError, setLoading } from './authSlice';
 import { getAuth } from 'firebase/auth';
 import { app } from '../../config/firebase/firebase.config';
+import { useAuth } from '../../hooks/useAuth';
 
 const auth = getAuth(app);
 export const registerUser = (email, password) => async (dispatch) => {
@@ -15,7 +16,14 @@ export const registerUser = (email, password) => async (dispatch) => {
     }
     dispatch(setLoading(false));
 };
-
+export const updateName = (name) => (dispatch) => {
+    dispatch(setLoading(true));
+    try {
+        return updateProfile(auth.currentUser, { displayName: name })
+    } catch (error) {
+        dispatch(setError(error.code));
+    }
+}
 // Similar thunks for other actions...
 export const loginUser = (email, password) => async (dispatch) => {
     dispatch(setLoading(true));
