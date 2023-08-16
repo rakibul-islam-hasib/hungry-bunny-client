@@ -4,7 +4,6 @@ import CheckoutBar from "../../components/cart/CheckoutBar";
 import Card from "../../components/Card/Card";
 import PopularFood from "./Elements/PopularFood";
 import Stacks from "./Elements/Stacks";
-import HomeSlider from "./Elements/HomeSlider";
 // import HomeBlog from "./Elements/HomeBlog";
 
 const Home = () => {
@@ -12,7 +11,6 @@ const Home = () => {
   return (
     <section>
       <Hero />
-      <HomeSlider/>
       <Card />
       <PopularFood />
       <Stacks />
