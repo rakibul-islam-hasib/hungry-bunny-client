@@ -1,10 +1,29 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import { useDispatch, useSelector } from 'react-redux';
+import { registerUser } from "../../redux/store/authThunks";
 const Register = () => {
+  const dispatch = useDispatch();
+  const { user, loading, error } = useSelector((state) => state.auth);
+
+  const handleFromSubmit = e => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    const data = Object.fromEntries(formData);
+    // console.log(data);
+    dispatch(registerUser(data.email, data.password))
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
+
+
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100 dark:bg-gray-900">
-      <div className="bg-white dark:bg-gray-800 p-8 shadow-md rounded-md w-96">
+      <form onSubmit={(e) => handleFromSubmit(e)} className="bg-white dark:bg-gray-800 p-8 shadow-md rounded-md w-96">
         <h1 className="text-2xl font-semibold mb-4">Join Us</h1>
         <div className="mb-4">
           <label htmlFor="email" className="block text-gray-600 mb-2">
@@ -13,6 +32,7 @@ const Register = () => {
           <input
             type="text"
             id="name"
+            name="name"
             className="w-full border rounded px-3 py-2 focus:outline-none focus:border-blue-500"
           />
         </div>
@@ -23,6 +43,7 @@ const Register = () => {
           <input
             type="email"
             id="email"
+            name="email"
             className="w-full border rounded px-3 py-2 focus:outline-none focus:border-blue-500"
           />
         </div>
@@ -33,6 +54,7 @@ const Register = () => {
           <input
             type="password"
             id="password"
+            name="password"
             className="w-full border rounded px-3 py-2 focus:outline-none focus:border-blue-500"
           />
         </div>
@@ -48,7 +70,7 @@ const Register = () => {
         >
           Register
         </button>
-      </div>
+      </form>
     </div>
   );
 };

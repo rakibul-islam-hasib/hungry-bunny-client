@@ -10,9 +10,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emailjs/browser": "^3.11.0",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@mui/material": "^5.14.3",
+    "@reduxjs/toolkit": "^1.9.5",
     "firebase": "^10.1.0",
     "framer-motion": "^10.15.0",
     "gsap": "^3.12.2",
@@ -25,8 +27,11 @@
     "react-dom": "^18.2.0",
     "react-icons": "^4.10.1",
     "react-intersection-observer": "^9.5.2",
+    "react-lottie": "^1.2.3",
     "react-responsive-carousel": "^3.2.23",
     "react-router-dom": "^6.14.2",
+    "redux": "^4.2.1",
+    "redux-thunk": "^2.4.2",
     "sort-by": "^1.2.0"
   },
   "devDependencies": {
