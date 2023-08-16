@@ -35,3 +35,12 @@ export const loginUser = (email, password) => async (dispatch) => {
         dispatch(setError(error.code));
     }
 }
+export const logoutUser = () => async (dispatch) => {
+    dispatch(setLoading(true));
+    try {
+        await signOut(auth);
+        dispatch(setUser(null));
+    } catch (error) {
+        dispatch(setError(error.code));
+    }
+}

@@ -7,6 +7,8 @@ import { NavLink } from 'react-router-dom';
 import './css/style.css';
 import { gsap } from 'gsap';
 import clickSound from '../../assets/audio/click.mp3';
+import LogoutBtn from '../buttons/LogoutBtn';
+import { useAuth } from '../../hooks/useAuth';
 
 const navLinks = [
     {
@@ -47,16 +49,14 @@ const navLinks = [
 ];
 
 const NavBar = () => {
-    const inputRef = useRef(null);
     const [showSidebar, setShowSidebar] = useState(false);
     const [showNav, setShowNav] = useState(false);
     const [scrollPosition, setScrollPosition] = useState(0);
     const [isFixed, setIsFixed] = useState(false);
-    // const isFixed = false;
     const [isDarkMode, setIsDarkMode] = useState(
         localStorage.getItem('isDarkMode') === 'true'
     );
-
+    const { user } = useAuth();
     const click = new Audio(clickSound);
 
     const animate = () => {
@@ -187,9 +187,9 @@ const NavBar = () => {
                                     <span className="slider"></span>
                                 </label>
                             </div>
-                            
-
-
+                            <div className="">
+                                {user && <LogoutBtn />}
+                            </div>
                         </div>
                     </div>
                     <div className="md:hidden top-0 block side-md absolute  -left-[500px] h-screen w-full bg-blue-300">
