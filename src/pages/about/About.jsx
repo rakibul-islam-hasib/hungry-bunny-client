@@ -8,11 +8,11 @@ const About = () => {
 <img className='md:ml-24' src={picture} style={{height: 600}} alt="delivery picture" />
 </div>
 <h3 className='md:absolute top-36 text-orange-500 font-extrabold text-4xl'>Hungry Bunny</h3>
-<div className='mt-6'>
+<div className='mt-6 mb-8'>
   <h3 className='font-extrabold text-4xl'>Delivering Delightful Moments to Your Doorstep</h3>
-  <p className='mt-4'>At Hungry Bunny, we are passionate about connecting you with delicious food from your favorite local restaurants, right to your doorstep. Our mission is to make your dining experience as convenient and enjoyable as possible.</p>
-  <p className='mt-4'>With a wide selection of cuisines and dishes to choose from, we cater to all tastes and preferences. Whether you're craving a classic comfort meal, exploring exotic flavors, or looking for healthy options, we have something for everyone.</p>
-  <p className='mt-4'>Our platform brings together a network of trusted restaurants and culinary artisans who take pride in crafting delectable dishes using the finest ingredients. We believe in supporting local businesses and contributing to the communities we serve.</p>
+  <p className='mt-4'>At Hungry Bunny, we are passionate about connecting you with delicious food from your favorite local restaurants, right to your doorstep. <br /> Our mission is to make your dining experience as convenient and enjoyable as possible.</p>
+  <p className='mt-4'>With a wide selection of cuisines and dishes to choose from, we cater to all tastes and preferences. Whether you're craving a classic comfort meal,<br /> exploring exotic flavors, or looking for healthy options, we have something for everyone.</p>
+  <p className='mt-4'>Our platform brings together a network of trusted restaurants and culinary artisans who take pride in crafting delectable dishes using the finest <br /> ingredients. We believe in supporting local businesses and contributing to the communities we serve.</p>
 </div>
 {/* hero section delivery */}
 <div className='mt-7 md:flex mb-4'>
@@ -54,7 +54,7 @@ const About = () => {
 </div>
 </div>
 {/* hero section delivery man */}
-<div className='mt-7 md:flex mb-4'>
+<div className='mt-7 md:flex mb-8'>
   <div className='mt-6 w-[50%] mr-8'>
   <h3 className='font-extrabold text-4xl'>Delivering Delicious Moments, One Ride at a Time</h3>
   <p className='mt-4'>Join our dedicated team of food delivery riders and be the hero of every mealtime! At our service, we don't just deliver food; we deliver smiles, convenience, and the joy of sharing a hot meal. Whether it's a busy workday or a lazy weekend, our riders are always on the move, ensuring your favorite dishes reach your doorstep piping hot and right on time. Join us in spreading happiness, one delivery at a time. Join our rider fleet today and be a part of something deliciously rewarding!</p>
