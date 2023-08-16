@@ -35,6 +35,16 @@ const navLinks = [
         name: 'Community',
         path: '/community',
     },
+    {
+        id: 6,
+        name: 'Restaurants',
+        path: '/restaurant',
+    },
+    {
+        id: 7,
+        name: 'Menu',
+        path: '/menu',
+    },
 ];
 
 const NavBar = () => {
