@@ -2,7 +2,6 @@ import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, up
 import { setUser, setError, setLoading } from './authSlice';
 import { getAuth } from 'firebase/auth';
 import { app } from '../../config/firebase/firebase.config';
-import { useAuth } from '../../hooks/useAuth';
 
 const auth = getAuth(app);
 export const registerUser = (email, password) => async (dispatch) => {
