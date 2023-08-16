@@ -3,107 +3,219 @@ import { BsSearch } from 'react-icons/bs';
 import cartImg from '../../assets/icons/cart.svg';
 import CheckoutBar from '../cart/CheckoutBar';
 import { AiOutlineBars, AiOutlineClose } from 'react-icons/ai';
+import { NavLink } from 'react-router-dom';
+import './css/style.css';
 import { gsap } from 'gsap';
+import clickSound from '../../assets/audio/click.mp3';
+
 const navLinks = [
     {
         id: 1,
         name: 'Home',
-        path: '/'
+        path: '/',
     },
     {
         id: 2,
         name: 'About',
-        path: '/about'
+        path: '/about',
     },
     {
         id: 3,
         name: 'Contact',
-        path: '/contact'
+        path: '/contact',
     },
     {
         id: 4,
         name: 'Login',
-        path: '/login'
+        path: '/login',
     },
+    {
+        id: 5,
+        name: 'Community',
+        path: '/community',
+    },
+    {
+        id: 6,
+        name: 'Restaurants',
+        path: '/restaurant',
+    },
+    {
+        id: 7,
+        name: 'Menu',
+        path: '/menu',
+    },
+];
 
-]
 const NavBar = () => {
     const inputRef = useRef(null);
     const [showSidebar, setShowSidebar] = useState(false);
     const [showNav, setShowNav] = useState(false);
+    const [scrollPosition, setScrollPosition] = useState(0);
+    const [isFixed, setIsFixed] = useState(false);
+    // const isFixed = false;
+    const [isDarkMode, setIsDarkMode] = useState(
+        localStorage.getItem('isDarkMode') === 'true'
+    );
+
+    const click = new Audio(clickSound);
 
     const animate = () => {
         const timeline = gsap.timeline({
             onComplete: () => {
-                console.log('done')
-            }
+                console.log('done');
+            },
         });
         timeline.to('.side-md', {
             duration: 1,
             left: 0,
-            ease: 'power4.out'
-        })
-    }
-
+            ease: 'power4.out',
+        });
+    };
 
     const handleCollapse = () => {
         if (showNav) {
             animate();
         } else {
             gsap.to('.side-md', {
-                duration: 1,
+                duration: 2,
                 left: '-1000px',
-                ease: 'power4.out'
-            })
+                top: 0,
+                ease: 'power4.out',
+            });
         }
-    }
+    };
+
     useEffect(() => {
         handleCollapse();
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [showNav])
+    }, [showNav]);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const currentPosition = window.pageYOffset;
+            setScrollPosition(currentPosition);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
+    useEffect(() => {
+        if (scrollPosition > 100) {
+            setIsFixed(true);
+        } else {
+            setIsFixed(false);
+        }
+    }, [scrollPosition]);
+
+    useEffect(() => {
+        const darkClass = 'dark';
+        const root = window.document.documentElement;
+
+        if (isDarkMode) {
+            root.classList.add(darkClass);
+        } else {
+            root.classList.remove(darkClass);
+        }
+
+        localStorage.setItem('isDarkMode', isDarkMode);
+    }, [isDarkMode]);
+
+
+    const onPathChange = () => {
+        click.play();
+    }
+
+
+
     return (
         <>
-            <nav className=' py-3 relative'>
-                <div className="w-[90%] mx-auto flex justify-between items-center ">
-                    <div className="logo">
-                        <h1 className='font-bold text-xl'>Foo</h1>
-                    </div>
-                    <div className="links hidden md:block">
-                        <ul className='flex space-x-6 '>
-                            {navLinks.map(link => <li key={link.id}>{link.name}</li>)}
-                        </ul>
-                    </div>
-                    <div className="search-and-others flex items-center space-x-2">
-                        <div className="relative">
-                            <input
-                                ref={inputRef}
-                                type="text"
-                                onFocus={() => inputRef.current.placeholder = 'Search here...'}
-                                onBlur={() => inputRef.current.placeholder = ''}
-                                className='outline-none w-[40px] duration-300 focus:w-[200px] border-orange-300 border px-3 py-1 rounded-full' />
-                            <div onClick={() => inputRef.current.focus()} className="absolute top-[9px] right-3">
-                                <BsSearch />
+            <div
+                className={
+                    isFixed
+                        ? 'fixed dark:text-white text-black top-0 z-[999] w-full duration-[1s] dark:bg-black bg-white dark:bg-opacity-60 backdrop-blur-xl bg-opacity-60'
+                        : 'static top-0 dark:text-black'
+                }
+            >
+                <nav className=" py-3 relative">
+                    <div className="w-[90%] mx-auto flex justify-between items-center ">
+                        <div className="logo">
+                            <h1 className={isFixed ? 'font-bold dark:text-gray-200 text-xl' : 'font-bold dark:text-white text-xl'}>Foo</h1>
+                        </div>
+                        <div className="links hidden md:block">
+                            <ul className={isFixed ? 'flex dark:text-gray-100 space-x-6 nav-links' : 'flex dark:text-white space-x-6 nav-links'}>
+                                {navLinks.map((link) => (
+                                    <li key={link.id}>
+                                        <NavLink
+                                            onClick={() => onPathChange()}
+                                            to={link.path}
+                                            className={({ isActive }) =>
+                                                isActive ? 'active-link' : isFixed ? 'dark:text-gray-100' : 'dark:text-white'
+                                            }
+                                        >
+                                            {link.name}
+                                        </NavLink>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                        <div className="search-and-others flex items-center space-x-2">
+                            <div className="relative">
+                                <input
+                                    ref={inputRef}
+                                    type="text"
+                                    onFocus={() => (inputRef.current.placeholder = 'Search here...')}
+                                    onBlur={() => (inputRef.current.placeholder = '')}
+                                    className="outline-none w-[40px] duration-300 focus:w-[200px] border-orange-300 border px-3 py-1 rounded-full"
+                                />
+                                <div
+                                    onClick={() => inputRef.current.focus()}
+                                    className="absolute top-[9px] right-3"
+                                >
+                                    <BsSearch />
+                                </div>
+                            </div>
+                            <div className="">
+                                <button
+                                    onClick={() => setShowSidebar(!showSidebar)}
+                                    className="px-3 relative py-1 rounded-full"
+                                >
+                                    <img className="w-9" src={cartImg} alt="" />
+                                    <div className="px-2 py-2 absolute -top-5 right-2 bg-red-700 rounded-full  blur-xl">
+                                        <span className="">{/* cart count */}</span>
+                                    </div>
+                                </button>
+                            </div>
+                            <div className="md:hidden">
+                                <AiOutlineBars
+                                    onClick={() => setShowNav(!showNav)}
+                                    className="text-3xl"
+                                />
+                            </div>
+                            <div className="">
+                                <label className="switch">
+                                    <span className="sun"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="#ffd43b"><circle r="5" cy="12" cx="12"></circle><path d="m21 13h-1a1 1 0 0 1 0-2h1a1 1 0 0 1 0 2zm-17 0h-1a1 1 0 0 1 0-2h1a1 1 0 0 1 0 2zm13.66-5.66a1 1 0 0 1 -.66-.29 1 1 0 0 1 0-1.41l.71-.71a1 1 0 1 1 1.41 1.41l-.71.71a1 1 0 0 1 -.75.29zm-12.02 12.02a1 1 0 0 1 -.71-.29 1 1 0 0 1 0-1.41l.71-.66a1 1 0 0 1 1.41 1.41l-.71.71a1 1 0 0 1 -.7.24zm6.36-14.36a1 1 0 0 1 -1-1v-1a1 1 0 0 1 2 0v1a1 1 0 0 1 -1 1zm0 17a1 1 0 0 1 -1-1v-1a1 1 0 0 1 2 0v1a1 1 0 0 1 -1 1zm-5.66-14.66a1 1 0 0 1 -.7-.29l-.71-.71a1 1 0 0 1 1.41-1.41l.71.71a1 1 0 0 1 0 1.41 1 1 0 0 1 -.71.29zm12.02 12.02a1 1 0 0 1 -.7-.29l-.66-.71a1 1 0 0 1 1.36-1.36l.71.71a1 1 0 0 1 0 1.41 1 1 0 0 1 -.71.24z"></path></g></svg></span>
+                                    <span className="moon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="m223.5 32c-123.5 0-223.5 100.3-223.5 224s100 224 223.5 224c60.6 0 115.5-24.2 155.8-63.4 5-4.9 6.3-12.5 3.1-18.7s-10.1-9.7-17-8.5c-9.8 1.7-19.8 2.6-30.1 2.6-96.9 0-175.5-78.8-175.5-176 0-65.8 36-123.1 89.3-153.3 6.1-3.5 9.2-10.5 7.7-17.3s-7.3-11.9-14.3-12.5c-6.3-.5-12.6-.8-19-.8z"></path></svg></span>
+                                    <input defaultChecked={isDarkMode} onChange={() => setIsDarkMode(!isDarkMode)} type="checkbox" className="input" />
+                                    <span className="slider"></span>
+                                </label>
                             </div>
                         </div>
-                        <div className="">
-                            <button onClick={() => setShowSidebar(!showSidebar)} className='px-3 relative py-1 rounded-full'>
-                                <img className='w-9' src={cartImg} alt="" />
-                                <div className='px-2 py-2 absolute -top-5 right-2 bg-red-700 rounded-full  blur-xl'><span className=''>0</span></div>
-                            </button>
-                        </div>
-                        <div className="md:hidden">
-                            <AiOutlineBars onClick={() => setShowNav(!showNav)} className='text-3xl' />
+                    </div>
+                    <div className="md:hidden top-0 block side-md absolute  -left-[500px] h-screen w-full bg-blue-300">
+                        <div className="w-full border">
+                            <div className="flex justify-end">
+                                <AiOutlineClose
+                                    onClick={() => setShowNav(false)}
+                                    className="text-3xl"
+                                />
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div className="md:hidden block side-md absolute top-0 -left-[500px] h-screen w-full bg-blue-300">
-                    <div className="w-full border">
-                        <div className="flex justify-end">
-                            <AiOutlineClose onClick={() => setShowNav(false)} className='text-3xl' />
-                        </div>
-                    </div>
-                </div>
-            </nav>
+                </nav>
+            </div>
             <CheckoutBar visibleLeft={showSidebar} setVisibleLeft={setShowSidebar} />
         </>
     );

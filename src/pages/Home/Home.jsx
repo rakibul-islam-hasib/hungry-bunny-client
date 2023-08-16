@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from 'react';
 import Hero from './Elements/Hero';
 import CheckoutBar from '../../components/cart/CheckoutBar';
@@ -11,6 +12,27 @@ const Home = () => {
             <Slider></Slider>
         </section>
     );
+=======
+import React from "react";
+import Hero from "./Elements/Hero";
+import CheckoutBar from "../../components/cart/CheckoutBar";
+import Card from "../../components/Card/Card";
+import PopularFood from "./Elements/PopularFood";
+import Stacks from "./Elements/Stacks";
+// import HomeBlog from "./Elements/HomeBlog";
+
+const Home = () => {
+
+  return (
+    <section>
+      <Hero />
+      <Card />
+      <PopularFood />
+      <Stacks />
+      <CheckoutBar />
+    </section>
+  );
+>>>>>>> 247d35b4a87f8287565c1163919ab29461a20eae
 };
 
 export default Home;

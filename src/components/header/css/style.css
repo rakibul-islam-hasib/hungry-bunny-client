@@ -1,0 +1,207 @@
+.nav-links a {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    padding-bottom: 3px;
+    margin-right: 10px;
+}
+
+.nav-links a:last-child {
+    margin-right: 0;
+}
+
+.nav-links a:after,
+.active-link:after {
+    content: '';
+    display: block;
+    margin: auto;
+    height: 3px;
+    width: 0px;
+    background: transparent;
+    transition: width .2s ease, background-color .5s ease;
+}
+
+.nav-links a.active-link:after,
+.nav-links a:hover:after {
+    width: 100%;
+    /* background: blue; */
+    @apply bg-orange-500;
+}
+
+
+.active-link {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    
+    padding-bottom: 3px;
+    margin-right: 10px;
+    @apply dark:text-primary text-black;
+}
+
+/* Toggle button css */
+
+.switch {
+    font-size: 17px;
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 24px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #73C0FC;
+    transition: .4s;
+    border-radius: 30px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    border-radius: 20px;
+    left: 2px;
+    bottom: 2px;
+    z-index: 2;
+    background-color: #e8e8e8;
+    transition: .4s;
+}
+
+.sun svg {
+    position: absolute;
+    top: 3px;
+    left: 22px;
+    z-index: 1;
+    width: 20px;
+    height: 20px;
+}
+
+.moon svg {
+    fill: #73C0FC;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    z-index: 1;
+    width: 15px;
+    height: 15px;
+}
+
+/* .switch:hover */
+.sun svg {
+    animation: rotate 15s linear infinite;
+}
+
+@keyframes rotate {
+
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* .switch:hover */
+.moon svg {
+    animation: tilt 5s linear infinite;
+}
+
+@keyframes tilt {
+
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(-10deg);
+    }
+
+    75% {
+        transform: rotate(10deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.input:checked+.slider {
+    background-color: #183153;
+}
+
+.input:focus+.slider {
+    box-shadow: 0 0 1px #183153;
+}
+
+.input:checked+.slider:before {
+    transform: translateX(20px);
+}
+
+
+
+
+.btn-c-nav {
+    width: 100px;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    transition: all 0.5s ease-in-out;
+    font-size: 15px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    /* background: #040f16; */
+    color: #f5f5f5;
+    @apply bg-primary;
+}
+
+.btn-c-nav:hover {
+    box-shadow: 0 0 20px 0px #2e2e2e3a;
+}
+
+.btn-c-nav .icon {
+    position: absolute;
+    height: 35px;
+    width: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s;
+}
+
+.btn-c-nav .text {
+    transform: translateX(35px);
+}
+
+.btn-c-nav:hover .icon {
+    width: 120px;
+}
+
+.btn-c-nav:hover .text {
+    transition: all 0.5s;
+    /* opacity: 0; */
+    transform: translateX(-100px);
+}
+
+.btn-c-nav:focus {
+    outline: none;
+}
+
+.btn-c-nav:active .icon {
+    transform: scale(0.85);
+}
