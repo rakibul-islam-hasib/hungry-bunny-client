@@ -7,11 +7,15 @@ import Contact from "../pages/contact/Contact";
 import CommunityLayout from "../layout/CommunityLayout";
 import Community from "../pages/community/Community";
 import Register from "../pages/auth/Register";
+import Error404 from "../layout/Error404";
+import Restaurant from "../pages/Restaurant/Restaurant";
+import Menu from "../pages/Menu/Menu";
 
 export const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout />,
+    errorElement: <Error404 />,
     children: [
       {
         path: "/",
@@ -33,6 +37,14 @@ export const router = createBrowserRouter([
         path: "/register",
         element: <Register />,
       },
+      {
+        path: '/restaurant',
+        element: <Restaurant />
+      },
+      {
+        path: '/menu',
+        element: <Menu />
+      }
     ],
   },
   {
