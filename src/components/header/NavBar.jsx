@@ -4,7 +4,6 @@ import cartImg from '../../assets/icons/cart.svg';
 import CheckoutBar from '../cart/CheckoutBar';
 import { AiOutlineBars, AiOutlineClose } from 'react-icons/ai';
 import { NavLink } from 'react-router-dom';
-import Switch from '@mui/material/Switch';
 import './css/style.css';
 import { gsap } from 'gsap';
 import clickSound from '../../assets/audio/click.mp3';
@@ -136,24 +135,24 @@ const NavBar = () => {
             <div
                 className={
                     isFixed
-                        ? 'fixed top-0 z-[999] w-full duration-[1s] dark:bg-black bg-white dark:bg-opacity-60 backdrop-blur-xl bg-opacity-60'
+                        ? 'fixed dark:text-white text-black top-0 z-[999] w-full duration-[1s] dark:bg-black bg-white dark:bg-opacity-60 backdrop-blur-xl bg-opacity-60'
                         : 'static top-0 dark:text-black'
                 }
             >
                 <nav className=" py-3 relative">
                     <div className="w-[90%] mx-auto flex justify-between items-center ">
                         <div className="logo">
-                            <h1 className={isFixed ? 'font-bold dark:text-gray-200 text-xl' : 'font-bold dark:text-black text-xl'}>Foo</h1>
+                            <h1 className={isFixed ? 'font-bold dark:text-gray-200 text-xl' : 'font-bold dark:text-white text-xl'}>Foo</h1>
                         </div>
                         <div className="links hidden md:block">
-                            <ul className={isFixed ? 'flex dark:text-gray-100 space-x-6 nav-links' : 'flex dark:text-black space-x-6 nav-links'}>
+                            <ul className={isFixed ? 'flex dark:text-gray-100 space-x-6 nav-links' : 'flex dark:text-white space-x-6 nav-links'}>
                                 {navLinks.map((link) => (
                                     <li key={link.id}>
                                         <NavLink
                                             onClick={() => onPathChange()}
                                             to={link.path}
                                             className={({ isActive }) =>
-                                                isActive ? 'active-link' : ''
+                                                isActive ? 'active-link' : isFixed ? 'dark:text-gray-100' : 'dark:text-white'
                                             }
                                         >
                                             {link.name}
