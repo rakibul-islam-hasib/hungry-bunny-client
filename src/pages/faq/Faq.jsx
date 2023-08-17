@@ -5,11 +5,11 @@ const Faq = () => {
     const [ allQuestions, setAllQuestions ] = useState([])
     
     useEffect(()=>{
-        fetch('faq.json')
+        fetch('/faq.json')
         .then(res => res.json())
         .then(data => {
             setAllQuestions(data)
-            console.log(data.answers);
+            console.log(data);
         })
     },[])
     return (
