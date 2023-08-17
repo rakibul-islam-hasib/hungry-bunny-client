@@ -33,7 +33,7 @@ const Posts = () => {
             user: {
                 name: 'Hasib Hossain',
                 isVerified: true,
-                photo: 'https://i.ibb.co/51wz2Fn/pexels-the-lazy-artist-gallery-2527939.jpg'
+                photo: 'https://i.ibb.co/5M0BDy4/No-thing.png'
             }
         },
         {
