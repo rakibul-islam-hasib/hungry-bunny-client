@@ -36,6 +36,7 @@
     "redux": "^4.2.1",
     "redux-thunk": "^2.4.2",
     "sort-by": "^1.2.0",
+    "swiper": "^10.1.0",
     "sweetalert2": "^11.7.23"
   },
   "devDependencies": {
