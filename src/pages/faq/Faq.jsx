@@ -14,7 +14,7 @@ const Faq = () => {
     },[])
     return (
         <div className='mb-10'>
-            <h2 className='text-4xl text-orange-500 p-6 text-center font-extrabold'>Frequently Asked Questions</h2>
+            <h2 className='text-4xl text-orange-500 p-7 text-center font-extrabold'>Frequently Asked Questions</h2>
             {
                 allQuestions.map((item) =>  <div key={item._id} className="card">
                 <Accordion activeIndex={0}>

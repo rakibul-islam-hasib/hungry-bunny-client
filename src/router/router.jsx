@@ -12,6 +12,7 @@ import Restaurant from "../pages/Restaurant/Restaurant";
 import Menu from "../pages/Menu/Menu";
 import Faq from "../pages/faq/Faq";
 import Temp from "../pages/temp/Temp";
+import Blog from "../pages/blog/Blog";
 
 export const router = createBrowserRouter([
   {
@@ -50,6 +51,10 @@ export const router = createBrowserRouter([
       {
         path: '/faq',
         element: <Faq />
+      },
+      {
+        path: '/blog',
+        element: <Blog/>
       },
       {
         path: '/temp',
