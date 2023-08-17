@@ -13,6 +13,7 @@ import Menu from "../pages/Menu/Menu";
 import Faq from "../pages/faq/Faq";
 import Temp from "../pages/temp/Temp";
 import Blog from "../pages/blog/Blog";
+import DashboardLayout from "../layout/DashboardLayout";
 
 export const router = createBrowserRouter([
   {
@@ -54,7 +55,7 @@ export const router = createBrowserRouter([
       },
       {
         path: '/blog',
-        element: <Blog/>
+        element: <Blog />
       },
       {
         path: '/temp',
@@ -71,5 +72,9 @@ export const router = createBrowserRouter([
         element: <Community />
       }
     ]
+  },
+  {
+    path: '/dashboard',
+    element: <DashboardLayout />,
   }
 ]);
