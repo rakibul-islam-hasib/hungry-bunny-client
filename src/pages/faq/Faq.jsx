@@ -1,9 +1,22 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { Accordion, AccordionTab } from 'primereact/accordion';
 
 const Faq = () => {
+    const [ allQuestions, setAllQuestions ] = useState([])
+    
+    useEffect(()=>{
+        fetch('faq.json')
+        .then(res => res.json())
+        .then(data => {
+            setAllQuestions(data)
+            console.log(data.answers);
+        })
+    },[])
     return (
         <div>
-            <h1>Faq</h1>
+            {/* {
+                allQuestions.map((item) => )
+            } */}
         </div>
     );
 };
