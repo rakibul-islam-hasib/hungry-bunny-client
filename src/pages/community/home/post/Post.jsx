@@ -3,6 +3,7 @@ import moment from 'moment';
 import { AiTwotoneLike } from 'react-icons/ai';
 import { BiCommentDetail } from 'react-icons/bi';
 import { BsShareFill } from 'react-icons/bs';
+import verified from '../../../../assets/icons/verified.svg'
 const Post = ({ post: data }) => {
     console.log(data);
     return (
@@ -11,7 +12,15 @@ const Post = ({ post: data }) => {
                 <div className="flex items-center gap-2">
                     <img src={data.user.photo} className='w-[40px] rounded-full h-[40px]' alt="" />
                     <div className="">
-                        <h1 className="font-bold mb-0 mt-2 leading-3 text-lg">{data.user.name}</h1>
+                        <div className="font-bold inline-flex items-center  mb-0 mt-2 leading-3 text-lg">
+                            {data.user.name}
+                            {
+                                data.user.isVerified && <img
+                                    className='w-[15px] h-[15px] inline-block ml-1'
+                                    src={verified}
+                                    alt="" />
+                            }
+                        </div>
                         <p className='mt-0 text-primary text-[12px]'>{moment(data.posted).format("MMM Do YY")}</p>
                     </div>
                 </div>
@@ -30,6 +39,9 @@ const Post = ({ post: data }) => {
                     <div className="">
                         <BsShareFill className='text-3xl cursor-pointer hover:text-primary duration-300' />
                     </div>
+                </div>
+                <div className="">
+
                 </div>
             </div>
         </div>
