@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Blog = () => {
     const [ blogs, setBlogs ] = useState([])
@@ -22,15 +23,22 @@ const Blog = () => {
               <div className="font-bold text-xl mb-2">
                 <p>{item.blogHeading}</p>
               </div>
-              <div className='flex justify-between'>
+              <div className='flex justify-between items-center'>
+              <div className='flex'>
+              <div>
+              <img className='rounded-full mr-3' style={{height: 40}} src={item.authorImage} alt="" />
+              </div>
               <div>
               <p className="text-gray-700 text-base">{item.authorName}</p>
               <p className="text-gray-700 text-base">{item.date}</p>
               </div>
+              </div>
               <div className="flex justify-between items-center mt-4">
-                <button className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-full flex items-center">
+                <Link to={`/blog/${item._id}`}>
+                  <button className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-full flex items-center">
                   Details
-                </button>
+                </button></Link>
+                
               </div>
               </div>
             </div>
