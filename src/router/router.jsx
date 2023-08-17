@@ -11,6 +11,7 @@ import Error404 from "../layout/Error404";
 import Restaurant from "../pages/Restaurant/Restaurant";
 import Menu from "../pages/Menu/Menu";
 import Faq from "../pages/faq/Faq";
+import Temp from "../pages/temp/Temp";
 
 export const router = createBrowserRouter([
   {
@@ -48,7 +49,11 @@ export const router = createBrowserRouter([
       },
       {
         path: '/faq',
-        element : <Faq />
+        element: <Faq />
+      },
+      {
+        path: '/temp',
+        element: <Temp />
       }
     ],
   },
