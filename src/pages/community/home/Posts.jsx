@@ -37,7 +37,7 @@ const Posts = () => {
             }
         },
         {
-            id: 1,
+            id: 2,
             post: 'This is a simple testing post we are working to make this post title',
             posted: 'Wed Aug 16 2023 23:21:44 GMT+0600 (Bangladesh Standard Time)',
             likes: 10,

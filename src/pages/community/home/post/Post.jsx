@@ -16,7 +16,7 @@ const Post = ({ post: data }) => {
                         <div className="font-bold inline-flex items-center  mb-0 mt-2 leading-3 text-lg">
                             {data.user.name}
                             {
-                                data.user.isVerified && <Tooltip title='This user is verified by Hungry Bunny' placement='top'>
+                                data.user.isVerified && <Tooltip arrow title='This user is verified by Hungry Bunny' placement='top'>
                                     <div
                                         className='w-[15px] h-[15px] inline-block ml-1'
                                     // src={verified}
