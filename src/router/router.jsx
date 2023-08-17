@@ -12,7 +12,7 @@ import Restaurant from "../pages/Restaurant/Restaurant";
 import Menu from "../pages/Menu/Menu";
 import Faq from "../pages/faq/Faq";
 import Temp from "../pages/temp/Temp";
-import Restaurants from "../pages/restaurants/Restaurants";
+import Blog from "../pages/blog/Blog";
 
 export const router = createBrowserRouter([
   {
@@ -38,7 +38,7 @@ export const router = createBrowserRouter([
       },
       {
         path: '/restaurants',
-        element: <Restaurants />
+        element: <Restaurant />
       },
       {
         path: "/register",
@@ -55,6 +55,10 @@ export const router = createBrowserRouter([
       {
         path: '/faq',
         element: <Faq />
+      },
+      {
+        path: '/blog',
+        element: <Blog/>
       },
       {
         path: '/temp',

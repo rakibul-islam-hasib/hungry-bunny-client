@@ -52,6 +52,7 @@ const Footer = () => {
                                 <p>Monday .....  10am-11pm</p>
                                 <p className='font-bold'>Links</p>
                                 <p><Link to='/faq'>Faq</Link></p>
+                                <p><Link to='/blog'>Blog</Link></p>
                             </div>
                         </div>
                         <div className='md:hidden lg:block mt-9'>
