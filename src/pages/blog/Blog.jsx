@@ -22,11 +22,16 @@ const Blog = () => {
               <div className="font-bold text-xl mb-2">
                 <p>{item.blogHeading}</p>
               </div>
+              <div className='flex justify-between'>
+              <div>
               <p className="text-gray-700 text-base">{item.authorName}</p>
+              <p className="text-gray-700 text-base">{item.date}</p>
+              </div>
               <div className="flex justify-between items-center mt-4">
                 <button className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-full flex items-center">
                   Details
                 </button>
+              </div>
               </div>
             </div>
           </div>
@@ -37,17 +42,3 @@ const Blog = () => {
 };
 
 export default Blog;
-
-{/* <div key={item._id} className='p-2 border overflow-hidden shadow-lg rounded-md'>
-            <img className="w-full rounded h-48 object-cover" src='' alt="Food Image" />
-            <div className="px-6 py-4">
-              <div className="font-bold text-xl mb-2"></div>
-              <p className="text-gray-700 text-base"></p>
-              <div className="flex justify-between items-center mt-4">
-                <span className="text-gray-600 font-semibold text-lg"> taka</span>
-                <button className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-full flex items-center">
-                  Details
-                </button>
-              </div>
-            </div>
-          </div> */}
