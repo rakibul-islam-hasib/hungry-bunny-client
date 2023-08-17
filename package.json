@@ -36,11 +36,8 @@
     "redux": "^4.2.1",
     "redux-thunk": "^2.4.2",
     "sort-by": "^1.2.0",
-<<<<<<< HEAD
-    "swiper": "^10.1.0"
-=======
+    "swiper": "^10.1.0",
     "sweetalert2": "^11.7.23"
->>>>>>> 3d23e3a31e2441e2a3125bf58ce7ba5233494cc1
   },
   "devDependencies": {
     "@types/react": "^18.2.15",
