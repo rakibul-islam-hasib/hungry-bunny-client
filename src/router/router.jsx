@@ -8,12 +8,18 @@ import CommunityLayout from "../layout/CommunityLayout";
 import Community from "../pages/community/Community";
 import Register from "../pages/auth/Register";
 import Error404 from "../layout/Error404";
+import Restaurant from "../pages/Restaurant/Restaurant";
+import Menu from "../pages/Menu/Menu";
+import Faq from "../pages/faq/Faq";
+import Temp from "../pages/temp/Temp";
+import Blog from "../pages/blog/Blog";
+import DashboardLayout from "../layout/DashboardLayout";
 
 export const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout />,
-    errorElement: <Error404/>,
+    errorElement: <Error404 />,
     children: [
       {
         path: "/",
@@ -35,6 +41,26 @@ export const router = createBrowserRouter([
         path: "/register",
         element: <Register />,
       },
+      {
+        path: '/restaurant',
+        element: <Restaurant />
+      },
+      {
+        path: '/menu',
+        element: <Menu />
+      },
+      {
+        path: '/faq',
+        element: <Faq />
+      },
+      {
+        path: '/blog',
+        element: <Blog />
+      },
+      {
+        path: '/temp',
+        element: <Temp />
+      }
     ],
   },
   {
@@ -46,5 +72,9 @@ export const router = createBrowserRouter([
         element: <Community />
       }
     ]
+  },
+  {
+    path: '/dashboard',
+    element: <DashboardLayout />,
   }
 ]);

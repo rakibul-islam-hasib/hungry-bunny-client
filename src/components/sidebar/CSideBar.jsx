@@ -1,6 +1,9 @@
 import React from 'react';
+import { useAuth } from '../../hooks/useAuth';
 
 const CSideBar = () => {
+    const { user } = useAuth();
+    console.log(user)
     return (
         <aside className=''>
 

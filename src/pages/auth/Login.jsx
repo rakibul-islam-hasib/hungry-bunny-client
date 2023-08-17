@@ -1,10 +1,32 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { loginUser } from "../../redux/slices/authThunks";
 
 const Login = () => {
+  const dispatch = useDispatch();
+
+  const handleFromSubmit = async (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    const data = Object.fromEntries(formData);
+    console.log(data);
+    try {
+      const res = await dispatch(loginUser(data.email, data.password));
+      if (res) {
+        console.log(res)
+      }
+    } catch (error) {
+      console.log(error)
+    }
+  };
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="bg-white p-8 shadow-md rounded-md w-96">
+    <div className="min-h-screen flex items-center justify-center">
+      <form
+        onSubmit={(e) => handleFromSubmit(e)}
+        className="bg-white p-8 shadow-md rounded-md w-96"
+      >
         <h1 className="text-2xl font-semibold mb-4">Login to hungry Bunny</h1>
         <div className="mb-4">
           <label htmlFor="email" className="block text-gray-600 mb-2">
@@ -13,6 +35,7 @@ const Login = () => {
           <input
             type="email"
             id="email"
+            name="email"
             className="w-full border rounded px-3 py-2 focus:outline-none focus:border-blue-500"
           />
         </div>
@@ -23,6 +46,7 @@ const Login = () => {
           <input
             type="password"
             id="password"
+            name="password"
             className="w-full border rounded px-3 py-2 focus:outline-none focus:border-blue-500"
           />
         </div>
@@ -38,8 +62,7 @@ const Login = () => {
         >
           Login
         </button>
-      </div>
-      
+      </form>
     </div>
   );
 };

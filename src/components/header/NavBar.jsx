@@ -4,10 +4,11 @@ import cartImg from '../../assets/icons/cart.svg';
 import CheckoutBar from '../cart/CheckoutBar';
 import { AiOutlineBars, AiOutlineClose } from 'react-icons/ai';
 import { NavLink } from 'react-router-dom';
-import Switch from '@mui/material/Switch';
 import './css/style.css';
 import { gsap } from 'gsap';
 import clickSound from '../../assets/audio/click.mp3';
+import LogoutBtn from '../buttons/LogoutBtn';
+import { useAuth } from '../../hooks/useAuth';
 
 const navLinks = [
     {
@@ -35,19 +36,27 @@ const navLinks = [
         name: 'Community',
         path: '/community',
     },
+    {
+        id: 6,
+        name: 'Restaurants',
+        path: '/restaurant',
+    },
+    {
+        id: 7,
+        name: 'Menu',
+        path: '/menu',
+    },
 ];
 
 const NavBar = () => {
-    const inputRef = useRef(null);
     const [showSidebar, setShowSidebar] = useState(false);
     const [showNav, setShowNav] = useState(false);
     const [scrollPosition, setScrollPosition] = useState(0);
     const [isFixed, setIsFixed] = useState(false);
-    // const isFixed = false;
     const [isDarkMode, setIsDarkMode] = useState(
         localStorage.getItem('isDarkMode') === 'true'
     );
-
+    const { user } = useAuth();
     const click = new Audio(clickSound);
 
     const animate = () => {
@@ -126,24 +135,24 @@ const NavBar = () => {
             <div
                 className={
                     isFixed
-                        ? 'fixed top-0 z-[999] w-full duration-[1s] dark:bg-black bg-white dark:bg-opacity-60 backdrop-blur-xl bg-opacity-60'
+                        ? 'fixed dark:text-white text-black top-0 z-[999] w-full duration-[1s] dark:bg-black bg-white dark:bg-opacity-60 backdrop-blur-xl bg-opacity-60'
                         : 'static top-0 dark:text-black'
                 }
             >
                 <nav className=" py-3 relative">
                     <div className="w-[90%] mx-auto flex justify-between items-center ">
                         <div className="logo">
-                            <h1 className={isFixed ? 'font-bold dark:text-gray-200 text-xl' : 'font-bold dark:text-black text-xl'}>Foo</h1>
+                            <h1 className={isFixed ? 'font-bold dark:text-gray-200 text-xl' : 'font-bold dark:text-white text-xl'}>Foo</h1>
                         </div>
                         <div className="links hidden md:block">
-                            <ul className={isFixed ? 'flex dark:text-gray-100 space-x-6 nav-links' : 'flex dark:text-black space-x-6 nav-links'}>
+                            <ul className={isFixed ? 'flex dark:text-gray-100 space-x-6 nav-links' : 'flex dark:text-white space-x-6 nav-links'}>
                                 {navLinks.map((link) => (
                                     <li key={link.id}>
                                         <NavLink
                                             onClick={() => onPathChange()}
                                             to={link.path}
                                             className={({ isActive }) =>
-                                                isActive ? 'active-link' : ''
+                                                isActive ? 'active-link' : isFixed ? 'dark:text-gray-100' : 'dark:text-white'
                                             }
                                         >
                                             {link.name}
@@ -153,21 +162,6 @@ const NavBar = () => {
                             </ul>
                         </div>
                         <div className="search-and-others flex items-center space-x-2">
-                            <div className="relative">
-                                <input
-                                    ref={inputRef}
-                                    type="text"
-                                    onFocus={() => (inputRef.current.placeholder = 'Search here...')}
-                                    onBlur={() => (inputRef.current.placeholder = '')}
-                                    className="outline-none w-[40px] duration-300 focus:w-[200px] border-orange-300 border px-3 py-1 rounded-full"
-                                />
-                                <div
-                                    onClick={() => inputRef.current.focus()}
-                                    className="absolute top-[9px] right-3"
-                                >
-                                    <BsSearch />
-                                </div>
-                            </div>
                             <div className="">
                                 <button
                                     onClick={() => setShowSidebar(!showSidebar)}
@@ -192,6 +186,9 @@ const NavBar = () => {
                                     <input defaultChecked={isDarkMode} onChange={() => setIsDarkMode(!isDarkMode)} type="checkbox" className="input" />
                                     <span className="slider"></span>
                                 </label>
+                            </div>
+                            <div className="">
+                                {user && <LogoutBtn />}
                             </div>
                         </div>
                     </div>
