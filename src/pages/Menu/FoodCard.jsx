@@ -10,11 +10,10 @@ import useFetch from '../../hooks/useFetch';
 
 const FoodCard = () => {
 
-
   const [menuTab, setMenuTab] = useState('Breakfast')
   const [loading, setLoading] = useState(false)
   const [foods] = useFetch();
-
+  console.log(foods);
   //loading 
   useEffect(() => {
     setLoading(true)
@@ -47,8 +46,8 @@ const FoodCard = () => {
 
         {/* all foods  */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-12">
-          {foods.filter((item) => menuTab === item.type).map((item,idx) => (
-            loading ? <Skeleton key={idx} /> : <FoodItem key={idx} {...item} />
+          {foods.filter((item) => menuTab === item.type).map(item => (
+            loading ? <Skeleton key={item._id} /> : <FoodItem key={item._id} {...item} />
           ))}
         </div>
       </section>
