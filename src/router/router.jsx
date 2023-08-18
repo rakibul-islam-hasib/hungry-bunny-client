@@ -38,6 +38,10 @@ export const router = createBrowserRouter([
         element: <Contact />
       },
       {
+        path: '/restaurants',
+        element: <Restaurant />
+      },
+      {
         path: "/register",
         element: <Register />,
       },

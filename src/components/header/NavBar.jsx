@@ -32,6 +32,11 @@ const navLinks = [
         path: '/login',
     },
     {
+        id: 4,
+        name: 'Restaurants',
+        path: '/restaurants',
+    },
+    {
         id: 5,
         name: 'Community',
         path: '/community',
