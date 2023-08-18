@@ -33,8 +33,10 @@
     display: inline-block;
     position: relative;
     cursor: pointer;
+    
     padding-bottom: 3px;
     margin-right: 10px;
+    @apply dark:text-primary text-black;
 }
 
 /* Toggle button css */
@@ -192,7 +194,8 @@
 
 .btn-c-nav:hover .text {
     transition: all 0.5s;
-    opacity: 0;
+    /* opacity: 0; */
+    transform: translateX(-100px);
 }
 
 .btn-c-nav:focus {

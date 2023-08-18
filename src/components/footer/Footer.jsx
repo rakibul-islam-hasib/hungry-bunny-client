@@ -1,5 +1,6 @@
 import React from 'react';
 import bgImg from '../../assets/img/footer_bg.jpg';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
@@ -49,10 +50,9 @@ const Footer = () => {
                                 <p>Saturday ..... 10am-11pm</p>
                                 <p>Sunday .....  10am-11pm</p>
                                 <p>Monday .....  10am-11pm</p>
-                                <p>Tuesday .....  10am-11pm</p>
-                                <p>Wednesday .....  10am-11pm</p>
-                                <p>Thursday .....  10am-11pm</p>
-                                <p>Friday .....  10am-11pm</p>
+                                <p className='font-bold'>Links</p>
+                                <p><Link to='/faq'>Faq</Link></p>
+                                <p><Link to='/blog'>Blog</Link></p>
                             </div>
                         </div>
                         <div className='md:hidden lg:block mt-9'>
