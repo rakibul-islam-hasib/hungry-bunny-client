@@ -41,13 +41,13 @@ const Hero = () => {
         </div>
       </div>
       <div className="mt-5">
-        <h1 className='capitalize text-3xl font-bold mb-3 text-center  '>Some of our <span className='text-primary'>popular list </span></h1>
-        <div className="flex justify-between">
+        <h1 className='capitalize text-3xl font-bold mb-3 text-center  '>Some of our <span className='text-primary'>popular food list </span></h1>
+        <div className="hidden md:flex justify-between flex-wrap">
           {
             heroCategory.map(item => <div key={item.id}
               className='border rounded-2xl hover:border-primary duration-300 hover:bg-primary hover:bg-opacity-5 border-orange-300 px-16 py-6'
             >
-              <div className="text-center">
+              <div className="text-center ">
                 <img src={item.image} className='w-[50px]' alt="" />
                 <h1>{item.name}</h1>
               </div>
