@@ -11,8 +11,12 @@ const FoodCard = () => {
   const [menuTab, setMenuTab] = useState('Breakfast')
   const [loading, setLoading] = useState(false)
   const [foods] = useFetch();
+<<<<<<< HEAD
 
   
+=======
+  console.log(foods);
+>>>>>>> 05bf245f524030a6fb0875ae0b2f603099ec5451
   //loading 
   useEffect(() => {
     setLoading(true)
@@ -25,7 +29,12 @@ const FoodCard = () => {
   const handleMenuTabs = (type) => {
     setMenuTab(type)
   }
+<<<<<<< HEAD
   
+=======
+
+
+>>>>>>> 05bf245f524030a6fb0875ae0b2f603099ec5451
   return (
     <div className="mx-auto md:px-20 px-6 mt-10  #F4ECE1 #FCFBF7">
       <div className="text-center lg:w-[70%] w-full sm:w-[90%] md:w-[80%] mx-auto">
@@ -44,8 +53,8 @@ const FoodCard = () => {
 
         {/* all foods  */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-12">
-          {foods.filter((item) => menuTab === item.type).map((item,idx) => (
-            loading ? <Skeleton key={idx} /> : <FoodItem key={idx} {...item} />
+          {foods.filter((item) => menuTab === item.type).map(item => (
+            loading ? <Skeleton key={item._id} /> : <FoodItem key={item._id} {...item} />
           ))}
         </div>
       </section>
