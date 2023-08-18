@@ -11,6 +11,10 @@ import { RxAvatar } from 'react-icons/rx';
 import logo from '../../assets/img/logo.png';
 import darkLogo from '../../assets/img/dark-logo.png';
 import { Menu } from '@headlessui/react';
+import { BiLogOut } from 'react-icons/bi';
+import { useDispatch } from 'react-redux';
+import { logoutUser } from '../../redux/slices/authThunks';
+import Swal from 'sweetalert2';
 const navLinks = [
     {
         id: 1,
@@ -58,8 +62,28 @@ const NavBar = () => {
     const [isDarkMode, setIsDarkMode] = useState(
         localStorage.getItem('isDarkMode') === 'true'
     );
+    const dispatch = useDispatch();
     const { user } = useAuth();
-
+    const handleLLogout = () => {
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                dispatch(logoutUser());
+                Swal.fire(
+                    'Logged out!',
+                    'Your are logged out.',
+                    'success'
+                )
+            }
+        })
+    }
     const animate = () => {
         const timeline = gsap.timeline({
             onComplete: () => {
@@ -195,7 +219,7 @@ const NavBar = () => {
                                         <Menu as="div" className="relative inline-block">
                                             <div>
                                                 <Menu.Button className="focus:outline-none">
-                                                    <div className="cursor-pointer ">
+                                                    <div className="cursor-pointer mt-2">
                                                         <RxAvatar className='text-3xl tepr' />
                                                     </div>
                                                 </Menu.Button>
@@ -214,7 +238,9 @@ const NavBar = () => {
                                                 </Menu.Item>
                                                 <Menu.Item>
                                                     {({ active }) => (
-                                                        <LogoutBtn />
+                                                        <button onClick={handleLLogout} className="p-2 bg-primary rounded-full ">
+                                                            <BiLogOut className='text-2xl text-white' />
+                                                        </button>
                                                     )}
                                                 </Menu.Item>
                                             </Menu.Items>
