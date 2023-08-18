@@ -7,7 +7,7 @@ const useFetch = () => {
         fetch('foods.json')
             .then(res => res.json())
             .then(data => setFoods(data))
-    }, [foods])
+    }, [])
     return [foods, setFoods]
 }
 
