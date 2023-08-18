@@ -6,13 +6,13 @@ import { Button } from '@mui/material';
 const Error404 = () => {
     return (
         <div className='flex flex-col-reverse md:flex md:flex-row'>
-            <div className='mx-auto text-xl md:pt-32 md:text-3xl md:ml-36'>
+            <div className='mx-auto text-xl md:pt-52 md:text-3xl md:ml-72'>
                 <h1>OOPS..!!! </h1>
                 <h2>Page not found</h2>
                 <Link to='/'> <Button className=''>Back to Home</Button></Link>
             </div>
             <div>
-                <img className='mx-auto h-[200px] md:h-[300px] md:mr-24' src={photo} alt="" />
+                <img className='mx-auto h-[250px] md:h-[550px] md:mr-44' src={photo} alt="" />
             </div>
         </div>
     );
