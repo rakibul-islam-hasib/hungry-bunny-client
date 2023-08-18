@@ -224,7 +224,7 @@ const NavBar = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="md:hidden top-0 block side-md absolute  -left-[500px] h-screen w-full bg-blue-300">
+                    <div className="md:hidden top-0 block side-md absolute z-[999]  -left-[500px] h-screen w-full bg-blue-300">
                         <div className="w-full border">
                             <div className="flex justify-end">
                                 <AiOutlineClose
