@@ -31,7 +31,16 @@ const Hero = () => {
               Search
             </button> */}
           </div>
+
+
+
+
+
+
         </div>
+      </div>
+      <div className="">
+
       </div>
     </section>
   );
