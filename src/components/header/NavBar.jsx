@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import cartImg from '../../assets/icons/cart.svg';
 import CheckoutBar from '../cart/CheckoutBar';
 import { AiOutlineBars, AiOutlineClose } from 'react-icons/ai';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import './css/style.css';
 import { gsap } from 'gsap';
 import LogoutBtn from '../buttons/LogoutBtn';
@@ -58,7 +58,7 @@ const NavBar = () => {
     const [showNav, setShowNav] = useState(false);
     const [scrollPosition, setScrollPosition] = useState(0);
     const [isFixed, setIsFixed] = useState(false);
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const navigate = useNavigate();
     const [isDarkMode, setIsDarkMode] = useState(
         localStorage.getItem('isDarkMode') === 'true'
     );
@@ -228,7 +228,7 @@ const NavBar = () => {
                                                 <Menu.Item>
                                                     {({ active }) => (
                                                         <button
-                                                            onClick={() => console.log('Dashboard clicked')}
+                                                            onClick={() => navigate('/dashboard')}
                                                             className={`${active ? 'bg-gray-100' : ''
                                                                 } group flex items-center w-full px-4 py-2 text-sm`}
                                                         >

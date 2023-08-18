@@ -22,28 +22,47 @@ const Login = () => {
   };
 
   return (
-    <div>
-      <div className="w-full h-full pr-10 md:p-10 bg-opacity-70">
-        <form className="px-2 mx-2  md:mx-auto border border-gray-700 rounded-2xl text-gray-700 md:px-16 w-3/4 md:w-1/2">
-          <h2 className="text-3xl font-bold p-4 md:mx-36">Log In</h2>
-          <div>
-
-            <input className="bg-transparent border-b-2 w-full" type="email" id="email" placeholder="Enter Your Email" />
-          </div>
-
-          <div className="py-4">
-
-            <input className="bg-transparent border-b-2 w-full" type="password"
-              id="password" placeholder="Password" />
-          </div>
-          <div className="flex justify-between text-sm">
-            <p><input type="checkbox" />Remember me</p>
-            <Link><p className="text-blue-500">Forgot Password?</p></Link>
-          </div>
-          <button className="bg-blue-500 text-white rounded-md my-6 px-4 py-2 ">Log in</button>
-          <p className="text-sm">Don&apos;t Have an Account? Please <Link><span className="text-blue-500">Register</span></Link></p>
-        </form>
-      </div>
+    <div className="min-h-screen flex items-center justify-center">
+      <form
+        onSubmit={(e) => handleFromSubmit(e)}
+        className="bg-white p-8 shadow-md rounded-md w-96"
+      >
+        <h1 className="text-2xl font-semibold mb-4">Login to hungry Bunny</h1>
+        <div className="mb-4">
+          <label htmlFor="email" className="block text-gray-600 mb-2">
+            Email
+          </label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            className="w-full border rounded px-3 py-2 focus:outline-none focus:border-blue-500"
+          />
+        </div>
+        <div className="mb-4">
+          <label htmlFor="password" className="block text-gray-600 mb-2">
+            Password
+          </label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            className="w-full border rounded px-3 py-2 focus:outline-none focus:border-blue-500"
+          />
+        </div>
+        <p className="my-4">
+          Create an account{" "}
+          <span className="text-orange-500 font-semibold">
+            <Link to="/register">Register Here</Link>
+          </span>{" "}
+        </p>
+        <button
+          type="submit"
+          className="bg-orange-500 text-white rounded-full px-4 py-2 w-full hover:bg-orange-600 focus:outline-none focus:ring focus:ring-blue-300"
+        >
+          Login
+        </button>
+      </form>
     </div>
   );
 };
