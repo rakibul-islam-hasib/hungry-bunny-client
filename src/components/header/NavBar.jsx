@@ -8,6 +8,8 @@ import { gsap } from 'gsap';
 import LogoutBtn from '../buttons/LogoutBtn';
 import { useAuth } from '../../hooks/useAuth';
 import { RxAvatar } from 'react-icons/rx';
+import logo from '../../assets/img/logo.png';
+import darkLogo from '../../assets/img/dark-logo.png';
 import { Menu } from '@headlessui/react';
 const navLinks = [
     {
@@ -136,7 +138,13 @@ const NavBar = () => {
                 <nav className=" py-3 relative">
                     <div className="w-[90%] mx-auto flex justify-between items-center ">
                         <div className="logo">
-                            <h1 className={isFixed ? 'font-bold dark:text-gray-200 text-xl' : 'font-bold dark:text-white text-xl'}>Foo</h1>
+                            <div className="flex items-center">
+                                {isDarkMode ? <img className='' src={logo} alt="" /> : <img src={darkLogo}
+                                    // className='w-[100px]'
+                                    alt="" />}
+                                {/* <h1 className={isFixed ? 'font-bold dark:text-gray-200 text-xl' : 'font-bold dark:text-white text-xl'}>Hungry Bunny</h1> */}
+                            </div>
+
                         </div>
                         <div className="links hidden md:block">
                             <ul className={isFixed ? 'flex dark:text-gray-100 space-x-6 nav-links' : 'flex dark:text-white space-x-6 nav-links'}>
@@ -188,7 +196,7 @@ const NavBar = () => {
                                             <div>
                                                 <Menu.Button className="focus:outline-none">
                                                     <div className="cursor-pointer ">
-                                                        <RxAvatar className='text-3xl tepr'/>
+                                                        <RxAvatar className='text-3xl tepr' />
                                                     </div>
                                                 </Menu.Button>
                                             </div>

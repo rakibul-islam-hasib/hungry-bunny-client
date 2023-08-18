@@ -1,6 +1,4 @@
 import React from "react";
-import bgImg from '../../assets/img/footer_bg.jpg';
-import { FormControl } from "@mui/material";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { loginUser } from "../../redux/slices/authThunks";
