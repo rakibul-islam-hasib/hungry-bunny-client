@@ -10,11 +10,10 @@ import useFetch from '../../hooks/useFetch';
 
 const FoodCard = () => {
 
-
     const [menuTab, setMenuTab] = useState('Breakfast')
     const [loading, setLoading] = useState(false)
     const [foods] = useFetch();
-
+console.log(foods);
     //loading 
     useEffect(() => {
         setLoading(true)

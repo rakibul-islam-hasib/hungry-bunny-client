@@ -1,147 +1,200 @@
 [
-    {
+  {
       "id": 1,
       "title": "Eggs Benedict",
-      "description": "Gay one the what walk then she. Demesne mention promise you justice arrived way.Amazing foods are or and increasing to in especially inquietude companions acceptance admiration.Outweigh it families distance wandered ye..",
+      "description": "A classic breakfast dish featuring poached eggs, ham, and hollandaise sauce atop toasted English muffins. Served with a side of roasted potatoes.",
       "price": 8.99,
       "image": "https://i.ibb.co/ccZyWng/breakfast1.png",
-      "type": "Breakfast"
-    },
-    {
+      "type": "Breakfast",
+      "restaurant": "SadherGhor",
+      "ingredients": ["Eggs", "English Muffin"],
+      "rating": 4.7
+  },
+  {
       "id": 2,
       "title": "Breakfast Sandwich",
-      "description": "Gay one the what walk then she. Demesne mention promise you justice arrived way.Amazing foods are or and increasing to in especially inquietude companions acceptance admiration.Outweigh it families distance wandered ye..",
+      "description": "Start your day with a hearty breakfast sandwich made with freshly baked bread, scrambled eggs, cheddar cheese, and savory ham.",
       "price": 9.99,
       "image": "https://i.ibb.co/Bnz8Zv2/breakfast2.png",
-      "type": "Breakfast"
-    },
-    {
+      "type": "Breakfast",
+      "restaurant": "SadherGhor",
+      "ingredients": ["Bread", "Ham"],
+      "rating": 4.5
+  },
+  {
       "id": 3,
-      "title": "Baked Chiken",
-      "description": "Gay one the what walk then she. Demesne mention promise you justice arrived way.Amazing foods are or and increasing to in especially inquietude companions acceptance admiration.Outweigh it families distance wandered ye..",
+      "title": "Baked Chicken",
+      "description": "Tender chicken pieces marinated in a blend of herbs and spices, then baked to perfection. Served with a side of seasonal vegetables.",
       "price": 10.99,
       "image": "https://i.ibb.co/mXYbPcv/breakfast3.png",
-      "type": "Breakfast"
-    },
-    {
+      "type": "Breakfast",
+      "restaurant": "SadherGhor",
+      "ingredients": ["Chicken", "Herbs"],
+      "rating": 4.2
+  },
+  {
       "id": 4,
-      "title": "Bagel and cream cheese",
-      "description": "Gay one the what walk then she. Demesne mention promise you justice arrived way.Amazing foods are or and increasing to in especially inquietude companions acceptance admiration.Outweigh it families distance wandered ye..",
+      "title": "Bagel and Cream Cheese",
+      "description": "A classic bagel toasted to a golden brown and spread with rich cream cheese. Perfect for a quick and satisfying breakfast.",
       "price": 23.99,
       "image": "https://i.ibb.co/87MwqqT/breakfast4.png",
-      "type": "Breakfast"
-    },
-    {
+      "type": "Breakfast",
+      "restaurant": "SadherGhor",
+      "ingredients": ["Bagel", "Cream Cheese"],
+      "rating": 4.8
+  },
+  {
       "id": 5,
       "title": "Fried Egg Toast Brunch",
-      "description": "Gay one the what walk then she. Demesne mention promise you justice arrived way.Amazing foods are or and increasing to in especially inquietude companions acceptance admiration.Outweigh it families distance wandered ye..",
+      "description": "A delightful brunch option featuring sunny-side-up eggs served over toasted bread. Accompanied by a fresh salad and tangy vinaigrette.",
       "price": 3.99,
       "image": "https://i.ibb.co/92mtcwx/breakfast5.png",
-      "type": "Breakfast"
-    },
-    {
+      "type": "Breakfast",
+      "restaurant": "SadherGhor",
+      "ingredients": ["Eggs", "Bread"],
+      "rating": 4.3
+  },
+  {
       "id": 6,
       "title": "Toast Croissant Fried Egg",
-      "description": "Gay one the what walk then she. Demesne mention promise you justice arrived way.Amazing foods are or and increasing to in especially inquietude companions acceptance admiration.Outweigh it families distance wandered ye..",
+      "description": "Indulge in a flaky croissant filled with a perfectly fried egg. Served with a side of mixed greens and balsamic dressing.",
       "price": 19.99,
       "image": "https://i.ibb.co/hHGc7sm/breakfast6.png",
-      "type": "Breakfast"
-    },
-    {
+      "type": "Breakfast",
+      "restaurant": "SadherGhor",
+      "ingredients": ["Croissant", "Eggs"],
+      "rating": 4.6
+  },
+  {
       "id": 7,
       "title": "Beef Steak",
-      "description": "Gay one the what walk then she. Demesne mention promise you justice arrived way.Amazing foods are or and increasing to in especially inquietude companions acceptance admiration.Outweigh it families distance wandered ye..",
+      "description": "Savor the bold flavors of a juicy beef steak, seasoned and grilled to your preference. Served with garlic mashed potatoes and steamed vegetables.",
       "price": 15.99,
       "image": "https://i.ibb.co/RgrfxCH/lunch1.png",
-      "type": "Lunch"
-    },
-    {
+      "type": "Lunch",
+      "restaurant": "BlueSeaFood",
+      "ingredients": ["Beef", "Seasonings"],
+      "rating": 4.9
+  },
+  {
       "id": 8,
       "title": "Honey with Peppers",
-      "description": "Gay one the what walk then she. Demesne mention promise you justice arrived way.Amazing foods are or and increasing to in especially inquietude companions acceptance admiration.Outweigh it families distance wandered ye..",
+      "description": "A unique lunch option featuring tender strips of honey-glazed chicken served with sautéed bell peppers and a side of fluffy rice.",
       "price": 7.99,
       "image": "https://i.ibb.co/XsNF0PW/lunch2.png",
-      "type": "Lunch"
-    },
-    {
+      "type": "Lunch",
+      "restaurant": "BlueSeaFood",
+      "ingredients": ["Honey", "Peppers"],
+      "rating": 4.4
+  },
+  {
       "id": 9,
-      "title": "Tarrgaon Rubbed Salmon",
-      "description": "Gay one the what walk then she. Demesne mention promise you justice arrived way.Amazing foods are or and increasing to in especially inquietude companions acceptance admiration.Outweigh it families distance wandered ye..",
+      "title": "Tarragon Rubbed Salmon",
+      "description": "Delight in a succulent salmon fillet rubbed with aromatic tarragon. Served with a medley of roasted vegetables and quinoa.",
       "price": 7.99,
       "image": "https://i.ibb.co/1MjBt1z/lunch3.png",
-      "type": "Lunch"
-    },
-    {
+      "type": "Lunch",
+      "restaurant": "BlueSeaFood",
+      "ingredients": ["Salmon", "Tarragon"],
+      "rating": 4.7
+  },
+  {
       "id": 10,
       "title": "Indian Lunch",
-      "description": "Gay one the what walk then she. Demesne mention promise you justice arrived way.Amazing foods are or and increasing to in especially inquietude companions acceptance admiration.Outweigh it families distance wandered ye..",
+      "description": "Experience the vibrant flavors of Indian cuisine with a delicious lunch spread, including fragrant spices, basmati rice, and flavorful curries.",
       "price": 8.99,
       "image": "https://i.ibb.co/G3Vq8Gt/lunch4.png",
-      "type": "Lunch"
-    },
-    {
+      "type": "Lunch",
+      "restaurant": "BlueSeaFood",
+      "ingredients": ["Spices", "Rice"],
+      "rating": 4.6
+  },
+  {
       "id": 11,
       "title": "Fried Chicken Bento",
-      "description": "Gay one the what walk then she. Demesne mention promise you justice arrived way.Amazing foods are or and increasing to in especially inquietude companions acceptance admiration.Outweigh it families distance wandered ye..",
+      "description": "Enjoy a Japanese-inspired bento box featuring crispy fried chicken, steamed rice, and a variety of fresh vegetables. Served with a zesty dipping sauce.",
       "price": 13.99,
       "image": "https://i.ibb.co/gF3dTJs/lunch5.png",
-      "type": "Lunch"
-    },
-    {
+      "type": "Lunch",
+      "restaurant": "BlueSeaFood",
+      "ingredients": ["Chicken", "Rice"],
+      "rating": 4.8
+  },
+  {
       "id": 12,
-      "title": "healthy Meal Plan",
-      "description": "Gay one the what walk then she. Demesne mention promise you justice arrived way.Amazing foods are or and increasing to in especially inquietude companions acceptance admiration.Outweigh it families distance wandered ye..",
+      "title": "Healthy Meal Plan",
+      "description": "Nourish your body with a well-balanced meal plan that includes a variety of nutrient-rich ingredients, such as colorful vegetables, lean proteins, and whole grains.",
       "price": 83.99,
       "image": "https://i.ibb.co/WGKYHcG/lunch6.png",
-      "type": "Lunch"
-    },
-    {
+      "type": "Lunch",
+      "restaurant": "BlueSeaFood",
+      "ingredients": ["Assorted Vegetables", "Grains"],
+      "rating": 4.5
+  },
+  {
       "id": 13,
       "title": "Baked Chicken",
-      "description": "Gay one the what walk then she. Demesne mention promise you justice arrived way.Amazing foods are or and increasing to in especially inquietude companions acceptance admiration.Outweigh it families distance wandered ye..",
+      "description": "Indulge in a hearty dinner featuring tender baked chicken infused with aromatic herbs. Served with roasted potatoes and a side of seasonal greens.",
       "price": 66.99,
       "image": "https://i.ibb.co/XLbqWqJ/dinner1.png",
-      "type": "Dinner"
-    },
-    {
+      "type": "Dinner",
+      "restaurant": "BanglarShad",
+      "ingredients": ["Chicken", "Herbs"],
+      "rating": 4.7
+  },
+  {
       "id": 14,
-      "title": "Lemony Salmaon Piccata",
-      "description": "Gay one the what walk then she. Demesne mention promise you justice arrived way.Amazing foods are or and increasing to in especially inquietude companions acceptance admiration.Outweigh it families distance wandered ye..",
+      "title": "Lemony Salmon Piccata",
+      "description": "Elevate your dinner experience with a zesty lemony salmon piccata, served with a flavorful caper sauce and a side of buttered asparagus.",
       "price": 56.99,
       "image": "https://i.ibb.co/N3rVPJD/dinner2.png",
-      "type": "Dinner"
-    },
-    {
+      "type": "Dinner",
+      "restaurant": "BanglarShad",
+      "ingredients": ["Salmon", "Lemon"],
+      "rating": 4.6
+  },
+  {
       "id": 15,
       "title": "Garlic Butter Baked Salmon",
-      "description": "Gay one the what walk then she. Demesne mention promise you justice arrived way.Amazing foods are or and increasing to in especially inquietude companions acceptance admiration.Outweigh it families distance wandered ye..",
+      "description": "Savor the melt-in-your-mouth goodness of garlic butter baked salmon, accompanied by a refreshing cucumber and tomato salad.",
       "price": 3.99,
-      "image": "  https://i.ibb.co/kyTLkW7/dinner3.png",
-      "type": "Dinner"
-    },
-    {
+      "image": "https://i.ibb.co/kyTLkW7/dinner3.png",
+      "type": "Dinner",
+      "restaurant": "BanglarShad",
+      "ingredients": ["Salmon", "Garlic"],
+      "rating": 4.3
+  },
+  {
       "id": 16,
-      "title": "French Fried with Cheese",
-      "description": "Gay one the what walk then she. Demesne mention promise you justice arrived way.Amazing foods are or and increasing to in especially inquietude companions acceptance admiration.Outweigh it families distance wandered ye..",
+      "title": "French Fries with Cheese",
+      "description": "Indulge in a comfort food classic – crispy French fries topped with melted cheddar cheese and served with a tangy dipping sauce.",
       "price": 23.99,
       "image": "https://i.ibb.co/SNxL4z3/dinner4.png",
-      "type": "Dinner"
-    },
-    {
+      "type": "Dinner",
+      "restaurant": "BanglarShad",
+      "ingredients": ["Potatoes", "Cheese"],
+      "rating": 4.4
+  },
+  {
       "id": 17,
-      "title": "Pork Tenderion",
-      "description": "Gay one the what walk then she. Demesne mention promise you justice arrived way.Amazing foods are or and increasing to in especially inquietude companions acceptance admiration.Outweigh it families distance wandered ye..",
+      "title": "Pork Tenderloin",
+      "description": "Satisfy your cravings with a succulent pork tenderloin, seasoned to perfection and served with roasted root vegetables and a drizzle of savory gravy.",
       "price": 12.99,
       "image": "https://i.ibb.co/VJ0c4cw/dinner5.png",
-      "type": "Dinner"
-    },
-    {
+      "type": "Dinner",
+      "restaurant": "BanglarShad",
+      "ingredients": ["Pork", "Seasonings"],
+      "rating": 4.9
+  },
+  {
       "id": 18,
       "title": "Lentil Salad",
-      "description": "Gay one the what walk then she. Demesne mention promise you justice arrived way.Amazing foods are or and increasing to in especially inquietude companions acceptance admiration.Outweigh it families distance wandered ye..",
+      "description": "Enjoy a wholesome and protein-packed lentil salad, tossed with fresh vegetables and a zesty lemon vinaigrette. A perfect light dinner option.",
       "price": 9.99,
       "image": "https://i.ibb.co/xjvNzKp/dinner6.png",
-      "type": "Dinner"
-    }
-  ]
-  
+      "type": "Dinner",
+      "restaurant": "BanglarShad",
+      "ingredients": ["Lentils", "Vegetables"],
+      "rating": 4.7
+  }
+]
