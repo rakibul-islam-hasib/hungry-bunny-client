@@ -3,9 +3,7 @@ import React, { useEffect, useState } from 'react';
 
 import FoodItem from './FoodItem';
 import Skeleton from './Skeleton';
-import useFetch from './useFetch';
-
-
+import useFetch from '../../hooks/useFetch';
 
 
 
