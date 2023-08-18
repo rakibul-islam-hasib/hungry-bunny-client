@@ -1,9 +1,13 @@
 import React from 'react';
+import Card from '../../components/Card/Card';
+import FoodCard from './FoodCard';
 
 const Menu = () => {
     return (
         <div>
-            <h1>Menu</h1>
+            
+            <Card/>
+            <FoodCard/>
         </div>
     );
 };
