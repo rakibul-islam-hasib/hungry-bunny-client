@@ -1,5 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { BsSearch } from 'react-icons/bs';
+import React, { useEffect, useState } from 'react';
 import cartImg from '../../assets/icons/cart.svg';
 import CheckoutBar from '../cart/CheckoutBar';
 import { AiOutlineBars, AiOutlineClose } from 'react-icons/ai';
@@ -57,7 +56,6 @@ const NavBar = () => {
         localStorage.getItem('isDarkMode') === 'true'
     );
     const { user } = useAuth();
-    const click = new Audio(clickSound);
 
     const animate = () => {
         const timeline = gsap.timeline({
@@ -124,11 +122,6 @@ const NavBar = () => {
     }, [isDarkMode]);
 
 
-    const onPathChange = () => {
-        click.play();
-    }
-
-
 
     return (
         <>
@@ -149,7 +142,6 @@ const NavBar = () => {
                                 {navLinks.map((link) => (
                                     <li key={link.id}>
                                         <NavLink
-                                            onClick={() => onPathChange()}
                                             to={link.path}
                                             className={({ isActive }) =>
                                                 isActive ? 'active-link' : isFixed ? 'dark:text-gray-100' : 'dark:text-white'
