@@ -5,10 +5,10 @@ import { AiOutlineBars, AiOutlineClose } from 'react-icons/ai';
 import { NavLink } from 'react-router-dom';
 import './css/style.css';
 import { gsap } from 'gsap';
-import clickSound from '../../assets/audio/click.mp3';
 import LogoutBtn from '../buttons/LogoutBtn';
 import { useAuth } from '../../hooks/useAuth';
-
+import { RxAvatar } from 'react-icons/rx';
+import { Menu } from '@headlessui/react';
 const navLinks = [
     {
         id: 1,
@@ -52,6 +52,7 @@ const NavBar = () => {
     const [showNav, setShowNav] = useState(false);
     const [scrollPosition, setScrollPosition] = useState(0);
     const [isFixed, setIsFixed] = useState(false);
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isDarkMode, setIsDarkMode] = useState(
         localStorage.getItem('isDarkMode') === 'true'
     );
@@ -180,7 +181,38 @@ const NavBar = () => {
                                 </label>
                             </div>
                             <div className="">
-                                {user && <LogoutBtn />}
+                                {/* {user && <LogoutBtn />} */}
+                                <div className="">
+                                    {user && (
+                                        <Menu as="div" className="relative inline-block">
+                                            <div>
+                                                <Menu.Button className="focus:outline-none">
+                                                    <div className="cursor-pointer ">
+                                                        <RxAvatar className='text-3xl tepr'/>
+                                                    </div>
+                                                </Menu.Button>
+                                            </div>
+                                            <Menu.Items className="absolute right-0 w-40 mt-2 origin-top-right bg-white border border-gray-300 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                                                <Menu.Item>
+                                                    {({ active }) => (
+                                                        <button
+                                                            onClick={() => console.log('Dashboard clicked')}
+                                                            className={`${active ? 'bg-gray-100' : ''
+                                                                } group flex items-center w-full px-4 py-2 text-sm`}
+                                                        >
+                                                            Dashboard
+                                                        </button>
+                                                    )}
+                                                </Menu.Item>
+                                                <Menu.Item>
+                                                    {({ active }) => (
+                                                        <LogoutBtn />
+                                                    )}
+                                                </Menu.Item>
+                                            </Menu.Items>
+                                        </Menu>
+                                    )}
+                                </div>
                             </div>
                         </div>
                     </div>

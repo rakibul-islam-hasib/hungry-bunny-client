@@ -4,11 +4,12 @@ import { FaUsers } from "react-icons/fa";
 import { NavLink, Outlet, ScrollRestoration } from 'react-router-dom';
 import { BsFillPostcardFill } from 'react-icons/bs';
 import { TbBrandAppleArcade } from 'react-icons/tb';
+import UserDashboard from './dashboard/userDashboard/UserDashboard';
 const adminNavItems = [
-    { to: "/dashboard/admin-home", icon: <BiHomeAlt className="text-2xl" />, label: "Dashboard Home" },
-    { to: "/dashboard/manage-users", icon: <FaUsers className="text-2xl" />, label: "Manage Users" },
-    { to: "/dashboard/manage-class", icon: <BsFillPostcardFill className="text-2xl" />, label: "Manage Class" },
-    { to: "/dashboard/manage-applications", icon: <TbBrandAppleArcade className="text-2xl" />, label: "Applications" },
+    { to: "/dashboard/account-home", icon: <BiHomeAlt className="text-2xl" />, label: "Account Home" },
+    { to: "/dashboard/manage-users", icon: <FaUsers className="text-2xl" />, label: "Address" },
+    { to: "/dashboard/manage-class", icon: <BsFillPostcardFill className="text-2xl" />, label: "Payment Method" },
+    { to: "/dashboard/manage-applications", icon: <TbBrandAppleArcade className="text-2xl" />, label: "Security" },
 ];
 
 const DashboardLayout = () => {
@@ -37,7 +38,7 @@ const DashboardLayout = () => {
                             }`}
                         onClick={() => setOpen(!open)}
                     >
-                        SOUND SAFARI
+                        HUNGRY BUNNY
                     </h1>
                 </div>
                 {/* Nav links  */}
@@ -84,7 +85,9 @@ const DashboardLayout = () => {
             <div className="h-screen overflow-y-auto px-8 flex-1">
                 {/* <NavBar /> */}
                 <ScrollRestoration />
+                <UserDashboard></UserDashboard>
                 <Outlet />
+
             </div>
         </div>
     );
