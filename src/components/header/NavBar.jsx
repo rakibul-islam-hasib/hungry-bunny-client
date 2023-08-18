@@ -15,6 +15,7 @@ import { BiLogOut } from 'react-icons/bi';
 import { useDispatch } from 'react-redux';
 import { logoutUser } from '../../redux/slices/authThunks';
 import Swal from 'sweetalert2';
+import NavMenu from './NavElement/NavMenu';
 const navLinks = [
     {
         id: 1,
@@ -216,35 +217,7 @@ const NavBar = () => {
                                 {/* {user && <LogoutBtn />} */}
                                 <div className="">
                                     {user && (
-                                        <Menu as="div" className="relative inline-block">
-                                            <div>
-                                                <Menu.Button className="focus:outline-none">
-                                                    <div className="cursor-pointer mt-2">
-                                                        <RxAvatar className='text-3xl tepr' />
-                                                    </div>
-                                                </Menu.Button>
-                                            </div>
-                                            <Menu.Items className="absolute right-0 w-40 mt-2 origin-top-right bg-white border border-gray-300 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                                                <Menu.Item>
-                                                    {({ active }) => (
-                                                        <button
-                                                            onClick={() => navigate('/dashboard')}
-                                                            className={`${active ? 'bg-gray-100' : ''
-                                                                } group flex items-center w-full px-4 py-2 text-sm`}
-                                                        >
-                                                            Dashboard
-                                                        </button>
-                                                    )}
-                                                </Menu.Item>
-                                                <Menu.Item>
-                                                    {({ active }) => (
-                                                        <button onClick={handleLLogout} className="p-2 bg-primary rounded-full ">
-                                                            <BiLogOut className='text-2xl text-white' />
-                                                        </button>
-                                                    )}
-                                                </Menu.Item>
-                                            </Menu.Items>
-                                        </Menu>
+                                        <NavMenu />
                                     )}
                                 </div>
                             </div>
