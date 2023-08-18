@@ -1,56 +1,56 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import './css/Hero.css';
 import playIcon from '../../../assets/icons/play.svg';
 import fastFood from '../../../assets/img/fast-food.png';
-import { BiCurrentLocation } from 'react-icons/bi';
-import { gsap } from 'gsap';
+import { heroCategory } from '../../../utils';
 
 const Hero = () => {
-  const heroRef = useRef(null);
-  const titleRef = useRef(null);
-  const searchBoxRef = useRef(null);
-
-  useEffect(() => {
-    // GSAP Animation for the title
-    gsap.from(titleRef.current, {
-      opacity: 0,
-      y: -50,
-      duration: 1,
-      delay: 0.5,
-      ease: 'power3.out',
-    });
-
-    // GSAP Animation for the search box
-    gsap.from(searchBoxRef.current, {
-      opacity: 0,
-      x: -50,
-      duration: 1,
-      delay: 1,
-      ease: 'power3.out',
-    });
-  }, []);
-
   return (
-    <section className='h-screen flex items-center'>
-      <div className="grid w-[90%] mx-auto">
-        <div className="flex flex-col mt-14 justify-center items-start h-full space-y-4" ref={heroRef}>
-          <div className="flex" ref={titleRef}>
-            <h1 className='text-8xl text-orange-500 font-bold'>Fast</h1>
-            <div className="">
-              <h1 className='text-4xl font-bold'>Food</h1>
-              <h1 className='text-4xl font-bold'>Delivery</h1>
+    <section className='h-screen'>
+      <div className=" w-[90%] mx-auto">
+        <div className=" mt-14   h-full space-y-4">
+
+          <div className="logo text-center">
+            <h1 className='text-8xl font-bold dark:text-gray-100'><span className='text-primary'>Hungry</span> Bunny</h1>
+          </div>
+          <div className="flex justify-center items-center">
+            <h1 className='text-5xl text-orange-500 font-bold'>Fast</h1>
+            <div className="dark:text-white leading-4 text-black">
+              <h1 className='text-xl font-bold leading-3'>Food</h1>
+              <h1 className='text-xl font-bold'>Delivery</h1>
             </div>
+          </div>
+          <p className='text-gray-500 text-center'>Imagine your hunger being met at warp speed. Our &quot;Supper First Delivery&quot; isn&apos;t just about delivering food; it&apos;s about delivering delight.</p>
+
+          {/* Search Box */}
+          <div className="mt-6 flex  items-center w-[70%] mx-auto">
+            <input
+              type="text"
+              placeholder="Search for products, services, and more"
+              className="px-4 py-4 text-xl border outline-none  border-gray-300 rounded-md focus:ring-orange-500 focus:border-orange-500 w-full" />
+            {/* <button className="px-4 py-2 text-white font-bold bg-orange-500 rounded-md hover:bg-orange-600 focus:outline-none focus:ring focus:ring-orange-300 focus:ring-opacity-50">
+              Search
+            </button> */}
           </div>
 
-          <div className="border w-full" ref={searchBoxRef}>
-            <div style={{ borderWidth: '2px' }} className="relative animated-border">
-              <input type="text" placeholder='Search your food.....' className='px-4 outline-none w-full py-3' />
-              <span className='absolute right-3 top-3'>
-                <BiCurrentLocation className='text-2xl' />
-              </span>
-            </div>
-          </div>
+
+
+
+
+
         </div>
+      </div>
+      <div className="flex justify-between">
+            {
+              heroCategory.map(item => <div key={item.id}
+              className='border rounded-2xl border-orange-300 px-16 py-6'
+              >
+                  <div className="text-center">
+                    <img src={item.image} className='w-[50px]' alt="" />
+                    <h1>{item.name}</h1>
+                  </div>
+              </div>)
+            }
       </div>
     </section>
   );
