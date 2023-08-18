@@ -3,7 +3,7 @@ import bbq from '../assets/icons/hero/icons8-bbq.svg';
 import burger from '../assets/icons/hero/icons8-burger.svg';
 import vegan from '../assets/icons/hero/icons8-vegan.svg';
 import sushi from '../assets/icons/hero/icons8-sushi.svg';
-export const heroCategroy = [
+export const heroCategory = [
     {
         id: 1,
         name: 'Pizza',

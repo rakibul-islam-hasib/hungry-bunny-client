@@ -2,6 +2,7 @@ import React from 'react';
 import './css/Hero.css';
 import playIcon from '../../../assets/icons/play.svg';
 import fastFood from '../../../assets/img/fast-food.png';
+import { heroCategory } from '../../../utils';
 
 const Hero = () => {
   return (
@@ -39,8 +40,17 @@ const Hero = () => {
 
         </div>
       </div>
-      <div className="">
-
+      <div className="flex justify-between">
+            {
+              heroCategory.map(item => <div key={item.id}
+              className='border rounded-2xl border-orange-300 px-16 py-6'
+              >
+                  <div className="text-center">
+                    <img src={item.image} className='w-[50px]' alt="" />
+                    <h1>{item.name}</h1>
+                  </div>
+              </div>)
+            }
       </div>
     </section>
   );
