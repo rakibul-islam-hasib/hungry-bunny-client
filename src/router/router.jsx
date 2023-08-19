@@ -15,6 +15,7 @@ import Temp from "../pages/temp/Temp";
 import Blog from "../pages/blog/Blog";
 import DashboardLayout from "../layout/DashboardLayout";
 import UserWelcome from "../pages/dashboard/user/UserWelcome";
+import UserProfile from "../pages/dashboard/user/UserProfile";
 
 export const router = createBrowserRouter([
   {
@@ -88,6 +89,7 @@ export const router = createBrowserRouter([
       },
       {
         path: 'user-profile',
+        element: <UserProfile />
       }
     ]
   }

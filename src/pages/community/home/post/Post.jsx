@@ -1,7 +1,6 @@
 import React from 'react';
 import moment from 'moment';
 import { AiTwotoneLike } from 'react-icons/ai';
-// import { BiCommentDetail } from 'react-icons/bi';
 import { BsShareFill } from 'react-icons/bs';
 import { HiChatAlt2 } from 'react-icons/hi';
 import Tooltip from '@mui/material/Tooltip';
