@@ -16,6 +16,7 @@ import Blog from "../pages/blog/Blog";
 import DashboardLayout from "../layout/DashboardLayout";
 import UserProfile from "../layout/dashboard/userDashboard/UserProfile";
 
+import UserWelcome from "../pages/dashboard/user/UserWelcome";
 
 export const router = createBrowserRouter([
   {
@@ -82,11 +83,14 @@ export const router = createBrowserRouter([
   {
     path: '/dashboard',
     element: <DashboardLayout />,
-    children:[
-
+    children: [
       {
-        path:'/dashboard/account-home',
-        element:<UserProfile />
+        index: true,
+        element: <UserWelcome />
+      },
+      {
+        path: 'user-profile',
+        element: <UserProfile />
       }
     ]
   }

@@ -2,15 +2,19 @@ import React, { useEffect, useState } from 'react';
 import cartImg from '../../assets/icons/cart.svg';
 import CheckoutBar from '../cart/CheckoutBar';
 import { AiOutlineBars, AiOutlineClose } from 'react-icons/ai';
+
 import { NavLink, useLocation, useNavigate } from 'react-router-dom';
+
 import './css/style.css';
 import { gsap } from 'gsap';
 import { useAuth } from '../../hooks/useAuth';
 import logo from '../../assets/img/logo.png';
 import darkLogo from '../../assets/img/dark-logo.png';
+
 import { useDispatch } from 'react-redux';
 import { logoutUser } from '../../redux/slices/authThunks';
 import Swal from 'sweetalert2';
+
 import NavMenu from './NavElement/NavMenu';
 const navLinks = [
     {
@@ -50,33 +54,14 @@ const NavBar = () => {
     const [showNav, setShowNav] = useState(false);
     const [scrollPosition, setScrollPosition] = useState(0);
     const [isFixed, setIsFixed] = useState(false);
+    
     const navigate = useNavigate();
+    
     const location = useLocation();
     const [isDarkMode, setIsDarkMode] = useState(
         localStorage.getItem('isDarkMode') === 'true'
     );
-    const dispatch = useDispatch();
     const { user } = useAuth();
-    const handleLLogout = () => {
-        Swal.fire({
-            title: 'Are you sure?',
-            text: "You won't be able to revert this!",
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, delete it!'
-        }).then((result) => {
-            if (result.isConfirmed) {
-                dispatch(logoutUser());
-                Swal.fire(
-                    'Logged out!',
-                    'Your are logged out.',
-                    'success'
-                )
-            }
-        })
-    }
     const animate = () => {
         const timeline = gsap.timeline({
             onComplete: () => {
@@ -155,7 +140,7 @@ const NavBar = () => {
                 <nav className=" py-3 relative">
                     <div className="w-[90%] mx-auto flex justify-between items-center ">
                         <div className="logo">
-                            <div className="flex items-center">
+                            <div onContextMenu={e => e.preventDefault()} className="flex items-center">
                                 {isDarkMode ? <img className='' src={logo} alt="" /> : <img src={darkLogo}
                                     // className='w-[100px]'
                                     alt="" />}

@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { BiHomeAlt, BiLogInCircle } from "react-icons/bi";
+import { BiLogInCircle } from "react-icons/bi";
 import { FaUsers } from "react-icons/fa";
 import { NavLink, Outlet, ScrollRestoration } from 'react-router-dom';
 import { BsFillPostcardFill } from 'react-icons/bs';
 import { TbBrandAppleArcade } from 'react-icons/tb';
-import UserDashboard from './dashboard/userDashboard/UserDashboard';
-const adminNavItems = [
-    { to: "/dashboard/account-home", icon: <BiHomeAlt className="text-2xl" />, label: "Account Home" },
+import { CgProfile } from 'react-icons/cg';
+const userNavItems = [
+    { to: "/dashboard/user-profile", icon: <CgProfile className="text-2xl" />, label: "Manage Profile" },
     { to: "/dashboard/manage-users", icon: <FaUsers className="text-2xl" />, label: "Address" },
     { to: "/dashboard/manage-class", icon: <BsFillPostcardFill className="text-2xl" />, label: "Payment Method" },
     { to: "/dashboard/manage-applications", icon: <TbBrandAppleArcade className="text-2xl" />, label: "Security" },
@@ -21,10 +21,10 @@ const DashboardLayout = () => {
 
 
     return (
-        <div className="flex">
+        <div className="flex bg-[#f1ecea]">
             <div
                 className={`${open ? "w-72 overflow-y-auto" : "w-[90px] overflow-auto"
-                    } bg-dark-purple h-screen p-5 hidden md:block pt-8 relative duration-300`}
+                    }  h-screen p-5 hidden md:block pt-8 relative duration-300`}
             >
                 <div className="flex gap-x-4 items-center">
                     <img
@@ -45,13 +45,13 @@ const DashboardLayout = () => {
                 {
                     role === 'admin' && <ul className="pt-6">
                         <p className={`ml-3 text-light-gray-4 ${!open && "hidden"}`}><small>MENU</small></p>
-                        {role === 'admin' && adminNavItems.map((menuItem, index) => (
+                        {role === 'admin' && userNavItems.map((menuItem, index) => (
                             <li key={index} className="mb-2">
                                 <NavLink
                                     to={menuItem.to}
                                     className={({ isActive }) =>
-                                        `flex ${isActive ? "bg-red-500 text-white " : "text-[#413F44]"
-                                        }  duration-150 rounded-md p-2 cursor-pointer hover:bg-secondary hover:text-white  font-bold text-sm items-center gap-x-4  `
+                                        `flex ${isActive ? "bg-primary text-white " : "text-[#413F44]"
+                                        }  duration-150 rounded-md p-2 cursor-pointer hover:bg-primary  hover:text-white  font-bold text-sm items-center gap-x-4  `
                                     }
                                 >
                                     {menuItem.icon}
@@ -85,7 +85,6 @@ const DashboardLayout = () => {
             <div className="h-screen overflow-y-auto px-8 flex-1">
                 {/* <NavBar /> */}
                 <ScrollRestoration />
-                <UserDashboard></UserDashboard>
                 <Outlet />
 
             </div>
