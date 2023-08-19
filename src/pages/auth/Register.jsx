@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
 import { registerUser, updateName } from "../../redux/slices/authThunks";
 import { setUser } from "../../redux/slices/authSlice";
@@ -7,7 +7,7 @@ const Register = () => {
   const dispatch = useDispatch();
   const { user, loading, error } = useSelector((state) => state.auth);
   // console.log(user, loading, error)
-  console.log(user, 'user', loading, 'loading', error, 'error')
+  if (user) return <Navigate to="/" />;
 
   const handleFromSubmit = async (e) => {
     e.preventDefault();
