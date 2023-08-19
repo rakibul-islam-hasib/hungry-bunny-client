@@ -14,8 +14,8 @@ import Faq from "../pages/faq/Faq";
 import Temp from "../pages/temp/Temp";
 import Blog from "../pages/blog/Blog";
 import DashboardLayout from "../layout/DashboardLayout";
-import UserDashboard from "../layout/dashboard/userDashboard/UserDashboard";
-import UserProfile from "../layout/dashboard/userDashboard/userProfile";
+import UserWelcome from "../pages/dashboard/user/UserWelcome";
+import UserProfile from "../pages/dashboard/user/UserProfile";
 
 export const router = createBrowserRouter([
   {
@@ -82,11 +82,14 @@ export const router = createBrowserRouter([
   {
     path: '/dashboard',
     element: <DashboardLayout />,
-    children:[
-
+    children: [
       {
-        path:'/dashboard/account-home',
-        element:<UserProfile />
+        index: true,
+        element: <UserWelcome />
+      },
+      {
+        path: 'user-profile',
+        element: <UserProfile />
       }
     ]
   }
