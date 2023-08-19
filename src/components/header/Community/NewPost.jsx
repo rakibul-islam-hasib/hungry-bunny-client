@@ -1,26 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { ImAttachment } from 'react-icons/im';
 import { BsImage } from 'react-icons/bs';
 import { IoSend } from 'react-icons/io5';
-import useAxiosFetch from '../../../hooks/useAxiosFetch';
 import { useAuth } from '../../../hooks/useAuth';
 import { Tooltip } from '@mui/material';
 import useUser from '../../../hooks/useUser';
 
 const NewPost = () => {
-    const axios = useAxiosFetch();
     const { user: firebaseUser } = useAuth();
-    const [user, setUser] = useState({});
     const userInfo = useUser(firebaseUser?.email);
     console.log(userInfo, 'userInfo');
-    useEffect(() => {
-        // const fetchUser = async () => {
-        //     const res = await axios.get(`/user-info/${firebaseUser?.email}`);
-        //     setUser(res.data);
-        // }
-        // fetchUser();
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [firebaseUser?.email])
 
 
     return (
