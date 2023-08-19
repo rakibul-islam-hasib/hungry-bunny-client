@@ -1,8 +1,8 @@
 import React from 'react';
 import moment from 'moment';
 import { AiTwotoneLike } from 'react-icons/ai';
-import { BiCommentDetail } from 'react-icons/bi';
 import { BsShareFill } from 'react-icons/bs';
+import { HiChatAlt2 } from 'react-icons/hi';
 import Tooltip from '@mui/material/Tooltip';
 
 const Post = ({ post: data }) => {
@@ -44,7 +44,7 @@ const Post = ({ post: data }) => {
                         <h1 className='text-lg'>{data.likes}</h1>
                     </div>
                     <div className="flex items-center">
-                        <BiCommentDetail className='text-3xl cursor-pointer hover:text-primary duration-300' />
+                        <HiChatAlt2 className='text-3xl cursor-pointer hover:text-primary duration-300' />
                         <h1 className='text-lg'>{data.comments.length}</h1>
                     </div>
                     <div className="">
