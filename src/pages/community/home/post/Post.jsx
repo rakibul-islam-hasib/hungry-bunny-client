@@ -6,7 +6,7 @@ import { BsShareFill } from 'react-icons/bs';
 import Tooltip from '@mui/material/Tooltip';
 
 const Post = ({ post: data }) => {
-    console.log(data);
+    // console.log(data);
     return (
         <div className='shadow bg-gray-100 my-3 px-8 py-5'>
             <div className="">

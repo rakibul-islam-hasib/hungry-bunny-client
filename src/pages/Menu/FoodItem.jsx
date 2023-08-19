@@ -22,7 +22,7 @@ const style = {
 };
 // Modal End
 
-const FoodItem = ({ image, title, description, price, type,  restaurant, ingredients, rating  }) => {
+const FoodItem = ({ image, title, description, price, type, restaurant, ingredients, rating }) => {
     const history = useNavigate()
 
     const handleRoute = () => {
@@ -39,7 +39,7 @@ const FoodItem = ({ image, title, description, price, type,  restaurant, ingredi
         setOpen(false);
     };
     return (
-        <div className="bg-white border border-gray-100 transition transform duration-700 hover:shadow-xl hover:scale-105 p-4 rounded-lg relative">
+        <div className="bg-white border border-gray-100 transition transform duration-200  hover:-translate-y-2 p-4 rounded-lg relative">
             <span className="bg-red-100  rounded-full text-primary text-sm poppins px-4 py-1 inline-block mb-4 ">{type}</span>
             <div onClick={handleOpen}>
 
@@ -64,13 +64,13 @@ const FoodItem = ({ image, title, description, price, type,  restaurant, ingredi
                     aria-labelledby="parent-modal-title"
                     aria-describedby="parent-modal-description"
                 >
-                    <Box sx={{ ...style, width: 400, border:'none', borderRadius:'20px', }}>
-                    <img className="w-64 mx-auto transform transition duration-300 hover:scale-105" src={image} alt="" />
+                    <Box sx={{ ...style, width: 400, border: 'none', borderRadius: '20px', }}>
+                        <img className="w-64 mx-auto transform transition duration-300 hover:scale-105" src={image} alt="" />
                         <h2 id="parent-modal-title">Restaurant: {restaurant}</h2>
                         <p id="parent-modal-description">
-                           Rating: {rating}
+                            Rating: {rating}
                         </p>
-                        
+
                         <div>
                             <p>Ingredients</p>
                             <li className='text-thin'>{ingredients[1]}</li>
