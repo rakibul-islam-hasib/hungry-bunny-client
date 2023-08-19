@@ -2,19 +2,16 @@ import React, { useEffect, useState } from 'react';
 import cartImg from '../../assets/icons/cart.svg';
 import CheckoutBar from '../cart/CheckoutBar';
 import { AiOutlineBars, AiOutlineClose } from 'react-icons/ai';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import './css/style.css';
 import { gsap } from 'gsap';
-import LogoutBtn from '../buttons/LogoutBtn';
 import { useAuth } from '../../hooks/useAuth';
-import { RxAvatar } from 'react-icons/rx';
 import logo from '../../assets/img/logo.png';
 import darkLogo from '../../assets/img/dark-logo.png';
-import { Menu } from '@headlessui/react';
-import { BiLogOut } from 'react-icons/bi';
 import { useDispatch } from 'react-redux';
 import { logoutUser } from '../../redux/slices/authThunks';
 import Swal from 'sweetalert2';
+import NavMenu from './NavElement/NavMenu';
 const navLinks = [
     {
         id: 1,
@@ -33,16 +30,11 @@ const navLinks = [
     },
     {
         id: 4,
-        name: 'Login',
-        path: '/login',
-    },
-    {
-        id: 5,
         name: 'Community',
         path: '/community',
     },
     {
-        id: 6,
+        id: 5,
         name: 'Restaurants',
         path: '/restaurant',
     },
@@ -59,6 +51,7 @@ const NavBar = () => {
     const [scrollPosition, setScrollPosition] = useState(0);
     const [isFixed, setIsFixed] = useState(false);
     const navigate = useNavigate();
+    const location = useLocation();
     const [isDarkMode, setIsDarkMode] = useState(
         localStorage.getItem('isDarkMode') === 'true'
     );
@@ -184,6 +177,16 @@ const NavBar = () => {
                                         </NavLink>
                                     </li>
                                 ))}
+                                <li>
+                                    {
+                                        user ? (
+                                            ''
+                                        ) : (
+                                            <NavLink className={location.pathname === '/login' ? 'active-link' : 'text-gray-100'}>Login</NavLink>
+                                        )
+                                    }
+
+                                </li>
                             </ul>
                         </div>
                         <div className="search-and-others flex items-center space-x-2">
@@ -216,35 +219,7 @@ const NavBar = () => {
                                 {/* {user && <LogoutBtn />} */}
                                 <div className="">
                                     {user && (
-                                        <Menu as="div" className="relative inline-block">
-                                            <div>
-                                                <Menu.Button className="focus:outline-none">
-                                                    <div className="cursor-pointer mt-2">
-                                                        <RxAvatar className='text-3xl tepr' />
-                                                    </div>
-                                                </Menu.Button>
-                                            </div>
-                                            <Menu.Items className="absolute right-0 w-40 mt-2 origin-top-right bg-white border border-gray-300 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                                                <Menu.Item>
-                                                    {({ active }) => (
-                                                        <button
-                                                            onClick={() => navigate('/dashboard')}
-                                                            className={`${active ? 'bg-gray-100' : ''
-                                                                } group flex items-center w-full px-4 py-2 text-sm`}
-                                                        >
-                                                            Dashboard
-                                                        </button>
-                                                    )}
-                                                </Menu.Item>
-                                                <Menu.Item>
-                                                    {({ active }) => (
-                                                        <button onClick={handleLLogout} className="p-2 bg-primary rounded-full ">
-                                                            <BiLogOut className='text-2xl text-white' />
-                                                        </button>
-                                                    )}
-                                                </Menu.Item>
-                                            </Menu.Items>
-                                        </Menu>
+                                        <NavMenu />
                                     )}
                                 </div>
                             </div>
