@@ -38,8 +38,8 @@ const UserProfile = () => {
                     <p className='text-2xl'>House : 1, Road : 1, Block : A, Mirpur : 1, Dhaka : 1216</p>
                 </div>
                 <div className="mt-6">
-                    <h1 className='text-base'>Address : </h1>
-                    <p className='text-2xl'>House : 1, Road : 1, Block : A, Mirpur : 1, Dhaka : 1216</p>
+                    <h1 className='text-base'> : </h1>
+                    
                 </div>
             </div>
 
