@@ -130,7 +130,7 @@ const NavBar = () => {
                 <nav className=" py-3 relative">
                     <div className="w-[90%] mx-auto flex justify-between items-center ">
                         <div className="logo">
-                            <div className="flex items-center">
+                            <div onContextMenu={e => e.preventDefault()} className="flex items-center">
                                 {isDarkMode ? <img className='' src={logo} alt="" /> : <img src={darkLogo}
                                     // className='w-[100px]'
                                     alt="" />}
