@@ -6,13 +6,13 @@ const Posts = () => {
         {
             id: 1,
             post: 'This is a simple testing post we are working to make this post title',
-            posted: 'Wed Aug 16 2023 23:21:44 GMT+0600 (Bangladesh Standard Time)',
+            posted: '2023-08-19T15:55:28.332Z',
             likes: 10,
             comments: [
                 {
                     _id: 1,
                     comment: 'This is the comment of the post',
-                    commented: 'Wed Aug 16 2023 23:21:44 GMT+0600 (Bangladesh Standard Time)',
+                    commented: '2023-08-19T15:55:28.332Z',
                     user: {
                         name: 'John Doe',
                         isVerified: true,
@@ -22,7 +22,7 @@ const Posts = () => {
                 {
                     _id: 2,
                     comment: 'This is the comment of the post',
-                    commented: 'Wed Aug 16 2023 23:21:44 GMT+0600 (Bangladesh Standard Time)',
+                    commented: '2023-08-19T15:55:28.332Z',
                     user: {
                         name: 'John Doe',
                         isVerified: true,
@@ -39,13 +39,13 @@ const Posts = () => {
         {
             id: 2,
             post: 'This is a simple testing post we are working to make this post title',
-            posted: 'Wed Aug 16 2023 23:21:44 GMT+0600 (Bangladesh Standard Time)',
+            posted: '2023-08-19T15:55:28.332Z',
             likes: 10,
             comments: [
                 {
                     _id: 1,
                     comment: 'This is the comment of the post',
-                    commented: 'Wed Aug 16 2023 23:21:44 GMT+0600 (Bangladesh Standard Time)',
+                    commented: '2023-08-19T15:55:28.332Z',
                     user: {
                         name: 'John Doe',
                         isVerified: true,
@@ -55,7 +55,7 @@ const Posts = () => {
                 {
                     _id: 2,
                     comment: 'This is the comment of the post',
-                    commented: 'Wed Aug 16 2023 23:21:44 GMT+0600 (Bangladesh Standard Time)',
+                    commented: '2023-08-19T15:55:28.332Z',
                     user: {
                         name: 'John Doe',
                         isVerified: true,
