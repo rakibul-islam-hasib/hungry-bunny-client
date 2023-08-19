@@ -22,7 +22,7 @@ const FoodCard = () => {
 
   //food menu tab 
   const handleMenuTabs = (type) => {
-    setMenuTab(type)
+    setMenuTab(type);
   }
   
   return (
@@ -43,8 +43,8 @@ const FoodCard = () => {
 
         {/* all foods  */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-12">
-          {foods.filter((item) => menuTab === item.type).map(item => (
-            loading ? <Skeleton key={item._id} /> : <FoodItem key={item._id} {...item} />
+          {foods.filter((item, idx) => menuTab === item.type).map((item, idx) => (
+            loading ? <Skeleton key={idx} /> : <FoodItem key={idx} {...item} />
           ))}
         </div>
       </section>

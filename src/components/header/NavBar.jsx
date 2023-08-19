@@ -2,13 +2,19 @@ import React, { useEffect, useState } from 'react';
 import cartImg from '../../assets/icons/cart.svg';
 import CheckoutBar from '../cart/CheckoutBar';
 import { AiOutlineBars, AiOutlineClose } from 'react-icons/ai';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import './css/style.css';
 import { gsap } from 'gsap';
-import clickSound from '../../assets/audio/click.mp3';
 import LogoutBtn from '../buttons/LogoutBtn';
 import { useAuth } from '../../hooks/useAuth';
-
+import { RxAvatar } from 'react-icons/rx';
+import logo from '../../assets/img/logo.png';
+import darkLogo from '../../assets/img/dark-logo.png';
+import { Menu } from '@headlessui/react';
+import { BiLogOut } from 'react-icons/bi';
+import { useDispatch } from 'react-redux';
+import { logoutUser } from '../../redux/slices/authThunks';
+import Swal from 'sweetalert2';
 const navLinks = [
     {
         id: 1,
@@ -52,11 +58,32 @@ const NavBar = () => {
     const [showNav, setShowNav] = useState(false);
     const [scrollPosition, setScrollPosition] = useState(0);
     const [isFixed, setIsFixed] = useState(false);
+    const navigate = useNavigate();
     const [isDarkMode, setIsDarkMode] = useState(
         localStorage.getItem('isDarkMode') === 'true'
     );
+    const dispatch = useDispatch();
     const { user } = useAuth();
-
+    const handleLLogout = () => {
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                dispatch(logoutUser());
+                Swal.fire(
+                    'Logged out!',
+                    'Your are logged out.',
+                    'success'
+                )
+            }
+        })
+    }
     const animate = () => {
         const timeline = gsap.timeline({
             onComplete: () => {
@@ -135,7 +162,13 @@ const NavBar = () => {
                 <nav className=" py-3 relative">
                     <div className="w-[90%] mx-auto flex justify-between items-center ">
                         <div className="logo">
-                            <h1 className={isFixed ? 'font-bold dark:text-gray-200 text-xl' : 'font-bold dark:text-white text-xl'}>Foo</h1>
+                            <div className="flex items-center">
+                                {isDarkMode ? <img className='' src={logo} alt="" /> : <img src={darkLogo}
+                                    // className='w-[100px]'
+                                    alt="" />}
+                                {/* <h1 className={isFixed ? 'font-bold dark:text-gray-200 text-xl' : 'font-bold dark:text-white text-xl'}>Hungry Bunny</h1> */}
+                            </div>
+
                         </div>
                         <div className="links hidden md:block">
                             <ul className={isFixed ? 'flex dark:text-gray-100 space-x-6 nav-links' : 'flex dark:text-white space-x-6 nav-links'}>
@@ -180,11 +213,44 @@ const NavBar = () => {
                                 </label>
                             </div>
                             <div className="">
-                                {user && <LogoutBtn />}
+                                {/* {user && <LogoutBtn />} */}
+                                <div className="">
+                                    {user && (
+                                        <Menu as="div" className="relative inline-block">
+                                            <div>
+                                                <Menu.Button className="focus:outline-none">
+                                                    <div className="cursor-pointer mt-2">
+                                                        <RxAvatar className='text-3xl tepr' />
+                                                    </div>
+                                                </Menu.Button>
+                                            </div>
+                                            <Menu.Items className="absolute right-0 w-40 mt-2 origin-top-right bg-white border border-gray-300 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                                                <Menu.Item>
+                                                    {({ active }) => (
+                                                        <button
+                                                            onClick={() => navigate('/dashboard')}
+                                                            className={`${active ? 'bg-gray-100' : ''
+                                                                } group flex items-center w-full px-4 py-2 text-sm`}
+                                                        >
+                                                            Dashboard
+                                                        </button>
+                                                    )}
+                                                </Menu.Item>
+                                                <Menu.Item>
+                                                    {({ active }) => (
+                                                        <button onClick={handleLLogout} className="p-2 bg-primary rounded-full ">
+                                                            <BiLogOut className='text-2xl text-white' />
+                                                        </button>
+                                                    )}
+                                                </Menu.Item>
+                                            </Menu.Items>
+                                        </Menu>
+                                    )}
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div className="md:hidden top-0 block side-md absolute  -left-[500px] h-screen w-full bg-blue-300">
+                    <div className="md:hidden top-0 block side-md absolute z-[999]  -left-[500px] h-screen w-full bg-blue-300">
                         <div className="w-full border">
                             <div className="flex justify-end">
                                 <AiOutlineClose
