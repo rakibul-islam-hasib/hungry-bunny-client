@@ -85,7 +85,10 @@ export const router = createBrowserRouter([
       {
         index: true,
         element: <UserWelcome />
-      }, 
+      },
+      {
+        path: 'user-profile',
+      }
     ]
   }
 ]);
