@@ -3,9 +3,10 @@ import { Link, Navigate } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
 import { registerUser, updateName } from "../../redux/slices/authThunks";
 import { setUser } from "../../redux/slices/authSlice";
+import useAxiosFetch from "../../hooks/useAxiosFetch";
 const Register = () => {
   const dispatch = useDispatch();
-
+  const axios = useAxiosFetch();
   const { user } = useSelector((state) => state.auth);
 
   if (user) return <Navigate to="/" />;
@@ -35,6 +36,9 @@ const Register = () => {
       if (res) {
         dispatch(updateName(data.name))
         dispatch(setUser(res.user));
+        if (res.user) {
+          await axios.post('/user-info', userData);
+        }
       }
       console.log(res);
     } catch (err) {
