@@ -14,6 +14,22 @@ const Register = () => {
     e.preventDefault();
     const formData = new FormData(e.target);
     const data = Object.fromEntries(formData);
+    const userData = {
+      email: data.email,
+      name: data.name,
+      joined: new Date(),
+      role: 'user',
+      phone: {
+        p1: '',
+        p2: ''
+      },
+      address: '',
+      following: [],
+      followers: [],
+    }
+
+
+
     try {
       const res = await dispatch(registerUser(data.email, data.password));
       if (res) {
