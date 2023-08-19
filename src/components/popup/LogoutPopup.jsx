@@ -1,16 +1,19 @@
 import { Button, Dialog, DialogActions, DialogContent, DialogTitle } from '@mui/material';
 import React from 'react';
 import { useDispatch } from 'react-redux';
+import Swal from 'sweetalert2';
+import { logoutUser } from '../../redux/slices/authThunks';
 
 const LogoutPopup = ({ open, setOpen }) => {
     const dispatch = useDispatch();
     const handleLLogout = () => {
-        console.log('logout')
-        setOpen(true);
+        dispatch(logoutUser());
+        setOpen(false);
     };
     const handleClose = () => {
         setOpen(false);
     };
+
     return (
         <Dialog
             open={open}
@@ -29,7 +32,7 @@ const LogoutPopup = ({ open, setOpen }) => {
             </DialogContent>
             <DialogActions>
                 <Button onClick={handleClose}>Disagree</Button>
-                <button className='px-6 py-2 bg-red-500 rounded-lg text-white' onClick={handleClose} autoFocus>
+                <button className='px-6 py-2 bg-red-500 rounded-lg text-white' onClick={handleLLogout} autoFocus>
                     Agree
                 </button>
             </DialogActions>

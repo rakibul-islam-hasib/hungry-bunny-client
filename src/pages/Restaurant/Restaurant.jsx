@@ -17,7 +17,7 @@ useEffect(() => {
             <div className="grid md:grid-cols-2 md:gap-8 gap-3 lg:grid-cols-3 mt-10 mx-auto">
         {allRestaurants.map((item) => (
           <div key={item._id} className='p-2 border overflow-hidden shadow-lg rounded-md'>
-          <img className="w-full rounded h-48 object-cover rounded-lg" src={item.restaurantImage} alt="Food Image" />
+          <img className="w-full  h-48 object-cover rounded-lg" src={item.restaurantImage} alt="Food Image" />
           <div className="px-6 py-4">
             <div className="mb-2">
               <p className='font-extrabold text-2xl'>Restaurant Name {item.restaurantName}</p>
