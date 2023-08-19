@@ -1,22 +1,13 @@
 import { Menu } from '@headlessui/react';
-import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle } from '@mui/material';
-import React from 'react';
-import { BiLogOut } from 'react-icons/bi';
+import React, { useState } from 'react';
 import { RxAvatar } from 'react-icons/rx';
-import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import LogoutPopup from '../../popup/LogoutPopup';
 
 const NavMenu = () => {
     const navigate = useNavigate();
-    const dispatch = useDispatch();
-    const [open, setOpen] = React.useState(false);
-    const handleLLogout = () => {
-        console.log('logout')
-        setOpen(true);
-    };
-    const handleClose = () => {
-        setOpen(false);
-    };
+    const [open, setOpen] = useState(false);
+
     return (
         <>
             <Menu as="div" className="relative  inline-block">
@@ -52,8 +43,10 @@ const NavMenu = () => {
                     </Menu.Item>
                     <Menu.Item>
                         {({ active }) => (
-                            <button onClick={handleLLogout} className={`${active ? 'bg-gray-100' : ''
-                                } group flex items-center w-full px-4 py-2 text-sm`}
+                            <button
+                                onClick={() => setOpen(true)}
+                                className={`${active ? 'bg-gray-100' : ''
+                                    } group flex items-center w-full px-4 py-2 text-sm`}
                             >
                                 Logout
                             </button>
@@ -65,28 +58,8 @@ const NavMenu = () => {
             {
                 // Modal here 
             }
+            <LogoutPopup open={open} setOpen={setOpen} />
 
-            <Dialog
-                open={open}
-                onClose={handleClose}
-                aria-labelledby="alert-dialog-title"
-                aria-describedby="alert-dialog-description"
-            >
-                <DialogTitle id="alert-dialog-title">
-                    <span className='text-xl font-bold'>Are you sure you want to logout</span>
-                </DialogTitle>
-                <DialogContent>
-                        <h1 className=''>You will be logged out from your account</h1>
-                    {/* <DialogContentText id="alert-dialog-description">
-                    </DialogContentText> */}
-                </DialogContent>
-                <DialogActions>
-                    <Button onClick={handleClose}>Disagree</Button>
-                    <Button onClick={handleClose} autoFocus>
-                        Agree
-                    </Button>
-                </DialogActions>
-            </Dialog>
         </>
     );
 };
