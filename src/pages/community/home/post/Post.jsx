@@ -4,11 +4,16 @@ import { AiTwotoneLike } from 'react-icons/ai';
 import { BsShareFill } from 'react-icons/bs';
 import { HiChatAlt2 } from 'react-icons/hi';
 import Tooltip from '@mui/material/Tooltip';
+import useAxiosFetch from '../../../../hooks/useAxiosFetch';
 
 const Post = ({ post: data }) => {
+    const axios = useAxiosFetch();
     // console.log(data);
     const handleLike = () => {
-        console.log('like' , data._id);
+        console.log('like', data._id);
+        axios.put(`/community-post/like/${data._id}`)
+        .then(res => console.log(res))
+    
     };
     return (
         <div className='shadow bg-gray-100 my-3 px-8 py-5'>
