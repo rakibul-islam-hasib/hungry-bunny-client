@@ -15,13 +15,15 @@ export const registerUser = (email, password) => async (dispatch) => {
     }
     dispatch(setLoading(false));
 };
-export const updateName = (name) => (dispatch) => {
+export const updateName = (name) => async (dispatch) => {
     dispatch(setLoading(true));
     try {
-        return updateProfile(auth.currentUser, { displayName: name })
+        await updateProfile(auth.currentUser, { displayName: name });
+        // Dispatch any success action if needed
     } catch (error) {
         dispatch(setError(error.code));
     }
+    dispatch(setLoading(false));
 }
 // Similar thunks for other actions...
 export const loginUser = (email, password) => async (dispatch) => {

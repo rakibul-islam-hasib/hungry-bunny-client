@@ -6,14 +6,16 @@ import { HiChatAlt2 } from 'react-icons/hi';
 import Tooltip from '@mui/material/Tooltip';
 import useAxiosFetch from '../../../../hooks/useAxiosFetch';
 
-const Post = ({ post: data }) => {
+const Post = ({ post: data, refetch }) => {
     const axios = useAxiosFetch();
-    // console.log(data);
     const handleLike = () => {
         console.log('like', data._id);
         axios.put(`/community-post/like/${data._id}`)
-        .then(res => console.log(res))
-    
+            .then(res => {
+                if (res.data.modifiedCount > 0) {
+                    refetch();
+                }
+            })
     };
     return (
         <div className='shadow bg-gray-100 my-3 px-8 py-5'>
