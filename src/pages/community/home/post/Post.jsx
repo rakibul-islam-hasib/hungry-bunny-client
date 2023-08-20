@@ -11,10 +11,12 @@ import TimeAgo from 'javascript-time-ago'
 import en from 'javascript-time-ago/locale/en'
 import '../../css/Post.css'
 import PostOptions from './PostOptions';
+import { IoCloseSharp } from 'react-icons/io5';
 
 const Post = ({ post: data, refetch: postDataRefetch }) => {
     TimeAgo.addLocale(en)
     const timeAgo = new TimeAgo('en-US')
+    const now = new Date();
     const [loading, setLoading] = useState(false);
     const axios = useAxiosFetch();
     const { user: firebaseUser } = useAuth();
@@ -36,7 +38,6 @@ const Post = ({ post: data, refetch: postDataRefetch }) => {
     };
 
     const isLiked = user?.likedPost?.includes(data._id);
-    const now = new Date();
     return (
         <div className='shadow bg-gray-100 my-3 px-8 py-5'>
             <div className="">
@@ -76,8 +77,11 @@ const Post = ({ post: data, refetch: postDataRefetch }) => {
                             </Tooltip>
                         </div>
                     </div>
-                    <div className="">
+                    <div className="flex items-center">
                         <PostOptions />
+                        <div className="">
+                            <IoCloseSharp className='text-3xl' />
+                        </div>
                     </div>
                 </div>
                 <div className="border px-6 py-4  mt-4">

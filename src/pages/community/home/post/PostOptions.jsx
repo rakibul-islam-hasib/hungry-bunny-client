@@ -1,9 +1,15 @@
 // import { Menu } from '@mui/material';
 import { Menu } from '@headlessui/react';
-import React from 'react';
+import React, { useState } from 'react';
 import { PiDotsThreeOutlineFill } from 'react-icons/pi';
+import DeletePostModal from '../../../../components/Modals/DeletePostModal';
 
 const PostOptions = () => {
+    const [isOpen, setIsOpen] = useState(false)
+    const handleDelete = () => {
+        setIsOpen(true)
+        console.log('delete')
+    }
     return (
         <>
             <Menu as="div" className="relative  inline-block">
@@ -18,11 +24,11 @@ const PostOptions = () => {
                     <Menu.Item>
                         {({ active }) => (
                             <button
-
+                                onClick={() => handleDelete()}
                                 className={`${active ? 'bg-gray-100' : ''
                                     } group flex items-center w-full px-4 py-2 text-sm`}
                             >
-                                Dashboard
+                                Delete
                             </button>
                         )}
                     </Menu.Item>
@@ -50,6 +56,7 @@ const PostOptions = () => {
                     </Menu.Item>
                 </Menu.Items>
             </Menu>
+            <DeletePostModal isOpen={isOpen} onClose={() => setIsOpen(false)} />
         </>
     );
 };
