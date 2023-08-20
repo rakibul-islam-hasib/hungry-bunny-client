@@ -12,7 +12,7 @@ const Post = ({ post: data, refetch: postDataRefetch }) => {
     const [loading, setLoading] = useState(false);
     const axios = useAxiosFetch();
     const { user: firebaseUser } = useAuth();
-    const [user, , refetch] = useUserSecure(firebaseUser?.email);
+    const [user, , userRefetch] = useUserSecure(firebaseUser?.email);
 
     const handleLike = () => {
         setLoading(true);
@@ -22,7 +22,7 @@ const Post = ({ post: data, refetch: postDataRefetch }) => {
                 console.log(res.data)
                 if (res.data.result.modifiedCount > 0 && res.data.result2.modifiedCount > 0) {
                     postDataRefetch();
-                    refetch();
+                    userRefetch();
                 }
             })
             .catch(err => console.log(err))
