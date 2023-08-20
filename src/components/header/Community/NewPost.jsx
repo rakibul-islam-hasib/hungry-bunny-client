@@ -4,11 +4,11 @@ import { BsImage } from 'react-icons/bs';
 import { IoSend } from 'react-icons/io5';
 import { useAuth } from '../../../hooks/useAuth';
 import { Tooltip } from '@mui/material';
-import useUser from '../../../hooks/useUser';
+import useUserSecure from '../../../hooks/useUserSecure';
 
 const NewPost = () => {
     const { user: firebaseUser } = useAuth();
-    const [userInfo] = useUser(firebaseUser?.email);
+    const userInfo = useUserSecure(firebaseUser?.email);
     console.log(userInfo, 'userInfo');
 
 
