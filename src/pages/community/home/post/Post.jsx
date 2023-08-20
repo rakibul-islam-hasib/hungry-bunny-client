@@ -10,7 +10,7 @@ import { useAuth } from '../../../../hooks/useAuth';
 import '../../css/Post.css'
 
 const Post = ({ post: data, refetch: postDataRefetch }) => {
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(false);
     const axios = useAxiosFetch();
     const { user: firebaseUser } = useAuth();
     const [user, , userRefetch] = useUserSecure(firebaseUser?.email);
@@ -66,14 +66,14 @@ const Post = ({ post: data, refetch: postDataRefetch }) => {
                 <div className="flex justify-between mt-6 w-[80%] mx-auto">
                     <div className="flex items-center">
                         {
-                            loading && <div className="mt-1 ml-3">
+                            loading ? <div className="mt-1 ml-3">
                                 <div className="post-loader">
-                                <div></div>
-                            </div>
-                            </div>
+                                    <div></div>
+                                </div>
+                            </div> :
+                                <span><AiTwotoneLike onClick={handleLike} className={isLiked ? 'text-3xl cursor-pointer hover:text-primary duration-300 text-primary' : 'text-3xl cursor-pointer hover:text-primary duration-300'} />
+                                    <h1 className='text-lg mt-1'>{data.likes}</h1></span>
                         }
-                        <AiTwotoneLike onClick={handleLike} className={isLiked ? 'text-3xl cursor-pointer hover:text-primary duration-300 text-primary' : 'text-3xl cursor-pointer hover:text-primary duration-300'} />
-                        <h1 className='text-lg mt-1'>{data.likes}</h1>
                     </div>
                     <div className="flex items-center">
                         <HiChatAlt2 className='text-3xl cursor-pointer hover:text-primary duration-300' />
