@@ -28,6 +28,8 @@ const Register = () => {
       following: [],
       followers: [],
       likedPost: [],
+      isVerified: false,
+      photo : 'https://i.ibb.co/5M0BDy4/No-thing.png',
     }
 
     try {

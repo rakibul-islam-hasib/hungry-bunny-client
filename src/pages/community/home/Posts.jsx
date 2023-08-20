@@ -5,10 +5,11 @@ import { useCommunityPost } from '../../../hooks/data/useCommunityPost';
 const Posts = () => {
     const [postData, loading, refetch] = useCommunityPost();
     if (loading) return <h1>Loading...</h1>
+    console.log(postData)
     return (
         <div>
             {
-                postData.map(post => <Post refetch={refetch} key={post.id} post={post} />)
+                postData.map(post => <Post refetch={refetch} key={post._id} post={post} />)
             }
         </div>
     );

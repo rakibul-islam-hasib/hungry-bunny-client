@@ -1,4 +1,5 @@
 import React from 'react';
+import { Toaster } from 'react-hot-toast';
 import CnavBar from '../components/header/Community/CnavBar';
 import { Outlet, ScrollRestoration } from 'react-router-dom';
 import CSideBar from '../components/sidebar/CSideBar';
@@ -24,6 +25,7 @@ const CommunityLayout = () => {
                 </section>
             </section>
             <ScrollRestoration />
+            <Toaster />
         </>
     );
 };
