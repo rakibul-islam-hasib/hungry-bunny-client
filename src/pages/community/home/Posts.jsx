@@ -4,14 +4,17 @@ import useAxiosFetch from '../../../hooks/useAxiosFetch';
 
 const Posts = () => {
     const [postData, setPostData] = useState([]);
+    const [loading, setLoading] = useState(true);
     const axios = useAxiosFetch();
     useEffect(() => {
         const fetchPosts = async () => {
             const res = await axios.get('/community-post');
             setPostData(res.data);
+            setLoading(false);
         }
         fetchPosts();
     }, [axios])
+    if (loading) return <h1>Loading...</h1>
     return (
         <div>
             {

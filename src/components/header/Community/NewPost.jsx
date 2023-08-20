@@ -8,7 +8,7 @@ import useUser from '../../../hooks/useUser';
 
 const NewPost = () => {
     const { user: firebaseUser } = useAuth();
-    const userInfo = useUser(firebaseUser?.email);
+    const [userInfo] = useUser(firebaseUser?.email);
     console.log(userInfo, 'userInfo');
 
 
