@@ -1,22 +1,37 @@
-import React from 'react';
+import React, { useState } from 'react';
 import moment from 'moment';
 import { AiTwotoneLike } from 'react-icons/ai';
 import { BsShareFill } from 'react-icons/bs';
 import { HiChatAlt2 } from 'react-icons/hi';
 import Tooltip from '@mui/material/Tooltip';
 import useAxiosFetch from '../../../../hooks/useAxiosFetch';
+import useUserSecure from '../../../../hooks/useUserSecure';
+import { useAuth } from '../../../../hooks/useAuth';
+import '../../css/Post.css'
 
-const Post = ({ post: data, refetch }) => {
+const Post = ({ post: data, refetch: postDataRefetch }) => {
+    const [loading, setLoading] = useState(false);
     const axios = useAxiosFetch();
+    const { user: firebaseUser } = useAuth();
+    const [user, , userRefetch] = useUserSecure(firebaseUser?.email);
+
     const handleLike = () => {
+        setLoading(true);
         console.log('like', data._id);
-        axios.put(`/community-post/like/${data._id}`)
+        axios.put(`/community-post/like/${data._id}/${user?._id}`)
             .then(res => {
-                if (res.data.modifiedCount > 0) {
-                    refetch();
+                console.log(res.data)
+                if (res.data.result.modifiedCount > 0 && res.data.result2.modifiedCount > 0) {
+                    postDataRefetch();
+                    userRefetch();
                 }
             })
+            .catch(err => console.log(err))
+            .finally(() => setLoading(false))
     };
+
+    const isLiked = user?.likedPost?.includes(data._id);
+
     return (
         <div className='shadow bg-gray-100 my-3 px-8 py-5'>
             <div className="">
@@ -50,8 +65,15 @@ const Post = ({ post: data, refetch }) => {
                 </div>
                 <div className="flex justify-between mt-6 w-[80%] mx-auto">
                     <div className="flex items-center">
-                        <AiTwotoneLike onClick={handleLike} className='text-3xl cursor-pointer hover:text-primary duration-300' />
-                        <h1 className='text-lg'>{data.likes}</h1>
+                        {
+                            loading ? <div className="mt-1 ml-3">
+                                <div className="post-loader">
+                                    <div></div>
+                                </div>
+                            </div> :
+                                <span className='flex items-center'><AiTwotoneLike onClick={handleLike} className={isLiked ? 'text-3xl cursor-pointer hover:text-primary duration-300 text-primary' : 'text-3xl cursor-pointer hover:text-primary duration-300'} />
+                                    <h1 className='text-lg mt-1'>{data.likes}</h1></span>
+                        }
                     </div>
                     <div className="flex items-center">
                         <HiChatAlt2 className='text-3xl cursor-pointer hover:text-primary duration-300' />
