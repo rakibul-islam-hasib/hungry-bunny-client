@@ -27,6 +27,7 @@ const Register = () => {
       address: '',
       following: [],
       followers: [],
+      likedPost: [],
     }
 
     try {
