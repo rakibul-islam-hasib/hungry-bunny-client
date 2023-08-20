@@ -1,26 +1,43 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
 import { registerUser, updateName } from "../../redux/slices/authThunks";
 import { setUser } from "../../redux/slices/authSlice";
+import useAxiosFetch from "../../hooks/useAxiosFetch";
 const Register = () => {
   const dispatch = useDispatch();
-  const { user, loading, error } = useSelector((state) => state.auth);
-  // console.log(user, loading, error)
-  console.log(user, 'user', loading, 'loading', error, 'error')
+  const axios = useAxiosFetch();
+  const { user } = useSelector((state) => state.auth);
+
+  if (user) return <Navigate to="/" />;
 
   const handleFromSubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
     const data = Object.fromEntries(formData);
-    // console.log(data);
+    const userData = {
+      email: data.email,
+      name: data.name,
+      joined: new Date(),
+      role: 'user',
+      phone: {
+        p1: '',
+        p2: ''
+      },
+      address: '',
+      following: [],
+      followers: [],
+    }
+
     try {
-      const res = await dispatch(registerUser(data.email, data.password));
-      if (res) {
-        dispatch(updateName(data.name))
-        dispatch(setUser(res.user));
+      const userCredential = await dispatch(registerUser(data.email, data.password));
+      if (userCredential.user) {
+        await dispatch(updateName(data.name)); // Wait for the display name update
+        dispatch(setUser(userCredential.user)); // Set user in Redux store
+        if (userCredential.user) {
+          await axios.post('/user-info', userData); // Post user info to API
+        }
       }
-      console.log(res);
     } catch (err) {
       console.log(err);
     }

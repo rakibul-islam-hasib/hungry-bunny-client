@@ -1,11 +1,13 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { loginUser } from "../../redux/slices/authThunks";
+import { useAuth } from "../../hooks/useAuth";
 
 const Login = () => {
   const dispatch = useDispatch();
-
+  const { user } = useAuth();
+  if (user) return <Navigate to='/' />
   const handleFromSubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);

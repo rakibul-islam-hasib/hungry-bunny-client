@@ -1,12 +1,22 @@
 import React from 'react';
 import moment from 'moment';
 import { AiTwotoneLike } from 'react-icons/ai';
-import { BiCommentDetail } from 'react-icons/bi';
 import { BsShareFill } from 'react-icons/bs';
+import { HiChatAlt2 } from 'react-icons/hi';
 import Tooltip from '@mui/material/Tooltip';
+import useAxiosFetch from '../../../../hooks/useAxiosFetch';
 
-const Post = ({ post: data }) => {
-    console.log(data);
+const Post = ({ post: data, refetch }) => {
+    const axios = useAxiosFetch();
+    const handleLike = () => {
+        console.log('like', data._id);
+        axios.put(`/community-post/like/${data._id}`)
+            .then(res => {
+                if (res.data.modifiedCount > 0) {
+                    refetch();
+                }
+            })
+    };
     return (
         <div className='shadow bg-gray-100 my-3 px-8 py-5'>
             <div className="">
@@ -40,11 +50,11 @@ const Post = ({ post: data }) => {
                 </div>
                 <div className="flex justify-between mt-6 w-[80%] mx-auto">
                     <div className="flex items-center">
-                        <AiTwotoneLike className='text-3xl cursor-pointer hover:text-primary duration-300' />
+                        <AiTwotoneLike onClick={handleLike} className='text-3xl cursor-pointer hover:text-primary duration-300' />
                         <h1 className='text-lg'>{data.likes}</h1>
                     </div>
                     <div className="flex items-center">
-                        <BiCommentDetail className='text-3xl cursor-pointer hover:text-primary duration-300' />
+                        <HiChatAlt2 className='text-3xl cursor-pointer hover:text-primary duration-300' />
                         <h1 className='text-lg'>{data.comments.length}</h1>
                     </div>
                     <div className="">
