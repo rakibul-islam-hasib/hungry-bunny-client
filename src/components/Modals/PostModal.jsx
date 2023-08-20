@@ -1,42 +1,48 @@
 import React, { useState } from 'react';
-import { Transition } from '@headlessui/react';
-
-const PostModal = ({ isOpen, onClose }) => {
+import { Dialog, Transition } from '@headlessui/react';
+import { motion } from 'framer-motion';
+const PostModal = ({ isOpen, onClose, onSuccess }) => {
     return (
-        <Transition show={isOpen} as={React.Fragment}>
-            <div className="fixed inset-0 flex items-center justify-center z-50">
-                <Transition.Child
-                    enter="transition-opacity ease-in-out duration-300"
-                    enterFrom="opacity-0"
-                    enterTo="opacity-100"
-                    leave="transition-opacity ease-in-out duration-300"
-                    leaveFrom="opacity-100"
-                    leaveTo="opacity-0"
+        <Transition.Root show={isOpen} as={React.Fragment}>
+            <Dialog
+                as="div"
+                className="fixed inset-0 z-10 overflow-y-auto"
+                onClose={onClose}
+            >
+                <div
+                    className="flex items-center justify-center min-h-screen"
                 >
-                    <div className="fixed inset-0 bg-black opacity-40"></div>
-                </Transition.Child>
-                <Transition.Child
-                    enter="transition-opacity ease-in-out duration-300 transform"
-                    enterFrom="opacity-0 scale-95"
-                    enterTo="opacity-100 scale-100"
-                    leave="transition-opacity ease-in-out duration-300 transform"
-                    leaveFrom="opacity-100 scale-100"
-                    leaveTo="opacity-0 scale-95"
-                >
-                    <div className="bg-white p-4 rounded-lg shadow-md">
-                        {/* Modal content here */}
-                        <h2 className="text-lg font-semibold mb-2">Modal Title</h2>
-                        <p className="text-gray-600">Modal content goes here.</p>
-                        <button
-                            className="mt-4 bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded"
-                            onClick={onClose}
-                        >
-                            Close
-                        </button>
-                    </div>
-                </Transition.Child>
-            </div>
-        </Transition>
+                    <Transition.Child
+                        as={motion.div}
+                        initial={{ opacity: 0, scale: 0.5 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        exit={{ opacity: 0, scale: 0.5, transition: { duration: 0.6 } }}
+                        className="bg-white p-8 rounded-lg md:min-w-[300px] shadow-lg"
+                    >
+                        {/* Your form components go here */}
+                        <div className="">
+                            <p className='text-2xl font-bold text-red-500'>Are you sure you want to delete this post ?</p>
+                            <p>You can not get back this post</p>
+                        </div>
+                        {/* ... other form fields ... */}
+                        <div className="flex justify-end mt-6">
+                            <button
+                                onClick={onClose}
+                                className="px-4 py-2 mr-2 bg-gray-200 text-gray-600 rounded hover:bg-gray-300"
+                            >
+                                Cancel
+                            </button>
+                            <button
+                                onClick={onSuccess}
+                                className="px-4 py-2 bg-orange-500 text-white rounded hover:bg-orange-600"
+                            >
+                                Ok Delete
+                            </button>
+                        </div>
+                    </Transition.Child>
+                </div>
+            </Dialog>
+        </Transition.Root>
     );
 };
 

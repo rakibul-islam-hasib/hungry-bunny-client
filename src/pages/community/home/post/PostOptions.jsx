@@ -3,12 +3,27 @@ import { Menu } from '@headlessui/react';
 import React, { useState } from 'react';
 import { PiDotsThreeOutlineFill } from 'react-icons/pi';
 import PostModal from '../../../../components/Modals/PostModal';
+import useAxiosSecure from '../../../../hooks/useAxiosSecure';
+import toast from 'react-hot-toast';
+import { useCommunityPost } from '../../../../hooks/data/useCommunityPost';
 
-const PostOptions = () => {
-    const [isOpen, setIsOpen] = useState(false)
+const PostOptions = ({ id }) => {
+    const [isOpen, setIsOpen] = useState(false);
+    const [, , refetch] = useCommunityPost();
+    const axios = useAxiosSecure();
     const handleDelete = () => {
-        setIsOpen(true)
-        console.log('delete')
+        axios.delete(`/community-post/${id}`)
+            .then(res => {
+                console.log(res.data)
+                if (res.data.deletedCount > 0) {
+                    refetch();
+                    toast.success('Post deleted successfully')
+                }
+            })
+            .catch(err => console.log(err))
+            .finally(() => setIsOpen(false))
+        console.log(id)
+
     }
     return (
         <>
@@ -24,7 +39,7 @@ const PostOptions = () => {
                     <Menu.Item>
                         {({ active }) => (
                             <button
-                                onClick={() => handleDelete()}
+                                onClick={() => setIsOpen(true)}
                                 className={`${active ? 'bg-gray-100' : ''
                                     } group flex items-center w-full px-4 py-2 text-sm`}
                             >
@@ -56,7 +71,7 @@ const PostOptions = () => {
                     </Menu.Item>
                 </Menu.Items>
             </Menu>
-            <PostModal isOpen={isOpen} onClose={() => setIsOpen(false)} />
+            <PostModal isOpen={isOpen} onClose={() => setIsOpen(false)} onSuccess={handleDelete} />
         </>
     );
 };

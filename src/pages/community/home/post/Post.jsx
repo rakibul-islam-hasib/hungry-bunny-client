@@ -78,7 +78,7 @@ const Post = ({ post: data, refetch: postDataRefetch }) => {
                         </div>
                     </div>
                     <div className="flex items-center">
-                        <PostOptions />
+                        <PostOptions id={data._id} />
                         <div className="">
                             <IoCloseSharp className='text-3xl' />
                         </div>
