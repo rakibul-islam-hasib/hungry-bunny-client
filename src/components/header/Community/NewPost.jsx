@@ -11,6 +11,11 @@ const NewPost = () => {
     const userInfo = useUserSecure(firebaseUser?.email);
     console.log(userInfo, 'userInfo');
 
+    const handlePosting = event => {
+        event.preventDefault();
+        console.log('posting', event);
+    };
+
 
     return (
         <div className='bg-gray-100 rounded-xl px-10 py-7'>
@@ -19,14 +24,17 @@ const NewPost = () => {
                 <h1 className='uppercase text-xl text-center md:text-left font-semibold'>New Post</h1>
             </div>
             <div className="mt-3 flex md:flex-row flex-col items-center gap-5">
-                <Tooltip color='red' title={firebaseUser?.email ? 'You can post anything' : 'Please login to new post'} placement='top'>
-                    <input
-                        disabled={!firebaseUser?.email}
-                        type="text"
-                        placeholder='What do you think about us ?'
-                        className='outline-none rounded-lg w-full focus:ring-1 ring-primary border-none bg-slate-50 text-base py-2 pl-3 font-semibold'
-                    />
-                </Tooltip>
+                <form className='w-full' onSubmit={e => handlePosting(e)}>
+                    <Tooltip color='red' title={firebaseUser?.email ? 'You can post anything' : 'Please login to new post'} placement='top'>
+                        <input
+                            disabled={!firebaseUser?.email}
+                            type="text"
+                            name='post'
+                            placeholder='What do you think about us ?'
+                            className='outline-none rounded-lg w-full focus:ring-1 ring-primary border-none bg-slate-50 text-base py-2 pl-3 font-semibold'
+                        />
+                    </Tooltip>
+                </form>
                 <div className="icons flex items-center gap-2">
                     <div className='cursor-pointer  p-2 hover:bg-lime-200 rounded-xl duration-200 hover:text-primary'>
                         <ImAttachment className='text-2xl group-hover:text-primary text-gray-400' />
