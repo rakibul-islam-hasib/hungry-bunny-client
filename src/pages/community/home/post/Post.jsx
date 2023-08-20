@@ -7,6 +7,9 @@ import Tooltip from '@mui/material/Tooltip';
 
 const Post = ({ post: data }) => {
     // console.log(data);
+    const handleLike = () => {
+        console.log('like' , data._id);
+    };
     return (
         <div className='shadow bg-gray-100 my-3 px-8 py-5'>
             <div className="">
@@ -40,7 +43,7 @@ const Post = ({ post: data }) => {
                 </div>
                 <div className="flex justify-between mt-6 w-[80%] mx-auto">
                     <div className="flex items-center">
-                        <AiTwotoneLike className='text-3xl cursor-pointer hover:text-primary duration-300' />
+                        <AiTwotoneLike onClick={handleLike} className='text-3xl cursor-pointer hover:text-primary duration-300' />
                         <h1 className='text-lg'>{data.likes}</h1>
                     </div>
                     <div className="flex items-center">
