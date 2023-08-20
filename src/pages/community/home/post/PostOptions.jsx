@@ -2,7 +2,7 @@
 import { Menu } from '@headlessui/react';
 import React, { useState } from 'react';
 import { PiDotsThreeOutlineFill } from 'react-icons/pi';
-import DeletePostModal from '../../../../components/Modals/DeletePostModal';
+import PostModal from '../../../../components/Modals/PostModal';
 
 const PostOptions = () => {
     const [isOpen, setIsOpen] = useState(false)
@@ -56,7 +56,7 @@ const PostOptions = () => {
                     </Menu.Item>
                 </Menu.Items>
             </Menu>
-            <DeletePostModal isOpen={isOpen} onClose={() => setIsOpen(false)} />
+            <PostModal isOpen={isOpen} onClose={() => setIsOpen(false)} />
         </>
     );
 };

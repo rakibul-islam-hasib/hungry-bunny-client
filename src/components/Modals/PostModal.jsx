@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Transition } from '@headlessui/react';
 
-const DeletePostModal = ({ isOpen, onClose }) => {
+const PostModal = ({ isOpen, onClose }) => {
     return (
         <Transition show={isOpen} as={React.Fragment}>
             <div className="fixed inset-0 flex items-center justify-center z-50">
@@ -40,4 +40,4 @@ const DeletePostModal = ({ isOpen, onClose }) => {
     );
 };
 
-export default DeletePostModal;
+export default PostModal;
