@@ -7,9 +7,13 @@ import Tooltip from '@mui/material/Tooltip';
 import useAxiosFetch from '../../../../hooks/useAxiosFetch';
 import useUserSecure from '../../../../hooks/useUserSecure';
 import { useAuth } from '../../../../hooks/useAuth';
+import TimeAgo from 'javascript-time-ago'
+import en from 'javascript-time-ago/locale/en'
 import '../../css/Post.css'
 
 const Post = ({ post: data, refetch: postDataRefetch }) => {
+    TimeAgo.addLocale(en)
+    const timeAgo = new TimeAgo('en-US')
     const [loading, setLoading] = useState(false);
     const axios = useAxiosFetch();
     const { user: firebaseUser } = useAuth();
@@ -31,7 +35,7 @@ const Post = ({ post: data, refetch: postDataRefetch }) => {
     };
 
     const isLiked = user?.likedPost?.includes(data._id);
-
+    const now = new Date();
     return (
         <div className='shadow bg-gray-100 my-3 px-8 py-5'>
             <div className="">
@@ -57,7 +61,15 @@ const Post = ({ post: data, refetch: postDataRefetch }) => {
                                 </Tooltip>
                             }
                         </div>
-                        <p className='mt-0 text-primary text-[12px]'>{moment(data.posted).format("MMM Do YY")}</p>
+                        <p className='mt-0 text-primary text-[12px]'>
+                            {
+                                // moment(data.posted).format("MMM Do YY")
+                                // moment(data.posted).startOf('hour').fromNow()
+
+                                // format(data.posted)
+                                timeAgo.format(new Date(data.posted), now)
+                            }
+                        </p>
                     </div>
                 </div>
                 <div className="border px-6 py-4  mt-4">
