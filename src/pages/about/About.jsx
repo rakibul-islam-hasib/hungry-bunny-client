@@ -8,10 +8,15 @@ const About = () => {
         <img className='md:ml-24' src={picture} style={{ height: 600 }} alt="delivery picture" />
       </div>
       <h3 className='md:absolute top-36 text-orange-500 font-extrabold text-4xl'>Hungry Bunny</h3>
+      <div>
+        <div>
+          <p>happy customer</p>
+        </div>
+      </div>
       <div className='mt-6'>
         <h3 className='font-extrabold text-4xl'>Delivering Delightful Moments to Your Doorstep</h3>
         <p className='mt-4'>At Hungry Bunny, we are passionate about connecting you with delicious food from your favorite local restaurants, right to your doorstep. Our mission is to make your dining experience as convenient and enjoyable as possible.</p>
-        <p className='mt-4'>With a wide selection of cuisines and dishes to choose from, we cater to all tastes and preferences. Whether you&lsquo;re craving a classic comfort meal, exploring exotic flavors, or looking for healthy options, we have something for everyone.</p>
+        <p className='mt-4'>With a wide selection of cuisines and dishes to choose from, we cater to all tastes and preferences. Whether you &lsquo;re craving a classic comfort meal, exploring exotic flavors, or looking for healthy options, we have something for everyone.</p>
         <p className='mt-4'>Our platform brings together a network of trusted restaurants and culinary artisans who take pride in crafting delectable dishes using the finest ingredients. We believe in supporting local businesses and contributing to the communities we serve.</p>
       </div>
       {/* hero section delivery */}

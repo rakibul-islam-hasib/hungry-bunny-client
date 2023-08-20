@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { FaReadme } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 const Blog = () => {
@@ -18,7 +19,11 @@ const Blog = () => {
             <div className="grid md:grid-cols-2 md:gap-8 gap-3 lg:grid-cols-3 mt-10 mx-auto">
         {blogs.map((item) => (
           <div key={item._id} className='p-2 border overflow-hidden shadow-lg rounded-md'>
-            <img className="w-full rounded h-48 object-cover rounded-lg" src={item.blogImage} alt="Food Image" />
+            <img className="w-full h-48 object-cover rounded-lg" src={item.blogImage} alt="Food Image" />
+            <div className='flex justify-between mt-3'>
+            <p>{item.date}</p>
+            <p className='flex items-center'><span className='mr-2'>{item.time} min read</span><span><FaReadme></FaReadme></span> </p>
+            </div>
             <div className="px-6 py-4">
               <div className="font-bold text-xl mb-2">
                 <p>{item.blogHeading}</p>

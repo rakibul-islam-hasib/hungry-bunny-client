@@ -26,7 +26,7 @@ useEffect(() => {
               <p className='font-extrabold text-2xl'>Restaurant Name {item.restaurantName}</p>
             </div>
               <div>
-              <p className='font-bold flex'><span className='mr-2'><FaMapMarkerAlt className='text-orange-500'></FaMapMarkerAlt></span> <span>{item.place}</span></p>
+              <p className='font-bold flex'><span className='mr-2'><FaMapMarkerAlt className='text-orange-500 text-2xl'></FaMapMarkerAlt></span> <span>{item.place}</span></p>
               </div>
             <div className='flex justify-between items-center'>
             <div className='flex'>
