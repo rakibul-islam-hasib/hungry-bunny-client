@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import useAxiosFetch from "./useAxiosFetch";
+import useAxiosSecure from "./useAxiosSecure";
 
-const useUser = (email) => {
+const useUserSecure = (email) => {
+    const axios = useAxiosSecure();
     const [data, setData] = useState({});
-    const axios = useAxiosFetch();
     useEffect(() => {
         const fetchUser = async () => {
             const res = await axios.get(`/user-info/${email}`);
@@ -14,4 +14,4 @@ const useUser = (email) => {
     }, [email])
     return data;
 };
-export default useUser;
+export default useUserSecure;
