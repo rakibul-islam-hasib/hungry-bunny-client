@@ -32,7 +32,7 @@ const Register = () => {
 
 
     try {
-      const res = await dispatch(registerUser(data.email, data.password));
+      const res = dispatch(registerUser(data.email, data.password));
       if (res) {
         dispatch(updateName(data.name))
         dispatch(setUser(res.user));
