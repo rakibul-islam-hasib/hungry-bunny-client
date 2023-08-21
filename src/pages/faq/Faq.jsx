@@ -18,7 +18,7 @@ const Faq = () => {
             {
                 allQuestions.map((item) =>  <div key={item._id} className="card">
                 <Accordion activeIndex={0}>
-                    <AccordionTab className='mt-3 mb-3 text-2xl hover:bg-orange-400 p-3 rounded-lg hover:text-white hover:text-4xl' header={item.question}>
+                    <AccordionTab className='mt-3 mb-3 text-2xl hover:bg-orange-400 p-3 rounded-lg hover:text-white' header={item.question}>
                         <p className="m-0">
                             {item.answers}
                         </p>
