@@ -5,7 +5,7 @@ const About = () => {
   return (
     <div className='mx-auto justify-center items-center ml-5'>
       <div className="md:relative">
-        <img className='md:ml-24' src={picture} style={{ height: 600 }} alt="delivery picture" />
+        <img className='w-full' src={picture} style={{ height: 600 }} alt="delivery picture" />
       </div>
       <h3 className='md:absolute top-36 text-orange-500 font-extrabold text-4xl'>Hungry Bunny</h3>
       <div className='mt-6 mb-10 flex text-center'>
