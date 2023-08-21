@@ -1,19 +1,21 @@
 import { useEffect, useState } from "react";
+// import { useQuery } from "react-query";
 import useAxiosFetch from "./useAxiosFetch";
+import { useQuery } from "@tanstack/react-query";
 
 const useUser = (email) => {
-    const [data, setData] = useState({});
-    const [loading, setLoading] = useState(true);
     const axios = useAxiosFetch();
-    useEffect(() => {
-        const fetchUser = async () => {
-            const res = await axios.get(`/user-info/${email}`);
-            setData(res.data);
-            setLoading(false);
+    const { data, isLoading } = useQuery(
+        {
+            queryKey: ["user", email],
+            queryFn: async () => {
+                const res = await axios.get(`/user-info/${email}`);
+                return res.data;
+            },
+            enabled: !!email,
         }
-        fetchUser();
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [email])
-    return [data, loading];
+    );
+    return [data, isLoading];
 };
+
 export default useUser;

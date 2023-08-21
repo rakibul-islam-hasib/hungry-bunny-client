@@ -21,7 +21,7 @@ const Post = ({ post: data, refetch: postDataRefetch }) => {
     const axios = useAxiosFetch();
     const { user: firebaseUser } = useAuth();
     const [user, , userRefetch] = useUserSecure(firebaseUser?.email);
-
+    
     const handleLike = () => {
         setLoading(true);
         console.log('like', data._id);
@@ -95,7 +95,7 @@ const Post = ({ post: data, refetch: postDataRefetch }) => {
                                     <div></div>
                                 </div>
                             </div> :
-                                <span className='flex items-center'><AiTwotoneLike onClick={handleLike} className={isLiked ? 'text-3xl cursor-pointer hover:text-primary duration-300 text-primary' : 'text-3xl cursor-pointer hover:text-primary duration-300'} />
+                                <span className='flex items-center'><AiTwotoneLike onClick={handleLike} className={isLiked ? 'text-3xl cursor-pointer hover:text-primary duration-300 text-blue-700' : 'text-3xl cursor-pointer hover:text-primary duration-300'} />
                                     <h1 className='text-lg mt-1'>{data.likes}</h1></span>
                         }
                     </div>
