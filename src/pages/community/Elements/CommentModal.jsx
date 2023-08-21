@@ -1,52 +1,60 @@
-import { useState } from 'react';
-import { Dialog } from '@headlessui/react';
+import React, { useState } from 'react';
+import { Dialog, Transition } from '@headlessui/react';
 import { motion } from 'framer-motion';
+const PostModal = ({ isOpen, onClose, onSuccess, data, postId }) => {
 
-const commentsData = [
-    {
-        id: 1,
-        author: 'User1',
-        text: 'This is the first comment.',
-    },
-    {
-        id: 2,
-        author: 'User2',
-        text: 'Another interesting comment here.',
-    },
-    // Add more fake comments...
-];
+    console.log(postId === data._id ? data?.comments : '', 'data from PostModal')
 
-const CommentModal = ({ isOpen, onClose }) => {
+
+
     return (
-        <Dialog open={isOpen} onClose={onClose} className="fixed inset-0 z-10 overflow-y-auto">
-            <div className="flex items-center justify-center min-h-screen">
-                <Dialog.Overlay className="fixed inset-0 bg-black opacity-30" />
-                <motion.div
-                    initial={{ opacity: 0, y: -20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -20 }}
-                    transition={{ duration: 0.3 }}
-                    className="bg-white rounded-lg p-6 shadow-lg"
+        <Transition.Root show={isOpen} as={React.Fragment}>
+            <Dialog
+                as="div"
+                className="fixed inset-0 z-10 overflow-y-auto"
+                onClose={onClose}
+            >
+                <div
+                    className="flex items-center justify-center min-h-screen"
                 >
-                    <Dialog.Title className="text-lg font-bold mb-4">Comments</Dialog.Title>
-                    <div className="space-y-4">
-                        {commentsData.map((comment) => (
-                            <div key={comment.id} className="border p-3 rounded-lg">
-                                <p className="text-gray-600 font-semibold">{comment.author}</p>
-                                <p className="text-gray-800">{comment.text}</p>
-                            </div>
-                        ))}
-                    </div>
-                    <button
-                        onClick={onClose}
-                        className="mt-4 bg-gray-300 hover:bg-gray-400 py-2 px-4 rounded-lg"
+                    <Transition.Child
+                        as={motion.div}
+                        initial={{ opacity: 0, scale: 0.5 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        exit={{ opacity: 0, scale: 0.5, transition: { duration: 0.6 } }}
+                        className="bg-white p-8 rounded-lg md:min-w-[300px] shadow-lg"
                     >
-                        Close
-                    </button>
-                </motion.div>
-            </div>
-        </Dialog>
+                        {/* Your form components go here */}
+                        <div className="">
+
+
+                        
+
+
+
+
+
+                        </div>
+                        {/* ... other form fields ... */}
+                        <div className="flex justify-end mt-6">
+                            <button
+                                onClick={onClose}
+                                className="px-4 py-2 mr-2 bg-gray-200 text-gray-600 rounded hover:bg-gray-300"
+                            >
+                                Cancel
+                            </button>
+                            <button
+                                onClick={onSuccess}
+                                className="px-4 py-2 bg-orange-500 text-white rounded hover:bg-orange-600"
+                            >
+                                Ok Delete
+                            </button>
+                        </div>
+                    </Transition.Child>
+                </div>
+            </Dialog>
+        </Transition.Root>
     );
 };
 
-export default CommentModal;
+export default PostModal;

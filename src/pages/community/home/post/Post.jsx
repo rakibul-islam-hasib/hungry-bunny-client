@@ -24,6 +24,7 @@ const Post = ({ post: data, refetch: postDataRefetch }) => {
     const { user: firebaseUser } = useAuth();
     const [user, , userRefetch] = useUserSecure(firebaseUser?.email);
     const [isOpen, setIsOpen] = useState(false);
+    const [postId, setPostId] = useState('');
     const handleLike = () => {
         if (!user) return toast.error('Please login to like this post');
         setLoading(true);
@@ -104,7 +105,10 @@ const Post = ({ post: data, refetch: postDataRefetch }) => {
                             }
                         </div>
                         <div className="flex items-center">
-                            <HiChatAlt2 onClick={() => setIsOpen(true)} className='text-3xl cursor-pointer hover:text-primary duration-300' />
+                            <HiChatAlt2 onClick={() => {
+                                setIsOpen(true)
+                                setPostId(data._id)
+                            }} className='text-3xl cursor-pointer hover:text-primary duration-300' />
                             <h1 className='text-lg'>{data.comments.length}</h1>
                         </div>
                         <div className="">
@@ -116,7 +120,7 @@ const Post = ({ post: data, refetch: postDataRefetch }) => {
                     </div>
                 </div>
             </div>
-            <CommentModal isOpen={isOpen} onClose={() => setIsOpen(false)} />
+            <CommentModal postId={postId} data={data} isOpen={isOpen} onClose={() => setIsOpen(false)} />
         </>
     );
 };
