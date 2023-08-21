@@ -17,6 +17,7 @@ import DashboardLayout from "../layout/DashboardLayout";
 import UserProfile from "../layout/dashboard/userDashboard/UserProfile";
 
 import UserWelcome from "../pages/dashboard/user/UserWelcome";
+import MultiStepForm from "../pages/auth/MultiStepForm";
 
 export const router = createBrowserRouter([
   {
@@ -46,7 +47,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/register",
-        element: <Register />,
+        element: <MultiStepForm />,
       },
       {
         path: '/restaurant',
