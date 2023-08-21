@@ -1,21 +1,24 @@
 // import { Menu } from '@mui/material';
 import { Menu } from '@headlessui/react';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { PiDotsThreeOutlineFill } from 'react-icons/pi';
 import PostModal from '../../../../components/Modals/PostModal';
 import useAxiosSecure from '../../../../hooks/useAxiosSecure';
 import toast from 'react-hot-toast';
 import { useCommunityPost } from '../../../../hooks/data/useCommunityPost';
 import useUserSecure from '../../../../hooks/useUserSecure';
-import useUser from '../../../../hooks/useUser';
+import { useAuth } from '../../../../hooks/useAuth';
 
 const PostOptions = ({ id }) => {
     const [isOpen, setIsOpen] = useState(false);
-    const [user,] = useUserSecure();
-    console.log(user, 'user from post options')
     const [, , refetch] = useCommunityPost();
     const axios = useAxiosSecure();
+    const { user } = useAuth();
+    const [userData,] = useUserSecure(user?.email);
+    const [userPosts, setUserPosts] = useState([]);
+    console.log(userData, 'userData from PostOptions')
     const handleDelete = () => {
+
         axios.delete(`/community-post/${id}`)
             .then(res => {
                 console.log(res.data)
@@ -40,17 +43,19 @@ const PostOptions = ({ id }) => {
                     </Menu.Button>
                 </div>
                 <Menu.Items className="absolute right-0 w-40 mt-2 origin-top-right bg-white border border-gray-300 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                    <Menu.Item>
-                        {({ active }) => (
-                            <button
-                                onClick={() => setIsOpen(true)}
-                                className={`${active ? 'bg-gray-100' : ''
-                                    } group flex items-center w-full px-4 py-2 text-sm`}
-                            >
-                                Delete
-                            </button>
-                        )}
-                    </Menu.Item>
+                    {
+                        userData.posts.includes(id) && <Menu.Item>
+                            {({ active }) => (
+                                <button
+                                    onClick={() => setIsOpen(true)}
+                                    className={`${active ? 'bg-gray-100' : ''
+                                        } group flex items-center w-full px-4 py-2 text-sm`}
+                                >
+                                    Delete
+                                </button>
+                            )}
+                        </Menu.Item>
+                    }
                     <Menu.Item>
                         {({ active }) => (
                             <button

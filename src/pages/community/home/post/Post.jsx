@@ -21,7 +21,7 @@ const Post = ({ post: data, refetch: postDataRefetch }) => {
     const axios = useAxiosFetch();
     const { user: firebaseUser } = useAuth();
     const [user, , userRefetch] = useUserSecure(firebaseUser?.email);
-
+    
     const handleLike = () => {
         setLoading(true);
         console.log('like', data._id);
