@@ -34,8 +34,8 @@ const Contact = () => {
       <div className='flex justify-evenly mb-10'>
 
         <h3 className='flex  items-center text-2xl font-sans mt-5'><span className='mr-3 '><FaMobileAlt className='text-orange-500'></FaMobileAlt> </span> <span>(+880) 1880107...</span></h3>
-        <h3 className='flex  items-center text-2xl font-serif mt-5'><span className='mr-3'> </span><FaMapMarkerAlt className='text-orange-500'></FaMapMarkerAlt> <span><a href="" target='blank'> Bashundara road 120/A</a></span></h3>
-        <h3 className='flex  items-center text-2xl font-serif mt-5'><span className='mr-3'><FaRocketchat className='text-orange-500'></FaRocketchat> </span> <span><a href="" target='blank'> community</a></span></h3>
+        <h3 className='flex  items-center text-2xl font-serif mt-5'><span className='mr-3'> </span><FaMapMarkerAlt className='text-orange-500'></FaMapMarkerAlt> <span> Bashundara road 120/A</span></h3>
+        <h3 className='flex  items-center text-2xl font-serif mt-5'><span className='mr-3'><FaRocketchat className='text-orange-500'></FaRocketchat> </span> <span> community</span></h3>
       </div>
       <div className='md:flex w-full'>
 

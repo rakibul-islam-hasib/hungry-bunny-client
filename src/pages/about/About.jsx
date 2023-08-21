@@ -8,9 +8,22 @@ const About = () => {
         <img className='md:ml-24' src={picture} style={{ height: 600 }} alt="delivery picture" />
       </div>
       <h3 className='md:absolute top-36 text-orange-500 font-extrabold text-4xl'>Hungry Bunny</h3>
-      <div>
-        <div>
-          <p>happy customer</p>
+      <div className='mt-6 mb-10 flex text-center'>
+        <div className='border-2 w-[20%] rounded-2xl mr-16 border-orange-400 pr-7 pl-7 pt-4 pb-4 hover:bg-orange-500 hover:text-white '>
+          <p className='text-4xl'><span>5000</span> <span className='text-6xl'>+</span></p>
+          <p className='text-2xl'>happy customer</p>
+        </div>
+        <div className='border-2 w-[20%] rounded-2xl mr-16 border-orange-400 pr-7 pl-7 pt-4 pb-4 hover:bg-orange-500 hover:text-white '>
+          <p className='text-4xl'><span>24/7</span> <span className='text-6xl'></span></p>
+          <p className='text-2xl'>service</p>
+        </div>
+        <div className='border-2 w-[20%] rounded-2xl mr-16 border-orange-400 pr-7 pl-7 pt-4 pb-4 hover:bg-orange-500 hover:text-white '>
+          <p className='text-4xl'><span>50</span> <span className='text-6xl'>+</span></p>
+          <p className='text-2xl'>restaurant</p>
+        </div>
+        <div className='border-2 w-[20%] rounded-2xl mr-16 border-orange-400 pr-7 pl-7 pt-4 pb-4 hover:bg-orange-500 hover:text-white '>
+          <p className='text-4xl'><span>100</span> <span className='text-6xl'>+</span></p>
+          <p className='text-2xl'>delivery boy</p>
         </div>
       </div>
       <div className='mt-6'>
