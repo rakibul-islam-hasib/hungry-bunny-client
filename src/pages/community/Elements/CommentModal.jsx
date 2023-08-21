@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
 import { motion } from 'framer-motion';
-const PostModal = ({ isOpen, onClose, onSuccess, data }) => {
+const PostModal = ({ isOpen, onClose, onSuccess, data, postId }) => {
 
-    console.log(data, 'data from PostModal')
+    console.log(postId === data._id ? data?.comments : '', 'data from PostModal')
 
 
 
@@ -26,8 +26,14 @@ const PostModal = ({ isOpen, onClose, onSuccess, data }) => {
                     >
                         {/* Your form components go here */}
                         <div className="">
-                            <p className='text-2xl font-bold text-red-500'>Are you sure you want to delete this post ?</p>
-                            <p>You can not get back this post</p>
+
+
+                        
+
+
+
+
+
                         </div>
                         {/* ... other form fields ... */}
                         <div className="flex justify-end mt-6">
