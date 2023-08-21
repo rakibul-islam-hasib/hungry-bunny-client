@@ -34,12 +34,19 @@ const NewPost = () => {
             comments: [],
             likedBy: []
         }
-        axios.post('/community-post', postData)
+        axios.post('/community-post/', postData)
             .then(res => {
                 console.log(res.data);
                 if (res.data.insertedId) {
                     refetchPost();
-                    toast.success('Posted successfully');
+                    axios.put(`/community-post/${user._id}`, { postId: res.data.insertedId })
+                        .then(res => {
+                            console.log(res.data);
+                            if (res.data.modifiedCount > 0) {
+                                refetch();
+                                toast.success('Posted successfully');
+                            }
+                        })
                 }
                 // refetch();
             })

@@ -6,9 +6,13 @@ import PostModal from '../../../../components/Modals/PostModal';
 import useAxiosSecure from '../../../../hooks/useAxiosSecure';
 import toast from 'react-hot-toast';
 import { useCommunityPost } from '../../../../hooks/data/useCommunityPost';
+import useUserSecure from '../../../../hooks/useUserSecure';
+import useUser from '../../../../hooks/useUser';
 
 const PostOptions = ({ id }) => {
     const [isOpen, setIsOpen] = useState(false);
+    const [user,] = useUserSecure();
+    console.log(user, 'user from post options')
     const [, , refetch] = useCommunityPost();
     const axios = useAxiosSecure();
     const handleDelete = () => {
