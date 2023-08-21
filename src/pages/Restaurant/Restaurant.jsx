@@ -3,16 +3,17 @@ import { Link } from 'react-router-dom';
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { Rating } from '@smastrom/react-rating'
 import '@smastrom/react-rating/style.css'
+import useAxiosFetch from '../../hooks/useAxiosFetch';
 
 const Restaurant = () => {
+  const axios = useAxiosFetch([])
     const [ allRestaurants, setAllRestaurants ] = useState([])
 useEffect(() => {
-    fetch('restaurant.json')
-    .then(res => res.json())
-    .then(data => {
-        setAllRestaurants(data)
-        console.log(data);
-    })
+   axios.get('/restaurant')
+   .then(res => {
+    setAllRestaurants(res.data)
+   })
+// eslint-disable-next-line react-hooks/exhaustive-deps
 }, [])
 
     return (

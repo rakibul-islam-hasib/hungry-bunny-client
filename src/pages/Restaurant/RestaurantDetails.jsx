@@ -1,6 +1,9 @@
 import React from 'react';
+import { useLoaderData } from 'react-router-dom';
 
 function RestaurantDetails() {
+    const restaurant = useLoaderData()
+    console.log(restaurant);
 
     return (
         <div>
