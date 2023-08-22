@@ -15,8 +15,6 @@ const PostOptions = ({ id }) => {
     const axios = useAxiosSecure();
     const { user } = useAuth();
     const [userData,] = useUserSecure(user?.email);
-    const [userPosts, setUserPosts] = useState([]);
-    console.log(userData, 'userData from PostOptions')
     const handleDelete = () => {
 
         axios.delete(`/community-post/${id}`)
