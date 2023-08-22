@@ -44,7 +44,7 @@ const PostOptions = ({ id }) => {
                 </div>
                 <Menu.Items className="absolute right-0 w-40 mt-2 origin-top-right bg-white border border-gray-300 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                     {
-                        userData.posts.includes(id) && <Menu.Item>
+                        userData?.posts?.includes(id) && <Menu.Item>
                             {({ active }) => (
                                 <button
                                     onClick={() => setIsOpen(true)}
