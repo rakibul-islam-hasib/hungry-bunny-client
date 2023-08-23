@@ -91,7 +91,7 @@ console.log(userData);
 
   return (
 
-    <div className="bg-gradient-to-br from-gray-800 to-gray-600  min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-800 to-gray-600">
+    <div className="bg-gradient-to-br from-gray-500 to-gray-600  min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-800 to-gray-600">
       <form onSubmit={(e) => handleFromSubmit(e)} className="bg-gradient-to-br from-purple-600 to-blue-500  w-full md:w-2/3 lg:w-1/3 p-6 rounded-lg shadow-md transition duration-300 transform hover:scale-105">
         {step === 1 && (
           <div>
