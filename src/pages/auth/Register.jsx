@@ -27,20 +27,20 @@ const Register = () => {
       address: '',
       following: [],
       followers: [],
+      likedPost: [],
+      isVerified: false,
+      photo : 'https://i.ibb.co/5M0BDy4/No-thing.png',
     }
 
-
-
     try {
-      const res = await dispatch(registerUser(data.email, data.password));
-      if (res) {
-        dispatch(updateName(data.name))
-        dispatch(setUser(res.user));
-        if (res.user) {
-          await axios.post('/user-info', userData);
+      const userCredential = await dispatch(registerUser(data.email, data.password));
+      if (userCredential.user) {
+        await dispatch(updateName(data.name)); // Wait for the display name update
+        dispatch(setUser(userCredential.user)); // Set user in Redux store
+        if (userCredential.user) {
+          await axios.post('/user-info', userData); // Post user info to API
         }
       }
-      console.log(res);
     } catch (err) {
       console.log(err);
     }

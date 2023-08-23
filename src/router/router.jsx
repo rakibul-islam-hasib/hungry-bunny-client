@@ -14,10 +14,11 @@ import Faq from "../pages/faq/Faq";
 import Temp from "../pages/temp/Temp";
 import Blog from "../pages/blog/Blog";
 import DashboardLayout from "../layout/DashboardLayout";
-import UserProfile from "../layout/dashboard/userDashboard/UserProfile";
 
 import UserWelcome from "../pages/dashboard/user/UserWelcome";
 import MultiStepForm from "../pages/auth/MultiStepForm";
+import UserProfile from "../pages/dashboard/user/UserProfile";
+import RestaurantDetails from "../pages/Restaurant/RestaurantDetails";
 
 export const router = createBrowserRouter([
   {
@@ -52,6 +53,11 @@ export const router = createBrowserRouter([
       {
         path: '/restaurant',
         element: <Restaurant />
+      },
+      {
+        path: '/restaurant/:id',
+        element: <RestaurantDetails></RestaurantDetails>,
+        loader: ({params}) => fetch(`http://localhost:5000/restaurant/${params.id}`)
       },
       {
         path: '/menu',
