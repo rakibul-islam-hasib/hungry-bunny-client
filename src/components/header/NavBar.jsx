@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import cartImg from '../../assets/icons/cart.svg';
 import CheckoutBar from '../cart/CheckoutBar';
 import { AiOutlineBars, AiOutlineClose } from 'react-icons/ai';
-import { NavLink, useLocation } from 'react-router-dom';
+import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import './css/style.css';
 import { gsap } from 'gsap';
 import { useAuth } from '../../hooks/useAuth';
@@ -48,6 +48,7 @@ const NavBar = () => {
     const [scrollPosition, setScrollPosition] = useState(0);
     const [isFixed, setIsFixed] = useState(false);
     const location = useLocation();
+    const navigate = useNavigate();
     const [isDarkMode, setIsDarkMode] = useState(
         localStorage.getItem('isDarkMode') === 'true'
     );
@@ -129,7 +130,7 @@ const NavBar = () => {
             >
                 <nav className=" py-3 relative">
                     <div className="w-[90%] mx-auto flex justify-between items-center ">
-                        <div className="logo">
+                        <div onClick={() => navigate('/')} className="logo">
                             <div onContextMenu={e => e.preventDefault()} className="flex items-center">
                                 {isDarkMode ? <img className='' src={logo} alt="" /> : <img src={darkLogo}
                                     // className='w-[100px]'
