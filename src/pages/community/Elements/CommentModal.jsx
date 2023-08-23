@@ -29,34 +29,44 @@ const PostModal = ({ isOpen, onClose, onSuccess, data, postId }) => {
                                     <IoCloseSharp onClick={onClose} className="text-2xl text-white cursor-pointer" />
                                 </div>
                                 <div className="h-[300px] md:h-[400px] border p-4 rounded-xl comment-section overflow-y-auto">
-                                    {
+                                    {data?.comments == undefined || data?.comments === null ? (
+                                        <div className="h-full w-full text-center flex justify-center items-center">
+                                            <p className="text-center text-gray-400 animate-pulse">Loading...</p>
+                                        </div>
+                                    ) : data?.comments?.length === 0 ? (
+                                        <div className="h-full w-full text-center flex justify-center items-center">
+                                            <p className="text-center text-gray-400">No comments yet</p>
+                                        </div>
+                                    ) : (
                                         data?.comments?.map((comment, i) => (
-                                            <div key={i} className="flex items-center justify-between mb-4">
+                                            <div key={i} className="flex border px-2 py-1 rounded-md items-start justify-between mb-4">
                                                 <div className="flex items-center">
-                                                    <img src={comment?.user?.photo} alt="" className='w-8 h-8 rounded-full' />
+                                                    <img src={comment?.user?.photo} alt="" className="w-8 h-8 rounded-full" />
                                                     <div className="ml-2">
-                                                        <p className='font-bold'>{comment?.user?.name}</p>
-                                                        <p>{comment?.comment}</p>
+                                                        <p className="font-bold">{comment?.user?.name}</p>
+                                                        <p className="text-sm text-gray-600">{comment?.comment}</p>
                                                     </div>
                                                 </div>
                                                 <div className="flex items-center gap-2">
-                                                    <p className='text-xs text-gray-400'>{comment?.createdAt}</p>
-                                                    <p className='text-xs text-gray-400'>Reply</p>
+                                                    <p className="text-xs text-gray-400">{comment?.createdAt}</p>
+                                                    <button className="text-xs text-gray-400 hover:text-gray-600 focus:outline-none">
+                                                        Reply
+                                                    </button>
                                                 </div>
                                             </div>
                                         ))
-                                    }
+                                    )}
                                 </div>
                                 <div className="mt-4 flex items-center">
                                     <input
                                         type="text"
                                         placeholder="Add a comment..."
-                                        className="flex-grow px-4 py-2 rounded-l-xl border focus:outline-none focus:ring focus:border-blue-300 comment-input"
+                                        className="flex-grow px-4 py-2 rounded-l-xl border focus:outline-none  comment-input"
                                         value={comment}
                                         onChange={(e) => setComment(e.target.value)}
                                     />
                                     <button
-                                        className="bg-blue-500 text-white px-4 py-2 rounded-r-xl flex items-center justify-center hover:bg-blue-600 comment-submit"
+                                        className="bg-primary text-white px-4 py-[10px] rounded-r-xl flex items-center justify-center  comment-submit"
                                         onClick={() => {
                                             // Handle comment submission logic here
                                             // You can add the comment to the data.comments array
