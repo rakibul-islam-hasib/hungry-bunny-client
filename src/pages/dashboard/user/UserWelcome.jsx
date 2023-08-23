@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaBook, FaCartPlus, FaWallet  } from 'react-icons/fa';
-import { FcCollaboration } from 'react-icons/fc';
+import { FcCollaboration, FcMenu } from 'react-icons/fc';
 
 const UserWelcome = () => {
     return (
@@ -9,11 +9,11 @@ const UserWelcome = () => {
 <div className='md:flex md:w-[100%] justify-between mr-9 mb-7 mt-10 md:space-x-10 sm:mb-5'>
 <div className='text-center bg-gradient-to-r from-cyan-500 to-blue-500 pt-8 pb-8 pr-20 pl-20 rounded-2xl text-white'>
   <p className='text-6xl'>number</p>
-  <p className='text-4xl font-bold'><span>icon</span> <span>MENU</span></p>
+  <p className='text-4xl font-bold flex text-white'><span><FcMenu/> </span> <span>MENU</span></p>
 </div>
 <div className='text-center bg-gradient-to-r from-pink-500 to-purple-500 pt-8 pb-8 pr-20 pl-20 rounded-2xl text-white'>
   <p className='text-6xl'>number</p>
-  <p className='text-4xl font-bold'><span>icon</span> <span>DELIVERY</span></p>
+  <p className='text-4xl font-bold'><span> </span> <span>DELIVERY</span></p>
 </div>
 <div className='text-center bg-gradient-to-r from-red-400 to-pink-500 pt-8 pb-8 pr-20 pl-20 rounded-2xl text-white'>
   <p className='text-6xl'>number</p>
