@@ -154,21 +154,21 @@ function RestaurantDetails() {
       </div>
       <div className='w-[25%]'>
 
-      <div className='ml-8 mt-10 p-5 bg-orange-100'>
+      <div className='ml-8 mt-10 p-2 bg-orange-100 rounded-2xl'>
         <h2 className='text-center text-4xl font-extrabold mb-5'>Popular Dish Item</h2>
-        <p className='font-semibold mb-5 flex bg-white rounded-2xl hover:bg-orange-500 text-slate-800 hover:text-white p-3 justify-between ml-4 items-center mt-2 text-2xl'><span> {restaurant.popularDish[0].dishName}</span><span><FaArrowRight/></span></p>
-        <p className='font-semibold mb-5 flex bg-white rounded-2xl hover:bg-orange-500 text-slate-800 hover:text-white p-3 justify-between ml-4 items-center mt-2 text-2xl'><span>{restaurant.popularDish[1].dishName}</span> <span><FaArrowRight/></span></p>
-        <p className='font-semibold mb-5 flex bg-white rounded-2xl hover:bg-orange-500 text-slate-800 hover:text-white p-3 justify-between ml-4 items-center mt-2 text-2xl'><span>{restaurant.popularDish[2].dishName}</span> <span><FaArrowRight/></span></p>
-        <p className='font-semibold mb-5 flex bg-white rounded-2xl hover:bg-orange-500 text-slate-800 hover:text-white p-3 justify-between ml-4 items-center mt-2 text-2xl'><span>{restaurant.popularDish[3].dishName}</span> <span><FaArrowRight/></span></p>
-        <p className='font-semibold mb-5 flex bg-white rounded-2xl hover:bg-orange-500 text-slate-800 hover:text-white p-3 justify-between ml-4 items-center mt-2 text-2xl'><span>{restaurant.popularDish[4].dishName}</span> <span><FaArrowRight/></span></p>
+        <p className='font-semibold mb-5 flex bg-white rounded-2xl hover:bg-orange-500 text-slate-800 hover:text-white p-1 justify-between ml-1 items-center mt-2 text-2xl'><span> {restaurant.popularDish[0].dishName}</span><span><FaArrowRight/></span></p>
+        <p className='font-semibold mb-5 flex bg-white rounded-2xl hover:bg-orange-500 text-slate-800 hover:text-white p-1 justify-between ml-1 items-center mt-2 text-2xl'><span>{restaurant.popularDish[1].dishName}</span> <span><FaArrowRight/></span></p>
+        <p className='font-semibold mb-5 flex bg-white rounded-2xl hover:bg-orange-500 text-slate-800 hover:text-white p-1 justify-between ml-1 items-center mt-2 text-2xl'><span>{restaurant.popularDish[2].dishName}</span> <span><FaArrowRight/></span></p>
+        <p className='font-semibold mb-5 flex bg-white rounded-2xl hover:bg-orange-500 text-slate-800 hover:text-white p-1 justify-between ml-1 items-center mt-2 text-2xl'><span>{restaurant.popularDish[3].dishName}</span> <span><FaArrowRight/></span></p>
+        <p className='font-semibold mb-5 flex bg-white rounded-2xl hover:bg-orange-500 text-slate-800 hover:text-white p-1 justify-between ml-1 items-center mt-2 text-2xl'><span>{restaurant.popularDish[4].dishName}</span> <span><FaArrowRight/></span></p>
      
       </div>
-      <div className='mt-20 rounded-xl border-4 border-orange-400 pl-7 pr-7 pt-10 pb-10 ml-7'>
+      <div className='mt-20 rounded-xl border-4 border-orange-400 pl-4 pr-4 pt-10 pb-10 ml-7'>
         <h2 className='mb-6 text-center uppercase font-bold text-4xl'>contact & service</h2>
        <p className='text-2xl'>Email</p>
-        <p className='flex mb-5 items-center justify-between p-2 bg-white rounded-2xl hover:bg-orange-500 text-slate-800 hover:text-white text-2xl'><span className='flex items-center'><FaMailBulk/> {restaurant.email}</span> <span><FaArrowRight/> </span></p>
+        <p className='flex mb-5 items-center justify-between p-1 bg-white rounded-2xl hover:bg-orange-500 text-slate-800 hover:text-white text-2xl'><span className='flex items-center'><FaMailBulk/> {restaurant.email}</span> <span><FaArrowRight/> </span></p>
        <p className='text-2xl'>Service</p>
-        <p className='flex items-center justify-between p-2 bg-white rounded-2xl hover:bg-orange-500 text-slate-800 hover:text-white text-2xl'><span className='flex items-center'><FaUserAstronaut/> {restaurant.service}</span> <span><FaArrowRight/> </span></p>
+        <p className='flex items-center justify-between p-1 bg-white rounded-2xl hover:bg-orange-500 text-slate-800 hover:text-white text-2xl'><span className='flex items-center'><FaUserAstronaut/> {restaurant.service}</span> <span><FaArrowRight/> </span></p>
       </div>
       </div>
 
