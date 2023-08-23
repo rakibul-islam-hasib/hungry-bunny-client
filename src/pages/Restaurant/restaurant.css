@@ -1,4 +1,4 @@
-.loader {
+.restaurant-loader {
     --dim: 3rem;
     width: var(--dim);
     height: var(--dim);
@@ -6,7 +6,7 @@
     animation: spin988 2s linear infinite;
   }
   
-  .loader .circle {
+  .restaurant-loader .circle {
     --color: #333;
     --dim: 1.2rem;
     width: var(--dim);
@@ -16,22 +16,22 @@
     position: absolute;
   }
   
-  .loader .circle:nth-child(1) {
+  .restaurant-loader .circle:nth-child(1) {
     top: 0;
     left: 0;
   }
   
-  .loader .circle:nth-child(2) {
+  .restaurant-loader .circle:nth-child(2) {
     top: 0;
     right: 0;
   }
   
-  .loader .circle:nth-child(3) {
+  .restaurant-loader .circle:nth-child(3) {
     bottom: 0;
     left: 0;
   }
   
-  .loader .circle:nth-child(4) {
+  .restaurant-loader .circle:nth-child(4) {
     bottom: 0;
     right: 0;
   }

@@ -21,7 +21,7 @@ useEffect(() => {
    .finally(() => setLoading(false))
 // eslint-disable-next-line react-hooks/exhaustive-deps
 }, [])
-  if(loading) return <div className ="loader mx-auto">
+  if(loading) return <div className ="restaurant-loader mx-auto">
   <div className ="circle"></div>
   <div className ="circle"></div>
   <div className ="circle"></div>
