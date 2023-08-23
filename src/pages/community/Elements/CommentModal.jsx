@@ -10,7 +10,15 @@ import { useAuth } from '../../../hooks/useAuth';
 const PostModal = ({ isOpen, onClose, onSuccess, data: PostData, postId }) => {
     const [comment, setComment] = useState('');
     const { user } = useAuth();
-    const [data, isLoading, refetch] = useUserSecure();
+    const [data, isLoading, refetch] = useUserSecure(user?.email);
+    console.log(data, 'data from comment modal')
+
+
+    const handleComment = () => {
+        console.log('comment', comment);
+     };
+
+
     return (
         <Transition.Root show={isOpen} as={React.Fragment}>
             <Dialog
@@ -29,7 +37,7 @@ const PostModal = ({ isOpen, onClose, onSuccess, data: PostData, postId }) => {
                         <FocusTrap>
                             <button tabIndex={0} style={{ position: 'absolute', left: '-9999px' }}></button>
                             <div className="relative">
-                                <div className="absolute -right-6 -top-6 p-2 bg-red-500 rounded-xl ">
+                                <div className="absolute -right-6 -top-6 p-2 bg-red-500 dark:bg-blue-600 rounded-xl ">
                                     <IoCloseSharp onClick={onClose} className="text-2xl text-white cursor-pointer" />
                                 </div>
                                 <div className="h-[300px] md:h-[400px] border p-4 rounded-xl comment-section overflow-y-auto">
@@ -91,11 +99,7 @@ const PostModal = ({ isOpen, onClose, onSuccess, data: PostData, postId }) => {
                                     />
                                     <button
                                         className="bg-primary text-white px-4 py-[10px] rounded-r-xl flex items-center justify-center  comment-submit"
-                                        onClick={() => {
-                                            // Handle comment submission logic here
-                                            // You can add the comment to the data.comments array
-                                            // and clear the input field by resetting the 'comment' state
-                                        }}
+                                        onClick={handleComment}
                                     >
                                         <IoSend className="text-xl" />
                                     </button>
