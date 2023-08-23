@@ -8,8 +8,6 @@ import { registerUser, updateName } from "../../redux/slices/authThunks";
 import { setUser } from "../../redux/slices/authSlice";
 import useAxiosFetch from "../../hooks/useAxiosFetch";
 
-
-
 const MultiStepForm = () => {
 
 
