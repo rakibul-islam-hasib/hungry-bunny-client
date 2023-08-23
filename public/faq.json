@@ -1,0 +1,52 @@
+[
+    {
+        "_id": 1,
+        "question": "What is Hungry Bunny?",
+        "answers": "Hungry Bunny is a popular food delivery platform operated by Uber Technologies. It allows users to order food from various restaurants in their area through a mobile app or website and have it delivered to their doorstep."
+    },
+    {
+        "_id": 2,
+        "question": "How do I order food on DoorDash?",
+        "answers": "To order food on DoorDash, you can visit their website or use their mobile app. Simply enter your location, browse through the available restaurants, choose your desired dishes, add them to your cart, and proceed to checkout. You can then track the delivery and receive your food at your chosen location."
+    },
+    {
+        "_id": 3,
+        "question": "What types of cuisines can I order on Grubhub?",
+        "answers": "Grubhub offers a wide range of cuisines to choose from, including American, Italian, Asian, Mexican, Indian, and more. You can explore various restaurants in your area and find options that suit your taste preferences."
+    },
+    {
+        "_id": 4,
+        "question": "How does Postmates work?",
+        "answers": "Postmates is an on-demand delivery service that can deliver not only food but also a variety of other items like groceries, alcohol, and more. You can order through their app, select the items you want, and a Postmates courier will pick up and deliver your order to your specified location."
+    },
+    {
+        "_id": 5,
+        "question": "Is there a subscription service for food delivery on Amazon Fresh?",
+        "answers": "Yes, Amazon Fresh offers a subscription service called Amazon Fresh that provides unlimited grocery and food delivery for a monthly fee. This service is available to Amazon Prime members in select locations."
+    },
+    {
+        "_id": 6,
+        "question": "Can I schedule food deliveries on Instacart?",
+        "answers": "Instacart primarily focuses on grocery delivery, but some participating stores might offer prepared food options. While you can't directly schedule restaurant food deliveries through Instacart, you can schedule grocery deliveries to have ingredients delivered to your doorstep for cooking at home."
+    },
+    {
+        "_id": 7,
+        "question": "How does Grubhub's Perks program work?",
+        "answers": "Grubhub's Perks program offers rewards and discounts to regular users. As you use the platform to order food, you may earn points or unlock special deals. These rewards can be redeemed for discounts on future orders or other benefits, depending on the specific program details."
+    },
+    {
+        "_id": 8,
+        "question": "Does Uber Eats offer contactless delivery?",
+        "answers": "Yes, Uber Eats provides the option for contactless delivery. Customers can request that their orders be left at their doorstep or another designated location, minimizing physical contact between the delivery driver and the customer."
+    },
+    {
+        "_id": 9,
+        "question": "How can I track my delivery on DoorDash?",
+        "answers": "Once you've placed an order on DoorDash, you can track the status of your delivery in real-time through their app or website. You'll receive updates about when the restaurant prepares your food, when the driver picks up your order, and when it's on its way to your location."
+    },
+    {
+        "_id": 10,
+        "question": "Are there any delivery fees associated with using Postmates?",
+        "answers": "Yes, Postmates typically charges a delivery fee for each order, which can vary based on factors like distance and demand. Additionally, there might be additional charges during peak times or for smaller orders. Some merchants may also have a service fee."
+    }
+]
