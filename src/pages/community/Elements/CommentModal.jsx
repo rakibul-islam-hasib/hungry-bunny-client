@@ -4,10 +4,13 @@ import { motion } from 'framer-motion';
 import { IoCloseSharp, IoSend } from 'react-icons/io5';
 import './css/Style.css';
 import { Tooltip } from '@mui/material';
+import useUserSecure from '../../../hooks/useUserSecure';
+import { useAuth } from '../../../hooks/useAuth';
 
-const PostModal = ({ isOpen, onClose, onSuccess, data, postId }) => {
+const PostModal = ({ isOpen, onClose, onSuccess, data: PostData, postId }) => {
     const [comment, setComment] = useState('');
-
+    const { user } = useAuth();
+    const [data, isLoading, refetch] = useUserSecure();
     return (
         <Transition.Root show={isOpen} as={React.Fragment}>
             <Dialog
@@ -30,16 +33,16 @@ const PostModal = ({ isOpen, onClose, onSuccess, data, postId }) => {
                                     <IoCloseSharp onClick={onClose} className="text-2xl text-white cursor-pointer" />
                                 </div>
                                 <div className="h-[300px] md:h-[400px] border p-4 rounded-xl comment-section overflow-y-auto">
-                                    {data?.comments == undefined || data?.comments === null ? (
+                                    {PostData?.comments == undefined || PostData?.comments === null ? (
                                         <div className="h-full w-full text-center flex justify-center items-center">
                                             <p className="text-center text-gray-400 animate-pulse">Loading...</p>
                                         </div>
-                                    ) : data?.comments?.length === 0 ? (
+                                    ) : PostData?.comments?.length === 0 ? (
                                         <div className="h-full w-full text-center flex justify-center items-center">
                                             <p className="text-center text-gray-400">No comments yet</p>
                                         </div>
                                     ) : (
-                                        data?.comments?.map((comment, i) => (
+                                        PostData?.comments?.map((comment, i) => (
                                             <div key={i} className="flex border px-2 py-1 rounded-md items-start justify-between mb-4">
                                                 <div className="flex items-center">
                                                     <img src={comment?.user?.photo} alt="" className="w-9 h-9 rounded-full" />
@@ -48,7 +51,7 @@ const PostModal = ({ isOpen, onClose, onSuccess, data, postId }) => {
                                                             <div>{comment?.user?.name}</div>
                                                             <div>
                                                                 {
-                                                                    data.user.isVerified && <Tooltip arrow title='This user is verified by Hungry Bunny' placement='top'>
+                                                                    PostData.user.isVerified && <Tooltip arrow title='This user is verified by Hungry Bunny' placement='top'>
                                                                         <div
                                                                             className='w-[15px] h-[15px] inline-block ml-1'
                                                                         // src={verified}
