@@ -50,7 +50,7 @@ function RestaurantDetails() {
 
     {/* food restaurant card */}
 <div className="md:flex">
-<div className="grid md:grid-cols-1 md:gap-8 gap-3 lg:grid-cols-2 mt-10 w-[65%]">
+<div className="grid md:grid-cols-2 md:gap-8 gap-3 lg:grid-cols-3 mt-10 w-[75%]">
           <div className='p-2 border overflow-hidden shadow-lg rounded-md'>
           <img className="w-full  h-48 object-cover rounded-lg" src={restaurant.foodItems[0].foodImage} alt="Food Image" />
           <div className="px-6 py-4">
@@ -152,7 +152,7 @@ function RestaurantDetails() {
           </div>
         </div>
       </div>
-      <div className='w-[35%]'>
+      <div className='w-[25%]'>
 
       <div className='ml-8 mt-10 p-5 bg-orange-100'>
         <h2 className='text-center text-4xl font-extrabold mb-5'>Popular Dish Item</h2>
