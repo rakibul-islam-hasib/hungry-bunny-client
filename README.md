@@ -34,15 +34,15 @@
 #### react-lottie > [lottie-files](https://lottiefiles.com/)
 #### react-icons > [react-icons](https://www.npmjs.com/package/react-icons)
 #### time ago.js > [time-ago.js](https://www.npmjs.com/package/javascript-time-ago)
-#### react-hot-toast > [https://react-hot-toast.com/]
-#### moment.js > [https://momentjs.com/]
+#### react-hot-toast > [react-hot-toast](https://react-hot-toast.com/)
+#### moment.js > [moment.js](https://momentjs.com/)
 
 <!--  -->
 
 ## server Site Use Technology.
-#### express.js > [https://expressjs.com]
-#### cors > [https://www.npmjs.com/package/cors]
-#### dotenv > [https://www.npmjs.com/package/dotenv]
-#### json web token > [https://jwt.io]
+#### express.js > [express.js](https://expressjs.com)
+#### cors > [cors](https://www.npmjs.com/package/cors)
+#### dotenv > [dotenv](https://www.npmjs.com/package/dotenv)
+#### json web token > [jwt-token](https://jwt.io)
 
-## Database use mongodb > [https://www.mongodb.com]
+## Database use mongodb > [mongodb.com](https://www.mongodb.com)
