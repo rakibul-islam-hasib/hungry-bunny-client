@@ -13,15 +13,15 @@
 
 ## CLient Site Use Technology.  
 ## Live site Link > [hungry-bunny](https://hungry-bunny-web.web.app)
-## hosted  netlify > [https://app.netlify.com]
-#### React vite > [https://vitejs.dev/guide]
-#### Firebase > [https://firebase.google.com]
-#### React Router > [https://reactrouter.com/en/main]
-#### React Router > [https://reactrouter.com/en/main]
-#### React query > [https://tanstack.com/query/v3/]
-#### React redux and redux toolkit > [https://redux.js.org/introduction/installation]
-#### headlessui > [https://headlessui.com/]
-#### emotion react > [https://emotion.sh/docs/introduction]
+## hosted  netlify > [netlify.com](https://app.netlify.com)
+#### React vite > [vite](https://vitejs.dev/guide)
+#### Firebase > [firebase.com](https://firebase.google.com)
+#### React Router > [react-router](https://reactrouter.com/en/main)
+#### Match sorter > [match-sorter](https://www.npmjs.com/package/match-sorter)
+#### React query > [tanStack-query](https://tanstack.com/query/v3/)
+#### React redux and redux toolkit > [redux-toolkit](https://redux.js.org/introduction/installation)
+#### headless ui > [headless-ui](https://headlessui.com/)
+#### emotion react > [emotion-react](https://emotion.sh/docs/introduction)
 #### framer motion > [https://www.framer.com/motion/]
 #### axios > [https://axios-http.com/docs/intro]
 #### tailwind css > [https://tailwindcss.com/]
