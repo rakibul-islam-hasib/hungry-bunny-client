@@ -22,18 +22,18 @@
 #### React redux and redux toolkit > [redux-toolkit](https://redux.js.org/introduction/installation)
 #### headless ui > [headless-ui](https://headlessui.com/)
 #### emotion react > [emotion-react](https://emotion.sh/docs/introduction)
-#### framer motion > [https://www.framer.com/motion/]
-#### axios > [https://axios-http.com/docs/intro]
-#### tailwind css > [https://tailwindcss.com/]
-#### Material UI > [https://mui.com/]
-#### Prime React > [https://primereact.org/]
-#### javascript time ago > [https://www.npmjs.com/package/javascript-time-ago]
-#### swiper.js  > [https://swiperjs.com/] 
-#### sweetalert2 > [https://www.npmjs.com/package/sweetalert2-react]
-#### react-useanimations > [https://react.useanimations.com/]
-#### react-lottie > [https://lottiefiles.com/]
-#### react-icons > [https://www.npmjs.com/package/react-icons]
-#### timeago.js > [https://www.npmjs.com/package/javascript-time-ago]
+#### framer motion > [framer-motion](https://www.framer.com/motion/)
+#### axios > [axios](https://axios-http.com/docs/intro)
+#### tailwind css > [tailwind css.com](https://tailwindcss.com/)
+#### Material UI > [material ui](https://mui.com/)
+#### Prime React > [prime-react](https://primereact.org/)
+#### javascript time ago > [javaScript-time-ago](https://www.npmjs.com/package/javascript-time-ago)
+#### sWiper.js  > [sWiper.js](https://swiperjs.com/)
+#### sweet alert2 > [sweet-alert2](https://www.npmjs.com/package/sweetalert2-react)
+#### react-use animations > [use-animations](https://react.useanimations.com/)
+#### react-lottie > [lottie-files](https://lottiefiles.com/)
+#### react-icons > [react-icons](https://www.npmjs.com/package/react-icons)
+#### time ago.js > [time-ago.js](https://www.npmjs.com/package/javascript-time-ago)
 #### react-hot-toast > [https://react-hot-toast.com/]
 #### moment.js > [https://momentjs.com/]
 
