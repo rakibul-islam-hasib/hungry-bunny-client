@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Dialog, Transition, FocusTrap } from '@headlessui/react';
 import { motion } from 'framer-motion';
 import { IoCloseSharp, IoSend } from 'react-icons/io5';
@@ -7,19 +7,26 @@ import { Tooltip } from '@mui/material';
 import useUserSecure from '../../../hooks/useUserSecure';
 import { useAuth } from '../../../hooks/useAuth';
 import useAxiosSecure from '../../../hooks/useAxiosSecure';
+import { useQuery } from '@tanstack/react-query';
 
-const PostModal = ({ isOpen, onClose, onSuccess, data: PostData, postId }) => {
+const PostModal = ({ isOpen, onClose, onSuccess, data: PostData, postId, refetchPost }) => {
     const [comment, setComment] = useState('');
     const { user } = useAuth();
     const axios = useAxiosSecure();
-    const [data, isLoading, refetch] = useUserSecure(user?.email);
-    // console.log(data, 'data from comment modal')
+    const [data, isLoading, userRefetch] = useUserSecure(user?.email);
 
+    // console.log(data, 'data from comment modal')
+    const { data: postComments, refetch: commentRefetch } = useQuery({
+        queryKey: ['comments', postId],
+        queryFn: async () => {
+            const res = await axios.get(`/community-post/comment/${postId}`);
+            return res.data;
+        },
+        enabled: !!postId && !!isOpen,
+    })
 
     const handleComment = () => {
-        if (comment === '') return;
-        if (user == null) return;
-        if (isLoading) return;
+        if (comment === '' || user == null || isLoading) return;
         const commentData = {
             comment: comment,
             commented: new Date(),
@@ -32,10 +39,13 @@ const PostModal = ({ isOpen, onClose, onSuccess, data: PostData, postId }) => {
         };
         axios.put(`/community-post/comment/${postId}`, commentData)
             .then(res => {
-                console.log(res, 'res from comment modal')
-                setComment('');
-                refetch();
-
+                console.log(res.data, 'res from comment modal')
+                if (res.data.modifiedCount > 0) {
+                    setComment('');
+                    userRefetch();
+                    commentRefetch();
+                    refetchPost();
+                }
             })
             .catch(err => console.log(err))
     };
@@ -72,7 +82,7 @@ const PostModal = ({ isOpen, onClose, onSuccess, data: PostData, postId }) => {
                                             <p className="text-center text-gray-400">No comments yet</p>
                                         </div>
                                     ) : (
-                                        PostData?.comments?.map((comment, i) => (
+                                        postComments?.map((comment, i) => (
                                             <div key={i} className="flex border px-2 py-1 rounded-md items-start justify-between mb-4">
                                                 <div className="flex items-center">
                                                     <img src={comment?.user?.photo} alt="" className="w-9 h-9 rounded-full" />
