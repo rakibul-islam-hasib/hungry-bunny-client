@@ -8,8 +8,15 @@ import useUserSecure from '../../../hooks/useUserSecure';
 import { useAuth } from '../../../hooks/useAuth';
 import useAxiosSecure from '../../../hooks/useAxiosSecure';
 import { useQuery } from '@tanstack/react-query';
+import TimeAgo from 'javascript-time-ago';
+import en from 'javascript-time-ago/locale/en';
+import { toast } from 'react-hot-toast';
+import { RiDeleteBin5Line } from 'react-icons/ri';
+import moment from 'moment';
 
 const PostModal = ({ isOpen, onClose, onSuccess, data: PostData, postId, refetchPost }) => {
+    TimeAgo.addLocale(en)
+    const timeAgo = new TimeAgo('en-US')
     const [comment, setComment] = useState('');
     const { user } = useAuth();
     const axios = useAxiosSecure();
@@ -88,7 +95,15 @@ const PostModal = ({ isOpen, onClose, onSuccess, data: PostData, postId, refetch
                                                     <img src={comment?.user?.photo} alt="" className="w-9 h-9 rounded-full" />
                                                     <div className="ml-2">
                                                         <div className="font-bold flex items-center text-base">
-                                                            <div>{comment?.user?.name}</div>
+                                                            <div
+                                                                className="flex items-center gap-1"
+                                                            >{comment?.user?.name}
+                                                                <Tooltip title={moment(comment?.commented).format('MMM Do YY')}>
+                                                                    <p className="text-xs text-gray-400">{
+                                                                        timeAgo.format(new Date(comment?.commented), 'mini')
+                                                                    }</p>
+                                                                </Tooltip>
+                                                            </div>
                                                             <div>
                                                                 {
                                                                     comment?.user?.isVerified && <Tooltip arrow title='This user is verified by Hungry Bunny' placement='top'>
@@ -112,10 +127,17 @@ const PostModal = ({ isOpen, onClose, onSuccess, data: PostData, postId, refetch
                                                     </div>
                                                 </div>
                                                 <div className="flex items-center gap-2">
-                                                    <p className="text-xs text-gray-400">{comment?.createdAt}</p>
-                                                    <button className="text-xs text-gray-400 hover:text-gray-600 focus:outline-none">
-                                                        Reply
-                                                    </button>
+
+                                                    <div className="">
+                                                        <button
+                                                            onClick={() => { toast.error('Reply feature is not available yet') }}
+                                                            className="text-xs text-gray-400 hover:text-gray-600 focus:outline-none">
+                                                            Reply
+                                                        </button>
+                                                        <div className="">
+                                                            <RiDeleteBin5Line className="text-xl text-red-500 hover:text-gray-600 cursor-pointer" />
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         ))
