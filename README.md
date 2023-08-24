@@ -10,3 +10,24 @@
 #### Faq page:- User can see all raq. questions and answers.
 #### Blog page:- User can see all blogs. Image, author name, reading time, publish date and blog headline.
 #### User Dashboard page:- User can manage his/her profile.  
+
+## CLient Site Use Technology.
+#### React vite > [https://vitejs.dev/guide]
+#### Firebase > [https://firebase.google.com]
+#### React Router > [https://reactrouter.com/en/main]
+#### React Router > [https://reactrouter.com/en/main]
+#### React query > [https://tanstack.com/query/v3/]
+#### React redux and redux toolkit > [https://redux.js.org/introduction/installation]
+#### headlessui > [https://headlessui.com/]
+#### emotion react > [https://emotion.sh/docs/introduction]
+#### framer motion > [https://www.framer.com/motion/]
+#### axios > [https://axios-http.com/docs/intro]
+#### Material UI > [https://mui.com/]
+#### Prime React > [https://primereact.org/]
+#### javascript time ago > [https://www.npmjs.com/package/javascript-time-ago]
+<!--  -->
+#### sweetalert2 > [https://www.npmjs.com/package/javascript-time-ago]
+#### swiper.js  > [https://www.npmjs.com/package/javascript-time-ago]
+
+#### react-useanimations > [https://www.npmjs.com/package/javascript-time-ago]
+#### react-lottie > [https://www.npmjs.com/package/javascript-time-ago]
