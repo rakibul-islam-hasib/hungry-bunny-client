@@ -12,6 +12,8 @@
 #### User Dashboard page:- User can manage his/her profile.  
 
 ## CLient Site Use Technology.
+## Live site Link > [https://hungry-bunny-web.web.app]
+## hosted  netlify > [https://app.netlify.com]
 #### React vite > [https://vitejs.dev/guide]
 #### Firebase > [https://firebase.google.com]
 #### React Router > [https://reactrouter.com/en/main]
@@ -33,6 +35,14 @@
 #### react-icons > [https://www.npmjs.com/package/react-icons]
 #### timeago.js > [https://www.npmjs.com/package/javascript-time-ago]
 #### react-hot-toast > [https://react-hot-toast.com/]
+#### moment.js > [https://momentjs.com/]
+
 <!--  -->
 
-#### moment.js > [https://momentjs.com/]
+## server Site Use Technology.
+#### express.js > [https://expressjs.com]
+#### cors > [https://www.npmjs.com/package/cors]
+#### dotenv > [https://www.npmjs.com/package/dotenv]
+#### json web token > [https://jwt.io]
+
+## Database use mongodb > [https://www.mongodb.com]
