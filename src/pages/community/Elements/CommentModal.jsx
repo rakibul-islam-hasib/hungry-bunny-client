@@ -49,7 +49,7 @@ const PostModal = ({ isOpen, onClose, onSuccess, data: PostData, postId, refetch
             })
             .catch(err => console.log(err))
     };
-
+    console.log(postComments, 'post comments from comment modal')
 
     return (
         <Transition.Root show={isOpen} as={React.Fragment}>
@@ -91,7 +91,7 @@ const PostModal = ({ isOpen, onClose, onSuccess, data: PostData, postId, refetch
                                                             <div>{comment?.user?.name}</div>
                                                             <div>
                                                                 {
-                                                                    PostData.user.isVerified && <Tooltip arrow title='This user is verified by Hungry Bunny' placement='top'>
+                                                                    comment?.user?.isVerified && <Tooltip arrow title='This user is verified by Hungry Bunny' placement='top'>
                                                                         <div
                                                                             className='w-[15px] h-[15px] inline-block ml-1'
                                                                         // src={verified}
