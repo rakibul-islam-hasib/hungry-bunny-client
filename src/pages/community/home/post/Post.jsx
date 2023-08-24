@@ -7,9 +7,9 @@ import Tooltip from '@mui/material/Tooltip';
 import useAxiosFetch from '../../../../hooks/useAxiosFetch';
 import useUserSecure from '../../../../hooks/useUserSecure';
 import { useAuth } from '../../../../hooks/useAuth';
-import TimeAgo from 'javascript-time-ago'
-import en from 'javascript-time-ago/locale/en'
-import '../../css/Post.css'
+import TimeAgo from 'javascript-time-ago';
+import en from 'javascript-time-ago/locale/en';
+import '../../css/Post.css';
 import PostOptions from './PostOptions';
 import { IoCloseSharp } from 'react-icons/io5';
 import { toast } from 'react-hot-toast';
