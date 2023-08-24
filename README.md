@@ -11,8 +11,8 @@
 #### Blog page:- User can see all blogs. Image, author name, reading time, publish date and blog headline.
 #### User Dashboard page:- User can manage his/her profile.  
 
-## CLient Site Use Technology.
-## Live site Link > [https://hungry-bunny-web.web.app]
+## CLient Site Use Technology.  
+## Live site Link > [hungry-bunny](https://hungry-bunny-web.web.app)
 ## hosted  netlify > [https://app.netlify.com]
 #### React vite > [https://vitejs.dev/guide]
 #### Firebase > [https://firebase.google.com]
