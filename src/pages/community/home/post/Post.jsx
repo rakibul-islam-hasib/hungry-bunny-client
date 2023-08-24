@@ -120,7 +120,7 @@ const Post = ({ post: data, refetch: postDataRefetch }) => {
                     </div>
                 </div>
             </div>
-            <CommentModal postId={postId} data={data} isOpen={isOpen} onClose={() => setIsOpen(false)} />
+            <CommentModal refetchPost={postDataRefetch} postId={postId} data={data} isOpen={isOpen} onClose={() => setIsOpen(false)} />
         </>
     );
 };

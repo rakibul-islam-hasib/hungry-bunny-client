@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Dialog, Transition, FocusTrap } from '@headlessui/react';
 import { motion } from 'framer-motion';
 import { IoCloseSharp, IoSend } from 'react-icons/io5';
@@ -6,18 +6,50 @@ import './css/Style.css';
 import { Tooltip } from '@mui/material';
 import useUserSecure from '../../../hooks/useUserSecure';
 import { useAuth } from '../../../hooks/useAuth';
+import useAxiosSecure from '../../../hooks/useAxiosSecure';
+import { useQuery } from '@tanstack/react-query';
 
-const PostModal = ({ isOpen, onClose, onSuccess, data: PostData, postId }) => {
+const PostModal = ({ isOpen, onClose, onSuccess, data: PostData, postId, refetchPost }) => {
     const [comment, setComment] = useState('');
     const { user } = useAuth();
-    const [data, isLoading, refetch] = useUserSecure(user?.email);
-    console.log(data, 'data from comment modal')
+    const axios = useAxiosSecure();
+    const [data, isLoading, userRefetch] = useUserSecure(user?.email);
 
+    // console.log(data, 'data from comment modal')
+    const { data: postComments, refetch: commentRefetch } = useQuery({
+        queryKey: ['comments', postId],
+        queryFn: async () => {
+            const res = await axios.get(`/community-post/comment/${postId}`);
+            return res.data;
+        },
+        enabled: !!postId && !!isOpen,
+    })
 
     const handleComment = () => {
-        console.log('comment', comment);
-     };
-
+        if (comment === '' || user == null || isLoading) return;
+        const commentData = {
+            comment: comment,
+            commented: new Date(),
+            user: {
+                name: data?.name,
+                photo: data?.photo,
+                isVerified: data?.isVerified,
+                role: data?.role || 'user'
+            }
+        };
+        axios.put(`/community-post/comment/${postId}`, commentData)
+            .then(res => {
+                console.log(res.data, 'res from comment modal')
+                if (res.data.modifiedCount > 0) {
+                    setComment('');
+                    userRefetch();
+                    commentRefetch();
+                    refetchPost();
+                }
+            })
+            .catch(err => console.log(err))
+    };
+    console.log(postComments, 'post comments from comment modal')
 
     return (
         <Transition.Root show={isOpen} as={React.Fragment}>
@@ -50,7 +82,7 @@ const PostModal = ({ isOpen, onClose, onSuccess, data: PostData, postId }) => {
                                             <p className="text-center text-gray-400">No comments yet</p>
                                         </div>
                                     ) : (
-                                        PostData?.comments?.map((comment, i) => (
+                                        postComments?.map((comment, i) => (
                                             <div key={i} className="flex border px-2 py-1 rounded-md items-start justify-between mb-4">
                                                 <div className="flex items-center">
                                                     <img src={comment?.user?.photo} alt="" className="w-9 h-9 rounded-full" />
@@ -59,7 +91,7 @@ const PostModal = ({ isOpen, onClose, onSuccess, data: PostData, postId }) => {
                                                             <div>{comment?.user?.name}</div>
                                                             <div>
                                                                 {
-                                                                    PostData.user.isVerified && <Tooltip arrow title='This user is verified by Hungry Bunny' placement='top'>
+                                                                    comment?.user?.isVerified && <Tooltip arrow title='This user is verified by Hungry Bunny' placement='top'>
                                                                         <div
                                                                             className='w-[15px] h-[15px] inline-block ml-1'
                                                                         // src={verified}
