@@ -3,7 +3,6 @@ import useAxiosSecure from "./useAxiosSecure";
 import { useAuth } from "./useAuth";
 
 const useUserSecure = (email) => {
-    console.log(email, 'email from useUserSecure')
     const axios = useAxiosSecure();
     const { user } = useAuth();
     const { data, isLoading, isError, refetch } = useQuery(
