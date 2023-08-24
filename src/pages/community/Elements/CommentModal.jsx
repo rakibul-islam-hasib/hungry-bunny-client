@@ -6,17 +6,39 @@ import './css/Style.css';
 import { Tooltip } from '@mui/material';
 import useUserSecure from '../../../hooks/useUserSecure';
 import { useAuth } from '../../../hooks/useAuth';
+import useAxiosSecure from '../../../hooks/useAxiosSecure';
 
 const PostModal = ({ isOpen, onClose, onSuccess, data: PostData, postId }) => {
     const [comment, setComment] = useState('');
     const { user } = useAuth();
+    const axios = useAxiosSecure();
     const [data, isLoading, refetch] = useUserSecure(user?.email);
-    console.log(data, 'data from comment modal')
+    // console.log(data, 'data from comment modal')
 
 
     const handleComment = () => {
-        console.log('comment', comment);
-     };
+        if (comment === '') return;
+        if (user == null) return;
+        if (isLoading) return;
+        const commentData = {
+            comment: comment,
+            commented: new Date(),
+            user: {
+                name: data?.name,
+                photo: data?.photo,
+                isVerified: data?.isVerified,
+                role: data?.role || 'user'
+            }
+        };
+        axios.put(`/community-post/comment/${postId}`, commentData)
+            .then(res => {
+                console.log(res, 'res from comment modal')
+                setComment('');
+                refetch();
+
+            })
+            .catch(err => console.log(err))
+    };
 
 
     return (
