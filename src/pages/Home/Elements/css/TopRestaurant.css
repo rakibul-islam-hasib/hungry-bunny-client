@@ -1,0 +1,8 @@
+@media (max-width: 480px) {
+    .mySwiper {
+      /* Adjust the styles for mobile devices */
+      .swiper-slide {
+        width: 100%; /* Set the slide width to 100% for mobile */
+      }
+    }
+  }
