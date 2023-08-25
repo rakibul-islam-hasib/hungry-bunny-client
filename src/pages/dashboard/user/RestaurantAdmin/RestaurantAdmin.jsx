@@ -7,7 +7,7 @@ const RestaurantAdmin = () => {
   return (
     <div className="mt-10">
       <div className="lg:flex">
-        <div className="w-4/6 h-full rounded-md">
+        <div className="lg:w-4/6 h-full rounded-md">
           {/* Admin cart */}
           <div className="bg-orange-50 ">
             <AdminCart></AdminCart>
@@ -17,7 +17,7 @@ const RestaurantAdmin = () => {
           {/*Admin Evalute  */}
           <AdminEvalute></AdminEvalute>
         </div>
-        <div className="w-2/6 h-full  ml-4">
+        <div className="lg:w-2/6 h-full  ml-4">
           <h2 className="text-center font-semibold text-xl">
             Daily Tranding menu
           </h2>

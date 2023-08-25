@@ -12,7 +12,7 @@ const AdminCart = () => {
             area: true,
           },
         ]}
-        width={700}
+        width={750}
         height={300}
       />
     </div>

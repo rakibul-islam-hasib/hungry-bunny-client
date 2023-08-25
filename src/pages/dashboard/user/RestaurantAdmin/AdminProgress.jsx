@@ -5,7 +5,7 @@ const AdminProgress = () => {
   return (
     <div className=" bg-orange-50 p-10 mt-10">
       <h4 className="text-lg font-bold">Total Income</h4>
-      <div className="flex p-4 gap-6 justify-between">
+      <div className="lg:flex p-4 gap-6 justify-between">
         <div>
           <CircularProgress size="lg" determinate value={66.67}>
             27
