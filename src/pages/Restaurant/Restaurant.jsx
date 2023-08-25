@@ -40,28 +40,12 @@ useEffect(() => {
               <div>
               <p className='font-bold flex'><span className='mr-2'><FaMapMarkerAlt className='text-orange-500 text-2xl'></FaMapMarkerAlt></span> <span>{item.place}</span></p>
               </div>
-            <div className='flex justify-between items-center'>
-            <div className='flex'>
-            <Rating
-      style={{ maxWidth: 100 }}
-      value={item.rating}
-      readOnly
-    />
-            </div>
-            <div className="flex justify-between items-center mt-4">
-              <Link to={`/restaurant/${item._id}`}>
-                <button className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-full flex items-center">
-                Details
-              </button></Link>
-              
-            </div>
             </div>
           </div>
-        </div>
         ))}
       </div>
-        </div>
-    );
+    </div>
+  );
 };
 
 export default Restaurant;
