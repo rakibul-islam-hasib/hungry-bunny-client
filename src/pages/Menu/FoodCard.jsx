@@ -6,13 +6,12 @@ import Skeleton from './Skeleton';
 import useFetch from '../../hooks/useFetch';
 
 
-
-
 const FoodCard = () => {
 
   const [menuTab, setMenuTab] = useState('Breakfast')
   const [loading, setLoading] = useState(false)
   const [foods] = useFetch();
+  
   //loading 
   useEffect(() => {
     setLoading(true)
@@ -25,8 +24,7 @@ const FoodCard = () => {
   const handleMenuTabs = (type) => {
     setMenuTab(type);
   }
-
-
+  
   return (
     <div className="mx-auto md:px-20 px-6 mt-10  #F4ECE1 #FCFBF7">
       <div className="text-center lg:w-[70%] w-full sm:w-[90%] md:w-[80%] mx-auto">
