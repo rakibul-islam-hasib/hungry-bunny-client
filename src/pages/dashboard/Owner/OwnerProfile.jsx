@@ -66,11 +66,11 @@ const OwnerProfile = () => {
                     <div>
                         <div className="mb-5">
                             <h1 className='text-2xl'>Avatar </h1>
-                            <div className='lg:flex md:flex '>
+                            <div className='lg:flex md:flex'>
                                 <span className='me-4'>
-                                    <img className='h-[100px] w-[100px] rounded-lg' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTko38x76BKbf_gARfDc4DuyP_Q30OnRBpT_w&usqp=CAU" alt="" />
+                                    <img className='h-[100px] w-[100px] rounded-lg mb-5' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTko38x76BKbf_gARfDc4DuyP_Q30OnRBpT_w&usqp=CAU" alt="" />
                                 </span>
-                                <span className='justify-center align-middle text-center ms-3 mt-8'>
+                                <span className='mt-8'>
                                     <button
                                         onClick={openModal}
                                         className="bg-transparent hover:bg-blue-500 text-blue-500 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
@@ -152,8 +152,8 @@ const OwnerProfile = () => {
 
                     </div>
 
-                    <div className='lg:flex md:flex justify-between'>
-                        <div>
+                    <div className='lg:flex md:flex justify-between sm:flex'>
+                        <div className='mb-5'>
                             <input type="submit" value="Log out" className="bg-transparent hover:bg-orange-500 text-orange-500 font-semibold hover:text-white py-2 px-4 border border-orange-500 hover:border-transparent rounded" />
                         </div>
 
