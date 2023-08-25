@@ -13,8 +13,8 @@ const Home = () => {
   return (
     <section>
       <Hero />
-      <TopRestaurant/>
-      <FoodCard/>
+      <TopRestaurant />
+      <FoodCard />
       <PopularFood />
       <Stacks />
       <CheckoutBar />
