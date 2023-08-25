@@ -20,6 +20,9 @@ import UserProfile from "../pages/dashboard/user/UserProfile";
 import RestaurantDetails from "../pages/Restaurant/RestaurantDetails";
 import RestaurantAdmin from "../pages/dashboard/user/RestaurantAdmin/RestaurantAdmin";
 import Register from "../pages/auth/Register";
+import OwnerProfile from "../pages/dashboard/Owner/OwnerProfile";
+import OwnerWelcome from "../pages/dashboard/Owner/OwnerWelcome";
+import OwnerDashLayout from "../layout/OwnerDashLayout";
 
 export const router = createBrowserRouter([
   {
@@ -97,13 +100,23 @@ export const router = createBrowserRouter([
         element: <UserWelcome />,
       },
       {
-        path: "user-profile",
-        element: <UserProfile />,
+        path: 'user-profile',
+        element: <UserProfile />
+      }
+    ]
+  },
+  {
+    path: '/ownerdash',
+    element: <OwnerDashLayout />,
+    children: [
+      {
+        index: true,
+        element: <OwnerWelcome />
       },
       {
-        path: "restaurant-cp",
-        element: <RestaurantAdmin />,
-      },
-    ],
-  },
+        path: 'owner-profile',
+        element: <OwnerProfile />
+      }
+    ]
+  }
 ]);
