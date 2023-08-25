@@ -24,7 +24,7 @@ body {
       @apply text-gray-800 cursor-pointer select-none;
     }
     .active_menu_tab {
-      @apply rounded-full px-4 py-2 text-white select-none;
+      @apply rounded-full px-4 pb-2 pt-3 text-white select-none;
     }
   }
   

@@ -31,7 +31,6 @@ const PostModal = ({ isOpen, onClose, onSuccess, data: PostData, postId, refetch
         },
         enabled: !!postId && !!isOpen,
     })
-
     const handleComment = () => {
         if (comment === '' || user == null || isLoading) return;
         const commentData = {
@@ -39,6 +38,7 @@ const PostModal = ({ isOpen, onClose, onSuccess, data: PostData, postId, refetch
             commented: new Date(),
             user: {
                 name: data?.name,
+                email: data?.email,
                 photo: data?.photo,
                 isVerified: data?.isVerified,
                 role: data?.role || 'user'
@@ -56,7 +56,23 @@ const PostModal = ({ isOpen, onClose, onSuccess, data: PostData, postId, refetch
             })
             .catch(err => console.log(err))
     };
-    console.log(postComments, 'post comments from comment modal')
+
+    const deleteComment = (id) => {
+        console.log(id)
+        const myPromise = axios.delete(`/community-post/comment/${postId}/${id}`);
+        toast.promise(myPromise, {
+            loading: 'Deleting comment...',
+            success: 'Comment deleted!',
+            error: 'Error deleting comment',
+        }).then(res => {
+            // console.log(res)
+            if (res.data.modifiedCount > 0) {
+                userRefetch();
+                commentRefetch();
+                refetchPost();
+            }
+        })
+    }
 
     return (
         <Transition.Root show={isOpen} as={React.Fragment}>
@@ -135,7 +151,7 @@ const PostModal = ({ isOpen, onClose, onSuccess, data: PostData, postId, refetch
                                                             Reply
                                                         </button>
                                                         <div className="">
-                                                            <RiDeleteBin5Line className="text-xl text-red-500 hover:text-gray-600 cursor-pointer" />
+                                                            <RiDeleteBin5Line onClick={() => deleteComment(comment?._id)} className="text-xl text-red-500 hover:text-gray-600 cursor-pointer" />
                                                         </div>
                                                     </div>
                                                 </div>
