@@ -55,7 +55,7 @@ export const router = createBrowserRouter([
       {
         path: '/restaurant/:id',
         element: <RestaurantDetails></RestaurantDetails>,
-        loader: ({params}) => fetch(`http://localhost:5000/restaurant/${params.id}`)
+        loader: ({params}) => fetch(`https://hungry-bunny.vercel.app/restaurant/${params.id}`)
       },
       {
         path: '/menu',
