@@ -38,7 +38,7 @@ const FoodCard = () => {
       <section className="my-12 max-w-screen-xl mx-auto px-6">
         {/* food Menu tab  */}
         <div className="flex items-center justify-center space-x-6">
-          <p className={menuTab === 'Breakfast' ? "active_menu_tab poppins bg-primary" : "menu_tab poppins"} onClick={() => handleMenuTabs('Breakfast')}>BREAKFAST</p>
+          <p className={menuTab === 'Breakfast' ? "active_menu_tab poppins  bg-primary" : "menu_tab poppins"} onClick={() => handleMenuTabs('Breakfast')}>BREAKFAST</p>
           <p className={menuTab === 'Lunch' ? "active_menu_tab poppins bg-primary" : "menu_tab poppins"} onClick={() => handleMenuTabs('Lunch')}>LUNCH</p>
           <p className={menuTab === 'Dinner' ? "active_menu_tab poppins bg-primary" : "menu_tab poppins"} onClick={() => handleMenuTabs('Dinner')}>DINNER</p>
         </div>
