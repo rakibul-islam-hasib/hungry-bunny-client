@@ -18,6 +18,7 @@ import UserWelcome from "../pages/dashboard/user/UserWelcome";
 // import MultiStepForm from "../pages/auth/MultiStepForm";
 import UserProfile from "../pages/dashboard/user/UserProfile";
 import RestaurantDetails from "../pages/Restaurant/RestaurantDetails";
+import RestaurantAdmin from "../pages/dashboard/user/RestaurantAdmin/RestaurantAdmin";
 import Register from "../pages/auth/Register";
 
 export const router = createBrowserRouter([
@@ -35,70 +36,74 @@ export const router = createBrowserRouter([
         element: <Login />,
       },
       {
-        path: '/about',
-        element: <About />
+        path: "/about",
+        element: <About />,
       },
       {
-        path: '/contact',
-        element: <Contact />
+        path: "/contact",
+        element: <Contact />,
       },
       {
-        path: '/restaurants',
-        element: <Restaurant />
+        path: "/restaurants",
+        element: <Restaurant />,
       },
       {
         path: "/register",
         element: <Register />,
       },
       {
-        path: '/restaurant',
-        element: <Restaurant />
+        path: "/restaurant",
+        element: <Restaurant />,
       },
       {
-        path: '/restaurant/:id',
+        path: "/restaurant/:id",
         element: <RestaurantDetails></RestaurantDetails>,
         loader: ({params}) => fetch(`https://hungry-bunny.vercel.app/restaurant/${params.id}`)
       },
       {
-        path: '/menu',
-        element: <Menu />
+        path: "/menu",
+        element: <Menu />,
       },
       {
-        path: '/faq',
-        element: <Faq />
+        path: "/faq",
+        element: <Faq />,
       },
       {
-        path: '/blog',
-        element: <Blog />
+        path: "/blog",
+        element: <Blog />,
       },
       {
-        path: '/temp',
-        element: <Temp />
-      }
+        path: "/temp",
+        element: <Temp />,
+      },
     ],
   },
   {
-    path: '/community',
+    path: "/community",
     element: <CommunityLayout />,
     children: [
       {
         index: true,
-        element: <Community />
-      }
-    ]
+        element: <Community />,
+      },
+    ],
   },
   {
-    path: '/dashboard',
+    path: "/dashboard",
     element: <DashboardLayout />,
     children: [
       {
         index: true,
-        element: <UserWelcome />
+        element: <UserWelcome />,
       },
       {
-        path: 'user-profile',
-        element: <UserProfile />
-      }
-    ]
-  }
+        path: "user-profile",
+        element: <UserProfile />,
+      },
+      {
+        path: "restaurant-cp",
+        element: <RestaurantAdmin />,
+      },
+    ],
+  },
 ]);
