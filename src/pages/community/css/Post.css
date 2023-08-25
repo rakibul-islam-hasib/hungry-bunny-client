@@ -1,0 +1,24 @@
+.post-loader {
+    width: 27px;
+    height: 27px;
+    border: 7px double;
+    border-color: #f97316 transparent;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: spin13213 1.2s linear infinite;
+  }
+  
+  .post-loader div {
+    width: 50%;
+    height: 50%;
+    background-color: #f97316;
+    border-radius: 50%;
+  }
+  
+  @keyframes spin13213 {
+    to {
+      transform: rotate(360deg);
+    }
+  }

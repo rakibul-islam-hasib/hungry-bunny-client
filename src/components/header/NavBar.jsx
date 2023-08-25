@@ -1,13 +1,14 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { BsSearch } from 'react-icons/bs';
+import React, { useEffect, useState } from 'react';
 import cartImg from '../../assets/icons/cart.svg';
 import CheckoutBar from '../cart/CheckoutBar';
 import { AiOutlineBars, AiOutlineClose } from 'react-icons/ai';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import './css/style.css';
 import { gsap } from 'gsap';
-import clickSound from '../../assets/audio/click.mp3';
-
+import { useAuth } from '../../hooks/useAuth';
+import logo from '../../assets/img/logo.png';
+import darkLogo from '../../assets/img/dark-logo.png';
+import NavMenu from './NavElement/NavMenu';
 const navLinks = [
     {
         id: 1,
@@ -26,16 +27,11 @@ const navLinks = [
     },
     {
         id: 4,
-        name: 'Login',
-        path: '/login',
-    },
-    {
-        id: 5,
         name: 'Community',
         path: '/community',
     },
     {
-        id: 6,
+        id: 5,
         name: 'Restaurants',
         path: '/restaurant',
     },
@@ -47,18 +43,16 @@ const navLinks = [
 ];
 
 const NavBar = () => {
-    const inputRef = useRef(null);
     const [showSidebar, setShowSidebar] = useState(false);
     const [showNav, setShowNav] = useState(false);
     const [scrollPosition, setScrollPosition] = useState(0);
     const [isFixed, setIsFixed] = useState(false);
-    // const isFixed = false;
+    const location = useLocation();
+    const navigate = useNavigate();
     const [isDarkMode, setIsDarkMode] = useState(
         localStorage.getItem('isDarkMode') === 'true'
     );
-
-    const click = new Audio(clickSound);
-
+    const { user } = useAuth();
     const animate = () => {
         const timeline = gsap.timeline({
             onComplete: () => {
@@ -124,11 +118,6 @@ const NavBar = () => {
     }, [isDarkMode]);
 
 
-    const onPathChange = () => {
-        click.play();
-    }
-
-
 
     return (
         <>
@@ -141,15 +130,20 @@ const NavBar = () => {
             >
                 <nav className=" py-3 relative">
                     <div className="w-[90%] mx-auto flex justify-between items-center ">
-                        <div className="logo">
-                            <h1 className={isFixed ? 'font-bold dark:text-gray-200 text-xl' : 'font-bold dark:text-white text-xl'}>Foo</h1>
+                        <div onClick={() => navigate('/')} className="logo">
+                            <div onContextMenu={e => e.preventDefault()} className="flex items-center">
+                                {isDarkMode ? <img className='' src={logo} alt="" /> : <img src={darkLogo}
+                                    // className='w-[100px]'
+                                    alt="" />}
+                                {/* <h1 className={isFixed ? 'font-bold dark:text-gray-200 text-xl' : 'font-bold dark:text-white text-xl'}>Hungry Bunny</h1> */}
+                            </div>
+
                         </div>
                         <div className="links hidden md:block">
                             <ul className={isFixed ? 'flex dark:text-gray-100 space-x-6 nav-links' : 'flex dark:text-white space-x-6 nav-links'}>
                                 {navLinks.map((link) => (
                                     <li key={link.id}>
                                         <NavLink
-                                            onClick={() => onPathChange()}
                                             to={link.path}
                                             className={({ isActive }) =>
                                                 isActive ? 'active-link' : isFixed ? 'dark:text-gray-100' : 'dark:text-white'
@@ -159,24 +153,19 @@ const NavBar = () => {
                                         </NavLink>
                                     </li>
                                 ))}
+                                <li>
+                                    {
+                                        user ? (
+                                            ''
+                                        ) : (
+                                            <NavLink to='/login' className={location.pathname === '/login' ? 'active-link' : 'dark:text-gray-100 text-black'}>Login</NavLink>
+                                        )
+                                    }
+
+                                </li>
                             </ul>
                         </div>
                         <div className="search-and-others flex items-center space-x-2">
-                            <div className="relative">
-                                <input
-                                    ref={inputRef}
-                                    type="text"
-                                    onFocus={() => (inputRef.current.placeholder = 'Search here...')}
-                                    onBlur={() => (inputRef.current.placeholder = '')}
-                                    className="outline-none w-[40px] duration-300 focus:w-[200px] border-orange-300 border px-3 py-1 rounded-full"
-                                />
-                                <div
-                                    onClick={() => inputRef.current.focus()}
-                                    className="absolute top-[9px] right-3"
-                                >
-                                    <BsSearch />
-                                </div>
-                            </div>
                             <div className="">
                                 <button
                                     onClick={() => setShowSidebar(!showSidebar)}
@@ -202,9 +191,17 @@ const NavBar = () => {
                                     <span className="slider"></span>
                                 </label>
                             </div>
+                            <div className="">
+                                {/* {user && <LogoutBtn />} */}
+                                <div className="">
+                                    {user && (
+                                        <NavMenu />
+                                    )}
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div className="md:hidden top-0 block side-md absolute  -left-[500px] h-screen w-full bg-blue-300">
+                    <div className="md:hidden top-0 block side-md absolute z-[999]  -left-[500px] h-screen w-full bg-blue-300">
                         <div className="w-full border">
                             <div className="flex justify-end">
                                 <AiOutlineClose

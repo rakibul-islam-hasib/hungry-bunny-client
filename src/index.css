@@ -7,7 +7,7 @@
 body {
     font-family: 'Josefin Sans', sans-serif;
     /* background-color: #f7fafc; */
-    @apply bg-[#f1ecea] dark:bg-[#1a202c];
+    @apply bg-[#f1ecea] dark:bg-black;
 }
 
 .p-sidebar-close {
@@ -17,3 +17,14 @@ body {
 .p-sidebar-close-icon {
     @apply text-red-500 text-4xl h-6 w-6
 }
+
+
+@layer components {
+    .menu_tab {
+      @apply text-gray-800 cursor-pointer select-none;
+    }
+    .active_menu_tab {
+      @apply rounded-full px-4 pb-2 pt-3 text-white select-none;
+    }
+  }
+  
