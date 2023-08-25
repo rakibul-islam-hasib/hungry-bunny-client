@@ -17,6 +17,9 @@ import DashboardLayout from "../layout/DashboardLayout";
 import UserWelcome from "../pages/dashboard/user/UserWelcome";
 import UserProfile from "../pages/dashboard/user/UserProfile";
 import RestaurantDetails from "../pages/Restaurant/RestaurantDetails";
+import OwnerProfile from "../pages/dashboard/Owner/OwnerProfile";
+import OwnerWelcome from "../pages/dashboard/Owner/OwnerWelcome";
+import OwnerDashLayout from "../layout/OwnerDashLayout";
 
 export const router = createBrowserRouter([
   {
@@ -96,6 +99,28 @@ export const router = createBrowserRouter([
       {
         path: 'user-profile',
         element: <UserProfile />
+      },
+      {
+        index: true,
+        element: <OwnerWelcome />
+      },
+      {
+        path: 'owner-profile',
+        element: <OwnerProfile />
+      }
+    ]
+  },
+  {
+    path: '/ownerdash',
+    element: <OwnerDashLayout />,
+    children: [
+      {
+        index: true,
+        element: <OwnerWelcome />
+      },
+      {
+        path: 'owner-profile',
+        element: <OwnerProfile />
       }
     ]
   }
