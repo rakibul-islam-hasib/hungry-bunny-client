@@ -5,6 +5,7 @@ import { NavLink, Outlet, ScrollRestoration } from 'react-router-dom';
 import { BsFillPostcardFill } from 'react-icons/bs';
 import { TbBrandAppleArcade } from 'react-icons/tb';
 import { CgProfile } from 'react-icons/cg';
+
 const userNavItems = [
     { to: "/dashboard/user-profile", icon: <CgProfile className="text-2xl" />, label: "Manage Profile" },
     { to: "/dashboard/manage-users", icon: <FaUsers className="text-2xl" />, label: "Address" },
