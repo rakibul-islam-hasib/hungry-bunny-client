@@ -14,6 +14,9 @@ import Faq from "../pages/faq/Faq";
 import Temp from "../pages/temp/Temp";
 import Blog from "../pages/blog/Blog";
 import DashboardLayout from "../layout/DashboardLayout";
+import UserWelcome from "../pages/dashboard/user/UserWelcome";
+import UserProfile from "../pages/dashboard/user/UserProfile";
+import RestaurantDetails from "../pages/Restaurant/RestaurantDetails";
 
 export const router = createBrowserRouter([
   {
@@ -50,6 +53,11 @@ export const router = createBrowserRouter([
         element: <Restaurant />
       },
       {
+        path: '/restaurant/:id',
+        element: <RestaurantDetails></RestaurantDetails>,
+        loader: ({params}) => fetch(`http://localhost:5000/restaurant/${params.id}`)
+      },
+      {
         path: '/menu',
         element: <Menu />
       },
@@ -80,5 +88,15 @@ export const router = createBrowserRouter([
   {
     path: '/dashboard',
     element: <DashboardLayout />,
+    children: [
+      {
+        index: true,
+        element: <UserWelcome />
+      },
+      {
+        path: 'user-profile',
+        element: <UserProfile />
+      }
+    ]
   }
 ]);
