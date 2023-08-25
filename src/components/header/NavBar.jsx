@@ -8,11 +8,6 @@ import { gsap } from 'gsap';
 import { useAuth } from '../../hooks/useAuth';
 import logo from '../../assets/img/logo.png';
 import darkLogo from '../../assets/img/dark-logo.png';
-
-import { useDispatch } from 'react-redux';
-import { logoutUser } from '../../redux/slices/authThunks';
-import Swal from 'sweetalert2';
-
 import NavMenu from './NavElement/NavMenu';
 const navLinks = [
     {
@@ -52,9 +47,6 @@ const NavBar = () => {
     const [showNav, setShowNav] = useState(false);
     const [scrollPosition, setScrollPosition] = useState(0);
     const [isFixed, setIsFixed] = useState(false);
-    
-    const navigate = useNavigate();
-    
     const location = useLocation();
     const navigate = useNavigate();
     const [isDarkMode, setIsDarkMode] = useState(
@@ -166,7 +158,7 @@ const NavBar = () => {
                                         user ? (
                                             ''
                                         ) : (
-                                            <NavLink className={location.pathname === '/login' ? 'active-link' : 'text-gray-100'}>Login</NavLink>
+                                            <NavLink to='/login' className={location.pathname === '/login' ? 'active-link' : 'dark:text-gray-100 text-black'}>Login</NavLink>
                                         )
                                     }
 

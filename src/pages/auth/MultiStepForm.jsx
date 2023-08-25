@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-// import './MultiStepForm.css'
+import './MultiStepForm.css'
 
 
 import { Link, Navigate } from "react-router-dom";
@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { registerUser, updateName } from "../../redux/slices/authThunks";
 import { setUser } from "../../redux/slices/authSlice";
 import useAxiosFetch from "../../hooks/useAxiosFetch";
+import SocialLogin from './SocialLogin';
 
 const MultiStepForm = () => {
 
@@ -21,7 +22,7 @@ const MultiStepForm = () => {
     location: '',
     password: '',
   });
-// console.log(formData);
+  // console.log(formData);
 
   const dispatch = useDispatch();
   const axios = useAxiosFetch();
@@ -30,7 +31,7 @@ const MultiStepForm = () => {
   if (user) return <Navigate to="/" />;
 
   const handleFromSubmit = async (e) => {
-    
+
     e.preventDefault();
     // const formData = new FormData(e.target);
     // const data = Object.fromEntries(formData);
@@ -50,7 +51,7 @@ const MultiStepForm = () => {
       following: [],
       followers: [],
     }
-console.log(userData);
+    console.log(userData);
 
 
     try {
@@ -91,8 +92,8 @@ console.log(userData);
 
   return (
 
-    <div className="bg-gradient-to-br from-gray-500 to-gray-600  min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-800 to-gray-600">
-      <form onSubmit={(e) => handleFromSubmit(e)} className="bg-gradient-to-br from-purple-600 to-blue-500  w-full md:w-2/3 lg:w-1/3 p-6 rounded-lg shadow-md transition duration-300 transform hover:scale-105">
+    <div className=" to-gray-600  min-h-screen flex items-center justify-center ">
+      <form onSubmit={(e) => handleFromSubmit(e)} className=" to-blue-500  w-full md:w-2/3 lg:w-1/3 p-6 rounded-lg shadow-md transition duration-300 transform hover:scale-105">
         {step === 1 && (
           <div>
             <h1 className="text-3xl font-semibold mb-4">Your Name</h1>
@@ -106,8 +107,11 @@ console.log(userData);
               className="input-field"
             />
             <div className="flex justify-end mt-6">
-              <button onClick={handleNext} className="btn bg-gradient-to-br from-gray-800 to-gray-600">
+              <button onClick={handleNext} className=' relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800'>
+                <span className="items-center relative font-bold px-8 py-2 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+
                 Next
+                </span>
               </button>
             </div>
           </div>
@@ -161,8 +165,6 @@ console.log(userData);
             </div>
           </div>
         )}
-
-
         {step === 4 && (
           <div>
             <h1 className="text-3xl font-semibold mb-4">Location</h1>
@@ -252,8 +254,6 @@ console.log(userData);
             </div>
           </div>
         )}
-
-
         {step === 5 && (
           <div>
             <h1 className="text-3xl font-semibold mb-4">Password</h1>
@@ -281,6 +281,10 @@ console.log(userData);
             <Link to="/login">Login</Link>
           </span>{" "}
         </p>
+        <div>
+          
+        <SocialLogin/>
+        </div>
       </form>
     </div>
 
