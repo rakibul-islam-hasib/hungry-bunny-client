@@ -99,14 +99,6 @@ export const router = createBrowserRouter([
       {
         path: 'user-profile',
         element: <UserProfile />
-      },
-      {
-        index: true,
-        element: <OwnerWelcome />
-      },
-      {
-        path: 'owner-profile',
-        element: <OwnerProfile />
       }
     ]
   },
