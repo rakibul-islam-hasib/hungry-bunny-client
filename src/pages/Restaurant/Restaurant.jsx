@@ -29,13 +29,13 @@ useEffect(() => {
 </div>
     return (
         <div>
-            <div className="grid md:grid-cols-2 md:gap-8 gap-3 lg:grid-cols-3 mt-10 mx-auto">
+            <div className="grid md:grid-cols-2 md:gap-8 gap-3 lg:grid-cols-3 mt-10 mx-auto ">
         {allRestaurants.map((item) => (
-          <div key={item._id} className='p-2 border overflow-hidden shadow-lg rounded-md'>
+          <div key={item._id} className='p-2 border overflow-hidden shadow-lg rounded-md '>
           <img className="w-full  h-48 object-cover rounded-lg" src={item.restaurantImage} alt="Food Image" />
           <div className="px-6 py-4">
             <div className="mb-2">
-              <p className='font-extrabold text-2xl'>Restaurant Name {item.restaurantName}</p>
+              <p className='font-extrabold text-2xl'> {item.restaurantName}</p>
             </div>
               <div>
               <p className='font-bold flex'><span className='mr-2'><FaMapMarkerAlt className='text-orange-500 text-2xl'></FaMapMarkerAlt></span> <span>{item.place}</span></p>

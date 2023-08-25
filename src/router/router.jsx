@@ -6,7 +6,6 @@ import About from "../pages/about/About";
 import Contact from "../pages/contact/Contact";
 import CommunityLayout from "../layout/CommunityLayout";
 import Community from "../pages/community/Community";
-import Register from "../pages/auth/Register";
 import Error404 from "../layout/Error404";
 import Restaurant from "../pages/Restaurant/Restaurant";
 import Menu from "../pages/Menu/Menu";
@@ -14,9 +13,12 @@ import Faq from "../pages/faq/Faq";
 import Temp from "../pages/temp/Temp";
 import Blog from "../pages/blog/Blog";
 import DashboardLayout from "../layout/DashboardLayout";
+
 import UserWelcome from "../pages/dashboard/user/UserWelcome";
+// import MultiStepForm from "../pages/auth/MultiStepForm";
 import UserProfile from "../pages/dashboard/user/UserProfile";
 import RestaurantDetails from "../pages/Restaurant/RestaurantDetails";
+import Register from "../pages/auth/Register";
 
 export const router = createBrowserRouter([
   {
