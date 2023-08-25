@@ -7,7 +7,7 @@
 #### Restaurant page:- User can see all restaurant. Location, rating, restaurant image, name and details button. Any user click details button user can see restaurant description, total recipe, dish item name, popular food name, image, rating, price, contact email.
 #### Menu page:- User can see popular menu items. Image, price, menu name, description and add to cart.
 #### Menu page:- User can see popular menu items and our menu items show using tab. Image, price, menu name, description and add to cart.
-#### Faq page:- User can see all raq. questions and answers.
+#### Faq page:- User can see all faq questions and answers.
 #### Blog page:- User can see all blogs. Image, author name, reading time, publish date and blog headline.
 #### User Dashboard page:- User can manage his/her profile.  
 

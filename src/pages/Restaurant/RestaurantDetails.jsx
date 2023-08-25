@@ -8,18 +8,18 @@ function RestaurantDetails() {
     console.log(restaurant.restaurantName);
 
     return (
-        <div>
-         <div className='mt-7 md:flex mb-4'>
-        <div className='mt-4 w-[50%] mr-8'>
+        <div className='sm:ml-5'>
+         <div className='mt-7 md:flex mb-4 sm:ml-5'>
+        <div className='mt-4 md:w-[50%] md:mr-8'>
           <h3 className='font-extrabold text-4xl'>{restaurant.restaurantName}</h3>
           <p className='mt-3 md:mr-7'> {restaurant.descriptionFirst}</p>
           <p className='mt-3 md:mr-7'> {restaurant.descriptionSecond}</p>
           <div className='mt-3 mb-3 flex text-center'>
-        <div className='border-2 w-[40%] rounded-2xl mr-16 border-orange-400 pr-4 pl-4 hover:bg-orange-500 hover:text-white '>
+        <div className='border-2 sm:w-[50%] md:w-[40%] rounded-2xl mr-16 border-orange-400 pr-4 pl-4 hover:bg-orange-500 hover:text-white '>
           <p className='text-4xl'><span>5000</span> <span className='text-6xl'>+</span></p>
           <p className='text-2xl'>happy customer</p>
         </div>
-        <div className='border-2 w-[40%] rounded-2xl mr-16 border-orange-400 pr-4 pl-4 hover:bg-orange-500 hover:text-white '>
+        <div className='border-2 sm:w-[50%] md:w-[40%] rounded-2xl mr-16 border-orange-400 pr-4 pl-4 hover:bg-orange-500 hover:text-white '>
           <p className='text-4xl'><span>115</span> <span className='text-6xl'>+</span></p>
           <p className='text-2xl'>recipe</p>
         </div>
@@ -32,7 +32,7 @@ function RestaurantDetails() {
           <p className='text-2xl'>delivery boy</p>
         </div> */}
       </div>
-          <div className='flex justify-evenly restaurants-center mt-7'>
+          <div className='flex justify-evenly restaurants-center mt-7 mb-5'>
           <button className="bg-orange-600 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded-full flex restaurants-center">
             become a partner
           </button>
@@ -43,16 +43,16 @@ function RestaurantDetails() {
     />
           </div>
         </div>
-        <div className='w-[50%]'>
-          <img src={restaurant.restaurantImage} className='w-full' alt="" />
+        <div className='md:w-[50%]'>
+          <img src={restaurant.restaurantImage} className='w-full sm:m-5' alt="" />
         </div>
       </div>
 
     {/* food restaurant card */}
 <div className="md:flex">
-<div className="grid md:grid-cols-2 md:gap-8 gap-3 lg:grid-cols-3 mt-10 w-[75%]">
+<div className="grid md:grid-cols-2 md:gap-8 gap-3 lg:grid-cols-3 mt-10 md:w-[75%]">
           <div className='p-2 border overflow-hidden shadow-lg rounded-md'>
-          <img className="w-full  h-48 object-cover rounded-lg" src={restaurant.foodItems[0].foodImage} alt="Food Image" />
+          <img className="w-full h-48 object-cover rounded-lg" src={restaurant.foodItems[0].foodImage} alt="Food Image" />
           <div className="px-6 py-4">
             <div className="mb-2">
               <p className='font-extrabold text-2xl'>Food Name {restaurant.foodItems[0].foodItem}</p>
@@ -152,7 +152,7 @@ function RestaurantDetails() {
           </div>
         </div>
       </div>
-      <div className='w-[25%]'>
+      <div className='md:w-[25%]'>
 
       <div className='ml-8 mt-10 p-2 bg-orange-100 rounded-2xl'>
         <h2 className='text-center text-4xl font-extrabold mb-5'>Popular Dish Item</h2>
