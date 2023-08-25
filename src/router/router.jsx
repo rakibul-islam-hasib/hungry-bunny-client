@@ -61,7 +61,7 @@ export const router = createBrowserRouter([
       {
         path: "/restaurant/:id",
         element: <RestaurantDetails></RestaurantDetails>,
-        loader: ({params}) => fetch(`https://hungry-bunny.vercel.app/restaurant/${params.id}`)
+        loader: ({ params }) => fetch(`https://hungry-bunny.vercel.app/restaurant/${params.id}`)
       },
       {
         path: "/menu",
@@ -100,10 +100,14 @@ export const router = createBrowserRouter([
         element: <UserWelcome />,
       },
       {
-        path: 'user-profile',
-        element: <UserProfile />
+        path: "user-profile",
+        element: <UserProfile />,
+      },
+      {
+        path: "restaurant-cp",
+        element: <RestaurantAdmin />,
       }
-    ]
+    ],
   },
   {
     path: '/ownerdash',
