@@ -6,14 +6,13 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import './css/TopRestaurant.css'
-
-
 // import required modules
-import { Autoplay, Pagination } from 'swiper/modules';
+import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import useAxiosFetch from '../../../hooks/useAxiosFetch';
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FaMapMarkerAlt } from 'react-icons/fa';
+import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai';
 
 
 const TopRestaurant = () => {
@@ -31,6 +30,7 @@ const TopRestaurant = () => {
         console.log(error);
       })
       .finally(() => setLoading(false))
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
 
@@ -62,16 +62,18 @@ const TopRestaurant = () => {
           delay: 2000,
           disableOnInteraction: false,
         }}
-        
+
         pagination={{
           clickable: true,
+          el: '.mySwiper .swiper-pagination'
         }}
-        modules={[Pagination,Autoplay]}
-        className="mySwiper"
+       
+        modules={[Pagination, Autoplay, Navigation]}
+        className="mySwiper swiper-container"
       >
 
         {/* <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'> */}
-          <div>
+        <div>
           {allRestaurants.map(item => <SwiperSlide key={item._id}>
 
 
@@ -80,17 +82,17 @@ const TopRestaurant = () => {
             <div className="pb-6 flex flex-wrap items-center justify-center">
 
               <div className="flex-shrink-0 m-6 relative overflow-hidden border border-red-400  rounded-lg max-w-xs shadow-lg">
-                
+
                 <div className="relative  px-2 flex items-center justify-center">
-                 <Link to={`/restaurant/${item._id}`} >
-                  <img className='h-60 rounded-lg transition duration-300 ease-in-out hover:scale-110 ' src={item.restaurantImage} alt="" />
-                    </Link>
+                  <Link to={`/restaurant/${item._id}`} >
+                    <img className='h-60 rounded-lg transition duration-300 ease-in-out hover:scale-110 ' src={item.restaurantImage} alt="" />
+                  </Link>
                 </div>
                 <div className="relative text-black px-6 pb-6 mt-6">
-                    <small className='flex items-center gap-2 poppins text-normal'>
+                  <small className='flex items-center gap-2 poppins text-normal'>
                     <span className=''><FaMapMarkerAlt className='text-orange-500'></FaMapMarkerAlt></span>
-                  <span className="block opacity-75 -mb-1">{item.place}</span>
-                    </small>
+                    <span className="block opacity-75 -mb-1">{item.place}</span>
+                  </small>
                   <div className="flex justify-between">
                     <span className="block font-semibold text-xl">{item.restaurantName}</span>
                     {/* <span className="block bg-white rounded-full text-orange-500 text-xs font-bold px-3 py-2 leading-none flex items-center">$36.00</span> */}
@@ -102,7 +104,22 @@ const TopRestaurant = () => {
           </SwiperSlide>)
           }
         </div>
+        {/* <div className="flex justify-center ">
+          <div className="">
+            <div className="swiper-pagination"></div>
+          </div>
+        </div> */}
+        <div className="flex justify-center mt-4">
+          <div className="">
+            {/* <div className="flex">
+              <AiOutlineArrowLeft className="swiper-pagination-arrow-prev" />
+              <AiOutlineArrowRight className="swiper-pagination-arrow-next" />
+            </div> */}
+            <div className="swiper-pagination"></div>
+          </div>
+        </div>
       </Swiper>
+      {/* Pagination */}
     </div>
   );
 };
