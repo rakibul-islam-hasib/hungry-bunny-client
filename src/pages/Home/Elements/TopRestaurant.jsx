@@ -90,6 +90,7 @@ const TopRestaurant = () => {
                     <small className='flex items-center gap-2 poppins text-normal'>
                     <span className=''><FaMapMarkerAlt className='text-orange-500'></FaMapMarkerAlt></span>
                   <span className="block opacity-75 -mb-1">{item.place}</span>
+                  <span className="block opacity-75 -mb-1">{item.service}</span>
                     </small>
                   <div className="flex justify-between">
                     <span className="block font-semibold text-xl">{item.restaurantName}</span>

@@ -100,6 +100,10 @@ export const router = createBrowserRouter([
         element: <UserWelcome />,
       },
       {
+        path:'admin-dashboard'
+      }
+      ,
+      {
         path: "user-profile",
         element: <UserProfile />,
       },
@@ -109,6 +113,7 @@ export const router = createBrowserRouter([
       }
     ],
   },
+
   {
     path: '/ownerdash',
     element: <OwnerDashLayout />,
