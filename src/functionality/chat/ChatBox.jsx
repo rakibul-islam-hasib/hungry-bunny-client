@@ -3,7 +3,9 @@ import React from 'react';
 const ChatBox = () => {
   return (
     <div className='h-screen'>
-      <div className="fixed right-3 bottom-3">
+
+      {/* Chat button */}
+      <div className="fixed hidden right-3 bottom-3">
         <button className='flex border-primary rounded-full gap-2 items-center border px-3 py-1'>
           <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" className='h-[40px]' viewBox="0 0 72 72"
             style={{ fill: '#FD7E14' }}>
@@ -12,6 +14,14 @@ const ChatBox = () => {
           <span>Live Chat</span>
         </button>
       </div>
+
+      {/* Chat box by rakib */}
+      <div className="h-[500px] w-[300px] border border-primary fixed bottom-0 right-2">
+        <div className="header">
+                                                
+        </div>
+      </div>
+
     </div>
   );
 };
