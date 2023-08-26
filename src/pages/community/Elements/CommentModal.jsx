@@ -6,18 +6,72 @@ import './css/Style.css';
 import { Tooltip } from '@mui/material';
 import useUserSecure from '../../../hooks/useUserSecure';
 import { useAuth } from '../../../hooks/useAuth';
+import useAxiosSecure from '../../../hooks/useAxiosSecure';
+import { useQuery } from '@tanstack/react-query';
+import TimeAgo from 'javascript-time-ago';
+import en from 'javascript-time-ago/locale/en';
+import { toast } from 'react-hot-toast';
+import { RiDeleteBin5Line } from 'react-icons/ri';
+import moment from 'moment';
 
-const PostModal = ({ isOpen, onClose, onSuccess, data: PostData, postId }) => {
+const PostModal = ({ isOpen, onClose, onSuccess, data: PostData, postId, refetchPost }) => {
+    TimeAgo.addLocale(en)
+    const timeAgo = new TimeAgo('en-US')
     const [comment, setComment] = useState('');
     const { user } = useAuth();
-    const [data, isLoading, refetch] = useUserSecure(user?.email);
-    console.log(data, 'data from comment modal')
+    const axios = useAxiosSecure();
+    const [data, isLoading, userRefetch] = useUserSecure(user?.email);
 
-
+    // console.log(data, 'data from comment modal')
+    const { data: postComments, refetch: commentRefetch } = useQuery({
+        queryKey: ['comments', postId],
+        queryFn: async () => {
+            const res = await axios.get(`/community-post/comment/${postId}`);
+            return res.data;
+        },
+        enabled: !!postId && !!isOpen,
+    })
     const handleComment = () => {
-        console.log('comment', comment);
-     };
+        if (comment === '' || user == null || isLoading) return;
+        const commentData = {
+            comment: comment,
+            commented: new Date(),
+            user: {
+                name: data?.name,
+                email: data?.email,
+                photo: data?.photo,
+                isVerified: data?.isVerified,
+                role: data?.role || 'user'
+            }
+        };
+        axios.put(`/community-post/comment/${postId}`, commentData)
+            .then(res => {
+                console.log(res.data, 'res from comment modal')
+                if (res.data.modifiedCount > 0) {
+                    setComment('');
+                    userRefetch();
+                    commentRefetch();
+                    refetchPost();
+                }
+            })
+            .catch(err => console.log(err))
+    };
 
+    const deleteComment = (id) => {
+        const myPromise = axios.delete(`/community-post/comment/${postId}/${id}`);
+        toast.promise(myPromise, {
+            loading: 'Deleting comment...',
+            success: 'Comment deleted!',
+            error: 'Error deleting comment',
+        }).then(res => {
+            // console.log(res)
+            if (res.data.modifiedCount > 0) {
+                userRefetch();
+                commentRefetch();
+                refetchPost();
+            }
+        })
+    }
 
     return (
         <Transition.Root show={isOpen} as={React.Fragment}>
@@ -50,16 +104,24 @@ const PostModal = ({ isOpen, onClose, onSuccess, data: PostData, postId }) => {
                                             <p className="text-center text-gray-400">No comments yet</p>
                                         </div>
                                     ) : (
-                                        PostData?.comments?.map((comment, i) => (
+                                        postComments?.map((comment, i) => (
                                             <div key={i} className="flex border px-2 py-1 rounded-md items-start justify-between mb-4">
                                                 <div className="flex items-center">
                                                     <img src={comment?.user?.photo} alt="" className="w-9 h-9 rounded-full" />
                                                     <div className="ml-2">
                                                         <div className="font-bold flex items-center text-base">
-                                                            <div>{comment?.user?.name}</div>
+                                                            <div
+                                                                className="flex items-center gap-1"
+                                                            >{comment?.user?.name}
+                                                                <Tooltip title={moment(comment?.commented).format('MMM Do YY')}>
+                                                                    <p className="text-xs text-gray-400">{
+                                                                        timeAgo.format(new Date(comment?.commented), 'mini')
+                                                                    }</p>
+                                                                </Tooltip>
+                                                            </div>
                                                             <div>
                                                                 {
-                                                                    PostData.user.isVerified && <Tooltip arrow title='This user is verified by Hungry Bunny' placement='top'>
+                                                                    comment?.user?.isVerified && <Tooltip arrow title='This user is verified by Hungry Bunny' placement='top'>
                                                                         <div
                                                                             className='w-[15px] h-[15px] inline-block ml-1'
                                                                         // src={verified}
@@ -80,10 +142,17 @@ const PostModal = ({ isOpen, onClose, onSuccess, data: PostData, postId }) => {
                                                     </div>
                                                 </div>
                                                 <div className="flex items-center gap-2">
-                                                    <p className="text-xs text-gray-400">{comment?.createdAt}</p>
-                                                    <button className="text-xs text-gray-400 hover:text-gray-600 focus:outline-none">
-                                                        Reply
-                                                    </button>
+
+                                                    <div className="">
+                                                        <button
+                                                            onClick={() => { toast.error('Reply feature is not available yet') }}
+                                                            className="text-xs text-gray-400 hover:text-gray-600 focus:outline-none">
+                                                            Reply
+                                                        </button>
+                                                        <div className="">
+                                                            <RiDeleteBin5Line onClick={() => deleteComment(comment?._id)} className="text-xl text-red-500 hover:text-gray-600 cursor-pointer" />
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         ))
