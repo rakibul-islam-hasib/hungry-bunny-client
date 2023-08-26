@@ -13,11 +13,28 @@ const ChatBox = () => {
       },
     });
 
-    timeline.to('#chat-box', {
-      duration: 1,
+    timeline.to('#close-btn-chat', {
+      duration: 0.01,
       ease: 'power3.out',
-      bottom: '-1000px',
+      opacity: 0,
+      right: '-500px',
     })
+      .to('#chat-box', {
+        duration: 1,
+        ease: 'power3.out',
+        bottom: '-1000px',
+      })
+      .to('#close-btn-chat', {
+        duration: 0.1,
+        ease: 'power3.out',
+        opacity: 0.5,
+      })
+      .to('#close-btn-chat', {
+        duration: 0.4,
+        ease: 'power3.out',
+        opacity: 1,
+        right: '12px',
+      })
   }
   const a2 = () => {
     // Description : This function is for open the chat box .
@@ -38,7 +55,7 @@ const ChatBox = () => {
     <div className='h-screen'>
 
       {/* Chat button */}
-      <div className="fixed right-3 bottom-3">
+      <div id='close-btn-chat' className="fixed right-3 bottom-3">
         <button onClick={() => a2()} className='flex border-primary rounded-full gap-2 items-center border px-3 py-1'>
           <ChatIcoSvg />
           <span>Live Chat</span>
@@ -46,7 +63,7 @@ const ChatBox = () => {
       </div>
 
       {/* Chat box by rakib */}
-      <div id='chat-box' className="fixed bottom-0 right-2">
+      <div id='chat-box' className="fixed -bottom-[1000px] right-2">
         <div className="h-[500px] rounded-t-xl bg-orange-100 w-[300px] border border-primary ">
           <div className="header flex justify-between items-center px-6 rounded-t-xl py-3 bg-primary">
             <div className="">
