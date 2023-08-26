@@ -1,12 +1,29 @@
 import React from 'react';
-import darkLogo from '../../assets/svg/chat-logo.svg'
 import ChatMen from '../../assets/svg/ChatMen';
+import CloseDownSvg from '../../assets/svg/CloseDownSvg';
+import { gsap } from 'gsap';
 const ChatBox = () => {
+
+  const animation1 = () => {
+    const timeline = gsap.timeline({
+      onComplete: () => {
+        console.log('completed');
+      },
+    });
+
+    timeline.to('#chat-box', {
+      duration: 0.5,
+      ease: 'power3.out',
+      bottom: '-1000px',
+    })
+  }
+
+
   return (
     <div className='h-screen'>
 
       {/* Chat button */}
-      <div className="fixed hidden right-3 bottom-3">
+      <div className="fixed right-3 bottom-3">
         <button className='flex border-primary rounded-full gap-2 items-center border px-3 py-1'>
           <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" className='h-[40px]' viewBox="0 0 72 72"
             style={{ fill: '#FD7E14' }}>
@@ -17,15 +34,17 @@ const ChatBox = () => {
       </div>
 
       {/* Chat box by rakib */}
-      <div className="h-[500px] bg-orange-100 w-[300px] border border-primary fixed bottom-0 right-2">
-        <div className="header flex justify-center py-3 bg-primary">
+      <div id='chat-box' className="h-[500px] rounded-t-xl bg-orange-100 w-[300px] border border-primary fixed bottom-0 right-2">
+        <div className="header flex justify-between items-center px-6 rounded-t-xl py-3 bg-primary">
           <div className="">
             <ChatMen />
-
           </div>
-          <div className="">
+          <div className="text-white">
             <p>Welcome To</p>
-            <h1>Live chat</h1>
+            <h1 className='text-xl font-bold'>Live chat</h1>
+          </div>
+          <div onClick={() => animation1()} className="">
+            <CloseDownSvg />
           </div>
         </div>
       </div>
