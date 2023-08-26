@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ChatMen from '../../assets/svg/ChatMen';
 import CloseDownSvg from '../../assets/svg/CloseDownSvg';
 import { gsap } from 'gsap';
 import ChatIcoSvg from '../../assets/svg/ChatIcoSvg';
 const ChatBox = () => {
+  const [message, setMessage] = useState('');
 
-  const a1 = () => {
-    // Description : This function is for close the chat box . 
+  // Description : This function is for close the chat box . 
+  const closeChat = () => {
     const timeline = gsap.timeline({
       onComplete: () => {
         console.log('completed');
@@ -36,8 +37,8 @@ const ChatBox = () => {
         right: '12px',
       })
   }
-  const a2 = () => {
-    // Description : This function is for open the chat box .
+  // Description : This function is for open the chat box .
+  const openChat = () => {
     const timeline = gsap.timeline({
       onComplete: () => {
         console.log('completed');
@@ -50,43 +51,59 @@ const ChatBox = () => {
       bottom: '0px',
     })
   };
+  const handleInputChange = (event) => {
+    setMessage(event.target.value);
+  };
+
+  const handleSendMessage = () => {
+    // Handle sending the message logic here
+    console.log('Sending message:', message);
+    setMessage('');
+  };
 
   return (
-    <div className='h-screen'>
-
-      {/* Chat button */}
-      <div id='close-btn-chat' className="fixed right-3 bottom-3">
-        <button onClick={() => a2()} className='flex border-primary rounded-full gap-2 items-center border px-3 py-1'>
+    <div className="h-screen">
+      <div id="close-btn-chat" className="fixed right-3 bottom-3">
+        <button
+          onClick={() => openChat()}
+          className="flex border-primary rounded-full gap-2 items-center border px-3 py-1"
+        >
           <ChatIcoSvg />
           <span>Live Chat</span>
         </button>
       </div>
 
-      {/* Chat box by rakib */}
-      <div id='chat-box' className="fixed -bottom-[1000px] right-2">
-        <div className="h-[500px] rounded-t-xl bg-orange-100 w-[300px] border border-primary ">
+      <div id="chat-box" className="fixed -bottom-[1000px] right-2">
+        <div className="h-[500px] rounded-t-xl bg-orange-100 w-[300px] border border-primary">
           <div className="header flex justify-between items-center px-6 rounded-t-xl py-3 bg-primary">
             <div className="">
               <ChatMen />
             </div>
             <div className="text-white">
               <p>Welcome To</p>
-              <h1 className='text-xl font-bold'>Live chat</h1>
+              <h1 className="text-xl font-bold">Live chat</h1>
             </div>
-            <button onClick={() => a1()} className="">
+            <button onClick={() => closeChat()}>
               <CloseDownSvg />
             </button>
           </div>
-          {/* 
-          // Body of chat box
-        */}
 
-
-          <div className="mt-auto border border-blue-500">
-            <input type="text" />
+          <div className=" px-3 flex items-center my-2 gap-2 fixed bottom-1 ">
+            <input
+              type="text"
+              placeholder="Type your message..."
+              value={message}
+              onChange={handleInputChange}
+              className="rounded-full border px-4 py-2"
+            />
+            <button
+              onClick={handleSendMessage}
+              className=" bg-primary text-white px-4 py-2 rounded-full"
+            >
+              Send
+            </button>
           </div>
         </div>
-
       </div>
     </div>
   );
