@@ -1,5 +1,6 @@
 import React from 'react';
-
+import darkLogo from '../../assets/svg/chat-logo.svg'
+import ChatMen from '../../assets/svg/ChatMen';
 const ChatBox = () => {
   return (
     <div className='h-screen'>
@@ -16,9 +17,16 @@ const ChatBox = () => {
       </div>
 
       {/* Chat box by rakib */}
-      <div className="h-[500px] w-[300px] border border-primary fixed bottom-0 right-2">
-        <div className="header">
-                                                
+      <div className="h-[500px] bg-orange-100 w-[300px] border border-primary fixed bottom-0 right-2">
+        <div className="header flex justify-center py-3 bg-primary">
+          <div className="">
+            <ChatMen />
+
+          </div>
+          <div className="">
+            <p>Welcome To</p>
+            <h1>Live chat</h1>
+          </div>
         </div>
       </div>
 
