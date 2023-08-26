@@ -22,7 +22,7 @@ const OwnerDashLayout = () => {
         <div className="flex bg-[#f1ecea]">
             <div
                 className={`${open ? "w-72 overflow-y-auto" : "w-[90px] overflow-auto"
-                    }  h-screen p-5 hidden md:block pt-8 relative duration-300`}
+            }  h-screen p-5 hidden md:block pt-8 relative duration-300`}
             >
                 <div className="flex gap-x-4 items-center">
                     <img
