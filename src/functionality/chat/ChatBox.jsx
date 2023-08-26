@@ -15,7 +15,7 @@ const ChatBox = () => {
 
     timeline.to('#close-btn-chat', {
       duration: 0.01,
-      ease: 'power3.out',
+      ease: 'bounce.out',
       opacity: 0,
       right: '-500px',
     })
@@ -26,12 +26,12 @@ const ChatBox = () => {
       })
       .to('#close-btn-chat', {
         duration: 0.1,
-        ease: 'power3.out',
+        ease: 'bounce.out',
         opacity: 0.5,
       })
       .to('#close-btn-chat', {
         duration: 0.4,
-        ease: 'power3.out',
+        ease: 'bounce.out',
         opacity: 1,
         right: '12px',
       })
