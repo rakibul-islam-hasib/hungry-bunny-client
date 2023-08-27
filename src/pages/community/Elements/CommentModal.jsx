@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Dialog, Transition, FocusTrap } from '@headlessui/react';
 import { motion } from 'framer-motion';
 import { IoCloseSharp, IoSend } from 'react-icons/io5';
@@ -58,7 +58,6 @@ const PostModal = ({ isOpen, onClose, onSuccess, data: PostData, postId, refetch
     };
 
     const deleteComment = (id) => {
-        console.log(id)
         const myPromise = axios.delete(`/community-post/comment/${postId}/${id}`);
         toast.promise(myPromise, {
             loading: 'Deleting comment...',
