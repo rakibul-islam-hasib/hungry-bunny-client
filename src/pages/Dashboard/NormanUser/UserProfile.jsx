@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 
-const OwnerProfile = () => {
+const UserProfile = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     const openModal = () => {
@@ -169,4 +169,4 @@ const OwnerProfile = () => {
     );
 };
 
-export default OwnerProfile;
+export default UserProfile;
