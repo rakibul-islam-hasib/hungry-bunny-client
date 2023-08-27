@@ -17,8 +17,8 @@ const RestaurantAdmin = () => {
           {/*Admin Evalute  */}
           <AdminEvalute></AdminEvalute>
         </div>
-        <div className="lg:w-2/6 h-full  ml-4">
-          <h2 className="text-center font-semibold text-xl">
+        <div className="lg:w-2/6 h-full  ml-4 ">
+          <h2 className="text-center font-semibold text-xl ">
             Daily Tranding menu
           </h2>
           {/* Card 1 */}
