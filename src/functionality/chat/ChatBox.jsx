@@ -45,7 +45,7 @@ const ChatBox = () => {
         </button>
       </div>
 
-      <div ref={chatBoxRef} className={`fixed bottom-0 right-2 `}>
+      <div ref={chatBoxRef} className={`fixed right-3 -bottom-[1000px] `}>
         <div className="h-[500px] rounded-t-xl relative bg-orange-100 w-[300px] border border-primary">
           <div className="header flex justify-between items-center px-6 rounded-t-xl py-3 bg-primary">
             <div className="">
@@ -59,10 +59,14 @@ const ChatBox = () => {
               <CloseDownSvg />
             </button>
           </div>
-          <div className="mt-auto border border-blue-500 absolute w-full bottom-0">
-            <form action="">
-              <input type="text" placeholder='' />
-
+          <div className="mt-auto absolute w-full bottom-0">
+            <form className='flex mx-3 mb-2 items-center gap-1' action="">
+              <input
+                type="text"
+                placeholder='Type your message....'
+                className='outline-none py-2 px-2 w-full rounded-full'
+              />
+              <button className='px-2 py-2 font-bold text-white bg-primary rounded-[30px]'>Send</button>
             </form>
           </div>
         </div>
