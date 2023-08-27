@@ -1,10 +1,36 @@
 import React, { useState } from "react";
-import { BiLogInCircle } from "react-icons/bi";
+import { BiHomeAlt, BiLogInCircle } from "react-icons/bi";
 import { FaUsers } from "react-icons/fa";
 import { NavLink, Outlet, ScrollRestoration } from "react-router-dom";
 import { BsFillPostcardFill } from "react-icons/bs";
 import { TbBrandAppleArcade } from "react-icons/tb";
 import { CgProfile } from "react-icons/cg";
+import logo from '../assets/img/logo.png';
+
+
+const adminNavItems = [
+  {
+    to: "/dashboard/admin-dashboard",
+    icon: <CgProfile className="text-2xl" />,
+    label: "Dashboard",
+  },
+  {
+    to: "/dashboard/manage-users",
+    icon: <FaUsers className="text-2xl" />,
+    label: "Manage Users",
+  },
+  {
+    to: "/dashboard/manage-riders",
+    icon: <BsFillPostcardFill className="text-2xl" />,
+    label: "Manage Riders",
+  },
+  {
+    to: "/dashboard/manage-restaurant",
+    icon: <TbBrandAppleArcade className="text-2xl" />,
+    label: "Manage Restaurant",
+  },
+];
+
 const userNavItems = [
   {
     to: "/dashboard/user-profile",
@@ -12,7 +38,7 @@ const userNavItems = [
     label: "Manage Profile",
   },
   {
-    to: "/dashboard/manage-users",
+    to: "/dashboard/address",
     icon: <FaUsers className="text-2xl" />,
     label: "Address",
   },
@@ -27,33 +53,45 @@ const userNavItems = [
     label: "Security",
   },
 ];
+
+
 const restaurantNavItems = [
   {
-    to: "/dashboard/user-profile",
+    to: "/dashboard/restaurant-cp",
     icon: <CgProfile className="text-2xl" />,
-    label: "Manage restaurant",
+    label: "Owner Dashboard",
   },
   {
-    to: "/dashboard/manage-users",
+    to: "/dashboard/restaurant-orders",
     icon: <FaUsers className="text-2xl" />,
-    label: "Address",
+    label: "Orders",
   },
   {
-    to: "/dashboard/manage-class",
+    to: "/dashboard/restaurant-menu",
     icon: <BsFillPostcardFill className="text-2xl" />,
-    label: "Payment Method",
+    label: "Menu",
   },
   {
-    to: "/dashboard/manage-applications",
+    to: "/dashboard/restaurant-customers",
     icon: <TbBrandAppleArcade className="text-2xl" />,
-    label: "Security",
+    label: "Customers",
+  },
+  {
+    to: "/dashboard/restaurant-add-items",
+    icon: <TbBrandAppleArcade className="text-2xl" />,
+    label: "Add New Items",
   },
 ];
+
+
+
+
+
 
 const DashboardLayout = () => {
   const [open, setOpen] = useState(true);
 
-  const role = "restaurant";
+  const role = "admin";
 
   return (
     <div className="flex bg-[#f1ecea]">
@@ -64,7 +102,7 @@ const DashboardLayout = () => {
       >
         <div className="flex gap-x-4 items-center">
           <img
-            src="https://i.ibb.co/26dQJcm/musical-note.png"
+            src={"https://i.ibb.co/26dQJcm/musical-note.png"}
             onClick={() => setOpen(!open)}
             className={`cursor-pointer h-[40px] duration-500 ${
               open && "rotate-[360deg]"
@@ -80,6 +118,35 @@ const DashboardLayout = () => {
           </h1>
         </div>
         {/* Nav links  */}
+        {role === "admin" && (
+          <ul className="pt-6">
+            <p className={`ml-3 text-light-gray-4 ${!open && "hidden"}`}>
+              <small>MENU</small>
+            </p>
+            {role === "admin" &&
+              adminNavItems.map((menuItem, index) => (
+                <li key={index} className="mb-2">
+                  <NavLink
+                    to={menuItem.to}
+                    className={({ isActive }) =>
+                      `flex ${
+                        isActive ? "bg-primary text-white " : "text-[#413F44]"
+                      }  duration-150 rounded-md p-2 cursor-pointer hover:bg-primary  hover:text-white  font-bold text-sm items-center gap-x-4  `
+                    }
+                  >
+                    {menuItem.icon}
+                    <span
+                      className={`${
+                        !open && "hidden"
+                      } origin-left duration-200`}
+                    >
+                      {menuItem.label}
+                    </span>
+                  </NavLink>
+                </li>
+              ))}
+          </ul>
+        )}
         {role === "user" && (
           <ul className="pt-6">
             <p className={`ml-3 text-light-gray-4 ${!open && "hidden"}`}>
@@ -145,6 +212,23 @@ const DashboardLayout = () => {
             <small>Useful Links</small>
           </p>
 
+          <li>
+            <NavLink
+            to={'/'}
+              className={({ isActive }) =>
+                `flex ${
+                  isActive
+                    ? "bg-dark-primary-3 text-dark-primary"
+                    : "text-[#413F44]"
+                }  duration-150 rounded-md inline-flex p-2 cursor-pointer hover:bg-dark-primary-3  font-bold text-sm items-center gap-x-4  `
+              }
+            >
+              <BiHomeAlt className="text-2xl" />
+              <span className={`${!open && "hidden"} origin-left duration-200`}>
+                Back to Home
+              </span>
+            </NavLink>
+          </li>
           <li>
             <NavLink
               className={({ isActive }) =>

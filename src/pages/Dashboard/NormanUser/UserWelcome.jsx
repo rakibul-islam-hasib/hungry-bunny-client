@@ -1,6 +1,6 @@
 import React from 'react';
 
-const OwnerWelcome = () => {
+const UserWelcome = () => {
     return (
         <div className='mt-10 sm:text-center'>
             <h1 className='text-5xl text-orange-500 font-bold'>Welcome back Hungry Bunny</h1>
@@ -11,4 +11,4 @@ const OwnerWelcome = () => {
     );
 };
 
-export default OwnerWelcome;
+export default UserWelcome;
