@@ -23,6 +23,7 @@ import Register from "../pages/auth/Register";
 import OwnerProfile from "../pages/dashboard/Owner/OwnerProfile";
 import OwnerWelcome from "../pages/dashboard/Owner/OwnerWelcome";
 import OwnerDashLayout from "../layout/OwnerDashLayout";
+import UserAddress from "../pages/dashboard/Owner/UserAddress";
 
 export const router = createBrowserRouter([
   {
@@ -110,7 +111,7 @@ export const router = createBrowserRouter([
     ],
   },
   {
-    path: '/ownerdash',
+    path: '/dashboard',
     element: <OwnerDashLayout />,
     children: [
       {
@@ -120,7 +121,11 @@ export const router = createBrowserRouter([
       {
         path: 'owner-profile',
         element: <OwnerProfile />
-      }
+      },
+      {
+        path: 'address',
+        element: <UserAddress />
+      },
     ]
   }
 ]);
