@@ -1,10 +1,7 @@
 import React, { useState } from 'react';
-import { useForm } from "react-hook-form";
-import { motion } from 'framer-motion';
-import { Dialog, Transition } from '@headlessui/react';
-import { MdDriveFileRenameOutline } from 'react-icons/md';
 
-const OwnerProfile = () => {
+
+const UserProfile = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     const openModal = () => {
@@ -15,17 +12,17 @@ const OwnerProfile = () => {
         setIsOpen(false);
     };
 
-    const handleAccount = event => {
-        event.preventDefault();
-        const form = event.target;
-        const name = form.name.value;
-        const last = form.last.value;
-        const email = form.email.value;
-        const phone = form.phone.value;
+    // const handleAccount = event => {
+    //     event.preventDefault();
+    //     const form = event.target;
+    //     const name = form.name.value;
+    //     const last = form.last.value;
+    //     const email = form.email.value;
+    //     const phone = form.phone.value;
 
-        const newAccount = { name, last, email, phone }
+    //     const newAccount = { name, last, email, phone }
 
-        console.log(newAccount);
+    //     console.log(newAccount);
 
         // // send data to the server
         // fetch('', {
@@ -52,7 +49,7 @@ const OwnerProfile = () => {
         //     })
 
 
-    }
+    // }
 
     return (
         <>
@@ -60,7 +57,7 @@ const OwnerProfile = () => {
                 <h1 className='text-2xl font-bold'>Account</h1>
             </div>
             <div>
-                <form className='form md:w-full sm:w-full bg-purple-200 p-10 rounded-lg' onSubmit={handleAccount}>
+                <form className='form md:w-full sm:w-full bg-purple-200 p-10 rounded-lg'>
                     <h2 className="text-3xl font-extrabold text-start mb-2">Personal Information</h2>
 
                     <div>
@@ -131,22 +128,22 @@ const OwnerProfile = () => {
                         <h1 className='font-bold text-xl'>Email notifications</h1>
                         <div className='grid grid-cols-2'>
                             <label>
-                                <input className='my-5' type="checkbox" checked /> New Deals
+                                <input className='my-5' type="checkbox" defaultChecked /> New Deals
                             </label>
                             <label>
-                                <input className='my-5' type="checkbox" checked /> Password changes
+                                <input className='my-5' type="checkbox" defaultChecked /> Password changes
                             </label>
                             <label>
-                                <input className='my-5' type="checkbox" checked /> New Restaurants
+                                <input className='my-5' type="checkbox" defaultChecked /> New Restaurants
                             </label>
                             <label>
-                                <input className='my-5' type="checkbox" checked /> Special Offers
+                                <input className='my-5' type="checkbox" defaultChecked /> Special Offers
                             </label>
                             <label>
-                                <input className='my-5' type="checkbox" checked /> Order Statuses
+                                <input className='my-5' type="checkbox"  /> Order Statuses
                             </label>
                             <label>
-                                <input className='my-5' type="checkbox" checked /> Newsletter
+                                <input className='my-5' type="checkbox"  /> Newsletter
                             </label>
                         </div>
 
@@ -172,4 +169,4 @@ const OwnerProfile = () => {
     );
 };
 
-export default OwnerProfile;
+export default UserProfile;
