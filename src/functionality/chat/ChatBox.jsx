@@ -8,8 +8,18 @@ import useUtils from '../../hooks/useUtils';
 const ChatBox = () => {
   const [isOpen, setIsOpen] = useState(false);
   const chatBoxRef = useRef(null);
-  const { isFooter } = useUtils();
-  console.log(isFooter)
+  const { isFooter, isHero } = useUtils();
+  const [isHidden, setIsHidden] = useState(false);
+
+  useEffect(() => {
+    if (isFooter || isHero) {
+      setIsHidden(true);
+    } else {
+      setIsHidden(false);
+    }
+  }, [isFooter, isHero]);
+
+
   useEffect(() => {
     const timeline = gsap.timeline({
       onComplete: () => {
@@ -40,10 +50,10 @@ const ChatBox = () => {
 
   return (
     <div className='h-screen'>
-      <div className={`fixed right-3 bottom-3 ${isFooter ? 'hidden' : ''}`}>
-        <button onClick={toggleChatBox} className={`flex border-primary  dark:text-white rounded-full gap-2 items-center border px-3 py-1 `}>
+      <div className={`fixed right-3 bottom-3 ${isHidden ? 'hidden' : ''}`}>
+        <button onClick={toggleChatBox} className={`flex border-primary bg-white dark:bg-black  dark:text-white rounded-full gap-2 items-center border px-3 py-1 `}>
           <ChatIcoSvg />
-          <span>{isOpen ? 'Close Chat' : 'Live Chat'}</span>
+          <span className='hidden md:block'>{isOpen ? 'Close Chat' : 'Live Chat'}</span>
         </button>
       </div>
 
