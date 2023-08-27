@@ -7,7 +7,7 @@ import { TbBrandAppleArcade } from 'react-icons/tb';
 import { CgProfile } from 'react-icons/cg';
 const userNavItems = [
     { to: "/dashboard/owner-profile", icon: <CgProfile className="text-2xl" />, label: "Manage Profile" },
-    { to: "/dashboard/manage-users", icon: <FaUsers className="text-2xl" />, label: "Address" },
+    { to: "/dashboard/address", icon: <FaUsers className="text-2xl" />, label: "Address" },
     { to: "/dashboard/manage-class", icon: <BsFillPostcardFill className="text-2xl" />, label: "Payment Method" },
     { to: "/dashboard/manage-applications", icon: <TbBrandAppleArcade className="text-2xl" />, label: "Security" },
 ];
