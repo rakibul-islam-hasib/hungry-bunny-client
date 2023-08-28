@@ -10,7 +10,7 @@ const Blog = () => {
     const [loading, setLoading ] = useState(true)
 
     useEffect(() => {
-      axios.get('/restaurant')
+      axios.get('/blogs')
       .then(res => {
        setBlogs(res.data)
       })
