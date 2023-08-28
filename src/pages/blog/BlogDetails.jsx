@@ -7,7 +7,7 @@ function BlogDetails() {
     const blogs = useLoaderData([])
     console.log(blogs);
     return (
-        <div className="mt-10">
+        <div className="mt-10 w-3/4 mx-auto">
             <h2 className="text-4xl ml-5 mb-7 font-extrabold mt-5">{blogs.blogHeading}</h2>
             <div>
         <img className="rounded-2xl mb-10" src={blogs.blogImage} alt="food image" />
@@ -18,6 +18,7 @@ function BlogDetails() {
         <img className="rounded-full mr-5" style={{height:50}} src={blogs.authorImage} alt="author image" />
         <div>
             <p>{blogs.authorName}</p>
+            <p> khan@gmail.com</p>
             <p>{blogs.date}</p>
         </div>
         </div>

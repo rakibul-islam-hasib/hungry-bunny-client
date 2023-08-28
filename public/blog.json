@@ -6,6 +6,7 @@
         "authorImage": "https://randomuser.me/api/portraits/men/28.jpg",
         "blogImage": "https://images.pexels.com/photos/958545/pexels-photo-958545.jpeg?auto=compress&cs=tinysrgb&w=1600",
         "date": "2023-08-10",
+        "email": "habib@gmail.com",
         "time": 5,
         "rating": 4.9,
         "description": {
@@ -21,6 +22,7 @@
         "authorImage": "https://randomuser.me/api/portraits/men/72.jpg",
         "blogImage": "https://images.pexels.com/photos/1640772/pexels-photo-1640772.jpeg?auto=compress&cs=tinysrgb&w=1600",
         "date": "2023-07-25",
+        "email": "labib@gmail.com",
         "time": 4,
         "rating": 4.7,
         "description": {
@@ -36,6 +38,7 @@
         "authorImage": "https://randomuser.me/api/portraits/men/76.jpg",
         "blogImage": "https://images.pexels.com/photos/699953/pexels-photo-699953.jpeg?auto=compress&cs=tinysrgb&w=1600",
         "date": "2023-07-12",
+        "email": "rakib@gmail.com",
         "time": 5,
         "rating": 4.7,
         "description": {
@@ -51,6 +54,7 @@
         "authorImage": "https://randomuser.me/api/portraits/men/13.jpg",
         "blogImage": "https://images.pexels.com/photos/3186654/pexels-photo-3186654.jpeg?auto=compress&cs=tinysrgb&w=1600",
         "date": "2023-06-28",
+        "email": "jahid@gmail.com",
         "time": 4,
         "rating": 4.3,
         "description": {
@@ -66,6 +70,7 @@
         "authorImage": "https://randomuser.me/api/portraits/men/78.jpg",
         "blogImage": "https://images.pexels.com/photos/2664216/pexels-photo-2664216.jpeg?auto=compress&cs=tinysrgb&w=1600",
         "date": "2023-06-15",
+        "email": "sujoy@gmail.com",
         "time": 4,
         "rating": 4.2,
         "description": {
@@ -81,6 +86,7 @@
         "authorImage": "https://randomuser.me/api/portraits/men/71.jpg",
         "blogImage": "https://images.pexels.com/photos/1527603/pexels-photo-1527603.jpeg?auto=compress&cs=tinysrgb&w=1600",
         "date": "2023-06-10",
+        "email": "sonjoy@gmail.com",
         "time": 4,
         "rating": 4.9,
         "description": {
@@ -96,6 +102,7 @@
         "authorImage": "https://randomuser.me/api/portraits/men/14.jpg",
         "blogImage": "https://images.pexels.com/photos/3756498/pexels-photo-3756498.jpeg?auto=compress&cs=tinysrgb&w=1600",
         "date": "2023-06-05",
+        "email": "tareq@gmail.com",
         "time": 3,
         "rating": 4.6,
         "description": {
@@ -111,6 +118,7 @@
         "authorImage": "https://randomuser.me/api/portraits/men/22.jpg",
         "blogImage": "https://images.pexels.com/photos/1310777/pexels-photo-1310777.jpeg?auto=compress&cs=tinysrgb&w=1600",
         "date": "2023-05-28",
+        "email": "sohel@gmail.com",
         "time": 4,
         "rating": 4.4,
         "description": {
@@ -126,6 +134,7 @@
         "authorImage": "https://randomuser.me/api/portraits/men/51.jpg",
         "blogImage": "https://images.pexels.com/photos/806361/pexels-photo-806361.jpeg?auto=compress&cs=tinysrgb&w=1600",
         "date": "2023-05-20",
+        "email": "tabib@gmail.com",
         "time": 3,
         "rating": 4.6,
         "description": {
@@ -141,6 +150,7 @@
         "authorImage": "https://randomuser.me/api/portraits/men/67.jpg",
         "blogImage": "https://images.pexels.com/photos/3758053/pexels-photo-3758053.jpeg?auto=compress&cs=tinysrgb&w=1600",
         "date": "2023-05-15",
+        "email": "tamim@gmail.com",
         "time": 2,
         "rating": 4.8,
         "description": {
@@ -157,6 +167,7 @@
         "authorImage": "https://randomuser.me/api/portraits/men/0.jpg",
         "blogImage": "https://img.freepik.com/free-photo/top-view-table-full-delicious-food-composition_23-2149141352.jpg?size=626&ext=jpg&ga=GA1.1.939033137.1692619858&semt=sph",
         "date": "2023-05-15",
+        "email": "sakib@gmail.com",
         "time": 4,
         "rating": 4.8,
         "description": {
@@ -172,6 +183,7 @@
         "authorImage": "https://randomuser.me/api/portraits/men/49.jpg",
         "blogImage": "https://img.freepik.com/free-photo/penne-pasta-tomato-sauce-with-chicken-tomatoes-wooden-table_2829-19744.jpg?size=626&ext=jpg&ga=GA1.1.939033137.1692619858&semt=sph",
         "date": "2023-05-15",
+        "email": "joy@gmail.com",
         "time": 4,
         "rating": 4.2,
         "description": {
@@ -187,6 +199,7 @@
         "authorImage": "https://randomuser.me/api/portraits/men/82.jpg",
         "blogImage": "https://img.freepik.com/free-photo/chicken-skewers-with-slices-sweet-peppers-dill_2829-18813.jpg?size=626&ext=jpg&ga=GA1.1.939033137.1692619858&semt=sph",
         "date": "2023-05-15",
+        "email": "hasib@gmail.com",
         "time": 4,
         "rating": 4.8,
         "description": {
@@ -202,6 +215,7 @@
         "authorImage": "https://randomuser.me/api/portraits/men/73.jpg",
         "blogImage": "https://img.freepik.com/free-photo/delicious-food-white-plate_144627-34705.jpg?size=626&ext=jpg&ga=GA1.1.939033137.1692619858&semt=sph",
         "date": "2023-05-15",
+        "email": "hassan@gmail.com",
         "time": 5,
         "rating": 4.7,
         "description": {
