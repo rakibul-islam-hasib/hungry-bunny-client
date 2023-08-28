@@ -1,19 +1,31 @@
 import React, { useEffect, useState } from 'react';
 import { FaReadme } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import useAxiosFetch from '../../hooks/useAxiosFetch';
+import './blog.css'
 
 const Blog = () => {
+  const axios = useAxiosFetch([])
     const [ blogs, setBlogs ] = useState([])
+    const [loading, setLoading ] = useState(true)
 
     useEffect(() => {
-        fetch('blog.json')
-        .then(res => res.json())
-        .then(data => {
-            setBlogs(data)
-            console.log(data);
-        })
-    }, [])
-
+      axios.get('/restaurant')
+      .then(res => {
+       setBlogs(res.data)
+      })
+      .catch(error =>{
+       console.log(error);
+      })
+      .finally(() => setLoading(false))
+   // eslint-disable-next-line react-hooks/exhaustive-deps
+   }, [])
+   if(loading) return <div className ="restaurant-loader mx-auto">
+   <div className ="circle"></div>
+   <div className ="circle"></div>
+   <div className ="circle"></div>
+   <div className ="circle"></div>
+ </div>
     return (
         <div>
             <div className="grid md:grid-cols-2 md:gap-8 gap-3 lg:grid-cols-3 mt-10 mx-auto">
@@ -39,7 +51,7 @@ const Blog = () => {
               </div>
               </div>
               <div className="flex justify-between items-center mt-4">
-                <Link to={`/blog/${item._id}`}>
+                <Link to={`/blogs/${item._id}`}>
                   <button className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-full flex items-center">
                   Details
                 </button></Link>

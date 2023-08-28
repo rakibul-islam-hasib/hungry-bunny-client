@@ -19,6 +19,7 @@ import UserWelcome from "../pages/dashboard/user/UserWelcome";
 import UserProfile from "../pages/dashboard/user/UserProfile";
 import RestaurantDetails from "../pages/Restaurant/RestaurantDetails";
 import Register from "../pages/auth/Register";
+import BlogDetails from "../pages/blog/BlogDetails";
 
 export const router = createBrowserRouter([
   {
@@ -56,7 +57,7 @@ export const router = createBrowserRouter([
       },
       {
         path: '/restaurant/:id',
-        element: <RestaurantDetails></RestaurantDetails>,
+        element: <RestaurantDetails/>,
         loader: ({params}) => fetch(`https://hungry-bunny.vercel.app/restaurant/${params.id}`)
       },
       {
@@ -68,8 +69,13 @@ export const router = createBrowserRouter([
         element: <Faq />
       },
       {
-        path: '/blog',
+        path: '/blogs',
         element: <Blog />
+      },
+      {
+        path: '/blogs/:id',
+        element: <BlogDetails/>,
+        loader: ({params}) => fetch(`http://localhost:5000/blogs/${params.id}`)
       },
       {
         path: '/temp',

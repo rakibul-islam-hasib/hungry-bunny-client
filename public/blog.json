@@ -1,6 +1,5 @@
 [
     {
-        "_id": 1,
         "blogHeading": "The Art of Baking: From Flour to Flavors",
         "authorName": "Sarah Thompson",
         "authorImage": "https://randomuser.me/api/portraits/men/28.jpg",
@@ -15,7 +14,6 @@
         }
     },
     {
-        "_id": 2,
         "blogHeading": "Savoring Street Food: A Global Gastronomic Adventure",
         "authorName": "Carlos Rodriguez",
         "authorImage": "https://randomuser.me/api/portraits/men/72.jpg",
@@ -30,7 +28,6 @@
         }
     },
     {
-        "_id": 3,
         "blogHeading": "The Organic Revolution: Nourishing Body and Earth",
         "authorName": "Elena Martinez",
         "authorImage": "https://randomuser.me/api/portraits/men/76.jpg",
@@ -45,7 +42,6 @@
         }
     },
     {
-        "_id": 4,
         "blogHeading": "Culinary Fusion: Where East Meets West on the Plate",
         "authorName": "David Kim",
         "authorImage": "https://randomuser.me/api/portraits/men/13.jpg",
@@ -60,7 +56,6 @@
         }
     },
     {
-        "_id": 5,
         "blogHeading": "Elevating Home Cooking: From Novice to Masterchef",
         "authorName": "Sophia Williams",
         "authorImage": "https://randomuser.me/api/portraits/men/78.jpg",
@@ -75,7 +70,6 @@
         }
     },
     {
-        "_id": 6,
         "blogHeading": "Exploring Vegan Delights: A Plant-Based Odyssey",
         "authorName": "Olivia Adams",
         "authorImage": "https://randomuser.me/api/portraits/men/71.jpg",
@@ -90,7 +84,6 @@
         }
     },
     {
-        "_id": 7,
         "blogHeading": "Flavors of the Mediterranean: A Love Affair with Food",
         "authorName": "Antonio Lopez",
         "authorImage": "https://randomuser.me/api/portraits/men/14.jpg",
@@ -105,7 +98,6 @@
         }
     },
     {
-        "_id": 8,
         "blogHeading": "The Craft of Mixology: A Journey Through Cocktails",
         "authorName": "Max Johnson",
         "authorImage": "https://randomuser.me/api/portraits/men/22.jpg",
@@ -120,7 +112,6 @@
         }
     },
     {
-        "_id": 9,
         "blogHeading": "Rediscovering Grandma's Recipes: A Taste of Nostalgia",
         "authorName": "Grace Miller",
         "authorImage": "https://randomuser.me/api/portraits/men/51.jpg",
@@ -135,7 +126,6 @@
         }
     },
     {
-        "_id": 10,
         "blogHeading": "Culinary Adventures for the Brave: Exploring Exotic Ingredients",
         "authorName": "Raj Patel",
         "authorImage": "https://randomuser.me/api/portraits/men/67.jpg",
@@ -151,7 +141,6 @@
     },
 
     {
-        "_id": 11,
         "blogHeading": "The Art of Balancing Food Delivery and Restaurants",
         "authorName": "Benjamin Mitchell",
         "authorImage": "https://randomuser.me/api/portraits/men/0.jpg",
@@ -166,7 +155,6 @@
         }
     },
     {
-        "_id": 12,
         "blogHeading": "Unveiling the Future of Food Delivery",
         "authorName": "Ethan Reynolds",
         "authorImage": "https://randomuser.me/api/portraits/men/49.jpg",
@@ -181,7 +169,6 @@
         }
     },
     {
-        "_id": 13,
         "blogHeading": "The Rise of Online Food Delivery Platforms",
         "authorName": "Alexander Carter",
         "authorImage": "https://randomuser.me/api/portraits/men/82.jpg",
@@ -196,7 +183,6 @@
         }
     },
     {
-        "_id": 14,
         "blogHeading": "Exploring the Evolution of Food Delivery Services",
         "authorName": "Oliver Johnson",
         "authorImage": "https://randomuser.me/api/portraits/men/73.jpg",
