@@ -18,7 +18,7 @@ function BlogDetails() {
         <img className="rounded-full mr-5" style={{height:50}} src={blogs.authorImage} alt="author image" />
         <div className="text-left">
             <p>{blogs.authorName}</p>
-            <p> khan@gmail.com</p>
+            <p>{blogs.email}</p>
             <p>{blogs.date}</p>
         </div>
         </div>
