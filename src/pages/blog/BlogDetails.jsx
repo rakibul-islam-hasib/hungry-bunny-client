@@ -16,13 +16,13 @@ function BlogDetails() {
         <div className="flex justify-between border-2 border-orange-400 pt-8 pb-8 pr-5 pl-5 rounded-2xl items-center text-center">
         <div className="flex">
         <img className="rounded-full mr-5" style={{height:50}} src={blogs.authorImage} alt="author image" />
-        <div>
+        <div className="text-left">
             <p>{blogs.authorName}</p>
             <p> khan@gmail.com</p>
             <p>{blogs.date}</p>
         </div>
         </div>
-        <div>
+        <div className="text-left">
         <p className='flex items-center'><span className='mr-2'>{blogs.time} min read</span><span><FaReadme/></span> </p>
         <Rating
       style={{ maxWidth: 140 }}
