@@ -37,7 +37,7 @@ const Blog = () => {
           </div>
       <div className="grid md:grid-cols-2 md:gap-8 gap-3 lg:grid-cols-3 mt-10 mx-auto">
         {blogs.map((item) => (
-          <div key={item._id} className='p-2 border overflow-hidden shadow-lg rounded-md dark:drop-shadow-md'>
+          <div key={item._id} className='p-2 border overflow-hidden shadow-lg rounded-2xl dark:drop-shadow-md'>
             <img className="w-full h-48 object-cover rounded-lg" src={item.blogImage} alt="Food Image" />
             <div className='flex justify-between mt-3'>
               <p>{item.date}</p>
@@ -70,8 +70,8 @@ const Blog = () => {
         ))}
       </div>
       {/* Pagination  */}
-      <div className="mt-8 mb-8 text-right text-4xl">
-        <Pagination className='text-right font-bold' onChange={(e, vale) => setPage(vale)} count={totalPage} color="secondary" />
+      <div className="mt-10 mb-5 text-right text-4xl mx-auto sm:w-[40%] md:w-[20%]">
+        <Pagination className='text-right text-4xl font-bold pt-5 pb-5 pr-4 pl-4 rounded-2xl dark:bg-white' onChange={(e, vale) => setPage(vale)} count={totalPage} color="secondary" />
       </div>
       <ScrollRestoration />
     </div>
