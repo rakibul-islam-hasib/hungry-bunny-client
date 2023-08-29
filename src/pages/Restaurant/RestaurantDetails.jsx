@@ -8,7 +8,7 @@ function RestaurantDetails() {
     console.log(restaurant.restaurantName);
 
     return (
-        <div className='sm:ml-5'>
+        <div className='sm:ml-5 dark:text-white'>
          <div className='mt-7 md:flex mb-4 sm:ml-5'>
         <div className='mt-4 md:w-[50%] md:mr-8'>
           <h3 className='font-extrabold text-4xl'>{restaurant.restaurantName}</h3>
@@ -44,14 +44,14 @@ function RestaurantDetails() {
           </div>
         </div>
         <div className='md:w-[50%]'>
-          <img src={restaurant.restaurantImage} className='w-full sm:m-5' alt="" />
+          <img src={restaurant.restaurantImage} className='w-full sm:m-5 rounded-2xl' alt="" />
         </div>
       </div>
 
     {/* food restaurant card */}
 <div className="md:flex">
 <div className="grid md:grid-cols-2 md:gap-8 gap-3 lg:grid-cols-3 mt-10 md:w-[75%]">
-          <div className='p-2 border overflow-hidden shadow-lg rounded-md'>
+          <div className='p-2 border overflow-hidden shadow-lg rounded-2xl'>
           <img className="w-full h-48 object-cover rounded-lg" src={restaurant.foodItems[0].foodImage} alt="Food Image" />
           <div className="px-6 py-4">
             <div className="mb-2">
@@ -154,13 +154,15 @@ function RestaurantDetails() {
       </div>
       <div className='md:w-[25%]'>
 
-      <div className='ml-8 mt-10 p-2 bg-orange-100 rounded-2xl'>
-        <h2 className='text-center text-4xl font-extrabold mb-5'>Popular Dish Item</h2>
+      <div className='mt-10 p-2 bg-orange-100 rounded-2xl drop-shadow-lg dark:bg-black'>
+       <div className='drop-shadow-lg ml-4 dark:bg-black dark:border-4 dark:border-orange-400 p-2 rounded-xl'>
+       <h2 className='text-center text-4xl font-extrabold mb-5'>Popular Dish Item</h2>
         <p className='font-semibold mb-5 flex bg-white rounded-2xl hover:bg-orange-500 text-slate-800 hover:text-white p-1 justify-between ml-1 items-center mt-2 text-2xl'><span> {restaurant.popularDish[0].dishName}</span><span><FaArrowRight/></span></p>
         <p className='font-semibold mb-5 flex bg-white rounded-2xl hover:bg-orange-500 text-slate-800 hover:text-white p-1 justify-between ml-1 items-center mt-2 text-2xl'><span>{restaurant.popularDish[1].dishName}</span> <span><FaArrowRight/></span></p>
         <p className='font-semibold mb-5 flex bg-white rounded-2xl hover:bg-orange-500 text-slate-800 hover:text-white p-1 justify-between ml-1 items-center mt-2 text-2xl'><span>{restaurant.popularDish[2].dishName}</span> <span><FaArrowRight/></span></p>
         <p className='font-semibold mb-5 flex bg-white rounded-2xl hover:bg-orange-500 text-slate-800 hover:text-white p-1 justify-between ml-1 items-center mt-2 text-2xl'><span>{restaurant.popularDish[3].dishName}</span> <span><FaArrowRight/></span></p>
         <p className='font-semibold mb-5 flex bg-white rounded-2xl hover:bg-orange-500 text-slate-800 hover:text-white p-1 justify-between ml-1 items-center mt-2 text-2xl'><span>{restaurant.popularDish[4].dishName}</span> <span><FaArrowRight/></span></p>
+       </div>
      
       </div>
       <div className='mt-20 rounded-xl border-4 border-orange-400 pl-4 pr-4 pt-10 pb-10 ml-7'>
