@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link, ScrollRestoration } from 'react-router-dom';
-import { FaMapMarkerAlt } from "react-icons/fa";
+import { FaLocationArrow, FaMapMarkerAlt } from "react-icons/fa";
 import { Rating } from '@smastrom/react-rating'
 import '@smastrom/react-rating/style.css'
 import useAxiosFetch from '../../hooks/useAxiosFetch';
@@ -35,10 +35,10 @@ const Restaurant = () => {
             <h2 className='text-2xl font-bold text-slate-800 dark:text-white mb-4'> Rediscovering Traditional Flavors with a Modern Twist</h2>
           </div>
           <div className='md:flex ml-6 md:ml-96'>
-            <input type="text" className='rounded-2xl w-[40%] text-2xl dark:text-black' placeholder='search restaurant' />
-            <button className='bg-orange-500 text-white pl-7 pr-7 pt-3 pb-3 text-4xl rounded-2xl ml-5'>search</button>
+            <input type="text" className='rounded-3xl w-[40%] border-0 text-2xl dark:text-black' placeholder='search restaurant' />
+            <button className='bg-orange-500 text-white pl-7 pr-7 pt-3 pb-3 text-4xl rounded-3xl ml-5'><FaLocationArrow/> </button>
           </div>
-      <div className='p-10 md:w-[90%] -mb-36 dark:border-4 dark:border-orange-400 dark:bg-black text-white mt-10 bottom-10 rounded-3xl bg-white mx-auto grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
+      <div className='p-10 md:w-[90%] -mb-36 dark:border-4 dark:border-orange-400 dark:bg-black dark:text-white mt-10 bottom-10 rounded-3xl bg-white mx-auto grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
         <div className=''>
           <p className='flex items-center'><span className='text-4xl font-extrabold'> 30</span> <span className='text-4xl font-extrabold'>+</span></p>
           <p className='text-2xl'>Food Vendors</p>
