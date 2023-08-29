@@ -20,6 +20,7 @@ import UserWelcome from "../pages/dashboard/WellComeDashboard/UserWelcome";
 import RestaurantDetails from "../pages/Restaurant/RestaurantDetails";
 import RestaurantAdmin from "../pages/dashboard/RestaurantAdmin/RestaurantAdmin";
 import Register from "../pages/auth/Register";
+import BlogDetails from "../pages/blog/BlogDetails";
 // import UserAddress from "../pages/dashboard/Owner/UserAddress";
 import UserProfile from "../pages/dashboard/NormanUser/UserProfile";
 import UserAddress from "../pages/dashboard/NormanUser/UserAddress";
@@ -61,21 +62,26 @@ export const router = createBrowserRouter([
         element: <Restaurant />,
       },
       {
-        path: "/restaurant/:id",
-        element: <RestaurantDetails></RestaurantDetails>,
-        loader: ({ params }) => fetch(`https://hungry-bunny.vercel.app/restaurant/${params.id}`)
+        path: '/restaurant/:id',
+        element: <RestaurantDetails/>,
+        loader: ({params}) => fetch(`http://localhost:5000/restaurant/${params.id}`)
       },
       {
-        path: "/menu",
-        element: <Menu />,
+        path: '/menu',
+        element: <Menu />
       },
       {
-        path: "/faq",
-        element: <Faq />,
+        path: '/faq',
+        element: <Faq />
       },
       {
-        path: "/blog",
-        element: <Blog />,
+        path: '/blogs',
+        element: <Blog />
+      },
+      {
+        path: '/blogs/:id',
+        element: <BlogDetails/>,
+        loader: ({params}) => fetch(`http://localhost:5000/blogs/${params.id}`)
       },
       {
         path: "/temp",
