@@ -24,8 +24,6 @@ import BlogDetails from "../pages/blog/BlogDetails";
 // import UserAddress from "../pages/dashboard/Owner/UserAddress";
 import UserProfile from "../pages/dashboard/NormanUser/UserProfile";
 import UserAddress from "../pages/dashboard/NormanUser/UserAddress";
-import AdminDash from "../pages/dashboard/AdminDash/AdminDash";
-import ManageUsers from "../pages/dashboard/AdminDash/ManageUsers";
 
 export const router = createBrowserRouter([
   {
@@ -110,16 +108,6 @@ export const router = createBrowserRouter([
 /*------------------------------------------------------------
 -----------------WebSite Admin  Dashboard-------------------
 -------------------------------------------------------------*/ 
-
-
-      {
-        path:'admin-dashboard',
-        element:<AdminDash/>
-      },
-      {
-        path:'manage-users',
-        element:<ManageUsers/>
-      },
 
 
 
