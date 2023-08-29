@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import ChangeProfilePicModal from '../../../components/Modals/ChangeProfilePicModal';
 
 
 const UserProfile = () => {
@@ -20,7 +21,7 @@ const UserProfile = () => {
                 <h1 className='text-2xl font-bold'>Account</h1>
             </div>
             <div>
-                <div className='form md:w-full sm:w-full bg-purple-200 p-10 rounded-lg'>
+                <div className='form md:w-full sm:w-full p-10 rounded-lg'>
                     <h2 className="text-3xl font-extrabold text-start mb-2">Personal Information</h2>
 
                     <div>
@@ -33,13 +34,13 @@ const UserProfile = () => {
                                 <span className='mt-8'>
                                     <button
                                         onClick={openModal}
-                                        className="bg-transparent hover:bg-blue-500 text-blue-500 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
+                                        className="bg-transparent hover:bg-primary  text-primary font-semibold hover:text-white py-2 px-4 border border-primary hover:border-transparent rounded"
                                     >
                                         Change
                                     </button>
                                     <button
                                         onClick={openModal}
-                                        className="bg-transparent hover:bg-blue-500 text-blue-500 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded ms-2"
+                                        className="bg-transparent hover:bg-primary text-primary font-semibold hover:text-white py-2 px-4 border border-primary hover:border-transparent rounded ms-2"
                                     >
                                         Remove
                                     </button>
@@ -129,7 +130,7 @@ const UserProfile = () => {
 
                 </div>
             </div>
-
+            <ChangeProfilePicModal isOpen={isOpen} onClose={closeModal}/>
         </>
     );
 };
