@@ -95,7 +95,6 @@ const DashboardLayout = () => {
   const [open, setOpen] = useState(true);
   const { user: firebaseUser } = useAuth();
   const [user, isLoading] = useUserSecure(firebaseUser?.email);
-  console.log(user)
   const role = user?.role || "user";
 
   /* 
