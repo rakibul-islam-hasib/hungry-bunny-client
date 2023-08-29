@@ -31,7 +31,7 @@ const Blog = () => {
             <h2 className='text-2xl font-bold text-slate-800 dark:text-white mb-4'> Savoring Flavors, One Recipe at a Bite</h2>
           </div>
           <div className='md:flex ml-6 md:ml-96'>
-            <input type="text" className='rounded-2xl w-[40%] text-2xl dark:text-black' placeholder='search blogs' />
+            <input type="text" className='rounded-2xl w-[40%] text-2xl dark:text-black' placeholder='search blog' />
             <button className='bg-orange-500 text-white pl-7 pr-7 pt-3 pb-3 text-4xl rounded-2xl ml-5'>search</button>
           </div>
           </div>

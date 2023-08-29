@@ -32,9 +32,9 @@ function BlogDetails() {
         </div>
         </div>
         <div className="mt-10">
-        <p className="mb-5">{blogs.description.partOne}</p>
-        <p className="mb-5">{blogs.description.partTwo}</p>
-        <p className="mb-5">{blogs.description.partThree}</p>
+        <p className="mb-5">{blogs?.description.partOne}</p>
+        <p className="mb-5">{blogs?.description.partTwo}</p>
+        <p className="mb-5">{blogs?.description.partThree}</p>
         </div>
         </div>
         <div className="mt-16">

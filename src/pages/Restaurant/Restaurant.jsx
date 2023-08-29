@@ -28,16 +28,36 @@ const Restaurant = () => {
 
   return (
     <div>
+      <div>
       <div className='bg-orange-50 dark:bg-gradient-to-r from-cyan-400 to-blue-300  mt-5 pt-8 pb-8 rounded-3xl drop-shadow-lg'>
           <div className='text-center mx-auto'>
-            <h2 className='text-4xl font-extrabold mb-6 text-purple-800'>All blogs posts</h2>
-            <h2 className='text-2xl font-bold text-slate-800 dark:text-white mb-4'> Savoring Flavors, One Recipe at a Bite</h2>
+            <h2 className='text-4xl font-extrabold mb-6 text-purple-800 uppercase'>see available restaurant</h2>
+            <h2 className='text-2xl font-bold text-slate-800 dark:text-white mb-4'> Rediscovering Traditional Flavors with a Modern Twist</h2>
           </div>
           <div className='md:flex ml-6 md:ml-96'>
-            <input type="text" className='rounded-2xl w-[40%] text-2xl dark:text-black' placeholder='search blogs' />
+            <input type="text" className='rounded-2xl w-[40%] text-2xl dark:text-black' placeholder='search restaurant' />
             <button className='bg-orange-500 text-white pl-7 pr-7 pt-3 pb-3 text-4xl rounded-2xl ml-5'>search</button>
           </div>
           </div>
+      <div className='p-10 rounded-3xl bg-white mx-auto grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
+        <div className=''>
+          <p className='flex items-center'><span className='text-4xl font-extrabold'> 30</span> <span className='text-4xl font-extrabold'>+</span></p>
+          <p className='text-2xl'>Food Vendors</p>
+        </div>
+        <div className=''>
+          <p className='flex items-center'><span className='text-4xl font-extrabold'>300</span> <span className='text-4xl font-extrabold'>+</span></p>
+          <p className='text-2xl'>Food items</p>
+        </div>
+        <div className=''>
+          <p className='flex items-center'><span className='text-4xl font-extrabold'>30</span> <span className='text-4xl font-extrabold'>%</span></p>
+          <p className='text-2xl'>Birthday Specials</p>
+        </div>
+        <div className=''>
+          <p className='flex items-center'><span className='text-4xl font-extrabold'>25</span> <span className='text-4xl font-extrabold'>%</span></p>
+          <p className='text-2xl'>Exclusive Membership</p>
+        </div>
+      </div>
+      </div>
       <div className="grid md:grid-cols-2 md:gap-8 gap-3 lg:grid-cols-3 mt-10 mx-auto ">
         {allRestaurants.map((item) => (
           // <div key={item._id} className='p-2 border overflow-hidden shadow-lg rounded-md '>
