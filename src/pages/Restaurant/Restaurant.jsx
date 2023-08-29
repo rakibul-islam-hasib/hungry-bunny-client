@@ -29,7 +29,7 @@ const Restaurant = () => {
   return (
     <div>
       <div>
-      <div className='bg-orange-50 dark:bg-gradient-to-r from-cyan-400 to-blue-300  mt-5 pt-8 pb-8 rounded-3xl drop-shadow-lg'>
+      <div className='bg-orange-50 pb-8 dark:bg-gradient-to-r from-cyan-400 to-blue-300  mt-5 pt-8 rounded-3xl drop-shadow-lg'>
           <div className='text-center mx-auto'>
             <h2 className='text-4xl font-extrabold mb-6 text-purple-800 uppercase'>see available restaurant</h2>
             <h2 className='text-2xl font-bold text-slate-800 dark:text-white mb-4'> Rediscovering Traditional Flavors with a Modern Twist</h2>
@@ -38,8 +38,7 @@ const Restaurant = () => {
             <input type="text" className='rounded-2xl w-[40%] text-2xl dark:text-black' placeholder='search restaurant' />
             <button className='bg-orange-500 text-white pl-7 pr-7 pt-3 pb-3 text-4xl rounded-2xl ml-5'>search</button>
           </div>
-          </div>
-      <div className='p-10 md:w-[90%] bottom-10 rounded-3xl bg-white mx-auto grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
+      <div className='p-10 md:w-[90%] -mb-36 dark:border-4 dark:border-orange-400 dark:bg-black text-white mt-10 bottom-10 rounded-3xl bg-white mx-auto grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
         <div className=''>
           <p className='flex items-center'><span className='text-4xl font-extrabold'> 30</span> <span className='text-4xl font-extrabold'>+</span></p>
           <p className='text-2xl'>Food Vendors</p>
@@ -57,6 +56,7 @@ const Restaurant = () => {
           <p className='text-2xl'>Exclusive Membership</p>
         </div>
       </div>
+          </div>
       </div>
       <div className="grid md:grid-cols-2 md:gap-8 gap-3 lg:grid-cols-3 mt-10 mx-auto ">
         {allRestaurants.map((item) => (
@@ -74,7 +74,7 @@ const Restaurant = () => {
           //   </div>
           // </div>
 
-          <div key={item._id} className=" bg-white dark:drop-shadow-lg shadow-lg dark:border-2 dark:border-white dark:bg-black dark:text-white rounded-lg overflow-hidden my-5">
+          <div key={item._id} className=" bg-white mt-36 dark:drop-shadow-lg shadow-lg dark:border-2 dark:border-orange-300 dark:bg-black dark:text-white rounded-lg overflow-hidden my-5">
             <img className="w-full h-60 object-cover rounded-lg" src={item.restaurantImage} alt="Food Image" />
             <div className="px-4 py-2">
               <h1 className="text-gray-900 dark:text-white font-bold text-2xl uppercase mt-3 mb-2">{item.restaurantName}</h1>
