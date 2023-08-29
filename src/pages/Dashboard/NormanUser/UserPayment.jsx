@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
-const UserAddress = () => {
+const UserPayment = () => {
+
     const [isOpen, setIsOpen] = useState(false);
 
     const openModal = () => {
@@ -11,17 +12,18 @@ const UserAddress = () => {
         setIsOpen(false);
     };
 
-    const handleAccount = event => {
+    const handlePayment = event => {
         event.preventDefault();
         const form = event.target;
-        const name = form.name.value;
-        const last = form.last.value;
-        const email = form.email.value;
-        const phone = form.phone.value;
+        const cardNum = form.cardNum.value;
+        const cvc = form.cvc.value;
+        const expire = form.expire.value;
+        const cardholder = form.cardholder.value;
+        
 
-        const newAccount = { name, last, email, phone }
+        const newPayment = { cvc, expire, cardNum, cardholder }
 
-        console.log(newAccount);
+        console.log(newPayment);
 
         // // send data to the server
         // fetch('', {
@@ -52,60 +54,53 @@ const UserAddress = () => {
     return (
         <>
             <div className='mt-20'>
-                <h1 className='text-2xl font-bold'>Address</h1>
+                <h1 className='text-2xl font-bold'>Payment method</h1>
             </div>
             <div>
-                <form className='form md:w-full sm:w-full bg-purple-200 p-10 rounded-lg' onSubmit={handleAccount}>
-                    <h2 className="text-3xl font-extrabold text-start mb-2">Existing Shipping Addresses</h2>
+                <form className='form md:w-full sm:w-full bg-purple-200 p-10 rounded-lg' onSubmit={handlePayment}>
+                    <h2 className="text-3xl font-extrabold text-start mb-2">Connected payment methods</h2>
                        
 
-                    <h2 className="text-3xl font-extrabold text-start mb-2">New Shipping Addresses</h2>
+                    <h2 className="text-3xl font-extrabold text-start mb-2">New Payment method</h2>
 
-                    {/* form country, city and state name row */}
+                    {/* form card number, expiration and CVC name row */}
                     <div className="md:flex mb-6">
                         <div className="form-control md:w-1/2 ">
                             <label className="label">
-                                <span className="label-text">Country</span>
+                                <span className="label-text">Card Number</span>
                             </label>
                             <label className="input-group">
-                                <input type="text" name="country" placeholder="Enter country" className="input input-bordered w-full rounded p-2" />
+                                <input type="text" name="cardNum" placeholder="XXXX - XXXX - XXXX - XXXX" className="input input-bordered w-full rounded p-2" />
                             </label>
                         </div>
                         <div className="form-control md:w-1/2 ml-4">
                             <label className="label">
-                                <span className="label-text">State</span>
+                                <span className="label-text">Expiration</span>
                             </label>
                             <label className="input-group">
-                                <input type="state" name="state" id="" placeholder='Enter state' className="input input-bordered w-full rounded p-2" />
+                                <input type="expire" name="expire" id="" placeholder='MM / YYYY' className="input input-bordered w-full rounded p-2" />
                             </label>
                         </div>
                         <div className="form-control md:w-1/2 ml-4">
                             <label className="label">
-                                <span className="label-text">City</span>
+                                <span className="label-text">CVC</span>
                             </label>
                             <label className="input-group">
-                                <input type="city" name="city" id="" placeholder='Enter city' className="input input-bordered w-full rounded p-2" />
+                                <input type="cvc" name="cvc" id="" placeholder='XXX' className="input input-bordered w-full rounded p-2" />
                             </label>
                         </div>
                     </div>
-                    {/* form Address row */}
+                    {/* form Cardholder row */}
                     <div className="md:flex mb-6">
-                        <div className="form-control md:w-1/2">
+                        <div className="form-control md:full lg:w-full">
                             <label className="label">
-                                <span className="label-text">Address line 1</span>
+                                <span className="label-text">Cardholder</span>
                             </label>
                             <label className="input-group">
-                                <input type="text" name="address-one" placeholder="Enter Address" className="input input-bordered w-full rounded p-2" />
+                                <input type="text" name="cardholder" placeholder="Enter Name on Card" className="input input-bordered w-full rounded p-2" />
                             </label>
                         </div>
-                        <div className="form-control md:w-1/2 ml-4">
-                            <label className="label">
-                                <span className="label-text">Address line 2</span>
-                            </label>
-                            <label className="input-group">
-                                <input type="text" name="address-two" placeholder="Enter Address (Optional)" className="input input-bordered w-full rounded p-2" />
-                            </label>
-                        </div>
+                        
                     </div>
 
 
@@ -114,7 +109,7 @@ const UserAddress = () => {
 
                         <div className='text-end'>
                             
-                            <input type="submit" value="Add New Address" className=" bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded p-2 ms-2 " />
+                            <input type="submit" value="Add New Payment Method" className=" bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded p-2 ms-2 " />
 
                         </div>
                     
@@ -127,4 +122,4 @@ const UserAddress = () => {
     );
 };
 
-export default UserAddress;
+export default UserPayment;

@@ -43,12 +43,12 @@ const userNavItems = [
     label: "Address",
   },
   {
-    to: "/dashboard/manage-class",
+    to: "/dashboard/user-payment",
     icon: <BsFillPostcardFill className="text-2xl" />,
     label: "Payment Method",
   },
   {
-    to: "/dashboard/manage-applications",
+    to: "/dashboard/user-security",
     icon: <TbBrandAppleArcade className="text-2xl" />,
     label: "Security",
   },
@@ -91,7 +91,7 @@ const restaurantNavItems = [
 const DashboardLayout = () => {
   const [open, setOpen] = useState(true);
 
-  const role = "admin";
+  const role = "user";
 
   return (
     <div className="flex bg-[#f1ecea]">

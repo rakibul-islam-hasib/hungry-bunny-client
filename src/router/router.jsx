@@ -25,6 +25,8 @@ import UserProfile from "../pages/dashboard/NormanUser/UserProfile";
 import UserAddress from "../pages/dashboard/NormanUser/UserAddress";
 import AdminDash from "../pages/dashboard/AdminDash/AdminDash";
 import ManageUsers from "../pages/dashboard/AdminDash/ManageUsers";
+import UserPayment from "../pages/dashboard/NormanUser/UserPayment";
+import UserSecurity from "../pages/dashboard/NormanUser/UserSecurity";
 
 export const router = createBrowserRouter([
   {
@@ -136,6 +138,14 @@ export const router = createBrowserRouter([
       {
         path: 'address',
         element: <UserAddress />
+      },
+      {
+        path: 'user-payment',
+        element: <UserPayment />
+      },
+      {
+        path: 'user-security',
+        element: <UserSecurity />
       },
     ],
   },
