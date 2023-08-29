@@ -1,6 +1,8 @@
 import { useEffect } from 'react';
 import axios from 'axios';
 
+//  Base URL: https://hungry-bunny.vercel.app
+// Localhost: http://localhost:5000
 const useAxiosFetch = () => {
     const axiosInstance = axios.create({
         baseURL: 'http://localhost:5000', // TODO : Replace with base URL

@@ -1,68 +1,40 @@
-import React from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/effect-coverflow';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
-import './Temp.css';
+import React, { useState, useEffect } from 'react';
+import io from 'socket.io-client';
 
-import { EffectCoverflow, Pagination, Navigation } from 'swiper/modules';
-const Temp = () => {
+const socket = io('http://localhost:5000');
+
+const Chat = () => {
+  const [message, setMessage] = useState('');
+  const [messages, setMessages] = useState([]);
+
+  useEffect(() => {
+    // Listen for incoming messages
+    socket.on('message', (message) => {
+      setMessages((messages) => [...messages, message]);
+    });
+  }, []);
+
+  const handleMessageChange = (event) => {
+    setMessage(event.target.value);
+  };
+
+  const handleSendMessage = () => {
+    // Send a message to the server
+    socket.emit('message', message);
+    setMessage('');
+  };
+
   return (
     <div>
-      <Swiper
-        effect={'coverflow'}
-        loop={true}
-        
-        grabCursor={true}
-        centeredSlides={true}
-        navigation={{ nextEl: '.next-swp', prevEl: '.prv-swp' }}
-        slidesPerView={'auto'}
-        coverflowEffect={{
-          rotate: 0,
-          stretch: 5,
-          depth: 100,
-          modifier: 1,
-          slideShadows: true,
-        }}
-        pagination={true}
-        modules={[EffectCoverflow, Pagination, Navigation]}
-        className="mySwiper"
-      >
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
-        </SwiperSlide>
-      </Swiper>
-      <div className="">
-        <button className='next-swp'>Next</button>
-        <button className='prv-swp'>Prv</button>
-      </div>
+      <ul>
+        {messages.map((message, index) => (
+          <li key={index}>{message}</li>
+        ))}
+      </ul>
+      <input type="text" value={message} onChange={handleMessageChange} />
+      <button onClick={handleSendMessage}>Send</button>
     </div>
   );
 };
 
-export default Temp;
+export default Chat;

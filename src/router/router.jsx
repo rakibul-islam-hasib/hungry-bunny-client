@@ -14,12 +14,18 @@ import Temp from "../pages/temp/Temp";
 import Blog from "../pages/blog/Blog";
 import DashboardLayout from "../layout/DashboardLayout";
 
-import UserWelcome from "../pages/dashboard/user/UserWelcome";
+import UserWelcome from "../pages/dashboard/WellComeDashboard/UserWelcome";
 // import MultiStepForm from "../pages/auth/MultiStepForm";
-import UserProfile from "../pages/dashboard/user/UserProfile";
+// import UserProfile from "../pages/dashboard/user/UserProfile";
 import RestaurantDetails from "../pages/Restaurant/RestaurantDetails";
+import RestaurantAdmin from "../pages/dashboard/RestaurantAdmin/RestaurantAdmin";
 import Register from "../pages/auth/Register";
 import BlogDetails from "../pages/blog/BlogDetails";
+// import UserAddress from "../pages/dashboard/Owner/UserAddress";
+import UserProfile from "../pages/dashboard/NormanUser/UserProfile";
+import UserAddress from "../pages/dashboard/NormanUser/UserAddress";
+import AdminDash from "../pages/dashboard/AdminDash/AdminDash";
+import ManageUsers from "../pages/dashboard/AdminDash/ManageUsers";
 
 export const router = createBrowserRouter([
   {
@@ -36,24 +42,24 @@ export const router = createBrowserRouter([
         element: <Login />,
       },
       {
-        path: '/about',
-        element: <About />
+        path: "/about",
+        element: <About />,
       },
       {
-        path: '/contact',
-        element: <Contact />
+        path: "/contact",
+        element: <Contact />,
       },
       {
-        path: '/restaurants',
-        element: <Restaurant />
+        path: "/restaurants",
+        element: <Restaurant />,
       },
       {
         path: "/register",
         element: <Register />,
       },
       {
-        path: '/restaurant',
-        element: <Restaurant />
+        path: "/restaurant",
+        element: <Restaurant />,
       },
       {
         path: '/restaurant/:id',
@@ -78,33 +84,68 @@ export const router = createBrowserRouter([
         loader: ({params}) => fetch(`http://localhost:5000/blogs/${params.id}`)
       },
       {
-        path: '/temp',
-        element: <Temp />
-      }
+        path: "/temp",
+        element: <Temp />,
+      },
     ],
   },
   {
-    path: '/community',
+    path: "/community",
     element: <CommunityLayout />,
     children: [
       {
         index: true,
-        element: <Community />
-      }
-    ]
+        element: <Community />,
+      },
+    ],
   },
   {
-    path: '/dashboard',
+    path: "/dashboard",
     element: <DashboardLayout />,
     children: [
       {
         index: true,
-        element: <UserWelcome />
+        element: <UserWelcome />,
+      },
+/*------------------------------------------------------------
+-----------------WebSite Admin  Dashboard-------------------
+-------------------------------------------------------------*/ 
+
+
+      {
+        path:'admin-dashboard',
+        element:<AdminDash/>
       },
       {
-        path: 'user-profile',
-        element: <UserProfile />
-      }
-    ]
-  }
+        path:'manage-users',
+        element:<ManageUsers/>
+      },
+
+
+
+/*------------------------------------------------------------
+-----------------Restaurant Owner Dashboard-------------------
+-------------------------------------------------------------*/ 
+      {
+        path: "restaurant-cp",
+        element: <RestaurantAdmin />,
+      },
+
+
+/*------------------------------------------------------------
+---------------------Normal User Dashboard--------------------
+-------------------------------------------------------------*/ 
+      {
+        path: "user-profile",
+        element: <UserProfile />,
+      },
+      {
+        path: 'address',
+        element: <UserAddress />
+      },
+    ],
+  },
+  
+
+
 ]);

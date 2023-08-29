@@ -37,6 +37,10 @@ function BlogDetails() {
         <p className="mb-5">{blogs.description.partThree}</p>
         </div>
         </div>
+        <div className="mt-16">
+            <h2 className="text-4xl text-center font-bold">Recent Blogs</h2>
+
+        </div>
         </div>
     );
 }

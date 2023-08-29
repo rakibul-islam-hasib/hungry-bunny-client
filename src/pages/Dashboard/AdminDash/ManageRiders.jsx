@@ -1,14 +1,11 @@
 import React from 'react';
 
-
-const UserProfile = () => {
-    
+const ManageRiders = () => {
     return (
         <div>
             
-            <h1>Mr: </h1>
         </div>
     );
 };
 
-export default UserProfile;
+export default ManageRiders;
