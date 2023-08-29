@@ -36,10 +36,11 @@ const Register = () => {
       const userCredential = await dispatch(registerUser(data.email, data.password));
       if (userCredential.user) {
         await dispatch(updateName(data.name)); // Wait for the display name update
-        dispatch(setUser(userCredential.user)); // Set user in Redux store
+        await dispatch(setUser(userCredential.user)); // Set user in Redux store
         if (userCredential.user) {
           await axios.post('/user-info', userData); // Post user info to API
         }
+        console.log('Not Under userCredential.user')
       }
     } catch (err) {
       console.log(err);

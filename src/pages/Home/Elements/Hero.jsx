@@ -1,12 +1,33 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './css/Hero.css';
 import playIcon from '../../../assets/icons/play.svg';
 import fastFood from '../../../assets/img/fast-food.png';
 import { heroCategory } from '../../../utils';
+import { useDispatch } from 'react-redux';
+import { useInView } from 'react-intersection-observer';
+import { setHero } from '../../../redux/slices/utilsSlice';
 
 const Hero = () => {
+
+  const dispatch = useDispatch();
+
+  const { ref, inView } = useInView({
+    triggerOnce: false, // Only trigger once when the component comes into view
+  });
+
+  useEffect(() => {
+    if (inView) {
+      dispatch(setHero(true))
+    }
+    else {
+      dispatch(setHero(false))
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [inView]);
+
+
   return (
-    <section className='h-screen'>
+    <section ref={ref} className='h-screen'>
       <div className=" w-[90%] mx-auto">
         <div className=" mt-14   h-full space-y-4">
 

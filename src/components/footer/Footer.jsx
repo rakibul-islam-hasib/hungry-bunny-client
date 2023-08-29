@@ -1,12 +1,33 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import bgImg from '../../assets/img/footer_bg.jpg';
 import { Link } from 'react-router-dom';
-
+import { useInView } from 'react-intersection-observer';
+import { useDispatch } from 'react-redux';
+import { setFooter } from '../../redux/slices/utilsSlice';
 const Footer = () => {
+    const dispatch = useDispatch();
+
+    const { ref, inView } = useInView({
+        triggerOnce: false, // Only trigger once when the component comes into view
+    });
+
+    useEffect(() => {
+        if (inView) {
+            console.log('in view')
+            dispatch(setFooter(true))
+        }
+        else {
+            console.log('not in view')
+            dispatch(setFooter(false))
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [inView]);
+
+
     return (
 
         <>
-            <footer style={{backgroundImage : `url(${bgImg})`}} className='mt-5 bg-cover bg-fixed '>
+            <footer ref={ref} style={{ backgroundImage: `url(${bgImg})` }} className='mt-5 bg-cover bg-fixed '>
                 <div className="w-full h-full bg-gray-900 pr-10 md:p-10 bg-opacity-70">
                     <div className='grid md:grid-cols-3 lg:grid-cols-4 pl-8 max-w-screen-xl mx-auto text-gray-300'>
                         <div className='mt-7'>
@@ -52,7 +73,7 @@ const Footer = () => {
                                 <p>Monday .....  10am-11pm</p>
                                 <p className='font-bold'>Links</p>
                                 <p><Link to='/faq'>Faq</Link></p>
-                                <p><Link to='/blog'>Blog</Link></p>
+                                <p><Link to='/blogs'>Blogs</Link></p>
                             </div>
                         </div>
                         <div className='md:hidden lg:block mt-9'>

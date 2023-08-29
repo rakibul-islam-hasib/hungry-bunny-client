@@ -5,6 +5,7 @@ import PopularFood from "./Elements/PopularFood";
 import Stacks from "./Elements/Stacks";
 import FoodCard from "../Menu/FoodCard";
 import TopRestaurant from "./Elements/TopRestaurant";
+import ChatBox from "../../functionality/chat/ChatBox";
 
 // import HomeBlog from "./Elements/HomeBlog";
 
@@ -18,6 +19,7 @@ const Home = () => {
       <PopularFood />
       <Stacks />
       <CheckoutBar />
+      <ChatBox />
     </section>
   );
 };
