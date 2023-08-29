@@ -8,12 +8,16 @@ import './restaurant.css'
 import { Pagination } from '@mui/material';
 
 const Restaurant = () => {
+  const [ searchQuery, setSearchQuery ] = useState('')
+  
   const [allRestaurants, setAllRestaurants] = useState([]);
   const [page, setPage] = useState(1);
+  
   // console.log(page)
   const [totalItem, setTotalItem] = useState(1);
   const totalPage = Math.ceil(totalItem / 3);
   const axios = useAxiosFetch();
+
   useEffect(() => {
     axios.get('/restaurant/total/count')
       .then(res => setTotalItem(res.data.total))
@@ -26,6 +30,12 @@ const Restaurant = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [page])
 
+  const handleSearch = () =>{
+      axios.get(`/restaurant/search?query=${searchQuery}`)
+      .then(res => setAllRestaurants(res.data))
+      .catch(error => console.log(error))
+  }
+
   return (
     <div>
       <div>
@@ -35,8 +45,8 @@ const Restaurant = () => {
             <h2 className='text-2xl font-bold text-slate-800 dark:text-white mb-4'> Rediscovering Traditional Flavors with a Modern Twist</h2>
           </div>
           <div className='md:flex ml-6 md:ml-96'>
-            <input type="text" className='rounded-3xl w-[40%] border-0 text-2xl dark:text-black' placeholder='search restaurant' />
-            <button className='bg-orange-500 text-white pl-7 pr-7 pt-3 pb-3 text-4xl rounded-3xl ml-5'><FaLocationArrow/> </button>
+            <input type="text" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} className='rounded-3xl w-[40%] border-0 text-2xl dark:text-black' placeholder='search restaurant' />
+            <button onClick={handleSearch} className='bg-orange-500 text-white pl-7 pr-7 pt-3 pb-3 text-4xl rounded-3xl ml-5'><FaLocationArrow/> </button>
           </div>
       <div className='p-10 md:w-[90%] -mb-36 dark:border-4 dark:border-orange-400 dark:bg-black dark:text-white mt-10 bottom-10 rounded-3xl bg-white mx-auto grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
         <div className=''>
