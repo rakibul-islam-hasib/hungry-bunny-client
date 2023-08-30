@@ -1,9 +1,20 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import ChangeProfilePicModal from '../../../components/Modals/ChangeProfilePicModal';
+import { useAuth } from '../../../hooks/useAuth';
+import useUserSecure from '../../../hooks/useUserSecure';
+import useAxiosSecure from '../../../hooks/useAxiosSecure';
 
 
 const UserProfile = () => {
     const [isOpen, setIsOpen] = useState(false);
-
+    const { user } = useAuth();
+    const axios = useAxiosSecure();
+    // console.log(data, 'data from user profile')
+    const fetchUser = async () => {
+        const res = await axios.get(`/user-info/${user?.email}`);
+        console.log(res.data, 'data from user profile')
+        return res.data;
+    }
     const openModal = () => {
         setIsOpen(true);
     };
@@ -12,44 +23,10 @@ const UserProfile = () => {
         setIsOpen(false);
     };
 
-    // const handleAccount = event => {
-    //     event.preventDefault();
-    //     const form = event.target;
-    //     const name = form.name.value;
-    //     const last = form.last.value;
-    //     const email = form.email.value;
-    //     const phone = form.phone.value;
+    const handleProfilePicChange = (imgURL) => {
+        console.log(imgURL);
+    };
 
-    //     const newAccount = { name, last, email, phone }
-
-    //     console.log(newAccount);
-
-        // // send data to the server
-        // fetch('', {
-        //     method: 'POST',
-        //     headers: {
-        //         'content-type': 'application/json'
-        //     },
-        //     body: JSON.stringify(newAccount)
-        // })
-        //     .then(res => res.json())
-        //     .then(data => {
-        //         console.log(data);
-        //         if (data.insertedId) {
-        //             Swal.fire({
-        //                 title: 'Successfull',
-        //                 showClass: {
-        //                   popup: 'animate__animated animate__fadeInDown'
-        //                 },
-        //                 hideClass: {
-        //                   popup: 'animate__animated animate__fadeOutUp'
-        //                 }
-        //               })
-        //         }
-        //     })
-
-
-    // }
 
     return (
         <>
@@ -57,7 +34,7 @@ const UserProfile = () => {
                 <h1 className='text-2xl font-bold'>Account</h1>
             </div>
             <div>
-                <form className='form md:w-full sm:w-full bg-purple-200 p-10 rounded-lg'>
+                <div className='form md:w-full sm:w-full p-10 rounded-lg'>
                     <h2 className="text-3xl font-extrabold text-start mb-2">Personal Information</h2>
 
                     <div>
@@ -70,13 +47,13 @@ const UserProfile = () => {
                                 <span className='mt-8'>
                                     <button
                                         onClick={openModal}
-                                        className="bg-transparent hover:bg-blue-500 text-blue-500 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
+                                        className="bg-transparent hover:bg-primary  text-primary font-semibold hover:text-white py-2 px-4 border border-primary hover:border-transparent rounded"
                                     >
                                         Change
                                     </button>
                                     <button
                                         onClick={openModal}
-                                        className="bg-transparent hover:bg-blue-500 text-blue-500 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded ms-2"
+                                        className="bg-transparent hover:bg-primary text-primary font-semibold hover:text-white py-2 px-4 border border-primary hover:border-transparent rounded ms-2"
                                     >
                                         Remove
                                     </button>
@@ -85,8 +62,10 @@ const UserProfile = () => {
 
                         </div>
                     </div>
+
+
                     {/* form first name and last name row */}
-                    <div className="md:flex mb-6">
+                    <form className="md:flex mb-6">
                         <div className="form-control md:w-1/2 ">
                             <label className="label">
                                 <span className="label-text">First Name</span>
@@ -103,7 +82,7 @@ const UserProfile = () => {
                                 <input type="last" name="last" id="" placeholder='Last Name' className="input input-bordered w-full rounded p-2" />
                             </label>
                         </div>
-                    </div>
+                    </form>
                     {/* form Email and phone row */}
                     <div className="md:flex mb-6">
                         <div className="form-control md:w-1/2">
@@ -140,10 +119,10 @@ const UserProfile = () => {
                                 <input className='my-5' type="checkbox" defaultChecked /> Special Offers
                             </label>
                             <label>
-                                <input className='my-5' type="checkbox"  /> Order Statuses
+                                <input className='my-5' type="checkbox" /> Order Statuses
                             </label>
                             <label>
-                                <input className='my-5' type="checkbox"  /> Newsletter
+                                <input className='my-5' type="checkbox" /> Newsletter
                             </label>
                         </div>
 
@@ -162,9 +141,9 @@ const UserProfile = () => {
                     </div>
 
 
-                </form>
+                </div>
             </div>
-
+            <ChangeProfilePicModal isOpen={isOpen} onClose={closeModal} onSuccess={handleProfilePicChange} />
         </>
     );
 };
