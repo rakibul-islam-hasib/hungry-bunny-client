@@ -2,11 +2,17 @@ import React, { useState } from 'react';
 import './MultiStepForm.css'
 
 
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import SocialLogin from './SocialLogin';
+import { useDispatch, useSelector } from 'react-redux';
+import useAxiosFetch from '../../hooks/useAxiosFetch';
+import { registerUser, updateName } from '../../redux/slices/authThunks';
+import { setUser } from '../../redux/slices/authSlice';
 
 const MultiStepForm = () => {
-
+  const dispatch = useDispatch();
+  const axios = useAxiosFetch();
+  const { user } = useSelector((state) => state.auth);
 
 
   const [step, setStep] = useState(1);
@@ -21,10 +27,46 @@ const MultiStepForm = () => {
 
 
 
-  const handleFromSubmit = () => {
+  if (user) return <Navigate to="/" />;
 
+  const handleFromSubmit = async () => {
+    // e.preventDefault();
+    // const formData = new FormData(e.target);
+    // const data = Object.fromEntries(formData);
+    const userData = {
+      email: formData.email,
+      name: formData.name,
+      gender: formData.gender,
+      location: formData.location,
+      joined: new Date(),
+      role: 'user',
+      phone: {
+        p1: '',
+        p2: ''
+      },
+      address: '',
+      following: [],
+      followers: [],
+      likedPost: [],
+      isVerified: false,
+      photo: 'https://i.ibb.co/txQbC7p/casual-life-3d-profile-picture-of-person-in-glasses-and-orange-shirt.png',
+    }
+    console.log(formData);
+    try {
+      const userCredential = await dispatch(registerUser(formData.email, formData.password));
+      if (userCredential.user) {
+        await dispatch(updateName(formData.name)); // Wait for the display name update
+        await dispatch(setUser(userCredential.user)); // Set user in Redux store
+        if (userCredential.user) {
+          await axios.post('/user-info', userData); // Post user info to API
+          console.log(userData);
+        }
+        console.log('Not Under userCredential.user')
+      }
+    } catch (err) {
+      console.log(err);
+    }
   }
-
 
 
   const handleNext = () => {

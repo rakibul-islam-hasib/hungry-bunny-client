@@ -2,18 +2,16 @@ import React from 'react';
 import { FaBook, FaCartPlus, FaWallet } from 'react-icons/fa';
 import { FcCollaboration, FcMenu } from 'react-icons/fc';
 import { useAuth } from '../../../hooks/useAuth';
-import useUserSecure from '../../../hooks/useUserSecure';
 const UserWelcome = () => {
 
     const { user: firebaseUser } = useAuth()
-  const [user, isLoading] = useUserSecure(firebaseUser?.email);
 
 
-  console.log(user)
+  console.log(firebaseUser)
 
     return (
         <div className='mt-10 sm:text-center'>
-            <h1 className='text-4xl text-orange-500 font-bold'>Welcome back Hungry Bunny <br /> <span>Mr: {user.name} {user.role}</span></h1>
+            <h1 className='text-4xl text-orange-500 font-bold'>Welcome back Hungry Bunny <br /> <span>Mr: {firebaseUser.displayName} {firebaseUser.role}</span></h1>
             <div className='md:flex md:w-[100%] justify-between mr-9 mb-7 mt-10 md:space-x-10 sm:mb-5'>
                 <div className='text-center bg-gradient-to-r from-cyan-500 to-blue-500 pt-8 pb-8 pr-20 pl-20 rounded-2xl text-white'>
                     <p className='text-6xl'>number</p>
