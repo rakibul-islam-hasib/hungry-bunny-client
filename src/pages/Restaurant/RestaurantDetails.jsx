@@ -57,7 +57,7 @@ function RestaurantDetails() {
             <div className="mb-2">
               <p className='font-extrabold text-2xl dark:text-slate-300'>Food Name {restaurant.foodItems[0].foodItem}</p>
             </div>
-              <p className='font-extrabold text-slate-400'>{restaurant.foodItems[0].description}</p>
+              <p className='font-extrabold'>{restaurant.foodItems[0].description}</p>
               <div>
               <p className='font-bold flex justify-between mt-2'><span className='mr-2 text-2xl'>$ {restaurant.foodItems[0].price}</span> <span><Rating
       style={{ maxWidth: 100 }}
