@@ -11,6 +11,7 @@ const Faq = () => {
             // console.log(data);
         })
     },[])
+    
     return (
         <div className='mb-10 dark:text-slate-200'>
             <h2 className='text-4xl text-orange-500 p-7 text-center font-extrabold'>Frequently Asked Questions</h2>
