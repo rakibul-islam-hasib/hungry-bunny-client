@@ -2,19 +2,16 @@ import React, { useEffect, useState } from 'react';
 import ChangeProfilePicModal from '../../../components/Modals/ChangeProfilePicModal';
 import { useAuth } from '../../../hooks/useAuth';
 import useUserSecure from '../../../hooks/useUserSecure';
+import Loader from '../../../components/loader/Loader';
 import useAxiosSecure from '../../../hooks/useAxiosSecure';
+import { toast } from 'react-hot-toast';
 
 
 const UserProfile = () => {
     const [isOpen, setIsOpen] = useState(false);
-    const { user } = useAuth();
+    const { user: firebaseUser } = useAuth();
+    const [user, isLoading, refetch] = useUserSecure(firebaseUser?.email);
     const axios = useAxiosSecure();
-    // console.log(data, 'data from user profile')
-    const fetchUser = async () => {
-        const res = await axios.get(`/user-info/${user?.email}`);
-        console.log(res.data, 'data from user profile')
-        return res.data;
-    }
     const openModal = () => {
         setIsOpen(true);
     };
@@ -25,8 +22,21 @@ const UserProfile = () => {
 
     const handleProfilePicChange = (imgURL) => {
         console.log(imgURL);
+        axios.put(`/user-info/photo/${firebaseUser?.email}`, { photo: imgURL })
+            .then((res) => {
+                console.log(res);
+                if (res.data.modifiedCount) {
+                    toast.success('Profile pic changed successfully');
+                    refetch();
+                }
+            })
+            .catch((err) => {
+                console.log(err);
+            })
+
     };
 
+    if (isLoading) return <Loader />
 
     return (
         <>
@@ -42,7 +52,7 @@ const UserProfile = () => {
                             <h1 className='text-2xl'>Avatar </h1>
                             <div className='lg:flex md:flex'>
                                 <span className='me-4'>
-                                    <img className='h-[100px] w-[100px] rounded-lg mb-5' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTko38x76BKbf_gARfDc4DuyP_Q30OnRBpT_w&usqp=CAU" alt="" />
+                                    <img className='h-[100px] w-[100px] rounded-lg mb-5' src={user.photo} alt="" />
                                 </span>
                                 <span className='mt-8'>
                                     <button
