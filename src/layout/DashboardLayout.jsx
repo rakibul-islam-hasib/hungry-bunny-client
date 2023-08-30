@@ -50,12 +50,12 @@ const userNavItems = [
     label: "Address",
   },
   {
-    to: "/dashboard/manage-class",
+    to: "/dashboard/user-payment",
     icon: <BsFillPostcardFill className="text-2xl" />,
     label: "Payment Method",
   },
   {
-    to: "/dashboard/manage-applications",
+    to: "/dashboard/user-security",
     icon: <TbBrandAppleArcade className="text-2xl" />,
     label: "Security",
   },
