@@ -17,6 +17,7 @@ const Restaurant = () => {
   const [totalItem, setTotalItem] = useState(1);
   const totalPage = Math.ceil(totalItem / 3);
   const axios = useAxiosFetch();
+  console.log(totalItem)
 
   useEffect(() => {
     axios.get('/restaurant/total/count')
