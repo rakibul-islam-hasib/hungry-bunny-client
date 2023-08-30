@@ -38,7 +38,7 @@ const Login = () => {
             type="email"
             id="email"
             name="email"
-            className="w-full border rounded px-3 py-2 focus:outline-none focus:border-blue-500"
+            className="w-full border rounded px-3 py-2 focus:outline-none "
           />
         </div>
         <div className="mb-4">
@@ -49,7 +49,7 @@ const Login = () => {
             type="password"
             id="password"
             name="password"
-            className="w-full border rounded px-3 py-2 focus:outline-none focus:border-blue-500"
+            className="w-full border rounded px-3 py-2 focus:outline-none "
           />
         </div>
         <p className="my-4">

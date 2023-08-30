@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { useInView } from 'react-intersection-observer';
 import { useDispatch } from 'react-redux';
 import { setFooter } from '../../redux/slices/utilsSlice';
+import NewsLetter from './NewsLetter';
 const Footer = () => {
     const dispatch = useDispatch();
 
@@ -28,6 +29,7 @@ const Footer = () => {
 
         <>
             <footer ref={ref} style={{ backgroundImage: `url(${bgImg})` }} className='mt-5 bg-cover bg-fixed '>
+                <NewsLetter />
                 <div className="w-full h-full bg-gray-900 pr-10 md:p-10 bg-opacity-70">
                     <div className='grid md:grid-cols-3 lg:grid-cols-4 pl-8 max-w-screen-xl mx-auto text-gray-300'>
                         <div className='mt-7'>
