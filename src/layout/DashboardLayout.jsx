@@ -5,7 +5,6 @@ import { NavLink, Outlet, ScrollRestoration } from "react-router-dom";
 import { BsFillPostcardFill } from "react-icons/bs";
 import { TbBrandAppleArcade } from "react-icons/tb";
 import { CgProfile } from "react-icons/cg";
-import logo from '../assets/img/logo.png';
 import useUserSecure from "../hooks/useUserSecure";
 import { useAuth } from "../hooks/useAuth";
 import Loader from "../components/loader/Loader";
@@ -31,6 +30,11 @@ const adminNavItems = [
     to: "/dashboard/manage-restaurant",
     icon: <TbBrandAppleArcade className="text-2xl" />,
     label: "Manage Restaurant",
+  },
+  {
+    to: "/dashboard/user-profile",
+    icon: <CgProfile className="text-2xl" />,
+    label: "Manage Profile",
   },
 ];
 
@@ -95,14 +99,17 @@ const DashboardLayout = () => {
   const [open, setOpen] = useState(true);
   const { user: firebaseUser } = useAuth();
   const [user, isLoading] = useUserSecure(firebaseUser?.email);
+  
   const role = user?.role || "user";
+  console.log(role, 'role from DashboardLayout')
 
   /* 
-    Total role list : 
-    1. admin
-    2. user
-    3. restaurant
+  Total role list : 
+  1. admin
+  2. user
+  3. restaurant
   */
+  if (!firebaseUser?.email || !firebaseUser) return <Loader />;
   if (isLoading) return <Loader />;
 
   return (
