@@ -1,0 +1,27 @@
+/* .swiper-pagination-bullet-active {
+  @apply bg-primary h-[12px] w-[12px];
+}
+
+.swiper-pagination-bullet {
+  @apply h-[12px] w-[12px];
+} */
+
+.swiper-pagination-bullet {
+  @apply h-[12px] w-[12px];
+  /* display: none; */
+}
+
+.swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  border-radius: 50%;
+  @apply bg-primary;
+  opacity: 0.2;
+  cursor: pointer;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.swiper-pagination-bullet-active {
+  opacity: 1;
+}

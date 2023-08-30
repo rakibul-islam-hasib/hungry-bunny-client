@@ -6,7 +6,6 @@ import About from "../pages/about/About";
 import Contact from "../pages/contact/Contact";
 import CommunityLayout from "../layout/CommunityLayout";
 import Community from "../pages/community/Community";
-import Register from "../pages/auth/Register";
 import Error404 from "../layout/Error404";
 import Restaurant from "../pages/Restaurant/Restaurant";
 import Menu from "../pages/Menu/Menu";
@@ -14,9 +13,18 @@ import Faq from "../pages/faq/Faq";
 import Temp from "../pages/temp/Temp";
 import Blog from "../pages/blog/Blog";
 import DashboardLayout from "../layout/DashboardLayout";
-import UserWelcome from "../pages/dashboard/user/UserWelcome";
-import UserProfile from "../pages/dashboard/user/UserProfile";
+
+import UserWelcome from "../pages/dashboard/WellComeDashboard/UserWelcome";
+// import MultiStepForm from "../pages/auth/MultiStepForm";
+// import UserProfile from "../pages/dashboard/user/UserProfile";
 import RestaurantDetails from "../pages/Restaurant/RestaurantDetails";
+import RestaurantAdmin from "../pages/dashboard/RestaurantAdmin/RestaurantAdmin";
+import Register from "../pages/auth/Register";
+// import UserAddress from "../pages/dashboard/Owner/UserAddress";
+import UserProfile from "../pages/dashboard/NormanUser/UserProfile";
+import UserAddress from "../pages/dashboard/NormanUser/UserAddress";
+import AdminDash from "../pages/dashboard/AdminDash/AdminDash";
+import ManageUsers from "../pages/dashboard/AdminDash/ManageUsers";
 
 export const router = createBrowserRouter([
   {
@@ -33,70 +41,105 @@ export const router = createBrowserRouter([
         element: <Login />,
       },
       {
-        path: '/about',
-        element: <About />
+        path: "/about",
+        element: <About />,
       },
       {
-        path: '/contact',
-        element: <Contact />
+        path: "/contact",
+        element: <Contact />,
       },
       {
-        path: '/restaurants',
-        element: <Restaurant />
+        path: "/restaurants",
+        element: <Restaurant />,
       },
       {
         path: "/register",
         element: <Register />,
       },
       {
-        path: '/restaurant',
-        element: <Restaurant />
+        path: "/restaurant",
+        element: <Restaurant />,
       },
       {
-        path: '/restaurant/:id',
+        path: "/restaurant/:id",
         element: <RestaurantDetails></RestaurantDetails>,
-        loader: ({params}) => fetch(`http://localhost:5000/restaurant/${params.id}`)
+        loader: ({ params }) => fetch(`https://hungry-bunny.vercel.app/restaurant/${params.id}`)
       },
       {
-        path: '/menu',
-        element: <Menu />
+        path: "/menu",
+        element: <Menu />,
       },
       {
-        path: '/faq',
-        element: <Faq />
+        path: "/faq",
+        element: <Faq />,
       },
       {
-        path: '/blog',
-        element: <Blog />
+        path: "/blog",
+        element: <Blog />,
       },
       {
-        path: '/temp',
-        element: <Temp />
-      }
+        path: "/temp",
+        element: <Temp />,
+      },
     ],
   },
   {
-    path: '/community',
+    path: "/community",
     element: <CommunityLayout />,
     children: [
       {
         index: true,
-        element: <Community />
-      }
-    ]
+        element: <Community />,
+      },
+    ],
   },
   {
-    path: '/dashboard',
+    path: "/dashboard",
     element: <DashboardLayout />,
     children: [
       {
         index: true,
-        element: <UserWelcome />
+        element: <UserWelcome />,
+      },
+/*------------------------------------------------------------
+-----------------WebSite Admin  Dashboard-------------------
+-------------------------------------------------------------*/ 
+
+
+      {
+        path:'admin-dashboard',
+        element:<AdminDash/>
       },
       {
-        path: 'user-profile',
-        element: <UserProfile />
-      }
-    ]
-  }
+        path:'manage-users',
+        element:<ManageUsers/>
+      },
+
+
+
+/*------------------------------------------------------------
+-----------------Restaurant Owner Dashboard-------------------
+-------------------------------------------------------------*/ 
+      {
+        path: "restaurant-cp",
+        element: <RestaurantAdmin />,
+      },
+
+
+/*------------------------------------------------------------
+---------------------Normal User Dashboard--------------------
+-------------------------------------------------------------*/ 
+      {
+        path: "user-profile",
+        element: <UserProfile />,
+      },
+      {
+        path: 'address',
+        element: <UserAddress />
+      },
+    ],
+  },
+  
+
+
 ]);

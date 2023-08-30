@@ -4,6 +4,9 @@ import CheckoutBar from "../../components/cart/CheckoutBar";
 import PopularFood from "./Elements/PopularFood";
 import Stacks from "./Elements/Stacks";
 import FoodCard from "../Menu/FoodCard";
+import TopRestaurant from "./Elements/TopRestaurant";
+import ChatBox from "../../functionality/chat/ChatBox";
+
 // import HomeBlog from "./Elements/HomeBlog";
 
 const Home = () => {
@@ -11,10 +14,12 @@ const Home = () => {
   return (
     <section>
       <Hero />
-      <FoodCard/>
+      <TopRestaurant />
+      <FoodCard />
       <PopularFood />
       <Stacks />
       <CheckoutBar />
+      <ChatBox />
     </section>
   );
 };

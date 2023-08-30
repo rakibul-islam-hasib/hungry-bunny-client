@@ -29,7 +29,7 @@ const Register = () => {
       followers: [],
       likedPost: [],
       isVerified: false,
-      photo : 'https://i.ibb.co/5M0BDy4/No-thing.png',
+      photo: 'https://i.ibb.co/txQbC7p/casual-life-3d-profile-picture-of-person-in-glasses-and-orange-shirt.png',
     }
 
     try {
