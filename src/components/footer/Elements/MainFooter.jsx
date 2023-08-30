@@ -4,13 +4,15 @@ import FacebookSvg from '../../../assets/svg/FacebookSvg';
 import WhatsappSvg from '../../../assets/svg/WhatsappSvg';
 import InstagramSvg from '../../../assets/svg/InstagramSvg';
 import downloadApp from '../../../assets/svg/DownloadApp.svg';
-
+import { GrLocation } from 'react-icons/gr';
+import { FiPhoneCall } from 'react-icons/fi';
+import { HiOutlineMail } from 'react-icons/hi';
 
 const MainFooter = () => {
     return (
         <div className='bg-orange-100 py-11'>
             <div className="w-[90%] mx-auto">
-                <div className="w-full h-full gap-6 grid grid-cols-5">
+                <div className="w-full border-b border-gray-400 pb-9 h-full gap-6 grid grid-cols-1 md:grid-cols-3 sm:grid-cols-2 lg:grid-cols-5">
                     <div className="space-y-3">
                         <img src={logo} alt="" />
                         <p className='text-[14px] ml-3'>Hungry Bunny, This is a simple  about of  hungry bunny it is a online food delivery website .</p>
@@ -64,6 +66,19 @@ const MainFooter = () => {
                         </ul>
                     </div>
                     <div className="">
+                        <h1 className='text-xl font-bold mb-4'>Our Information</h1>
+                        <ul className='text-gray-600 space-y-2'>
+                            <li className=''>
+                                <GrLocation className='inline-block mr-1 text-xl text-gray-600' /> 1234 Street Name, City Name, United States
+                            </li>
+                            <li className=''>
+                                <FiPhoneCall className='inline-block mr-1 text-xl text-gray-600' /> +1 800 123 1234
+                            </li>
+                            <li className=''>
+                                <HiOutlineMail className='inline-block mr-1 text-xl text-gray-600' /> 
+                                admin@hungry-bunny.com
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
