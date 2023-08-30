@@ -40,6 +40,11 @@ const navLinks = [
         name: 'Menu',
         path: '/menu',
     },
+    {
+        id: 7,
+        name: 'Team Info',
+        path: '/team-info',
+    },
 ];
 
 const NavBar = () => {

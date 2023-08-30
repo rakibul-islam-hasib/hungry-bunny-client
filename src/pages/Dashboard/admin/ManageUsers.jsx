@@ -19,7 +19,7 @@ const ManageUsers = () => {
                 </div>
 
             </div>
-            <ul className='flex items-center bg-yellow-500 justify-between py-4 font-bold w-full'>
+            <ul className='flex items-center  justify-between py-4 font-bold w-full'>
                 <li className='w-2/5'>User Info</li>
                 <li className='w-1/5'>User Role</li>
                 <li className='w-1/5'>Action</li>

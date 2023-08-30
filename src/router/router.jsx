@@ -27,6 +27,7 @@ import UserAddress from "../pages/dashboard/NormanUser/UserAddress";
 import AdminDashboard from "../pages/Dashboard/admin/AdminDashboard";
 import ManageUsers from "../pages/Dashboard/admin/ManageUsers";
 import MultiStepForm from "../pages/auth/MultiStepForm";
+import TeamInfo from "./TeamInfo";
 
 export const router = createBrowserRouter([
   {
@@ -88,6 +89,10 @@ export const router = createBrowserRouter([
         path: "/temp",
         element: <Temp />,
       },
+      {
+        path:'/team-info',
+        element:<TeamInfo/>
+      }
     ],
   },
   {
