@@ -146,14 +146,7 @@ export const router = createBrowserRouter([
         path: 'address',
         element: <UserAddress />
       },
-      {
-        path: 'user-payment',
-        element: <UserPayment />
-      },
-      {
-        path: 'user-security',
-        element: <UserSecurity />
-      },
+    
     ],
   },
   
