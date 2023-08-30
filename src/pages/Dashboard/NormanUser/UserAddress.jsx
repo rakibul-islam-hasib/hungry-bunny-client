@@ -56,10 +56,44 @@ const UserAddress = () => {
             </div>
             <div>
                 <form className='form md:w-full sm:w-full bg-purple-200 p-10 rounded-lg' onSubmit={handleAccount}>
-                    <h2 className="text-3xl font-extrabold text-start mb-2">Existing Shipping Addresses</h2>
+                    <h2 className="text-3xl font-extrabold text-start mb-8">Existing Shipping Addresses</h2>
 
+                    <div className='lg:flex md:flex justify-around'>
+                        <div className="relative flex w-full max-w-[25rem] max-h-[8rem] flex-row rounded-xl bg-white bg-clip-border text-gray-700 shadow-md mb-10 me-7">
+                            <div className="relative m-0 w-2/5 shrink-0 overflow-hidden rounded-2xl  bg-white bg-clip-border text-gray-700">
+                            <img className='h-[130px] w-[130px] rounded-2xl m-auto p-2' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIKw0aSHbklS0Ufdqhf3a5kLdb99BSI2_xJA&usqp=CAU" alt="" />
+                            </div>
+                            <div className="p-4">
+                                <h6 className="mb-1 block font-sans text-lg font-bold uppercase leading-relaxed tracking-normal text-pink-500 antialiased">
+                                    Country Name
+                                </h6>
+                                <h4 className="mb-2 block font-sans text-sm font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
+                                    country Address 
+                                </h4>
+                                <p className="mb-2 pb-2 block font-sans text-base font-normal leading-relaxed text-gray-700 antialiased">
+                                    Address 
+                                </p>
+                            </div>
+                        </div>
+                        <div className="relative flex w-full max-w-[25rem] max-h-[8rem] flex-row rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
+                            <div className="relative m-0 w-2/5 shrink-0 overflow-hidden rounded-2xl  bg-white bg-clip-border text-gray-700">
+                            <img className='h-[130px] w-[130px] rounded-2xl m-auto p-2' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIKw0aSHbklS0Ufdqhf3a5kLdb99BSI2_xJA&usqp=CAU" alt="" />
+                            </div>
+                            <div className="p-4">
+                                <h6 className="mb-1 block font-sans text-lg font-bold uppercase leading-relaxed tracking-normal text-pink-500 antialiased">
+                                    Country Name
+                                </h6>
+                                <h4 className="mb-2 block font-sans text-sm font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
+                                    country Address 
+                                </h4>
+                                <p className="mb-2 pb-2 block font-sans text-base font-normal leading-relaxed text-gray-700 antialiased">
+                                    Address 
+                                </p>
+                            </div>
+                        </div>
+                    </div>
 
-                    <h2 className="text-3xl font-extrabold text-start mb-2">New Shipping Addresses</h2>
+                    <h2 className="text-3xl font-extrabold text-start mb-5 mt-5">New Shipping Addresses</h2>
 
                     {/* form country, city and state name row */}
                     <div className="md:flex mb-6">
