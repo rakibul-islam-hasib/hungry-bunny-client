@@ -3,7 +3,7 @@ import useAxiosSecure from "./useAxiosSecure";
 import { useAuth } from "./useAuth";
 
 const useUserSecure = (email) => {
-    
+    console.log(email, 'email')
     const axios = useAxiosSecure();
     const { user } = useAuth();
     const { data, isLoading, isError, refetch } = useQuery(
@@ -17,12 +17,7 @@ const useUserSecure = (email) => {
         }
 
     );
-    if (!email) return ['Please enter email to get user info',
-        'Please enter email to get user info',
-        'Please enter email to get user info',
-        'Please enter email to get user info',
-        'Please enter email to get user info'];
-
+    console.log(data, 'data from useUserSecure')
     return [data, isLoading, refetch, isError];
 };
 

@@ -1,10 +1,20 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import ChangeProfilePicModal from '../../../components/Modals/ChangeProfilePicModal';
+import { useAuth } from '../../../hooks/useAuth';
+import useUserSecure from '../../../hooks/useUserSecure';
+import useAxiosSecure from '../../../hooks/useAxiosSecure';
 
 
 const UserProfile = () => {
     const [isOpen, setIsOpen] = useState(false);
-
+    const { user } = useAuth();
+    const axios = useAxiosSecure();
+    // console.log(data, 'data from user profile')
+    const fetchUser = async () => {
+        const res = await axios.get(`/user-info/${user?.email}`);
+        console.log(res.data, 'data from user profile')
+        return res.data;
+    }
     const openModal = () => {
         setIsOpen(true);
     };
@@ -13,7 +23,10 @@ const UserProfile = () => {
         setIsOpen(false);
     };
 
-    
+    const handleProfilePicChange = (file) => {
+        console.log(file);
+    };
+
 
     return (
         <>
@@ -130,7 +143,7 @@ const UserProfile = () => {
 
                 </div>
             </div>
-            <ChangeProfilePicModal isOpen={isOpen} onClose={closeModal}/>
+            <ChangeProfilePicModal isOpen={isOpen} onClose={closeModal} onSuccess={handleProfilePicChange} />
         </>
     );
 };

@@ -99,16 +99,16 @@ const DashboardLayout = () => {
   const [open, setOpen] = useState(true);
   const { user: firebaseUser } = useAuth();
   const [user, isLoading] = useUserSecure(firebaseUser?.email);
-  console.log(user)
+  
   const role = user?.role || "user";
-  // console.log(role)
+  
   /* 
   Total role list : 
   1. admin
   2. user
   3. restaurant
   */
-  if (!firebaseUser?.email) return <Loader />;
+  if (!firebaseUser?.email || !firebaseUser) return <Loader />;
   if (isLoading) return <Loader />;
 
   return (
