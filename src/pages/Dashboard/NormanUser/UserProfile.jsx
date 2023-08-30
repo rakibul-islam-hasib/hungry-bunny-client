@@ -2,19 +2,16 @@ import React, { useEffect, useState } from 'react';
 import ChangeProfilePicModal from '../../../components/Modals/ChangeProfilePicModal';
 import { useAuth } from '../../../hooks/useAuth';
 import useUserSecure from '../../../hooks/useUserSecure';
+import Loader from '../../../components/loader/Loader';
 import useAxiosSecure from '../../../hooks/useAxiosSecure';
+import { toast } from 'react-hot-toast';
 
 
 const UserProfile = () => {
     const [isOpen, setIsOpen] = useState(false);
-    const { user } = useAuth();
+    const { user: firebaseUser } = useAuth();
+    const [user, isLoading, refetch] = useUserSecure(firebaseUser?.email);
     const axios = useAxiosSecure();
-    // console.log(data, 'data from user profile')
-    const fetchUser = async () => {
-        const res = await axios.get(`/user-info/${user?.email}`);
-        console.log(res.data, 'data from user profile')
-        return res.data;
-    }
     const openModal = () => {
         setIsOpen(true);
     };
@@ -25,8 +22,21 @@ const UserProfile = () => {
 
     const handleProfilePicChange = (imgURL) => {
         console.log(imgURL);
+        axios.put(`/user-info/photo/${firebaseUser?.email}`, { photo: imgURL })
+            .then((res) => {
+                console.log(res);
+                if (res.data.modifiedCount) {
+                    toast.success('Profile pic changed successfully');
+                    refetch();
+                }
+            })
+            .catch((err) => {
+                console.log(err);
+            })
+
     };
 
+    if (isLoading) return <Loader />
 
     return (
         <>
@@ -42,7 +52,7 @@ const UserProfile = () => {
                             <h1 className='text-2xl'>Avatar </h1>
                             <div className='lg:flex md:flex'>
                                 <span className='me-4'>
-                                    <img className='h-[100px] w-[100px] rounded-lg mb-5' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTko38x76BKbf_gARfDc4DuyP_Q30OnRBpT_w&usqp=CAU" alt="" />
+                                    <img className='h-[100px] w-[100px] rounded-lg mb-5' src={user.photo} alt="" />
                                 </span>
                                 <span className='mt-8'>
                                     <button
@@ -66,39 +76,53 @@ const UserProfile = () => {
 
                     {/* form first name and last name row */}
                     <form className="md:flex mb-6">
-                        <div className="form-control md:w-1/2 ">
+                        <div className=" md:w-1/2 ">
                             <label className="label">
-                                <span className="label-text">First Name</span>
+                                <span className="label-text text-primary">First Name</span>
                             </label>
-                            <label className="input-group">
-                                <input type="text" name="name" placeholder="First Name" className="input input-bordered w-full rounded p-2" />
+                            <label className="">
+                                <input
+                                    type="text"
+                                    name="name"
+                                    placeholder="First Name"
+                                    className=" outline-none border border-primary w-full rounded p-2" />
                             </label>
                         </div>
-                        <div className="form-control md:w-1/2 ml-4">
+                        <div className=" md:w-1/2 ml-4">
                             <label className="label">
-                                <span className="label-text">Last Name</span>
+                                <span className="label-text text-primary">Last Name</span>
                             </label>
-                            <label className="input-group">
-                                <input type="last" name="last" id="" placeholder='Last Name' className="input input-bordered w-full rounded p-2" />
+                            <label className="">
+                                <input
+                                    type="text"
+                                    name="last"
+                                    placeholder='Last Name'
+                                    className=" outline-none border border-primary w-full rounded p-2"
+                                />
                             </label>
                         </div>
                     </form>
                     {/* form Email and phone row */}
                     <div className="md:flex mb-6">
-                        <div className="form-control md:w-1/2">
+                        <div className=" md:w-1/2">
                             <label className="label">
-                                <span className="label-text">Email</span>
+                                <span className="label-text text-primary">Email</span>
                             </label>
-                            <label className="input-group">
-                                <input type="text" name="email" placeholder="Email" className="input input-bordered w-full rounded p-2" />
+                            <label className="">
+                                <input
+                                    type="text"
+                                    name="email"
+                                    placeholder="Email"
+                                    className=" outline-none border border-primary w-full rounded p-2"
+                                />
                             </label>
                         </div>
-                        <div className="form-control md:w-1/2 ml-4">
+                        <div className=" md:w-1/2 ml-4">
                             <label className="label">
-                                <span className="label-text">Phone Number</span>
+                                <span className="label-text text-primary">Phone Number</span>
                             </label>
-                            <label className="input-group">
-                                <input type="text" name="phone" placeholder="Phone Number" className="input input-bordered w-full rounded p-2" />
+                            <label className="">
+                                <input type="text" name="phone" placeholder="Phone Number" className=" outline-none border border-primary w-full rounded p-2" />
                             </label>
                         </div>
                     </div>

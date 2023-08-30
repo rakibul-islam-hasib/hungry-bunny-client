@@ -26,6 +26,7 @@ const ChangeProfilePicModal = ({ isOpen, onClose, onSuccess }) => {
         const imagesRef = ref(storage, `images/${imgId + selectedFile?.name}`);
 
         const test = uploadBytes(imagesRef, file).then((snapshot) => {
+            toast.loading('Uploading...');
             getDownloadURL(ref(storage, `images/${imgId + selectedFile?.name}`))
                 .then((url) => {
                     if (url) {

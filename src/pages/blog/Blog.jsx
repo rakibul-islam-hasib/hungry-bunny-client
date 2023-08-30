@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { FaReadme } from 'react-icons/fa';
+import { FaLocationArrow, FaReadme } from 'react-icons/fa';
 import { Link, ScrollRestoration } from 'react-router-dom';
 import useAxiosFetch from '../../hooks/useAxiosFetch';
 import Pagination from '@mui/material/Pagination';
@@ -24,28 +24,33 @@ const Blog = () => {
   }, [page])
 
   return (
-    <div className='dark:text-white'>
-      <div className='bg-orange-50 dark:bg-gradient-to-r from-cyan-400 to-blue-300  mt-5 pt-8 pb-8 rounded-3xl drop-shadow-lg'>
+    <div className=''>
+      <div className="bg-[url('https://images.pexels.com/photos/1631677/pexels-photo-1631677.jpeg?auto=compress&cs=tinysrgb&w=1600')] rounded-3xl">
+
+      <div className=' mt-5 pt-8 pb-8 rounded-3xl drop-shadow-lg'>
           <div className='text-center mx-auto'>
-            <h2 className='text-4xl font-extrabold mb-6 text-purple-800'>All blogs posts</h2>
-            <h2 className='text-2xl font-bold text-slate-800 dark:text-white mb-4'> Savoring Flavors, One Recipe at a Bite</h2>
+            
+            <h2 className='text-4xl font-extrabold mb-6'>All blogs posts</h2>
+            <h2 className='text-2xl text-slate-800 dark:text-slate-950 mb-4'> Savoring Flavors, One Recipe at a Bite</h2>
           </div>
           <div className='md:flex ml-6 md:ml-96'>
             <input type="text" className='rounded-2xl w-[40%] text-2xl dark:text-black' placeholder='search blog' />
-            <button className='bg-orange-500 text-white pl-7 pr-7 pt-3 pb-3 text-4xl rounded-2xl ml-5'>search</button>
+            <button className='bg-orange-500 text-white pl-7 pr-7 pt-3 pb-3 text-4xl rounded-2xl ml-2'><FaLocationArrow/> </button>
           </div>
           </div>
+      </div>
+          
       <div className="grid md:grid-cols-2 md:gap-8 gap-3 lg:grid-cols-3 mt-10 mx-auto">
         {blogs.map((item) => (
           <div key={item._id} className='p-2 border overflow-hidden shadow-lg rounded-2xl dark:drop-shadow-md'>
             <img className="w-full h-48 object-cover rounded-lg" src={item.blogImage} alt="Food Image" />
-            <div className='flex justify-between mt-3'>
-              <p>{item.date}</p>
+            <div className='flex justify-between mt-3 dark:text-slate-200'>
+              <p >{item.date}</p>
               <p className='flex items-center'><span className='mr-2'>{item.time} min read</span><span><FaReadme></FaReadme></span> </p>
             </div>
             <div className="px-6 py-4">
               <div className="font-bold text-xl mb-2">
-                <p>{item.blogHeading}</p>
+                <p className='dark:text-slate-200'>{item.blogHeading}</p>
               </div>
               <div className='flex justify-between items-center'>
                 <div className='flex'>
