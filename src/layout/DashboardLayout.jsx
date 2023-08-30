@@ -101,7 +101,8 @@ const DashboardLayout = () => {
   const [user, isLoading] = useUserSecure(firebaseUser?.email);
   
   const role = user?.role || "user";
-  
+  console.log(role, 'role from DashboardLayout')
+
   /* 
   Total role list : 
   1. admin

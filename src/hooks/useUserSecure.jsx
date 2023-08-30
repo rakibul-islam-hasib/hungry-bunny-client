@@ -17,7 +17,6 @@ const useUserSecure = (email) => {
         }
 
     );
-    console.log(data, 'data from useUserSecure')
     return [data, isLoading, refetch, isError];
 };
 
