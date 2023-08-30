@@ -145,8 +145,8 @@ const DashboardLayout = () => {
                   <NavLink
                     to={menuItem.to}
                     className={({ isActive }) =>
-                      `flex ${isActive ? "bg-primary text-white " : "text-[#413F44]"
-                      }  duration-150 rounded-md p-2 cursor-pointer hover:bg-primary  hover:text-white  font-bold text-sm items-center gap-x-4  `
+                      `flex ${isActive ? "bg-[#252525] text-white " : "text-[#413F44]"
+                      }  duration-150 rounded-md p-2 cursor-pointer hover:bg-[#252525]  hover:text-white  font-bold text-sm items-center gap-x-4  `
                     }
                   >
                     {menuItem.icon}

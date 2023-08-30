@@ -38,7 +38,7 @@ const TopRestaurant = () => {
   return (
     <div>
       <div className="text-center lg:w-[70%] w-full sm:w-[90%] md:w-[80%] mx-auto space-y-5 py-5">
-        <h3 className="font-semibold text-4xl mx-auto uppercase">top restaurant</h3>
+        <h3 className="font-semibold text-4xl mx-auto uppercase">Our top {allRestaurants.length} restaurant</h3>
         <p className=''>Introducing our Top Restaurant collection, a fusion of exceptional food quality and flawless service. Explore unforgettable dining where flavors and experiences converge for an unparalleled gastronomic journey.</p>
       </div>
       <Swiper
