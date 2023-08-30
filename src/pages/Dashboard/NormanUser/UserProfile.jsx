@@ -76,39 +76,53 @@ const UserProfile = () => {
 
                     {/* form first name and last name row */}
                     <form className="md:flex mb-6">
-                        <div className="form-control md:w-1/2 ">
+                        <div className=" md:w-1/2 ">
                             <label className="label">
-                                <span className="label-text">First Name</span>
+                                <span className="label-text text-primary">First Name</span>
                             </label>
-                            <label className="input-group">
-                                <input type="text" name="name" placeholder="First Name" className="input input-bordered w-full rounded p-2" />
+                            <label className="">
+                                <input
+                                    type="text"
+                                    name="name"
+                                    placeholder="First Name"
+                                    className=" outline-none border border-primary w-full rounded p-2" />
                             </label>
                         </div>
-                        <div className="form-control md:w-1/2 ml-4">
+                        <div className=" md:w-1/2 ml-4">
                             <label className="label">
-                                <span className="label-text">Last Name</span>
+                                <span className="label-text text-primary">Last Name</span>
                             </label>
-                            <label className="input-group">
-                                <input type="last" name="last" id="" placeholder='Last Name' className="input input-bordered w-full rounded p-2" />
+                            <label className="">
+                                <input
+                                    type="text"
+                                    name="last"
+                                    placeholder='Last Name'
+                                    className=" outline-none border border-primary w-full rounded p-2"
+                                />
                             </label>
                         </div>
                     </form>
                     {/* form Email and phone row */}
                     <div className="md:flex mb-6">
-                        <div className="form-control md:w-1/2">
+                        <div className=" md:w-1/2">
                             <label className="label">
-                                <span className="label-text">Email</span>
+                                <span className="label-text text-primary">Email</span>
                             </label>
-                            <label className="input-group">
-                                <input type="text" name="email" placeholder="Email" className="input input-bordered w-full rounded p-2" />
+                            <label className="">
+                                <input
+                                    type="text"
+                                    name="email"
+                                    placeholder="Email"
+                                    className=" outline-none border border-primary w-full rounded p-2"
+                                />
                             </label>
                         </div>
-                        <div className="form-control md:w-1/2 ml-4">
+                        <div className=" md:w-1/2 ml-4">
                             <label className="label">
-                                <span className="label-text">Phone Number</span>
+                                <span className="label-text text-primary">Phone Number</span>
                             </label>
-                            <label className="input-group">
-                                <input type="text" name="phone" placeholder="Phone Number" className="input input-bordered w-full rounded p-2" />
+                            <label className="">
+                                <input type="text" name="phone" placeholder="Phone Number" className=" outline-none border border-primary w-full rounded p-2" />
                             </label>
                         </div>
                     </div>
