@@ -5,6 +5,7 @@ import { useInView } from 'react-intersection-observer';
 import { useDispatch } from 'react-redux';
 import { setFooter } from '../../redux/slices/utilsSlice';
 import NewsLetter from './NewsLetter';
+import MainFooter from './Elements/MainFooter';
 const Footer = () => {
     const dispatch = useDispatch();
 
@@ -26,9 +27,9 @@ const Footer = () => {
     return (
 
         <>
-            <footer ref={ref} style={{ backgroundImage: `url(${bgImg})` }} className='mt-5 bg-cover bg-fixed '>
+            <footer ref={ref}>
                 <NewsLetter />
-                
+                <MainFooter />
             </footer>
         </>
     );
