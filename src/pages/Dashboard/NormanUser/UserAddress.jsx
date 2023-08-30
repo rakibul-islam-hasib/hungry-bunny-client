@@ -58,8 +58,8 @@ const UserAddress = () => {
                 <form className='form md:w-full sm:w-full bg-purple-200 p-10 rounded-lg' onSubmit={handleAccount}>
                     <h2 className="text-3xl font-extrabold text-start mb-8">Existing Shipping Addresses</h2>
 
-                    <div className='lg:flex md:flex justify-around sm:flex'>
-                        <div className="relative flex w-full max-w-[25rem] max-h-[8rem] flex-row rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
+                    <div className='lg:flex md:flex justify-around'>
+                        <div className="relative flex w-full max-w-[25rem] max-h-[8rem] flex-row rounded-xl bg-white bg-clip-border text-gray-700 shadow-md mb-10 me-7">
                             <div className="relative m-0 w-2/5 shrink-0 overflow-hidden rounded-2xl  bg-white bg-clip-border text-gray-700">
                             <img className='h-[130px] w-[130px] rounded-2xl m-auto p-2' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIKw0aSHbklS0Ufdqhf3a5kLdb99BSI2_xJA&usqp=CAU" alt="" />
                             </div>

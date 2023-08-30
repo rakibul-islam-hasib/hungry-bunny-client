@@ -62,7 +62,7 @@ const UserPayment = () => {
                     <h2 className="text-3xl font-extrabold text-start mb-5">Connected payment methods</h2>
 
                     <div className='lg:flex md:flex justify-around sm:flex mb-16'>
-                        <div className="w-full max-w-[25rem] max-h-[8rem] flex-row rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
+                        <div className="w-full max-w-[25rem] max-h-[8rem] flex-row rounded-xl bg-white bg-clip-border text-gray-700 shadow-md  mb-10 me-7">
                             
                             <div className="p-4">
                                 <h6 className="mb-1 block font-sans text-lg font-bold uppercase leading-relaxed tracking-normal text-pink-500 antialiased">
@@ -71,7 +71,7 @@ const UserPayment = () => {
                                 <h4 className="mb-2 block font-sans text-sm font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
                                 12/25
                                 </h4>
-                                <div className='lg:flex md:flex justify-between sm:flex'>
+                                <div className='flex lg:flex md:flex justify-between sm:flex'>
                                     <span>
                                     <p className="mb-2 pb-2 block font-sans text-base font-normal leading-relaxed text-gray-700 antialiased">
                                     Jane Robert
@@ -92,7 +92,7 @@ const UserPayment = () => {
                                 <h4 className="mb-2 block font-sans text-sm font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
                                 10/23
                                 </h4>
-                                <div className='lg:flex md:flex justify-between sm:flex'>
+                                <div className='flex lg:flex md:flex justify-between sm:flex'>
                                     <span>
                                     <p className="mb-2 pb-2 block font-sans text-base font-normal leading-relaxed text-gray-700 antialiased">
                                     Henry Devid
