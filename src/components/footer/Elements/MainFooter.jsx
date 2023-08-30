@@ -3,6 +3,9 @@ import logo from '../../../assets/img/dark-logo.png'
 import FacebookSvg from '../../../assets/svg/FacebookSvg';
 import WhatsappSvg from '../../../assets/svg/WhatsappSvg';
 import InstagramSvg from '../../../assets/svg/InstagramSvg';
+import downloadApp from '../../../assets/svg/DownloadApp.svg';
+
+
 const MainFooter = () => {
     return (
         <div className='bg-orange-100 py-11'>
@@ -31,19 +34,36 @@ const MainFooter = () => {
                     </div>
 
                     <div className="">
-                        <h1 className='text-xl font-bold'>Products</h1>
-                        <ul>
-                            
+                        <h1 className='text-xl font-bold mb-4'>Products</h1>
+                        <ul className=''>
+                            <li className='cursor-pointer text-[14.5px] font-semibold hover:text-primary duration-300'>Price Drop</li>
+                            <li className='cursor-pointer text-[14.5px] font-semibold hover:text-primary duration-300'>New Products</li>
+                            <li className='cursor-pointer text-[14.5px] font-semibold hover:text-primary duration-300'>Best Sellers</li>
+                            <li className='cursor-pointer text-[14.5px] font-semibold hover:text-primary duration-300'>Brands</li>
                         </ul>
                     </div>
                     <div className="">
-
+                        <h1 className='text-xl font-bold mb-4'>Our Company</h1>
+                        <ul className='text-gray-600'>
+                            <li className='cursor-pointer text-[14.5px] font-semibold hover:text-primary duration-300'>About Us</li>
+                            <li className='cursor-pointer text-[14.5px] font-semibold hover:text-primary duration-300'>Contact Us</li>
+                            <li className='cursor-pointer text-[14.5px] font-semibold hover:text-primary duration-300'>Terms & Conditions</li>
+                            <li className='cursor-pointer text-[14.5px] font-semibold hover:text-primary duration-300'>Privacy Policy</li>
+                            <li className='cursor-pointer text-[14.5px] font-semibold hover:text-primary duration-300'>Legal</li>
+                        </ul>
                     </div>
                     <div className="">
-
+                        <h1 className='text-xl font-bold mb-4'>Download App</h1>
+                        <ul>
+                            <li className='text-gray-600'>
+                                Save $3 with app & new user only
+                            </li>
+                            <li>
+                                <img className='w-[120px] mt-2' src={downloadApp} alt="" />
+                            </li>
+                        </ul>
                     </div>
                     <div className="">
-
                     </div>
                 </div>
             </div>
