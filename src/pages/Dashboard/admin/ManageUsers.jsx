@@ -5,7 +5,7 @@ const ManageUsers = () => {
 
     const [users]=useAllUsers()
     return (
-        <div>
+        <div className=''>
             <h1>Total User: {users.length}</h1>
             <div className='flex justify-between my-5 mb-8'>
                 <h1>Manage Users</h1>
@@ -22,7 +22,6 @@ const ManageUsers = () => {
             <ul className='flex items-center  justify-between py-4 font-bold w-full'>
                 <li className='w-2/5'>User Info</li>
                 <li className='w-1/5'>User Role</li>
-                <li className='w-1/5'>Action</li>
                 <li className='w-1/5'>Action</li>
             </ul>
 
