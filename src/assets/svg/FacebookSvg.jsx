@@ -1,8 +1,8 @@
 import React from 'react';
 
-const FacebookSvg = () => {
+const FacebookSvg = ({ className }) => {
     return (
-        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 48 48">
+        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" className={className} viewBox="0 0 48 48">
             <linearGradient id="Ld6sqrtcxMyckEl6xeDdMa_uLWV5A9vXIPu_gr1" x1="9.993" x2="40.615" y1="9.993" y2="40.615" gradientUnits="userSpaceOnUse">
                 <stop offset="0" stopColor="#2aa4f4" />
                 <stop offset="1" stopColor="#007ad9" />
