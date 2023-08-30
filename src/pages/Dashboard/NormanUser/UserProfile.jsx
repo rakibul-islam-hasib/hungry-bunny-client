@@ -105,15 +105,15 @@ const UserProfile = () => {
                     {/* form Email and phone row */}
                     <div className="md:flex mb-6">
                         <div className=" md:w-1/2">
-                            <label className="label">
-                                <span className="label-text text-primary">Email</span>
+                            <label className="">
+                                <span className=" text-primary">Email</span>
                             </label>
                             <label className="">
                                 <input
                                     type="text"
                                     name="email"
                                     placeholder="Email"
-                                    className=" outline-none border border-primary w-full rounded p-2"
+                                    className=" outline-none focus:outline-none  border border-primary w-full rounded p-2"
                                 />
                             </label>
                         </div>
@@ -164,7 +164,7 @@ const UserProfile = () => {
                         </div>
                     </div>
 
-
+                <input type="text" placeholder='fsdfsdf' />
                 </div>
             </div>
             <ChangeProfilePicModal isOpen={isOpen} onClose={closeModal} onSuccess={handleProfilePicChange} />
