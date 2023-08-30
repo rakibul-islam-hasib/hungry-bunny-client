@@ -39,10 +39,10 @@ const Restaurant = () => {
   return (
     <div>
       <div>
-      <div className='bg-orange-50 pb-8 dark:bg-gradient-to-r from-cyan-400 to-blue-300  mt-5 pt-8 rounded-3xl drop-shadow-lg'>
+      <div className="pb-8  mt-5 pt-8 drop-shadow-lg bg-[url('https://images.pexels.com/photos/978587/pexels-photo-978587.jpeg?auto=compress&cs=tinysrgb&w=1600')] rounded-3xl">
           <div className='text-center mx-auto'>
-            <h2 className='text-4xl font-extrabold mb-6 text-purple-800 uppercase'>see available restaurant</h2>
-            <h2 className='text-2xl font-bold text-slate-800 dark:text-white mb-4'> Rediscovering Traditional Flavors with a Modern Twist</h2>
+            <h2 className='text-4xl font-extrabold mb-6 uppercase'>see available restaurant</h2>
+            <h2 className='text-2xl text-white mb-4'> Rediscovering Traditional Flavors with a Modern Twist</h2>
           </div>
           <div className='md:flex ml-6 md:ml-96'>
             <input type="text" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} className='rounded-3xl w-[40%] border-0 text-2xl dark:text-black' placeholder='search restaurant' />

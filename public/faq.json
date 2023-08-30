@@ -48,5 +48,36 @@
         "_id": 10,
         "question": "Are there any delivery fees associated with using Postmates?",
         "answers": "Yes, Postmates typically charges a delivery fee for each order, which can vary based on factors like distance and demand. Additionally, there might be additional charges during peak times or for smaller orders. Some merchants may also have a service fee."
+    },
+
+    {
+        "_id": 11,
+        "question": "Is your restaurant suitable for large groups and events?",
+        "answers": "Absolutely! We can accommodate large groups and events. Please contact us in advance to make a reservation and discuss any special arrangements."
+    },
+    {
+        "_id": 12,
+        "question": " Do you offer vegetarian/vegan options?",
+        "answers": "Yes, we have a dedicated section on our menu for vegetarian and vegan dishes, crafted to delight our plant-based diners."
+    },
+    {
+        "_id": 13,
+        "question": " Can I make a reservation online?",
+        "answers": "Certainly! You can easily make a reservation through our website by visiting the Reservations page and following the instructions provided."
+    },
+    {
+        "_id": 14,
+        "question": " Can I bring my own wine or cake for a special occasion?",
+        "answers": "We have an extensive wine selection available, and our team can assist you in choosing the perfect pairing. However, outside cakes are allowed for special occasions, and we may charge a nominal cake-cutting fee."
+    },
+    {
+        "_id": 15,
+        "question": " Are gift cards available for purchase?",
+        "answers": "Certainly! We offer gift cards that can be purchased online or at our restaurant. They make perfect gifts for food enthusiasts."
+    },
+    {
+        "_id": 16,
+        "question": "Do you host live entertainment or events?",
+        "answers": "We occasionally host live entertainment and special events. Stay updated by checking our Events page for the latest information on performances and happenings."
     }
 ]
