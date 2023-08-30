@@ -24,6 +24,9 @@ import BlogDetails from "../pages/blog/BlogDetails";
 // import UserAddress from "../pages/dashboard/Owner/UserAddress";
 import UserProfile from "../pages/dashboard/NormanUser/UserProfile";
 import UserAddress from "../pages/dashboard/NormanUser/UserAddress";
+import AdminDashboard from "../pages/Dashboard/admin/AdminDashboard";
+import ManageUsers from "../pages/Dashboard/admin/ManageUsers";
+import MultiStepForm from "../pages/auth/MultiStepForm";
 
 export const router = createBrowserRouter([
   {
@@ -53,7 +56,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/register",
-        element: <Register />,
+        element: <MultiStepForm />,
       },
       {
         path: "/restaurant",
@@ -108,7 +111,14 @@ export const router = createBrowserRouter([
 /*------------------------------------------------------------
 -----------------WebSite Admin  Dashboard-------------------
 -------------------------------------------------------------*/ 
-
+      {
+        path:'admin-dashboard',
+        element:<AdminDashboard/>
+      },
+      {
+        path:'manage-users',
+        element:<ManageUsers/>
+      },
 
 
 /*------------------------------------------------------------

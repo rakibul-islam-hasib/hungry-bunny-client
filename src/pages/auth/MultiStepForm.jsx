@@ -2,11 +2,7 @@ import React, { useState } from 'react';
 import './MultiStepForm.css'
 
 
-import { Link, Navigate } from "react-router-dom";
-import { useDispatch, useSelector } from 'react-redux';
-import { registerUser, updateName } from "../../redux/slices/authThunks";
-import { setUser } from "../../redux/slices/authSlice";
-import useAxiosFetch from "../../hooks/useAxiosFetch";
+import { Link } from "react-router-dom";
 import SocialLogin from './SocialLogin';
 
 const MultiStepForm = () => {
@@ -22,55 +18,12 @@ const MultiStepForm = () => {
     location: '',
     password: '',
   });
-  // console.log(formData);
-
-  const dispatch = useDispatch();
-  const axios = useAxiosFetch();
-  const { user } = useSelector((state) => state.auth);
-
-  if (user) return <Navigate to="/" />;
-
-  const handleFromSubmit = async (e) => {
-
-    e.preventDefault();
-    // const formData = new FormData(e.target);
-    // const data = Object.fromEntries(formData);
-    const userData = {
-      email: formData.email,
-      name: formData.name,
-      gender: formData.gender,
-      location: formData.location,
-      password: formData.password,
-      joined: new Date(),
-      role: 'user',
-      phone: {
-        p1: '',
-        p2: ''
-      },
-      address: '',
-      following: [],
-      followers: [],
-    }
-    console.log(userData);
 
 
-    try {
-      const res = await dispatch(registerUser(formData.email, formData.password));
-      if (res) {
-        dispatch(updateName(formData.name))
-        dispatch(setUser(res.user));
-        if (res.user) {
-          await axios.post('/user-info', userData);
-          console.log(userData);
-        }
-      }
-      console.log(res);
-    } catch (err) {
-      console.log(err);
-    }
+
+  const handleFromSubmit = () => {
+
   }
-
-
 
 
 
@@ -110,7 +63,7 @@ const MultiStepForm = () => {
               <button onClick={handleNext} className=' relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800'>
                 <span className="items-center relative font-bold px-8 py-2 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
 
-                Next
+                  Next
                 </span>
               </button>
             </div>
@@ -129,11 +82,17 @@ const MultiStepForm = () => {
               className="input-field"
             />
             <div className="flex justify-between mt-6">
-              <button onClick={handlePrev} className="btn btn-gradient-secondary">
-                Previous
+              <button onClick={handlePrev} className=' relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800'>
+                <span className="items-center relative font-bold px-8 py-2 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+
+                  Previous
+                </span>
               </button>
-              <button onClick={handleNext} className="btn">
-                Next
+              <button onClick={handleNext} className=' relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800'>
+                <span className="items-center relative font-bold px-8 py-2 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+
+                  Next
+                </span>
               </button>
             </div>
           </div>
@@ -156,11 +115,17 @@ const MultiStepForm = () => {
               </select>
             </div>
             <div className="flex justify-between mt-6">
-              <button onClick={handlePrev} className="btn btn-gradient-secondary">
-                Previous
+              <button onClick={handlePrev} className=' relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800'>
+                <span className="items-center relative font-bold px-8 py-2 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+
+                  Previous
+                </span>
               </button>
-              <button onClick={handleNext} className="btn">
-                Next
+              <button onClick={handleNext} className=' relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800'>
+                <span className="items-center relative font-bold px-8 py-2 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+
+                  Next
+                </span>
               </button>
             </div>
           </div>
@@ -245,11 +210,17 @@ const MultiStepForm = () => {
               </select>
             </div>
             <div className="flex justify-between mt-6">
-              <button onClick={handlePrev} className="btn btn-gradient-secondary">
-                Previous
+              <button onClick={handlePrev} className=' relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800'>
+                <span className="items-center relative font-bold px-8 py-2 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+
+                  Previous
+                </span>
               </button>
-              <button onClick={handleNext} className="btn">
-                Next
+              <button onClick={handleNext} className=' relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800'>
+                <span className="items-center relative font-bold px-8 py-2 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+
+                  Next
+                </span>
               </button>
             </div>
           </div>
@@ -267,10 +238,18 @@ const MultiStepForm = () => {
               className="input-field"
             />
             <div className="flex justify-between mt-6">
-              <button onClick={handlePrev} className="btn btn-gradient-secondary">
-                Previous
+              <button onClick={handlePrev} className=' relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800'>
+                <span className="items-center relative font-bold px-8 py-2 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+
+                  Previous
+                </span>
               </button>
-              <button type='submit' className="btn">Registation</button>
+              <button type='submit' className=' relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800'>
+                <span className="items-center relative font-bold px-8 py-2 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+
+                  Registation
+                </span>
+              </button>
             </div>
 
           </div>
@@ -282,8 +261,8 @@ const MultiStepForm = () => {
           </span>{" "}
         </p>
         <div>
-          
-        <SocialLogin/>
+
+          <SocialLogin />
         </div>
       </form>
     </div>
