@@ -155,7 +155,7 @@ const UserPayment = () => {
 
                         <div className='text-end'>
                             
-                            <input type="submit" value="Add New Payment Method" className=" bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded p-2 ms-2 " />
+                            <input type="submit" value="Add New Payment Method" className=" bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded p-2 ms-2 " />
 
                         </div>
                     
