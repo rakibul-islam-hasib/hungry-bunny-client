@@ -44,13 +44,13 @@ const Blog = () => {
         {blogs.map((item) => (
           <div key={item._id} className='p-2 border overflow-hidden shadow-lg rounded-2xl dark:drop-shadow-md'>
             <img className="w-full h-48 object-cover rounded-lg" src={item.blogImage} alt="Food Image" />
-            <div className='flex justify-between mt-3'>
-              <p>{item.date}</p>
+            <div className='flex justify-between mt-3 dark:text-slate-200'>
+              <p >{item.date}</p>
               <p className='flex items-center'><span className='mr-2'>{item.time} min read</span><span><FaReadme></FaReadme></span> </p>
             </div>
             <div className="px-6 py-4">
               <div className="font-bold text-xl mb-2">
-                <p>{item.blogHeading}</p>
+                <p className='dark:text-slate-200'>{item.blogHeading}</p>
               </div>
               <div className='flex justify-between items-center'>
                 <div className='flex'>
