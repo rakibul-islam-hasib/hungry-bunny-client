@@ -6,6 +6,7 @@
         "price": 8.99,
         "image": "https://media.istockphoto.com/id/182161332/photo/eggs-benedict.webp?b=1&s=170667a&w=0&k=20&c=W7bYSNbBdU3EsNabn-i9iykByJFvavZWdDFMyWg_bwM=",
         "type": "Breakfast",
+        "category": "Snacks",
         "restaurant": "SadherGhor",
         "ingredients": ["Eggs", "English Muffin"],
         "rating": 4.7
@@ -17,6 +18,7 @@
         "price": 7.49,
         "image": "https://media.istockphoto.com/id/1468515195/photo/breakfast-of-pancakes-with-chocolate.webp?b=1&s=170667a&w=0&k=20&c=6WZAFkPfEXRniDAEpoC5-wo_3Nck_ewWyjmM-fMmuWg=",
         "type": "Breakfast",
+        "category": "Snacks",
         "restaurant": "MorningBites",
         "ingredients": ["Pancake Batter", "Maple Syrup", "Whipped Cream", "Berries or Bananas"],
         "rating": 4.5
@@ -28,6 +30,7 @@
         "price": 6.99,
         "image": "https://media.istockphoto.com/id/639376412/photo/blueberry-raspberry-parfaits-in-mason-jars-still-life-against-wood.webp?b=1&s=170667a&w=0&k=20&c=19P8kxhp99CwUXKZ3aqpGqupaRR4rMxDA_R2NTihvPc=",
         "type": "Breakfast",
+        "category": "Snacks",
         "restaurant": "HealthyBites",
         "ingredients": ["Greek Yogurt", "Granola", "Assorted Fruits", "Honey"],
         "rating": 4.8
@@ -39,6 +42,7 @@
         "price": 9.25,
         "image": "https://media.istockphoto.com/id/1036890322/photo/vegetarian-breakfast-burrito-with-eggs.jpg?s=612x612&w=0&k=20&c=NlEkC7qATfSPjpXxQgcDIAi8rywsYIjoEkFBFw4D0Ys=",
         "type": "Breakfast",
+        "category": "Snacks",
         "restaurant": "SpiceFusion",
         "ingredients": ["Scrambled Eggs", "Black Beans", "Bell Peppers", "Onions", "Cheese", "Salsa"],
         "rating": 4.6
@@ -50,6 +54,7 @@
         "price": 8.99,
         "image": "https://media.istockphoto.com/id/1311507085/photo/avocado-toast-with-eggs-and-roasted-tomatoes.webp?b=1&s=170667a&w=0&k=20&c=6ryzDPsyH7RSsu2d4GppMYga7yFl7JJLXPhfYsbk_lo=",
         "type": "Breakfast",
+        "category": "Snacks",
         "restaurant": "GreenEats",
         "ingredients": ["Whole-Grain Bread", "Avocado", "Poached Egg", "Red Pepper Flakes", "Mixed Greens"],
         "rating": 4.6
@@ -61,6 +66,7 @@
         "price": 9.49,
         "image": "https://media.istockphoto.com/id/466063332/photo/frittata-with-chicken-and-spinach-and-fresh-spinach.webp?b=1&s=170667a&w=0&k=20&c=yBhD-WVHGRXXr7Wsg5uyFlQhjp2vXljsLGZJ7Ja2Upk=",
         "type": "Breakfast",
+        "category": "Snacks",
         "restaurant": "MexiCafe",
         "ingredients": ["Eggs", "Ham", "Mushrooms", "Onions", "Cheddar Cheese", "Hash Browns"],
         "rating": 4.7
@@ -72,6 +78,7 @@
         "price": 10.99,
         "image": "https://media.istockphoto.com/id/185266029/photo/waffles-with-fruit-and-maple-syrup-on-a-marble-counter.webp?b=1&s=170667a&w=0&k=20&c=hH8dRj_eOW1mLiPuHIcAeHY76Y3LmyXWE9hTzokN5EY=",
         "type": "Breakfast",
+        "category": "Snacks",
         "restaurant": "WaffleHaven",
         "ingredients": ["Waffle Batter", "Whipped Cream", "Strawberries", "Powdered Sugar", "Maple Syrup"],
         "rating": 4.9
@@ -83,6 +90,7 @@
         "price": 8.75,
         "image": "https://media.istockphoto.com/id/518620806/photo/mexican-quesadillas-with-cheese-vegetables.webp?b=1&s=170667a&w=0&k=20&c=mqb3KGsY4NKz0n3oBpLv254RVSmt2k0S0EX13IvE27I=",
         "type": "Breakfast",
+        "category": "Snacks",
         "restaurant": "MexiCafe",
         "ingredients": ["Flour Tortilla", "Scrambled Eggs", "Bacon", "Tomatoes", "Green Onions", "Monterey Jack Cheese", "Salsa"],
         "rating": 4.5
@@ -458,6 +466,7 @@
         "price": 14.99,
         "image": "https://media.istockphoto.com/id/1308229866/photo/pasta-spaghetti-with-grilled-shrimps-bechamel-sauce-spaghetti-with-seafood-rich-cream.jpg?s=612x612&w=0&k=20&c=Bidy068OuiJmQhxHfJZuSHiZhUqxsPg8CWQScl63JiY=",
         "type": "Dinner",
+        "category": "Seafood",
         "restaurant": "Seashell",
         "ingredients": ["Shrimp", "Garlic", "Cream", "Pasta", "Parmesan"],
         "rating": 4.6
@@ -469,6 +478,7 @@
         "price": 22.99,
         "image": "https://media.istockphoto.com/id/1305699663/photo/seafood-platter-grilled-lobster-shrimps-scallops-langoustines-octopus-squid-on-white-plate.jpg?s=612x612&w=0&k=20&c=iEwdxon7CJ0wQEDy8-kwnz7TLdknVw05vaa-Qc_aHow=",
         "type": "Dinner",
+        "category": "Seafood",
         "restaurant": "Seashell",
         "ingredients": ["Fish", "Calamari", "Scallops", "Batter", "Dipping Sauces"],
         "rating": 4.7
@@ -480,6 +490,7 @@
         "price": 17.99,
         "image": "https://media.istockphoto.com/id/1297010162/photo/thai-prawn-massaman-curry-in-a-bowl-with-chopsticks.jpg?s=612x612&w=0&k=20&c=2BvRTwn1ANgRgn5E14A0orgyId6BcrFU91tAXV6i2jU=",
         "type": "Lunch",
+        "category": "Seafood",
         "restaurant": "Seashell",
         "ingredients": ["Shrimp", "Coconut Milk", "Lime", "Spices", "Rice"],
         "rating": 4.9
@@ -491,6 +502,7 @@
         "price": 34.99,
         "image": "https://media.istockphoto.com/id/1495742492/photo/delicious-lobster-cooked-on-the-dining-table.jpg?s=612x612&w=0&k=20&c=JNUkWwyerZjMvg2SJ56c9mXqutVY_GQ6m0O-HA9Q4M0=",
         "type": "Dinner",
+        "category": "Seafood",
         "restaurant": "Seashell",
         "ingredients": ["Lobster Tail", "Garlic Butter", "Side Dishes"],
         "rating": 4.8
@@ -502,6 +514,7 @@
         "price": 19.99,
         "image": "https://media.istockphoto.com/id/185405840/photo/crawfish-boil.jpg?s=612x612&w=0&k=20&c=D29dGV00uspxi79WRB2J17UPumTIkuW95vHchzM-7no=",
         "type": "Lunch",
+        "category": "Seafood",
         "restaurant": "Seashell",
         "ingredients": ["Crawfish", "Corn", "Potatoes", "Sausages", "Cajun Spices"],
         "rating": 4.7
@@ -513,6 +526,7 @@
         "price": 18.99,
         "image": "https://media.istockphoto.com/id/1081539362/photo/salmon-in-honey-soy-glaze-with-rice-spinach-and-avocado.jpg?s=612x612&w=0&k=20&c=cFxrL48b_QG7NRAOqaH8rl7kg5lfhjdifkSQF_nFirw=",
         "type": "Dinner",
+        "category": "Seafood",
         "restaurant": "Seashell",
         "ingredients": ["Salmon", "Sesame", "Ginger", "Vegetables"],
         "rating": 4.6
@@ -524,6 +538,7 @@
         "price": 21.99,
         "image": "https://media.istockphoto.com/id/1329666820/photo/traditional-spanish-seafood-paella-in-the-fry-pan-on-a-white-background.jpg?s=612x612&w=0&k=20&c=0yI_5efHYwS40Flz8bGA3x6dTQzERWiOfhM1vyGiac4=",
         "type": "Lunch",
+        "category": "Seafood",
         "restaurant": "Seashell",
         "ingredients": ["Shrimp", "Mussels", "Rice", "Saffron", "Bell Peppers"],
         "rating": 4.9
@@ -535,6 +550,7 @@
         "price": 15.99,
         "image": "https://media.istockphoto.com/id/154395264/photo/stuffed-avocado.jpg?s=612x612&w=0&k=20&c=Pv4jUWJ-HvIMOsrsgSRKpnGjAuNDmDW4iXlhacbT-rQ=",
         "type": "Lunch",
+        "category": "Seafood",
         "restaurant": "Seashell",
         "ingredients": ["Crab Meat", "Avocado", "Herbs", "Greens"],
         "rating": 4.7
@@ -546,6 +562,7 @@
         "price": 20.99,
         "image": "https://media.istockphoto.com/id/185107259/photo/seafood-scampi-and-white-wine.jpg?s=612x612&w=0&k=20&c=AuMpbQgTUdqI1TOO6MvSbtNbXtIxXXyltKKc3-p0SMM=",
         "type": "Dinner",
+        "category": "Seafood",
         "restaurant": "Seashell",
         "ingredients": ["Scallops", "Garlic Butter", "Side Dish"],
         "rating": 4.8
@@ -557,6 +574,7 @@
         "price": 16.99,
         "image": "https://media.istockphoto.com/id/1136130610/photo/hawaiian-tuna-poke-bowl.jpg?s=612x612&w=0&k=20&c=wMCcmU_3q7Bh6OE-viKWBpPtvQCxiccItl1B34PlBmQ=",
         "type": "Lunch",
+        "category": "Seafood",
         "restaurant": "Seashell",
         "ingredients": ["Tuna", "Soy Sauce", "Sesame", "Rice", "Toppings"],
         "rating": 4.9
@@ -568,6 +586,7 @@
         "price": 19.99,
         "image": "https://media.istockphoto.com/id/1055532542/photo/gumbo-with-prawns-okra-and-sausage.jpg?s=612x612&w=0&k=20&c=IBPsyKRqiHLEwyDV_k8RdQNLPh2kKVkXLNTeLd2iTWY=",
         "type": "Dinner",
+        "category": "Seafood",
         "restaurant": "Seashell",
         "ingredients": ["Shrimp", "Crab", "Andouille Sausage", "Okra", "Rice"],
         "rating": 4.7
@@ -590,6 +609,7 @@
         "price": 12.99,
         "image": "https://media.istockphoto.com/id/155382654/photo/ravioli-with-ricotta-and-mozzarella-cheese.jpg?s=612x612&w=0&k=20&c=m4ybjD5b7esPWGwFh1qljypT46UpLpFwg71SykfA7o0=",
         "type": "Evening Snack",
+        "category": "Pasta",
         "restaurant": "HealthyBites",
         "ingredients": ["Pasta Shells", "Spinach", "Ricotta Cheese", "Herbs"],
         "rating": 4.5
@@ -601,6 +621,7 @@
         "price": 4.99,
         "image": "https://media.istockphoto.com/id/1533635262/photo/croissants-strawberries-lemonade-on-checkered-blanket.jpg?s=612x612&w=0&k=20&c=0RX7Q0_COU8lSpPkWec8iUETxuhuXTddSfk3O49Lrs0=",
         "type": "Evening Snack",
+        "category": "Pastry",
         "restaurant": "GreenEats",
         "ingredients": ["Pastry Dough", "Mixed Berries", "Sugar", "Vanilla"],
         "rating": 4.8
@@ -843,6 +864,7 @@
         "price": 5.99,
         "image": "https://media.istockphoto.com/id/1472804077/photo/strawberry-shortcake.jpg?s=612x612&w=0&k=20&c=iMgi5yfEzcDy3HrV4pRHBU4RSz0ITEZ_22g9RdMJlXg=",
         "type": "Dessert",
+        "category": "Dessert",
         "restaurant": "SadherGhor",
         "ingredients": ["Shortcake", "Strawberries", "Whipped Cream"],
         "rating": 4.7
@@ -854,6 +876,7 @@
         "price": 7.99,
         "image": "https://media.istockphoto.com/id/462862427/photo/chocolate-mousse-with-almond-in-a-white-cup.jpg?s=612x612&w=0&k=20&c=dc-eGKrycmifjhHkh9ZDB3d0feF7K_-VRLkoUElRTNM=",
         "type": "Dessert",
+        "category": "Dessert",
         "restaurant": "HealthyBites",
         "ingredients": ["Dark Chocolate", "Milk Chocolate", "White Chocolate", "Chocolate Shavings"],
         "rating": 4.5
@@ -865,6 +888,7 @@
         "price": 6.99,
         "image": "https://media.istockphoto.com/id/1344093370/photo/granola-with-yoghurt-and-fresh-blueberries.jpg?s=612x612&w=0&k=20&c=9mAM84faYXSHnSKwKvNa9EdenYZ36C6wUUOESpzeTk0=",
         "type": "Dessert",
+        "category": "Dessert",
         "restaurant": "GreenEats",
         "ingredients": ["Mixed Fruits", "Yogurt", "Nuts", "Honey"],
         "rating": 4.8
@@ -876,6 +900,7 @@
         "price": 8.99,
         "image": "https://media.istockphoto.com/id/641237530/photo/red-velvet-cheesecake.jpg?s=612x612&w=0&k=20&c=VGUb632rJrIUUXKxtIo1z-hVPzJaH6YxCZYi0QVPEWs=",
         "type": "Dessert",
+        "category": "Dessert",
         "restaurant": "CaféChic",
         "ingredients": ["Cream Cheese", "Red Velvet Cake", "Cream Cheese Frosting"],
         "rating": 4.6
@@ -887,6 +912,7 @@
         "price": 6.99,
         "image": "https://media.istockphoto.com/id/831559706/photo/delicious-mango-passion-fruit-and-cream-cheese-layered-dessert-on-glasses.jpg?s=612x612&w=0&k=20&c=2lAjzjn2WPFXVhEvbJPoHWezBIND0SDFlnUBAz2235I=",
         "type": "Dessert",
+        "category": "Dessert",
         "restaurant": "SpiceFusion",
         "ingredients": ["Coconut Milk", "Mango Coulis", "Gelatin"],
         "rating": 4.9
@@ -898,6 +924,7 @@
         "price": 4.99,
         "image": "https://media.istockphoto.com/id/1255426185/photo/delicious-chocolate-zucchini-brownies.jpg?s=612x612&w=0&k=20&c=xbo8Cj5-h0wxp06Uu6I9tfnvTNlF9aI2IdwHdRMmnyM=",
         "type": "Dessert",
+        "category": "Dessert",
         "restaurant": "SadherGhor",
         "ingredients": ["Chocolate", "Chocolate Chips", "Chocolate Sauce"],
         "rating": 4.7
@@ -909,6 +936,7 @@
         "price": 7.99,
         "image": "https://media.istockphoto.com/id/1307280189/photo/small-tartlet-pastries-with-white-cream-topped-with-raspberry-fruits.jpg?s=612x612&w=0&k=20&c=K6Yy7RKLEYlRiyCucr__LLCnBcAbeyrZ09oW4p9jDPw=",
         "type": "Dessert",
+        "category": "Dessert",
         "restaurant": "HealthyBites",
         "ingredients": ["Tart Crust", "White Chocolate Ganache", "Raspberries"],
         "rating": 4.5
