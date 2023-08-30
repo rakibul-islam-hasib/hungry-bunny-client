@@ -3,8 +3,9 @@ import { Dialog, Transition } from '@headlessui/react';
 import { motion } from 'framer-motion';
 import { useAuth } from '../../hooks/useAuth';
 import { storage } from '../../config/firebase/firebase.config';
-import { ref } from 'firebase/storage';
-
+import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
+import { v4 } from 'uuid';
+import { toast } from 'react-hot-toast';
 const ChangeProfilePicModal = ({ isOpen, onClose, onSuccess }) => {
     const [selectedFile, setSelectedFile] = useState(null);
     const [previewUrl, setPreviewUrl] = useState(null);
@@ -19,9 +20,28 @@ const ChangeProfilePicModal = ({ isOpen, onClose, onSuccess }) => {
         setSelectedFile(null);
         setPreviewUrl(null);
     };
-    console.log(selectedFile?.name)
+
     const handleProfilePicChange = (file) => {
-        const imagesRef = ref(storage, `images/${user?.uid}/profilePic`);
+        const imgId = v4();
+        const imagesRef = ref(storage, `images/${imgId + selectedFile?.name}`);
+
+        const test = uploadBytes(imagesRef, file).then((snapshot) => {
+            getDownloadURL(ref(storage, `images/${imgId + selectedFile?.name}`))
+                .then((url) => {
+                    if (url) {
+                        onSuccess(url);
+                        onClose();
+                    }
+                    else {
+                        toast.error('Something went wrong , please try again later');
+                    }
+                })
+        });
+        toast.promise(test, {
+            loading: 'Uploading...',
+            success: 'Your pic has been uploaded successfully',
+            error: 'Something went wrong , please try again later',
+        });
     };
     return (
         <Transition.Root show={isOpen} as={React.Fragment}>
@@ -89,7 +109,8 @@ const ChangeProfilePicModal = ({ isOpen, onClose, onSuccess }) => {
                             <button
                                 onClick={() => {
                                     // Pass the selectedFile to the onSuccess handler
-                                    handleFileChange();
+                                    // handleFileChange();
+                                    handleProfilePicChange(selectedFile);
                                 }}
                                 className="px-4 py-2 bg-orange-500 text-white rounded hover:bg-orange-600"
                             >

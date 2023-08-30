@@ -23,8 +23,8 @@ const UserProfile = () => {
         setIsOpen(false);
     };
 
-    const handleProfilePicChange = (file) => {
-        console.log(file);
+    const handleProfilePicChange = (imgURL) => {
+        console.log(imgURL);
     };
 
 
