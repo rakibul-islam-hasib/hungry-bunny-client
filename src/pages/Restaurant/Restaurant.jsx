@@ -8,15 +8,16 @@ import './restaurant.css'
 import { Pagination } from '@mui/material';
 
 const Restaurant = () => {
-  const [ searchQuery, setSearchQuery ] = useState('')
-  
+  const [searchQuery, setSearchQuery] = useState('')
+
   const [allRestaurants, setAllRestaurants] = useState([]);
   const [page, setPage] = useState(1);
-  
+
   // console.log(page)
   const [totalItem, setTotalItem] = useState(1);
   const totalPage = Math.ceil(totalItem / 3);
   const axios = useAxiosFetch();
+  console.log(totalItem)
 
   useEffect(() => {
     axios.get('/restaurant/total/count')
@@ -29,9 +30,17 @@ const Restaurant = () => {
     window.scrollTo(0, 0);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [page])
-
-  const handleSearch = () =>{
-      axios.get(`/restaurant/search?query=${searchQuery}`)
+  useEffect(() => {
+    axios.get(`/restaurant/search/query?name=${searchQuery}`)
+      .then(res => {
+        setAllRestaurants(res.data)
+        setTotalItem(res.data.length)
+      })
+      .catch(error => console.log(error))
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [searchQuery])
+  const handleSearch = () => {
+    axios.get(`/restaurant/search?query=${searchQuery}`)
       .then(res => setAllRestaurants(res.data))
       .catch(error => console.log(error))
   }
@@ -39,34 +48,34 @@ const Restaurant = () => {
   return (
     <div>
       <div>
-      <div className="pb-8  mt-5 pt-8 drop-shadow-lg bg-[url('https://images.pexels.com/photos/978587/pexels-photo-978587.jpeg?auto=compress&cs=tinysrgb&w=1600')] rounded-3xl">
+        <div className="pb-8  mt-5 pt-8 drop-shadow-lg bg-[url('https://images.pexels.com/photos/978587/pexels-photo-978587.jpeg?auto=compress&cs=tinysrgb&w=1600')] rounded-3xl">
           <div className='text-center mx-auto'>
             <h2 className='text-4xl font-extrabold mb-6 uppercase'>see available restaurant</h2>
             <h2 className='text-2xl text-white mb-4'> Rediscovering Traditional Flavors with a Modern Twist</h2>
           </div>
           <div className='md:flex ml-6 md:ml-96'>
             <input type="text" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} className='rounded-3xl w-[40%] border-0 text-2xl dark:text-black' placeholder='search restaurant' />
-            <button onClick={handleSearch} className='bg-orange-500 text-white pl-7 pr-7 pt-3 pb-3 text-4xl rounded-3xl ml-5'><FaLocationArrow/> </button>
+            <button onClick={handleSearch} className='bg-orange-500 text-white pl-7 pr-7 pt-3 pb-3 text-4xl rounded-3xl ml-5'><FaLocationArrow /> </button>
           </div>
-      <div className='p-10 md:w-[90%] -mb-36 dark:border-4 dark:border-orange-400 dark:bg-black dark:text-white mt-10 bottom-10 rounded-3xl bg-white mx-auto grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
-        <div className=''>
-          <p className='flex items-center'><span className='text-4xl font-extrabold'> 30</span> <span className='text-4xl font-extrabold'>+</span></p>
-          <p className='text-2xl'>Food Vendors</p>
-        </div>
-        <div className=''>
-          <p className='flex items-center'><span className='text-4xl font-extrabold'>300</span> <span className='text-4xl font-extrabold'>+</span></p>
-          <p className='text-2xl'>Food items</p>
-        </div>
-        <div className=''>
-          <p className='flex items-center'><span className='text-4xl font-extrabold'>30</span> <span className='text-4xl font-extrabold'>%</span></p>
-          <p className='text-2xl'>Birthday Specials</p>
-        </div>
-        <div className=''>
-          <p className='flex items-center'><span className='text-4xl font-extrabold'>25</span> <span className='text-4xl font-extrabold'>%</span></p>
-          <p className='text-2xl'>Exclusive Membership</p>
-        </div>
-      </div>
+          <div className='p-10 md:w-[90%] -mb-36 dark:border-4 dark:border-orange-400 dark:bg-black dark:text-white mt-10 bottom-10 rounded-3xl bg-white mx-auto grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
+            <div className=''>
+              <p className='flex items-center'><span className='text-4xl font-extrabold'> 30</span> <span className='text-4xl font-extrabold'>+</span></p>
+              <p className='text-2xl'>Food Vendors</p>
+            </div>
+            <div className=''>
+              <p className='flex items-center'><span className='text-4xl font-extrabold'>300</span> <span className='text-4xl font-extrabold'>+</span></p>
+              <p className='text-2xl'>Food items</p>
+            </div>
+            <div className=''>
+              <p className='flex items-center'><span className='text-4xl font-extrabold'>30</span> <span className='text-4xl font-extrabold'>%</span></p>
+              <p className='text-2xl'>Birthday Specials</p>
+            </div>
+            <div className=''>
+              <p className='flex items-center'><span className='text-4xl font-extrabold'>25</span> <span className='text-4xl font-extrabold'>%</span></p>
+              <p className='text-2xl'>Exclusive Membership</p>
+            </div>
           </div>
+        </div>
       </div>
       <div className="grid md:grid-cols-2 md:gap-8 gap-3 lg:grid-cols-3 mt-10 mx-auto ">
         {allRestaurants.map((item) => (
@@ -101,8 +110,8 @@ const Restaurant = () => {
 
         ))}
       </div>
-       {/* Pagination  */}
-       <div className="mt-10 mb-5 text-right text-4xl mx-auto sm:w-[40%] md:w-[20%]">
+      {/* Pagination  */}
+      <div className="mt-10 mb-5 text-right text-4xl mx-auto sm:w-[40%] md:w-[20%]">
         <Pagination className='text-right text-4xl font-bold pt-5 pb-5 pr-4 pl-4 rounded-2xl dark:bg-white' onChange={(e, vale) => setPage(vale)} count={totalPage} color="secondary" />
       </div>
       <ScrollRestoration />
