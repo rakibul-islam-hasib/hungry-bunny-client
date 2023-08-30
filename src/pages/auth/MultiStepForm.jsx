@@ -15,6 +15,8 @@ const MultiStepForm = () => {
   const { user } = useSelector((state) => state.auth);
 
 
+
+
   const [step, setStep] = useState(1);
 
   const [formData, setFormData] = useState({
@@ -26,15 +28,11 @@ const MultiStepForm = () => {
   });
 
 
-  
-
 
   if (user) return <Navigate to="/" />;
 
   const handleFromSubmit = async () => {
-    // e.preventDefault();
-    // const formData = new FormData(e.target);
-    // const data = Object.fromEntries(formData);
+    
     const userData = {
       email: formData.email,
       name: formData.name,
