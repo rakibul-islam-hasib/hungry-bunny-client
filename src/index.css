@@ -18,7 +18,9 @@ body {
     @apply text-red-500 text-4xl h-6 w-6
 }
 
-
+input { 
+  outline: none !important;
+}
 @layer components {
     .menu_tab {
       @apply text-gray-800 cursor-pointer select-none;

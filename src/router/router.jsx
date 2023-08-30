@@ -22,8 +22,8 @@ import RestaurantAdmin from "../pages/dashboard/RestaurantAdmin/RestaurantAdmin"
 import Register from "../pages/auth/Register";
 import BlogDetails from "../pages/blog/BlogDetails";
 // import UserAddress from "../pages/dashboard/Owner/UserAddress";
-import UserProfile from "../pages/dashboard/NormanUser/UserProfile";
-import UserAddress from "../pages/dashboard/NormanUser/UserAddress";
+import UserProfile from "../pages/dashboard/user/UserProfile";
+import UserAddress from "../pages/dashboard/user/UserAddress";
 import AdminDashboard from "../pages/Dashboard/admin/AdminDashboard";
 import ManageUsers from "../pages/Dashboard/admin/ManageUsers";
 import MultiStepForm from "../pages/auth/MultiStepForm";
