@@ -56,7 +56,7 @@ const UserSecurity = () => {
                 <h1 className='text-2xl font-bold'>Security</h1>
             </div>
             <div>
-                <form className='form md:w-full sm:w-full bg-purple-200 p-10 rounded-lg' onSubmit={handleSecurity}>
+                <form className='form md:w-full sm:w-full  p-10 rounded-lg' onSubmit={handleSecurity}>
                     <h2 className="text-3xl font-extrabold text-start mb-2">2 factor Authentication</h2>
                        {/* form Phone number row */}
                     <div className="lg:flex md:flex justify-between sm:flex mb-6">
@@ -112,7 +112,7 @@ const UserSecurity = () => {
 
                         <div className='text-end'>
                             
-                            <input type="submit" value="Change Password" className=" bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded p-2 ms-2 " />
+                            <input type="submit" value="Change Password" className=" bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded p-2 ms-2" />
 
                         </div>
                     

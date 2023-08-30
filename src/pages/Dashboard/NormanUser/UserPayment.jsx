@@ -57,7 +57,7 @@ const UserPayment = () => {
                 <h1 className='text-2xl font-bold'>Payment method</h1>
             </div>
             <div>
-                <form className='form md:w-full sm:w-full bg-purple-200 p-10 rounded-lg' onSubmit={handlePayment}>
+                <form className='form md:w-full sm:w-full  p-10 rounded-lg' onSubmit={handlePayment}>
 
                     <h2 className="text-3xl font-extrabold text-start mb-5">Connected payment methods</h2>
 

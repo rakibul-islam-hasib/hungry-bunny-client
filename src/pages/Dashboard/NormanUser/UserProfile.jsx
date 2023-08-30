@@ -57,7 +57,7 @@ const UserProfile = () => {
                 <h1 className='text-2xl font-bold'>Account</h1>
             </div>
             <div>
-                <form className='form md:w-full sm:w-full bg-purple-200 p-10 rounded-lg'>
+                <form className='form md:w-full sm:w-full  p-10 rounded-lg'>
                     <h2 className="text-3xl font-extrabold text-start mb-2">Personal Information</h2>
 
                     <div>

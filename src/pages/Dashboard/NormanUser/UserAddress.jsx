@@ -55,7 +55,7 @@ const UserAddress = () => {
                 <h1 className='text-2xl font-bold'>Address</h1>
             </div>
             <div>
-                <form className='form md:w-full sm:w-full bg-purple-200 p-10 rounded-lg' onSubmit={handleAccount}>
+                <form className='form md:w-full sm:w-full  p-10 rounded-lg' onSubmit={handleAccount}>
                     <h2 className="text-3xl font-extrabold text-start mb-8">Existing Shipping Addresses</h2>
 
                     <div className='lg:flex md:flex justify-around'>
