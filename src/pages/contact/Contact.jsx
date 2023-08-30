@@ -30,7 +30,7 @@ const Contact = () => {
   return (
     <div className='dark:text-slate-200'>
       <h2 className='text-2xl text-center font-bold uppercase mt-10 mb-8'>Get in Touch with Us</h2>
-      <p className='text-center'>Have a question or feedback about our food delivery services?  We&apos;re here to help! Our dedicated customer <br /> support team is available to assist you with any inquiries you may have. Whether you need assistance with <br /> your order, have dietary preferences, or want to share your thoughts, feel free to reach out to <br /> us. Your satisfaction is our priority, and we&apos;re committed to providing you with a seamless and <br /> delightful food delivery experience. Contact us today and let us serve you better.</p>
+      <p className='text-center sm:mr-10 sm:ml-10 md:mr-32 md:ml-32'>Have a question or feedback about our food delivery services?  We&apos;re here to help! Our dedicated customer support team is available to assist you with any inquiries you may have. Whether you need assistance with your order, have dietary preferences, or want to share your thoughts, feel free to reach out to us. Your satisfaction is our priority, and we&apos;re committed to providing you with a seamless and delightful food delivery experience. Contact us today and let us serve you better.</p>
       <div className='flex justify-evenly mb-10'>
 
         <h3 className='flex  items-center text-2xl font-sans mt-5'><span className='mr-3 '><FaMobileAlt className='text-orange-500'></FaMobileAlt> </span> <span>(+880) 1880107...</span></h3>
