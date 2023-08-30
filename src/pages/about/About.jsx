@@ -1,13 +1,17 @@
 import React from 'react';
-import picture from '../../assets/img/aboutPage.jpg';
+
 
 const About = () => {
   return (
-    <div className='mx-auto justify-center items-center ml-5'>
-      <div className="md:relative">
-        <img className='w-full' src={picture} style={{ height: 600 }} alt="delivery picture" />
+    <div className='mx-auto justify-center items-center ml-5 dark:text-slate-300'>
+      <div className="bg-fixed">
+        <img className='w-full rounded-2xl bg-fixed' src='https://images.pexels.com/photos/8566621/pexels-photo-8566621.jpeg?auto=compress&cs=tinysrgb&w=1600' style={{ height: 600 }} alt="delivery picture" />
       </div>
-      <h3 className='md:absolute top-36 text-orange-500 font-extrabold text-4xl'>Hungry Bunny</h3>
+<div className='-mt-96 text-center mb-64'>
+<h3 className='text-white font-extrabold text-6xl'>Hungry Bunny</h3>
+<h3 className='text-slate-200 mt-8 font-extrabold text-2xl'>Indulge in culinary convenience through our food delivery. <br /> Enjoy restaurant-quality meals in the comfort of home – a simple <br /> click for fresh, delightful flavors at your doorstep</h3>
+
+</div>
       <div className='mt-6 mb-10 flex text-center'>
         <div className='border-2 w-[20%] rounded-2xl mr-16 border-orange-400 pr-7 pl-7 pt-4 pb-4 hover:bg-orange-500 hover:text-white '>
           <p className='text-4xl'><span>5000</span> <span className='text-6xl'>+</span></p>
