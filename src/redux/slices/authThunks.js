@@ -1,4 +1,4 @@
-import { FacebookAuthProvider, createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from 'firebase/auth';
+import { FacebookAuthProvider, createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithPopup, signInWithRedirect, signOut, updateProfile } from 'firebase/auth';
 import { setUser, setError, setLoading } from './authSlice';
 import { getAuth } from 'firebase/auth';
 import { app } from '../../config/firebase/firebase.config';
@@ -50,12 +50,14 @@ export const logoutUser = () => async (dispatch) => {
 }
 export const loginWithFacebook = () => async (dispatch) => {
     dispatch(setLoading(true));
+    dispatch(setError(''));
     try {
         // Login with facebook
-       const userCredential =  await signInWithPopup(auth, facebookProvider);
-         dispatch(setUser(userCredential.user));
+        const userCredential = await signInWithRedirect(auth, facebookProvider);
+        dispatch(setUser(userCredential.user));
     } catch (error) {
         dispatch(setError(error.code));
+        console.log(error.code)
         dispatch(setLoading(false));
     }
 }
