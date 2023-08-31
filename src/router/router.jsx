@@ -26,6 +26,10 @@ import UserAddress from "../pages/dashboard/NormanUser/UserAddress";
 import AdminDash from "../pages/dashboard/AdminDash/AdminDash";
 import ManageUsers from "../pages/dashboard/AdminDash/ManageUsers";
 
+import AdminOrder from "../pages/Dashboard/RestaurantAdmin/AdminOrder/AdminOrder";
+import AdminAddItems from "../pages/Dashboard/RestaurantAdmin/AdminAddItems/AdminAddItems";
+import AdminMenu from "../pages/Dashboard/RestaurantAdmin/AdminMenu/AdminMenu";
+
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -63,7 +67,8 @@ export const router = createBrowserRouter([
       {
         path: "/restaurant/:id",
         element: <RestaurantDetails></RestaurantDetails>,
-        loader: ({ params }) => fetch(`https://hungry-bunny.vercel.app/restaurant/${params.id}`)
+        loader: ({ params }) =>
+          fetch(`https://hungry-bunny.vercel.app/restaurant/${params.id}`),
       },
       {
         path: "/menu",
@@ -101,45 +106,50 @@ export const router = createBrowserRouter([
         index: true,
         element: <UserWelcome />,
       },
-/*------------------------------------------------------------
+      /*------------------------------------------------------------
 -----------------WebSite Admin  Dashboard-------------------
--------------------------------------------------------------*/ 
-
+-------------------------------------------------------------*/
 
       {
-        path:'admin-dashboard',
-        element:<AdminDash/>
+        path: "admin-dashboard",
+        element: <AdminDash />,
       },
       {
-        path:'manage-users',
-        element:<ManageUsers/>
+        path: "manage-users",
+        element: <ManageUsers />,
       },
 
-
-
-/*------------------------------------------------------------
+      /*------------------------------------------------------------
 -----------------Restaurant Owner Dashboard-------------------
--------------------------------------------------------------*/ 
+-------------------------------------------------------------*/
       {
         path: "restaurant-cp",
         element: <RestaurantAdmin />,
       },
+      {
+        path: "/dashboard/restaurant-orders",
+        element: <AdminOrder />,
+      },
+      {
+        path: "/dashboard/restaurant-add-items",
+        element: <AdminAddItems />,
+      },
+      {
+        path: "/dashboard/restaurant-menu",
+        element: <AdminMenu />,
+      },
 
-
-/*------------------------------------------------------------
+      /*------------------------------------------------------------
 ---------------------Normal User Dashboard--------------------
--------------------------------------------------------------*/ 
+-------------------------------------------------------------*/
       {
         path: "user-profile",
         element: <UserProfile />,
       },
       {
-        path: 'address',
-        element: <UserAddress />
+        path: "address",
+        element: <UserAddress />,
       },
     ],
   },
-  
-
-
 ]);

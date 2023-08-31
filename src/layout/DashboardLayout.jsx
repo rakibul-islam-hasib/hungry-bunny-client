@@ -5,8 +5,7 @@ import { NavLink, Outlet, ScrollRestoration } from "react-router-dom";
 import { BsFillPostcardFill } from "react-icons/bs";
 import { TbBrandAppleArcade } from "react-icons/tb";
 import { CgProfile } from "react-icons/cg";
-import logo from '../assets/img/logo.png';
-
+import logo from "../assets/img/logo.png";
 
 const adminNavItems = [
   {
@@ -54,7 +53,6 @@ const userNavItems = [
   },
 ];
 
-
 const restaurantNavItems = [
   {
     to: "/dashboard/restaurant-cp",
@@ -83,15 +81,10 @@ const restaurantNavItems = [
   },
 ];
 
-
-
-
-
-
 const DashboardLayout = () => {
   const [open, setOpen] = useState(true);
 
-  const role = "admin";
+  const role = "restaurant";
 
   return (
     <div className="flex bg-[#f1ecea]">
@@ -214,7 +207,7 @@ const DashboardLayout = () => {
 
           <li>
             <NavLink
-            to={'/'}
+              to={"/"}
               className={({ isActive }) =>
                 `flex ${
                   isActive
