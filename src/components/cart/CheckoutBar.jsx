@@ -1,5 +1,6 @@
 import React from 'react';
 import { Sidebar } from 'primereact/sidebar';
+
 const CheckoutBar = ({ visibleLeft, setVisibleLeft }) => {
     return (
         <Sidebar visible={visibleLeft} className='bg-white px-3 py-6' position="right" onHide={() => setVisibleLeft(false)}>
