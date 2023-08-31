@@ -10,6 +10,11 @@ import { HiOutlineMail } from 'react-icons/hi';
 import norton from '../../../assets/svg/norton.svg';
 import trustWave from '../../../assets/svg/trust-wave.svg';
 import trust from '../../../assets/svg/trust.svg';
+import visa from '../../../assets/svg/visa.svg';
+import masterCard from '../../../assets/svg/mastercard.svg';
+import paypal from '../../../assets/svg/paypal.svg';
+import amex from '../../../assets/svg/amex.svg';
+
 
 
 const MainFooter = () => {
@@ -85,7 +90,11 @@ const MainFooter = () => {
                         </ul>
                     </div>
                 </div>
-                <div className="flex items-center justify-between mt-5">
+
+                {/* Part 2 */}
+
+
+                <div className="md:flex items-center justify-between mt-5 border-b border-b-gray-400 pb-5">
                     <div className="space-y-2">
                         <div className="flex items-center gap-2">
                             <div className='px-2 py-1 rounded-xl bg-white w-fit'>Information : </div>
@@ -105,13 +114,29 @@ const MainFooter = () => {
                     {/* Trusted by */}
                     <div className="">
                         <h1 className='text-xl font-bold mb-4'>Trusted by</h1>
-                        <div className="flex items-center gap-5">
+                        <div className="sm:flex items-center gap-5">
                             <img className='w-[120px]' src={norton} alt="" />
                             <img className='w-[120px]' src={trustWave} alt="" />
                             <img className='w-[120px]' src={trust} alt="" />
                         </div>
                     </div>
                 </div>
+
+                {/* part 3 */}
+                <div className="mt-6 sm:flex justify-between items-center">
+                    <div className="flex items-center gap-4">
+                        <img src={paypal} alt="" />
+                        <img src={masterCard} alt="" />
+                        <img src={visa} alt="" />
+                        <img src={amex} alt="" />
+                    </div>
+                    <div className="">
+                        <p className='text-gray-600 text-center mt-2'>© 2023 Hungry Bunny. All Rights Reserved.</p>
+                    </div>
+                </div>
+
+
+
             </div>
         </div>
     );
