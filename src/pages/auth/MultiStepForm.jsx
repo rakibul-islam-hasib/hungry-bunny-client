@@ -30,7 +30,6 @@ const MultiStepForm = () => {
 
 
 
-  if (user) return <Navigate to="/" />;
 
   const handleFromSubmit = async (e) => {
     e.preventDefault();

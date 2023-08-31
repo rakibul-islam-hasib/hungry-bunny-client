@@ -1,45 +1,26 @@
 
-import { Button } from '@mui/material';
 import { FaFacebook, FaGoogle } from 'react-icons/fa';
 import { useDispatch } from 'react-redux';
-import { loginWithFacebook } from '../../redux/slices/authThunks';
+import { handleFacebookRedirect, loginWithFacebook } from '../../redux/slices/authThunks';
 import { useAuth } from '../../hooks/useAuth';
+import { useEffect } from 'react';
 const SocialLogin = () => {
     const dispatch = useDispatch();
     const { error, user } = useAuth();
-    console.log(user, error)
-    const handleGoogle = () => {
 
+    useEffect(() => {
+        dispatch(handleFacebookRedirect())
+    }, [dispatch])
+
+    const handleFacebook = () => {
+        dispatch(loginWithFacebook())
+            .then(res => {
+                console.log(res, 'res something')
+            })
+            .catch(err => {
+                console.log(err, 'err something')
+            })
     }
-    const handleFacebook = async () => {
-        const userCredential = await dispatch(loginWithFacebook());
-        if (userCredential) {
-            const userData = {
-                email: userCredential.user.email,
-                name: userCredential.user.displayName,
-                gender: 'Not Provided',
-                location: 'Not Provided',
-                joined: new Date(),
-                role: 'user',
-                phone: {
-                    p1: '',
-                    p2: ''
-                },
-                address: '',
-                following: [],
-                followers: [],
-                likedPost: [],
-                isVerified: false,
-                photo: 'https://i.ibb.co/txQbC7p/casual-life-3d-profile-picture-of-person-in-glasses-and-orange-shirt.png',
-            }
-        }
-        if (error) {
-            console.log(error)
-            alert(error)
-        }
-
-    }
-
 
     return (
         <div className='pt-6'>
