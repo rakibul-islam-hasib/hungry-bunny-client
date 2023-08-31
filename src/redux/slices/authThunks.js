@@ -78,11 +78,26 @@ export const handleFacebookRedirect = () => async (dispatch) => {
         const userCredential = await getRedirectResult(auth);
 
         if (userCredential.user) {
+
             const userData = {
                 email: userCredential.user.email,
                 name: userCredential.user.displayName,
-                gender : 'N/A'
-            };
+                gender: 'N/A',
+                location: 'N/A',
+                joined: new Date(),
+                role: 'user',
+                method: 'facebook',
+                phone: {
+                    p1: '',
+                    p2: ''
+                },
+                address: '',
+                following: [],
+                followers: [],
+                likedPost: [],
+                isVerified: false,
+                photo: 'https://i.ibb.co/txQbC7p/casual-life-3d-profile-picture-of-person-in-glasses-and-orange-shirt.png',
+            }
             // TODO : Replace with server URL : https://
             fetch('http://localhost:5000/user-info', {
                 method: 'POST',

@@ -3,7 +3,6 @@ import { FaFacebook, FaGoogle } from 'react-icons/fa';
 import { useDispatch } from 'react-redux';
 import { handleFacebookRedirect, loginWithFacebook } from '../../redux/slices/authThunks';
 import { useAuth } from '../../hooks/useAuth';
-import useAxiosSecure from '../../hooks/useAxiosSecure';
 import { useEffect } from 'react';
 const SocialLogin = () => {
     const dispatch = useDispatch();
@@ -21,30 +20,6 @@ const SocialLogin = () => {
             .catch(err => {
                 console.log(err, 'err something')
             })
-        const userData = {
-            email: user?.email,
-            name: user?.name,
-            gender: 'N/A',
-            location: 'N/A',
-            joined: new Date(),
-            role: 'user',
-            method: 'facebook',
-            phone: {
-                p1: '',
-                p2: ''
-            },
-            address: '',
-            following: [],
-            followers: [],
-            likedPost: [],
-            isVerified: false,
-            photo: 'https://i.ibb.co/txQbC7p/casual-life-3d-profile-picture-of-person-in-glasses-and-orange-shirt.png',
-        }
-        // const result = await axios.post('/user-info', userData);
-        // console.log('Hello')
-        // console.log(result.data);
-
-
     }
 
     return (
