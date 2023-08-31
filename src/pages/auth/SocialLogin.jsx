@@ -2,12 +2,11 @@
 import { FaFacebook, FaGoogle } from 'react-icons/fa';
 import { useDispatch } from 'react-redux';
 import { handleFacebookRedirect, loginWithFacebook, loginWithGoogle } from '../../redux/slices/authThunks';
-import { useAuth } from '../../hooks/useAuth';
 import { useEffect } from 'react';
 const SocialLogin = () => {
     const dispatch = useDispatch();
-    const { error, user } = useAuth();
-    console.log(error , 'error')
+    
+    
     useEffect(() => {
         dispatch(handleFacebookRedirect())
     }, [dispatch])
