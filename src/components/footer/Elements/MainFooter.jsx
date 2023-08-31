@@ -7,6 +7,10 @@ import downloadApp from '../../../assets/svg/DownloadApp.svg';
 import { GrLocation } from 'react-icons/gr';
 import { FiPhoneCall } from 'react-icons/fi';
 import { HiOutlineMail } from 'react-icons/hi';
+import norton from '../../../assets/svg/norton.svg';
+import trustWave from '../../../assets/svg/trust-wave.svg';
+import trust from '../../../assets/svg/trust.svg';
+
 
 const MainFooter = () => {
     return (
@@ -75,10 +79,37 @@ const MainFooter = () => {
                                 <FiPhoneCall className='inline-block mr-1 text-xl text-gray-600' /> +1 800 123 1234
                             </li>
                             <li className=''>
-                                <HiOutlineMail className='inline-block mr-1 text-xl text-gray-600' /> 
+                                <HiOutlineMail className='inline-block mr-1 text-xl text-gray-600' />
                                 admin@hungry-bunny.com
                             </li>
                         </ul>
+                    </div>
+                </div>
+                <div className="flex items-center justify-between mt-5">
+                    <div className="space-y-2">
+                        <div className="flex items-center gap-2">
+                            <div className='px-2 py-1 rounded-xl bg-white w-fit'>Information : </div>
+                            <p>Biriyani under 200 taka . All bangladesh free delivery</p>
+                        </div>
+                        <div className="flex items-center gap-2">
+                            <div className='px-2 py-1 rounded-xl bg-white w-fit'>Category :</div>
+                            <p>Visit our category to explore food that you want</p>
+                        </div>
+
+                        <div className="flex items-center gap-2">
+                            <div className='px-2 py-1 rounded-xl bg-white w-fit'>Products :</div>
+                            <p>We delivered supper first</p>
+                        </div>
+
+                    </div>
+                    {/* Trusted by */}
+                    <div className="">
+                        <h1 className='text-xl font-bold mb-4'>Trusted by</h1>
+                        <div className="flex items-center gap-5">
+                            <img className='w-[120px]' src={norton} alt="" />
+                            <img className='w-[120px]' src={trustWave} alt="" />
+                            <img className='w-[120px]' src={trust} alt="" />
+                        </div>
                     </div>
                 </div>
             </div>
