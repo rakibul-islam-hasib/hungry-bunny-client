@@ -1,13 +1,13 @@
 
 import { FaFacebook, FaGoogle } from 'react-icons/fa';
 import { useDispatch } from 'react-redux';
-import { handleFacebookRedirect, loginWithFacebook } from '../../redux/slices/authThunks';
+import { handleFacebookRedirect, loginWithFacebook, loginWithGoogle } from '../../redux/slices/authThunks';
 import { useAuth } from '../../hooks/useAuth';
 import { useEffect } from 'react';
 const SocialLogin = () => {
     const dispatch = useDispatch();
     const { error, user } = useAuth();
-
+    console.log(error , 'error')
     useEffect(() => {
         dispatch(handleFacebookRedirect())
     }, [dispatch])
@@ -20,6 +20,11 @@ const SocialLogin = () => {
             .catch(err => {
                 console.log(err, 'err something')
             })
+    }
+
+
+    const googleLogin = async () => {
+        await dispatch(loginWithGoogle())
     }
 
     return (
@@ -39,7 +44,7 @@ const SocialLogin = () => {
                     </button>
 
                     <button
-                        onClick={handleFacebook}
+                        onClick={googleLogin}
                         title="Facebook"
 
                         className=' px-3 flex items-center py-2 gap-3 rounded-xl border-2 border-primary'
