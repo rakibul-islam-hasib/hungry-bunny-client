@@ -1,13 +1,26 @@
 
 import { Button } from '@mui/material';
 import { FaFacebook, FaGoogle } from 'react-icons/fa';
+import { useDispatch } from 'react-redux';
+import { loginWithFacebook } from '../../redux/slices/authThunks';
+import { FacebookAuthProvider, getAuth, signInWithPopup } from 'firebase/auth';
+import { app } from '../../config/firebase/firebase.config';
 const SocialLogin = () => {
+    // const dispatch = useDispatch();
+    const auth = getAuth(app);
+    const fbProvider = new FacebookAuthProvider();
 
     const handleGoogle = () => {
 
     }
-    const handleFacebook = () => {
-
+    const handleFacebook = async () => {
+        // const userCredential = await dispatch(loginWithFacebook());
+        // console.log(userCredential)
+        signInWithPopup(auth, fbProvider)
+            .then((result) => {
+                console.log(result)
+            })
+            .catch((error) => console.log(error))
     }
 
 
@@ -16,31 +29,27 @@ const SocialLogin = () => {
 
             <div className="text-center">
                 <div className="divider">OR SIGN IN WITH</div>
-                <div className='flex pt-3 justify-center'>
+                <div className='flex gap-4 pt-3 justify-center'>
                     <button
                         onClick={handleFacebook}
                         title="Facebook"
-                        
-                        className=' relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800'
+
+                        className=' px-4 flex items-center py-2 gap-3 rounded-xl border-2 border-primary'
                     >
-                        
-                        <span className='flex gap-3 items-center relative px-10 py-2 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0'>
                         <FaFacebook className='text-2xl'></FaFacebook>
 
                         Facebook
-                        </span>
                     </button>
+
                     <button
-                        onClick={handleGoogle}
-                        title="Google"
-                        className=' relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800'
+                        onClick={handleFacebook}
+                        title="Facebook"
+
+                        className=' px-3 flex items-center py-2 gap-3 rounded-xl border-2 border-primary'
                     >
-                        
-                        <span className='flex gap-3 items-center relative px-10 py-2 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0'>
                         <FaGoogle className='text-2xl'></FaGoogle>
 
                         Google
-                        </span>
                     </button>
                 </div>
             </div>

@@ -131,7 +131,7 @@ const MainFooter = () => {
                         <img src={amex} alt="" />
                     </div>
                     <div className="">
-                        <p className='text-gray-600 text-center mt-2'>© 2023 Hungry Bunny. All Rights Reserved.</p>
+                        <p className='text-gray-600 text-center mt-2'>© 2023 Hungry Bunny. All Rights Reserved by <span className='font-bold'>The Web Warriors</span>.</p>
                     </div>
                 </div>
 
