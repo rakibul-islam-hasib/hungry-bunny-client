@@ -5,22 +5,18 @@ import { useDispatch } from 'react-redux';
 import { loginWithFacebook } from '../../redux/slices/authThunks';
 import { FacebookAuthProvider, getAuth, signInWithPopup } from 'firebase/auth';
 import { app } from '../../config/firebase/firebase.config';
+import { useAuth } from '../../hooks/useAuth';
 const SocialLogin = () => {
-    // const dispatch = useDispatch();
-    const auth = getAuth(app);
-    const fbProvider = new FacebookAuthProvider();
-
+    const dispatch = useDispatch();
+    const { error, user } = useAuth();
+    
     const handleGoogle = () => {
 
     }
     const handleFacebook = async () => {
-        // const userCredential = await dispatch(loginWithFacebook());
-        // console.log(userCredential)
-        signInWithPopup(auth, fbProvider)
-            .then((result) => {
-                console.log(result)
-            })
-            .catch((error) => console.log(error))
+        const userCredential = await dispatch(loginWithFacebook());
+        console.log(userCredential)
+        console.log(error)
     }
 
 
