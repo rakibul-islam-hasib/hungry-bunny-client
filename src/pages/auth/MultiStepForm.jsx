@@ -30,7 +30,6 @@ const MultiStepForm = () => {
 
 
 
-  if (user) return <Navigate to="/" />;
 
   const handleFromSubmit = async (e) => {
     e.preventDefault();
@@ -92,7 +91,7 @@ const MultiStepForm = () => {
 
       <div className="w-full flex justify-center">
         <div className=" to-gray-600 flex-col   flex items-center    w-full md:w-2/3 lg:w-1/3 p-6 rounded-lg shadow-md  justify-center ">
-          <h1 className='text-red-600'>{error.split('/')[1].split('-').join(' ')}</h1>
+          <h1 className='text-red-600'>{error?.split('/')[1]?.split('-')?.join(' ')}</h1>
           <form onSubmit={(e) => handleFromSubmit(e)} className="">
             {step === 1 && (
               <div>
