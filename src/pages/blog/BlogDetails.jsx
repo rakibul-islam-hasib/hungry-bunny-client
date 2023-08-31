@@ -45,7 +45,7 @@ function BlogDetails() {
             <input type="submit" value="send" className="w-full mb-20 drop-shadow-lg text-white hover:text-orange-500 border-2 border-orange-500 bg-orange-500 hover:bg-white rounded-3xl text-3xl font-bold pt-2 pb-2"/>
         </div>
         </div>
-        <div className="md:w-[40%] mt-16 md:ml-10">
+        <div className="md:w-[40%] mt-7 md:ml-10">
             <h2 className="text-4xl text-center font-bold mb-10">Recent Blogs</h2>
             <div className="flex">
                 <img style={{width: 200}} className="rounded-xl" src="https://media.istockphoto.com/id/1394233089/photo/creative-idea-and-innovation-concept.webp?b=1&s=170667a&w=0&k=20&c=6HT0Tmv4gUudW9FBvP-r-lkMY3xnL-uDM03fG4ne1jo=" alt="" />
