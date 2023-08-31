@@ -35,13 +35,14 @@ function BlogDetails() {
         <p className="mb-5">{blogs?.description.partThree}</p>
         </div>
         <div>
+            <h2 className="font-bold text-center text-slate-700 text-4xl mt-10 mb-8">Leave your comment</h2>
             <div className="flex justify-between">
         <input type="text"  className='w-[45%] rounded-3xl drop-shadow-lg pt-4 pb-4 text-2xl dark:text-black pl-5' placeholder='your name' />
         <input type="email"  className='w-[45%] rounded-3xl drop-shadow-lg pt-4 pb-4  text-2xl dark:text-black pl-5' placeholder='your email' />
 
             </div>
             <textarea type='text' name="" className="w-full drop-shadow-lg mt-5 mb-4 rounded-3xl pt-4 pb-4 border-0 text-2xl dark:text-black pl-5" id="" cols="100" placeholder="leave your comment" rows="5"></textarea>
-            <input type="submit" value="send" className="w-full mb-20 text-white hover:text-orange-500 border-2 border-orange-500 bg-orange-500 hover:bg-white rounded-3xl text-3xl font-bold pt-2 pb-2"/>
+            <input type="submit" value="send" className="w-full mb-20 drop-shadow-lg text-white hover:text-orange-500 border-2 border-orange-500 bg-orange-500 hover:bg-white rounded-3xl text-3xl font-bold pt-2 pb-2"/>
         </div>
         </div>
         <div className="md:w-[40%] mt-16 md:ml-10">
