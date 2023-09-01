@@ -67,7 +67,7 @@ const About = () => {
 
 {/* add new section */}
 <div className='grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 mt-10 mb-10'>
-  <div className='p-7 bg-white rounded-3xl drop-shadow-lg hover:text-white hover:bg-orange-500 dark:bg-black dark:text-white dark:border-2 dark:border-orange-500 dark:hover:bg-orange-500'>
+  <div className='p-7 bg-white rounded-3xl drop-shadow-lg hover:text-white hover:bg-orange-500 dark:bg-black dark:text-white dark:border-2 dark:border-orange-500 dark:hover:bg-orange-500 hover:'>
     <p className='text-7xl ml-3'><PiVanDuotone/> </p>
     <h3 className='text-4xl font-bold'>Free Delivery</h3>
     <p className='mt-4 mb-4'>Enjoy the added perk of FREE delivery! Savor your favorite dishes without the extra cost, making every meal a delightful and budget-friendly experience.</p>

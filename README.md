@@ -7,9 +7,11 @@
 #### Restaurant page:- User can see all restaurant. Location, rating, restaurant image, name and details button. Any user click details button user can see restaurant description, total recipe, dish item name, popular food name, image, rating, price, contact email, restaurant page use search field can user search any restaurant, restaurants page pagination use, every page show three restaurants.
 #### Menu page:- User can see popular menu items. Image, price, menu name, description and add to cart.
 #### Menu page:- User can see popular menu items and our menu items show using tab. Image, price, menu name, description and add to cart.
+#### Login page:- Use multi steps login system. first name, second email address and lastly password.
 #### Faq page:- User can see all faq questions and answers.
 #### Blog page:- User can see all blogs. Image, author name, reading time, publish date, see, blogs page use pagination, every page show ten blogs. click blog details btn show blog details .
 #### User Dashboard page:- User can manage his/her profile.  
+#### Admin Dashboard page:- Manage all user, admin can change user role, make admin and make restaurant owner.  
 
 ## CLient Site Use Technology.  
 ## Live site Link > [hungry-bunny](https://hungry-bunny-web.web.app)
