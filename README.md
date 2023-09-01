@@ -8,10 +8,16 @@
 #### Menu page:- User can see popular menu items. Image, price, menu name, description and add to cart.
 #### Menu page:- User can see popular menu items and our menu items show using tab. Image, price, menu name, description and add to cart.
 #### Login page:- Use multi steps login system. first name, second email address and lastly password.
-#### Faq page:- User can see all faq questions and answers.
-#### Blog page:- User can see all blogs. Image, author name, reading time, publish date, see, blogs page use pagination, every page show ten blogs. click blog details btn show blog details .
+#### Register page:- User can email and password then login web site.
+#### Faq page:- User can see all faq questions and answers, user can give any suggestion.
+#### Blog page:- User can see all blogs. Image, author name, reading time, publish date, see, blogs page use pagination, every page show ten blogs. click blog details btn show blog details, user can do comments.
+
+#### User Dashboard page:- User can manage his/her profile all personal info give this web site, number of menu, number of delivery, number of contact, orders numbers, payments number, bookings number and reviews number .  
+#### User Dashboard Manage page:- New shipping address, city, apartment number.  
+#### User Dashboard Payment page:- user can give card number, expiration date, and card holder name.  
+#### User Dashboard Security page:- user can open two factor authentication, give new password, new password .  
+#### Admin Dashboard page:- Manage all user, admin can change user role, make admin and make restaurant owner. 
 #### User Dashboard page:- User can manage his/her profile.  
-#### Admin Dashboard page:- Manage all user, admin can change user role, make admin and make restaurant owner.  
 
 ## CLient Site Use Technology.  
 ## Live site Link > [hungry-bunny](https://hungry-bunny-web.web.app)
