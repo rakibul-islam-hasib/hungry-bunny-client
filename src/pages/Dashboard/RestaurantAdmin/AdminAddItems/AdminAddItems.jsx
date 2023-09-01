@@ -104,7 +104,7 @@ const AdminAddItems = () => {
               <textarea
                 id="product-details"
                 rows="6"
-                className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full p-4"
+                className="bg-gray-50 border resize-none outline-none border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full p-4"
                 placeholder="Details"
               ></textarea>
             </div>
@@ -114,10 +114,10 @@ const AdminAddItems = () => {
 
       <div className="p-6 border-t border-gray-200 rounded-b">
         <button
-          className="text-white bg-orange-600 hover:bg-green-700 focus:ring-4 focus:ring-cyan-200 font-medium rounded-full text-sm px-5 py-2.5 text-center"
+          className="text-white capitalize bg-primary hover:bg-green-700 focus:ring-4 focus:ring-cyan-200 font-medium rounded-full text-sm px-5 py-2.5 text-center"
           type="submit"
         >
-          Save all
+          Add this product
         </button>
       </div>
     </div>

@@ -23,7 +23,7 @@ import Register from "../pages/auth/Register";
 import BlogDetails from "../pages/blog/BlogDetails";
 // import UserAddress from "../pages/dashboard/Owner/UserAddress";
 import MultiStepForm from "../pages/auth/MultiStepForm";
-import TeamInfo from "./TeamInfo";
+import TeamInfo from "../pages/Team/TeamInfo";
 import AdminDashboard from "../pages/Dashboard/admin/AdminDashboard";
 import ManageUsers from "../pages/dashboard/admin/ManageUsers";
 import UserProfile from "../pages/dashboard/user/UserProfile";
@@ -35,6 +35,7 @@ import AdminOrder from "../pages/Dashboard/RestaurantAdmin/AdminOrder/AdminOrder
 import AdminAddItems from "../pages/Dashboard/RestaurantAdmin/AdminAddItems/AdminAddItems";
 import AdminMenu from "../pages/Dashboard/RestaurantAdmin/AdminMenu/AdminMenu";
 import AdminCustomers from "../pages/Dashboard/RestaurantAdmin/AdminCustomers/AdminCustomers";
+import NormalProfile from "../pages/Dashboard/user/NormalProfile";
 
 export const router = createBrowserRouter([
   {
@@ -91,7 +92,7 @@ export const router = createBrowserRouter([
       {
         path: '/blogs/:id',
         element: <BlogDetails />,
-        loader: ({ params }) => fetch(`http://localhost:5000/blogs/${params.id}`)
+        loader: ({ params }) => fetch(`https://hungry-bunny.vercel.app/blogs/${params.id}`)
       },
       {
         path: "/temp",
@@ -177,6 +178,10 @@ export const router = createBrowserRouter([
         path: 'user-security',
         element: <UserSecurity />
       },
+      {
+        path: 'profile',
+        element: <NormalProfile />
+      }
 
     ],
   },
