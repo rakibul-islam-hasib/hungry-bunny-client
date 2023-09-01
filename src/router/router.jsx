@@ -21,12 +21,13 @@ import RestaurantDetails from "../pages/Restaurant/RestaurantDetails";
 import RestaurantAdmin from "../pages/dashboard/RestaurantAdmin/RestaurantAdmin";
 import Register from "../pages/auth/Register";
 // import UserAddress from "../pages/dashboard/Owner/UserAddress";
-import UserProfile from "../pages/dashboard/NormanUser/UserProfile";
-import UserAddress from "../pages/dashboard/NormanUser/UserAddress";
+import UserProfile from "../pages/dashboard/NormalUser/UserProfile";
+import UserAddress from "../pages/dashboard/NormalUser/UserAddress";
 import AdminDash from "../pages/dashboard/AdminDash/AdminDash";
 import ManageUsers from "../pages/dashboard/AdminDash/ManageUsers";
-import UserPayment from "../pages/dashboard/NormanUser/UserPayment";
-import UserSecurity from "../pages/dashboard/NormanUser/UserSecurity";
+import UserPayment from "../pages/dashboard/NormalUser/UserPayment";
+import UserSecurity from "../pages/dashboard/NormalUser/UserSecurity";
+import Profile from "../pages/dashboard/NormalUser/Profile";
 
 export const router = createBrowserRouter([
   {
@@ -131,6 +132,10 @@ export const router = createBrowserRouter([
 /*------------------------------------------------------------
 ---------------------Normal User Dashboard--------------------
 -------------------------------------------------------------*/ 
+      {
+        path: "profile",
+        element: <Profile></Profile>,
+      },
       {
         path: "user-profile",
         element: <UserProfile />,
