@@ -1,4 +1,8 @@
 import React from 'react';
+import { GrDeliver } from 'react-icons/gr';
+import { BsStopwatch } from 'react-icons/bs';
+import { MdOutlineLocalOffer } from 'react-icons/md';
+import { PiBowlFood } from 'react-icons/pi';
 
 
 const About = () => {
@@ -61,6 +65,31 @@ const About = () => {
           </button>
         </div>
       </div>
+
+{/* add new section */}
+<div className='grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 mt-10 mb-10'>
+  <div className='p-7 bg-white rounded-3xl drop-shadow-lg hover:text-white hover:bg-orange-500'>
+    <p className='text-7xl ml-3'><GrDeliver/> </p>
+    <h3 className='text-4xl font-bold'>Free Delivery</h3>
+    <p className='mt-4 mb-4'>Enjoy the added perk of FREE delivery! Savor your favorite dishes without the extra cost, making every meal a delightful and budget-friendly experience.</p>
+  </div>
+  <div className='p-7 bg-white rounded-3xl drop-shadow-lg hover:text-white hover:bg-orange-500'>
+    <p className='text-7xl ml-3 hover:text-white'><BsStopwatch/> </p>
+    <h3 className='text-4xl font-bold'>Save your Time</h3>
+    <p className='mt-4 mb-4'>Save time with our swift food delivery service. Spend less time in the kitchen and more time enjoying your meals, all with just a few clicks.</p>
+  </div>
+  <div className='p-7 bg-white rounded-3xl drop-shadow-lg hover:text-white hover:bg-orange-500'>
+    <p className='text-7xl ml-3 hover:text-white'><MdOutlineLocalOffer/> </p>
+    <h3 className='text-4xl font-bold'>Regular Discount</h3>
+    <p className='mt-4 mb-4'>Unlock regular discounts for loyal customers. Enjoy savings on your favorite dishes with our exclusive offers, making dining with us even more satisfying.</p>
+  </div>
+  <div className='p-7 bg-white rounded-3xl drop-shadow-lg hover:text-white hover:bg-orange-500'>
+    <p className='text-7xl ml-3 hover:text-white'><PiBowlFood/> </p>
+    <h3 className='text-4xl font-bold'>Variety Foods</h3>
+    <p className='mt-4 mb-4'>Explore a world of diverse flavors. Our menu boasts a variety of cuisines, promising an exciting dining adventure with every order.</p>
+  </div>
+</div>
+
       {/* hero section partner */}
       <div className='mt-7 md:flex mb-4'>
         <div className='mt-6 md:w-[50%] mr-8 sm:my-4'>
