@@ -165,7 +165,7 @@ const UserProfile = () => {
 
                     <div className='lg:flex md:flex justify-between sm:flex'>
                         <div className='mb-5'>
-                            <button type="submit" className="bg-transparent hover:bg-orange-500 text-orange-500 font-semibold hover:text-white py-2 px-4 border border-orange-500 hover:border-transparent rounded">
+                            <button type="submit" onClick={() => setIsLogoutOpen(true)} className="bg-transparent hover:bg-orange-500 text-orange-500 font-semibold hover:text-white py-2 px-4 border border-orange-500 hover:border-transparent rounded">
                                 Log out
                             </button>
                         </div>
