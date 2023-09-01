@@ -22,22 +22,13 @@ import RestaurantAdmin from "../pages/dashboard/RestaurantAdmin/RestaurantAdmin"
 import Register from "../pages/auth/Register";
 import BlogDetails from "../pages/blog/BlogDetails";
 // import UserAddress from "../pages/dashboard/Owner/UserAddress";
-<<<<<<< HEAD
-import UserProfile from "../pages/dashboard/user/UserProfile";
-import UserAddress from "../pages/dashboard/user/UserAddress";
-import AdminDashboard from "../pages/Dashboard/admin/AdminDashboard";
-import ManageUsers from "../pages/Dashboard/admin/ManageUsers";
+import Profile from "../pages/dashboard/NormalUser/Profile";
 import MultiStepForm from "../pages/auth/MultiStepForm";
 import TeamInfo from "./TeamInfo";
-=======
-import UserProfile from "../pages/dashboard/NormalUser/UserProfile";
-import UserAddress from "../pages/dashboard/NormalUser/UserAddress";
-import AdminDash from "../pages/dashboard/AdminDash/AdminDash";
-import ManageUsers from "../pages/dashboard/AdminDash/ManageUsers";
-import UserPayment from "../pages/dashboard/NormalUser/UserPayment";
-import UserSecurity from "../pages/dashboard/NormalUser/UserSecurity";
-import Profile from "../pages/dashboard/NormalUser/Profile";
->>>>>>> b1a40dd883f8558f592ac9cd3dbb5b3d04783e4e
+import AdminDashboard from "../pages/Dashboard/admin/AdminDashboard";
+import ManageUsers from "../pages/dashboard/admin/ManageUsers";
+import UserProfile from "../pages/dashboard/user/UserProfile";
+import UserAddress from "../pages/dashboard/user/UserAddress";
 
 export const router = createBrowserRouter([
   {
@@ -75,8 +66,8 @@ export const router = createBrowserRouter([
       },
       {
         path: '/restaurant/:id',
-        element: <RestaurantDetails/>,
-        loader: ({params}) => fetch(`http://localhost:5000/restaurant/${params.id}`)
+        element: <RestaurantDetails />,
+        loader: ({ params }) => fetch(`http://localhost:5000/restaurant/${params.id}`)
       },
       {
         path: '/menu',
@@ -92,16 +83,16 @@ export const router = createBrowserRouter([
       },
       {
         path: '/blogs/:id',
-        element: <BlogDetails/>,
-        loader: ({params}) => fetch(`http://localhost:5000/blogs/${params.id}`)
+        element: <BlogDetails />,
+        loader: ({ params }) => fetch(`http://localhost:5000/blogs/${params.id}`)
       },
       {
         path: "/temp",
         element: <Temp />,
       },
       {
-        path:'/team-info',
-        element:<TeamInfo/>
+        path: '/team-info',
+        element: <TeamInfo />
       }
     ],
   },
@@ -123,31 +114,31 @@ export const router = createBrowserRouter([
         index: true,
         element: <UserWelcome />,
       },
-/*------------------------------------------------------------
------------------WebSite Admin  Dashboard-------------------
--------------------------------------------------------------*/ 
+      /*------------------------------------------------------------
+      -----------------WebSite Admin  Dashboard-------------------
+      -------------------------------------------------------------*/
       {
-        path:'admin-dashboard',
-        element:<AdminDashboard/>
+        path: 'admin-dashboard',
+        element: <AdminDashboard />
       },
       {
-        path:'manage-users',
-        element:<ManageUsers/>
+        path: 'manage-users',
+        element: <ManageUsers />
       },
 
 
-/*------------------------------------------------------------
------------------Restaurant Owner Dashboard-------------------
--------------------------------------------------------------*/ 
+      /*------------------------------------------------------------
+      -----------------Restaurant Owner Dashboard-------------------
+      -------------------------------------------------------------*/
       {
         path: "restaurant-cp",
         element: <RestaurantAdmin />,
       },
 
 
-/*------------------------------------------------------------
----------------------Normal User Dashboard--------------------
--------------------------------------------------------------*/ 
+      /*------------------------------------------------------------
+      ---------------------Normal User Dashboard--------------------
+      -------------------------------------------------------------*/
       {
         path: "profile",
         element: <Profile></Profile>,
@@ -160,10 +151,10 @@ export const router = createBrowserRouter([
         path: 'address',
         element: <UserAddress />
       },
-    
+
     ],
   },
-  
+
 
 
 ]);

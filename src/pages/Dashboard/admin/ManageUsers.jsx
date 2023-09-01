@@ -14,7 +14,7 @@ const ManageUsers = () => {
                     <input
                         type="text"
                         placeholder="Search User here"
-                        className="border border-red-400 border-blue-700 focus:border-pink-400 focus:outline-none px-20  py-2 rounded-full" />
+                        className="border border-red-400  focus:border-pink-400 focus:outline-none px-20  py-2 rounded-full" />
                         <button className='absolute right-14 mt-2'>Search  </button>
                 </div>
 
