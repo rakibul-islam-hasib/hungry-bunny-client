@@ -16,8 +16,12 @@
 #### User Dashboard Manage page:- New shipping address, city, apartment number.  
 #### User Dashboard Payment page:- user can give card number, expiration date, and card holder name.  
 #### User Dashboard Security page:- user can open two factor authentication, give new password, new password .  
+#### Restaurant owner Dashboard:- Restaurant owner can see his/her restaurant menu items, total seal, total customers, total orders. 
+#### Restaurant owner Dashboard add new items page:- Restaurant owner can add new items, select any criteria, name, image, price, short description.
+#### Restaurant owner Dashboard Menu page:- Restaurant owner can see his/her restaurant all menu. owner can delete any items.
 #### Admin Dashboard page:- Manage all user, admin can change user role, make admin and make restaurant owner. 
-#### User Dashboard page:- User can manage his/her profile.  
+
+
 
 ## CLient Site Use Technology.  
 ## Live site Link > [hungry-bunny](https://hungry-bunny-web.web.app)
