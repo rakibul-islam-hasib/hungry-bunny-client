@@ -9,36 +9,39 @@ const steps = [
     step: '01',
     image: illustration,
     title: 'Select Restaurant',
-    description: 'First Select yor favorite restaurant . Make sure you are sign in with your account in our website . Then our intellisense is suggest you your nearby restaurants',
+    description:
+      'First Select yor favorite restaurant . Make sure you are sign in with your account in our website . Then our intellisense is suggest you your nearby restaurants',
   },
   {
     id: 2,
     step: '02',
     image: illustration2,
     title: 'Select Menu',
-    description: 'After successfully choosing your favorite restaurant . Then you need to select your favorite food . Then select your favorite payment method for payment . Now follow the next step',
+    description:
+      'After successfully choosing your favorite restaurant . Then you need to select your favorite food . Then select your favorite payment method for payment . Now follow the next step',
   },
   {
     id: 3,
     step: '03',
     image: illustration3,
     title: 'Wait for delivery',
-    description: 'Ok , great you have successfully place your first order. Now just waite for 30 minute . Our delivery team will be meet you within 30 minute with your awesome food',
+    description:
+      'Ok , great you have successfully place your first order. Now just waite for 30 minute . Our delivery team will be meet you within 30 minute with your awesome food',
   },
 ];
 
 const HowWeWork = () => {
   return (
     <div className='my-24'>
-      <h1 className='text-center mb-6 text-5xl  font-bold'>
+      <h1 className='text-center mb-9 text-5xl font-bold'>
         How We <span className='text-primary'>Work</span>
       </h1>
 
-      <div className='flex justify-center space-x-14  items-center'>
+      <div className='flex flex-col md:flex-row justify-center space-x-14 items-center'>
         {steps.map((step) => (
           <div
             key={step.id}
-            className='flex w-[300px] flex-col justify-center items-center text-center'
+            className='flex w-full md:w-[300px] flex-col justify-center items-center text-center mb-10 md:mb-0'
           >
             <img src={step.image} alt='' />
             <div className='flex items-end mt-3'>
