@@ -98,3 +98,46 @@ export const locationOptions = [
     { value: 'Tangail', label: 'Tangail' },
     { value: 'Thakurgaon', label: 'Thakurgaon' }
 ];
+
+export const districts = [
+    {
+        id: 1,
+        photo: 'https://i.ibb.co/5j2VFwr/Whats-App-Image-2023-07-16-at-19-42-25.jpg',
+        name: 'Pabna'
+    },
+    {
+        id: 2,
+        photo: 'https://i.ibb.co/qj7j53t/Downloader-la-64f216032482f.jpg',
+        name: 'Dhaka'
+    },
+    {
+        id: 3,
+        name: 'Rajshahi',
+        photo: 'https://i.ibb.co/gJSbwW1/Downloader-la-64f216032482f.jpg'
+    },
+    {
+        id: 4,
+        name: 'Khulna',
+        photo: 'https://i.ibb.co/tbwYnr0/Downloader-la-64f217a7436c4.jpg',
+    },
+    {
+        id: 5,
+        name: 'Barishal',
+        photo: 'https://i.ibb.co/Nj34d78/Downloader-la-64f21931a1b94.jpg',
+    },
+    {
+        id: 6,
+        name: 'Barishal',
+        photo: 'https://i.ibb.co/Nj34d78/Downloader-la-64f21931a1b94.jpg',
+    },
+    {
+        id: 7,
+        name: 'Barishal',
+        photo: 'https://i.ibb.co/Nj34d78/Downloader-la-64f21931a1b94.jpg',
+    },
+    {
+        id: 8,
+        name: 'Barishal',
+        photo: 'https://i.ibb.co/Nj34d78/Downloader-la-64f21931a1b94.jpg',
+    },
+]

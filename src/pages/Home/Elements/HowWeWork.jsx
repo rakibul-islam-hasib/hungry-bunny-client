@@ -37,7 +37,7 @@ const HowWeWork = () => {
         How We <span className='text-primary'>Work</span>
       </h1>
 
-      <div className='flex flex-col md:flex-row justify-center space-x-14 items-center'>
+      <div className='flex flex-col md:flex-row justify-center md:space-x-14 items-center'>
         {steps.map((step) => (
           <div
             key={step.id}
