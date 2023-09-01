@@ -12,8 +12,8 @@ const BlogDetails = () => {
         <div className="md:w-[60%]">
             <h2 className="text-4xl ml-5 mb-7 font-extrabold mt-5">{blogs.blogHeading}</h2>
         <img className="rounded-2xl mb-10" src={blogs.blogImage} alt="food image" />
-        <div className="flex justify-between border-2 border-orange-400 pt-5 pb-5 pr-5 pl-5 rounded-2xl items-center text-center">
-        <div className="flex">
+        <div className="flex justify-between border-2 border-orange-400 pt-3 pb-3 pr-5 pl-5 rounded-2xl items-center text-center">
+        <div className="md:w-[50%] flex">
         <img className="rounded-full mr-5" style={{height:50}} src={blogs.authorImage} alt="author image" />
         <div className="text-left text-2xl">
             <p>{blogs.authorName}</p>
@@ -35,45 +35,16 @@ const BlogDetails = () => {
         <p className="mb-5">{blogs?.description.partTwo}</p>
         <p className="mb-5">{blogs?.description.partThree}</p>
         </div>
-        <div>
+        <div className="mb-16">
             <h2 className="font-bold text-center text-slate-700 text-4xl mt-10 mb-8">Leave your comment</h2>
             <div className="flex justify-between">
-        <input type="text"  className='w-[45%] rounded-3xl drop-shadow-lg pt-4 pb-4 text-2xl dark:text-black pl-5' placeholder='your name' />
-        <input type="email"  className='w-[45%] rounded-3xl drop-shadow-lg pt-4 pb-4  text-2xl dark:text-black pl-5' placeholder='your email' />
-            <div className="md:w-[60%]">
-                <h2 className="text-4xl ml-5 mb-7 font-extrabold mt-5">{blogs.blogHeading}</h2>
-                <img className="rounded-2xl mb-10" src={blogs.blogImage} alt="food image" />
-                <div className="flex justify-between border-2 border-orange-400 pt-5 pb-5 pr-5 pl-5 rounded-2xl items-center text-center">
-                    <div className="flex">
-                        <img className="rounded-full mr-5" style={{ height: 50 }} src={blogs.authorImage} alt="author image" />
-                        <div className="text-left text-2xl">
-                            <p>{blogs.authorName}</p>
-                            <p>{blogs.email}</p>
-                            <p>{blogs.date}</p>
-                        </div>
-                    </div>
-                    <div className="text-left">
-                        <p className='flex items-center'><span className='mr-2'>{blogs.time} min read</span><span><FaReadme /></span> </p>
-                        <Rating
-                            style={{ maxWidth: 140 }}
-                            value={blogs.rating}
-                            readOnly
-                        />
-                    </div>
-                </div>
-                <div className="mt-10">
-                    <p className="mb-5">{blogs?.description.partOne}</p>
-                    <p className="mb-5">{blogs?.description.partTwo}</p>
-                    <p className="mb-5">{blogs?.description.partThree}</p>
-                </div>
-                <div>
-                    <div className="flex justify-between">
-                        <input type="text" className='w-[45%] rounded-3xl drop-shadow-lg pt-4 pb-4 text-2xl dark:text-black pl-5' placeholder='your name' />
-                        <input type="email" className='w-[45%] rounded-3xl drop-shadow-lg pt-4 pb-4  text-2xl dark:text-black pl-5' placeholder='your email' />
-
-            </div>
-            <textarea type='text' name="" className="w-full drop-shadow-lg mt-5 mb-4 rounded-3xl pt-4 pb-4 border-0 text-2xl dark:text-black pl-5" id="" cols="100" placeholder="leave your comment" rows="5"></textarea>
-            <input type="submit" value="send" className="w-full mb-20 drop-shadow-lg text-white hover:text-orange-500 border-2 border-orange-500 bg-orange-500 hover:bg-white rounded-3xl text-3xl font-bold pt-2 pb-2"/>
+        <input type="text"  className='w-[48%] rounded-3xl drop-shadow-lg pt-4 pb-4 text-2xl dark:text-black pl-5' placeholder='your name' />
+        <input type="email"  className='w-[48%] rounded-3xl drop-shadow-lg pt-4 pb-4  text-2xl dark:text-black pl-5' placeholder='your email' />
+           
+        </div>
+        <textarea name="description" type='text' className="rounded-3xl w-full mt-8 mb-5 drop-shadow-lg pt-4 pb-4  text-2xl dark:text-black pl-5' placeholder='your email' />
+           " cols="100" rows="5"></textarea>
+           <input type="submit" value="send" className="text-center rounded-3xl drop-shadow-lg pt-2 pb-2 font-bold text-3xl bg-orange-500 w-full text-white border-2 border-orange-500 hover:text-orange-500 hover:bg-white" />
         </div>
         </div>
         <div className="md:w-[40%] mt-7 md:ml-10">
@@ -98,11 +69,10 @@ const BlogDetails = () => {
         </div> */}
             </div>
         </div>
-        </div>
-        </div>
-        </div>
+
 
     );
 }
 
 export default BlogDetails;
+
