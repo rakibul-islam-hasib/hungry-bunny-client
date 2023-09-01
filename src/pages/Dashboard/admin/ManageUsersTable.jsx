@@ -64,8 +64,7 @@ const ManageUsersTable = ({ userData }) => {
         
     }
 
-
-
+    
     return (
         <div className='flex mx-auto py-3 justify-between w-full'>
             <div className='flex w-2/5 items-center'>
