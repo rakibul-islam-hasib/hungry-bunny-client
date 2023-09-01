@@ -15,11 +15,11 @@ function RestaurantDetails() {
           <p className='mt-3 md:mr-7'> {restaurant.descriptionFirst}</p>
           <p className='mt-3 md:mr-7'> {restaurant.descriptionSecond}</p>
           <div className='mt-3 mb-3 flex text-center'>
-        <div className='border-2 sm:w-[50%] md:w-[40%] rounded-2xl mr-16 border-orange-400 pr-4 pl-4 hover:bg-orange-500 hover:text-white '>
+        <div className='border-2 sm:w-[50%] md:w-[40%] hover:transition hover:duration-400 rounded-2xl mr-16 border-orange-400 pr-4 pl-4 hover:bg-orange-500 hover:text-white '>
           <p className='text-4xl'><span>5000</span> <span className='text-6xl'>+</span></p>
           <p className='text-2xl'>happy customer</p>
         </div>
-        <div className='border-2 sm:w-[50%] md:w-[40%] rounded-2xl mr-16 border-orange-400 pr-4 pl-4 hover:bg-orange-500 hover:text-slate-200 '>
+        <div className='border-2 sm:w-[50%] md:w-[40%] hover:transition hover:duration-400 rounded-2xl mr-16 border-orange-400 pr-4 pl-4 hover:bg-orange-500 hover:text-slate-200 '>
           <p className='text-4xl'><span>115</span> <span className='text-6xl'>+</span></p>
           <p className='text-2xl'>recipe</p>
         </div>
@@ -33,7 +33,7 @@ function RestaurantDetails() {
         </div> */}
       </div>
           <div className='flex justify-evenly restaurants-center mt-7 mb-5'>
-          <button className="bg-orange-600 hover:bg-orange-700 text-slate-200 font-bold py-2 px-4 rounded-full flex restaurants-center">
+          <button className="bg-orange-600 hover:transition hover:duration-400 hover:bg-orange-700 text-slate-200 font-bold py-2 px-4 rounded-full flex restaurants-center">
             become a partner
           </button>
           <Rating

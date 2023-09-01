@@ -39,14 +39,14 @@ const Faq = () => {
         <input type="text"  className='w-full my-6 rounded-3xl drop-shadow-lg pt-4 pb-4 text-2xl dark:text-black pl-5' placeholder='your name' />
         <input type="email"  className='w-full rounded-3xl drop-shadow-lg pt-4 pb-4  text-2xl dark:text-black pl-5' placeholder='your email' />
         <textarea name="" id="" cols="100" rows="5" className="rounded-3xl w-full mt-8 mb-5 drop-shadow-lg pt-4 pb-4  text-2xl dark:text-black pl-5" placeholder="write your comment"></textarea>
-           <input type="submit" value="send" className="text-center rounded-3xl drop-shadow-lg pt-2 pb-2 font-bold text-3xl bg-orange-500 w-full text-white border-2 border-orange-500 hover:text-orange-500 hover:bg-white" />
+           <input type="submit" value="send" className="text-center hover:transition hover:duration-400 rounded-3xl drop-shadow-lg pt-2 pb-2 font-bold text-3xl bg-orange-500 w-full text-white border-2 border-orange-500 hover:text-orange-500 hover:bg-white" />
         </div>
                 </div>
             <div className='md:w-[60%]'>
             {
                 allQuestions.map((item) =>  <div key={item._id} className="card my-2">
                 <details className='text-2xl font-bold'>
-                    <summary className='hover:bg-orange-400 hover:text-white drop-shadow-md rounded-xl p-2'>{item.question}</summary>
+                    <summary className='hover:bg-orange-400 hover:transition hover:duration-400 hover:text-white drop-shadow-md rounded-xl p-2'>{item.question}</summary>
                     <p className='my-3 p-3'>{item.answers}</p>
                 </details>
             </div>)

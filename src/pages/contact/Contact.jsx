@@ -45,7 +45,7 @@ const Contact = () => {
             <input type="text" name="name" className='rounded-full border border-white mb-5 p-4 w-full' placeholder='name' /><br />
             <input type="email" name="email" className='rounded-full  mb-5 p-4 w-full' placeholder='email' /><br />
             <textarea name="message" placeholder='message' className='rounded-full w-full mb-5 p-4' /><br />
-            <input type="submit" value="send" className="text-center rounded-3xl drop-shadow-lg pt-2 pb-2 font-bold text-3xl bg-orange-500 w-full text-white border-2 border-orange-500 hover:text-orange-500 hover:bg-white" />
+            <input type="submit" value="send" className="text-center hover:transition hover:duration-400 rounded-3xl drop-shadow-lg pt-2 pb-2 font-bold text-3xl bg-orange-500 w-full text-white border-2 border-orange-500 hover:text-orange-500 hover:bg-white" />
 
           </form>
         </div>
