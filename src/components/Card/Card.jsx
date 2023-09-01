@@ -1,5 +1,6 @@
 import React from "react";
 import { FaShoppingCart } from "react-icons/fa";
+import useMenu from "../../hooks/useMenu";
 
 const fakeData = [
   {
@@ -46,7 +47,14 @@ const fakeData = [
   }
 ];
 
+
+
 const Card = () => {
+
+
+  const [menuItems] = useMenu();
+
+
   return (
     <div className="mx-auto md:px-20 px-6 mt-10">
       <div className="text-center lg:w-[70%] w-full sm:w-[90%] md:w-[80%] mx-auto">
@@ -56,14 +64,14 @@ const Card = () => {
         </p>
       </div>
       <div className="grid md:grid-cols-2 md:gap-8 gap-3 lg:grid-cols-3 mt-10 mx-auto">
-        {fakeData.map((item) => (
-          <div key={item.id} className={`p-2 border overflow-hidden shadow-lg rounded-md ${item.id === 1 ? 'w-full' : ''}`}>
-            <img className="w-full rounded h-48 object-cover" src={item.image} alt="Food Image" />
+        {menuItems.map((menu) => (
+          <div key={menu.id} className={`p-2 border overflow-hidden shadow-lg rounded-md ${menu.id === 1 ? 'w-full' : ''}`}>
+            <img className="w-full rounded h-48 object-cover" src={menu.image} alt="Food Image" />
             <div className="px-6 py-4">
-              <div className="font-bold text-xl mb-2">{item.name}</div>
-              <p className="text-gray-700 text-base">{item.description}</p>
+              <div className="font-bold text-xl mb-2">{menu.name}</div>
+              <p className="text-gray-700 text-base">{menu.description}</p>
               <div className="flex justify-between items-center mt-4">
-                <span className="text-gray-600 font-semibold text-lg">{item.price} Taka</span>
+                <span className="text-gray-600 font-semibold text-lg">{menu.price} Taka</span>
                 <button className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-full flex items-center">
                   <FaShoppingCart className="mr-2" />
                   Add to Cart

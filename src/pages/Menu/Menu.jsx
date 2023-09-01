@@ -7,7 +7,6 @@ const Menu = () => {
         <div>
             
             <Card/>
-            <FoodCard/>
         </div>
     );
 };
