@@ -23,7 +23,7 @@ import Register from "../pages/auth/Register";
 import BlogDetails from "../pages/blog/BlogDetails";
 // import UserAddress from "../pages/dashboard/Owner/UserAddress";
 import MultiStepForm from "../pages/auth/MultiStepForm";
-import TeamInfo from "./TeamInfo";
+import TeamInfo from "../pages/Team/TeamInfo";
 import AdminDashboard from "../pages/Dashboard/admin/AdminDashboard";
 import ManageUsers from "../pages/dashboard/admin/ManageUsers";
 import UserProfile from "../pages/dashboard/user/UserProfile";
