@@ -22,13 +22,19 @@ import RestaurantAdmin from "../pages/dashboard/RestaurantAdmin/RestaurantAdmin"
 import Register from "../pages/auth/Register";
 import BlogDetails from "../pages/blog/BlogDetails";
 // import UserAddress from "../pages/dashboard/Owner/UserAddress";
-import Profile from "../pages/dashboard/NormalUser/Profile";
 import MultiStepForm from "../pages/auth/MultiStepForm";
 import TeamInfo from "./TeamInfo";
 import AdminDashboard from "../pages/Dashboard/admin/AdminDashboard";
 import ManageUsers from "../pages/dashboard/admin/ManageUsers";
 import UserProfile from "../pages/dashboard/user/UserProfile";
 import UserAddress from "../pages/dashboard/user/UserAddress";
+import UserPayment from "../pages/dashboard/user/UserPayment";
+import UserSecurity from "../pages/dashboard/user/UserSecurity";
+
+import AdminOrder from "../pages/Dashboard/RestaurantAdmin/AdminOrder/AdminOrder";
+import AdminAddItems from "../pages/Dashboard/RestaurantAdmin/AdminAddItems/AdminAddItems";
+import AdminMenu from "../pages/Dashboard/RestaurantAdmin/AdminMenu/AdminMenu";
+import AdminCustomers from "../pages/Dashboard/RestaurantAdmin/AdminCustomers/AdminCustomers";
 
 export const router = createBrowserRouter([
   {
@@ -65,9 +71,10 @@ export const router = createBrowserRouter([
         element: <Restaurant />,
       },
       {
-        path: '/restaurant/:id',
+        path: "/restaurant/:id",
         element: <RestaurantDetails />,
-        loader: ({ params }) => fetch(`http://localhost:5000/restaurant/${params.id}`)
+        loader: ({ params }) =>
+          fetch(`https://hungry-bunny.vercel.app/restaurant/${params.id}`),
       },
       {
         path: '/menu',
@@ -115,46 +122,62 @@ export const router = createBrowserRouter([
         element: <UserWelcome />,
       },
       /*------------------------------------------------------------
-      -----------------WebSite Admin  Dashboard-------------------
-      -------------------------------------------------------------*/
-      {
-        path: 'admin-dashboard',
-        element: <AdminDashboard />
-      },
-      {
-        path: 'manage-users',
-        element: <ManageUsers />
-      },
+-----------------WebSite Admin  Dashboard-------------------
+-------------------------------------------------------------*/
 
+      {
+        path: "admin-dashboard",
+        element: <AdminDashboard />,
+      },
+      {
+        path: "manage-users",
+        element: <ManageUsers />,
+      },
 
       /*------------------------------------------------------------
-      -----------------Restaurant Owner Dashboard-------------------
-      -------------------------------------------------------------*/
+-----------------Restaurant Owner Dashboard-------------------
+-------------------------------------------------------------*/
       {
         path: "restaurant-cp",
         element: <RestaurantAdmin />,
       },
-
+      {
+        path: "/dashboard/restaurant-orders",
+        element: <AdminOrder />,
+      },
+      {
+        path: "/dashboard/restaurant-add-items",
+        element: <AdminAddItems />,
+      },
+      {
+        path: "/dashboard/restaurant-menu",
+        element: <AdminMenu />,
+      },
+      {
+        path: "/dashboard/restaurant-customers",
+        element: <AdminCustomers />,
+      },
 
       /*------------------------------------------------------------
-      ---------------------Normal User Dashboard--------------------
-      -------------------------------------------------------------*/
-      {
-        path: "profile",
-        element: <Profile></Profile>,
-      },
+---------------------Normal User Dashboard--------------------
+-------------------------------------------------------------*/
       {
         path: "user-profile",
         element: <UserProfile />,
       },
       {
-        path: 'address',
-        element: <UserAddress />
+        path: "address",
+        element: <UserAddress />,
+      },
+      {
+        path: 'user-payment',
+        element: <UserPayment />
+      },
+      {
+        path: 'user-security',
+        element: <UserSecurity />
       },
 
     ],
   },
-
-
-
 ]);

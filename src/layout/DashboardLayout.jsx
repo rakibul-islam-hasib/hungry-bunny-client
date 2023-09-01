@@ -68,7 +68,6 @@ const userNavItems = [
   },
 ];
 
-
 const restaurantNavItems = [
   {
     to: "/dashboard/restaurant-cp",
@@ -96,11 +95,6 @@ const restaurantNavItems = [
     label: "Add New Items",
   },
 ];
-
-
-
-
-
 
 const DashboardLayout = () => {
   const [open, setOpen] = useState(true);
