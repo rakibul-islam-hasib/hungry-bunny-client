@@ -23,31 +23,7 @@ const UserAddress = () => {
 
         console.log(newAccount);
 
-        // // send data to the server
-        // fetch('', {
-        //     method: 'POST',
-        //     headers: {
-        //         'content-type': 'application/json'
-        //     },
-        //     body: JSON.stringify(newAccount)
-        // })
-        //     .then(res => res.json())
-        //     .then(data => {
-        //         console.log(data);
-        //         if (data.insertedId) {
-        //             Swal.fire({
-        //                 title: 'Successfull',
-        //                 showClass: {
-        //                   popup: 'animate__animated animate__fadeInDown'
-        //                 },
-        //                 hideClass: {
-        //                   popup: 'animate__animated animate__fadeOutUp'
-        //                 }
-        //               })
-        //         }
-        //     })
-
-
+    
     }
     return (
         <>

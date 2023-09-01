@@ -35,6 +35,7 @@ import AdminOrder from "../pages/Dashboard/RestaurantAdmin/AdminOrder/AdminOrder
 import AdminAddItems from "../pages/Dashboard/RestaurantAdmin/AdminAddItems/AdminAddItems";
 import AdminMenu from "../pages/Dashboard/RestaurantAdmin/AdminMenu/AdminMenu";
 import AdminCustomers from "../pages/Dashboard/RestaurantAdmin/AdminCustomers/AdminCustomers";
+import NormalProfile from "../pages/Dashboard/user/NormalProfile";
 
 export const router = createBrowserRouter([
   {
@@ -177,6 +178,10 @@ export const router = createBrowserRouter([
         path: 'user-security',
         element: <UserSecurity />
       },
+      {
+        path: 'profile',
+        element: <NormalProfile />
+      }
 
     ],
   },
