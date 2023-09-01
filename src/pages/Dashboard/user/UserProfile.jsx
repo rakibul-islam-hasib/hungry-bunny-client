@@ -5,6 +5,7 @@ import useUserSecure from '../../../hooks/useUserSecure';
 import Loader from '../../../components/loader/Loader';
 import useAxiosSecure from '../../../hooks/useAxiosSecure';
 import { toast } from 'react-hot-toast';
+import { Tooltip } from '@mui/material';
 
 
 const UserProfile = () => {
@@ -94,15 +95,17 @@ const UserProfile = () => {
                                 <span className=" text-primary">Email</span>
                             </label>
                             <label className="">
-                                <input
-                                    type="email"
-                                    name="email"
-                                    placeholder='Email'
-                                    defaultValue={user?.email}
-                                    readOnly
-                                    disabled
-                                    className=" outline-none border border-primary w-full rounded p-2"
-                                />
+                                <Tooltip title='You can not change yor email' >
+                                    <input
+                                        type="email"
+                                        name="email"
+                                        placeholder='Email'
+                                        defaultValue={user?.email}
+                                        readOnly
+                                        disabled
+                                        className=" outline-none border border-primary w-full rounded p-2"
+                                    />
+                                </Tooltip>
                             </label>
                         </div>
                     </form>
@@ -168,7 +171,7 @@ const UserProfile = () => {
                         </div>
                     </div>
 
-                <input type="text" placeholder='fsdfsdf' />
+                    <input type="text" placeholder='fsdfsdf' />
                 </div>
             </div>
             <ChangeProfilePicModal isOpen={isOpen} onClose={closeModal} onSuccess={handleProfilePicChange} />
