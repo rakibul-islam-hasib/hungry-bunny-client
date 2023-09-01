@@ -47,6 +47,8 @@
     "recharts": "^2.8.0",
     "redux": "^4.2.1",
     "redux-thunk": "^2.4.2",
+    "scroll-carousel": "^1.2.7",
+    "scroll-carousel-react": "^1.0.0",
     "socket.io-client": "^4.7.2",
     "sort-by": "^1.2.0",
     "sweetalert2": "^11.7.23",
