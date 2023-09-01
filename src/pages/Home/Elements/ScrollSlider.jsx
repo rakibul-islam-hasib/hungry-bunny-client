@@ -7,7 +7,11 @@ const ScrollSlider = () => {
     const duplicatedDistricts = [...districts, ...districts];
 
     return (
-        <div>
+        <div className='my-10'>
+            <div className="text-center my-10">
+                <h1 className="text-5xl font-bold text-gray-700"><span className='text-primary'>Popular</span> Districts</h1>
+                <p className='text-sm mt-3'>Here some popular districts. We are trusted by hole Bangladesh</p>
+            </div>
             <ScrollCarousel
                 autoplay
                 autoplaySpeed={3000}
