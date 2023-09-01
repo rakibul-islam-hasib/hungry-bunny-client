@@ -7,6 +7,7 @@ import FoodCard from "../Menu/FoodCard";
 import TopRestaurant from "./Elements/TopRestaurant";
 import ChatBox from "../../functionality/chat/ChatBox";
 import HowWeWork from "./Elements/HowWeWork";
+import ScrollSlider from "./Elements/ScrollSlider";
 
 // import HomeBlog from "./Elements/HomeBlog";
 
@@ -19,6 +20,7 @@ const Home = () => {
       <FoodCard />
       <PopularFood />
       {/* <Stacks /> */}
+      <ScrollSlider />
       <HowWeWork />
       <ChatBox />
       <CheckoutBar />
