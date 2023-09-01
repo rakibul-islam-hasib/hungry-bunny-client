@@ -32,6 +32,11 @@ import UserAddress from "../pages/dashboard/user/UserAddress";
 import UserPayment from "../pages/dashboard/user/UserPayment";
 import UserSecurity from "../pages/dashboard/user/UserSecurity";
 
+import AdminOrder from "../pages/Dashboard/RestaurantAdmin/AdminOrder/AdminOrder";
+import AdminAddItems from "../pages/Dashboard/RestaurantAdmin/AdminAddItems/AdminAddItems";
+import AdminMenu from "../pages/Dashboard/RestaurantAdmin/AdminMenu/AdminMenu";
+import AdminCustomers from "../pages/Dashboard/RestaurantAdmin/AdminCustomers/AdminCustomers";
+
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -67,9 +72,10 @@ export const router = createBrowserRouter([
         element: <Restaurant />,
       },
       {
-        path: '/restaurant/:id',
-        element: <RestaurantDetails />,
-        loader: ({ params }) => fetch(`http://localhost:5000/restaurant/${params.id}`)
+        path: "/restaurant/:id",
+        element: <RestaurantDetails></RestaurantDetails>,
+        loader: ({ params }) =>
+          fetch(`https://hungry-bunny.vercel.app/restaurant/${params.id}`),
       },
       {
         path: '/menu',
@@ -117,41 +123,52 @@ export const router = createBrowserRouter([
         element: <UserWelcome />,
       },
       /*------------------------------------------------------------
-      -----------------WebSite Admin  Dashboard-------------------
-      -------------------------------------------------------------*/
-      {
-        path: 'admin-dashboard',
-        element: <AdminDashboard />
-      },
-      {
-        path: 'manage-users',
-        element: <ManageUsers />
-      },
+-----------------WebSite Admin  Dashboard-------------------
+-------------------------------------------------------------*/
 
+      {
+        path: "admin-dashboard",
+        element: <AdminDashboard />,
+      },
+      {
+        path: "manage-users",
+        element: <ManageUsers />,
+      },
 
       /*------------------------------------------------------------
-      -----------------Restaurant Owner Dashboard-------------------
-      -------------------------------------------------------------*/
+-----------------Restaurant Owner Dashboard-------------------
+-------------------------------------------------------------*/
       {
         path: "restaurant-cp",
         element: <RestaurantAdmin />,
       },
-
+      {
+        path: "/dashboard/restaurant-orders",
+        element: <AdminOrder />,
+      },
+      {
+        path: "/dashboard/restaurant-add-items",
+        element: <AdminAddItems />,
+      },
+      {
+        path: "/dashboard/restaurant-menu",
+        element: <AdminMenu />,
+      },
+      {
+        path: "/dashboard/restaurant-customers",
+        element: <AdminCustomers />,
+      },
 
       /*------------------------------------------------------------
-      ---------------------Normal User Dashboard--------------------
-      -------------------------------------------------------------*/
-      {
-        path: "profile",
-        element: <Profile />,
-      },
+---------------------Normal User Dashboard--------------------
+-------------------------------------------------------------*/
       {
         path: "user-profile",
         element: <UserProfile />,
       },
       {
-        path: 'address',
-        element: <UserAddress />
+        path: "address",
+        element: <UserAddress />,
       },
       {
         path: 'user-payment',
@@ -164,7 +181,4 @@ export const router = createBrowserRouter([
 
     ],
   },
-
-
-
 ]);
