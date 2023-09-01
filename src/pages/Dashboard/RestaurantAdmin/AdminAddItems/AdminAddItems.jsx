@@ -2,7 +2,7 @@ import React from "react";
 
 const AdminAddItems = () => {
   return (
-    <div className="bg-white border border-4 rounded-lg shadow relative m-10">
+    <div className="bg-white border-4 rounded-lg shadow relative m-10">
       <div className="flex items-start justify-between p-5 border-b rounded-t">
         <h3 className="text-xl font-semibold">Edit product</h3>
         <button
@@ -16,11 +16,11 @@ const AdminAddItems = () => {
             viewBox="0 0 20 20"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <path
+            {/* <path
               fill-rule="evenodd"
               d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
               clip-rule="evenodd"
-            ></path>
+            ></path> */}
           </svg>
         </button>
       </div>
@@ -40,7 +40,7 @@ const AdminAddItems = () => {
                 name="product-name"
                 id="product-name"
                 className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full p-2.5"
-                placeholder="Apple Imac 27”"
+                placeholder="Chicken Burger"
                 required=""
               />
             </div>
@@ -56,7 +56,7 @@ const AdminAddItems = () => {
                 name="category"
                 id="category"
                 className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full p-2.5"
-                placeholder="Electronics"
+                placeholder="Food"
                 required=""
               />
             </div>
@@ -65,14 +65,16 @@ const AdminAddItems = () => {
                 name="brand"
                 className="text-sm font-medium text-gray-900 block mb-2"
               >
-                Brand
+                Quantity
               </label>
               <input
-                type="text"
-                name="brand"
-                id="brand"
+                type="number"
+                name="
+                Quantity"
+                id="
+                Quantity"
                 className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full p-2.5"
-                placeholder="Apple"
+                placeholder="01"
                 required=""
               />
             </div>
@@ -88,7 +90,7 @@ const AdminAddItems = () => {
                 name="price"
                 id="price"
                 className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full p-2.5"
-                placeholder="$2300"
+                placeholder="$230"
                 required=""
               />
             </div>
