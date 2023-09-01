@@ -6,12 +6,16 @@ import Loader from '../../../components/loader/Loader';
 import useAxiosSecure from '../../../hooks/useAxiosSecure';
 import { toast } from 'react-hot-toast';
 import { Tooltip } from '@mui/material';
+import { useDispatch } from 'react-redux';
+import LogoutPopup from '../../../components/popup/LogoutPopup';
 
 
 const UserProfile = () => {
     const [isOpen, setIsOpen] = useState(false);
     const { user: firebaseUser } = useAuth();
     const [user, isLoading, refetch] = useUserSecure(firebaseUser?.email);
+    const dispatch = useDispatch();
+    const [isLogoutOpen, setIsLogoutOpen] = useState(false);
     const axios = useAxiosSecure();
     const openModal = () => {
         setIsOpen(true);
@@ -161,7 +165,9 @@ const UserProfile = () => {
 
                     <div className='lg:flex md:flex justify-between sm:flex'>
                         <div className='mb-5'>
-                            <input type="submit" value="Log out" className="bg-transparent hover:bg-orange-500 text-orange-500 font-semibold hover:text-white py-2 px-4 border border-orange-500 hover:border-transparent rounded" />
+                            <button type="submit" className="bg-transparent hover:bg-orange-500 text-orange-500 font-semibold hover:text-white py-2 px-4 border border-orange-500 hover:border-transparent rounded">
+                                Log out
+                            </button>
                         </div>
 
                         <div className='gap-2'>
@@ -170,11 +176,10 @@ const UserProfile = () => {
 
                         </div>
                     </div>
-
-                    <input type="text" placeholder='fsdfsdf' />
                 </div>
             </div>
             <ChangeProfilePicModal isOpen={isOpen} onClose={closeModal} onSuccess={handleProfilePicChange} />
+            <LogoutPopup open={isLogoutOpen} setOpen={setIsLogoutOpen} />
         </>
     );
 };
