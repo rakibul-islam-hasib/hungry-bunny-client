@@ -189,7 +189,7 @@ const DashboardLayout = () => {
           </ul>
         )}
         {role === "restaurant" && (
-          <ul className="pt-6">
+          <ul className="pt-6 ">
             <p className={`ml-3 text-light-gray-4 ${!open && "hidden"}`}>
               <small>MENU</small>
             </p>
