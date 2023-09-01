@@ -3,51 +3,58 @@ import illustration from '../../../assets/img/work/illustration-1.png';
 import illustration2 from '../../../assets/img/work/illustration-2.png';
 import illustration3 from '../../../assets/img/work/illustration-3.png';
 
+const steps = [
+  {
+    id: 1,
+    step: '01',
+    image: illustration,
+    title: 'Select Restaurant',
+    description: 'First Select yor favorite restaurant . Make sure you are sign in with your account in our website . Then our intellisense is suggest you your nearby restaurants',
+  },
+  {
+    id: 2,
+    step: '02',
+    image: illustration2,
+    title: 'Select Menu',
+    description: 'After successfully choosing your favorite restaurant . Then you need to select your favorite food . Then select your favorite payment method for payment . Now follow the next step',
+  },
+  {
+    id: 3,
+    step: '03',
+    image: illustration3,
+    title: 'Wait for delivery',
+    description: 'Ok , great you have successfully place your first order. Now just waite for 30 minute . Our delivery team will be meet you within 30 minute with your awesome food',
+  },
+];
+
 const HowWeWork = () => {
-    return (
-        <div className=''>
-            <h1 className='text-center text-5xl  font-bold'>How We <span className='text-primary'>Work</span></h1>
+  return (
+    <div className=''>
+      <h1 className='text-center mb-6 text-5xl  font-bold'>
+        How We <span className='text-primary'>Work</span>
+      </h1>
 
-            <div className="flex justify-center items-center">
-
-                <div className="flex w-[300px] flex-col justify-center items-center text-center">
-                    <img src={illustration} alt="" />
-                    <div className="flex items-end mt-3">
-                        <span className='text-5xl text-gray-400 font-bold'>01</span>
-                        <h2 className='text-2xl font-bold'>Select Restaurant</h2>
-                    </div>
-                    <div className="w-[80%] mx-auto mt-2">
-                    <p>First Select yor favorite restaurant . Make sure you are sign in with your account in our website . Then our intellisense is suggest you your nearby restaurants</p>
-                    </div>
-                </div>
-                <div className="flex w-[300px] flex-col justify-center items-center text-center">
-                    <img src={illustration2} alt="" />
-                    <div className="flex mt-3 items-end">
-                        <span className='text-5xl text-gray-400 font-bold'>02</span>
-                        <h2 className='text-2xl font-bold'>Select Menu</h2>
-                    </div>
-                    <div className="w-[80%] mt-2 mx-auto text-center">
-                        <p>After successfully choosing your favorite restaurant . Then you need to select your favorite food . Then select your favorite payment method for payment . Now follow the next step</p>
-                    </div>
-                </div>
-       
-       
-                <div className="flex w-[300px] flex-col justify-center items-center text-center">
-                    <img src={illustration3} alt="" />
-                    <div className="flex gap-1 mt-3 items-end">
-                        <span className='text-5xl text-gray-400 font-bold'>03</span>
-                        <h2 className='text-2xl font-bold'>Wait for delivery</h2>
-                    </div>
-                    <div className="w-[80%] mt-2 mx-auto text-center">
-                        <p>After successfully choosing your favorite restaurant . Then you need to select your favorite food . Then select your favorite payment method for payment . Now follow the next step</p>
-                    </div>
-                </div>
-       
+      <div className='flex justify-center space-x-14  items-center'>
+        {steps.map((step) => (
+          <div
+            key={step.id}
+            className='flex w-[300px] flex-col justify-center items-center text-center'
+          >
+            <img src={step.image} alt='' />
+            <div className='flex items-end mt-3'>
+              <span className='text-5xl text-gray-400 font-bold'>
+                {step.step}
+              </span>
+              <h2 className='text-2xl font-bold'>{step.title}</h2>
             </div>
-
-
-        </div>
-    );
+            <div className='w-[80%] mx-auto mt-2'>
+              <p>{step.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 };
 
 export default HowWeWork;
