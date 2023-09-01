@@ -23,7 +23,7 @@ const ChatBox = () => {
   useEffect(() => {
     const timeline = gsap.timeline({
       onComplete: () => {
-        console.log('Animation completed');
+        // console.log('Animation completed');
       },
     });
 
