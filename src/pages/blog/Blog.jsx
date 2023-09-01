@@ -39,7 +39,7 @@ const Blog = () => {
         className="border rounded-3xl pt-4 pb-4 py-2 px-4  "
         placeholder="Search blogs"
       />
-      <input type="submit" className='bg-orange-500 border-2 border-orange-500 text-4xl text-white rounded-3xl pt-3 pb-3 px-4 py-2 ml-2 hover:bg-white font-bold hover:text-orange-500' value="search" />
+      <input type="submit" className='bg-orange-500 hover:transition hover:duration-400 border-2 border-orange-500 text-4xl text-white rounded-3xl pt-3 pb-3 px-4 py-2 ml-2 hover:bg-white font-bold hover:text-orange-500' value="search" />
     </div>
         </div>
         <div className='md:w-1/2 mx-auto'>

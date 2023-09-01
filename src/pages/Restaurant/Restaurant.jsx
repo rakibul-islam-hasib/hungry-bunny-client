@@ -103,7 +103,7 @@ const Restaurant = () => {
             </div>
             <div className="flex items-center justify-between px-4 py-2 ">
               <h1 className=" font-bold text-xl">{item.place}</h1>
-              <Link to={`/restaurant/${item._id}`} className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-full flex items-center">
+              <Link to={`/restaurant/${item._id}`} className="bg-orange-500 hover:bg-orange-600 hover:transition hover:duration-400 text-white font-bold py-2 px-4 rounded-full flex items-center">
                 Details
               </Link >
 
