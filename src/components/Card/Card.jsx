@@ -66,15 +66,17 @@ const Card = () => {
       <div className="grid md:grid-cols-2 md:gap-8 gap-3 lg:grid-cols-3 mt-10 mx-auto">
         {menuItems.map((menu) => (
           <div key={menu.id} className={` border overflow-hidden shadow-lg rounded-md ${menu.id === 1 ? 'w-full' : ''}`}>
-            <img className="w-full rounded h-48 object-cover" src={menu.image} alt="Food Image" />
+            <div>
+              <img className="w-full   object-cover transition transform duration-200  hover:-translate-y-2 rounded-lg relative" src={menu.image} alt="Food Image" />
+            </div>
             <div className=" py-4">
               <div className="font-bold text-xl mb-2">{menu.name}</div>
-              <p className="text-gray-700 text-base">{menu.description.slice(0,70)}</p>
+              <p className="text-gray-700 text-base">{menu.description.slice(0, 70)}</p>
               <div className="flex justify-between items-center  h-14">
                 <span className="text-gray-600 font-semibold text-lg">{menu.price} Taka</span>
                 <button className="  ">
-                  <FaRegBookmark className="text-2xl hover:text-3xl"/>
-                  
+                  <FaRegBookmark className="text-2xl hover:text-3xl" />
+
                 </button>
               </div>
             </div>
