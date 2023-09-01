@@ -8,6 +8,8 @@ import { CgProfile } from "react-icons/cg";
 import useUserSecure from "../hooks/useUserSecure";
 import { useAuth } from "../hooks/useAuth";
 import Loader from "../components/loader/Loader";
+import { FaUserEdit } from "react-icons/fa";
+import logo from '../assets/img/logo.png';
 
 
 const adminNavItems = [
@@ -40,8 +42,13 @@ const adminNavItems = [
 
 const userNavItems = [
   {
-    to: "/dashboard/user-profile",
+    to: "/dashboard/profile",
     icon: <CgProfile className="text-2xl" />,
+    label: "User Profile",
+  },
+  {
+    to: "/dashboard/user-profile",
+    icon: <FaUserEdit className="text-2xl" />,
     label: "Manage Profile",
   },
   {

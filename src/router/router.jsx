@@ -22,12 +22,22 @@ import RestaurantAdmin from "../pages/dashboard/RestaurantAdmin/RestaurantAdmin"
 import Register from "../pages/auth/Register";
 import BlogDetails from "../pages/blog/BlogDetails";
 // import UserAddress from "../pages/dashboard/Owner/UserAddress";
+<<<<<<< HEAD
 import UserProfile from "../pages/dashboard/user/UserProfile";
 import UserAddress from "../pages/dashboard/user/UserAddress";
 import AdminDashboard from "../pages/Dashboard/admin/AdminDashboard";
 import ManageUsers from "../pages/Dashboard/admin/ManageUsers";
 import MultiStepForm from "../pages/auth/MultiStepForm";
 import TeamInfo from "./TeamInfo";
+=======
+import UserProfile from "../pages/dashboard/NormalUser/UserProfile";
+import UserAddress from "../pages/dashboard/NormalUser/UserAddress";
+import AdminDash from "../pages/dashboard/AdminDash/AdminDash";
+import ManageUsers from "../pages/dashboard/AdminDash/ManageUsers";
+import UserPayment from "../pages/dashboard/NormalUser/UserPayment";
+import UserSecurity from "../pages/dashboard/NormalUser/UserSecurity";
+import Profile from "../pages/dashboard/NormalUser/Profile";
+>>>>>>> b1a40dd883f8558f592ac9cd3dbb5b3d04783e4e
 
 export const router = createBrowserRouter([
   {
@@ -138,6 +148,10 @@ export const router = createBrowserRouter([
 /*------------------------------------------------------------
 ---------------------Normal User Dashboard--------------------
 -------------------------------------------------------------*/ 
+      {
+        path: "profile",
+        element: <Profile></Profile>,
+      },
       {
         path: "user-profile",
         element: <UserProfile />,
