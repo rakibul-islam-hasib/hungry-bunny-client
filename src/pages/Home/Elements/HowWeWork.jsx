@@ -29,7 +29,7 @@ const steps = [
 
 const HowWeWork = () => {
   return (
-    <div className=''>
+    <div className='my-24'>
       <h1 className='text-center mb-6 text-5xl  font-bold'>
         How We <span className='text-primary'>Work</span>
       </h1>
