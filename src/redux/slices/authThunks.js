@@ -1,4 +1,4 @@
-import { FacebookAuthProvider, createUserWithEmailAndPassword, getRedirectResult, signInWithEmailAndPassword, signInWithPopup, signInWithRedirect, signOut, updateProfile } from 'firebase/auth';
+import { FacebookAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword, getRedirectResult, signInWithEmailAndPassword, signInWithPopup, signInWithRedirect, signOut, updateProfile } from 'firebase/auth';
 import { setUser, setError, setLoading } from './authSlice';
 import { getAuth } from 'firebase/auth';
 import { app } from '../../config/firebase/firebase.config';
@@ -56,12 +56,25 @@ export const loginWithFacebook = () => async (dispatch) => {
         // Login with facebook
         const userCredential = await signInWithRedirect(auth, facebookProvider);
         if (userCredential.user) {
-            const userData = {
-                email: userCredential.user.email,
-                name: userCredential.user.displayName,
-            }
-            // const result = await axios.post('/user-info', userData);
-            // console.log(result)
+
+            dispatch(setUser(userCredential.user));
+        }
+    } catch (error) {
+        dispatch(setError(error.code));
+        // console.log(error.code)
+        dispatch(setLoading(false));
+    }
+}
+export const loginWithGoogle = () => async (dispatch) => {
+    // const axios = useAxiosFetch();
+    dispatch(setLoading(true));
+    dispatch(setError(''));
+    try {
+        // Login with google
+        const provider = new GoogleAuthProvider();
+        const userCredential = await signInWithRedirect(auth, provider);
+        if (userCredential.user) {
+
             dispatch(setUser(userCredential.user));
         }
     } catch (error) {
@@ -108,13 +121,13 @@ export const handleFacebookRedirect = () => async (dispatch) => {
             })
                 .then((res) => res.json())
                 .then((data) => {
-                    console.log(data);
+                    console.log(data , 'data');
                 });
             dispatch(setUser(userCredential.user));
         }
     } catch (error) {
         dispatch(setError(error.code));
-        console.log(error.code);
+        // console.log(error.code);
     } finally {
         dispatch(setLoading(false));
     }

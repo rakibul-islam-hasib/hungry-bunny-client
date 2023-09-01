@@ -109,8 +109,11 @@ const MultiStepForm = () => {
                   className="input-field "
                 />
                 <div className="flex justify-end mt-6">
-                  <button onClick={handleNext} className='px-4 py-2 bg-transparent border-2 border-primary  rounded-xl hover:bg-primary hover:text-white font-bold duration-300'>
-                    Next
+                  <button onClick={handleNext} className=' relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800'>
+                    <span className="items-center relative font-bold px-8 py-2 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+
+                      Next
+                    </span>
                   </button>
                 </div>
               </div>
@@ -134,14 +137,17 @@ const MultiStepForm = () => {
                       Previous
                     </span>
                   </button>
-                  <button onClick={handleNext} className='px-4 py-2 bg-transparent border-2 border-primary  rounded-xl hover:bg-primary hover:text-white font-bold duration-300'>
-                    Next
+                  <button onClick={handleNext} className=' relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800'>
+                    <span className="items-center relative font-bold px-8 py-2 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+
+                      Next
+                    </span>
                   </button>
                 </div>
               </div>
             )}
             {step === 3 && (
-              <div>
+              <div className='w-[350px]'>
                 <h1 className="text-3xl font-semibold mb-4">Gender</h1>
                 <div className="flex flex-col">
                   <label className="text-gray-700 mt-4">Please Select Your Gender</label>
@@ -164,22 +170,25 @@ const MultiStepForm = () => {
                       Previous
                     </span>
                   </button>
-                  <button onClick={handleNext} className='px-4 py-2 bg-transparent border-2 border-primary  rounded-xl hover:bg-primary hover:text-white font-bold duration-300'>
-                    Next
+                  <button onClick={handleNext} className=' relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800'>
+                    <span className="items-center relative font-bold px-8 py-2 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+
+                      Next
+                    </span>
                   </button>
                 </div>
               </div>
             )}
             {step === 4 && (
-              <div>
+              <div className=' w-[350px] '>
                 <h1 className="text-3xl font-semibold mb-4">Location</h1>
-                <div className="flex flex-col">
+                <div className="flex  flex-col">
                   <label className="text-gray-700 mt-4">Please Select Your Location</label>
                   <select
                     name="location"
                     value={formData.location}
                     onChange={handleChange}
-                    className="input-field"
+                    className="input-field w-full"
                   >
                     {
                       locationOptions.map((location, index) => (
@@ -195,8 +204,11 @@ const MultiStepForm = () => {
                       Previous
                     </span>
                   </button>
-                  <button onClick={handleNext} className='px-4 py-2 bg-transparent border-2 border-primary  rounded-xl hover:bg-primary hover:text-white font-bold duration-300'>
-                    Next
+                  <button onClick={handleNext} className=' relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800'>
+                    <span className="items-center relative font-bold px-8 py-2 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+
+                      Next
+                    </span>
                   </button>
                 </div>
               </div>
@@ -220,8 +232,11 @@ const MultiStepForm = () => {
                       Previous
                     </span>
                   </button>
-                  <button type='submit' className='px-4 py-2 bg-transparent border-2 border-primary  rounded-xl hover:bg-primary hover:text-white font-bold duration-300'>
-                    Register
+                  <button type='submit'  className=' relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800'>
+                    <span className="items-center relative font-bold px-8 py-2 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+
+                      Register
+                    </span>
                   </button>
                 </div>
 
