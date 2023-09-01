@@ -29,6 +29,8 @@ import AdminDashboard from "../pages/Dashboard/admin/AdminDashboard";
 import ManageUsers from "../pages/dashboard/admin/ManageUsers";
 import UserProfile from "../pages/dashboard/user/UserProfile";
 import UserAddress from "../pages/dashboard/user/UserAddress";
+import UserPayment from "../pages/dashboard/user/UserPayment";
+import UserSecurity from "../pages/dashboard/user/UserSecurity";
 
 export const router = createBrowserRouter([
   {
@@ -141,7 +143,7 @@ export const router = createBrowserRouter([
       -------------------------------------------------------------*/
       {
         path: "profile",
-        element: <Profile></Profile>,
+        element: <Profile />,
       },
       {
         path: "user-profile",
@@ -150,6 +152,14 @@ export const router = createBrowserRouter([
       {
         path: 'address',
         element: <UserAddress />
+      },
+      {
+        path: 'user-payment',
+        element: <UserPayment />
+      },
+      {
+        path: 'user-security',
+        element: <UserSecurity />
       },
 
     ],

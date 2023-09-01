@@ -20,8 +20,8 @@ const Home = () => {
       <PopularFood />
       {/* <Stacks /> */}
       <HowWeWork />
-      <CheckoutBar />
       <ChatBox />
+      <CheckoutBar />
     </section>
   );
 };
