@@ -43,7 +43,7 @@ const Blog = () => {
     </div>
         </div>
         <div className='md:w-1/2 mx-auto'>
-          <img className='bg-orange-400 rounded-3xl ml-10' style={{height:400}} src={blog} alt="" />
+          <img className='bg-orange-400 rounded-3xl  ml-10' style={{height:400}} src={blog} alt="" />
         </div>
       </div>
       <div>
