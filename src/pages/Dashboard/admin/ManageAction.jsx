@@ -3,8 +3,8 @@ import { Menu, Transition } from '@headlessui/react'
 
 
 
-const ManageAction = () => {
-
+const ManageAction = ({userData}) => {
+console.log(userData);
     function classNames(...classes) {
         return classes.filter(Boolean).join(' ')
     }
@@ -49,7 +49,7 @@ const ManageAction = () => {
                             <Menu.Item>
                                 {({ active }) => (
                                     <button
-                                    onClick={handleMakeAdmin}
+                                    onClick={() => handleMakeAdmin()}
 
                                         className={classNames(
                                             active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
