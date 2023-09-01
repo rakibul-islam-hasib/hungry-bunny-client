@@ -36,14 +36,13 @@ const BlogDetails = () => {
         <p className="mb-5">{blogs?.description.partThree}</p>
         </div>
         <div className="mb-16">
-            <h2 className="font-bold text-center text-slate-700 text-4xl mt-10 mb-8">Leave your comment</h2>
+            <h2 className="font-bold text-center text-slate-700 text-4xl mt-10 mb-8 dark:text-slate-100">Leave your comment</h2>
             <div className="flex justify-between">
         <input type="text"  className='w-[48%] rounded-3xl drop-shadow-lg pt-4 pb-4 text-2xl dark:text-black pl-5' placeholder='your name' />
         <input type="email"  className='w-[48%] rounded-3xl drop-shadow-lg pt-4 pb-4  text-2xl dark:text-black pl-5' placeholder='your email' />
            
         </div>
-        <textarea name="description" type='text' className="rounded-3xl w-full mt-8 mb-5 drop-shadow-lg pt-4 pb-4  text-2xl dark:text-black pl-5' placeholder='your email' />
-           " cols="100" rows="5"></textarea>
+        <textarea name="" id="" cols="100" rows="5" className="rounded-3xl w-full mt-8 mb-5 drop-shadow-lg pt-4 pb-4  text-2xl dark:text-black pl-5" placeholder="write your comment"></textarea>
            <input type="submit" value="send" className="text-center rounded-3xl drop-shadow-lg pt-2 pb-2 font-bold text-3xl bg-orange-500 w-full text-white border-2 border-orange-500 hover:text-orange-500 hover:bg-white" />
         </div>
         </div>
