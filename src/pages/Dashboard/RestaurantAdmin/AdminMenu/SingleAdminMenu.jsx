@@ -1,7 +1,7 @@
 import React from "react";
 
 const SingleAdminMenu = ({ menu }) => {
-  const { id, image } = menu;
+  const { id, image, title, description } = menu;
   return (
     <div className="max-w-xs mx-auto overflow-hidden bg-white rounded-lg shadow-md">
       <div className="relative">
@@ -15,11 +15,8 @@ const SingleAdminMenu = ({ menu }) => {
         </div>
       </div>
       <div className="p-4">
-        <h3 className="text-xl font-semibold mb-2">Product Sale</h3>
-        <p className="text-gray-700 text-base">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-          bibendum auctor felis, vel consequat odio ullamcorper eu.
-        </p>
+        <h3 className="text-xl font-semibold mb-2">{title}</h3>
+        <p className="text-gray-700 text-base">{description}</p>
       </div>
     </div>
   );

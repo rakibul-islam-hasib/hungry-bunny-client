@@ -29,6 +29,7 @@ import ManageUsers from "../pages/dashboard/AdminDash/ManageUsers";
 import AdminOrder from "../pages/Dashboard/RestaurantAdmin/AdminOrder/AdminOrder";
 import AdminAddItems from "../pages/Dashboard/RestaurantAdmin/AdminAddItems/AdminAddItems";
 import AdminMenu from "../pages/Dashboard/RestaurantAdmin/AdminMenu/AdminMenu";
+import AdminCustomers from "../pages/Dashboard/RestaurantAdmin/AdminCustomers/AdminCustomers";
 
 export const router = createBrowserRouter([
   {
@@ -137,6 +138,10 @@ export const router = createBrowserRouter([
       {
         path: "/dashboard/restaurant-menu",
         element: <AdminMenu />,
+      },
+      {
+        path: "/dashboard/restaurant-customers",
+        element: <AdminCustomers />,
       },
 
       /*------------------------------------------------------------
