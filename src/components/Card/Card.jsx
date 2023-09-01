@@ -56,6 +56,8 @@ const Card = () => {
 
 
   return (
+
+    
     <div className="mx-auto md:px-20 px-6 mt-10">
       <div className="text-center lg:w-[70%] w-full sm:w-[90%] md:w-[80%] mx-auto">
         <h3 className="font-semibold text-4xl mx-auto ">Popular Menu</h3>
