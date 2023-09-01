@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import './css/Stack.css'
+// import './css/Stack.css'
 import { animate } from '../../../utils/stackAnimate';
 import deliveryMen from '../../../assets/img/delivery.jpg';
 import { useInView } from 'react-intersection-observer';

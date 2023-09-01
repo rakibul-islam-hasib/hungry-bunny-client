@@ -9,6 +9,7 @@ import { toast } from 'react-hot-toast';
 const ChangeProfilePicModal = ({ isOpen, onClose, onSuccess }) => {
     const [selectedFile, setSelectedFile] = useState(null);
     const [previewUrl, setPreviewUrl] = useState(null);
+    const [isLoading, setIsLoading] = useState(false);
     const { user } = useAuth();
     const handleFileChange = (event) => {
         const file = event.target.files[0];
@@ -22,6 +23,7 @@ const ChangeProfilePicModal = ({ isOpen, onClose, onSuccess }) => {
     };
 
     const handleProfilePicChange = (file) => {
+        setIsLoading(true);
         const imgId = v4();
         const imagesRef = ref(storage, `images/${imgId + selectedFile?.name}`);
 
@@ -31,10 +33,12 @@ const ChangeProfilePicModal = ({ isOpen, onClose, onSuccess }) => {
                 .then((url) => {
                     if (url) {
                         onSuccess(url);
+                        setIsLoading(false);
                         onClose();
                     }
                     else {
                         toast.error('Something went wrong , please try again later');
+                        setIsLoading(false);
                     }
                 })
         });
@@ -113,9 +117,10 @@ const ChangeProfilePicModal = ({ isOpen, onClose, onSuccess }) => {
                                     // handleFileChange();
                                     handleProfilePicChange(selectedFile);
                                 }}
+                                disabled={!selectedFile || isLoading}
                                 className="px-4 py-2 bg-orange-500 text-white rounded hover:bg-orange-600"
                             >
-                                Ok , Change
+                                {isLoading ? 'Uploading...' : 'Upload'}
                             </button>
                         </div>
                     </Transition.Child>

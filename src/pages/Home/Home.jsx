@@ -6,6 +6,7 @@ import Stacks from "./Elements/Stacks";
 import FoodCard from "../Menu/FoodCard";
 import TopRestaurant from "./Elements/TopRestaurant";
 import ChatBox from "../../functionality/chat/ChatBox";
+import HowWeWork from "./Elements/HowWeWork";
 
 // import HomeBlog from "./Elements/HomeBlog";
 
@@ -17,9 +18,10 @@ const Home = () => {
       <TopRestaurant />
       <FoodCard />
       <PopularFood />
-      <Stacks />
-      <CheckoutBar />
+      {/* <Stacks /> */}
+      <HowWeWork />
       <ChatBox />
+      <CheckoutBar />
     </section>
   );
 };

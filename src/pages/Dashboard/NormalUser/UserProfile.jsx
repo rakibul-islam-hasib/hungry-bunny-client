@@ -5,17 +5,12 @@ import useUserSecure from '../../../hooks/useUserSecure';
 import Loader from '../../../components/loader/Loader';
 import useAxiosSecure from '../../../hooks/useAxiosSecure';
 import { toast } from 'react-hot-toast';
-import { Tooltip } from '@mui/material';
-import { useDispatch } from 'react-redux';
-import LogoutPopup from '../../../components/popup/LogoutPopup';
 
 
 const UserProfile = () => {
     const [isOpen, setIsOpen] = useState(false);
     const { user: firebaseUser } = useAuth();
     const [user, isLoading, refetch] = useUserSecure(firebaseUser?.email);
-    const dispatch = useDispatch();
-    const [isLogoutOpen, setIsLogoutOpen] = useState(false);
     const axios = useAxiosSecure();
     const openModal = () => {
         setIsOpen(true);
@@ -49,7 +44,11 @@ const UserProfile = () => {
                 <h1 className='text-2xl font-bold'>Account</h1>
             </div>
             <div>
+<<<<<<<< HEAD:src/pages/Dashboard/user/UserProfile.jsx
                 <div className='form md:w-full sm:w-full p-10 rounded-lg'>
+========
+                <form className='form md:w-full sm:w-full  p-10 rounded-lg'>
+>>>>>>>> b1a40dd883f8558f592ac9cd3dbb5b3d04783e4e:src/pages/Dashboard/NormalUser/UserProfile.jsx
                     <h2 className="text-3xl font-extrabold text-start mb-2">Personal Information</h2>
 
                     <div>
@@ -62,13 +61,21 @@ const UserProfile = () => {
                                 <span className='mt-8'>
                                     <button
                                         onClick={openModal}
+<<<<<<<< HEAD:src/pages/Dashboard/user/UserProfile.jsx
                                         className="bg-transparent hover:bg-primary  text-primary font-semibold hover:text-white py-2 px-4 border border-primary hover:border-transparent rounded"
+========
+                                        className="bg-transparent hover:bg-orange-500 text-orange-500 font-semibold hover:text-white py-2 px-4 border border-orange-500 hover:border-transparent rounded"
+>>>>>>>> b1a40dd883f8558f592ac9cd3dbb5b3d04783e4e:src/pages/Dashboard/NormalUser/UserProfile.jsx
                                     >
                                         Change
                                     </button>
                                     <button
                                         onClick={openModal}
+<<<<<<<< HEAD:src/pages/Dashboard/user/UserProfile.jsx
                                         className="bg-transparent hover:bg-primary text-primary font-semibold hover:text-white py-2 px-4 border border-primary hover:border-transparent rounded ms-2"
+========
+                                        className="bg-transparent hover:bg-orange-500 text-orange-500 font-semibold hover:text-white py-2 px-4 border border-orange-500 hover:border-transparent rounded ms-2"
+>>>>>>>> b1a40dd883f8558f592ac9cd3dbb5b3d04783e4e:src/pages/Dashboard/NormalUser/UserProfile.jsx
                                     >
                                         Remove
                                     </button>
@@ -99,17 +106,15 @@ const UserProfile = () => {
                                 <span className=" text-primary">Email</span>
                             </label>
                             <label className="">
-                                <Tooltip title='You can not change yor email' >
-                                    <input
-                                        type="email"
-                                        name="email"
-                                        placeholder='Email'
-                                        defaultValue={user?.email}
-                                        readOnly
-                                        disabled
-                                        className=" outline-none border border-primary w-full rounded p-2"
-                                    />
-                                </Tooltip>
+                                <input
+                                    type="email"
+                                    name="email"
+                                    placeholder='Email'
+                                    defaultValue={user?.email}
+                                    readOnly
+                                    disabled
+                                    className=" outline-none border border-primary w-full rounded p-2"
+                                />
                             </label>
                         </div>
                     </form>
@@ -142,22 +147,29 @@ const UserProfile = () => {
                         <h1 className='font-bold text-xl'>Email notifications</h1>
                         <div className='grid grid-cols-2'>
                             <label>
-                                <input className='my-5' type="checkbox" defaultChecked /> New Deals
+                                <input className='my-5 accent-orange-400' type="checkbox" defaultChecked /> New Deals
                             </label>
                             <label>
-                                <input className='my-5' type="checkbox" defaultChecked /> Password changes
+                                <input className='my-5 accent-orange-400' type="checkbox" defaultChecked /> Password changes
                             </label>
                             <label>
-                                <input className='my-5' type="checkbox" defaultChecked /> New Restaurants
+                                <input className='my-5 accent-orange-400' type="checkbox" defaultChecked /> New Restaurants
                             </label>
                             <label>
-                                <input className='my-5' type="checkbox" defaultChecked /> Special Offers
+                                <input className='my-5 accent-orange-400' type="checkbox" defaultChecked /> Special Offers
                             </label>
                             <label>
+<<<<<<<< HEAD:src/pages/Dashboard/user/UserProfile.jsx
                                 <input className='my-5' type="checkbox" /> Order Statuses
                             </label>
                             <label>
                                 <input className='my-5' type="checkbox" /> Newsletter
+========
+                                <input className='my-5 accent-orange-400' type="checkbox"  /> Order Statuses
+                            </label>
+                            <label>
+                                <input className='my-5 accent-orange-400' type="checkbox"  /> Newsletter
+>>>>>>>> b1a40dd883f8558f592ac9cd3dbb5b3d04783e4e:src/pages/Dashboard/NormalUser/UserProfile.jsx
                             </label>
                         </div>
 
@@ -165,21 +177,20 @@ const UserProfile = () => {
 
                     <div className='lg:flex md:flex justify-between sm:flex'>
                         <div className='mb-5'>
-                            <button type="submit" className="bg-transparent hover:bg-orange-500 text-orange-500 font-semibold hover:text-white py-2 px-4 border border-orange-500 hover:border-transparent rounded">
-                                Log out
-                            </button>
+                            <input type="submit" value="Log out" className="bg-transparent hover:bg-orange-500 text-orange-500 font-semibold hover:text-white py-2 px-4 border border-orange-500 hover:border-transparent rounded" />
                         </div>
 
                         <div className='gap-2'>
                             <input type="submit" value="Discard changes" className="bg-slate-200 hover:bg-slate-300 font-bold py-2 px-4 rounded text-black" />
-                            <input type="submit" value="Save changes" className=" bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded p-2 ms-2" />
+                            <input type="submit" value="Save changes" className=" bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded p-2 ms-2" />
 
                         </div>
                     </div>
+
+                <input type="text" placeholder='fsdfsdf' />
                 </div>
             </div>
             <ChangeProfilePicModal isOpen={isOpen} onClose={closeModal} onSuccess={handleProfilePicChange} />
-            <LogoutPopup open={isLogoutOpen} setOpen={setIsLogoutOpen} />
         </>
     );
 };

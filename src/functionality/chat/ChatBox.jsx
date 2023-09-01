@@ -23,7 +23,7 @@ const ChatBox = () => {
   useEffect(() => {
     const timeline = gsap.timeline({
       onComplete: () => {
-        console.log('Animation completed');
+        // console.log('Animation completed');
       },
     });
 
@@ -71,7 +71,7 @@ const ChatBox = () => {
   };
 
   return (
-    <div className='h-screen'>
+    <div className=''>
       <div className={`fixed right-3 bottom-3 ${isHidden ? 'hidden' : ''}`}>
         <button onClick={toggleChatBox} className={`flex border-primary bg-white dark:bg-black  dark:text-white rounded-full gap-2 items-center border px-3 py-1 `}>
           <ChatIcoSvg />
