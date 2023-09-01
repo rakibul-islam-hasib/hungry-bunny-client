@@ -1,29 +1,24 @@
 import React from 'react';
-// import 'scroll-carousel/dist/scroll.carousel.min.css';
 import ScrollCarousel from 'scroll-carousel-react';
 import { districts } from '../../../utils';
-const ScrollSlider = () => {
 
+const ScrollSlider = () => {
+    // Duplicate the districts array to create a two-sided carousel
+    const duplicatedDistricts = [...districts, ...districts];
 
     return (
         <div>
             <ScrollCarousel
-
                 autoplay
                 autoplaySpeed={3000}
-                // smartSpeed
                 direction="rtl"
                 elementType='div'
                 speed={7}
                 margin={20}
-            // onMove={(progress) => {
-            //     if (progress > 50 && progress < 60)
-            //         console.log('Scrolling', progress);
-            // }}
+                slideSelector='.my-hp-slide'
             >
-                {
-
-                    districts.map((district, index) => <div key={district.id} className="w-[200px] rounded-xl relative h-[200px]">
+                {duplicatedDistricts.map((district, index) => (
+                    <div key={index} className="w-[200px] my-hp-slide rounded-xl relative h-[200px]">
                         <div className="flex flex-col items-center justify-center">
                             <div className="w-full h-full relative bg-gray-200 flex items-center justify-center">
                                 <img src={district.photo} alt="" className="h-[150px] w-[200px]" />
@@ -37,9 +32,8 @@ const ScrollSlider = () => {
                                 </div>
                             </div>
                         </div>
-                    </div>)
-
-                }
+                    </div>
+                ))}
             </ScrollCarousel>
         </div>
     );
