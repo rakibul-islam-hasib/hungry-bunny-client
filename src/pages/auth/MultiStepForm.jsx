@@ -29,10 +29,6 @@ const MultiStepForm = () => {
   });
 
 
-
-
-
-
   const handleFromSubmit = async (e) => {
     e.preventDefault();
     const userData = {

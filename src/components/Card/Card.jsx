@@ -1,5 +1,5 @@
 import React from "react";
-import { FaShoppingCart } from "react-icons/fa";
+import { FaBookmark, FaCaretDown, FaRegBookmark, FaShoppingCart } from "react-icons/fa";
 import useMenu from "../../hooks/useMenu";
 
 const fakeData = [
@@ -65,16 +65,16 @@ const Card = () => {
       </div>
       <div className="grid md:grid-cols-2 md:gap-8 gap-3 lg:grid-cols-3 mt-10 mx-auto">
         {menuItems.map((menu) => (
-          <div key={menu.id} className={`p-2 border overflow-hidden shadow-lg rounded-md ${menu.id === 1 ? 'w-full' : ''}`}>
+          <div key={menu.id} className={` border overflow-hidden shadow-lg rounded-md ${menu.id === 1 ? 'w-full' : ''}`}>
             <img className="w-full rounded h-48 object-cover" src={menu.image} alt="Food Image" />
-            <div className="px-6 py-4">
+            <div className=" py-4">
               <div className="font-bold text-xl mb-2">{menu.name}</div>
-              <p className="text-gray-700 text-base">{menu.description}</p>
-              <div className="flex justify-between items-center mt-4">
+              <p className="text-gray-700 text-base">{menu.description.slice(0,70)}</p>
+              <div className="flex justify-between items-center  h-14">
                 <span className="text-gray-600 font-semibold text-lg">{menu.price} Taka</span>
-                <button className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-full flex items-center">
-                  <FaShoppingCart className="mr-2" />
-                  Add to Cart
+                <button className="  ">
+                  <FaRegBookmark className="text-2xl hover:text-3xl"/>
+                  
                 </button>
               </div>
             </div>
