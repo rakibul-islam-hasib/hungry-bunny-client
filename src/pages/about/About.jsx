@@ -1,8 +1,7 @@
 import React from 'react';
-import { GrDeliver } from 'react-icons/gr';
 import { BsStopwatch } from 'react-icons/bs';
 import { MdOutlineLocalOffer } from 'react-icons/md';
-import { PiBowlFood } from 'react-icons/pi';
+import { PiBowlFood, PiVanDuotone } from 'react-icons/pi';
 
 
 const About = () => {
@@ -69,7 +68,7 @@ const About = () => {
 {/* add new section */}
 <div className='grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 mt-10 mb-10'>
   <div className='p-7 bg-white rounded-3xl drop-shadow-lg hover:text-white hover:bg-orange-500'>
-    <p className='text-7xl ml-3'><GrDeliver/> </p>
+    <p className='text-7xl ml-3'><PiVanDuotone/> </p>
     <h3 className='text-4xl font-bold'>Free Delivery</h3>
     <p className='mt-4 mb-4'>Enjoy the added perk of FREE delivery! Savor your favorite dishes without the extra cost, making every meal a delightful and budget-friendly experience.</p>
   </div>
