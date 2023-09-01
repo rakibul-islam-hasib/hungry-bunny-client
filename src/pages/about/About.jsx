@@ -4,38 +4,50 @@ import React from 'react';
 const About = () => {
   return (
     <div className='mx-auto font-sans justify-center items-center ml-5 dark:text-slate-300'>
-      <div className="bg-fixed w-full bg-[url('https://images.pexels.com/photos/6646953/pexels-photo-6646953.jpeg?auto=compress&cs=tinysrgb&w=1600')]" style={{height:700}}>
-        {/* <img className="w-full rounded-2xl bg-fixed" src='' style={{ height: 800 }} alt="delivery picture" /> */}
+      {/* <div className="bg-fixed w-full bg-[url('https://images.pexels.com/photos/6646953/pexels-photo-6646953.jpeg?auto=compress&cs=tinysrgb&w=1600')]" style={{height:700}}>
+        <img className="w-full rounded-2xl bg-fixed" src='' style={{ height: 800 }} alt="delivery picture" />
 <div className=' text-center mb-32'>
 <h3 className='text-white font-extrabold text-6xl pt-44'>Hungry Bunny</h3>
 <h3 className='text-slate-200 mt-8 font-extrabold text-2xl sm:mr-10 sm:ml-10 md:mr-32 md:ml-32'>Indulge in culinary convenience through our food delivery. Enjoy restaurant-quality meals in the comfort of home – a simple click for fresh, delightful flavors at your doorstep</h3>
 
 </div>
+      </div> */}
+      <div className='md:flex mb-10'>
+      <div className='mt-10 md:w-[50%] pr-10'>
+        <p className='text-4xl font-extrabold text-slate-800'>About Us</p>
+        <p className='text-2xl mt-10 mb-6'>Discover culinary delights delivered to your door. We partner with local restaurants and chefs to bring you a diverse, delicious menu, ensuring satisfaction with every order.</p>
+        <button className="drop-shadow-lg border-orange-500 hover:text-orange-500 hover:bg-white mt-8 text-white bg-orange-500 border-2 font-bold py-2 px-4 rounded-full flex items-center">
+            SEND EMAIL
+          </button>
       </div>
-      <div className='mt-80 mb-10 sm:my-3 md:ml-10 sm:gap-x-3 grid sm:grid-cols-2 md:grid-cols-4 text-center'>
-        <div className='border-2 sm:mb-3 rounded-2xl md:mr-16 border-orange-400 pr-3 pl-3 pt-2 pb-2 hover:bg-orange-500 hover:text-white '>
+      <div className='md:w-[50%]'>
+        <img className='rounded-3xl' src="https://images.pexels.com/photos/6605268/pexels-photo-6605268.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="" />
+      </div>
+      </div>
+      <div className=' mb-10 sm:my-3 md:ml-10 sm:gap-x-3 grid sm:grid-cols-2 md:grid-cols-4 text-center'>
+        <div className='border-2 pt sm:mb-3 rounded-2xl md:mr-16 border-orange-400 pr-3 pl-3 pb-2 hover:bg-orange-500 hover:text-white '>
           <p className='text-4xl'><span>5000</span> <span className='text-6xl'>+</span></p>
           <p className='text-2xl'>happy customer</p>
         </div>
-        <div className='border-2 sm:mb-3 rounded-2xl md:mr-16 border-orange-400 pr-3 pl-3 pt-2 pb-2 hover:bg-orange-500 hover:text-white '>
+        <div className='border-2 sm:mb-3 rounded-2xl md:mr-16 border-orange-400 pr-3 pl-3 pb-2 hover:bg-orange-500 hover:text-white '>
           <p className='text-4xl'><span>24/7</span> <span className='text-6xl'></span></p>
           <p className='text-2xl'>service</p>
         </div>
-        <div className='border-2 sm:mb-3 rounded-2xl md:mr-16 border-orange-400 pr-3 pl-3 pt-2 pb-2 hover:bg-orange-500 hover:text-white '>
+        <div className='border-2 sm:mb-3 rounded-2xl md:mr-16 border-orange-400 pr-3 pl-3 pb-2 hover:bg-orange-500 hover:text-white '>
           <p className='text-4xl'><span>50</span> <span className='text-6xl'>+</span></p>
           <p className='text-2xl'>restaurant</p>
         </div>
-        <div className='border-2 sm:mb-3 md:mr-14 rounded-2xl border-orange-400  pr-5 pl-5 pt-2 pb-2 hover:bg-orange-500 hover:text-white '>
+        <div className='border-2 sm:mb-3 md:mr-14 rounded-2xl border-orange-400  pr-5 pl-5 pb-2 hover:bg-orange-500 hover:text-white '>
           <p className='text-4xl'><span>100</span> <span className='text-6xl'>+</span></p>
           <p className='text-2xl'>delivery boy</p>
         </div>
       </div>
-      <div className='mt-6'>
+      {/* <div className='mt-6'>
         <h3 className='font-extrabold text-4xl'>Delivering Delightful Moments to Your Doorstep</h3>
         <p className='mt-4 text-2xl'>At Hungry Bunny, we are passionate about connecting you with delicious food from your favorite local restaurants, right to your doorstep. Our mission is to make your dining experience as convenient and enjoyable as possible.</p>
         <p className='mt-4'>With a wide selection of cuisines and dishes to choose from, we cater to all tastes and preferences. Whether you &lsquo;re craving a classic comfort meal, exploring exotic flavors, or looking for healthy options, we have something for everyone.</p>
         <p className='mt-4'>Our platform brings together a network of trusted restaurants and culinary artisans who take pride in crafting delectable dishes using the finest ingredients. We believe in supporting local businesses and contributing to the communities we serve.</p>
-      </div>
+      </div> */}
       {/* hero section delivery */}
       <div className='mt-7 md:flex mb-4'>
         <div className='md:w-[50%] sm:my-4'>
