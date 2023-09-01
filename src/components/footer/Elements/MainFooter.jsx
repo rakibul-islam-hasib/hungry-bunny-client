@@ -14,6 +14,7 @@ import visa from '../../../assets/svg/visa.svg';
 import masterCard from '../../../assets/svg/mastercard.svg';
 import paypal from '../../../assets/svg/paypal.svg';
 import amex from '../../../assets/svg/amex.svg';
+import { Link } from 'react-router-dom';
 
 
 
@@ -58,9 +59,9 @@ const MainFooter = () => {
                         <ul className='text-gray-600'>
                             <li className='cursor-pointer text-[14.5px] font-semibold hover:text-primary duration-300'>About Us</li>
                             <li className='cursor-pointer text-[14.5px] font-semibold hover:text-primary duration-300'>Contact Us</li>
-                            <li className='cursor-pointer text-[14.5px] font-semibold hover:text-primary duration-300'>Terms & Conditions</li>
                             <li className='cursor-pointer text-[14.5px] font-semibold hover:text-primary duration-300'>Privacy Policy</li>
-                            <li className='cursor-pointer text-[14.5px] font-semibold hover:text-primary duration-300'>Legal</li>
+                            <li className='cursor-pointer text-[14.5px] font-semibold hover:text-primary duration-300'><Link to={'/faq'}>Faq</Link></li>
+                            <li className='cursor-pointer text-[14.5px] font-semibold hover:text-primary duration-300'><Link to={'/blogs'}>Blog</Link></li>
                         </ul>
                     </div>
                     <div className="">
