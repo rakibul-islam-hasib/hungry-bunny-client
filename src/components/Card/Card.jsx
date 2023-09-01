@@ -2,50 +2,6 @@ import React from "react";
 import { FaBookmark, FaCaretDown, FaRegBookmark, FaShoppingCart } from "react-icons/fa";
 import useMenu from "../../hooks/useMenu";
 
-const fakeData = [
-  {
-    id: 1,
-    name: "Delicious Dish 1",
-    description: "A mouthwatering dish that will tantalize your taste buds and leave you craving for more.",
-    price: 210,
-    image: "https://insanelygoodrecipes.com/wp-content/uploads/2020/02/Burger-and-Fries.jpg"
-  },
-  {
-    id: 2,
-    name: "Delicious Dish 2",
-    description: "A mouthwatering dish that will tantalize your taste buds and leave you craving for more.",
-    price: 220,
-    image: "https://insanelygoodrecipes.com/wp-content/uploads/2020/02/Burger-and-Fries.jpg"
-  },
-  {
-    id: 3,
-    name: "Delicious Dish 3",
-    description: "A mouthwatering dish that will tantalize your taste buds and leave you craving for more.",
-    price: 230,
-    image: "https://insanelygoodrecipes.com/wp-content/uploads/2020/02/Burger-and-Fries.jpg"
-  },
-  {
-    id: 4,
-    name: "Delicious Dish 4",
-    description: "A mouthwatering dish that will tantalize your taste buds and leave you craving for more.",
-    price: 240,
-    image: "https://insanelygoodrecipes.com/wp-content/uploads/2020/02/Burger-and-Fries.jpg"
-  },
-  {
-    id: 5,
-    name: "Delicious Dish 5",
-    description: "A mouthwatering dish that will tantalize your taste buds and leave you craving for more.",
-    price: 250,
-    image: "https://insanelygoodrecipes.com/wp-content/uploads/2020/02/Burger-and-Fries.jpg"
-  },
-  {
-    id: 6,
-    name: "Delicious Dish 6",
-    description: "A mouthwatering dish that will tantalize your taste buds and leave you craving for more.",
-    price: 260,
-    image: "https://insanelygoodrecipes.com/wp-content/uploads/2020/02/Burger-and-Fries.jpg"
-  }
-];
 
 
 
@@ -57,7 +13,7 @@ const Card = () => {
 
   return (
 
-    
+
     <div className="mx-auto md:px-20 px-6 mt-10">
       <div className="text-center lg:w-[70%] w-full sm:w-[90%] md:w-[80%] mx-auto">
         <h3 className="font-semibold text-4xl mx-auto ">Popular Menu</h3>
