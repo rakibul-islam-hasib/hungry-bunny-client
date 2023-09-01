@@ -3,7 +3,7 @@ import React from 'react';
 
 const About = () => {
   return (
-    <div className='mx-auto justify-center items-center ml-5 dark:text-slate-300'>
+    <div className='mx-auto font-sans justify-center items-center ml-5 dark:text-slate-300'>
       <div className="bg-fixed w-full bg-[url('https://images.pexels.com/photos/6646953/pexels-photo-6646953.jpeg?auto=compress&cs=tinysrgb&w=1600')]" style={{height:700}}>
         {/* <img className="w-full rounded-2xl bg-fixed" src='' style={{ height: 800 }} alt="delivery picture" /> */}
 <div className=' text-center mb-32'>
@@ -32,7 +32,7 @@ const About = () => {
       </div>
       <div className='mt-6'>
         <h3 className='font-extrabold text-4xl'>Delivering Delightful Moments to Your Doorstep</h3>
-        <p className='mt-4'>At Hungry Bunny, we are passionate about connecting you with delicious food from your favorite local restaurants, right to your doorstep. Our mission is to make your dining experience as convenient and enjoyable as possible.</p>
+        <p className='mt-4 text-2xl'>At Hungry Bunny, we are passionate about connecting you with delicious food from your favorite local restaurants, right to your doorstep. Our mission is to make your dining experience as convenient and enjoyable as possible.</p>
         <p className='mt-4'>With a wide selection of cuisines and dishes to choose from, we cater to all tastes and preferences. Whether you &lsquo;re craving a classic comfort meal, exploring exotic flavors, or looking for healthy options, we have something for everyone.</p>
         <p className='mt-4'>Our platform brings together a network of trusted restaurants and culinary artisans who take pride in crafting delectable dishes using the finest ingredients. We believe in supporting local businesses and contributing to the communities we serve.</p>
       </div>
@@ -43,8 +43,8 @@ const About = () => {
         </div>
         <div className='mt-6 md:w-[50%] sm:my-4'>
           <h3 className='font-extrabold text-4xl'>Delivering Flavorful Moments to Your Doorstep</h3>
-          <p className='mt-4'>Our dedicated team works tirelessly to ensure that your orders are delivered promptly and with utmost care. From sizzling pizzas to savory noodles, indulgent desserts to health-conscious choices, our diverse range of restaurant partners offers something for every palate</p>
-          <button className="bg-orange-600 hover:bg-orange-700 mt-8 text-white font-bold py-2 px-4 rounded-full flex items-center">
+          <p className='mt-4 text-2xl'>Our dedicated team works tirelessly to ensure that your orders are delivered promptly and with utmost care. From sizzling pizzas to savory noodles, indulgent desserts to health-conscious choices, our diverse range of restaurant partners offers something for every palate</p>
+          <button className="drop-shadow-lg border-orange-500 hover:text-orange-500 hover:bg-white mt-8 text-white bg-orange-500 border-2 font-bold py-2 px-4 rounded-full flex items-center">
             Our Dedicated team
           </button>
         </div>
@@ -53,8 +53,8 @@ const About = () => {
       <div className='mt-7 md:flex mb-4'>
         <div className='mt-6 md:w-[50%] mr-8 sm:my-4'>
           <h3 className='font-extrabold text-4xl'>Empowering Culinary Creativity, One Delivery at a Time</h3>
-          <p className='mt-4'>Join our Your Food Delivery Partner Name family and embark on a journey that celebrates culinary excellence. As a trusted delivery partner, we bridge the gap between talented chefs and eager diners. From kitchen to doorstep, we ensure that every dish retains its essence and arrives with care. Discover a new dimension of flavors with Your Food Delivery Partner Name, where passion for food meets seamless delivery.</p>
-          <button className="bg-orange-600 hover:bg-orange-700 mt-8 text-white font-bold py-2 px-4 rounded-full flex items-center">
+          <p className='mt-4 text-2xl'>Join our Your Food Delivery Partner Name family and embark on a journey that celebrates culinary excellence. As a trusted delivery partner, we bridge the gap between talented chefs and eager diners. From kitchen to doorstep, we ensure that every dish retains its essence and arrives with care. Discover a new dimension of flavors with Your Food Delivery Partner</p>
+          <button className="drop-shadow-lg border-orange-500 bg-orange-500 border-2 hover:text-orange-500 hover:bg-white mt-8 text-white font-bold py-2 px-4 rounded-full flex items-center">
             become a partner
           </button>
         </div>
@@ -69,8 +69,8 @@ const About = () => {
         </div>
         <div className='mt-6 md:w-[50%] sm:my-4'>
           <h3 className='font-extrabold text-4xl'>Where Culinary Creativity Meets Your Cravings</h3>
-          <p className='mt-4'>Indulge in a symphony of flavors at FlavorFusion Delights, where every dish is a masterpiece crafted with passion and innovation. Our menu, an amalgamation of global cuisines, takes your taste buds on an unforgettable journey. From sizzling street food to elegantly curated fine dining experiences, we cater to your every craving. Discover the perfect fusion of tradition and modernity in every bite. Come, experience a world of tastes that redefine dining.</p>
-          <button className="bg-orange-600 hover:bg-orange-700 mt-8 text-white font-bold py-2 px-4 rounded-full flex items-center">
+          <p className='mt-4 text-2xl'>Indulge in a symphony of flavors at FlavorFusion Delights, where every dish is a masterpiece crafted with passion and innovation. Our menu, an amalgamation of global cuisines, takes your taste buds on an unforgettable journey. From sizzling street food to elegantly curated fine dining experiences, we cater to your every craving. Discover the perfect fusion of tradition and modernity in every bite.</p>
+          <button className="drop-shadow-lg border-orange-500 bg-orange-500 border-2 hover:text-orange-500 hover:bg-white mt-8 text-white font-bold py-2 px-4 rounded-full flex items-center">
             add your restaurant
           </button>
         </div>
@@ -79,10 +79,11 @@ const About = () => {
       <div className='mt-7 md:flex mb-4'>
         <div className='mt-6 md:w-[50%] mr-8 sm:my-4'>
           <h3 className='font-extrabold text-4xl'>Delivering Delicious Moments, One Ride at a Time</h3>
-          <p className='mt-4'>Join our dedicated team of food delivery riders and be the hero of every mealtime! At our service, we don&lsquo;t just deliver food; we deliver smiles, convenience, and the joy of sharing a hot meal. Whether it&lsquo;s a busy workday or a lazy weekend, our riders are always on the move, ensuring your favorite dishes reach your doorstep piping hot and right on time. Join us in spreading happiness, one delivery at a time. Join our rider fleet today and be a part of something deliciously rewarding!</p>
-          <button className="bg-orange-600 hover:bg-orange-700 mt-8 text-white font-bold py-2 px-4 rounded-full flex items-center">
+          <p className='mt-4 text-2xl'>Join our dedicated team of food delivery riders and be the hero of every mealtime! At our service, we don&lsquo;t just deliver food; we deliver smiles, convenience, and the joy of sharing a hot meal. Whether it&lsquo;s a busy workday or a lazy weekend, our riders are always on the move, ensuring your favorite dishes reach your doorstep piping hot and right on time. </p>
+          <button className="drop-shadow-lg bg-orange-500 border-2 border-orange-500 hover:text-orange-500 hover:bg-white mt-8 text-white font-bold py-2 px-4 rounded-full flex items-center">
             become a rider
           </button>
+
         </div>
         <div className='md:w-[50%] sm:my-4'>
           <img style={{ height: 400 }} className='rounded-lg' src="https://images.pexels.com/photos/4392039/pexels-photo-4392039.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="" />
