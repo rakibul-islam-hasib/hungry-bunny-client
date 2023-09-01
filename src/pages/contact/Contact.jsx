@@ -29,7 +29,7 @@ const Contact = () => {
   };
   return (
     <div className='dark:text-slate-200'>
-      <h2 className='text-2xl text-center font-bold uppercase mt-10 mb-8'>Get in Touch with Us</h2>
+      <h2 className='text-2xl text-center font-bold uppercase mt-10 mb-8'>Feel free to send us any feedback</h2>
       <p className='text-center sm:mr-10 sm:ml-10 md:mr-32 md:ml-32'>Have a question or feedback about our food delivery services?  We&apos;re here to help! Our dedicated customer support team is available to assist you with any inquiries you may have. Whether you need assistance with your order, have dietary preferences, or want to share your thoughts, feel free to reach out to us. Your satisfaction is our priority, and we&apos;re committed to providing you with a seamless and delightful food delivery experience. Contact us today and let us serve you better.</p>
       <div className='flex justify-evenly mb-10'>
 
@@ -45,10 +45,12 @@ const Contact = () => {
             <input type="text" name="name" className='rounded-full border border-white mb-5 p-4 w-full' placeholder='name' /><br />
             <input type="email" name="email" className='rounded-full  mb-5 p-4 w-full' placeholder='email' /><br />
             <textarea name="message" placeholder='message' className='rounded-full w-full mb-5 p-4' /><br />
-            <input type="submit" className=' rounded-3xl text-center bg-orange-600 w-full hover:bg-orange-700 mt-8 text-white font-bold py-2 px-4' value="Send" />
+            <input type="submit" value="send" className="text-center rounded-3xl drop-shadow-lg pt-2 pb-2 font-bold text-3xl bg-orange-500 w-full text-white border-2 border-orange-500 hover:text-orange-500 hover:bg-white" />
+
           </form>
         </div>
         <div className='w-[50%]'>
+
           <Lottie options={lottieOptions} />
 
         </div>
