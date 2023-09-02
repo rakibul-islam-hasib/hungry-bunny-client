@@ -33,7 +33,7 @@ function RestaurantDetails() {
         </div> */}
       </div>
           <div className='flex justify-evenly restaurants-center mt-7 mb-5'>
-          <button className="bg-orange-600 hover:transition hover:duration-400 hover:bg-orange-700 text-slate-200 font-bold py-2 px-4 rounded-full flex restaurants-center">
+          <button className="bg-orange-500 hover:transition hover:duration-400 hover:bg-orange-600 text-slate-200 font-bold py-2 px-4 rounded-full flex restaurants-center">
             become a partner
           </button>
           <Rating
@@ -112,7 +112,7 @@ function RestaurantDetails() {
           </div>
         </div>
           <div className='p-2 border overflow-hidden shadow-lg rounded-md'>
-          <img className="w-full  h-48 object-cover rounded-lg" src={restaurant.foodItems[3].foodImage} alt="Food Image" />
+          <img className="w-full h-48 object-cover rounded-lg" src={restaurant.foodItems[3].foodImage} alt="Food Image" />
           <div className="px-6 py-4">
             <div className="mb-2">
               <p className='font-extrabold text-2xl dark:text-slate-300'>Food Name {restaurant.foodItems[3].foodItem}</p>
