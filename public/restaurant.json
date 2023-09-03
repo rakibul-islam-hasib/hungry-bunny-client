@@ -3,7 +3,7 @@
     "_id": "1",
     "restaurantName": "Delicious Bites",
     "restaurantImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3TBBK6hevphIb2F8_NdNi8Rm0W1iCV7Q5rA&usqp=CAU",
-    "place": "Cityville",
+    "place": "Comilla",
     "popularDish": [
       {
         "dishName": "Creamy Alfredo Pasta",
