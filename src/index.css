@@ -29,4 +29,6 @@ input {
       @apply rounded-full px-4 pb-2 pt-3 text-white select-none;
     }
   }
-  
+  .btn{
+    @apply bg-orange-500 hover:bg-orange-600 text-slate-200 font-bold py-2 px-4 rounded-full
+  }

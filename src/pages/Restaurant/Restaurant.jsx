@@ -9,8 +9,10 @@ import { Pagination } from '@mui/material';
 
 const Restaurant = () => {
   const [searchQuery, setSearchQuery] = useState('')
+  const [isFieldClicked, setFieldClicked] = useState(false);
 
   const [allRestaurants, setAllRestaurants] = useState([]);
+
   const [page, setPage] = useState(1);
 
   // console.log(page)
@@ -56,8 +58,35 @@ const Restaurant = () => {
             <h2 className='text-2xl text-white font-bold mb-4'> Rediscovering Traditional Flavors with a Modern Twist</h2>
           </div>
           <div className='flex items-center mx-auto mb-10'>
-            <input type="text" name='search-data' value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} className='rounded-3xl w-[40%] md:ml-80 pt-4 pb-4 border-0 text-2xl dark:text-black pl-5' placeholder='search restaurant' />
-            <button onClick={handleSearch} className='bg-blue-500 text-white pl-7 pr-7 pt-3 pb-3 text-4xl rounded-3xl ml-2'><FaLocationArrow /> </button>
+          <div className="relative max-w-sm mx-auto mt-7 flex">
+            <input value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)}
+                className={`w-full py-3 px-5 text-4xl rounded-full ${
+                    isFieldClicked ? '' : 'border-2 border-orange-500'
+                }`}
+                type="search"
+                placeholder="Search restaurant"
+                onClick={() => setFieldClicked(true)}
+                onBlur={() => setFieldClicked(false)}
+            />
+            <button  onClick={handleSearch}
+                className="absolute inset-y-0 right-0 flex items-center rounded-full px-8 text-gray-700 bg-orange-500 rounded-full hover:bg-gray-800 hover:text-white focus:outline-none focus:ring-2"
+            >
+                <svg
+                    className="h-5 w-5"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <path
+                        fillRule="evenodd"
+                        clipRule="evenodd"
+                        d="M14.795 13.408l5.204 5.204a1 1 0 01-1.414 1.414l-5.204-5.204a7.5 7.5 0 111.414-1.414zM8.5 14A5.5 5.5 0 103 8.5 5.506 5.506 0 008.5 14z"
+                    />
+                </svg>
+            </button>
+        </div>
+            {/* <input type="text" name='search-data' value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} className='rounded-3xl w-[40%] md:ml-80 pt-4 pb-4 border-0 text-2xl dark:text-black pl-5' placeholder='search restaurant' />
+            <button onClick={handleSearch} className='bg-blue-500 text-white pl-7 pr-7 pt-3 pb-3 text-4xl rounded-3xl ml-2'><FaLocationArrow /> </button> */}
 
             {/* <input type="text" name="" className='w-full lg:w-[300px] dark:bg-gray-200 py-3 pl-4 text-black rounded-lg' id="" />
             <button className='class="absolute bg-black text-white font-bold py-2 rounded-lg px-2 right-1 top-1"'>search</button> */}
