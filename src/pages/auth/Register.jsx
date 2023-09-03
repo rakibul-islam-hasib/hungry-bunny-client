@@ -40,7 +40,6 @@ const Register = () => {
         if (userCredential.user) {
           await axios.post('/user-info', userData); // Post user info to API
         }
-        console.log('Not Under userCredential.user')
       }
     } catch (err) {
       console.log(err);
