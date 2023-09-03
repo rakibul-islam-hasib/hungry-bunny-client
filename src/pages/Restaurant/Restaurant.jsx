@@ -93,8 +93,8 @@ const Restaurant = () => {
               </div>
               <div className='flex justify-between'>
                 <p className='font-bold flex'><span className='mr-2'><FaMapMarkerAlt className='text-orange-500 text-2xl'></FaMapMarkerAlt></span> <span>{item.place}</span></p>
-
-                <Link to={`/restaurant/${item._id}`} className='bg-orange-500 border-2 border-orange-500 hover:bg-white hover:text-orange-500 hover:transition hover:duration-400 text-white font-bold py-2 px-4 rounded-2xl flex items-center'><span>read more</span> <span className="ml-3"><FaArrowRight/> </span></Link>
+                
+                <Link to={`/restaurant/${item._id}`} className='bg-orange-500 border-2 border-orange-500 hover:bg-white hover:text-orange-500 hover:transition hover:duration-400 text-white font-bold py-2 px-4 rounded-2xl flex items-center'><span>read more</span> <span className="ml-3"><FaArrowRight/></span></Link>
               </div>
             </div>
           </div>
