@@ -68,7 +68,6 @@ const userNavItems = [
   },
 ];
 
-
 const restaurantNavItems = [
   {
     to: "/dashboard/restaurant-cp",
@@ -96,11 +95,6 @@ const restaurantNavItems = [
     label: "Add New Items",
   },
 ];
-
-
-
-
-
 
 const DashboardLayout = () => {
   const [open, setOpen] = useState(true);
@@ -195,7 +189,7 @@ const DashboardLayout = () => {
           </ul>
         )}
         {role === "restaurant" && (
-          <ul className="pt-6">
+          <ul className="pt-6 ">
             <p className={`ml-3 text-light-gray-4 ${!open && "hidden"}`}>
               <small>MENU</small>
             </p>

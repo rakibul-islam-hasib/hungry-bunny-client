@@ -3,14 +3,14 @@ import React, { useEffect, useState } from 'react';
 
 import FoodItem from './FoodItem';
 import Skeleton from './Skeleton';
-import useFetch from '../../hooks/useFetch';
+import useMenu from '../../hooks/useMenu';
 
 
 const FoodCard = () => {
 
   const [menuTab, setMenuTab] = useState('Breakfast')
   const [loading, setLoading] = useState(false)
-  const [foods] = useFetch();
+  const [foods] = useMenu();
   
   //loading 
   useEffect(() => {
