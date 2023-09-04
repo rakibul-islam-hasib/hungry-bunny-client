@@ -13,7 +13,7 @@ import LogoutPopup from '../../../components/popup/LogoutPopup';
 const UserProfile = () => {
     const [isOpen, setIsOpen] = useState(false);
     const { user: firebaseUser } = useAuth();
-    const [user, isLoading, refetch] = useUserSecure(firebaseUser?.email);
+    const [user, isLoading, refetch] = useUserSecure();
     const dispatch = useDispatch();
     const [isLogoutOpen, setIsLogoutOpen] = useState(false);
     const axios = useAxiosSecure();
