@@ -7,6 +7,8 @@ import { CgProfile } from 'react-icons/cg';
 import { FaUserEdit, FaUsers } from 'react-icons/fa';
 import { BsFillPostcardFill } from 'react-icons/bs';
 import { TbBrandAppleArcade } from 'react-icons/tb';
+import { IoMdRestaurant } from 'react-icons/io';
+
 export const heroCategory = [
     {
         id: 1,
@@ -200,34 +202,39 @@ export const userNavItems = [
         icon: <TbBrandAppleArcade className="text-2xl" />,
         label: "Security",
     },
+    {
+        to: "/dashboard/application/for-restaurant",
+        icon: <IoMdRestaurant className="text-2xl" />,
+        label: "Apply for Restaurant",
+    }
 ];
 
 
 
-export  const restaurantNavItems = [
+export const restaurantNavItems = [
     {
-      to: "/dashboard/restaurant-cp",
-      icon: <CgProfile className="text-2xl" />,
-      label: "Owner Dashboard",
+        to: "/dashboard/restaurant-cp",
+        icon: <CgProfile className="text-2xl" />,
+        label: "Owner Dashboard",
     },
     {
-      to: "/dashboard/restaurant-orders",
-      icon: <FaUsers className="text-2xl" />,
-      label: "Orders",
+        to: "/dashboard/restaurant-orders",
+        icon: <FaUsers className="text-2xl" />,
+        label: "Orders",
     },
     {
-      to: "/dashboard/restaurant-menu",
-      icon: <BsFillPostcardFill className="text-2xl" />,
-      label: "Menu",
+        to: "/dashboard/restaurant-menu",
+        icon: <BsFillPostcardFill className="text-2xl" />,
+        label: "Menu",
     },
     {
-      to: "/dashboard/restaurant-customers",
-      icon: <TbBrandAppleArcade className="text-2xl" />,
-      label: "Customers",
+        to: "/dashboard/restaurant-customers",
+        icon: <TbBrandAppleArcade className="text-2xl" />,
+        label: "Customers",
     },
     {
-      to: "/dashboard/restaurant-add-items",
-      icon: <TbBrandAppleArcade className="text-2xl" />,
-      label: "Add New Items",
+        to: "/dashboard/restaurant-add-items",
+        icon: <TbBrandAppleArcade className="text-2xl" />,
+        label: "Add New Items",
     },
-  ];
+];

@@ -38,6 +38,7 @@ import NormalProfile from "../pages/Dashboard/user/NormalProfile";
 import UserProfile from "../pages/Dashboard/user/UserProfile";
 import AdminAddItems from "../pages/Dashboard/RestaurantAdmin/AdminAddItems";
 import ForRestaurant from "../pages/Dashboard/applications/ForRestaurant";
+import PrivateRoute from "./PrivateRoute";
 
 export const router = createBrowserRouter([
   {
@@ -186,7 +187,7 @@ export const router = createBrowserRouter([
       },
       {
         path: '/dashboard/application/for-restaurant',
-        element: <ForRestaurant />,
+        element: <PrivateRoute><ForRestaurant /></PrivateRoute>,
       }
 
     ],
