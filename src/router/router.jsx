@@ -37,6 +37,7 @@ import AdminCustomers from "../pages/Dashboard/RestaurantAdmin/AdminCustomers/Ad
 import NormalProfile from "../pages/Dashboard/user/NormalProfile";
 import UserProfile from "../pages/Dashboard/user/UserProfile";
 import AdminAddItems from "../pages/Dashboard/RestaurantAdmin/AdminAddItems";
+import ForRestaurant from "../pages/Dashboard/applications/ForRestaurant";
 
 export const router = createBrowserRouter([
   {
@@ -136,9 +137,9 @@ export const router = createBrowserRouter([
         element: <ManageUsers />,
       },
 
-/*------------------------------------------------------------
------------------Restaurant Owner Dashboard-------------------
--------------------------------------------------------------*/
+      /*------------------------------------------------------------
+      -----------------Restaurant Owner Dashboard-------------------
+      -------------------------------------------------------------*/
       {
         path: "restaurant-cp",
         element: <RestaurantAdmin />,
@@ -182,6 +183,10 @@ export const router = createBrowserRouter([
       {
         path: 'profile',
         element: <NormalProfile />
+      },
+      {
+        path: '/dashboard/application/for-restaurant',
+        element: <ForRestaurant />,
       }
 
     ],
