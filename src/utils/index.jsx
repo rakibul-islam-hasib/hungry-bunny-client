@@ -3,6 +3,10 @@ import bbq from '../assets/icons/hero/icons8-bbq.svg';
 import burger from '../assets/icons/hero/icons8-burger.svg';
 import vegan from '../assets/icons/hero/icons8-vegan.svg';
 import sushi from '../assets/icons/hero/icons8-sushi.svg';
+import { CgProfile } from 'react-icons/cg';
+import { FaUserEdit, FaUsers } from 'react-icons/fa';
+import { BsFillPostcardFill } from 'react-icons/bs';
+import { TbBrandAppleArcade } from 'react-icons/tb';
 export const heroCategory = [
     {
         id: 1,
@@ -141,3 +145,89 @@ export const districts = [
         photo: 'https://i.ibb.co/Nj34d78/Downloader-la-64f21931a1b94.jpg',
     },
 ]
+
+export const adminNavItems = [
+    {
+        to: "/dashboard/admin-dashboard",
+        icon: <CgProfile className="text-2xl" />,
+        label: "Dashboard",
+    },
+    {
+        to: "/dashboard/manage-users",
+        icon: <FaUsers className="text-2xl" />,
+        label: "Manage Users",
+    },
+    {
+        to: "/dashboard/manage-riders",
+        icon: <BsFillPostcardFill className="text-2xl" />,
+        label: "Manage Riders",
+    },
+    {
+        to: "/dashboard/manage-restaurant",
+        icon: <TbBrandAppleArcade className="text-2xl" />,
+        label: "Manage Restaurant",
+    },
+    {
+        to: "/dashboard/user-profile",
+        icon: <CgProfile className="text-2xl" />,
+        label: "Manage Profile",
+    },
+];
+
+export const userNavItems = [
+    {
+        to: "/dashboard/profile",
+        icon: <CgProfile className="text-2xl" />,
+        label: "User Profile",
+    },
+    {
+        to: "/dashboard/user-profile",
+        icon: <FaUserEdit className="text-2xl" />,
+        label: "Manage Profile",
+    },
+    {
+        to: "/dashboard/address",
+        icon: <FaUsers className="text-2xl" />,
+        label: "Address",
+    },
+    {
+        to: "/dashboard/user-payment",
+        icon: <BsFillPostcardFill className="text-2xl" />,
+        label: "Payment Method",
+    },
+    {
+        to: "/dashboard/user-security",
+        icon: <TbBrandAppleArcade className="text-2xl" />,
+        label: "Security",
+    },
+];
+
+
+
+export  const restaurantNavItems = [
+    {
+      to: "/dashboard/restaurant-cp",
+      icon: <CgProfile className="text-2xl" />,
+      label: "Owner Dashboard",
+    },
+    {
+      to: "/dashboard/restaurant-orders",
+      icon: <FaUsers className="text-2xl" />,
+      label: "Orders",
+    },
+    {
+      to: "/dashboard/restaurant-menu",
+      icon: <BsFillPostcardFill className="text-2xl" />,
+      label: "Menu",
+    },
+    {
+      to: "/dashboard/restaurant-customers",
+      icon: <TbBrandAppleArcade className="text-2xl" />,
+      label: "Customers",
+    },
+    {
+      to: "/dashboard/restaurant-add-items",
+      icon: <TbBrandAppleArcade className="text-2xl" />,
+      label: "Add New Items",
+    },
+  ];
