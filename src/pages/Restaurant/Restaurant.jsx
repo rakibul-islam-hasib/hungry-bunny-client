@@ -17,7 +17,7 @@ const Restaurant = () => {
 
   // console.log(page)
   const [totalItem, setTotalItem] = useState(1);
-  const totalPage = Math.ceil(totalItem / 3);
+  const totalPage = Math.ceil(totalItem / 6);
   const axios = useAxiosFetch();
   console.log(totalItem)
 
@@ -26,7 +26,7 @@ const Restaurant = () => {
       .then(res => setTotalItem(res.data.total))
       .catch(err => console.log(err))
 
-    axios.get(`/restaurant?limit=3&page=${page}`)
+    axios.get(`/restaurant?limit=6&page=${page}`)
       .then(res => setAllRestaurants(res.data))
       .catch(err => console.log(err))
     window.scrollTo(0, 0);
@@ -69,10 +69,10 @@ const Restaurant = () => {
                 onBlur={() => setFieldClicked(false)}
             />
             <button  onClick={handleSearch}
-                className="absolute inset-y-0 right-0 flex items-center rounded-full px-8 text-gray-700 bg-orange-500 rounded-full hover:bg-gray-800 hover:text-white focus:outline-none focus:ring-2"
+                className="absolute inset-y-0 right-0 flex items-center px-8 text-gray-700 bg-orange-500 rounded-full hover:bg-gray-800 hover:text-white focus:outline-none focus:ring-2"
             >
                 <svg
-                    className="h-5 w-5"
+                    className="h-8 w-8"
                     fill="currentColor"
                     viewBox="0 0 20 20"
                     xmlns="http://www.w3.org/2000/svg"
@@ -114,13 +114,17 @@ const Restaurant = () => {
       </div>
       <div className="grid md:grid-cols-2 mt-32 md:gap-8 gap-3 lg:grid-cols-3 mx-auto ">
         {allRestaurants.map((item) => (
-          <div key={item._id} className='p-2 border overflow-hidden shadow-lg rounded-md '>
+          <div key={item._id} className='p-2 border dark:border-2 dark:border-orange-500 overflow-hidden shadow-lg rounded-xl'>
             <img className="w-full  h-64 object-cover rounded-lg" src={item.restaurantImage} alt="Food Image" />
             <div className="px-6 py-4">
-              <div className="mb-2">
-                <p className='font-extrabold text-2xl'> {item.restaurantName}</p>
+              <div className="mb-2 dark:text-gray-200">
+                <p className='flex justify-between items-center font-extrabold text-2xl'> <span>{item.restaurantName}</span> <span><Rating
+        style={{ maxWidth: 100 }}
+        value={item.rating}
+        readOnly
+      /></span></p>
               </div>
-              <div className='flex justify-between'>
+              <div className='flex justify-between dark:text-gray-200'>
                 <p className='font-bold flex'><span className='mr-2'><FaMapMarkerAlt className='text-orange-500 text-2xl'></FaMapMarkerAlt></span> <span>{item.place}</span></p>
                 
                 <Link to={`/restaurant/${item._id}`} className='bg-orange-500 border-2 border-orange-500 hover:bg-white hover:text-orange-500 hover:transition hover:duration-400 text-white font-bold py-2 px-4 rounded-2xl flex items-center'><span>read more</span> <span className="ml-3"><FaArrowRight/></span></Link>

@@ -19,7 +19,7 @@ const Home = () => {
       <TopRestaurant />
       <FoodCard />
       <PopularFood />
-      {/* <Stacks /> */}
+      <Stacks />
       <ScrollSlider />
       <HowWeWork />
       <ChatBox />
