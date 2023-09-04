@@ -1,29 +1,81 @@
+import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 import React, { useState } from "react";
-
+import { v4 } from "uuid";
+import { storage } from "../../../config/firebase/firebase.config";
+import 'react-toastify/dist/ReactToastify.css';
+import { toast as loaderPrompt } from 'react-toastify';
 const AdminAddItems = () => {
   const [selectedFile, setSelectedFile] = useState(null);
   const [imagePreview, setImagePreview] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
+  const [imageURL, setImageURL] = useState(null);
+  console.log(imageURL)
+  const uploadMenuPic = (file) => {
+    setIsLoading(true);
+    const imgId = v4().slice(0, 10);
+    const imagesRef = ref(storage, `menu-image/${imgId + selectedFile?.name}`);
+
+    const uploadingPromise = uploadBytes(imagesRef, file);
+
+    loaderPrompt.promise(uploadingPromise, {
+      pending: 'Uploading...',
+      success: 'Image Uploaded Successfully',
+      error: 'Something went wrong , please try again later'
+    }).then(() => {
+      getDownloadURL(ref(storage, `menu-image/${imgId + selectedFile?.name}`))
+        .then((url) => {
+          console.log(url)
+          if (url) {
+            setImageURL(url);
+            setIsLoading(false);
+          }
+          else {
+            setIsLoading(false);
+          }
+        }).catch((err) => {
+          setIsLoading(false);
+        }).finally(() => {
+          setIsLoading(false);
+        })
+    });
+  };
+
+
+
+
+
+
   const handleFileChange = (e) => {
     const file = e.target.files[0];
     setSelectedFile(file);
     const selectedUrl = URL.createObjectURL(file);
     setImagePreview(selectedUrl);
+    // Upload the image to firebase storage
+
+    // Get the image url after upload and save it to the database
+
+
+
+
   };
 
-  const handleFromSubmit = event => { 
+  const handleFromSubmit = (event) => {
     event.preventDefault();
     const formData = new FormData();
+    formData.append("product-name", event.target.elements["product-name"].value);
+    formData.append("category", event.target.elements["category"].value);
+    formData.append("Quantity", event.target.elements["Quantity"].value);
+    formData.append("price", event.target.elements["price"].value);
+    formData.append("product-details", event.target.elements["product-details"].value);
     formData.append("image", selectedFile);
     const data = Object.fromEntries(formData);
     console.log(data);
-  }
-
-
+  };
   return (
     <div className="bg-white border-4 rounded-lg shadow relative m-10">
       <div className="flex items-start justify-between p-5 border-b rounded-t">
         <h3 className="text-xl font-semibold">Edit product</h3>
-        
+
       </div>
 
       <div className="p-6 space-y-6">
@@ -90,7 +142,7 @@ const AdminAddItems = () => {
                 id="price"
                 className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full p-2.5"
                 placeholder="$230"
-                required=""
+                required
               />
             </div>
             <div className="col-span-full">
@@ -103,6 +155,7 @@ const AdminAddItems = () => {
               <textarea
                 id="product-details"
                 rows="6"
+                name="product-details"
                 className="bg-gray-50 border resize-none outline-none border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full p-4"
                 placeholder="Details"
               ></textarea>
@@ -141,20 +194,30 @@ const AdminAddItems = () => {
                 <div className="max-w-xs">
                   <img src={imagePreview} alt="Product Preview" className="w-full h-auto" />
                 </div>
+
+                {
+                  imageURL == null && <button onClick={() => uploadMenuPic(selectedFile)} type="button" className="px-3 py-1 text-sm bg-orange-400 font-bold text-white rounded-b-lg">Upload ? </button>
+                }
+                {
+                  imageURL && <button
+                    type="button"
+                    className="px-3 py-1 text-sm bg-green-400 font-bold text-white rounded-b-lg">Uploaded</button>
+                }
+
               </div>
             )}
+          </div>
+          <div className="p-6 border-b border-gray-200 rounded-b">
+            <button
+              className="text-white capitalize bg-primary hover:bg-green-700 focus:ring-4 focus:ring-cyan-200 font-medium rounded-full text-sm px-5 py-2.5 text-center"
+              type="submit"
+            >
+              Add this product
+            </button>
           </div>
         </form>
       </div>
 
-      <div className="p-6 border-t border-gray-200 rounded-b">
-        <button
-          className="text-white capitalize bg-primary hover:bg-green-700 focus:ring-4 focus:ring-cyan-200 font-medium rounded-full text-sm px-5 py-2.5 text-center"
-          type="submit"
-        >
-          Add this product
-        </button>
-      </div>
     </div>
   );
 };
