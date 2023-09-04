@@ -1,6 +1,5 @@
-import { Tooltip } from "@mui/material";
 import React from "react";
-import { CartesianGrid, Line, LineChart, ResponsiveContainer, XAxis } from "recharts";
+import { CartesianGrid, Line, LineChart, ResponsiveContainer, Tooltip, XAxis } from "recharts";
 
 const AdminCart = () => {
   const data = [

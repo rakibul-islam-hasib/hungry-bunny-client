@@ -10,6 +10,7 @@ import { useAuth } from "../hooks/useAuth";
 import Loader from "../components/loader/Loader";
 import { FaUserEdit } from "react-icons/fa";
 import logo from '../assets/img/logo.png';
+import { ToastContainer } from 'react-toastify';
 
 
 const adminNavItems = [
@@ -100,7 +101,7 @@ const DashboardLayout = () => {
   const [open, setOpen] = useState(true);
   const { user: firebaseUser } = useAuth();
   const [user, isLoading] = useUserSecure(firebaseUser?.email);
-  
+
   const role = user?.role || "user";
 
   /* 
@@ -259,6 +260,7 @@ const DashboardLayout = () => {
         {/* <NavBar /> */}
         <ScrollRestoration />
         <Outlet />
+        <ToastContainer />
       </div>
     </div>
   );
