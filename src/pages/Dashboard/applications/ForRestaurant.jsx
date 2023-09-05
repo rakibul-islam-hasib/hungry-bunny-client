@@ -13,24 +13,30 @@ const daysOfWeek = [
 ];
 
 const ForRestaurant = () => {
+    const initialOpeningHours = daysOfWeek.reduce((acc, day) => {
+        acc[day] = { openingTime: '09:00 AM', closingTime: '05:00 PM' };
+        return acc;
+    }, {});
+
+
+
     const [submittedData, setSubmittedData] = useState({});
     const [loading, setLoading] = useState(false);
     const [addingOpeningHours, setAddingOpeningHours] = useState(false);
-
+    const [openingHours, setOpeningHours] = useState(initialOpeningHours);
+    const [is24hOpen, setIs24hOpen] = useState(false);
     const onSubmit = (e) => {
         e.preventDefault();
-        // Add your form submission logic here.
+        const data = new FormData(e.target);
+        data.append('name', e.target.name.value);
+        data.append('email', e.target.email.value);
+        const formValues = Object.fromEntries(data.entries());
+        //   add the opening hours to the form values
+        formValues.openingHours = openingHours;
+        //   set the loading state to true
         setLoading(true);
-        // Replace the above line with your actual form submission logic.
-        setTimeout(() => {
-            setLoading(false);
-            setSubmittedData({
-                name: 'John Doe',
-                email: 'johndoe@example.com',
-                experience: '10 years in the restaurant industry',
-                // Add other submitted data here.
-            });
-        }, 2000); // Simulating a response delay.
+        console.log(formValues);
+        setSubmittedData(formValues);
     };
 
     const inputVariants = {
@@ -43,12 +49,6 @@ const ForRestaurant = () => {
         visible: { opacity: 1, scale: 1 },
     };
 
-    const initialOpeningHours = daysOfWeek.reduce((acc, day) => {
-        acc[day] = { openingTime: '09:00 AM', closingTime: '05:00 PM' };
-        return acc;
-    }, {});
-
-    const [openingHours, setOpeningHours] = useState(initialOpeningHours);
 
     const handleOpeningHoursChange = (day, field, value) => {
         setOpeningHours((prevHours) => ({
@@ -88,7 +88,6 @@ const ForRestaurant = () => {
                                     readOnly
                                     className="ml-2 text-primary w-full border-b border-primary focus:border-secondary outline-none"
                                     type="text"
-                                    id="name"
                                     name="name"
                                 />
                             </div>
@@ -113,8 +112,7 @@ const ForRestaurant = () => {
                                     readOnly
                                     className="ml-2 text-primary w-full border-b border-primary focus:border-secondary outline-none"
                                     type="email"
-                                    id="name"
-                                    name="name"
+                                    name="email"
                                 />
                             </div>
                         </div>
@@ -128,6 +126,7 @@ const ForRestaurant = () => {
                                     id="addOpeningHours"
                                     className="mr-2"
                                     checked={addingOpeningHours}
+                                    disabled={is24hOpen}
                                     onChange={() =>
                                         setAddingOpeningHours(!addingOpeningHours)
                                     }
@@ -141,6 +140,7 @@ const ForRestaurant = () => {
                                     className="mr-2"
                                     checked={openingHours['Monday'].openingTime === '00:00 AM'}
                                     onChange={(e) => {
+                                        setIs24hOpen(e.target.checked)
                                         if (e.target.checked) {
                                             setOpeningHours((prevHours) => ({
                                                 ...prevHours,
@@ -245,7 +245,7 @@ const ForRestaurant = () => {
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
                                 type="submit"
-                                className="flex items-center px-4 py-2 bg-secondary text-white rounded-md focus:outline-none"
+                                className="flex items-center px-4 py-2 bg-primary text-white rounded-md focus:outline-none"
                             >
                                 <FiSend className="mr-2" />
                                 Submit
