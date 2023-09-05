@@ -1,6 +1,9 @@
 import { Rating } from '@smastrom/react-rating';
 import React from 'react';
 import { FaArrowRight, FaMailBulk, FaShoppingCart, FaUserAstronaut } from 'react-icons/fa';
+import { BsStopwatch } from 'react-icons/bs';
+import { MdOutlineLocalOffer } from 'react-icons/md';
+import { PiBowlFood, PiVanDuotone } from 'react-icons/pi';
 import { BiLike } from 'react-icons/bi';
 import { useLoaderData } from 'react-router-dom';
 
@@ -49,16 +52,41 @@ function RestaurantDetails() {
           <img src={restaurant.restaurantImage} className='w-full sm:m-5 rounded-2xl' alt="" />
         </div>
       </div>
+      {/* add new section */}
+<div className='grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 mt-10 mb-10'>
+  <div className='p-7 bg-white hover:transition duration-400 rounded-3xl drop-shadow-lg hover:text-white hover:bg-orange-500 dark:bg-black dark:text-white dark:border-2 dark:border-orange-500 dark:hover:bg-orange-500 hover:'>
+    <p className='text-7xl ml-3'><PiVanDuotone/> </p>
+    <h3 className='text-4xl font-bold'>Fast Delivery</h3>
+    <p className='mt-4 mb-4'>Fast food delivery is the ultimate solution for those moments when you crave mouthwatering, convenient, and delicious meals without the hassle of cooking or leaving your home.</p>
+  </div>
+  <div className='p-7 bg-white hover:transition duration-400 rounded-3xl drop-shadow-lg hover:text-white hover:bg-orange-500 dark:bg-black dark:text-white dark:border-2 dark:border-orange-500 dark:hover:bg-orange-500'>
+    <p className='text-7xl ml-3 hover:text-white'><BsStopwatch/> </p>
+    <h3 className='text-4xl font-bold'>Save your Time</h3>
+    <p className='mt-4 mb-4'>Save time with our swift food delivery service. Spend less time in the kitchen and more time enjoying your meals, all with just a few clicks.</p>
+  </div>
+  <div className='p-7 bg-white hover:transition duration-400 rounded-3xl drop-shadow-lg hover:text-white hover:bg-orange-500 dark:bg-black dark:text-white dark:border-2 dark:border-orange-500 dark:hover:bg-orange-500'>
+    <p className='text-7xl ml-3 hover:text-white'><MdOutlineLocalOffer/> </p>
+    <h3 className='text-4xl font-bold'>Regular Discount</h3>
+    <p className='mt-4 mb-4'>Unlock regular discounts for loyal customers. Enjoy savings on your favorite dishes with our exclusive offers, making dining with us even more satisfying.</p>
+  </div>
+  <div className='p-7 bg-white hover:transition duration-400 rounded-3xl drop-shadow-lg hover:text-white hover:bg-orange-500 dark:bg-black dark:text-white dark:border-2 dark:border-orange-500 dark:hover:bg-orange-500'>
+    <p className='text-7xl ml-3 hover:text-white'><PiBowlFood/> </p>
+    <h3 className='text-4xl font-bold'>Variety Foods</h3>
+    <p className='mt-4 mb-4'>Explore a world of diverse flavors. Our menu boasts a variety of cuisines, promising an exciting dining adventure with every order.</p>
+  </div>
+</div>
 
       
 
     {/* food restaurant card */}
-<div className="md:flex dark:text-slate-300">
-<div className="grid md:grid-cols-2 md:gap-8 gap-3 lg:grid-cols-3 mt-10 md:w-[75%] mb-14">
+<div className="dark:text-slate-300">
+<div className="grid sm:grid-cols-2 md:grid-cols-3 md:gap-8 gap-3 lg:grid-cols-4 mb-14">
           {
-            restaurant.foodItems.map((items, idx) => <div key={items.idx} className='p-2 border overflow-hidden shadow-lg rounded-2xl'>
-            <img className="w-full h-48 object-cover rounded-lg" src={items.foodImage} alt="Food Image" />
-            <p className='font-bold flex justify-between mt-2'><span><Rating
+            restaurant.foodItems.map((items, idx) => <div key={items.idx} className='p-2 border overflow-hidden shadow-lg rounded-2xl gap-y-4'>
+            <img className="w-full object-cover rounded-lg" src={items.foodImage} alt="Food Image" />
+            <div className='w-full relative group hover:-translate-y-4 duration-500'>
+              <div className=''>
+              <p className='font-bold flex justify-between mt-2'><span><Rating
         style={{ maxWidth: 100 }}
         value={items.foodRating}
         readOnly
@@ -67,20 +95,22 @@ function RestaurantDetails() {
               <div className="mb-2">
                 <p className='font-extrabold text-2xl dark:text-slate-300'>Food Name {items.foodItem}</p>
               </div>
-                <p className='font-extrabold'>{items.description}</p>
+                <p className='font-extrabold'>{items.description.slice(0, 50)}</p>
                 <div className='font-bold flex justify-between items-center mt-2'>
                 <p className='mr-2 text-2xl'>$ {items.price}</p>
-                <button className="drop-shadow-lg hover:transition hover:duration-600 bg-orange-500 border-2 border-orange-500 hover:text-orange-500 hover:bg-white text-white font-bold py-1 px-3 rounded-full flex items-center">
+                <button className="drop-shadow-lg hover:transition duration-600 bg-orange-500 border-2 border-orange-500 hover:text-orange-500 hover:bg-white text-white font-bold py-1 px-3 rounded-full flex items-center">
                   <span>add to cart</span> <span className='ml-2'><FaShoppingCart/> </span>
                 </button>
                 </div>
                 
             </div>
+              </div>
+            </div>
           </div>)
           }
 
       </div>
-      <div className='md:w-[25%]'>
+      {/* <div className='md:w-[25%]'>
 
       <div className='mt-10 p-2  rounded-2xl drop-shadow-lg dark:bg-black'>
        <div className='drop-shadow-lg ml-4 dark:bg-black border-4 border-orange-400 p-2 rounded-xl'>
@@ -100,7 +130,7 @@ function RestaurantDetails() {
        <p className='text-2xl'>Service</p>
         <p className='flex items-center justify-between p-1 bg-white rounded-2xl hover:bg-orange-500 text-slate-800 hover:text-white text-2xl'><span className='flex items-center'><FaUserAstronaut/> {restaurant.service}</span> <span><FaArrowRight/> </span></p>
       </div>
-      </div>
+      </div> */}
 
 </div>
         </div>

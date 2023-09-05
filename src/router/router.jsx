@@ -26,17 +26,20 @@ import MultiStepForm from "../pages/auth/MultiStepForm";
 import TeamInfo from "../pages/Team/TeamInfo";
 import AdminDashboard from "../pages/Dashboard/admin/AdminDashboard";
 import ManageUsers from "../pages/dashboard/admin/ManageUsers";
-import UserProfile from "../pages/dashboard/user/UserProfile";
+// import UserProfile from "../pages/dashboard/user/UserProfile";
 import UserAddress from "../pages/dashboard/user/UserAddress";
 import UserPayment from "../pages/dashboard/user/UserPayment";
 import UserSecurity from "../pages/dashboard/user/UserSecurity";
 
 import AdminOrder from "../pages/Dashboard/RestaurantAdmin/AdminOrder/AdminOrder";
-import AdminAddItems from "../pages/Dashboard/RestaurantAdmin/AdminAddItems/AdminAddItems";
 import AdminMenu from "../pages/Dashboard/RestaurantAdmin/AdminMenu/AdminMenu";
 import AdminCustomers from "../pages/Dashboard/RestaurantAdmin/AdminCustomers/AdminCustomers";
 import NormalProfile from "../pages/Dashboard/user/NormalProfile";
 import AllFoods from "../pages/allFoods/AllFoods";
+import UserProfile from "../pages/Dashboard/user/UserProfile";
+import AdminAddItems from "../pages/Dashboard/RestaurantAdmin/AdminAddItems";
+import ForRestaurant from "../pages/Dashboard/applications/ForRestaurant";
+import PrivateRoute from "./PrivateRoute";
 
 export const router = createBrowserRouter([
   {
@@ -140,9 +143,9 @@ export const router = createBrowserRouter([
         element: <ManageUsers />,
       },
 
-/*------------------------------------------------------------
------------------Restaurant Owner Dashboard-------------------
--------------------------------------------------------------*/
+      /*------------------------------------------------------------
+      -----------------Restaurant Owner Dashboard-------------------
+      -------------------------------------------------------------*/
       {
         path: "restaurant-cp",
         element: <RestaurantAdmin />,
@@ -186,6 +189,10 @@ export const router = createBrowserRouter([
       {
         path: 'profile',
         element: <NormalProfile />
+      },
+      {
+        path: '/dashboard/application/for-restaurant',
+        element: <PrivateRoute><ForRestaurant /></PrivateRoute>,
       }
 
     ],

@@ -17,9 +17,10 @@ const Home = () => {
     <section>
       <Hero />
       <TopRestaurant />
-      <FoodCard />
-      <PopularFood />
-      <Stacks />
+      {/* <FoodCard /> */}
+      {/* <PopularFood /> */}
+      {/* <Stacks /> */}
+      {/* <Premium /> */}
       <ScrollSlider />
       <HowWeWork />
       <ChatBox />

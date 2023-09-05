@@ -10,97 +10,19 @@ import { useAuth } from "../hooks/useAuth";
 import Loader from "../components/loader/Loader";
 import { FaUserEdit } from "react-icons/fa";
 import logo from '../assets/img/logo.png';
+import { ToastContainer } from 'react-toastify';
+import { adminNavItems, restaurantNavItems, userNavItems } from "../utils";
 
 
-const adminNavItems = [
-  {
-    to: "/dashboard/admin-dashboard",
-    icon: <CgProfile className="text-2xl" />,
-    label: "Dashboard",
-  },
-  {
-    to: "/dashboard/manage-users",
-    icon: <FaUsers className="text-2xl" />,
-    label: "Manage Users",
-  },
-  {
-    to: "/dashboard/manage-riders",
-    icon: <BsFillPostcardFill className="text-2xl" />,
-    label: "Manage Riders",
-  },
-  {
-    to: "/dashboard/manage-restaurant",
-    icon: <TbBrandAppleArcade className="text-2xl" />,
-    label: "Manage Restaurant",
-  },
-  {
-    to: "/dashboard/user-profile",
-    icon: <CgProfile className="text-2xl" />,
-    label: "Manage Profile",
-  },
-];
 
-const userNavItems = [
-  {
-    to: "/dashboard/profile",
-    icon: <CgProfile className="text-2xl" />,
-    label: "User Profile",
-  },
-  {
-    to: "/dashboard/user-profile",
-    icon: <FaUserEdit className="text-2xl" />,
-    label: "Manage Profile",
-  },
-  {
-    to: "/dashboard/address",
-    icon: <FaUsers className="text-2xl" />,
-    label: "Address",
-  },
-  {
-    to: "/dashboard/user-payment",
-    icon: <BsFillPostcardFill className="text-2xl" />,
-    label: "Payment Method",
-  },
-  {
-    to: "/dashboard/user-security",
-    icon: <TbBrandAppleArcade className="text-2xl" />,
-    label: "Security",
-  },
-];
 
-const restaurantNavItems = [
-  {
-    to: "/dashboard/restaurant-cp",
-    icon: <CgProfile className="text-2xl" />,
-    label: "Owner Dashboard",
-  },
-  {
-    to: "/dashboard/restaurant-orders",
-    icon: <FaUsers className="text-2xl" />,
-    label: "Orders",
-  },
-  {
-    to: "/dashboard/restaurant-menu",
-    icon: <BsFillPostcardFill className="text-2xl" />,
-    label: "Menu",
-  },
-  {
-    to: "/dashboard/restaurant-customers",
-    icon: <TbBrandAppleArcade className="text-2xl" />,
-    label: "Customers",
-  },
-  {
-    to: "/dashboard/restaurant-add-items",
-    icon: <TbBrandAppleArcade className="text-2xl" />,
-    label: "Add New Items",
-  },
-];
+
 
 const DashboardLayout = () => {
   const [open, setOpen] = useState(true);
   const { user: firebaseUser } = useAuth();
   const [user, isLoading] = useUserSecure(firebaseUser?.email);
-  
+
   const role = user?.role || "user";
 
   /* 
@@ -116,7 +38,7 @@ const DashboardLayout = () => {
     <div className="flex bg-[#f1ecea]">
       <div
         className={`${open ? "w-72 overflow-y-auto" : "w-[90px] overflow-auto"
-          }  h-screen p-5 hidden md:block pt-8 relative duration-300`}
+          }  h-screen p-5 dashboard-scroll hidden md:block pt-8 relative duration-300`}
       >
         <div className="flex gap-x-4 items-center">
           <img
@@ -259,6 +181,7 @@ const DashboardLayout = () => {
         {/* <NavBar /> */}
         <ScrollRestoration />
         <Outlet />
+        <ToastContainer />
       </div>
     </div>
   );

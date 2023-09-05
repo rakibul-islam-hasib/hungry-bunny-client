@@ -59,10 +59,10 @@ const MultiStepForm = () => {
           await axios.post('/user-info', userData); // Post user info to API
           console.log(userData);
         }
-        console.log('Not Under userCredential.user')
+    
       }
     } catch (err) {
-      console.log(err);
+      console.log(err , 'error');
     }
   }
 
