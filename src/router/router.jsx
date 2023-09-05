@@ -39,6 +39,7 @@ import UserProfile from "../pages/Dashboard/user/UserProfile";
 import AdminAddItems from "../pages/Dashboard/RestaurantAdmin/AdminAddItems";
 import ForRestaurant from "../pages/Dashboard/applications/ForRestaurant";
 import PrivateRoute from "./PrivateRoute";
+import ManageApplications from "../pages/Dashboard/admin/ManageApplications";
 
 export const router = createBrowserRouter([
   {
@@ -188,6 +189,10 @@ export const router = createBrowserRouter([
       {
         path: '/dashboard/application/for-restaurant',
         element: <PrivateRoute><ForRestaurant /></PrivateRoute>,
+      },
+      {
+        path: 'manage-applications',
+        element: <PrivateRoute><ManageApplications /></PrivateRoute>,
       }
 
     ],
