@@ -1,6 +1,7 @@
 import { Rating } from '@smastrom/react-rating';
 import React from 'react';
-import { FaArrowRight, FaMailBulk, FaUserAstronaut } from 'react-icons/fa';
+import { FaArrowRight, FaMailBulk, FaShoppingCart, FaUserAstronaut } from 'react-icons/fa';
+import { BiLike } from 'react-icons/bi';
 import { useLoaderData } from 'react-router-dom';
 
 function RestaurantDetails() {
@@ -14,7 +15,15 @@ function RestaurantDetails() {
           <h3 className='font-extrabold text-4xl'>{restaurant.restaurantName}</h3>
           <p className='mt-3 md:mr-7'> {restaurant.descriptionFirst}</p>
           <p className='mt-3 md:mr-7'> {restaurant.descriptionSecond}</p>
-          <div className='mt-3 mb-3 flex text-center'>
+         <div className='flex'>
+         <button className="drop-shadow-lg mr-10 hover:transition hover:duration-600 bg-orange-500 border-2 border-white hover:text-orange-500 hover:bg-white mt-8 text-white font-bold py-2 px-4 uppercase text-2xl rounded-full items-center">
+            order now
+          </button>
+          <button className="drop-shadow-lg hover:transition hover:duration-600 bg-white border-2 border-orange-500 hover:text-white hover:bg-orange-500 mt-8 text-orange-500 font-bold py-2 px-4 uppercase text-2xl rounded-full items-center">
+            order now
+          </button>
+         </div>
+          {/* <div className='mt-3 mb-3 flex text-center'>
         <div className='border-2 sm:w-[50%] md:w-[40%] hover:transition hover:duration-400 rounded-2xl mr-16 border-orange-400 pr-4 pl-4 hover:bg-orange-500 hover:text-white '>
           <p className='text-4xl'><span>5000</span> <span className='text-6xl'>+</span></p>
           <p className='text-2xl'>happy customer</p>
@@ -24,8 +33,8 @@ function RestaurantDetails() {
           <p className='text-2xl'>recipe</p>
         </div>
         
-      </div>
-          <div className='flex justify-evenly restaurants-center mt-7 mb-5'>
+      </div> */}
+          {/* <div className='flex justify-evenly restaurants-center mt-7 mb-5'>
           <button className="bg-orange-500 hover:transition hover:duration-400 hover:bg-orange-600 text-slate-200 font-bold py-2 px-4 rounded-full flex restaurants-center">
             become a partner
           </button>
@@ -34,35 +43,38 @@ function RestaurantDetails() {
       value={restaurant.rating}
       readOnly
     />
-          </div>
+          </div> */}
         </div>
         <div className='md:w-[50%]'>
           <img src={restaurant.restaurantImage} className='w-full sm:m-5 rounded-2xl' alt="" />
         </div>
       </div>
 
+      
+
     {/* food restaurant card */}
 <div className="md:flex dark:text-slate-300">
-<div className="grid md:grid-cols-2 md:gap-8 gap-3 lg:grid-cols-3 mt-10 md:w-[75%]">
+<div className="grid md:grid-cols-2 md:gap-8 gap-3 lg:grid-cols-3 mt-10 md:w-[75%] mb-14">
           {
             restaurant.foodItems.map((items, idx) => <div key={items.idx} className='p-2 border overflow-hidden shadow-lg rounded-2xl'>
             <img className="w-full h-48 object-cover rounded-lg" src={items.foodImage} alt="Food Image" />
-            <div className="px-6 py-4">
+            <p className='font-bold flex justify-between mt-2'><span><Rating
+        style={{ maxWidth: 100 }}
+        value={items.foodRating}
+        readOnly
+      /></span> <span className='flex text-2xl items-center'><BiLike className='mr-2'/> 0 </span></p>
+            <div className="px-2 py-4">
               <div className="mb-2">
                 <p className='font-extrabold text-2xl dark:text-slate-300'>Food Name {items.foodItem}</p>
               </div>
                 <p className='font-extrabold'>{items.description}</p>
-                <div>
-                <p className='font-bold flex justify-between mt-2'><span className='mr-2 text-2xl'>$ {items.price}</span> <span><Rating
-        style={{ maxWidth: 100 }}
-        value={items.foodRating}
-        readOnly
-      /></span></p>
+                <div className='font-bold flex justify-between items-center mt-2'>
+                <p className='mr-2 text-2xl'>$ {items.price}</p>
+                <button className="drop-shadow-lg hover:transition hover:duration-600 bg-orange-500 border-2 border-orange-500 hover:text-orange-500 hover:bg-white text-white font-bold py-1 px-3 rounded-full flex items-center">
+                  <span>add to cart</span> <span className='ml-2'><FaShoppingCart/> </span>
+                </button>
                 </div>
                 
-                  <button className="bg-orange-500 hover:bg-orange-600 text-slate-200 font-bold py-2 px-4 rounded-full flex restaurants-center">
-                  Details
-                </button>
             </div>
           </div>)
           }
