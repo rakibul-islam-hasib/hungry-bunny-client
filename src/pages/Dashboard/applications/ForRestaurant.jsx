@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { FiUser, FiMail, FiBriefcase, FiSend, FiClock } from 'react-icons/fi';
 import { motion } from 'framer-motion';
+import useUserSecure from '../../../hooks/useUserSecure';
+import useAxiosSecure from '../../../hooks/useAxiosSecure';
 
 const daysOfWeek = [
     'Monday',
@@ -18,8 +20,8 @@ const ForRestaurant = () => {
         return acc;
     }, {});
 
-
-
+    const [user] = useUserSecure();
+    const axios = useAxiosSecure();
     const [submittedData, setSubmittedData] = useState({});
     const [loading, setLoading] = useState(false);
     const [addingOpeningHours, setAddingOpeningHours] = useState(false);
@@ -27,16 +29,24 @@ const ForRestaurant = () => {
     const [is24hOpen, setIs24hOpen] = useState(false);
     const onSubmit = (e) => {
         e.preventDefault();
+        setLoading(true);
         const data = new FormData(e.target);
         data.append('name', e.target.name.value);
         data.append('email', e.target.email.value);
         const formValues = Object.fromEntries(data.entries());
         //   add the opening hours to the form values
         formValues.openingHours = openingHours;
-        //   set the loading state to true
-        setLoading(true);
+        formValues.status = 'pending';
+        formValues.applicationDate = new Date();
+        formValues.applicationFor = 'restaurant';
         console.log(formValues);
         setSubmittedData(formValues);
+
+        axios.post('/application/apply', formValues).then((res) => {
+            setLoading(false);
+            console.log(res.data)
+        });
+
     };
 
     const inputVariants = {
@@ -56,7 +66,6 @@ const ForRestaurant = () => {
             [day]: { ...prevHours[day], [field]: value },
         }));
     };
-
     return (
         <>
             <div className=" min-h-screen flex justify-center items-center">
@@ -83,7 +92,7 @@ const ForRestaurant = () => {
                             <div className="flex items-center">
                                 <FiUser className="text-primary" />
                                 <input
-                                    defaultValue={'name'}
+                                    defaultValue={user?.name}
                                     disabled
                                     readOnly
                                     className="ml-2 text-primary w-full border-b border-primary focus:border-secondary outline-none"
@@ -107,7 +116,7 @@ const ForRestaurant = () => {
                             <div className="flex items-center">
                                 <FiUser className="text-primary" />
                                 <input
-                                    defaultValue={'admin@hungry.com'}
+                                    defaultValue={user?.email}
                                     disabled
                                     readOnly
                                     className="ml-2 text-primary w-full border-b border-primary focus:border-secondary outline-none"
@@ -117,98 +126,98 @@ const ForRestaurant = () => {
                             </div>
                         </div>
                         <div className="mb-4 flex items-center justify-between">
-                            <label
-                                className="text-gray-700 block mb-1 md:flex items-center cursor-pointer"
-                                htmlFor="addOpeningHours"
-                            >
+                            <label className="text-gray-700 block mb-1 md:flex items-center cursor-pointer">
                                 <input
-                                    type="checkbox"
+                                    type="radio"
                                     id="addOpeningHours"
-                                    className="mr-2"
-                                    checked={addingOpeningHours}
-                                    disabled={is24hOpen}
-                                    onChange={() =>
-                                        setAddingOpeningHours(!addingOpeningHours)
-                                    }
+                                    name="openingHoursOption"
+                                    value="addOpeningHours"
+                                    checked={is24hOpen ? false : addingOpeningHours}
+                                    onChange={() => {
+                                        setIs24hOpen(false); // Make sure is24hOpen is set to false
+                                        setAddingOpeningHours(true);
+                                    }}
                                 />
                                 Add Opening Hours
                             </label>
-                            <label htmlFor="24h" className="text-gray-700 block mb-1 md:flex items-center cursor-pointer">
+                            <label className="text-gray-700 block mb-1 md:flex items-center cursor-pointer">
                                 <input
-                                    type="checkbox"
+                                    type="radio"
                                     id="24h"
-                                    className="mr-2"
-                                    checked={openingHours['Monday'].openingTime === '00:00 AM'}
-                                    onChange={(e) => {
-                                        setIs24hOpen(e.target.checked)
-                                        if (e.target.checked) {
-                                            setOpeningHours((prevHours) => ({
-                                                ...prevHours,
-                                                ...daysOfWeek.reduce((acc, day) => {
-                                                    acc[day] = {
-                                                        openingTime: '00:00 AM',
-                                                        closingTime: '00:00 AM',
-                                                    };
-                                                    return acc;
-                                                }, {}),
-                                            }));
-                                        } else {
-                                            setOpeningHours(initialOpeningHours);
-                                        }
+                                    name="openingHoursOption"
+                                    value="24h"
+                                    checked={is24hOpen}
+                                    onChange={() => {
+                                        setIs24hOpen(true);
+                                        setAddingOpeningHours(false);
+                                        setOpeningHours((prevHours) => ({
+                                            ...prevHours,
+                                            ...daysOfWeek.reduce((acc, day) => {
+                                                acc[day] = {
+                                                    openingTime: '00:00 AM',
+                                                    closingTime: '00:00 AM',
+                                                };
+                                                return acc;
+                                            }, {}),
+                                        }));
                                     }}
                                 />
                                 24 Hours Open
                             </label>
                         </div>
 
+
                         {
-                            addingOpeningHours &&
-                            daysOfWeek.map((day) => (
-                                <div className="mb-4" key={day}>
-                                    <motion.label
-                                        variants={inputVariants}
-                                        initial="hidden"
-                                        animate="visible"
-                                        transition={{ duration: 0.5, delay: 0.3 }}
-                                        className="text-gray-700 block mb-1"
-                                    >
-                                        {day} Opening Hours
-                                    </motion.label>
-                                    <div className="flex items-center">
-                                        <select
-                                            className="ml-2 w-1/2 border border-gray-300 focus:border-secondary outline-none py-1"
-                                            value={openingHours[day].openingTime}
-                                            onChange={(e) =>
-                                                handleOpeningHoursChange(
-                                                    day,
-                                                    'openingTime',
-                                                    e.target.value
-                                                )
-                                            }
+                            !is24hOpen ? (
+                                addingOpeningHours &&
+                                daysOfWeek.map((day) => (
+                                    <div className="mb-4" key={day}>
+                                        <motion.label
+                                            variants={inputVariants}
+                                            initial="hidden"
+                                            animate="visible"
+                                            transition={{ duration: 0.5, delay: 0.3 }}
+                                            className="text-gray-700 block mb-1"
                                         >
-                                            <option value="09:00 AM">09:00 AM</option>
-                                            <option value="10:00 AM">10:00 AM</option>
-                                            {/* ... Add more options */}
-                                        </select>
-                                        <span className="mx-2">to</span>
-                                        <select
-                                            className="w-1/2 border border-gray-300 focus:border-secondary outline-none py-1"
-                                            value={openingHours[day].closingTime}
-                                            onChange={(e) =>
-                                                handleOpeningHoursChange(
-                                                    day,
-                                                    'closingTime',
-                                                    e.target.value
-                                                )
-                                            }
-                                        >
-                                            <option value="05:00 PM">05:00 PM</option>
-                                            <option value="06:00 PM">06:00 PM</option>
-                                            {/* ... Add more options */}
-                                        </select>
+                                            {day} Opening Hours
+                                        </motion.label>
+                                        <div className="flex items-center">
+                                            <select
+                                                className="ml-2 w-1/2 border border-gray-300 focus:border-secondary outline-none py-1"
+                                                value={openingHours[day].openingTime}
+                                                onChange={(e) =>
+                                                    handleOpeningHoursChange(
+                                                        day,
+                                                        'openingTime',
+                                                        e.target.value
+                                                    )
+                                                }
+                                            >
+                                                <option value="09:00 AM">09:00 AM</option>
+                                                <option value="10:00 AM">10:00 AM</option>
+                                                {/* ... Add more options */}
+                                            </select>
+                                            <span className="mx-2">to</span>
+                                            <select
+                                                className="w-1/2 border border-gray-300 focus:border-secondary outline-none py-1"
+                                                value={openingHours[day].closingTime}
+                                                onChange={(e) =>
+                                                    handleOpeningHoursChange(
+                                                        day,
+                                                        'closingTime',
+                                                        e.target.value
+                                                    )
+                                                }
+                                            >
+                                                <option value="05:00 PM">05:00 PM</option>
+                                                <option value="06:00 PM">06:00 PM</option>
+                                                {/* ... Add more options */}
+                                            </select>
+                                        </div>
                                     </div>
-                                </div>
-                            ))}
+                                ))
+                            ) : null
+                        }
 
                         {/* Add more fields like Cuisine Type, Restaurant Description, etc. here */}
 
@@ -254,59 +263,6 @@ const ForRestaurant = () => {
                     </form>
                 </motion.div>
             </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            {/* Display submission result */}
-            {submittedData?.name && (
-                <div className="bg-gray-200 min-h-screen flex justify-center items-center">
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        exit={{ opacity: 0, scale: 0.8 }}
-                        transition={{ duration: 0.5 }}
-                        className="bg-white p-8 rounded-lg shadow-md"
-                    >
-                        <h2 className="text-2xl font-bold">
-                            Your <span className="text-secondary">application is</span> submitted
-                        </h2>
-                        <p className="text-lg font-semibold">Name: {submittedData?.name}</p>
-                        <p className="text-lg font-semibold">Email: {submittedData?.email}</p>
-                        <p className="text-lg font-semibold">Experience: {submittedData?.experience}</p>
-                        <p>Now you need to wait for a few moments for admin approval</p>
-                    </motion.div>
-                </div>
-            )}
-
-            {submittedData?.reject && (
-                <div className="bg-gray-200 min-h-screen flex justify-center items-center">
-                    <div className="bg-white p-8 rounded-lg shadow-md">
-                        <p>You are not able to join as a restaurant partner</p>
-                        <p className="font-bold">Reason :</p>
-                        <div className="w-1/2">{submittedData?.reject}</div>
-                        <p className="mt-10">
-                            If you think it is a mistake then you can contact our admin{' '}
-                            <span>
-                                <a href="mailto:admin@yourwebsite.com">admin@yourwebsite.com</a>
-                            </span>
-                        </p>
-                    </div>
-                </div>
-            )}
         </>
     );
 };
