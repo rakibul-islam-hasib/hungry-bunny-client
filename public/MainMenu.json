@@ -1,0 +1,271 @@
+[
+    {
+        "id": 1,
+        "title": "Eggs Benedict",
+        "description": "A classic breakfast dish featuring poached eggs, ham, and hollandaise sauce atop toasted English muffins. Served with a side of roasted potatoes.",
+        "price": 200.99,
+        "image": "https://media.istockphoto.com/id/182161332/photo/eggs-benedict.webp?b=1&s=170667a&w=0&k=20&c=W7bYSNbBdU3EsNabn-i9iykByJFvavZWdDFMyWg_bwM=",
+        "category": "Snacks",
+        "restaurant": "SadherGhor",
+        "ingredients": [
+            "Eggs",
+            "English Muffin"
+        ],
+        "rating": 4.7
+    },
+    {
+        "id": 2,
+        "title": "Pancake Delight",
+        "description": "A delightful stack of fluffy pancakes served with maple syrup, whipped cream, and a choice of fresh berries or bananas.",
+        "price": 200.49,
+        "image": "https://media.istockphoto.com/id/1468515195/photo/breakfast-of-pancakes-with-chocolate.webp?b=1&s=170667a&w=0&k=20&c=6WZAFkPfEXRniDAEpoC5-wo_3Nck_ewWyjmM-fMmuWg=",
+        "category": "Snacks",
+        "restaurant": "MorningBites",
+        "ingredients": [
+            "Pancake Batter",
+            "Maple Syrup",
+            "Whipped Cream",
+            "Berries or Bananas"
+        ],
+        "rating": 4.5
+    },
+    {
+        "id": 3,
+        "title": "Greek Yogurt Parfait",
+        "description": "Layers of creamy Greek yogurt, crunchy granola, and a medley of fresh fruits, drizzled with honey for a healthy and satisfying breakfast.",
+        "price": 200.99,
+        "image": "https://media.istockphoto.com/id/639376412/photo/blueberry-raspberry-parfaits-in-mason-jars-still-life-against-wood.webp?b=1&s=170667a&w=0&k=20&c=19P8kxhp99CwUXKZ3aqpGqupaRR4rMxDA_R2NTihvPc=",
+        "category": "Snacks",
+        "restaurant": "HealthyBites",
+        "ingredients": [
+            "Greek Yogurt",
+            "Granola",
+            "Assorted Fruits",
+            "Honey"
+        ],
+        "rating": 4.8
+    },
+    {
+        "id": 4,
+        "title": "Veggie Breakfast Burrito",
+        "description": "A hearty breakfast burrito filled with scrambled eggs, black beans, sautéed bell peppers and onions, cheese, and a zesty salsa.",
+        "price": 200.25,
+        "image": "https://media.istockphoto.com/id/1036890322/photo/vegetarian-breakfast-burrito-with-eggs.jpg?s=612x612&w=0&k=20&c=NlEkC7qATfSPjpXxQgcDIAi8rywsYIjoEkFBFw4D0Ys=",
+        "category": "Snacks",
+        "restaurant": "SpiceFusion",
+        "ingredients": [
+            "Scrambled Eggs",
+            "Black Beans",
+            "Bell Peppers",
+            "Onions",
+            "Cheese",
+            "Salsa"
+        ],
+        "rating": 4.6
+    },
+    {
+        "id": 5,
+        "title": "Avocado Toast",
+        "description": "Slices of whole-grain toast topped with creamy avocado, a sprinkle of red pepper flakes, and a poached egg. Served with a side of mixed greens.",
+        "price": 200.99,
+        "image": "https://media.istockphoto.com/id/1311507085/photo/avocado-toast-with-eggs-and-roasted-tomatoes.webp?b=1&s=170667a&w=0&k=20&c=6ryzDPsyH7RSsu2d4GppMYga7yFl7JJLXPhfYsbk_lo=",
+        "category": "Snacks",
+        "restaurant": "GreenEats",
+        "ingredients": [
+            "Whole-Grain Bread",
+            "Avocado",
+            "Poached Egg",
+            "Red Pepper Flakes",
+            "Mixed Greens"
+        ],
+        "rating": 4.6
+    },
+    {
+        "id": 6,
+        "title": "Classic Omelette",
+        "description": "Fluffy three-egg omelette filled with diced ham, sautéed mushrooms, onions, and melted cheddar cheese. Served with hash browns.",
+        "price": 200.49,
+        "image": "https://media.istockphoto.com/id/466063332/photo/frittata-with-chicken-and-spinach-and-fresh-spinach.webp?b=1&s=170667a&w=0&k=20&c=yBhD-WVHGRXXr7Wsg5uyFlQhjp2vXljsLGZJ7Ja2Upk=",
+        "category": "Snacks",
+        "restaurant": "MexiCafe",
+        "ingredients": [
+            "Eggs",
+            "Ham",
+            "Mushrooms",
+            "Onions",
+            "Cheddar Cheese",
+            "Hash Browns"
+        ],
+        "rating": 4.7
+    },
+    {
+        "id": 7,
+        "title": "Belgian Waffles",
+        "description": "Golden-brown Belgian waffles topped with a dollop of whipped cream, fresh strawberries, and a dusting of powdered sugar. Served with warm maple syrup.",
+        "price": 2000.99,
+        "image": "https://media.istockphoto.com/id/185266029/photo/waffles-with-fruit-and-maple-syrup-on-a-marble-counter.webp?b=1&s=170667a&w=0&k=20&c=hH8dRj_eOW1mLiPuHIcAeHY76Y3LmyXWE9hTzokN5EY=",
+        "category": "Snacks",
+        "restaurant": "WaffleHaven",
+        "ingredients": [
+            "Waffle Batter",
+            "Whipped Cream",
+            "Strawberries",
+            "Powdered Sugar",
+            "Maple Syrup"
+        ],
+        "rating": 4.9
+    },
+    {
+        "id": 8,
+        "title": "Breakfast Quesadilla",
+        "description": "Flour tortilla filled with scrambled eggs, crispy bacon, diced tomatoes, green onions, and melted Monterey Jack cheese. Served with salsa.",
+        "price": 200.75,
+        "image": "https://media.istockphoto.com/id/518620806/photo/mexican-quesadillas-with-cheese-vegetables.webp?b=1&s=170667a&w=0&k=20&c=mqb3KGsY4NKz0n3oBpLv254RVSmt2k0S0EX13IvE27I=",
+        "category": "Snacks",
+        "restaurant": "MexiCafe",
+        "ingredients": [
+            "Flour Tortilla",
+            "Scrambled Eggs",
+            "Bacon",
+            "Tomatoes",
+            "Green Onions",
+            "Monterey Jack Cheese",
+            "Salsa"
+        ],
+        "rating": 4.5
+    },
+    {
+        "id": 52,
+        "title": "Margherita Pizza",
+        "description": "Classic pizza topped with fresh tomatoes, mozzarella cheese, basil, and olive oil.",
+        "price": 150.99,
+        "image": "https://media.istockphoto.com/id/1414575281/photo/a-delicious-and-tasty-italian-pizza-margherita-with-tomatoes-and-buffalo-mozzarella.jpg?s=612x612&w=0&k=20&c=v8mdiAa_5NaRYtIscClXe85lLzkx7loSd9_pJWt9G2o=",
+        "category": "Pizza",
+        "restaurant": "SadherGhor",
+        "ingredients": [
+            "Pizza Dough",
+            "Tomatoes",
+            "Mozzarella Cheese",
+            "Basil",
+            "Olive Oil"
+        ],
+        "rating": 4.7
+    },
+    {
+        "id": 56,
+        "title": "Pepperoni Feast Pizza",
+        "description": "A pizza loaded with pepperoni slices, melted cheese, and tangy tomato sauce.",
+        "price": 153.99,
+        "image": "https://media.istockphoto.com/id/111845282/photo/housewife-woman-holding-small-pepperoni-pizza-isolated-on-white-background.jpg?s=612x612&w=0&k=20&c=hNSs5tf425mqhdDPjye604mlPfk_m-Mf3QDCrLWSjLc=",
+        "category": "Pizza",
+        "restaurant": "SpiceFusion",
+        "ingredients": [
+            "Pizza Dough",
+            "Pepperoni",
+            "Cheese",
+            "Tomato Sauce"
+        ],
+        "rating": 4.9
+    },
+    {
+        "id": 61,
+        "title": "Mushroom Lovers Pizza",
+        "description": "Pizza topped with an assortment of sautéed mushrooms, cheese, and a garlic-infused olive oil.",
+        "price": 3002.99,
+        "image": "https://media.istockphoto.com/id/864768956/photo/gourmet-homemade-mushroom-pizza.jpg?s=612x612&w=0&k=20&c=0lxTUcy1LXsb1kPRgzv1D32H3kScpH-_oSqsA51xiYM=",
+        "category": "Pizza",
+        "restaurant": "SpiceFusion",
+        "ingredients": [
+            "Pizza Dough",
+            "Mushrooms",
+            "Cheese",
+            "Garlic Oil"
+        ],
+        "rating": 4.9
+    },
+    {
+        "id": 66,
+        "title": "Pesto and Sun-Dried Tomato Pizza",
+        "description": "Pizza topped with pesto sauce, sun-dried tomatoes, mozzarella cheese, and pine nuts.",
+        "price": 3002.99,
+        "image": "https://media.istockphoto.com/id/506496249/photo/pizza.jpg?s=612x612&w=0&k=20&c=kmdTFC8z52v9LnuFExTR8rSdZflM4KPhikrZ0RTGzd8=",
+        "category": "Pizza",
+        "restaurant": "SpiceFusion",
+        "ingredients": [
+            "Pizza Dough",
+            "Pesto Sauce",
+            "Sun-Dried Tomatoes",
+            "Mozzarella",
+            "Pine Nuts"
+        ],
+        "rating": 4.9
+    },
+    {
+        "id": 39,
+        "title": "Sushi Bowl",
+        "description": "Deconstructed sushi bowl with seasoned sushi rice, fresh sashimi-grade fish, avocado, cucumber, and a drizzle of soy sauce.",
+        "price": 154.25,
+        "image": "https://media.istockphoto.com/id/1354366250/photo/set-of-rainbow-uramaki-sushi-rolls-with-avocado.jpg?s=612x612&w=0&k=20&c=wgFUfdRVdtW976mlii4zK_Ziy7rqEcXWPHjGZ8dO5A0=",
+        "category": "Sushi",
+        "restaurant": "HealthyBites",
+        "ingredients": [
+            "Sushi Rice",
+            "Sashimi-Grade Fish",
+            "Avocado",
+            "Cucumber",
+            "Soy Sauce"
+        ],
+        "rating": 4.8
+    },
+    {
+        "id": 13,
+        "title": "Chicken Biryani",
+        "description": "A fragrant and flavorful rice dish made with tender chicken, basmati rice, aromatic spices, and garnished with fried onions and fresh cilantro.",
+        "price": 2002.99,
+        "image": "https://media.istockphoto.com/id/501137061/photo/chicken-biryani-1-4.jpg?s=612x612&w=0&k=20&c=4YH3uPuv2iNyNTemn5bTxCyst608o3WDZNyATnibDsg=",
+        "category": "Biryani",
+        "restaurant": "SpiceFusion",
+        "ingredients": [
+            "Chicken",
+            "Basmati Rice",
+            "Spices",
+            "Onions",
+            "Cilantro"
+        ],
+        "rating": 4.7
+    },
+    {
+        "id": 20,
+        "title": "Vegetable Biryani",
+        "description": "An aromatic rice dish made with fragrant basmati rice, mixed vegetables, and a blend of Indian spices. Garnished with fried onions and cilantro.",
+        "price": 300.99,
+        "image": "https://media.istockphoto.com/id/179085494/photo/indian-biryani.webp?b=1&s=170667a&w=0&k=20&c=9vWEBS53E4lFMFZvmps_K1o09812k2fWtfVpElSlZXE=",
+        "category": "Biryani",
+        "restaurant": "SpiceFusion",
+        "ingredients": [
+            "Basmati Rice",
+            "Mixed Vegetables",
+            "Spices",
+            "Onions",
+            "Cilantro"
+        ],
+        "rating": 4.7
+    },
+    {
+        "id": 37,
+        "title": "Veggie Biryani Bowl",
+        "description": "A bowl of fragrant basmati rice with a blend of aromatic spices and mixed vegetables, topped with fried onions and cilantro.",
+        "price": 200.99,
+        "image": "https://media.istockphoto.com/id/1039691852/photo/vegetable-fried-rice.jpg?s=612x612&w=0&k=20&c=ylOZDjkctSmrZIWP24DQkMf_XKpg2xFPA4KOolk3B_U=",
+        "category": "Biryani",
+        "restaurant": "SpiceFusion",
+        "ingredients": [
+            "Basmati Rice",
+            "Assorted Vegetables",
+            "Spices",
+            "Onions",
+            "Cilantro"
+        ],
+        "rating": 4.7
+    }
+]

@@ -4,7 +4,7 @@ const useMenu = () => {
     const [foods, setFoods] = useState([])
 
     useEffect(() => {
-        fetch('allMenu.json')
+        fetch('MainMenu.json')
             .then(res => res.json())
             .then(data => setFoods(data))
     }, [])
