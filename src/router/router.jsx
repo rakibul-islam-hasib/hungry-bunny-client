@@ -40,6 +40,7 @@ import UserProfile from "../pages/Dashboard/user/UserProfile";
 import AdminAddItems from "../pages/Dashboard/RestaurantAdmin/AdminAddItems";
 import ForRestaurant from "../pages/Dashboard/applications/ForRestaurant";
 import PrivateRoute from "./PrivateRoute";
+import ManageBlogs from "../pages/Dashboard/admin/ManageBlogs";
 
 export const router = createBrowserRouter([
   {
@@ -141,6 +142,10 @@ export const router = createBrowserRouter([
       {
         path: "manage-users",
         element: <ManageUsers />,
+      },
+      {
+        path: "manage-blogs",
+        element: <ManageBlogs/>,
       },
 
       /*------------------------------------------------------------
