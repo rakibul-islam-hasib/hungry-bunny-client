@@ -3,7 +3,7 @@ import { FiUser, FiMail, FiBriefcase, FiSend, FiClock } from 'react-icons/fi';
 import { motion } from 'framer-motion';
 import useUserSecure from '../../../hooks/useUserSecure';
 import useAxiosSecure from '../../../hooks/useAxiosSecure';
-
+import { toast } from 'react-toastify';
 const daysOfWeek = [
     'Monday',
     'Tuesday',
@@ -29,6 +29,7 @@ const ForRestaurant = () => {
     const [is24hOpen, setIs24hOpen] = useState(false);
     const onSubmit = (e) => {
         e.preventDefault();
+        if (!user) return toast.error('Please login first');
         setLoading(true);
         const data = new FormData(e.target);
         data.append('name', e.target.name.value);
@@ -39,6 +40,7 @@ const ForRestaurant = () => {
         formValues.status = 'pending';
         formValues.applicationDate = new Date();
         formValues.applicationFor = 'restaurant';
+        formValues.userId = user._id;
         console.log(formValues);
         setSubmittedData(formValues);
 
