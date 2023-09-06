@@ -23,7 +23,7 @@ function RestaurantDetails() {
             order now
           </button>
           <button className="drop-shadow-lg hover:transition hover:duration-600 bg-white border-2 border-orange-500 hover:text-white hover:bg-orange-500 mt-8 text-orange-500 font-bold py-2 px-4 uppercase text-2xl rounded-full items-center">
-            order now
+            follow
           </button>
          </div>
           {/* <div className='mt-3 mb-3 flex text-center'>
@@ -54,7 +54,7 @@ function RestaurantDetails() {
       </div>
       {/* add new section */}
 <div className='grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 mt-10 mb-10'>
-  <div className='p-7 bg-white hover:transition duration-400 rounded-3xl drop-shadow-lg hover:text-white hover:bg-orange-500 dark:bg-black dark:text-white dark:border-2 dark:border-orange-500 dark:hover:bg-orange-500 hover:'>
+  <div className='p-7 bg-white relative group hover:-translate-y-4 hover:transition duration-400 rounded-3xl drop-shadow-lg hover:text-white hover:bg-orange-500 dark:bg-black dark:text-white dark:border-2 dark:border-orange-500 dark:hover:bg-orange-500 hover:'>
     <p className='text-7xl ml-3'><PiVanDuotone/> </p>
     <h3 className='text-4xl font-bold'>Fast Delivery</h3>
     <p className='mt-4 mb-4'>Fast food delivery is the ultimate solution for those moments when you crave mouthwatering, convenient, and delicious meals without the hassle of cooking or leaving your home.</p>
@@ -82,8 +82,8 @@ function RestaurantDetails() {
 <div className="dark:text-slate-300">
 <div className="grid sm:grid-cols-2 md:grid-cols-3 md:gap-8 gap-3 lg:grid-cols-4 mb-14">
           {
-            restaurant.foodItems.map((items, idx) => <div key={items.idx} className='p-2 border overflow-hidden shadow-lg rounded-2xl gap-y-4'>
-            <img className="w-full object-cover rounded-lg" src={items.foodImage} alt="Food Image" />
+            restaurant.foodItems.map((items, idx) => <div key={items.idx} className='p-2 border overflow-hidden shadow-lg rounded-2xl'>
+            <img className="w-full h-60 object-cover rounded-lg" src={items.foodImage} alt="Food Image" />
             <div className='w-full relative group hover:-translate-y-4 duration-500'>
               <div className=''>
               <p className='font-bold flex justify-between mt-2'><span><Rating
