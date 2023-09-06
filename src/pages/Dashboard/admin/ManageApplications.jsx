@@ -70,7 +70,7 @@ const ManageApplications = () => {
                                     <span className="inline-block w-1/3 md:hidden font-bold">Actions</span>
                                     <button
                                         onClick={() => {
-                                            toast.promise(axios.put(`/application/status/${application._id}`, { status: 'approved' },), {
+                                            toast.promise(axios.put(`/application/status/${application._id}`, { status: 'approved' , userRole : 'restaurant' },), {
                                                 error: 'Error while approving application',
                                                 success: 'Application approved successfully',
                                                 pending: 'Approving application....',
