@@ -1,3 +1,8 @@
+/**
+ * A custom React hook for fetching restaurant details from the server.
+ *
+ * @returns {Object} - An object with restaurant data.
+ */
 import useAxiosSecure from './useAxiosSecure';
 import { useQuery } from '@tanstack/react-query';
 import useUserSecure from './useUserSecure';
