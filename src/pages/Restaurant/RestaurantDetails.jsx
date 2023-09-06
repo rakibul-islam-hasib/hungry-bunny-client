@@ -2,10 +2,11 @@ import { Rating } from '@smastrom/react-rating';
 import React from 'react';
 import { FaArrowRight, FaMailBulk, FaShoppingCart, FaUserAstronaut } from 'react-icons/fa';
 import { BsStopwatch } from 'react-icons/bs';
-import { MdOutlineLocalOffer } from 'react-icons/md';
-import { PiBowlFood, PiVanDuotone } from 'react-icons/pi';
+import { MdOutlineLocalOffer, MdDirectionsBike } from 'react-icons/md';
+import { PiBowlFood } from 'react-icons/pi';
 import { BiLike } from 'react-icons/bi';
 import { useLoaderData } from 'react-router-dom';
+import Subscribe from '../about/Subscribe';
 
 function RestaurantDetails() {
     const restaurant = useLoaderData()
@@ -55,7 +56,7 @@ function RestaurantDetails() {
       {/* add new section */}
 <div className='grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 mt-10 mb-10'>
   <div className='p-7 bg-white relative group hover:-translate-y-4 hover:transition duration-400 rounded-3xl drop-shadow-lg hover:text-white hover:bg-orange-500 dark:bg-black dark:text-white dark:border-2 dark:border-orange-500 dark:hover:bg-orange-500 hover:'>
-    <p className='text-7xl ml-3'><PiVanDuotone/> </p>
+    <p className='text-7xl ml-3'><MdDirectionsBike/> </p>
     <h3 className='text-4xl font-bold'>Fast Delivery</h3>
     <p className='mt-4 mb-4'>Fast food delivery is the ultimate solution for those moments when you crave mouthwatering, convenient, and delicious meals without the hassle of cooking or leaving your home.</p>
   </div>
@@ -108,8 +109,8 @@ function RestaurantDetails() {
             </div>
           </div>)
           }
-
       </div>
+<Subscribe/>
       {/* <div className='md:w-[25%]'>
 
       <div className='mt-10 p-2  rounded-2xl drop-shadow-lg dark:bg-black'>
