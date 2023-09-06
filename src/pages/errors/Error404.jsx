@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import photo from "../assets/img/errorPhoto.png"
+import photo from "../../assets/img/errorPhoto.png"
 import { Button } from '@mui/material';
 
 const Error404 = () => {
