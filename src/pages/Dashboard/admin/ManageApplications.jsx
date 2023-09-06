@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import useAxiosSecure from '../../../hooks/useAxiosSecure';
+import { toast } from 'react-toastify';
 const ManageApplications = () => {
 
     const axios = useAxiosSecure();
@@ -67,7 +68,22 @@ const ManageApplications = () => {
                                 </td>
                                 <td className="p-2 md:border md:border-grey-500 text-left block md:table-cell">
                                     <span className="inline-block w-1/3 md:hidden font-bold">Actions</span>
-                                    <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 border border-blue-500 rounded">Edit</button>
+                                    <button
+                                        onClick={() => {
+                                            toast.promise(axios.put(`/application/status/${application._id}`, { status: 'approved' , userRole : 'restaurant' },), {
+                                                error: 'Error while approving application',
+                                                success: 'Application approved successfully',
+                                                pending: 'Approving application....',
+
+                                            })
+                                                .then(res => {
+                                                    console.log(res.data);
+                                                })
+                                                .catch(err => {
+                                                    console.log(err);
+                                                })
+                                        }}
+                                        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 border border-blue-500 rounded">Approve</button>
                                     <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 border border-red-500 rounded">Delete</button>
                                 </td>
                             </tr>)

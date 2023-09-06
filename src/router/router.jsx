@@ -6,7 +6,7 @@ import About from "../pages/about/About";
 import Contact from "../pages/contact/Contact";
 import CommunityLayout from "../layout/CommunityLayout";
 import Community from "../pages/community/Community";
-import Error404 from "../layout/Error404";
+import Error404 from "../pages/errors/Error404";
 import Restaurant from "../pages/Restaurant/Restaurant";
 import Menu from "../pages/Menu/Menu";
 import Faq from "../pages/faq/Faq";
@@ -40,6 +40,7 @@ import AdminAddItems from "../pages/Dashboard/RestaurantAdmin/AdminAddItems";
 import ForRestaurant from "../pages/Dashboard/applications/ForRestaurant";
 import PrivateRoute from "./PrivateRoute";
 import ManageApplications from "../pages/Dashboard/admin/ManageApplications";
+import AdminRoute from "./AdminRoute";
 
 export const router = createBrowserRouter([
   {
@@ -192,7 +193,7 @@ export const router = createBrowserRouter([
       },
       {
         path: 'manage-applications',
-        element: <PrivateRoute><ManageApplications /></PrivateRoute>,
+        element: <PrivateRoute><AdminRoute><ManageApplications /></AdminRoute></PrivateRoute>,
       }
 
     ],
