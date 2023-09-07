@@ -69,7 +69,10 @@ const AdminAddItems = () => {
     formData.append("product-details", event.target.elements["product-details"].value);
     const data = Object.fromEntries(formData);
     data.image = imageURL;
+    data.submitted = new Date();
+    data.status = "pending";
     
+
     console.log(data);
   };
   return (
