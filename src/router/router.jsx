@@ -21,7 +21,8 @@ import RestaurantDetails from "../pages/Restaurant/RestaurantDetails";
 import RestaurantAdmin from "../pages/dashboard/RestaurantAdmin/RestaurantAdmin";
 import Register from "../pages/auth/Register";
 import BlogDetails from "../pages/blog/BlogDetails";
-// import UserAddress from "../pages/dashboard/Owner/UserAddress";
+
+
 import MultiStepForm from "../pages/auth/MultiStepForm";
 import TeamInfo from "../pages/Team/TeamInfo";
 import AdminDashboard from "../pages/Dashboard/admin/AdminDashboard";
@@ -39,8 +40,13 @@ import UserProfile from "../pages/Dashboard/user/UserProfile";
 import AdminAddItems from "../pages/Dashboard/RestaurantAdmin/AdminAddItems";
 import ForRestaurant from "../pages/Dashboard/applications/ForRestaurant";
 import PrivateRoute from "./PrivateRoute";
+
+import AboutTeam from "../pages/about/AboutTeam";
+
+
 import ManageApplications from "../pages/Dashboard/admin/ManageApplications";
 import AdminRoute from "./AdminRoute";
+
 
 export const router = createBrowserRouter([
   {
@@ -59,6 +65,10 @@ export const router = createBrowserRouter([
       {
         path: "/about",
         element: <About />,
+      },
+      {
+        path: "/team",
+        element: <AboutTeam />,
       },
       {
         path: "/contact",
