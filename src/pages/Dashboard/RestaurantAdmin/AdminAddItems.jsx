@@ -9,7 +9,7 @@ const AdminAddItems = () => {
   const [imagePreview, setImagePreview] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [imageURL, setImageURL] = useState(null);
-  console.log(imageURL)
+
   const uploadMenuPic = (file) => {
     setIsLoading(true);
     const imgId = v4().slice(0, 10);
@@ -67,8 +67,12 @@ const AdminAddItems = () => {
     formData.append("Quantity", event.target.elements["Quantity"].value);
     formData.append("price", event.target.elements["price"].value);
     formData.append("product-details", event.target.elements["product-details"].value);
-    formData.append("image", selectedFile);
     const data = Object.fromEntries(formData);
+    data.image = imageURL;
+    data.submitted = new Date();
+    data.status = "pending";
+    
+
     console.log(data);
   };
   return (
