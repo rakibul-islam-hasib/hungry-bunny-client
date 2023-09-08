@@ -1,18 +1,12 @@
 /* eslint-disable no-undef */
-// Counter.test.js
-import React from 'react';
-import { render, fireEvent } from '@testing-library/react';
-import Home from '../pages/Home/Home';
+import { screen, render } from '@testing-library/react';
+import HowWeWork from '../pages/Home/Elements/HowWeWork';
+import matchers from '@testing-library/jest-dom';
 
+expect.extend(matchers);
 
-test('Home page with menu', () => {
-  const { getByText } = render(<Home />);
-  const incrementButton = getByText('Increment');
-  const countText = getByText('Count: 0');
-
-  // Click the Increment button
-  fireEvent.click(incrementButton);
-
-  // Check if count increase
-  expect(countText).toHaveTextContent('Count: 1');
+it('should render the HowWeWork component', () => {
+    render(<HowWeWork />)
+    const howWeElement = screen.getByText('How We');
+    expect(howWeElement).toBeInTheDocument();
 });

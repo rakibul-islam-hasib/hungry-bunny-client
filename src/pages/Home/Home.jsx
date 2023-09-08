@@ -14,7 +14,7 @@ import ScrollSlider from "./Elements/ScrollSlider";
 const Home = () => {
 
   return (
-    <section>
+    <section id="home">
       <Hero />
       <TopRestaurant />
       <FoodCard />
