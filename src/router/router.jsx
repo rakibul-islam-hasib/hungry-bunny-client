@@ -36,10 +36,15 @@ import AdminOrder from "../pages/Dashboard/RestaurantAdmin/AdminOrder/AdminOrder
 import AdminMenu from "../pages/Dashboard/RestaurantAdmin/AdminMenu/AdminMenu";
 import AdminCustomers from "../pages/Dashboard/RestaurantAdmin/AdminCustomers/AdminCustomers";
 import NormalProfile from "../pages/Dashboard/user/NormalProfile";
+import AllFoods from "../pages/allFoods/AllFoods";
 import UserProfile from "../pages/Dashboard/user/UserProfile";
 import AdminAddItems from "../pages/Dashboard/RestaurantAdmin/AdminAddItems";
 import ForRestaurant from "../pages/Dashboard/applications/ForRestaurant";
 import PrivateRoute from "./PrivateRoute";
+import ManageBlogs from "../pages/Dashboard/admin/ManageBlogs";
+import UpdateBlog from "../pages/Dashboard/admin/UpdateBlog";
+import AddBlog from "../pages/Dashboard/admin/AddBlog";
+
 
 import AboutTeam from "../pages/about/AboutTeam";
 
@@ -97,6 +102,10 @@ export const router = createBrowserRouter([
         element: <Menu />
       },
       {
+        path: '/allfoods',
+        element: <AllFoods/>
+      },
+      {
         path: '/faq',
         element: <Faq />
       },
@@ -107,7 +116,7 @@ export const router = createBrowserRouter([
       {
         path: '/blogs/:id',
         element: <BlogDetails />,
-        loader: ({ params }) => fetch(`https://hungry-bunny.vercel.app/blogs/${params.id}`)
+        loader: ({ params }) => fetch(`http://localhost:5000/blogs/${params.id}`)
       },
       {
         path: "/temp",
@@ -148,6 +157,19 @@ export const router = createBrowserRouter([
       {
         path: "manage-users",
         element: <ManageUsers />,
+      },
+      {
+        path: "manage-blogs",
+        element: <ManageBlogs/>,
+      },
+      {
+        path: "manage-blogs/:id",
+        element: <UpdateBlog/>,
+        loader: ({ params }) => fetch(`http://localhost:5000/blogs/${params.id}`)
+      },
+      {
+        path: "add-blogs",
+        element: <AddBlog/>,
       },
 
       /*------------------------------------------------------------

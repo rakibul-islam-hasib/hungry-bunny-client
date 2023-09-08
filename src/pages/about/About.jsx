@@ -2,6 +2,7 @@ import React from 'react';
 import { BsStopwatch } from 'react-icons/bs';
 import { MdOutlineLocalOffer } from 'react-icons/md';
 import { PiBowlFood, PiVanDuotone } from 'react-icons/pi';
+import Subscribe from './Subscribe';
 
 
 const About = () => {
@@ -129,6 +130,7 @@ const About = () => {
           <img style={{ height: 400 }} className='rounded-lg' src="https://images.pexels.com/photos/4392039/pexels-photo-4392039.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="" />
         </div>
       </div>
+      <Subscribe/>
     </div>
   );
 };
