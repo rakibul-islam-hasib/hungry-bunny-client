@@ -2,22 +2,23 @@ import { useState } from "react";
 import useAxiosFetch from "../../../hooks/useAxiosFetch";
 import { useEffect } from "react";
 import { BiMessageAltDetail } from 'react-icons/bi';
-import { FaTrashRestoreAlt } from 'react-icons/fa';
-import { Link } from "react-router-dom";
+import { FaEdit, FaTrashRestoreAlt } from 'react-icons/fa';
+import { Link, ScrollRestoration } from "react-router-dom";
+import { Pagination } from "@mui/material";
 
 function ManageBlogs() {
     const [blogs, setBlogs] = useState([]);
     const [page, setPage] = useState(1);
     // console.log(page)
     const [totalItem, setTotalItem] = useState(1);
-    const totalPage = Math.ceil(totalItem / 10);
+    const totalPage = Math.ceil(totalItem / 15);
     const axios = useAxiosFetch();
     useEffect(() => {
       axios.get('/blogs/total/count')
         .then(res => setTotalItem(res.data.total))
         .catch(err => console.log(err))
   
-      axios.get(`/blogs?limit=10&page=${page}`)
+      axios.get(`/blogs?limit=15&page=${page}`)
         .then(res => setBlogs(res.data))
         .catch(err => console.log(err))
       window.scrollTo(0, 0);
@@ -27,7 +28,7 @@ function ManageBlogs() {
     return (
         <div className="mt-20 ml-6 mr-6">
 <div className="flex justify-between items-center">
-<h2 className="text-4xl font-bold">Total Blogs: <span>0</span></h2>
+<h2 className="text-4xl font-bold">Total Blogs: <span>{blogs.length}</span></h2>
 <form className='w-[40%]'>
       <label htmlFor="default-search" className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">
         Search
@@ -106,9 +107,9 @@ function ManageBlogs() {
               <p>{item.blogHeading.slice(0,30)}</p>
             </td>
             <td className="px-6 py-4">
-            <Link to={`/blogs/${item._id}`} type="button" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"> <svg className="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 18">
-    <path d="M18 0H2a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h3.546l3.2 3.659a1 1 0 0 0 1.506 0L13.454 14H18a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2Zm-8 10H5a1 1 0 0 1 0-2h5a1 1 0 1 1 0 2Zm5-4H5a1 1 0 0 1 0-2h10a1 1 0 1 1 0 2Z"/>
-</svg> </Link>
+            <Link to={`/dashboard/manage-blogs/${item._id}`} type="button"
+             className="text-white bg-orange-400 hover:bg-orange-500 focus:ring-4 focus:ring-orange-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-orange-600 dark:hover:bg-orange-700 focus:outline-none dark:focus:ring-orange-800"> <FaEdit className="text-2xl"/>
+     </Link>
             </td>
             <td className="px-6 py-4">
             <Link to={`/blogs/${item._id}`} type="button" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"> <BiMessageAltDetail className="text-2xl"/> </Link>
@@ -122,6 +123,11 @@ function ManageBlogs() {
       </table>
     </div>  
     </div>
+    {/* Pagination  */}
+    <div className="mt-10 mb-5 text-right text-4xl mx-auto sm:w-[40%] md:w-[20%]">
+        <Pagination className='text-right text-4xl font-bold pt-5 pb-5 pr-4 pl-4 rounded-2xl dark:bg-white' onChange={(e, vale) => setPage(vale)} count={totalPage} color="secondary" />
+      </div>
+      <ScrollRestoration />
         </div>
     );
 }

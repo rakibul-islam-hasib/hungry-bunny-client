@@ -41,6 +41,8 @@ import AdminAddItems from "../pages/Dashboard/RestaurantAdmin/AdminAddItems";
 import ForRestaurant from "../pages/Dashboard/applications/ForRestaurant";
 import PrivateRoute from "./PrivateRoute";
 import ManageBlogs from "../pages/Dashboard/admin/ManageBlogs";
+import UpdateBlog from "../pages/Dashboard/admin/UpdateBlog";
+
 
 export const router = createBrowserRouter([
   {
@@ -101,7 +103,7 @@ export const router = createBrowserRouter([
       {
         path: '/blogs/:id',
         element: <BlogDetails />,
-        loader: ({ params }) => fetch(`https://hungry-bunny.vercel.app/blogs/${params.id}`)
+        loader: ({ params }) => fetch(`http://localhost:5000/blogs/${params.id}`)
       },
       {
         path: "/temp",
@@ -146,6 +148,11 @@ export const router = createBrowserRouter([
       {
         path: "manage-blogs",
         element: <ManageBlogs/>,
+      },
+      {
+        path: "manage-blogs/:id",
+        element: <UpdateBlog/>,
+        loader: ({ params }) => fetch(`http://localhost:5000/blogs/${params.id}`)
       },
 
       /*------------------------------------------------------------
