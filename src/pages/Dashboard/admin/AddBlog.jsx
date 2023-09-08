@@ -1,16 +1,31 @@
 import { useForm } from "react-hook-form";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
+import Swal from "sweetalert2";
+
 
 function AddBlog() {
     const axios = useAxiosSecure()
     const { register, handleSubmit } = useForm()
 
-    const onSubmit =() =>{
-        
+    const onSubmit =(data) =>{
+        // console.log(data)
+        axios.post('/blogs', register)
+        .then(data => {
+            // console.log(data.data);
+            if(data.data.insertedId){
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: 'Your work has been saved',
+                    showConfirmButton: false,
+                    timer: 1500
+                  })
+            }
+        })
     }
     return (
-        <div className="mt-14 ml-4 mr-4 mb-10">
-        <h2 className="text-3xl uppercase text-center mb-8 text-orange-500 font-bold">create new blog</h2>
+        <div className=" mt-8 pt-14 pl-14 pr-14 pb-8 mb-5 rounded-xl">
+        <h2 className="text-3xl uppercase text-center mb-5 text-orange-500 font-bold">create new blog</h2>
         <form onSubmit={handleSubmit(onSubmit)}>
             {/* blog headline */}
             <div className="mb-4">
@@ -39,7 +54,7 @@ function AddBlog() {
                 </div>
                 <div className="md:w-1/2">
                 <label htmlFor="Blog Rating">Blog Rating</label>
-                <input type="number" placeholder="write blog rating number" className="text-2xl rounded-xl p-2 pl-3 w-full mt-2 mb-2 mr-5" id="rating" {...register('rating', {required: true})} />
+                <input type="text" placeholder="write blog rating number" className="text-2xl rounded-xl p-2 pl-3 w-full mt-2 mb-2 mr-5" id="rating" {...register('rating', {required: true})} />
                 </div>
                 
             </div>
@@ -63,7 +78,7 @@ function AddBlog() {
                 
                     </div>
             </div>
-            <input type="submit" className="drop-shadow-lg uppercase text-center hover:transition hover:duration-400 bg-orange-500 border-2 border-orange-500 hover:text-orange-500 hover:bg-white mt-8 text-white font-bold py-2 text-2xl px-4 rounded-full w-full" value="add new Blog"/>
+            <input type="submit" className="drop-shadow-lg uppercase text-center hover:transition hover:duration-400 bg-orange-500 border-2 border-orange-500 hover:text-orange-500 hover:bg-white mt-8 text-white font-bold py-2 text-2xl px-4 rounded-full w-full" value={`add new blog`} />
         </form>
     </div>
     );
