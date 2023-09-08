@@ -3,13 +3,17 @@ import React, { useState } from "react";
 import { v4 } from "uuid";
 import { storage } from "../../../config/firebase/firebase.config";
 import 'react-toastify/dist/ReactToastify.css';
-import { toast as loaderPrompt } from 'react-toastify';
+import { toast as loaderPrompt, toast } from 'react-toastify';
+import useRestaurant from "../../../hooks/useRestaurant";
+import useAxiosSecure from "../../../hooks/useAxiosSecure";
 const AdminAddItems = () => {
   const [selectedFile, setSelectedFile] = useState(null);
   const [imagePreview, setImagePreview] = useState(null);
+  const axios = useAxiosSecure();
   const [isLoading, setIsLoading] = useState(false);
   const [imageURL, setImageURL] = useState(null);
-
+  const [restaurant, restaurantLoader] = useRestaurant();
+  console.log(restaurant);
   const uploadMenuPic = (file) => {
     setIsLoading(true);
     const imgId = v4().slice(0, 10);
@@ -47,16 +51,14 @@ const AdminAddItems = () => {
 
   const handleFileChange = (e) => {
     const file = e.target.files[0];
-    setSelectedFile(file);
-    const selectedUrl = URL.createObjectURL(file);
-    setImagePreview(selectedUrl);
-    // Upload the image to firebase storage
-
-    // Get the image url after upload and save it to the database
-
-
-
-
+    if (file && file.size < 2 * 1024 * 1024) {
+      setSelectedFile(file);
+      const selectedUrl = URL.createObjectURL(file);
+      setImagePreview(selectedUrl);
+    } else {
+      setSelectedFile(null);
+      toast.error("Please select a file smaller than 2MB");
+    }
   };
 
   const handleFromSubmit = (event) => {
@@ -64,17 +66,34 @@ const AdminAddItems = () => {
     const formData = new FormData();
     formData.append("product-name", event.target.elements["product-name"].value);
     formData.append("category", event.target.elements["category"].value);
-    formData.append("Quantity", event.target.elements["Quantity"].value);
-    formData.append("price", event.target.elements["price"].value);
     formData.append("product-details", event.target.elements["product-details"].value);
     const data = Object.fromEntries(formData);
     data.image = imageURL;
     data.submitted = new Date();
     data.status = "pending";
-    
+    data.restaurant = restaurant._id;
+    data.price = parseInt(event.target.price.value);
+    data.quantity = parseInt(event.target.Quantity.value);
+    //* ------------------------- *//
+    toast.promise(axios.post('/food/post/new', data), {
+      pending: 'Adding Product...',
+      success: 'Product Added Successfully',
+      error: 'Something went wrong , please try again later'
+    })
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      })
 
-    console.log(data);
+
   };
+
+
+  if (restaurantLoader) return <div>Loading...</div>
+
+
   return (
     <div className="bg-white border-4 rounded-lg shadow relative m-10">
       <div className="flex items-start justify-between p-5 border-b rounded-t">

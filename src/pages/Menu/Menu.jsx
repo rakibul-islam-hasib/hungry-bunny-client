@@ -1,12 +1,11 @@
 import React from 'react';
-import Card from '../../components/Card/Card';
-import FoodCard from './FoodCard';
+import MenuCard from '../../components/Card/MenuCard';
 
 const Menu = () => {
     return (
         <div>
             
-            <Card/>
+            <MenuCard/>
         </div>
     );
 };
