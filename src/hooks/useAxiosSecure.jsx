@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux';
 import { logoutUser } from '../redux/slices/authThunks';
 
 const useAxiosSecure = () => {
-    //  Base URL: https://hungry-bunny.vercel.app
+    //  Base URL: http://localhost:5000
     // Localhost: http://localhost:5000
     const dispatch = useDispatch();
     const navigate = useNavigate();

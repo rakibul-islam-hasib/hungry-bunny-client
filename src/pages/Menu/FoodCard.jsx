@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 
 import FoodItem from './FoodItem';
-import Skeleton from './Skeleton';
+import Skeleton from '../../components/Skeletons/Skeleton';
 import useMenu from '../../hooks/useMenu';
 
 
