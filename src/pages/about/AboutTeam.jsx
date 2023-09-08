@@ -6,9 +6,10 @@ const AboutTeam = () => {
     <div className='my-10'>
       <h1 className='text-4xl font-bold text-center my-10'>Lets Meet Our <span className='text-primary'>Team Members </span> </h1>
 
-      <div className='grid md:grid-cols-2 md:gap-8 gap-3 lg:grid-cols-3 m-auto justify-center'>
+      <div className='grid md:grid-cols-2 md:gap-8 gap-3 lg:grid-cols-3 m-auto justify-center '>
         
-      <div className="max-w-[24rem] rounded rounded-t-full  overflow-hidden shadow-lg">
+      <div>
+      <div className="max-w-[24rem] rounded overflow-hidden shadow-lg rounded-t-full">
         <div className='text-center flex justify-center '>
         <img className="w-[24rem] rounded-full" src="https://www.w3schools.com/w3images/avatar2.png" alt="Sunset in the mountains" />
         </div>
@@ -32,6 +33,7 @@ const AboutTeam = () => {
             <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#travel</span>
             <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#winter</span>
           </div>
+      </div>
       </div>
       <div className="max-w-sm rounded rounded-t-full  overflow-hidden shadow-lg">
         <div className='text-center'>
