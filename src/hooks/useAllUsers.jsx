@@ -5,7 +5,7 @@ const useAllUsers = () => {
     const [users, setusers] = useState([]);
     const [loading, setLoading] = useState(true)
     useEffect(() => {
-        fetch("https://hungry-bunny.vercel.app/user-info")
+        fetch("http://localhost:5000/user-info")
             .then((res) => res.json())
             .then((data) => {
                 setusers(data);

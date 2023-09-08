@@ -6,17 +6,18 @@ import vegan from '../../assets/icons/menu/icons8-vegan.svg';
 import sushi from '../../assets/icons/menu/icons8-sushi.svg';
 
 import React, { useEffect, useState } from "react";
-import { FaRegBookmark } from "react-icons/fa";
+
 import useMenu from "../../hooks/useMenu";
-import Skeleton from '../../pages/Menu/Skeleton';
 import MenuCardItem from './MenuCardItem';
+import MenuSkeleton from './MenuSkeleton';
+import CategorySkeleton from './CategorySkeleton';
 
 
 
 
 const MenuCard = () => {
-  
-  
+
+
 
   const MenuCategory = [
     {
@@ -46,15 +47,15 @@ const MenuCard = () => {
     }
   ]
   const [menuTab, setMenuTab] = useState('Pizza')
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(true)
 
-//loading 
-useEffect(() => {
-  setLoading(true)
-  setTimeout(() => {
-    setLoading(false)
-  }, 1000)
-}, [])
+  //loading 
+  useEffect(() => {
+    setLoading(true)
+    setTimeout(() => {
+      setLoading(false)
+    }, 1000)
+  }, [])
 
 
 
@@ -67,6 +68,10 @@ useEffect(() => {
 
 
     <div>
+
+
+
+
       <div className="text-center lg:w-[70%] w-full sm:w-[90%] md:w-[80%] mx-auto">
         <h3 className="font-semibold text-4xl mx-auto ">Popular Menu</h3>
         <p className="font-semibold mt-2">
@@ -77,27 +82,31 @@ useEffect(() => {
       {/*  */}
       <div className=" md:flex justify-between flex-wrap">
         {
-          MenuCategory.map(item => <div key={item.id}
-            className={menuTab === `${item.name}`? 'border rounded-2xl hover:border-primary hover:bg-primary hover:bg-opacity-5 border-orange-300 lg:px-20 py-2  transform transition duration-300 hover:scale-105' : 'border rounded-2xl hover:border-primary hover:bg-primary hover:bg-opacity-5 border-orange-300 lg:px-20 py-2  transform transition duration-300 hover:scale-105'}  onClick={() => handleMenuTabs(item.name)}
-          >
-            <div className='text-center'>
-              {/* <p className={menuTab === 'Breakfast' ? "active_menu_tab poppins  bg-primary" : "menu_tab poppins"} onClick={() => handleMenuTabs('Breakfast')}>BREAKFAST</p> */}
-              <img src={item.image} className='w-[50px]' alt="" />
-              <h1>{item.name}</h1>
+          MenuCategory.map((item, idx) => (loading ? <CategorySkeleton key={idx} /> :
+
+
+            <div key={item.idx}
+              className={menuTab === `${item.name}` ? 'border rounded-2xl hover:border-primary hover:bg-primary hover:bg-opacity-5 border-orange-300 lg:px-20 py-2  transform transition duration-300 hover:scale-105' : 'border rounded-2xl hover:border-primary hover:bg-primary hover:bg-opacity-5 border-orange-300 lg:px-20 py-2  transform transition duration-300 hover:scale-105'} onClick={() => handleMenuTabs(item.name)}
+            >
+              <div className='text-center'>
+                {/* <p className={menuTab === 'Breakfast' ? "active_menu_tab poppins  bg-primary" : "menu_tab poppins"} onClick={() => handleMenuTabs('Breakfast')}>BREAKFAST</p> */}
+                <img src={item.image} className='w-[50px]' alt="" />
+                <h1>{item.name}</h1>
+              </div>
             </div>
-          </div>)
+          ))
         }
       </div>
 
       <div className="mx-auto md:px-20 px-6 mt-10">
 
-        <div className="grid md:grid-cols-2 md:gap-8 gap-3 lg:grid-cols-4 mt-10 mx-auto">
+        <div className="grid md:grid-cols-2 md:gap-8 gap-3 lg:grid-cols-3 mt-10 mx-auto">
 
 
-          
-            {menuItems.filter((menu, idx) => menuTab === menu.category).map((menu, idx) => (
-              loading ? <Skeleton key={idx} /> : <MenuCardItem key={idx} {...menu} />
-            ))}
+
+          {menuItems.filter((menu, idx) => menuTab === menu.category).map((menu, idx) => (
+            loading ? <MenuSkeleton key={idx} /> : <MenuCardItem key={idx} {...menu} />
+          ))}
         </div>
       </div>
     </div>

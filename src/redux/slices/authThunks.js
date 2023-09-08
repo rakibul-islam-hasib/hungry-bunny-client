@@ -112,7 +112,7 @@ export const handleFacebookRedirect = () => async (dispatch) => {
                 photo: 'https://i.ibb.co/txQbC7p/casual-life-3d-profile-picture-of-person-in-glasses-and-orange-shirt.png',
             }
             // TODO : Replace with server URL : https://
-            fetch('https://hungry-bunny.vercel.app/user-info', {
+            fetch('http://localhost:5000/user-info', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

@@ -5,6 +5,7 @@ import useAxiosSecure from '../../../hooks/useAxiosSecure';
 import { toast } from 'react-hot-toast';
 import useUserSecure from '../../../hooks/useUserSecure';
 import { useAuth } from '../../../hooks/useAuth';
+import useAllUsers from '../../../hooks/useAllUsers';
 
 
 const ManageUsersTable = ({ userData }) => {
@@ -12,6 +13,7 @@ const ManageUsersTable = ({ userData }) => {
 
     const { user: firebaseUser } = useAuth();
     const [user, isLoading, refetch] = useUserSecure(firebaseUser?.email);
+    // const [refetch]=useAllUsers()
 
     function classNames(...classes) {
         return classes.filter(Boolean).join(' ')
