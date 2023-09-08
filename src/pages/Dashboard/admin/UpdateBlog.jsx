@@ -9,7 +9,7 @@ function UpdateBlog() {
     const axios = useAxiosSecure()
     const { register, handleSubmit } = useForm()
 
-    const onSubmit = () =>{
+    const onSubmit = (data) =>{
         axios.put(`/blogs/${loadedBlog._id}`, register)
         .then(data => {
             console.log(data.data);
@@ -43,7 +43,7 @@ function UpdateBlog() {
                     </div>
                     <div className="md:w-1/2">
                     <h1 className="text-1xl ">Blog Date</h1>
-                    <input type="text" defaultValue={loadedBlog?.date} className="text-2xl rounded-xl p-2 pl-3 w-full mt-2 mb-2 mr-5" id="date" {...register('date')} />
+                    <input type="date" defaultValue={loadedBlog?.date} className="text-2xl rounded-xl p-2 pl-3 w-full mt-2 mb-2 mr-5" id="date" {...register('date')} />
                     </div>
                     
                 </div>
@@ -55,7 +55,7 @@ function UpdateBlog() {
                     </div>
                     <div className="md:w-1/2">
                     <h1 className="text-1xl ">Blog Rating</h1>
-                    <input type="number" defaultValue={loadedBlog?.rating} className="text-2xl rounded-xl p-2 pl-3 w-full mt-2 mb-2 mr-5" id="rating" {...register('rating')} />
+                    <input type="text" defaultValue={loadedBlog?.rating} className="text-2xl rounded-xl p-2 pl-3 w-full mt-2 mb-2 mr-5" id="rating" {...register('rating')} />
                     </div>
                     
                 </div>
