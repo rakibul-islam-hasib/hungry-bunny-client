@@ -1,0 +1,62 @@
+/* tailwind.css or styles.css */
+/* ... (previous styles) */
+
+/* Center the form */
+.center-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+  }
+  
+  /* Form container */
+  .form-container {
+    width: 400px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+  }
+  
+  /* Form title */
+  .form-title {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+  
+  /* Input field */
+  .input-field {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    transition: border-color 0.3s;
+  }
+  
+  .input-field:focus {
+    border-color: #4a90e2;
+  }
+  
+  /* Buttons */
+  .btn {
+    padding: 10px 20px;
+    background-color: #4a90e2;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .btn-secondary {
+    background-color: #ccc;
+    color: #333;
+  }
+  
+  .btn:hover {
+    background-color: #357ac1;
+  }
+   

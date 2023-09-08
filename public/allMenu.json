@@ -1,0 +1,1394 @@
+[
+    
+    {
+        "id": 9,
+        "title": "French Toast",
+        "description": "Thick slices of brioche bread dipped in a cinnamon-spiced egg batter and cooked until golden. Served with butter, powdered sugar, and a choice of syrup.",
+        "price": 200.99,
+        "image": "https://media.istockphoto.com/id/1397872499/photo/french-toast-with-honey-and-berries.webp?b=1&s=170667a&w=0&k=20&c=FvkgwzMz62PnUQFyego-Qe5xiAVw_fLLKB_wLoSVxME=",
+        "type": "Breakfast",
+        "restaurant": "CaféChic",
+        "ingredients": [
+            "Brioche Bread",
+            "Egg Batter",
+            "Cinnamon",
+            "Butter",
+            "Powdered Sugar",
+            "Syrup"
+        ],
+        "rating": 4.7
+    },
+    {
+        "id": 10,
+        "title": "Smoked Salmon Bagel",
+        "description": "Toasted bagel topped with cream cheese, smoked salmon, red onion slices, capers, and fresh dill. A classic combination for a satisfying breakfast.",
+        "price": 2001.25,
+        "image": "https://media.istockphoto.com/id/619073422/photo/toasted-bagel-with-smoked-salmon-and-cream-cheese.webp?b=1&s=170667a&w=0&k=20&c=mn3qugTtsL6DjTj9lfx96aQnHLhQ_HCdmuVms63EYMM=",
+        "type": "Breakfast",
+        "restaurant": "BowlFusion",
+        "ingredients": [
+            "Bagel",
+            "Cream Cheese",
+            "Smoked Salmon",
+            "Red Onion",
+            "Capers",
+            "Fresh Dill"
+        ],
+        "rating": 4.8
+    },
+    {
+        "id": 11,
+        "title": "Breakfast Burrito Bowl",
+        "description": "A hearty bowl featuring scrambled eggs, black beans, roasted sweet potatoes, sautéed spinach, pico de gallo, and a drizzle of chipotle aioli.",
+        "price": 200.99,
+        "image": "https://media.istockphoto.com/id/488363181/photo/breakfast-burrito.webp?b=1&s=170667a&w=0&k=20&c=tlZhbYfnC8UsGjaeVNBp6UotWVFEx4VkXRkQp2-JJ5U=",
+        "type": "Breakfast",
+        "restaurant": "BowlFusion",
+        "ingredients": [
+            "Scrambled Eggs",
+            "Black Beans",
+            "Sweet Potatoes",
+            "Spinach",
+            "Pico de Gallo",
+            "Chipotle Aioli"
+        ],
+        "rating": 4.6
+    },
+    {
+        "id": 12,
+        "title": "Fruit and Nut Yogurt Bowl",
+        "description": "Creamy yogurt topped with a mix of fresh fruits such as berries, banana slices, and kiwi. Finished with a sprinkle of granola, nuts, and a drizzle of honey.",
+        "price": 200.75,
+        "image": "https://media.istockphoto.com/id/665182604/photo/bowl-of-oat-granola-with-yogurt-fresh-raspberries-blueberries.webp?b=1&s=170667a&w=0&k=20&c=TuZku0Ss-JNeGkBkjCTPy5GXEbzAyY8SCnvM5qChtBg=",
+        "type": "Breakfast",
+        "restaurant": "MexiCafe",
+        "ingredients": [
+            "Yogurt",
+            "Assorted Fruits",
+            "Granola",
+            "Nuts",
+            "Honey"
+        ],
+        "rating": 4.7
+    },
+    
+    {
+        "id": 14,
+        "title": "Paneer Tikka Wrap",
+        "description": "Marinated and grilled paneer (Indian cottage cheese) wrapped in a soft roti with onions, peppers, and mint chutney.",
+        "price": 200.25,
+        "image": "https://media.istockphoto.com/id/1434204273/photo/chicken-shawarma-roll-wrap-isolated-on-wooden-board-side-view-of-fastfood.webp?b=1&s=170667a&w=0&k=20&c=ZRmvyW8hIk_6crF_CXnE1rBmiP-bHcVuMbMA4LQDWo0=",
+        "type": "Lunch",
+        "restaurant": "CaféChic",
+        "ingredients": [
+            "Paneer",
+            "Roti",
+            "Onions",
+            "Peppers",
+            "Mint Chutney"
+        ],
+        "rating": 4.8
+    },
+    {
+        "id": 15,
+        "title": "Veggie Fried Rice",
+        "description": "Stir-fried rice with a medley of vegetables, soy sauce, and scrambled eggs. A classic and satisfying rice-based dish.",
+        "price": 200.99,
+        "image": "https://media.istockphoto.com/id/157646162/photo/vegetarian-fried-rice-with-vegetables-healthy.webp?b=1&s=170667a&w=0&k=20&c=SneOIeCQnb8LXKLOOw1uUAKYtscIveiK5hlj1mkSQ1k=",
+        "type": "Lunch",
+        "restaurant": "MorningBites",
+        "ingredients": [
+            "Rice",
+            "Vegetables",
+            "Soy Sauce",
+            "Scrambled Eggs"
+        ],
+        "rating": 4.6
+    },
+    {
+        "id": 16,
+        "title": "Chicken Shawarma Plate",
+        "description": "Tender slices of marinated and grilled chicken served with rice, pita bread, garlic sauce, and a side salad.",
+        "price": 200.49,
+        "image": "https://media.istockphoto.com/id/1347230397/photo/chicken-gyros-with-vegetables-french-fries-and-tzatziki-sauce-on-plate-greek-food-concept.jpg?s=612x612&w=0&k=20&c=HTJffO7VJnCssnQ2d9v8IkGyjU-iyZVnUsC84tejnq0=",
+        "type": "Lunch",
+        "restaurant": "SadherGhor",
+        "ingredients": [
+            "Chicken",
+            "Rice",
+            "Pita Bread",
+            "Garlic Sauce",
+            "Side Salad"
+        ],
+        "rating": 4.5
+    },
+    {
+        "id": 17,
+        "title": "Veggie Wrap with Hummus",
+        "description": "A wholesome wrap filled with hummus, roasted vegetables, lettuce, and tomatoes, wrapped in a soft tortilla.",
+        "price": 300.99,
+        "image": "https://media.istockphoto.com/id/1291102971/photo/healthy-vegan-falafel-wrap-sandwich-with-side-salad-on-table.jpg?s=612x612&w=0&k=20&c=0mu9TvpB4EVeSxoZG0H6J780P3o_k0ue62cqAVWx-fY=",
+        "type": "Lunch",
+        "restaurant": "GreenEats",
+        "ingredients": [
+            "Hummus",
+            "Roasted Vegetables",
+            "Lettuce",
+            "Tomatoes",
+            "Tortilla"
+        ],
+        "rating": 4.7
+    },
+    {
+        "id": 18,
+        "title": "Aloo Paratha Combo",
+        "description": "Traditional Indian whole wheat bread stuffed with spiced mashed potatoes, served with yogurt, pickle, and a side salad.",
+        "price": 300.75,
+        "image": "https://media.istockphoto.com/id/477470288/photo/paratha-served-with-mixed-vegetables-chutney-and-pickles.jpg?s=612x612&w=0&k=20&c=m39CaYugvqKe3DHiMa0WtS7ceSvo7LbO7Z6FlquIzRc=",
+        "type": "Lunch",
+        "restaurant": "HealthyBites",
+        "ingredients": [
+            "Aloo Paratha",
+            "Yogurt",
+            "Pickle",
+            "Side Salad"
+        ],
+        "rating": 4.6
+    },
+    {
+        "id": 19,
+        "title": "BBQ Pulled Pork Sandwich",
+        "description": "Slow-cooked pulled pork smothered in barbecue sauce, served on a soft bun with coleslaw and a side of potato wedges.",
+        "price": 300.99,
+        "image": "https://media.istockphoto.com/id/464848566/photo/barbeque-pulled-pork-sandwiches.jpg?s=612x612&w=0&k=20&c=doyBreG8H9YGwtPMCtNITTjF5PNnomQp7k7RQ08dscU=",
+        "type": "Lunch",
+        "restaurant": "MexiCafe",
+        "ingredients": [
+            "Pulled Pork",
+            "Barbecue Sauce",
+            "Bun",
+            "Coleslaw",
+            "Potato Wedges"
+        ],
+        "rating": 4.8
+    },
+    
+    {
+        "id": 21,
+        "title": "Grilled Chicken Caesar Wrap",
+        "description": "Grilled chicken, crisp romaine lettuce, parmesan cheese, and Caesar dressing wrapped in a flour tortilla. Served with a side of garlic fries.",
+        "price": 250.25,
+        "image": "https://media.istockphoto.com/id/154962720/photo/grilled-chicken-salad-pita-sandwich.jpg?s=612x612&w=0&k=20&c=NavSGMR0O4_uLOsslTbropiYay_7oqVxzW1oQOMBibU=",
+        "type": "Lunch",
+        "restaurant": "CaféChic",
+        "ingredients": [
+            "Grilled Chicken",
+            "Romaine Lettuce",
+            "Parmesan Cheese",
+            "Caesar Dressing",
+            "Flour Tortilla",
+            "Garlic Fries"
+        ],
+        "rating": 4.6
+    },
+    {
+        "id": 22,
+        "title": "Spinach and Feta Stuffed Roti",
+        "description": "Delicious roti stuffed with a flavorful mixture of sautéed spinach and crumbled feta cheese, served with a side of cucumber yogurt dip.",
+        "price": 250.49,
+        "image": "https://media.istockphoto.com/id/637381094/photo/roasted-rolls-of-bread-lavash-filled-with-herbs-and-feta.jpg?s=612x612&w=0&k=20&c=JEBgvQsFNeDAtD2LOJ4kc-sMDn7kHfkgV0_FSsai5JI=",
+        "type": "Lunch",
+        "restaurant": "GreenEats",
+        "ingredients": [
+            "Roti",
+            "Spinach",
+            "Feta Cheese",
+            "Cucumber Yogurt Dip"
+        ],
+        "rating": 4.9
+    },
+    {
+        "id": 23,
+        "title": "Veggie Quesadilla",
+        "description": "A delightful combination of sautéed mushrooms, bell peppers, onions, and melted cheese folded in a toasted flour tortilla. Served with salsa.",
+        "price": 250.75,
+        "image": "https://media.istockphoto.com/id/186281219/photo/homemade-bean-quesadilla-with-salsa-and-corn.jpg?s=612x612&w=0&k=20&c=LQKnH1g9OFJEYDrBb9uNiXdcnmhvYHQNPFv8rJ0TqU0=",
+        "type": "Lunch",
+        "restaurant": "MexiCafe",
+        "ingredients": [
+            "Mushrooms",
+            "Bell Peppers",
+            "Onions",
+            "Cheese",
+            "Flour Tortilla",
+            "Salsa"
+        ],
+        "rating": 4.5
+    },
+    {
+        "id": 24,
+        "title": "Aloo Gobi Wrap",
+        "description": "A flavorful Indian wrap with spiced cauliflower and potatoes, wrapped in a soft roti with tangy tamarind chutney.",
+        "price": 250.99,
+        "image": "https://media.istockphoto.com/id/852010822/photo/fried-pakora-or-bhajji.jpg?s=612x612&w=0&k=20&c=-DlcNp04LGH4LfYnLzlVGIjc5URDr584mJ8SQWTejAs=",
+        "type": "Lunch",
+        "restaurant": "HealthyBites",
+        "ingredients": [
+            "Cauliflower",
+            "Potatoes",
+            "Roti",
+            "Tamarind Chutney"
+        ],
+        "rating": 4.8
+    },
+    {
+        "id": 25,
+        "title": "Chicken Shawarma Wrap",
+        "description": "Sliced marinated chicken wrapped in a warm pita with tomatoes, cucumbers, lettuce, and tahini sauce.",
+        "price": 250.25,
+        "image": "https://media.istockphoto.com/id/534532849/photo/chicken-sandwich-donner.jpg?s=612x612&w=0&k=20&c=cjf1g6MTx9Od_6ZvzPEn0ktJG4pOuvXdoXQeJwFvR8M=",
+        "type": "Lunch",
+        "restaurant": "SadherGhor",
+        "ingredients": [
+            "Marinated Chicken",
+            "Pita Bread",
+            "Tomatoes",
+            "Cucumbers",
+            "Lettuce",
+            "Tahini Sauce"
+        ],
+        "rating": 4.7
+    },
+    {
+        "id": 26,
+        "title": "Veggie Rice Bowl",
+        "description": "A nourishing bowl with a base of brown rice, topped with a variety of steamed vegetables, tofu, and a sesame ginger sauce.",
+        "price": 250.49,
+        "image": "https://media.istockphoto.com/id/1069547356/photo/poke-bowls-with-ponzu-dressing.jpg?s=612x612&w=0&k=20&c=i8Gzw3UU761-jvvYlYpPbObrqBIv9BjapE2zrqNimK0=",
+        "type": "Lunch",
+        "restaurant": "BowlFusion",
+        "ingredients": [
+            "Brown Rice",
+            "Vegetables",
+            "Tofu",
+            "Sesame Ginger Sauce"
+        ],
+        "rating": 4.6
+    },
+    {
+        "id": 27,
+        "title": "Grilled Vegetable Panini",
+        "description": "Grilled panini with a medley of marinated and roasted vegetables, melted mozzarella cheese, and a spread of sun-dried tomato pesto.",
+        "price": 250.99,
+        "image": "https://media.istockphoto.com/id/1461666108/photo/club-sandwich-panini-with-ham-tomato-cheese-and-lettuce-top-view.jpg?s=612x612&w=0&k=20&c=dRDW1-UtLkjSDuMK3E_7TnxB40JOORiDPh_Bgh62jVY=",
+        "type": "Lunch",
+        "restaurant": "CaféChic",
+        "ingredients": [
+            "Marinated Vegetables",
+            "Mozzarella Cheese",
+            "Sun-Dried Tomato Pesto"
+        ],
+        "rating": 4.7
+    },
+    {
+        "id": 28,
+        "title": "Chicken Tandoori Roti Wrap",
+        "description": "Tender tandoori-style grilled chicken wrapped in a soft roti with lettuce, onions, and a tangy yogurt sauce.",
+        "price": 250.99,
+        "image": "https://media.istockphoto.com/id/1221338072/photo/two-doner-kebab-with-meat-vegetables-and-fries-in-pita-bread-close-up-on-a-wooden-table.jpg?s=612x612&w=0&k=20&c=BW0cTtobxAv3kHAx4rU_obYqYItvMlSIp-cGMGU5h6w=",
+        "type": "Lunch",
+        "restaurant": "SpiceFusion",
+        "ingredients": [
+            "Tandoori Chicken",
+            "Roti",
+            "Lettuce",
+            "Onions",
+            "Yogurt Sauce"
+        ],
+        "rating": 4.8
+    },
+    {
+        "id": 29,
+        "title": "Falafel Rice Bowl",
+        "description": "A hearty bowl featuring crispy falafel, seasoned rice, hummus, tabbouleh, and a drizzle of tahini sauce.",
+        "price": 250.49,
+        "image": "https://media.istockphoto.com/id/1433415055/photo/chicken-over-rice-in-aluminum-bowl-new-york-style-famous-halal-food.jpg?s=612x612&w=0&k=20&c=uaEJaWsebH-Am-wc9ejtSks9hT3WSC9G7MixHhT2ZCo=",
+        "type": "Lunch",
+        "restaurant": "HealthyBites",
+        "ingredients": [
+            "Falafel",
+            "Seasoned Rice",
+            "Hummus",
+            "Tabbouleh",
+            "Tahini Sauce"
+        ],
+        "rating": 4.6
+    },
+    {
+        "id": 30,
+        "title": "BBQ Chicken Rice Plate",
+        "description": "Grilled BBQ chicken served with aromatic rice, coleslaw, and a choice of barbecue sauce or honey mustard.",
+        "price": 250.25,
+        "image": "https://media.istockphoto.com/id/1433415055/photo/chicken-over-rice-in-aluminum-bowl-new-york-style-famous-halal-food.jpg?s=612x612&w=0&k=20&c=uaEJaWsebH-Am-wc9ejtSks9hT3WSC9G7MixHhT2ZCo=",
+        "type": "Lunch",
+        "restaurant": "SadherGhor",
+        "ingredients": [
+            "Grilled Chicken",
+            "Aromatic Rice",
+            "Coleslaw",
+            "Barbecue Sauce or Honey Mustard"
+        ],
+        "rating": 4.5
+    },
+    {
+        "id": 31,
+        "title": "Thai Green Curry",
+        "description": "A flavorful Thai green curry made with tender chicken, vegetables, and aromatic herbs, served with steamed jasmine rice.",
+        "price": 250.99,
+        "image": "https://media.istockphoto.com/id/1271879367/photo/famous-internationally-renowned-thai-green-coconut-curry-gaeng-keow-wan-gai-with-chicken-in-a.jpg?s=612x612&w=0&k=20&c=jCV4dTxP-xaZa5mcwnSWOVmcYp84-l6tdW6cbUu3Xf8=",
+        "type": "Lunch",
+        "restaurant": "SpiceFusion",
+        "ingredients": [
+            "Chicken",
+            "Vegetables",
+            "Thai Green Curry Sauce",
+            "Jasmine Rice"
+        ],
+        "rating": 4.9
+    },
+    {
+        "id": 32,
+        "title": "Veggie Rice Noodle Bowl",
+        "description": "A light and fresh rice noodle bowl with assorted vegetables, tofu, herbs, and a zesty lime dressing.",
+        "price": 250.75,
+        "image": "https://media.istockphoto.com/id/1495281422/photo/a-serving-of-thai-duck-noodle-salad.jpg?s=612x612&w=0&k=20&c=MtzepgVbWoPtMV10Vni__3CY4zsZFKlhuI-kD9yY_qM=",
+        "type": "Lunch",
+        "restaurant": "GreenEats",
+        "ingredients": [
+            "Rice Noodles",
+            "Assorted Vegetables",
+            "Tofu",
+            "Lime Dressing"
+        ],
+        "rating": 4.7
+    },
+    {
+        "id": 33,
+        "title": "Chicken Fried Rice",
+        "description": "Stir-fried rice with tender pieces of chicken, eggs, assorted vegetables, and soy sauce for a satisfying and flavorful meal.",
+        "price": 250.99,
+        "image": "https://media.istockphoto.com/id/672810138/photo/a-traditional-asian-dish-pilaf-with-meat-mushrooms-and-pepper-capi-in-a-bowl-on-a-dark-wooden.jpg?s=612x612&w=0&k=20&c=aDB8wTyGNycfOv0h3VQHj8GaMprTvDWcXdn4zRvumUg=",
+        "type": "Lunch",
+        "restaurant": "MorningBites",
+        "ingredients": [
+            "Chicken",
+            "Rice",
+            "Assorted Vegetables",
+            "Soy Sauce"
+        ],
+        "rating": 4.6
+    },
+    {
+        "id": 34,
+        "title": "Vegetable Jambalaya",
+        "description": "A spicy and flavorful rice dish cooked with a mix of vegetables, spices, and Cajun seasoning, inspired by Creole cuisine.",
+        "price": 250.25,
+        "image": "https://media.istockphoto.com/id/691448664/photo/fresh-salad-plate-on-blue-picnic-table.jpg?s=612x612&w=0&k=20&c=xBscp0-6Egk0UpZV_zZTcUOruuMUgF-xIsk9eMadc6k=",
+        "type": "Lunch",
+        "restaurant": "SadherGhor",
+        "ingredients": [
+            "Rice",
+            "Assorted Vegetables",
+            "Spices",
+            "Cajun Seasoning"
+        ],
+        "rating": 4.5
+    },
+    {
+        "id": 35,
+        "title": "Chicken Teriyaki Rice Bowl",
+        "description": "Grilled chicken glazed with teriyaki sauce, served over steamed rice with sautéed vegetables and sesame seeds.",
+        "price": 200.49,
+        "image": "https://media.istockphoto.com/id/183883466/photo/sesame-chicken-teriyaki-bowl.jpg?s=612x612&w=0&k=20&c=MOLUBFYzN1fnmSNSaajj9UAn_6PEq2yOuu3FtjIs1dI=",
+        "type": "Lunch",
+        "restaurant": "BowlFusion",
+        "ingredients": [
+            "Chicken",
+            "Teriyaki Sauce",
+            "Steamed Rice",
+            "Sautéed Vegetables",
+            "Sesame Seeds"
+        ],
+        "rating": 4.8
+    },
+    {
+        "id": 36,
+        "title": "Shrimp and Broccoli Stir-Fry",
+        "description": "A quick and delicious stir-fry with succulent shrimp, crisp broccoli, and a savory sauce, served over a bed of white rice.",
+        "price": 203.75,
+        "image": "https://media.istockphoto.com/id/1390077241/photo/stir-fried-broccoli-with-shrimp.jpg?s=612x612&w=0&k=20&c=YiwTSYkTauTpWBAQexpEIZXcWubbDmf_LNJ5i0vUn9s=",
+        "type": "Lunch",
+        "restaurant": "CaféChic",
+        "ingredients": [
+            "Shrimp",
+            "Broccoli",
+            "Stir-Fry Sauce",
+            "White Rice"
+        ],
+        "rating": 4.7
+    },
+    
+    {
+        "id": 38,
+        "title": "Chicken and Broccoli Alfredo",
+        "description": "Creamy Alfredo sauce tossed with grilled chicken, tender broccoli florets, and fettuccine pasta.",
+        "price": 200.99,
+        "image": "https://media.istockphoto.com/id/1265266135/photo/fettuccine-alfredo-grilled-chicken.jpg?s=612x612&w=0&k=20&c=fnSje9qokoEop4LlQtp4B3yHG3bZsX2EpgQwFiv59xE=",
+        "type": "Lunch",
+        "restaurant": "SadherGhor",
+        "ingredients": [
+            "Chicken",
+            "Broccoli",
+            "Alfredo Sauce",
+            "Fettuccine Pasta"
+        ],
+        "rating": 4.6
+    },
+    
+    {
+        "id": 40,
+        "title": "Mediterranean Rice Bowl",
+        "description": "A wholesome bowl with lemon-infused rice, grilled chicken, mixed greens, olives, feta cheese, and a drizzle of olive oil.",
+        "price": 151.49,
+        "image": "https://media.istockphoto.com/id/1453427690/photo/black-plate-with-mixed-paella-meat-and-fish-on-a-gray-kitchen-cloth-a-wooden-fork-and-half-a.jpg?s=612x612&w=0&k=20&c=Fkm3v18B4otWP5uvnsVl9lrvnBAeEZpXUSrD_PHquMY=",
+        "type": "Lunch",
+        "restaurant": "GreenEats",
+        "ingredients": [
+            "Lemon Rice",
+            "Grilled Chicken",
+            "Mixed Greens",
+            "Olives",
+            "Feta Cheese",
+            "Olive Oil"
+        ],
+        "rating": 4.7
+    },
+    {
+        "id": 41,
+        "title": "Grilled Lemon Salmon",
+        "description": "A succulent salmon fillet, marinated in zesty lemon and herbs, grilled to perfection.",
+        "price": 156.99,
+        "image": "https://media.istockphoto.com/id/168511286/photo/bbq-grilled-salmon-fillet.jpg?s=612x612&w=0&k=20&c=TYh0B086oVyVqyO5el4Uh1oOy9m_GDY8AuY_I2ZpOC4=",
+        "type": "Lunch",
+        "restaurant": "Seashell",
+        "ingredients": [
+            "Salmon",
+            "Lemon",
+            "Herbs",
+            "Olive Oil"
+        ],
+        "rating": 4.8
+    },
+    {
+        "id": 42,
+        "title": "Creamy Garlic Shrimp Pasta",
+        "description": "Tender shrimp cooked in a creamy garlic sauce, served over al dente pasta.",
+        "price": 154.99,
+        "image": "https://media.istockphoto.com/id/1308229866/photo/pasta-spaghetti-with-grilled-shrimps-bechamel-sauce-spaghetti-with-seafood-rich-cream.jpg?s=612x612&w=0&k=20&c=Bidy068OuiJmQhxHfJZuSHiZhUqxsPg8CWQScl63JiY=",
+        "type": "Dinner",
+        "category": "Seafood",
+        "restaurant": "Seashell",
+        "ingredients": [
+            "Shrimp",
+            "Garlic",
+            "Cream",
+            "Pasta",
+            "Parmesan"
+        ],
+        "rating": 4.6
+    },
+    {
+        "id": 43,
+        "title": "Seafood Platter",
+        "description": "An assortment of fried fish, crispy calamari, and buttery scallops. Served with dipping sauces.",
+        "price": 152.99,
+        "image": "https://media.istockphoto.com/id/1305699663/photo/seafood-platter-grilled-lobster-shrimps-scallops-langoustines-octopus-squid-on-white-plate.jpg?s=612x612&w=0&k=20&c=iEwdxon7CJ0wQEDy8-kwnz7TLdknVw05vaa-Qc_aHow=",
+        "type": "Dinner",
+        "category": "Seafood",
+        "restaurant": "Seashell",
+        "ingredients": [
+            "Fish",
+            "Calamari",
+            "Scallops",
+            "Batter",
+            "Dipping Sauces"
+        ],
+        "rating": 4.7
+    },
+    {
+        "id": 44,
+        "title": "Coconut Lime Shrimp Curry",
+        "description": "Shrimp cooked in a fragrant coconut and lime curry sauce, served with steamed rice.",
+        "price": 157.99,
+        "image": "https://media.istockphoto.com/id/1297010162/photo/thai-prawn-massaman-curry-in-a-bowl-with-chopsticks.jpg?s=612x612&w=0&k=20&c=2BvRTwn1ANgRgn5E14A0orgyId6BcrFU91tAXV6i2jU=",
+        "type": "Lunch",
+        "category": "Seafood",
+        "restaurant": "Seashell",
+        "ingredients": [
+            "Shrimp",
+            "Coconut Milk",
+            "Lime",
+            "Spices",
+            "Rice"
+        ],
+        "rating": 4.9
+    },
+    {
+        "id": 45,
+        "title": "Lobster Tail Feast",
+        "description": "A lavish dinner featuring a succulent lobster tail, garlic butter, and sides of your choice.",
+        "price": 154.99,
+        "image": "https://media.istockphoto.com/id/1495742492/photo/delicious-lobster-cooked-on-the-dining-table.jpg?s=612x612&w=0&k=20&c=JNUkWwyerZjMvg2SJ56c9mXqutVY_GQ6m0O-HA9Q4M0=",
+        "type": "Dinner",
+        "category": "Seafood",
+        "restaurant": "Seashell",
+        "ingredients": [
+            "Lobster Tail",
+            "Garlic Butter",
+            "Side Dishes"
+        ],
+        "rating": 4.8
+    },
+    {
+        "id": 46,
+        "title": "Spicy Cajun Crawfish Boil",
+        "description": "A spicy and flavorful crawfish boil with corn, potatoes, and sausages. Perfect for sharing.",
+        "price": 159.99,
+        "image": "https://media.istockphoto.com/id/185405840/photo/crawfish-boil.jpg?s=612x612&w=0&k=20&c=D29dGV00uspxi79WRB2J17UPumTIkuW95vHchzM-7no=",
+        "type": "Lunch",
+        "category": "Seafood",
+        "restaurant": "Seashell",
+        "ingredients": [
+            "Crawfish",
+            "Corn",
+            "Potatoes",
+            "Sausages",
+            "Cajun Spices"
+        ],
+        "rating": 4.7
+    },
+    {
+        "id": 47,
+        "title": "Sesame Ginger Glazed Salmon",
+        "description": "Salmon fillet glazed with a delightful combination of sesame and ginger, accompanied by steamed vegetables.",
+        "price": 158.99,
+        "image": "https://media.istockphoto.com/id/1081539362/photo/salmon-in-honey-soy-glaze-with-rice-spinach-and-avocado.jpg?s=612x612&w=0&k=20&c=cFxrL48b_QG7NRAOqaH8rl7kg5lfhjdifkSQF_nFirw=",
+        "type": "Dinner",
+        "category": "Seafood",
+        "restaurant": "Seashell",
+        "ingredients": [
+            "Salmon",
+            "Sesame",
+            "Ginger",
+            "Vegetables"
+        ],
+        "rating": 4.6
+    },
+    {
+        "id": 48,
+        "title": "Seafood Paella",
+        "description": "A Spanish-inspired seafood paella featuring shrimp, mussels, and saffron-infused rice.",
+        "price": 151.99,
+        "image": "https://media.istockphoto.com/id/1329666820/photo/traditional-spanish-seafood-paella-in-the-fry-pan-on-a-white-background.jpg?s=612x612&w=0&k=20&c=0yI_5efHYwS40Flz8bGA3x6dTQzERWiOfhM1vyGiac4=",
+        "type": "Lunch",
+        "category": "Seafood",
+        "restaurant": "Seashell",
+        "ingredients": [
+            "Shrimp",
+            "Mussels",
+            "Rice",
+            "Saffron",
+            "Bell Peppers"
+        ],
+        "rating": 4.9
+    },
+    {
+        "id": 49,
+        "title": "Crab Stuffed Avocado Salad",
+        "description": "Fresh crab meat mixed with herbs and stuffed into avocado halves, served over a bed of greens.",
+        "price": 155.99,
+        "image": "https://media.istockphoto.com/id/154395264/photo/stuffed-avocado.jpg?s=612x612&w=0&k=20&c=Pv4jUWJ-HvIMOsrsgSRKpnGjAuNDmDW4iXlhacbT-rQ=",
+        "type": "Lunch",
+        "category": "Seafood",
+        "restaurant": "Seashell",
+        "ingredients": [
+            "Crab Meat",
+            "Avocado",
+            "Herbs",
+            "Greens"
+        ],
+        "rating": 4.7
+    },
+    {
+        "id": 50,
+        "title": "Garlic Butter Scallops",
+        "description": "Scallops sautéed in garlic butter, accompanied by your choice of side dish.",
+        "price": 150.99,
+        "image": "https://media.istockphoto.com/id/185107259/photo/seafood-scampi-and-white-wine.jpg?s=612x612&w=0&k=20&c=AuMpbQgTUdqI1TOO6MvSbtNbXtIxXXyltKKc3-p0SMM=",
+        "type": "Dinner",
+        "category": "Seafood",
+        "restaurant": "Seashell",
+        "ingredients": [
+            "Scallops",
+            "Garlic Butter",
+            "Side Dish"
+        ],
+        "rating": 4.8
+    },
+    {
+        "id": 51,
+        "title": "Tuna Poke Bowl",
+        "description": "Freshly diced tuna marinated in soy and sesame, served over a bed of rice with assorted toppings.",
+        "price": 156.99,
+        "image": "https://media.istockphoto.com/id/1136130610/photo/hawaiian-tuna-poke-bowl.jpg?s=612x612&w=0&k=20&c=wMCcmU_3q7Bh6OE-viKWBpPtvQCxiccItl1B34PlBmQ=",
+        "type": "Lunch",
+        "category": "Seafood",
+        "restaurant": "Seashell",
+        "ingredients": [
+            "Tuna",
+            "Soy Sauce",
+            "Sesame",
+            "Rice",
+            "Toppings"
+        ],
+        "rating": 4.9
+    },
+    {
+        "id": 52,
+        "title": "Seafood Gumbo",
+        "description": "A hearty seafood gumbo with shrimp, crab, andouille sausage, and okra. Served with rice.",
+        "price": 159.99,
+        "image": "https://media.istockphoto.com/id/1055532542/photo/gumbo-with-prawns-okra-and-sausage.jpg?s=612x612&w=0&k=20&c=IBPsyKRqiHLEwyDV_k8RdQNLPh2kKVkXLNTeLd2iTWY=",
+        "type": "Dinner",
+        "category": "Seafood",
+        "restaurant": "Seashell",
+        "ingredients": [
+            "Shrimp",
+            "Crab",
+            "Andouille Sausage",
+            "Okra",
+            "Rice"
+        ],
+        "rating": 4.7
+    },
+    
+    {
+        "id": 53,
+        "title": "Spinach and Ricotta Stuffed Pasta",
+        "description": "Pasta shells filled with a delicious mixture of spinach and creamy ricotta cheese.",
+        "price": 152.99,
+        "image": "https://media.istockphoto.com/id/155382654/photo/ravioli-with-ricotta-and-mozzarella-cheese.jpg?s=612x612&w=0&k=20&c=m4ybjD5b7esPWGwFh1qljypT46UpLpFwg71SykfA7o0=",
+        "type": "Evening Snack",
+        "category": "Pasta",
+        "restaurant": "HealthyBites",
+        "ingredients": [
+            "Pasta Shells",
+            "Spinach",
+            "Ricotta Cheese",
+            "Herbs"
+        ],
+        "rating": 4.5
+    },
+    {
+        "id": 54,
+        "title": "Berry Bliss Pastry",
+        "description": "Flaky pastry filled with a mix of fresh berries, lightly sweetened for a delightful treat.",
+        "price": 15.99,
+        "image": "https://media.istockphoto.com/id/1533635262/photo/croissants-strawberries-lemonade-on-checkered-blanket.jpg?s=612x612&w=0&k=20&c=0RX7Q0_COU8lSpPkWec8iUETxuhuXTddSfk3O49Lrs0=",
+        "type": "Evening Snack",
+        "category": "Pastry",
+        "restaurant": "GreenEats",
+        "ingredients": [
+            "Pastry Dough",
+            "Mixed Berries",
+            "Sugar",
+            "Vanilla"
+        ],
+        "rating": 4.8
+    },
+    {
+        "id": 55,
+        "title": "Crispy Chicken Waffle Sandwich",
+        "description": "Crispy fried chicken sandwiched between two fluffy waffles, served with maple syrup.",
+        "price": 151.99,
+        "image": "https://media.istockphoto.com/id/1400656098/photo/homemade-chicken-and-waffle-sandwich.jpg?s=612x612&w=0&k=20&c=y8bURrg0th7ccQQaMEKVn2eE8AjZvs95CGWMOSxqq_8=",
+        "type": "Evening Snack",
+        "restaurant": "CaféChic",
+        "ingredients": [
+            "Chicken",
+            "Waffles",
+            "Maple Syrup",
+            "Lettuce",
+            "Tomato"
+        ],
+        "rating": 4.6
+    },
+    
+    {
+        "id": 57,
+        "title": "Creamy Pesto Pasta",
+        "description": "Pasta tossed in a creamy pesto sauce made with basil, pine nuts, and parmesan.",
+        "price": 150.99,
+        "image": "https://media.istockphoto.com/id/1173825596/photo/pollo-e-funghi-penne-italian-pasta-with-chicken-and-mushrooms.jpg?s=612x612&w=0&k=20&c=WXCumz86SjXahfKAClOPpV8FKEe8-mbp0l1q-p8QW-Q=",
+        "type": "Evening Snack",
+        "restaurant": "SadherGhor",
+        "ingredients": [
+            "Pasta",
+            "Basil Pesto",
+            "Cream",
+            "Parmesan",
+            "Pine Nuts"
+        ],
+        "rating": 4.7
+    },
+    {
+        "id": 58,
+        "title": "Chocolate Hazelnut Pastry",
+        "description": "Flaky pastry filled with luscious chocolate hazelnut spread, baked to perfection.",
+        "price": 150.99,
+        "image": "https://media.istockphoto.com/id/1173825596/photo/pollo-e-funghi-penne-italian-pasta-with-chicken-and-mushrooms.jpg?s=612x612&w=0&k=20&c=WXCumz86SjXahfKAClOPpV8FKEe8-mbp0l1q-p8QW-Q=",
+        "type": "Evening Snack",
+        "restaurant": "HealthyBites",
+        "ingredients": [
+            "Pastry Dough",
+            "Chocolate Hazelnut Spread"
+        ],
+        "rating": 4.5
+    },
+    {
+        "id": 59,
+        "title": "Belgian Chocolate Waffle",
+        "description": "Indulgent Belgian-style waffle topped with rich Belgian chocolate sauce and whipped cream.",
+        "price": 150.99,
+        "image": "https://media.istockphoto.com/id/1643366486/photo/waffle-with-chocolate-and-banana-on-plate.jpg?s=612x612&w=0&k=20&c=ag2vNe-JdkACbIbNv8l6lY5PuIOaI5YAybgwrYSB8jU=",
+        "type": "Evening Snack",
+        "restaurant": "GreenEats",
+        "ingredients": [
+            "Waffle Batter",
+            "Belgian Chocolate",
+            "Whipped Cream"
+        ],
+        "rating": 4.8
+    },
+    {
+        "id": 60,
+        "title": "Caprese Sandwich",
+        "description": "Fresh mozzarella, tomatoes, and basil leaves drizzled with balsamic glaze, served in ciabatta.",
+        "price": 300.99,
+        "image": "https://media.istockphoto.com/id/1225614735/photo/caprese-sandwich.jpg?s=612x612&w=0&k=20&c=D_skFMCesCIhqJiUFE7lr08yNqX2ymxdocRwKsBOaJA=",
+        "type": "Evening Snack",
+        "restaurant": "CaféChic",
+        "ingredients": [
+            "Ciabatta Bread",
+            "Mozzarella",
+            "Tomatoes",
+            "Basil",
+            "Balsamic Glaze"
+        ],
+        "rating": 4.6
+    },
+    
+    {
+        "id": 62,
+        "title": "Creamy Alfredo Pasta",
+        "description": "Fettuccine pasta smothered in a creamy Alfredo sauce made with butter, cream, and parmesan.",
+        "price": 3001.99,
+        "image": "https://media.istockphoto.com/id/1451111530/photo/creamy-alfredo-pasta-with-chicken-mushrooms-and-parmesan-cheese-healthy-italian-food.jpg?s=612x612&w=0&k=20&c=MhHgRTw5-zoej97Hq__NbSfHFVtcvmsawZqpkky4Pwo=",
+        "type": "Evening Snack",
+        "restaurant": "SadherGhor",
+        "ingredients": [
+            "Fettuccine Pasta",
+            "Cream",
+            "Butter",
+            "Parmesan"
+        ],
+        "rating": 4.7
+    },
+    {
+        "id": 63,
+        "title": "Blueberry Cream Cheese Pastry",
+        "description": "Flaky pastry filled with a sweet and tangy blend of blueberry compote and cream cheese.",
+        "price": 300.99,
+        "image": "https://media.istockphoto.com/id/1336151149/photo/crumble-cheesecake-bars-with-blueberry-filling-and-fresh-blueberries-concrete-background-bar.jpg?s=612x612&w=0&k=20&c=BSn5DU4VNE00_RB62xR9AVfB-Gp0NHS58ddyo9UVcn0=",
+        "type": "Evening Snack",
+        "restaurant": "HealthyBites",
+        "ingredients": [
+            "Pastry Dough",
+            "Blueberry Compote",
+            "Cream Cheese"
+        ],
+        "rating": 4.5
+    },
+    {
+        "id": 64,
+        "title": "Nutella Banana Waffle",
+        "description": "Waffle topped with sliced bananas, Nutella spread, and a dusting of powdered sugar.",
+        "price": 3000.99,
+        "image": "https://media.istockphoto.com/id/1204458417/photo/traditional-belgian-waffles-with-fresh-strawberry-and-chocolate-stock-image.jpg?s=612x612&w=0&k=20&c=9tFlqsByey8G81lDYdLdLeMFTlpLPzoeOuePXMPI280=",
+        "type": "Evening Snack",
+        "restaurant": "GreenEats",
+        "ingredients": [
+            "Waffle Batter",
+            "Bananas",
+            "Nutella",
+            "Powdered Sugar"
+        ],
+        "rating": 4.8
+    },
+    {
+        "id": 65,
+        "title": "Turkey Avocado Club Sandwich",
+        "description": "Layers of roasted turkey, creamy avocado, crispy bacon, lettuce, and tomato in a triple-decker sandwich.",
+        "price": 300.99,
+        "image": "https://media.istockphoto.com/id/1546688402/photo/club-sandwich-with-green-salad.jpg?s=612x612&w=0&k=20&c=Mkn3CtNiilVNgW5Vasq0Dv5epdFYtK6ArCgPBj5PpAg=",
+        "type": "Evening Snack",
+        "restaurant": "CaféChic",
+        "ingredients": [
+            "Bread",
+            "Turkey",
+            "Avocado",
+            "Bacon",
+            "Lettuce",
+            "Tomato"
+        ],
+        "rating": 4.6
+    },
+    
+    {
+        "id": 67,
+        "title": "Creamy Mushroom Pasta",
+        "description": "Pasta tossed in a creamy mushroom sauce made with sautéed mushrooms, garlic, and herbs.",
+        "price": 3000.99,
+        "image": "https://media.istockphoto.com/id/1391593776/photo/rigatoni-with-lamb-sausage-wild-mushroom-truffle-cream-sauce.jpg?s=612x612&w=0&k=20&c=6LD4RZxHcz9jjdo6Ja1XwpGKJMXltNIpF_2AG0B25qc=",
+        "type": "Evening Snack",
+        "restaurant": "SadherGhor",
+        "ingredients": [
+            "Pasta",
+            "Mushrooms",
+            "Cream",
+            "Garlic",
+            "Herbs"
+        ],
+        "rating": 4.7
+    },
+    {
+        "id": 68,
+        "title": "Raspberry Danish Pastry",
+        "description": "Flaky pastry filled with sweet raspberry jam and topped with a drizzle of icing.",
+        "price": 300.99,
+        "image": "https://media.istockphoto.com/id/1395084907/photo/rustic-apple-blueberry-and-raspberry-custard-danishes-on-slate-platter.jpg?s=612x612&w=0&k=20&c=M1fY4T2ZJGecZXmAoqxO9-ERmEGvgct8n_6cbySlRh8=",
+        "type": "Evening Snack",
+        "restaurant": "HealthyBites",
+        "ingredients": [
+            "Pastry Dough",
+            "Raspberry Jam",
+            "Icing"
+        ],
+        "rating": 4.5
+    },
+    {
+        "id": 69,
+        "title": "Strawberry Nutella Waffle",
+        "description": "Waffle topped with sliced strawberries, Nutella spread, chopped nuts, and a dollop of whipped cream.",
+        "price": 3001.99,
+        "image": "https://media.istockphoto.com/id/1307021310/photo/mixed-fruit-with-chocolate-spread-on-a-waffle.jpg?s=612x612&w=0&k=20&c=IRNf2CLHVLVQTaW-HuOO7fOv0_tc_51QEGPlogHEIxw=",
+        "type": "Evening Snack",
+        "restaurant": "GreenEats",
+        "ingredients": [
+            "Waffle Batter",
+            "Strawberries",
+            "Nutella",
+            "Nuts",
+            "Whipped Cream"
+        ],
+        "rating": 4.8
+    },
+    {
+        "id": 70,
+        "title": "Caprese Panini",
+        "description": "Panini sandwich filled with mozzarella, tomato, fresh basil, and a balsamic glaze.",
+        "price": 300.99,
+        "image": "https://media.istockphoto.com/id/930271208/photo/healthy-grilled-basil-mozzarella-caprese-panini.jpg?s=612x612&w=0&k=20&c=6B176_LanoK6okEUU_MCfD49L1W5_dhbFijiJx3FzrM=",
+        "type": "Evening Snack",
+        "restaurant": "CaféChic",
+        "ingredients": [
+            "Panini Bread",
+            "Mozzarella",
+            "Tomato",
+            "Basil",
+            "Balsamic Glaze"
+        ],
+        "rating": 4.6
+    },
+    {
+        "id": 71,
+        "title": "Classic Tiramisu",
+        "description": "Layers of coffee-soaked ladyfingers and mascarpone cream, dusted with cocoa powder.",
+        "price": 300.99,
+        "image": "https://media.istockphoto.com/id/1446633819/photo/closeup-of-a-delicious-cake-isolated-on-a-white-background.jpg?s=612x612&w=0&k=20&c=h402RNyJaPJp1n4GLJOwQs2QouTxoL4YIet0qfUa73Y=",
+        "type": "Dessert",
+        "restaurant": "SadherGhor",
+        "ingredients": [
+            "Ladyfingers",
+            "Mascarpone Cheese",
+            "Coffee",
+            "Cocoa Powder"
+        ],
+        "rating": 4.7
+    },
+    {
+        "id": 72,
+        "title": "Chocolate Lava Cake",
+        "description": "Warm chocolate cake with a gooey molten center, served with a scoop of vanilla ice cream.",
+        "price": 300.99,
+        "image": "https://media.istockphoto.com/id/1346128287/photo/chocolate-fondant-cake-molten-lava-cake.jpg?s=612x612&w=0&k=20&c=zX5BNyWrbrBLKqEehMfIXej0hLz8a8eGEPT2naOPHuk=",
+        "type": "Dessert",
+        "restaurant": "HealthyBites",
+        "ingredients": [
+            "Chocolate Cake",
+            "Chocolate Ganache",
+            "Vanilla Ice Cream"
+        ],
+        "rating": 4.5
+    },
+    {
+        "id": 73,
+        "title": "Mixed Berry Parfait",
+        "description": "Layers of mixed berries, yogurt, and granola, topped with honey and a sprinkle of nuts.",
+        "price": 300.99,
+        "image": "https://media.istockphoto.com/id/180696282/photo/parfait-with-yogurt-strawberry-sauce-granola-and-fresh-fruits.jpg?s=612x612&w=0&k=20&c=0vo_xq-55JUjnrm4R4gyWLyV1o0DVMkSbgQtt08qpGU=",
+        "type": "Dessert",
+        "restaurant": "GreenEats",
+        "ingredients": [
+            "Mixed Berries",
+            "Yogurt",
+            "Granola",
+            "Honey",
+            "Nuts"
+        ],
+        "rating": 4.8
+    },
+    {
+        "id": 74,
+        "title": "Caramel Pecan Cheesecake",
+        "description": "Creamy cheesecake topped with caramel sauce and toasted pecans on a graham cracker crust.",
+        "price": 300.99,
+        "image": "https://media.istockphoto.com/id/1348676998/photo/caramel-pecan-cheesecake.jpg?s=612x612&w=0&k=20&c=eSlwDWzIOkoWApYmK-99_38x4cjBIp0nGLlr0p4nxRQ=",
+        "type": "Dessert",
+        "restaurant": "CaféChic",
+        "ingredients": [
+            "Cream Cheese",
+            "Caramel Sauce",
+            "Pecans",
+            "Graham Cracker Crust"
+        ],
+        "rating": 4.6
+    },
+    {
+        "id": 75,
+        "title": "Mango Coconut Sorbet",
+        "description": "Refreshing sorbet made with ripe mangoes and coconut milk, perfect for a tropical treat.",
+        "price": 300.99,
+        "image": "https://media.istockphoto.com/id/516450994/photo/homemade-mango-ice-cream.jpg?s=612x612&w=0&k=20&c=8-gjfqZcdJQpKGZEZXZE6-9fe89Yp63EwiWbBBrT6Ds=",
+        "type": "Dessert",
+        "restaurant": "SpiceFusion",
+        "ingredients": [
+            "Mangoes",
+            "Coconut Milk",
+            "Sugar"
+        ],
+        "rating": 4.9
+    },
+    {
+        "id": 76,
+        "title": "Strawberry Shortcake",
+        "description": "Light and fluffy shortcake filled with fresh strawberries and whipped cream.",
+        "price": 300.99,
+        "image": "https://media.istockphoto.com/id/1472804077/photo/strawberry-shortcake.jpg?s=612x612&w=0&k=20&c=iMgi5yfEzcDy3HrV4pRHBU4RSz0ITEZ_22g9RdMJlXg=",
+        "type": "Dessert",
+        "category": "Dessert",
+        "restaurant": "SadherGhor",
+        "ingredients": [
+            "Shortcake",
+            "Strawberries",
+            "Whipped Cream"
+        ],
+        "rating": 4.7
+    },
+    {
+        "id": 77,
+        "title": "Triple Chocolate Mousse",
+        "description": "Layers of dark, milk, and white chocolate mousse, topped with chocolate shavings.",
+        "price": 300.99,
+        "image": "https://media.istockphoto.com/id/462862427/photo/chocolate-mousse-with-almond-in-a-white-cup.jpg?s=612x612&w=0&k=20&c=dc-eGKrycmifjhHkh9ZDB3d0feF7K_-VRLkoUElRTNM=",
+        "type": "Dessert",
+        "category": "Dessert",
+        "restaurant": "HealthyBites",
+        "ingredients": [
+            "Dark Chocolate",
+            "Milk Chocolate",
+            "White Chocolate",
+            "Chocolate Shavings"
+        ],
+        "rating": 4.5
+    },
+    {
+        "id": 78,
+        "title": "Fruit and Nut Parfait",
+        "description": "Layers of mixed fruits, yogurt, and chopped nuts, drizzled with honey.",
+        "price": 300.99,
+        "image": "https://media.istockphoto.com/id/1344093370/photo/granola-with-yoghurt-and-fresh-blueberries.jpg?s=612x612&w=0&k=20&c=9mAM84faYXSHnSKwKvNa9EdenYZ36C6wUUOESpzeTk0=",
+        "type": "Dessert",
+        "category": "Dessert",
+        "restaurant": "GreenEats",
+        "ingredients": [
+            "Mixed Fruits",
+            "Yogurt",
+            "Nuts",
+            "Honey"
+        ],
+        "rating": 4.8
+    },
+    {
+        "id": 79,
+        "title": "Red Velvet Cheesecake",
+        "description": "Velvety red velvet cheesecake topped with cream cheese frosting and red velvet crumbs.",
+        "price": 300.99,
+        "image": "https://media.istockphoto.com/id/641237530/photo/red-velvet-cheesecake.jpg?s=612x612&w=0&k=20&c=VGUb632rJrIUUXKxtIo1z-hVPzJaH6YxCZYi0QVPEWs=",
+        "type": "Dessert",
+        "category": "Dessert",
+        "restaurant": "CaféChic",
+        "ingredients": [
+            "Cream Cheese",
+            "Red Velvet Cake",
+            "Cream Cheese Frosting"
+        ],
+        "rating": 4.6
+    },
+    {
+        "id": 80,
+        "title": "Coconut Mango Panna Cotta",
+        "description": "Silky panna cotta infused with coconut milk and topped with mango coulis.",
+        "price": 300.99,
+        "image": "https://media.istockphoto.com/id/831559706/photo/delicious-mango-passion-fruit-and-cream-cheese-layered-dessert-on-glasses.jpg?s=612x612&w=0&k=20&c=2lAjzjn2WPFXVhEvbJPoHWezBIND0SDFlnUBAz2235I=",
+        "type": "Dessert",
+        "category": "Dessert",
+        "restaurant": "SpiceFusion",
+        "ingredients": [
+            "Coconut Milk",
+            "Mango Coulis",
+            "Gelatin"
+        ],
+        "rating": 4.9
+    },
+    {
+        "id": 81,
+        "title": "Chocolate Lovers' Brownie",
+        "description": "Decadent chocolate brownie loaded with chocolate chips and drizzled with chocolate sauce.",
+        "price": 300.99,
+        "image": "https://media.istockphoto.com/id/1255426185/photo/delicious-chocolate-zucchini-brownies.jpg?s=612x612&w=0&k=20&c=xbo8Cj5-h0wxp06Uu6I9tfnvTNlF9aI2IdwHdRMmnyM=",
+        "type": "Dessert",
+        "category": "Dessert",
+        "restaurant": "SadherGhor",
+        "ingredients": [
+            "Chocolate",
+            "Chocolate Chips",
+            "Chocolate Sauce"
+        ],
+        "rating": 4.7
+    },
+    {
+        "id": 82,
+        "title": "Raspberry White Chocolate Tart",
+        "description": "Buttery tart crust filled with white chocolate ganache and topped with fresh raspberries.",
+        "price": 300.99,
+        "image": "https://media.istockphoto.com/id/1307280189/photo/small-tartlet-pastries-with-white-cream-topped-with-raspberry-fruits.jpg?s=612x612&w=0&k=20&c=K6Yy7RKLEYlRiyCucr__LLCnBcAbeyrZ09oW4p9jDPw=",
+        "type": "Dessert",
+        "category": "Dessert",
+        "restaurant": "HealthyBites",
+        "ingredients": [
+            "Tart Crust",
+            "White Chocolate Ganache",
+            "Raspberries"
+        ],
+        "rating": 4.5
+    },
+    {
+        "id": 1,
+        "title": "Eggs Benedict",
+        "description": "A classic breakfast dish featuring poached eggs, ham, and hollandaise sauce atop toasted English muffins. Served with a side of roasted potatoes.",
+        "price": 300.99,
+        "image": "https://i.ibb.co/ccZyWng/breakfast1.png",
+        "type": "Breakfast",
+        "restaurant": "SadherGhor",
+        "ingredients": [
+            "Eggs",
+            "English Muffin"
+        ],
+        "rating": 4.7
+    },
+    {
+        "id": 81,
+        "title": "Chocolate Lovers' Brownie",
+        "description": "Decadent chocolate brownie loaded with chocolate chips and drizzled with chocolate sauce.",
+        "price": 300.99,
+        "image": "https://media.istockphoto.com/id/1255426185/photo/delicious-chocolate-zucchini-brownies.jpg?s=612x612&w=0&k=20&c=xbo8Cj5-h0wxp06Uu6I9tfnvTNlF9aI2IdwHdRMmnyM=",
+        "type": "Breakfast",
+        "category": "Dessert",
+        "restaurant": "SadherGhor",
+        "ingredients": [
+            "Chocolate",
+            "Chocolate Chips",
+            "Chocolate Sauce"
+        ],
+        "rating": 4.7
+    },
+    {
+        "id": 2,
+        "title": "Breakfast Sandwich",
+        "description": "Start your day with a hearty breakfast sandwich made with freshly baked bread, scrambled eggs, cheddar cheese, and savory ham.",
+        "price": 300.99,
+        "image": "https://i.ibb.co/Bnz8Zv2/breakfast2.png",
+        "type": "Breakfast",
+        "restaurant": "SadherGhor",
+        "ingredients": [
+            "Bread",
+            "Ham"
+        ],
+        "rating": 4.5
+    },
+    {
+        "id": 3,
+        "title": "Baked Chicken",
+        "description": "Tender chicken pieces marinated in a blend of herbs and spices, then baked to perfection. Served with a side of seasonal vegetables.",
+        "price": 300.99,
+        "image": "https://i.ibb.co/mXYbPcv/breakfast3.png",
+        "type": "Breakfast",
+        "restaurant": "SadherGhor",
+        "ingredients": [
+            "Chicken",
+            "Herbs"
+        ],
+        "rating": 4.2
+    },
+    {
+        "id": 4,
+        "title": "Bagel and Cream Cheese",
+        "description": "A classic bagel toasted to a golden brown and spread with rich cream cheese. Perfect for a quick and satisfying breakfast.",
+        "price": 2003.99,
+        "image": "https://i.ibb.co/87MwqqT/breakfast4.png",
+        "type": "Breakfast",
+        "restaurant": "SadherGhor",
+        "ingredients": [
+            "Bagel",
+            "Cream Cheese"
+        ],
+        "rating": 4.8
+    },
+    {
+        "id": 5,
+        "title": "Fried Egg Toast Brunch",
+        "description": "A delightful brunch option featuring sunny-side-up eggs served over toasted bread. Accompanied by a fresh salad and tangy vinaigrette.",
+        "price": 200.99,
+        "image": "https://i.ibb.co/92mtcwx/breakfast5.png",
+        "type": "Breakfast",
+        "restaurant": "SadherGhor",
+        "ingredients": [
+            "Eggs",
+            "Bread"
+        ],
+        "rating": 4.3
+    },
+    {
+        "id": 6,
+        "title": "Toast Croissant Fried Egg",
+        "description": "Indulge in a flaky croissant filled with a perfectly fried egg. Served with a side of mixed greens and balsamic dressing.",
+        "price": 2009.99,
+        "image": "https://i.ibb.co/hHGc7sm/breakfast6.png",
+        "type": "Breakfast",
+        "restaurant": "SadherGhor",
+        "ingredients": [
+            "Croissant",
+            "Eggs"
+        ],
+        "rating": 4.6
+    },
+    {
+        "id": 7,
+        "title": "Beef Steak",
+        "description": "Savor the bold flavors of a juicy beef steak, seasoned and grilled to your preference. Served with garlic mashed potatoes and steamed vegetables.",
+        "price": 2005.99,
+        "image": "https://i.ibb.co/RgrfxCH/lunch1.png",
+        "type": "Lunch",
+        "restaurant": "BlueSeaFood",
+        "ingredients": [
+            "Beef",
+            "Seasonings"
+        ],
+        "rating": 4.9
+    },
+    {
+        "id": 8,
+        "title": "Honey with Peppers",
+        "description": "A unique lunch option featuring tender strips of honey-glazed chicken served with sautéed bell peppers and a side of fluffy rice.",
+        "price": 200.99,
+        "image": "https://i.ibb.co/XsNF0PW/lunch2.png",
+        "type": "Lunch",
+        "restaurant": "BlueSeaFood",
+        "ingredients": [
+            "Honey",
+            "Peppers"
+        ],
+        "rating": 4.4
+    },
+    {
+        "id": 9,
+        "title": "Tarragon Rubbed Salmon",
+        "description": "Delight in a succulent salmon fillet rubbed with aromatic tarragon. Served with a medley of roasted vegetables and quinoa.",
+        "price": 200.99,
+        "image": "https://i.ibb.co/1MjBt1z/lunch3.png",
+        "type": "Lunch",
+        "restaurant": "BlueSeaFood",
+        "ingredients": [
+            "Salmon",
+            "Tarragon"
+        ],
+        "rating": 4.7
+    },
+    {
+        "id": 10,
+        "title": "Indian Lunch",
+        "description": "Experience the vibrant flavors of Indian cuisine with a delicious lunch spread, including fragrant spices, basmati rice, and flavorful curries.",
+        "price": 200.99,
+        "image": "https://i.ibb.co/G3Vq8Gt/lunch4.png",
+        "type": "Lunch",
+        "restaurant": "BlueSeaFood",
+        "ingredients": [
+            "Spices",
+            "Rice"
+        ],
+        "rating": 4.6
+    },
+    {
+        "id": 11,
+        "title": "Fried Chicken Bento",
+        "description": "Enjoy a Japanese-inspired bento box featuring crispy fried chicken, steamed rice, and a variety of fresh vegetables. Served with a zesty dipping sauce.",
+        "price": 2003.99,
+        "image": "https://i.ibb.co/gF3dTJs/lunch5.png",
+        "type": "Lunch",
+        "restaurant": "BlueSeaFood",
+        "ingredients": [
+            "Chicken",
+            "Rice"
+        ],
+        "rating": 4.8
+    },
+    {
+        "id": 12,
+        "title": "Healthy Meal Plan",
+        "description": "Nourish your body with a well-balanced meal plan that includes a variety of nutrient-rich ingredients, such as colorful vegetables, lean proteins, and whole grains.",
+        "price": 2003.99,
+        "image": "https://i.ibb.co/WGKYHcG/lunch6.png",
+        "type": "Lunch",
+        "restaurant": "BlueSeaFood",
+        "ingredients": [
+            "Assorted Vegetables",
+            "Grains"
+        ],
+        "rating": 4.5
+    },
+    {
+        "id": 13,
+        "title": "Baked Chicken",
+        "description": "Indulge in a hearty dinner featuring tender baked chicken infused with aromatic herbs. Served with roasted potatoes and a side of seasonal greens.",
+        "price": 2006.99,
+        "image": "https://i.ibb.co/XLbqWqJ/dinner1.png",
+        "type": "Dinner",
+        "restaurant": "BanglarShad",
+        "ingredients": [
+            "Chicken",
+            "Herbs"
+        ],
+        "rating": 4.7
+    },
+    {
+        "id": 14,
+        "title": "Lemony Salmon Piccata",
+        "description": "Elevate your dinner experience with a zesty lemony salmon piccata, served with a flavorful caper sauce and a side of buttered asparagus.",
+        "price": 2006.99,
+        "image": "https://i.ibb.co/N3rVPJD/dinner2.png",
+        "type": "Dinner",
+        "restaurant": "BanglarShad",
+        "ingredients": [
+            "Salmon",
+            "Lemon"
+        ],
+        "rating": 4.6
+    },
+    {
+        "id": 15,
+        "title": "Garlic Butter Baked Salmon",
+        "description": "Savor the melt-in-your-mouth goodness of garlic butter baked salmon, accompanied by a refreshing cucumber and tomato salad.",
+        "price": 200.99,
+        "image": "https://i.ibb.co/kyTLkW7/dinner3.png",
+        "type": "Dinner",
+        "restaurant": "BanglarShad",
+        "ingredients": [
+            "Salmon",
+            "Garlic"
+        ],
+        "rating": 4.3
+    },
+    {
+        "id": 16,
+        "title": "French Fries with Cheese",
+        "description": "Indulge in a comfort food classic – crispy French fries topped with melted cheddar cheese and served with a tangy dipping sauce.",
+        "price": 2003.99,
+        "image": "https://i.ibb.co/SNxL4z3/dinner4.png",
+        "type": "Dinner",
+        "restaurant": "BanglarShad",
+        "ingredients": [
+            "Potatoes",
+            "Cheese"
+        ],
+        "rating": 4.4
+    },
+    {
+        "id": 17,
+        "title": "Pork Tenderloin",
+        "description": "Satisfy your cravings with a succulent pork tenderloin, seasoned to perfection and served with roasted root vegetables and a drizzle of savory gravy.",
+        "price": 2002.99,
+        "image": "https://i.ibb.co/VJ0c4cw/dinner5.png",
+        "type": "Dinner",
+        "restaurant": "BanglarShad",
+        "ingredients": [
+            "Pork",
+            "Seasonings"
+        ],
+        "rating": 4.9
+    },
+    {
+        "id": 18,
+        "title": "Lentil Salad",
+        "description": "Enjoy a wholesome and protein-packed lentil salad, tossed with fresh vegetables and a zesty lemon vinaigrette. A perfect light dinner option.",
+        "price": 200.99,
+        "image": "https://i.ibb.co/xjvNzKp/dinner6.png",
+        "type": "Dinner",
+        "restaurant": "BanglarShad",
+        "ingredients": [
+            "Lentils",
+            "Vegetables"
+        ],
+        "rating": 4.7
+    }
+]

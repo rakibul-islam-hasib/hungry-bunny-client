@@ -7,12 +7,18 @@ import "primereact/resources/primereact.min.css";
 import { Provider } from 'react-redux'
 import store from './redux/store'
 import AuthState from './context/AuthState'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+
+const queryClient = new QueryClient()
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Provider store={store}>
-      <AuthState>
+    <QueryClientProvider client={queryClient}>
+      <Provider store={store}>
+        <AuthState>
           <RouterProvider router={router} />
-      </AuthState>
-    </Provider>
+        </AuthState>
+      </Provider>
+    </QueryClientProvider>
   </React.StrictMode>,
 )

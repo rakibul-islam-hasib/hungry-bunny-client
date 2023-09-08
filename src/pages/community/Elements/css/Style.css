@@ -1,0 +1,17 @@
+.comment-section::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+    background-color: #ccc;
+}
+
+.comment-section::-webkit-scrollbar-track {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.comment-section::-webkit-scrollbar-thumb {
+    background-color: #bbb;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}

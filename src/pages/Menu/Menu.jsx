@@ -1,9 +1,11 @@
 import React from 'react';
+import MenuCard from '../../components/Card/MenuCard';
 
 const Menu = () => {
     return (
         <div>
-            <h1>Menu</h1>
+            
+            <MenuCard/>
         </div>
     );
 };

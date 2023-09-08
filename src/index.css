@@ -5,15 +5,63 @@
 
 
 body {
-    font-family: 'Josefin Sans', sans-serif;
-    /* background-color: #f7fafc; */
-    @apply bg-[#f1ecea] dark:bg-[#1a202c];
+  font-family: 'Josefin Sans', sans-serif;
+  /* background-color: #f7fafc; */
+  @apply bg-[#f1ecea] dark:bg-black;
 }
 
 .p-sidebar-close {
-    @apply border
+  @apply border
 }
 
 .p-sidebar-close-icon {
-    @apply text-red-500 text-4xl h-6 w-6
+  @apply text-red-500 text-4xl h-6 w-6
+}
+
+input {
+  outline: none !important;
+}
+
+.dashboard-scroll::-webkit-scrollbar {
+  width: 7px;
+  /* Adjust the width as needed */
+}
+.dashboard-scroll::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  /* Change background color as needed */
+}
+.dashboard-scroll::-webkit-scrollbar-thumb {
+  background-color: #888;
+  /* Change color as needed */
+  border-radius: 20px;
+  /* Rounded corners */
+}
+
+/* Ripple Button Styles */
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  transform: scale(0);
+  animation: ripple 1s ease-out;
+  background-color: rgba(255, 255, 255, 0.6);
+  pointer-events: none;
+}
+
+/* Ripple Animation */
+@keyframes ripple {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+
+@layer components {
+  .menu_tab {
+    @apply text-gray-800 cursor-pointer select-none;
+  }
+
+  .active_menu_tab {
+    @apply rounded-full px-4 pb-2 pt-3 text-white select-none;
+  }
 }

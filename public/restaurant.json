@@ -1,0 +1,535 @@
+[
+  {
+    "_id": "1",
+    "restaurantName": "Delicious Bites",
+    "restaurantImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3TBBK6hevphIb2F8_NdNi8Rm0W1iCV7Q5rA&usqp=CAU",
+    "place": "Comilla",
+    "popularDish": [
+      {
+        "dishName": "Creamy Alfredo Pasta",
+        "dishItemNumber": 1,
+        "description": "A rich and creamy pasta dish with Alfredo sauce and fresh vegetables."
+      },
+      {
+        "dishName": "Margherita Pizza",
+        "dishItemNumber": 12,
+        "description": "Traditional Italian pizza with tomatoes, mozzarella, and fresh basil."
+      },
+      {
+        "dishName": "Grilled Vegetable Panini",
+        "dishItemNumber": 13,
+        "description": "Grilled sandwich with assorted vegetables, cheese, and pesto."
+      },
+      {
+        "dishName": "Chicken Parmesan",
+        "dishItemNumber": 14,
+        "description": "Breaded and fried chicken topped with marinara sauce and melted cheese."
+      },
+      {
+        "dishName": "Chocolate Lava Cake",
+        "dishItemNumber": 15,
+        "description": "Warm chocolate cake with a gooey molten center, served with vanilla ice cream."
+      }
+    ],
+    "service": "Dine-in, Takeout, Delivery",
+    "date": "2023-08-17",
+    "descriptionFirst": "Nestled along the tranquil banks of the meandering Riverstone, Riverside Bistro Haven is a culinary oasis that combines stunning natural beauty with exquisite gastronomy. As you step into this haven of taste and elegance, you'll be greeted by a blend of rustic charm and modern sophistication, creating an atmosphere that is both inviting and enchanting.",
+    "descriptionSecond": "The restaurant's interior reflects a harmonious fusion of contemporary design and organic elements. Polished wood and stone accents provide a warm and earthy backdrop, while large panoramic windows offer breathtaking views of the river, allowing you to dine amidst the soothing sounds of nature.",
+    "email": "info@deliciousbites.com",
+    "rating": 4.5,
+    "owner": "John Doe",
+    "ownerImage": "https://images.generated.photos/qsAwc5XXEYkAxq1vi4VRTbgCZM_j93c3nlRdwvcpBA8/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/ODk5NDExLmpwZw.jpg",
+    "foodItems": [
+      {
+        "foodItem": "Garlic Bread",
+        "foodImage": "https://img.freepik.com/free-photo/top-view-table-full-delicious-food-composition_23-2149141352.jpg",
+        "description": "Toasted bread with garlic butter and herbs.",
+        "foodRating": 4.5,
+        "price": 3.99
+      },
+      {
+        "foodItem": "Classic Caesar Salad",
+        "foodImage": "https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        "description": "Crisp romaine lettuce, parmesan cheese, croutons, and Caesar dressing.",
+        "foodRating": 4.8,
+        "price": 6.99
+      },
+      {
+        "foodItem": "Mushroom Risotto",
+        "foodImage": "https://images.pexels.com/photos/70497/pexels-photo-70497.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        "description": "Tender grilled chicken served over fettuccine with creamy Alfredo sauce.",
+        "foodRating": 4.4,
+        "price": 12.99
+      },
+      {
+        "foodItem": "Tiramisu",
+        "foodImage": "https://images.pexels.com/photos/1640772/pexels-photo-1640772.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        "description": "Classic Italian dessert with layers of coffee-soaked ladyfingers and mascarpone cheese.",
+        "foodRating": 4.3,
+        "price": 5.99
+      }
+    ],
+    "dishItems": [
+      {
+        "dishName": "Chicken Carbonara",
+        "dishItemNumber": 16,
+        "description": "Pasta with creamy egg-based sauce, pancetta, and parmesan cheese."
+      },
+      {
+        "dishName": "Caprese Salad",
+        "dishItemNumber": 17,
+        "description": "Fresh tomato, mozzarella, and basil salad drizzled with balsamic glaze."
+      }
+    ]
+  },
+  {
+    "_id": "2",
+    "restaurantName": "Spice Paradise",
+    "restaurantImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlvWd3jVpARJubdQ1_2ELf6DFtEA1Oq0kP_90T26HWkKavqgvK3kiygc9AVPWzG7h5wIM&usqp=CAU",
+    "place": "Flavorville",
+    "popularDish": [
+      {
+        "dishName": "Fiery Tofu Delight",
+        "dishItemNumber": 12,
+        "description": "A spicy tofu stir-fry with a blend of exotic spices and vegetables."
+      },
+      {
+        "dishName": "Biryani Platter",
+        "dishItemNumber": 13,
+        "description": "Aromatic rice dish with tender meat or vegetables, flavored with spices."
+      },
+      {
+        "dishName": "Paneer Tikka Masala",
+        "dishItemNumber": 14,
+        "description": "Indian cottage cheese cooked in a spiced tomato and cream sauce."
+      },
+      {
+        "dishName": "Chole Bhature",
+        "dishItemNumber": 15,
+        "description": "Deep-fried bread served with spicy chickpea curry."
+      },
+      {
+        "dishName": "Mango Lassi",
+        "dishItemNumber": 16,
+        "description": "Refreshing yogurt-based drink with sweet mango flavor."
+      }
+    ],
+    "service": "Dine-in, Takeout",
+    "date": "2023-08-18",
+    "descriptionFirst": "Led by Chef Alexandre Durand, a visionary culinary artist with an international flair, Riverside Bistro Haven offers a menu that celebrates the finest ingredients from local farms and artisanal purveyors. With a dedication to seasonal and sustainable sourcing, each dish is a masterpiece that pays homage to the region's rich culinary heritage while embracing global influences.",
+    "descriptionSecond": "Start your culinary journey with a tantalizing array of appetizers, from delicate tuna tartare garnished with microgreens to crispy tempura-fried artichoke hearts drizzled with lemon-infused aioli. For the main course, savor the succulent flavors of a dry-aged ribeye steak, perfectly grilled and accompanied by truffle-infused mashed potatoes and grilled asparagus spears.",
+    "email": "contact@spiceparadise.net",
+    "rating": 4.8,
+    "owner": "Jane Smith",
+    "ownerImage": "https://images.generated.photos/Dh1Jspr3xgssZomgP66qNB2PDjgnTC0GXCEl-18lUSA/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/MTAzMDE5LmpwZw.jpg",
+    "foodItems": [
+      {
+        "foodItem": "Spicy Tofu Stir-fry",
+        "foodImage": "https://images.pexels.com/photos/699953/pexels-photo-699953.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        "description": "Tofu and mixed vegetables stir-fried in a spicy sauce.",
+        "foodRating": 4.5,
+        "price": 9.99
+      },
+      {
+        "foodItem": "Saffron Rice",
+        "foodImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmLQGNGtrEzkXTB2LDTbDhp4aNsHTHehNXOA&usqp=CAU",
+        "description": "Fragrant basmati rice cooked with saffron threads.",
+        "foodRating": 4.7,
+        "price": 4.49
+      },
+      {
+        "foodItem": "Paneer Tikka Masala",
+        "foodImage": "https://images.pexels.com/photos/718742/pexels-photo-718742.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        "description": "Indian cottage cheese cooked in a spiced tomato and cream sauce.",
+        "foodRating": 4.4,
+        "price": 12.99
+      },
+      {
+        "foodItem": "Butter Naan",
+        "foodImage": "https://images.pexels.com/photos/3186654/pexels-photo-3186654.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        "description": "Soft and fluffy Indian bread brushed with butter.",
+        "foodRating": 4.8,
+        "price": 2.99
+      },
+      {
+        "foodItem": "Mango Lassi",
+        "foodImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThD6QQo_jkPpAvEGwlqaUahTd652Y5FLoHXg&usqp=CAU",
+        "description": "Refreshing yogurt-based drink with sweet mango flavor.",
+        "foodRating": 4.9,
+        "price": 3.99
+      }
+    ],
+    "dishItems": [
+      {
+        "dishName": "Aloo Paratha",
+        "dishItemNumber": 16,
+        "description": "Indian flatbread stuffed with spiced potatoes."
+      },
+      {
+        "dishName": "Veg Biryani",
+        "dishItemNumber": 17,
+        "description": "Vegetable and rice dish cooked with aromatic spices."
+      }
+    ]
+  },
+  {
+    "_id": "3",
+    "restaurantName": "Ocean Feast",
+    "restaurantImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlK4fzFq403LXvd8jy1hSWWreNyN0KHjoR4w&usqp=CAU",
+    "place": "Seaside Town",
+    "popularDish": [
+      {
+        "dishName": "Oceanic Grilled Platter",
+        "dishItemNumber": 13,
+        "description": "A seafood extravaganza with grilled sea bass, prawns, and calamari."
+      },
+      {
+        "dishName": "Grilled Octopus",
+        "dishItemNumber": 14,
+        "description": "Tender and flavorful octopus grilled to perfection."
+      },
+      {
+        "dishName": "Shrimp Scampi",
+        "dishItemNumber": 15,
+        "description": "Juicy shrimp sautéed in garlic butter and white wine."
+      },
+      {
+        "dishName": "Lobster Bisque",
+        "dishItemNumber": 16,
+        "description": "Creamy soup made with lobster, cream, and aromatic spices."
+      },
+      {
+        "dishName": "Key Lime Pie",
+        "dishItemNumber": 17,
+        "description": "Tangy and refreshing pie made with key lime juice and a graham cracker crust."
+      }
+    ],
+    "service": "Dine-in, Takeout",
+    "date": "2023-08-19",
+    "descriptionFirst": "Vegetarian and vegan guests are welcomed with open arms, as the menu boasts an entire section dedicated to plant-based creations that transcend expectations. Indulge in dishes like roasted eggplant medallions layered with tomato confit and basil chiffonade, or the quinoa-stuffed bell pepper adorned with a vibrant saffron sauce.",
+    "descriptionSecond": "Cap off your dining experience with an array of delectable desserts that showcase the craftsmanship of the in-house pastry team. From a classic crème brûlée with a twist of lavender-infused custard to a rich dark chocolate ganache cake adorned with edible gold leaf, each dessert is a sweet symphony of flavors and textures.",
+    "email": "oceanfeast@email.com",
+    "rating": 4.2,
+    "owner": "Michael Johnson",
+    "ownerImage": "https://images.generated.photos/M0pg3aAAp0ymqqSi6DacUW9fDiY8Fze6h1NLZYfAJMo/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/OTk0ODMxLmpwZw.jpg",
+    "foodItems": [
+      {
+        "foodItem": "Grilled Sea Bass",
+        "foodImage": "https://images.pexels.com/photos/299347/pexels-photo-299347.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        "description": "Fresh sea bass marinated and grilled to perfection.",
+        "foodRating": 4.8,
+        "price": 14.99
+      },
+      {
+        "foodItem": "Lemon Garlic Prawns",
+        "foodImage": "https://images.pexels.com/photos/3655916/pexels-photo-3655916.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        "description": "Prawns cooked in a zesty lemon garlic sauce.",
+        "foodRating": 4.4,
+        "price": 12.99
+      },
+      {
+        "foodItem": "Calamari Fritti",
+        "foodImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlRtwa1lfKvW0aAdhhhh4WaiUfZO9rjC_J_A&usqp=CAU",
+        "description": "Tender calamari rings coated in a light batter and fried until golden.",
+        "foodRating": 4.3,
+        "price": 8.99
+      },
+      {
+        "foodItem": "Seafood Paella",
+        "foodImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkz5KcnTdBCB0a1M69wQ8kTDdMDnVZ5u9Y0w&usqp=CAU",
+        "description": "Spanish rice dish with a mix of seafood, saffron, and vegetables.",
+        "foodRating": 4.5,
+        "price": 16.99
+      },
+      {
+        "foodItem": "Key Lime Pie",
+        "foodImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjwzwdfB5q_iND069dJZWXR0wSYec2MFdjSQ&usqp=CAU",
+        "description": "Tangy and refreshing pie made with key lime juice and a graham cracker crust.",
+        "foodRating": 4.7,
+        "price": 6.49
+      }
+    ],
+    "dishItems": [
+      {
+        "dishName": "Grilled Lobster",
+        "dishItemNumber": 18,
+        "description": "Whole lobster grilled with garlic butter."
+      },
+      {
+        "dishName": "Seafood Chowder",
+        "dishItemNumber": 19,
+        "description": "Hearty soup filled with various types of seafood and vegetables."
+      }
+    ]
+  },
+  {
+    "_id": "4",
+    "restaurantName": "Sizzling Slices",
+    "restaurantImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKQloaIRT-19IWhL-NbqFBA9yi02rvqnPFqg&usqp=CAU",
+    "place": "Flameville",
+    "popularDish": [
+      {
+        "dishName": "Pepperoni Pizza",
+        "dishItemNumber": 14,
+        "description": "Classic pizza topped with spicy pepperoni and melted cheese."
+      },
+      {
+        "dishName": "BBQ Chicken Pizza",
+        "dishItemNumber": 15,
+        "description": "Grilled chicken, barbecue sauce, red onions, and cheese on a pizza crust."
+      },
+      {
+        "dishName": "Garlic Knots",
+        "dishItemNumber": 16,
+        "description": "Baked dough knots brushed with garlic butter and herbs."
+      },
+      {
+        "dishName": "Mozzarella Sticks",
+        "dishItemNumber": 17,
+        "description": "Golden-fried sticks of mozzarella cheese, served with marinara sauce."
+      },
+      {
+        "dishName": "Chocolate Brownie Sundae",
+        "dishItemNumber": 18,
+        "description": "Warm chocolate brownie topped with vanilla ice cream and chocolate sauce."
+      }
+    ],
+    "service": "Dine-in, Takeout",
+    "date": "2023-08-20",
+    "descriptionFirst": "Riverside Bistro Haven isn't just a restaurant; it's an immersive journey into culinary excellence, where the river's gentle whispers and the artistry of the kitchen converge to create an unforgettable symphony for your senses. Whether it's a romantic evening for two or a celebration with friends and family, this haven promises an experience that transcends mere dining, inviting you to savor every moment in a world of taste and tranquility",
+    "descriptionSecond": "The outdoor terrace, adorned with fairy lights and fragrant blooms, provides a magical setting for romantic evenings and celebratory toasts. Imagine sipping on a glass of fine wine as you watch the sun dip below the horizon, casting a warm glow on the rippling waters of the Riverstone.",
+    "email": "sizzlingslices@example.com",
+    "rating": 4.0,
+    "owner": "Sarah Williams",
+    "ownerImage": "https://images.generated.photos/_Ej6vrnJYRuJXjXEmL_MZ_-_iQyLESDFPP8rLwjiGsU/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/NTQ4MjAwLmpwZw.jpg",
+    "foodItems": [
+      {
+        "foodItem": "Caesar Salad",
+        "foodImage": "https://img.freepik.com/free-photo/side-view-pilaf-with-stewed-beef-meat-plate_141793-5057.jpg?size=626&ext=jpg",
+        "description": "Fresh romaine lettuce, croutons, parmesan cheese, and Caesar dressing.",
+        "foodRating": 4.9,
+        "price": 7.99
+      },
+      {
+        "foodItem": "Pasta Carbonara",
+        "foodImage": "https://img.freepik.com/free-photo/top-view-table-full-delicious-food-composition_23-2149141352.jpg?size=626&ext=jpg",
+        "description": "Pasta with creamy egg-based sauce, pancetta, and parmesan cheese.",
+        "foodRating": 4.8,
+        "price": 1.99
+      },
+      {
+        "foodItem": "Chicken Alfredo",
+        "foodImage": "https://img.freepik.com/free-photo/fresh-pasta-with-hearty-bolognese-parmesan-cheese-generated-by-ai_188544-9469.jpg?size=626&ext=jpg",
+        "description": "Fettuccine pasta with grilled chicken and creamy Alfredo sauce.",
+        "foodRating": 4.2,
+        "price": 13.99
+      },
+      {
+        "foodItem": "Garlic Bread",
+        "foodImage": "https://img.freepik.com/free-photo/chicken-skewers-with-slices-sweet-peppers-dill_2829-18813.jpg?size=626&ext=jpg",
+        "description": "Toasted bread with garlic butter and herbs.",
+        "foodRating": 4.8,
+        "price": 3.99
+      },
+      {
+        "foodItem": "Tiramisu",
+        "foodImage": "https://img.freepik.com/free-photo/side-view-fried-meat-with-french-fries-ketchup_141793-4908.jpg?size=626&ext=jpg&ga=GA1.1.939033137.1692619858&semt=sph",
+        "description": "Classic Italian dessert with layers of coffee-soaked ladyfingers and mascarpone cheese.",
+        "foodRating": 4.4,
+        "price": 6.99
+      }
+    ],
+    "dishItems": [
+      {
+        "dishName": "Chicken Parmesan",
+        "dishItemNumber": 1,
+        "description": "Breaded and fried chicken topped with marinara sauce and melted cheese."
+      },
+      {
+        "dishName": "Veggie Calzone",
+        "dishItemNumber": 11,
+        "description": "Folded pizza dough filled with vegetables and cheese, baked to perfection."
+      }
+    ]
+  },
+  {
+    "_id": "5",
+    "restaurantName": "Thai Delights",
+    "restaurantImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvlP1IYpD9XVPBzxa-3cs85mBM1GFahPZ4Yw&usqp=CAU",
+    "place": "Spice Valley",
+    "popularDish": [
+      {
+        "dishName": "Pad Thai",
+        "dishItemNumber": 16,
+        "description": "Stir-fried rice noodles with shrimp, tofu, peanuts, and tamarind sauce."
+      },
+      {
+        "dishName": "Green Curry",
+        "dishItemNumber": 17,
+        "description": "Spicy green curry with chicken, Thai eggplant, and bamboo shoots."
+      },
+      {
+        "dishName": "Spring Rolls",
+        "dishItemNumber": 18,
+        "description": "Crispy spring rolls filled with vegetables and served with dipping sauce."
+      },
+      {
+        "dishName": "Tom Yum Soup",
+        "dishItemNumber": 19,
+        "description": "Spicy and sour soup with shrimp, lemongrass, and mushrooms."
+      },
+      {
+        "dishName": "Mango Sticky Rice",
+        "dishItemNumber": 1,
+        "description": "Sweet sticky rice served with fresh mango slices and coconut sauce."
+      }
+    ],
+    "service": "Dine-in, Takeout",
+    "date": "2023-08-21",
+    "descriptionFirst": "At Riverside Bistro Haven, the enchanting ambiance extends beyond the exquisite cuisine. The restaurant offers a range of unique experiences and events that cater to every occasion. From intimate candlelit dinners on the outdoor terrace, where the river shimmers under the moonlight, to elegant private gatherings in the restaurant's chic event space, every moment is curated to perfection.",
+    "descriptionSecond": "For larger gatherings and special events, the restaurant's event space is a masterpiece of design and versatility. With panoramic views of the river and flexible seating arrangements, it's the ideal canvas for weddings, corporate events, and milestone celebrations. The expert events team at Riverside Bistro Haven works closely with guests to ensure that every detail is attended to, from the floral arrangements to the personalized menu selections.",
+    "email": "thaidelights@email.com",
+    "rating": 4.7,
+    "owner": "Somsak Tan",
+    "ownerImage": "https://images.generated.photos/tslCQKdyrA1FcnjPY3BfpuQ7VydJiLjvqvFNi3qb7Mc/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/OTg4MDM2LmpwZw.jpg",
+    "foodItems": [
+      {
+        "foodItem": "Tom Kha Gai",
+        "foodImage": "https://img.freepik.com/free-photo/closeup-roasted-meat-with-sauce-vegetables-fries-plate-table_181624-35847.jpg?size=626&ext=jpg&ga=GA1.1.939033137.1692619858&semt=sph",
+        "description": "Coconut milk soup with chicken, mushrooms, lemongrass, and galangal.",
+        "foodRating": 4.9,
+        "price": 8.99
+      },
+      {
+        "foodItem": "Green Papaya Salad",
+        "foodImage": "https://img.freepik.com/free-photo/sour-curry-with-snakehead-fish-spicy-garden-hot-pot-thai-food_150-2641.jpg?size=626&ext=jpg&ga=GA1.1.939033137.1692619858&semt=sph",
+        "description": "Shredded green papaya, tomatoes, peanuts, and lime dressing.",
+        "foodRating": 4.4,
+        "price": 7.49
+      },
+      {
+        "foodItem": "Massaman Curry",
+        "foodImage": "https://img.freepik.com/free-photo/pasta-spaghetti-with-shrimps-sauce_1220-5072.jpg?size=626&ext=jpg&ga=GA1.1.939033137.1692619858&semt=sph",
+        "description": "Rich and flavorful curry with beef, potatoes, and roasted peanuts.",
+        "foodRating": 4.9,
+        "price": 12.99
+      },
+      {
+        "foodItem": "Pad See Ew",
+        "foodImage": "https://img.freepik.com/free-photo/grilled-chicken-legs-flaming-grill-with-grilled-vegetables-with-tomatoes-potatoes-pepper-seeds-salt_150-37782.jpg?size=626&ext=jpg&ga=GA1.1.939033137.1692619858&semt=sph",
+        "description": "Stir-fried flat rice noodles with chicken, eggs, and sweet soy sauce.",
+        "foodRating": 4.5,
+        "price": 1.99
+      },
+      {
+        "foodItem": "Thai Iced Tea",
+        "foodImage": "https://img.freepik.com/free-photo/crispy-fried-chicken-plate-with-salad-carrot_150-20212.jpg?size=626&ext=jpg&ga=GA1.1.939033137.1692619858&semt=sph",
+        "description": "Sweet and creamy iced tea with a hint of Thai spices.",
+        "foodRating": 4.7,
+        "price": 3.99
+      }
+    ],
+    "dishItems": [
+      {
+        "dishName": "Red Curry",
+        "dishItemNumber": 12,
+        "description": "Spicy red curry with your choice of protein and mixed vegetables."
+      },
+      {
+        "dishName": "Pad Kee Mao",
+        "dishItemNumber": 13,
+        "description": "Spicy stir-fried wide rice noodles with basil leaves and vegetables."
+      }
+    ]
+  },
+  {
+    "_id": "6",
+    "restaurantName": "Mediterranean Flavors",
+    "restaurantImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3Wr8CbELQ6RpbhHRhxDXaCRUozVI7FzbpQw&usqp=CAU",
+    "place": "Olive Town",
+    "popularDish": [
+      {
+        "dishName": "Hummus and Pita",
+        "dishItemNumber": 11,
+        "description": "Creamy chickpea dip served with warm pita bread."
+      },
+      {
+        "dishName": "Falafel Platter",
+        "dishItemNumber": 12,
+        "description": "Crispy chickpea fritters served with tahini sauce and vegetables."
+      },
+      {
+        "dishName": "Shawarma Wrap",
+        "dishItemNumber": 13,
+        "description": "Grilled meat wrapped in pita bread with tahini, veggies, and pickles."
+      },
+      {
+        "dishName": "Mediterranean Salad",
+        "dishItemNumber": 14,
+        "description": "Fresh salad with tomatoes, cucumbers, olives, feta cheese, and dressing."
+      },
+      {
+        "dishName": "Baklava",
+        "dishItemNumber": 15,
+        "description": "Sweet pastry made of layers of filo dough, honey, and nuts."
+      }
+    ],
+    "service": "Dine-in, Takeout",
+    "date": "2023-08-22",
+    "descriptionFirst": "The restaurant also hosts themed culinary nights, where guests can embark on a gastronomic journey inspired by different cuisines and cultures. From a Mediterranean feast of mezze and grilled delicacies to an Asian fusion night featuring sushi, sashimi, and flavorful curries, these events showcase the global expertise of the culinary team.",
+    "descriptionSecond": "For larger gatherings and special events, the restaurant's event space is a masterpiece of design and versatility. With panoramic views of the river and flexible seating arrangements, it's the ideal canvas for weddings, corporate events, and milestone celebrations. The expert events team at Riverside Bistro Haven works closely with guests to ensure that every detail is attended to, from the floral arrangements to the personalized menu selections.",
+    "email": "mediterraneanflavors@example.com",
+    "rating": 4.4,
+    "owner": "Nadia Khalil",
+    "ownerImage": "https://images.generated.photos/rId-oVklqpiYrLyGYlZ881YGecpKiMNtcuGItcxEqiA/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/MjM3NjMzLmpwZw.jpg",
+    "foodItems": [
+      {
+        "foodItem": "Tabbouleh",
+        "foodImage": "https://img.freepik.com/free-photo/pork-hock-german-with-sauces-dark-background_150-45508.jpg?size=626&ext=jpg&ga=GA1.1.939033137.1692619858&semt=sph",
+        "description": "Parsley, mint, tomatoes, and bulgur salad with lemon and olive oil.",
+        "foodRating": 4.6,
+        "price": 6.99
+      },
+      {
+        "foodItem": "Chicken Kebabs",
+        "foodImage": "https://img.freepik.com/premium-photo/plov-plates-is-served-wedding-guests_789096-118.jpg?size=626&ext=jpg&ga=GA1.1.939033137.1692619858&semt=sph",
+        "description": "Grilled marinated chicken skewers served with rice and vegetables.",
+        "foodRating": 4.5,
+        "price": 1.99
+      },
+      {
+        "foodItem": "Lamb Gyro",
+        "foodImage": "https://img.freepik.com/free-photo/side-view-doner-with-grilled-chicken-greens-lettuce-tomato-french-fries-table_141793-4881.jpg?size=626&ext=jpg&ga=GA1.1.939033137.1692619858&semt=sph",
+        "description": "Sliced and seasoned lamb meat wrapped in pita bread with veggies and tzatziki.",
+        "foodRating": 4.7,
+        "price": 9.99
+      },
+      {
+        "foodItem": "Feta Cheese Dip",
+        "foodImage": "https://img.freepik.com/free-photo/penne-pasta-tomato-sauce-with-chicken-tomatoes-wooden-table_2829-19739.jpg?size=626&ext=jpg&ga=GA1.1.939033137.1692619858&semt=sph",
+        "description": "Creamy dip made with feta cheese, herbs, and olive oil, served with pita.",
+        "foodRating": 4.9,
+        "price": 5.49
+      },
+      {
+        "foodItem": "Baklava",
+        "foodImage": "https://img.freepik.com/free-photo/sour-curry-with-snakehead-fish-spicy-garden-hot-pot-thai-food_150-2641.jpg?size=626&ext=jpg&ga=GA1.1.939033137.1692619858&semt=sph",
+        "description": "Sweet pastry made of layers of filo dough, honey, and nuts.",
+        "foodRating": 4.8,
+        "price": 4.99
+      }
+    ],
+    "dishItems": [
+      {
+        "dishName": "Moussaka",
+        "dishItemNumber": 14,
+        "description": "Layered casserole with eggplant, minced meat, and béchamel sauce."
+      },
+      {
+        "dishName": "Greek Salad",
+        "dishItemNumber": 15,
+        "description": "Crisp lettuce, tomatoes, olives, feta cheese, and Greek dressing."
+      }
+    ]
+  }
+]
