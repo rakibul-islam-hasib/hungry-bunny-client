@@ -43,7 +43,7 @@ const navLinks = [
         path: '/menu',
     },
     {
-        id: 7,
+        id: 8,
         name: 'Team Info',
         path: '/team-info',
     },
