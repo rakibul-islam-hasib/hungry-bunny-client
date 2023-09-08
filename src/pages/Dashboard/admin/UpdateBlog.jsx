@@ -10,6 +10,7 @@ function UpdateBlog() {
     const { register, handleSubmit } = useForm()
 
     const onSubmit = (data) =>{
+        console.log(data);
         axios.put(`/blogs/${loadedBlog._id}`, register)
         .then(data => {
             console.log(data.data);
