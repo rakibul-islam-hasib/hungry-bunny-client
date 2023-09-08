@@ -1,62 +1,85 @@
 import { useForm } from "react-hook-form";
 import { useLoaderData } from "react-router-dom";
+// import useAxiosFetch from "../../../hooks/useAxiosFetch";
 
 function UpdateBlog() {
     const loadedBlog = useLoaderData()
-    console.log(loadedBlog);
+    // console.log(loadedBlog);
+    // const  axios = useAxiosFetch()
     const { register, handleSubmit } = useForm()
 
     const onSubmit = (data) =>{
-
+        fetch(`http://localhost:5000/dashboard/manage-blogs/${loadedBlog._id}`,{
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(onSubmit)
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data.data);
+            if(data.data.modifiedCount > 0){
+                alert('blog updated')
+            }
+        })
     }
     return (
-        <div className="mt-10 ml-4 mr-4">
-            <h2>update info {loadedBlog.blogHeading}</h2>
+        <div className="mt-14 ml-4 mr-4 mb-10">
+            <h2 className="text-3xl uppercase text-center mb-8 text-orange-500 font-bold">update blog information </h2>
             <form onSubmit={handleSubmit(onSubmit)}>
                 {/* blog headline */}
                 <div className="mb-4">
                     <div>
-                    <h1 className="text-2xl ">Blog Heading</h1>
-                    <input type="text" className="text-2xl rounded-xl p-2 pl-3 w-full mt-2 mb-2" id="headline" {...register('blogHeading')} />
+                    <h1 className="text-1xl ">Blog Heading</h1>
+                    <input type="text" defaultValue={loadedBlog.blogHeading} className="text-2xl rounded-xl p-2 pl-3 w-full mt-2 mb-2" id="headline" {...register('blogHeading')} />
                     </div>
                 </div>
                 {/* blog image and date */}
                 <div className="mb-4 md:flex gap-x-8">
                     <div className="md:w-1/2">
-                    <h1 className="text-2xl ">Blog Image</h1>
-                    <input type="text" className="text-2xl rounded-xl p-2 pl-3 w-full mt-2 mb-2 mr-5" id="blogImage" {...register('blogImage')} />
+                    <h1 className="text-1xl ">Blog Image</h1>
+                    <input type="text" defaultValue={loadedBlog?.blogImage} className="text-2xl rounded-xl p-2 pl-3 w-full mt-2 mb-2 mr-5" id="blogImage" {...register('blogImage')} />
                     </div>
                     <div className="md:w-1/2">
-                    <h1 className="text-2xl ">Blog Date</h1>
-                    <input type="text" className="text-2xl rounded-xl p-2 pl-3 w-full mt-2 mb-2 mr-5" id="date" {...register('date')} />
+                    <h1 className="text-1xl ">Blog Date</h1>
+                    <input type="text" defaultValue={loadedBlog?.date} className="text-2xl rounded-xl p-2 pl-3 w-full mt-2 mb-2 mr-5" id="date" {...register('date')} />
                     </div>
                     
                 </div>
                 {/* blog email and rating*/}
                 <div className="mb-4 md:flex gap-x-8">
                     <div className="md:w-1/2">
-                    <h1 className="text-2xl ">Author email</h1>
-                    <input type="email" className="text-2xl rounded-xl p-2 pl-3 w-full mt-2 mb-2 mr-5" id="email" {...register('email')} />
+                    <h1 className="text-1xl ">Author email</h1>
+                    <input type="email" defaultValue={loadedBlog?.email} className="text-2xl rounded-xl p-2 pl-3 w-full mt-2 mb-2 mr-5" id="email" {...register('email')} />
                     </div>
                     <div className="md:w-1/2">
-                    <h1 className="text-2xl ">Blog Rating</h1>
-                    <input type="number" className="text-2xl rounded-xl p-2 pl-3 w-full mt-2 mb-2 mr-5" id="rating" {...register('rating')} />
+                    <h1 className="text-1xl ">Blog Rating</h1>
+                    <input type="number" defaultValue={loadedBlog?.rating} className="text-2xl rounded-xl p-2 pl-3 w-full mt-2 mb-2 mr-5" id="rating" {...register('rating')} />
                     </div>
                     
                 </div>
                 {/* Author name and image*/}
                 <div className="mb-4 md:flex gap-x-8">
                     <div className="md:w-1/2">
-                    <h1 className="text-2xl ">Author Name</h1>
-                    <input type="text" className="text-2xl rounded-xl p-2 pl-3 w-full mt-2 mb-2 mr-5" id="email" {...register('authorName')} />
+                    <h1 className="text-1xl ">Author Name</h1>
+                    <input type="text" defaultValue={loadedBlog?.authorName} className="text-2xl rounded-xl p-2 pl-3 w-full mt-2 mb-2 mr-5" id="email" {...register('authorName')} />
                     </div>
                     <div className="md:w-1/2">
-                    <h1 className="text-2xl ">Author Image</h1>
-                    <input type="text" className="text-2xl rounded-xl p-2 pl-3 w-full mt-2 mb-2 mr-5" id="rating" {...register('authorImage')} />
+                    <h1 className="text-1xl ">Author Image</h1>
+                    <input type="text" defaultValue={loadedBlog?.authorImage} className="text-2xl rounded-xl p-2 pl-3 w-full mt-2 mb-2 mr-5" id="rating" {...register('authorImage')} />
                     </div>
                     
                 </div>
-               
+               {/* blog headline */}
+               <div className="mb-4">
+                    <div>
+                    <h1 className="text-1xl ">Blog Description</h1>
+                <textarea type="text" defaultValue={loadedBlog?.description} className="text-1xl rounded-xl p-2 pl-3 w-full h-32 mt-2 mb-2" id="headline" {...register('description')} ></textarea>
+                    
+                        </div>
+                </div>
+                <input type="submit" className="drop-shadow-lg uppercase text-center hover:transition hover:duration-400 bg-orange-500 border-2 border-orange-500 hover:text-orange-500 hover:bg-white mt-8 text-white font-bold py-2 text-2xl px-4 rounded-full w-full" value="Update Blog" />
             </form>
         </div>
     );

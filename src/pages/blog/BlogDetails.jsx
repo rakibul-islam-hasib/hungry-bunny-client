@@ -31,9 +31,9 @@ const BlogDetails = () => {
         </div>
         </div>
         <div className="mt-10">
-        <p className="mb-5">{blogs?.description.partOne}</p>
-        <p className="mb-5">{blogs?.description.partTwo}</p>
-        <p className="mb-5">{blogs?.description.partThree}</p>
+        <p className="mb-5">{blogs?.description}</p>
+        {/* <p className="mb-5">{blogs?.description.slice(200, 300)}</p>
+        <p className="mb-5">{blogs?.description.slice(300, 300)}</p> */}
         </div>
         <div className="mb-16">
             <h2 className="font-bold text-center text-slate-700 text-4xl mt-10 mb-8 dark:text-slate-100">Leave your comment</h2>
