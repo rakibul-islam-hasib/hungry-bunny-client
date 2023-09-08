@@ -3,15 +3,11 @@ import { Fragment } from 'react'
 import { Menu, Transition } from '@headlessui/react'
 import useAxiosSecure from '../../../hooks/useAxiosSecure';
 import { toast } from 'react-hot-toast';
-import useUserSecure from '../../../hooks/useUserSecure';
-import { useAuth } from '../../../hooks/useAuth';
 
 
-const ManageUsersTable = ({ userData }) => {
+const ManageUsersTable = ({ userData, refetch }) => {
     const axios = useAxiosSecure();
 
-    const { user: firebaseUser } = useAuth();
-    const [user, isLoading, refetch] = useUserSecure(firebaseUser?.email);
 
     function classNames(...classes) {
         return classes.filter(Boolean).join(' ')
@@ -58,13 +54,13 @@ const ManageUsersTable = ({ userData }) => {
 
 
     const handleRemoveUser = (userData) => {
-       
+
         console.log(userData);
-        
-        
+
+
     }
 
-    
+
     return (
         <div className='flex mx-auto py-3 justify-between w-full'>
             <div className='flex w-2/5 items-center'>
