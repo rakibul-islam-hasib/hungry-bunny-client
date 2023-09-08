@@ -46,6 +46,8 @@ const MenuCard = () => {
       image: sushi,
     }
   ]
+
+  
   const [menuTab, setMenuTab] = useState('Pizza')
   const [loading, setLoading] = useState(true)
 
@@ -73,7 +75,7 @@ const MenuCard = () => {
 
 
       <div className="text-center lg:w-[70%] w-full sm:w-[90%] md:w-[80%] mx-auto">
-        <h3 className="font-semibold text-4xl mx-auto ">Popular Menu</h3>
+        <h3 className="font-semibold text-4xl mx-auto ">Our Menu</h3>
         <p className="font-semibold mt-2">
           Discover the essence of our culinary artistry with our signature dishes. From the savoriness of our perfectly grilled steaks to the delicate balance of flavors in our artisanal pasta, these creations are the epitome of gastronomic excellence.
         </p>
