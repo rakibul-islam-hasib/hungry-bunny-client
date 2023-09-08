@@ -23,6 +23,7 @@ const style = {
 // Modal End
 
 const FoodItem = ({ image, title, description, price, type, restaurant, ingredients, rating }) => {
+   
     const history = useNavigate()
 
     const handleRoute = () => {
