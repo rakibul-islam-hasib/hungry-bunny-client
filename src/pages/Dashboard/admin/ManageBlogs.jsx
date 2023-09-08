@@ -38,7 +38,7 @@ function ManageBlogs() {
         confirmButtonText: 'Yes, delete it!'
       }).then((result) => {
         if (result.isConfirmed) {
-          axios.delete(`/blogs/${_id}`,{
+          axios.delete(`/blogs/total/count/${_id}`,{
             method: 'DELETE'
           })
           .then(data => {
@@ -135,7 +135,7 @@ function ManageBlogs() {
               <img className="rounded-xl border-2 " style={{height:50}} src={item.blogImage} alt="" />
             </td>
             <td className="px-6 py-4">
-              <p>{item.blogHeading.slice(0,30)}</p>
+              <p>{item.blogHeading}</p>
             </td>
             <td className="px-6 py-4">
             <Link to={`/dashboard/manage-blogs/${item._id}`} type="button"

@@ -1,22 +1,15 @@
 import { useForm } from "react-hook-form";
 import { useLoaderData } from "react-router-dom";
-// import useAxiosFetch from "../../../hooks/useAxiosFetch";
+import useAxiosSecure from "../../../hooks/useAxiosSecure";
 
 function UpdateBlog() {
     const loadedBlog = useLoaderData()
     // console.log(loadedBlog);
-    // const  axios = useAxiosFetch()
+    const axios = useAxiosSecure()
     const { register, handleSubmit } = useForm()
 
     const onSubmit = () =>{
-        fetch(`http://localhost:5000/blogs/${loadedBlog._id}`,{
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(onSubmit)
-        })
-        .then(res => res.json())
+        axios.put(`/blogs/${loadedBlog._id}`, register)
         .then(data => {
             console.log(data.data);
             if(data.data.modifiedCount > 0){

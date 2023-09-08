@@ -176,6 +176,11 @@ export const adminNavItems = [
         label: "Manage Blogs",
     },
     {
+        to: "/dashboard/add-blogs",
+        icon: <TbWriting className="text-2xl" />,
+        label: "Add Blogs",
+    },
+    {
         to: "/dashboard/user-profile",
         icon: <CgProfile className="text-2xl" />,
         label: "Manage Profile",
