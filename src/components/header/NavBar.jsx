@@ -26,6 +26,7 @@ const navLinks = [
         name: 'Contact',
         path: '/contact',
     },
+    
     {
         id: 4,
         name: 'Community',
@@ -42,15 +43,10 @@ const navLinks = [
         path: '/menu',
     },
     {
-        id: 8,
-        name: 'AllFoods',
-        path: '/allfoods',
+        id: 7,
+        name: 'Team Info',
+        path: '/team-info',
     },
-    // {
-    //     id: 7,
-    //     name: 'Team Info',
-    //     path: '/team-info',
-    // },
 ];
 
 

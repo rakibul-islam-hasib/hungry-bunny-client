@@ -3,6 +3,7 @@ import { Fragment } from 'react'
 import { Menu, Transition } from '@headlessui/react'
 import useAxiosSecure from '../../../hooks/useAxiosSecure';
 import { toast } from 'react-hot-toast';
+import Swal from 'sweetalert2';
 
 
 const ManageUsersTable = ({ userData, refetch }) => {
@@ -18,15 +19,33 @@ const ManageUsersTable = ({ userData, refetch }) => {
         console.log(userData);
 
 
-        axios.patch(`/user-info/admin/${userData._id}`)
-            .then(res => {
-                console.log(res.data)
-                if (res.data.modifiedCount > 0) {
-                    refetch();
-                    console.log(res.data);
-                    toast.success('User Is Admin Now')
-                }
-            })
+        Swal.fire({
+            title: 'Hey',
+            text: "You Want to Make User Admin",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Make Admin'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                axios.patch(`/user-info/admin/${userData._id}`)
+                    .then(res => {
+                        console.log(res.data)
+                        if (res.data.modifiedCount > 0) {
+                            refetch();
+                            console.log(res.data);
+                            Swal.fire(
+                                'success!',
+                                'User Is Admin Now.',
+                                'success'
+                            )
+                        }
+                    })
+            }
+        })
+
+
             .catch(err => console.log(err))
             // .finally(() => setIsOpen(false))
             .finally({
