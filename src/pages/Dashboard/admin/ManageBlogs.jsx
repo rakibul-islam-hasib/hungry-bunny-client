@@ -27,7 +27,7 @@ function ManageBlogs() {
     }, [page])
 
     const handleDelete = _id => {
-      // console.log(_id);
+      console.log(_id);
       Swal.fire({
         title: 'Are you sure?',
         text: "You won't be able to revert this!",
@@ -38,7 +38,7 @@ function ManageBlogs() {
         confirmButtonText: 'Yes, delete it!'
       }).then((result) => {
         if (result.isConfirmed) {
-          axios.delete(`/blogs/total/count/${_id}`,{
+          axios.delete(`/blogs/${_id}`,{
             method: 'DELETE'
           })
           .then(data => {

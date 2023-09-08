@@ -1,6 +1,7 @@
 import { useForm } from "react-hook-form";
 import { useLoaderData } from "react-router-dom";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
+import Swal from "sweetalert2";
 
 function UpdateBlog() {
     const loadedBlog = useLoaderData()
@@ -13,7 +14,13 @@ function UpdateBlog() {
         .then(data => {
             console.log(data.data);
             if(data.data.modifiedCount > 0){
-                alert('blog updated')
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: 'Your blog has been updated',
+                    showConfirmButton: false,
+                    timer: 1500
+                  })
             }
         })
     }
