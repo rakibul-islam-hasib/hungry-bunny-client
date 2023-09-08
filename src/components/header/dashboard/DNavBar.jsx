@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { FaBars } from 'react-icons/fa';
+import { AiOutlineClose } from 'react-icons/ai';
 import { gsap } from 'gsap';
 const DNavBar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -37,10 +38,10 @@ const DNavBar = () => {
 
 
             <div id='dashboard-nav' className="fixed z-10  left-0 -top-[1000px] h-screen bg-lime-300 w-full">
-                <div className="">
+                <div className="px-8 py-3">
                     <div className="flex items-center justify-between">
                         <h1>Dashboard</h1>
-                        <FaBars onClick={() => setIsOpen(!isOpen)} />
+                        <AiOutlineClose onClick={() => setIsOpen(!isOpen)} />
                     </div>
                 </div>
 
