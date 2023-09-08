@@ -1,5 +1,5 @@
 import React from 'react';
-import { AiOutlineMail, AiOutlinePhone, AiFillFacebook, AiFillInstagram, AiFillGithub } from "react-icons/ai";
+import { AiFillFacebook, AiFillInstagram, AiFillGithub } from "react-icons/ai";
 
 const AboutTeam = () => {
   return (

@@ -134,7 +134,7 @@ export const districts = [
     {
         id: 6,
         name: 'Rangpur',
-        photo: 'https://i.ibb.co/7gXp00k/rongpur.jpg',
+        photo: 'https://i.ibb.co/rGWZQHy/Rongpur2.jpg',
     },
     {
         id: 7,
