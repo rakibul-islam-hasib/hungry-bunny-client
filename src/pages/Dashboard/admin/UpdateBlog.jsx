@@ -8,8 +8,8 @@ function UpdateBlog() {
     // const  axios = useAxiosFetch()
     const { register, handleSubmit } = useForm()
 
-    const onSubmit = (data) =>{
-        fetch(`http://localhost:5000/dashboard/manage-blogs/${loadedBlog._id}`,{
+    const onSubmit = () =>{
+        fetch(`http://localhost:5000/blogs/${loadedBlog._id}`,{
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -75,7 +75,7 @@ function UpdateBlog() {
                <div className="mb-4">
                     <div>
                     <h1 className="text-1xl ">Blog Description</h1>
-                <textarea type="text" defaultValue={loadedBlog?.description} className="text-1xl rounded-xl p-2 pl-3 w-full h-32 mt-2 mb-2" id="headline" {...register('description')} ></textarea>
+                <textarea type="text" defaultValue={loadedBlog?.description} className="text-1xl rounded-xl p-2 pl-3 w-full h-60 mt-2 mb-2" id="headline" {...register('description')} ></textarea>
                     
                         </div>
                 </div>

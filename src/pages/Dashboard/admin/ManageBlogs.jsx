@@ -5,6 +5,7 @@ import { BiMessageAltDetail } from 'react-icons/bi';
 import { FaEdit, FaTrashRestoreAlt } from 'react-icons/fa';
 import { Link, ScrollRestoration } from "react-router-dom";
 import { Pagination } from "@mui/material";
+import Swal from "sweetalert2";
 
 function ManageBlogs() {
     const [blogs, setBlogs] = useState([]);
@@ -24,6 +25,36 @@ function ManageBlogs() {
       window.scrollTo(0, 0);
       // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [page])
+
+    const handleDelete = _id => {
+      // console.log(_id);
+      Swal.fire({
+        title: 'Are you sure?',
+        text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          axios.delete(`/blogs/${_id}`,{
+            method: 'DELETE'
+          })
+          .then(data => {
+            console.log(data.data)
+            if(data.data.deletedCount > 0){
+               Swal.fire(
+            'Deleted!',
+            'Your blog has been deleted.',
+            'success'
+          )
+            }
+          })
+        }
+      })
+
+    }
 
     return (
         <div className="mt-20 ml-6 mr-6">
@@ -115,7 +146,7 @@ function ManageBlogs() {
             <Link to={`/blogs/${item._id}`} type="button" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"> <BiMessageAltDetail className="text-2xl"/> </Link>
             </td>
             <td className="px-6 py-4">
-            <button type="button" className="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 focus:outline-none dark:focus:ring-red-800"><FaTrashRestoreAlt className="text-2xl"/> </button>
+            <button onClick={() => handleDelete(item._id)} type="button" className="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 focus:outline-none dark:focus:ring-red-800"><FaTrashRestoreAlt className="text-2xl"/> </button>
             </td>
           </tr>)
           }
