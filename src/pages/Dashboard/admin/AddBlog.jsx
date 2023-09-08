@@ -6,7 +6,7 @@ function AddBlog() {
     const { register, handleSubmit } = useForm()
 
     const onSubmit =() =>{
-
+        
     }
     return (
         <div className="mt-14 ml-4 mr-4 mb-10">
@@ -14,7 +14,7 @@ function AddBlog() {
         <form onSubmit={handleSubmit(onSubmit)}>
             {/* blog headline */}
             <div className="mb-4">
-                <div>
+                <div> 
                     <label htmlFor="Blog Heading">Blog Heading</label>
                 <input type="text" placeholder="write blog heading" className="text-2xl rounded-xl p-2 pl-3 w-full mt-2 mb-2" id="headline" {...register('blogHeading', {required: true})} />
                 </div>
@@ -63,7 +63,7 @@ function AddBlog() {
                 
                     </div>
             </div>
-            <input type="submit" className="drop-shadow-lg uppercase text-center hover:transition hover:duration-400 bg-orange-500 border-2 border-orange-500 hover:text-orange-500 hover:bg-white mt-8 text-white font-bold py-2 text-2xl px-4 rounded-full w-full" value="add new Blog" />
+            <input type="submit" className="drop-shadow-lg uppercase text-center hover:transition hover:duration-400 bg-orange-500 border-2 border-orange-500 hover:text-orange-500 hover:bg-white mt-8 text-white font-bold py-2 text-2xl px-4 rounded-full w-full" value="add new Blog"/>
         </form>
     </div>
     );
