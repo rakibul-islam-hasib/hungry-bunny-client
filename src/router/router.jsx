@@ -42,6 +42,7 @@ import ForRestaurant from "../pages/Dashboard/applications/ForRestaurant";
 import PrivateRoute from "./PrivateRoute";
 import ManageBlogs from "../pages/Dashboard/admin/ManageBlogs";
 import UpdateBlog from "../pages/Dashboard/admin/UpdateBlog";
+import AddBlog from "../pages/Dashboard/admin/AddBlog";
 
 
 export const router = createBrowserRouter([
@@ -153,6 +154,10 @@ export const router = createBrowserRouter([
         path: "manage-blogs/:id",
         element: <UpdateBlog/>,
         loader: ({ params }) => fetch(`http://localhost:5000/blogs/${params.id}`)
+      },
+      {
+        path: "add-blogs",
+        element: <AddBlog/>,
       },
 
       /*------------------------------------------------------------

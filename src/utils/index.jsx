@@ -6,6 +6,7 @@ import sushi from '../assets/icons/hero/icons8-sushi.svg';
 import { CgProfile } from 'react-icons/cg';
 import { FaUserEdit, FaUsers } from 'react-icons/fa';
 import { BsFillPostcardFill } from 'react-icons/bs';
+import { BiEdit } from 'react-icons/bi';
 import { TbBrandAppleArcade, TbWriting } from 'react-icons/tb';
 import { IoMdRestaurant } from 'react-icons/io';
 
@@ -177,7 +178,7 @@ export const adminNavItems = [
     },
     {
         to: "/dashboard/add-blogs",
-        icon: <TbWriting className="text-2xl" />,
+        icon: <BiEdit className="text-2xl" />,
         label: "Add Blogs",
     },
     {
