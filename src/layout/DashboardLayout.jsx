@@ -12,6 +12,7 @@ import { FaUserEdit } from "react-icons/fa";
 import logo from '../assets/img/logo.png';
 import { ToastContainer } from 'react-toastify';
 import { adminNavItems, restaurantNavItems, userNavItems } from "../utils";
+import DNavBar from "../components/header/dashboard/DNavBar";
 
 
 
@@ -36,6 +37,7 @@ const DashboardLayout = () => {
 
   return (
     <div className="flex bg-[#f1ecea]">
+      <DNavBar />
       <div
         className={`${open ? "w-72 overflow-y-auto" : "w-[90px] overflow-auto"
           }  h-screen p-5 dashboard-scroll hidden md:block pt-8 relative duration-300`}
