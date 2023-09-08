@@ -1,17 +1,31 @@
 import React, { useEffect, useState } from 'react';
 import { GoDotFill } from 'react-icons/go';
+import useAxiosFetch from '../../hooks/useAxiosFetch';
+import { Pagination } from '@mui/material';
+import { ScrollRestoration } from 'react-router-dom';
 
 const Faq = () => {
     const [ allQuestions, setAllQuestions ] = useState([])
+    const [page, setPage] = useState(1);
+
+    // console.log(page)
+    const [totalItem, setTotalItem] = useState(1);
+    const totalPage = Math.ceil(totalItem / 20);
+    const axios = useAxiosFetch();
+    console.log(totalItem)
+  
+    useEffect(() => {
+      axios.get('/faq/total/count')
+        .then(res => setTotalItem(res.data.total))
+        .catch(err => console.log(err))
+  
+      axios.get(`/faq?limit=20&page=${page}`)
+        .then(res => setAllQuestions(res.data))
+        .catch(err => console.log(err))
+      window.scrollTo(0, 0);
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [page])
     
-    useEffect(()=>{
-        fetch('faq.json')
-        .then(res => res.json())
-        .then(data => {
-            setAllQuestions(data)
-            // console.log(data);
-        })
-    },[])
     
     return (
         <div className='mb-10 dark:text-slate-200 font-sans ml-4'>
@@ -39,20 +53,25 @@ const Faq = () => {
         <input type="text"  className='w-full my-6 rounded-3xl drop-shadow-lg pt-4 pb-4 text-2xl dark:text-black pl-5' placeholder='your name' />
         <input type="email"  className='w-full rounded-3xl drop-shadow-lg pt-4 pb-4  text-2xl dark:text-black pl-5' placeholder='your email' />
         <textarea name="" id="" cols="100" rows="5" className="rounded-3xl w-full mt-8 mb-5 drop-shadow-lg pt-4 pb-4  text-2xl dark:text-black pl-5" placeholder="write your comment"></textarea>
-           <input type="submit" value="send" className="text-center hover:transition hover:duration-400 rounded-3xl drop-shadow-lg pt-2 pb-2 font-bold text-3xl bg-orange-500 w-full text-white border-2 border-orange-500 hover:text-orange-500 hover:bg-white" />
+           <input type="submit" value="send" className="text-center hover:transition hover:duration-700 rounded-2xl drop-shadow-lg pt-1 pb-1 uppercase font-bold text-3xl bg-orange-500 w-full text-white border-2 border-orange-500 hover:text-orange-500 hover:bg-white" />
         </div>
                 </div>
             <div className='md:w-[60%]'>
             {
                 allQuestions.map((item) =>  <div key={item._id} className="card my-2">
                 <details className='text-2xl font-bold'>
-                    <summary className='hover:bg-orange-400 hover:transition hover:duration-400 hover:text-white drop-shadow-md rounded-xl p-2'>{item.question}</summary>
+                    <summary className='hover:bg-orange-400 hover:transition hover:duration-700 hover:text-white drop-shadow-xl rounded-xl p-2'>{item.question}</summary>
                     <p className='my-3 p-3'>{item.answers}</p>
                 </details>
             </div>)
             }
             </div>
             </div>
+             {/* Pagination  */}
+      <div className="mt-10 mb-5 text-right text-4xl mx-auto sm:w-[40%] md:w-[20%]">
+        <Pagination className='text-right text-4xl font-bold pt-5 pb-5 pr-4 pl-4 rounded-2xl dark:bg-white' onChange={(e, vale) => setPage(vale)} count={totalPage} color="secondary" />
+      </div>
+      <ScrollRestoration />
         </div>
     );
 };
