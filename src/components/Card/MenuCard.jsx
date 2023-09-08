@@ -75,7 +75,7 @@ useEffect(() => {
       </div>
 
       {/*  */}
-      <div className="hidden md:flex justify-between flex-wrap">
+      <div className=" md:flex justify-between flex-wrap">
         {
           MenuCategory.map(item => <div key={item.id}
             className={menuTab === `${item.name}`? 'border rounded-2xl hover:border-primary hover:bg-primary hover:bg-opacity-5 border-orange-300 lg:px-20 py-2  transform transition duration-300 hover:scale-105' : 'border rounded-2xl hover:border-primary hover:bg-primary hover:bg-opacity-5 border-orange-300 lg:px-20 py-2  transform transition duration-300 hover:scale-105'}  onClick={() => handleMenuTabs(item.name)}
@@ -91,34 +91,13 @@ useEffect(() => {
 
       <div className="mx-auto md:px-20 px-6 mt-10">
 
-        <div className="grid md:grid-cols-2 md:gap-8 gap-3 lg:grid-cols-3 mt-10 mx-auto">
+        <div className="grid md:grid-cols-2 md:gap-8 gap-3 lg:grid-cols-4 mt-10 mx-auto">
 
 
-          {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-12"> */}
+          
             {menuItems.filter((menu, idx) => menuTab === menu.category).map((menu, idx) => (
               loading ? <Skeleton key={idx} /> : <MenuCardItem key={idx} {...menu} />
             ))}
-          {/* </div> */}
-
-
-          {/* {menuItems.map((menu) => (
-            <div key={menu.id} className={` border overflow-hidden shadow-lg rounded-md ${menu.id === 1 ? 'w-full' : ''}`}>
-              <div>
-                <img className="w-full   object-cover transition transform duration-200  hover:-translate-y-2 rounded-lg relative" src={menu.image} alt="Food Image" />
-              </div>
-              <div className=" py-4">
-                <div className="font-semibold text-xl mb-2">{menu.title}</div>
-                <p className="text-gray-700 text-base">{menu.description.slice(0, 70)}</p>
-                <div className="flex justify-between items-center  h-14">
-                  <span className="text-gray-600 font-semibold text-lg">{menu.price} Taka</span>
-                  <button className="  ">
-                    <FaRegBookmark className="text-2xl transform transition duration-300 hover:scale-125" />
-
-                  </button>
-                </div>
-              </div>
-            </div>
-          ))} */}
         </div>
       </div>
     </div>

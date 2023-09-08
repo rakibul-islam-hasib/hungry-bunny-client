@@ -4,17 +4,17 @@ import { useNavigate } from 'react-router-dom';
 
 const MenuCardItem = ({id,title,description,price,image}) => {
 
-    const history = useNavigate()
+    // const history = useNavigate()
 
-    const handleRoute = () => {
-        history.push(`/MainMenu/${title}`);
-    }
+    // const handleRoute = () => {
+    //     history.push(`/MainMenu/${title}`);
+    // }
 
     return (
         <div>
             <div key={id} className={` border overflow-hidden shadow-lg rounded-md ${id === 1 ? 'w-full' : ''}`}>
               <div>
-                <img className="w-full   object-cover transition transform duration-200  hover:-translate-y-2 rounded-lg relative" src={image} alt="Food Image" />
+                <img className="w-full h-64 object-cover transition transform duration-200  hover:-translate-y-2 rounded-lg relative" src={image} alt="Food Image" />
               </div>
               <div className=" py-4">
                 <div className="font-semibold text-xl mb-2">{title}</div>
