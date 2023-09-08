@@ -9,8 +9,8 @@ import React, { useEffect, useState } from "react";
 
 import useMenu from "../../hooks/useMenu";
 import MenuCardItem from './MenuCardItem';
-import MenuSkeleton from './MenuSkeleton';
-import CategorySkeleton from './CategorySkeleton';
+import MenuSkeleton from '../Skeletons/MenuSkeleton';
+import CategorySkeleton from '../Skeletons/CategorySkeleton';
 
 
 
