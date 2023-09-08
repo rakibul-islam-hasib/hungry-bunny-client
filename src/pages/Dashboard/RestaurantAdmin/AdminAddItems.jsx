@@ -5,12 +5,14 @@ import { storage } from "../../../config/firebase/firebase.config";
 import 'react-toastify/dist/ReactToastify.css';
 import { toast as loaderPrompt, toast } from 'react-toastify';
 import useRestaurant from "../../../hooks/useRestaurant";
+import useAxiosSecure from "../../../hooks/useAxiosSecure";
 const AdminAddItems = () => {
   const [selectedFile, setSelectedFile] = useState(null);
   const [imagePreview, setImagePreview] = useState(null);
+  const axios = useAxiosSecure();
   const [isLoading, setIsLoading] = useState(false);
   const [imageURL, setImageURL] = useState(null);
-  const restaurant = useRestaurant();
+  const [restaurant, restaurantLoader] = useRestaurant();
   console.log(restaurant);
   const uploadMenuPic = (file) => {
     setIsLoading(true);
@@ -72,9 +74,26 @@ const AdminAddItems = () => {
     data.restaurant = restaurant._id;
     data.price = parseInt(event.target.price.value);
     data.quantity = parseInt(event.target.Quantity.value);
+    //* ------------------------- *//
+    toast.promise(axios.post('/food/post/new', data), {
+      pending: 'Adding Product...',
+      success: 'Product Added Successfully',
+      error: 'Something went wrong , please try again later'
+    })
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      })
 
-    console.log(data);
+
   };
+
+
+  if (restaurantLoader) return <div>Loading...</div>
+
+
   return (
     <div className="bg-white border-4 rounded-lg shadow relative m-10">
       <div className="flex items-start justify-between p-5 border-b rounded-t">
