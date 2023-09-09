@@ -5,9 +5,9 @@ import vegan from '../assets/icons/hero/icons8-vegan.svg';
 import sushi from '../assets/icons/hero/icons8-sushi.svg';
 import { CgProfile } from 'react-icons/cg';
 import { FaUserEdit, FaUsers } from 'react-icons/fa';
-import { BsFillPostcardFill } from 'react-icons/bs';
-import { BiEdit } from 'react-icons/bi';
+import { BsCreditCard2Front, BsFillPostcardFill } from 'react-icons/bs';
 import { TbBrandAppleArcade, TbWriting } from 'react-icons/tb';
+import { BiEdit } from 'react-icons/bi';
 import { IoMdRestaurant } from 'react-icons/io';
 
 
@@ -186,6 +186,11 @@ export const adminNavItems = [
         icon: <CgProfile className="text-2xl" />,
         label: "Manage Profile",
     },
+    {
+        to: "/dashboard/manage-applications",
+        icon: <BsCreditCard2Front className="text-2xl" />,
+        label: "Manage Applications",
+    }
 ];
 
 export const userNavItems = [

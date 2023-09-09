@@ -14,11 +14,11 @@ import ScrollSlider from "./Elements/ScrollSlider";
 const Home = () => {
 
   return (
-    <section>
+    <section id="home">
       <Hero />
       <TopRestaurant />
-      {/* <FoodCard /> */}
-      {/* <PopularFood /> */}
+      <FoodCard />
+      <PopularFood />
       {/* <Stacks /> */}
       {/* <Premium /> */}
       <ScrollSlider />

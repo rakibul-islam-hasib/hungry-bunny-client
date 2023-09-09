@@ -121,7 +121,7 @@ export const handleFacebookRedirect = () => async (dispatch) => {
             })
                 .then((res) => res.json())
                 .then((data) => {
-                    console.log(data , 'data');
+                    console.log(data, 'data');
                 });
             dispatch(setUser(userCredential.user));
         }

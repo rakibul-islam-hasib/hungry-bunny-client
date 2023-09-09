@@ -1,0 +1,52 @@
+[
+    {
+        "name": "Sujan Ahammad",
+        "photo_url": "https://images.unsplash.com/photo-1615109398623-88346a601842?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80",
+        "facebook_url": "https://facebook.com/sujanahammad",
+        "instagram_url": "https://instagram.com/sujan_ahammad",
+        "github_url": "https://github.com/sujanahammad",
+        "description": "Sujan Ahammad is a passionate web developer, specializing in creating responsive and dynamic web applications. He loves coding and solving complex problems."
+      },
+      {
+        "name": "Rakibul Islam",
+        "photo_url": "https://images.unsplash.com/photo-1615109398623-88346a601842?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80",
+        "facebook_url": "https://facebook.com/rakibulislam",
+        "instagram_url": "https://instagram.com/rakibul_islam",
+        "github_url": "https://github.com/rakibulislam",
+        "description": "Rakibul Islam is a creative front-end developer who crafts beautiful and intuitive user interfaces. He's dedicated to delivering exceptional user experiences."
+      },
+      {
+        "name": "Tofael Khan",
+        "photo_url": "https://images.unsplash.com/photo-1615109398623-88346a601842?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80",
+        "facebook_url": "https://facebook.com/tofaelkhan",
+        "instagram_url": "https://instagram.com/tofael_khan",
+        "github_url": "https://github.com/tofaelkhan",
+        "description": "Tofael Khan is a full-stack developer with a passion for building robust and scalable web applications. He enjoys working on challenging projects."
+      },
+      {
+        "name": "Nafis Al Mahmud",
+        "photo_url": "https://images.unsplash.com/photo-1615109398623-88346a601842?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80",
+        "facebook_url": "https://facebook.com/nafismahmud",
+        "instagram_url": "https://instagram.com/nafis_mahmud",
+        "github_url": "https://github.com/nafismahmud",
+        "description": "Nafis Al Mahmud is a back-end developer who excels in optimizing web applications for performance and security. He's detail-oriented and results-driven."
+      },
+      {
+        "name": "Nowshin Akter",
+        "photo_url": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+        "facebook_url": "https://facebook.com/nowshinakter",
+        "instagram_url": "https://instagram.com/nowshinakter",
+        "github_url": "https://github.com/nowshinakter",
+        "description": "Nowshin Akter is a UX/UI designer who believes in the power of design to enhance user interactions. She's dedicated to creating visually stunning and intuitive interfaces."
+      },
+      {
+        "name": "Anika Tabassum",
+        "photo_url": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+        "facebook_url": "https://facebook.com/anikatabassum",
+        "instagram_url": "https://instagram.com/anikatabassum",
+        "github_url": "https://github.com/anikatabassum",
+        "description": "Anika Tabassum is a full-stack developer with a knack for building scalable and robust web applications. She enjoys tackling complex coding challenges."
+      }
+            
+
+]
