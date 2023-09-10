@@ -7,7 +7,7 @@ function AddBlog() {
     const axios = useAxiosSecure()
     const { register, handleSubmit } = useForm()
 
-    const onSubmit =(data) =>{
+    const onSubmit = (data) =>{
         console.log(data)
         axios.post('/blogs', register)
         .then(data => {
