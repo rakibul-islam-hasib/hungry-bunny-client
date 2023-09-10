@@ -54,23 +54,23 @@ function RestaurantDetails() {
         </div>
       </div>
       {/* add new section */}
-<div className='grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 mt-10 mb-10'>
-  <div className='p-7 bg-white relative group hover:-translate-y-4 hover:transition duration-400 rounded-3xl drop-shadow-lg hover:text-white hover:bg-orange-500 dark:bg-black dark:text-white dark:border-2 dark:border-orange-500 dark:hover:bg-orange-500 hover:'>
+<div className=' grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 mt-10 mb-10'>
+  <div className='p-7 bg-white relative group hover:-translate-y-4 hover:transition duration-400 rounded-3xl drop-shadow-lg hover:text-white hover:bg-orange-500 dark:bg-black dark:text-white dark:border-2 dark:border-orange-500 dark:hover:bg-orange-500'>
     <p className='text-7xl ml-3'><MdDirectionsBike/> </p>
     <h3 className='text-4xl font-bold'>Fast Delivery</h3>
     <p className='mt-4 mb-4'>Fast food delivery is the ultimate solution for those moments when you crave mouthwatering, convenient, and delicious meals without the hassle of cooking or leaving your home.</p>
   </div>
-  <div className='p-7 bg-white hover:transition duration-400 rounded-3xl drop-shadow-lg hover:text-white hover:bg-orange-500 dark:bg-black dark:text-white dark:border-2 dark:border-orange-500 dark:hover:bg-orange-500'>
+  <div className='p-7 bg-white relative group hover:-translate-y-4 hover:transition duration-400 rounded-3xl drop-shadow-lg hover:text-white hover:bg-orange-500 dark:bg-black dark:text-white dark:border-2 dark:border-orange-500 dark:hover:bg-orange-500'>
     <p className='text-7xl ml-3 hover:text-white'><BsStopwatch/> </p>
     <h3 className='text-4xl font-bold'>Save your Time</h3>
     <p className='mt-4 mb-4'>Save time with our swift food delivery service. Spend less time in the kitchen and more time enjoying your meals, all with just a few clicks.</p>
   </div>
-  <div className='p-7 bg-white hover:transition duration-400 rounded-3xl drop-shadow-lg hover:text-white hover:bg-orange-500 dark:bg-black dark:text-white dark:border-2 dark:border-orange-500 dark:hover:bg-orange-500'>
+  <div className='p-7 bg-white relative group hover:-translate-y-4 hover:transition duration-400 rounded-3xl drop-shadow-lg hover:text-white hover:bg-orange-500 dark:bg-black dark:text-white dark:border-2 dark:border-orange-500 dark:hover:bg-orange-500'>
     <p className='text-7xl ml-3 hover:text-white'><MdOutlineLocalOffer/> </p>
     <h3 className='text-4xl font-bold'>Regular Discount</h3>
     <p className='mt-4 mb-4'>Unlock regular discounts for loyal customers. Enjoy savings on your favorite dishes with our exclusive offers, making dining with us even more satisfying.</p>
   </div>
-  <div className='p-7 bg-white hover:transition duration-400 rounded-3xl drop-shadow-lg hover:text-white hover:bg-orange-500 dark:bg-black dark:text-white dark:border-2 dark:border-orange-500 dark:hover:bg-orange-500'>
+  <div className='p-7 bg-white relative group hover:-translate-y-4 hover:transition duration-400 rounded-3xl drop-shadow-lg hover:text-white hover:bg-orange-500 dark:bg-black dark:text-white dark:border-2 dark:border-orange-500 dark:hover:bg-orange-500'>
     <p className='text-7xl ml-3 hover:text-white'><PiBowlFood/> </p>
     <h3 className='text-4xl font-bold'>Variety Foods</h3>
     <p className='mt-4 mb-4'>Explore a world of diverse flavors. Our menu boasts a variety of cuisines, promising an exciting dining adventure with every order.</p>
