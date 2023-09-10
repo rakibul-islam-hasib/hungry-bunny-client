@@ -3,6 +3,7 @@ import { GoDotFill } from 'react-icons/go';
 import useAxiosFetch from '../../hooks/useAxiosFetch';
 import { Pagination } from '@mui/material';
 import { ScrollRestoration } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 
 const Faq = () => {
     const [ allQuestions, setAllQuestions ] = useState([])
@@ -29,6 +30,9 @@ const Faq = () => {
     
     return (
         <div className='mb-10 dark:text-slate-200 font-sans ml-4'>
+          <Helmet>
+        <title>Hungry Bunny || faq</title>
+      </Helmet>
             <h2 className='text-4xl text-orange-500 p-7 text-center font-extrabold'>Frequently Asked Questions</h2>
             <div className='md:flex'>
                 <div className='md:w-[40%] pr-6'>

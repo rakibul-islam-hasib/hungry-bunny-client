@@ -1,6 +1,7 @@
 import { useLoaderData } from "react-router-dom";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 function UpdateBlog() {
     const loadedBlog = useLoaderData()
@@ -26,6 +27,9 @@ function UpdateBlog() {
     }
     return (
         <div className="mt-14 ml-4 mr-4 mb-10">
+            <Helmet>
+        <title>Hungry Bunny || admin || update blog</title>
+      </Helmet>
             <h2 className="text-3xl uppercase text-center mb-8 text-orange-500 font-bold">update blog information </h2>
             <form onSubmit={event => onFromSubmit(event)}>
                 {/* blog headline */}

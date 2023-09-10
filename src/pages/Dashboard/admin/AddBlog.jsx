@@ -1,6 +1,7 @@
 import { useForm } from "react-hook-form";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 
 function AddBlog() {
@@ -25,6 +26,9 @@ function AddBlog() {
     }
     return (
         <div className=" mt-8 pt-14 pl-14 pr-14 pb-8 mb-5 rounded-xl">
+            <Helmet>
+        <title>Hungry Bunny || admin || add blog</title>
+      </Helmet>
         <h2 className="text-3xl uppercase text-center mb-5 text-orange-500 font-bold">create new blog</h2>
         <form onSubmit={handleSubmit(onSubmit)}>
             {/* blog headline */}

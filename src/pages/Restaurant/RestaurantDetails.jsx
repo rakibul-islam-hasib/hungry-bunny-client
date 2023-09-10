@@ -7,6 +7,7 @@ import { PiBowlFood } from 'react-icons/pi';
 import { BiLike } from 'react-icons/bi';
 import { useLoaderData } from 'react-router-dom';
 import Subscribe from '../about/Subscribe';
+import { Helmet } from 'react-helmet-async';
 
 function RestaurantDetails() {
     const restaurant = useLoaderData()
@@ -14,6 +15,9 @@ function RestaurantDetails() {
 
     return (
         <div className='sm:ml-5 dark:text-slate-200'>
+          <Helmet>
+        <title>Hungry Bunny || restaurant details</title>
+      </Helmet>
          <div className='mt-7 md:flex mb-4 sm:ml-5'>
         <div className='mt-4 md:w-[50%] md:mr-8'>
           <h3 className='font-extrabold text-4xl'>{restaurant.restaurantName}</h3>
@@ -83,7 +87,7 @@ function RestaurantDetails() {
 <div className="dark:text-slate-300">
 <div className="grid sm:grid-cols-2 md:grid-cols-3 md:gap-8 gap-3 lg:grid-cols-4 mb-14">
           {
-            restaurant.foodItems.map((items, idx) => <div key={items.idx} className='p-2 border overflow-hidden shadow-lg rounded-2xl'>
+            restaurant.foodItems.map((items, idx) => <div key={idx} className='p-2 border overflow-hidden shadow-lg rounded-2xl'>
             <img className="w-full h-60 object-cover rounded-lg" src={items.foodImage} alt="Food Image" />
             <div className='w-full relative group hover:-translate-y-4 duration-500'>
               <div className=''>
@@ -92,11 +96,11 @@ function RestaurantDetails() {
         value={items.foodRating}
         readOnly
       /></span> <span className='flex text-2xl items-center'><BiLike className='mr-2'/> 0 </span></p>
-            <div className="px-2 py-4">
+            <div className="px-2 py-2">
               <div className="mb-2">
                 <p className='font-extrabold text-2xl dark:text-slate-300'>Food Name {items.foodItem}</p>
               </div>
-                <p className='font-extrabold'>{items.description.slice(0, 50)}</p>
+                <p className='font-extrabold'>{items.description.slice(0, 60)}</p>
                 <div className='font-bold flex justify-between items-center mt-2'>
                 <p className='mr-2 text-2xl'>$ {items.price}</p>
                 <button className="drop-shadow-lg hover:transition duration-600 bg-orange-500 border-2 border-orange-500 hover:text-orange-500 hover:bg-white text-white font-bold py-1 px-3 rounded-full flex items-center">

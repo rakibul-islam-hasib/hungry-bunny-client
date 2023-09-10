@@ -6,6 +6,7 @@ import { FaEdit, FaTrashRestoreAlt } from 'react-icons/fa';
 import { Link, ScrollRestoration } from "react-router-dom";
 import { Pagination } from "@mui/material";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 function ManageBlogs() {
   const [blogs, setBlogs] = useState([]);
@@ -58,6 +59,9 @@ function ManageBlogs() {
 
   return (
     <div className="mt-20 ml-6 mr-6">
+      <Helmet>
+        <title>Hungry Bunny || admin || manage blogs</title>
+      </Helmet>
       <div className="flex justify-between items-center">
         <h2 className="text-4xl font-bold">Total Blogs: <span>{blogs.length}</span></h2>
         <form className='w-[40%]'>
