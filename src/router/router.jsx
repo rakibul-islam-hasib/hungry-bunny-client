@@ -36,10 +36,15 @@ import AdminOrder from "../pages/Dashboard/RestaurantAdmin/AdminOrder/AdminOrder
 import AdminMenu from "../pages/Dashboard/RestaurantAdmin/AdminMenu/AdminMenu";
 import AdminCustomers from "../pages/Dashboard/RestaurantAdmin/AdminCustomers/AdminCustomers";
 import NormalProfile from "../pages/Dashboard/user/NormalProfile";
+import AllFoods from "../pages/allFoods/AllFoods";
 import UserProfile from "../pages/Dashboard/user/UserProfile";
 import AdminAddItems from "../pages/Dashboard/RestaurantAdmin/AdminAddItems";
 import ForRestaurant from "../pages/Dashboard/applications/ForRestaurant";
 import PrivateRoute from "./PrivateRoute";
+import ManageBlogs from "../pages/Dashboard/admin/ManageBlogs";
+import UpdateBlog from "../pages/Dashboard/admin/UpdateBlog";
+import AddBlog from "../pages/Dashboard/admin/AddBlog";
+
 
 import AboutTeam from "../pages/about/AboutTeam";
 
@@ -67,7 +72,7 @@ export const router = createBrowserRouter([
         element: <About />,
       },
       {
-        path: "/team",
+        path: "/team-info",
         element: <AboutTeam />,
       },
       {
@@ -90,11 +95,16 @@ export const router = createBrowserRouter([
         path: "/restaurant/:id",
         element: <RestaurantDetails />,
         loader: ({ params }) =>
+          // TODO : replace with base URL
           fetch(`https://hungry-bunny.vercel.app/restaurant/${params.id}`),
       },
       {
         path: '/menu',
         element: <Menu />
+      },
+      {
+        path: '/allfoods',
+        element: <AllFoods />
       },
       {
         path: '/faq',
@@ -107,6 +117,7 @@ export const router = createBrowserRouter([
       {
         path: '/blogs/:id',
         element: <BlogDetails />,
+        // TODO : replace with base URL https://hungry-bunny.vercel.app
         loader: ({ params }) => fetch(`https://hungry-bunny.vercel.app/blogs/${params.id}`)
       },
       {
@@ -148,6 +159,20 @@ export const router = createBrowserRouter([
       {
         path: "manage-users",
         element: <ManageUsers />,
+      },
+      {
+        path: "manage-blogs",
+        element: <ManageBlogs />,
+      },
+      {
+        path: "manage-blogs/:id",
+        element: <UpdateBlog />,
+        // TODO : replace with base URL https://hungry-bunny.vercel.app
+        loader: ({ params }) => fetch(`https://hungry-bunny.vercel.app/blogs/${params.id}`)
+      },
+      {
+        path: "add-blogs",
+        element: <AddBlog />,
       },
 
       /*------------------------------------------------------------

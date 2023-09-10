@@ -6,8 +6,10 @@ import sushi from '../assets/icons/hero/icons8-sushi.svg';
 import { CgProfile } from 'react-icons/cg';
 import { FaUserEdit, FaUsers } from 'react-icons/fa';
 import { BsCreditCard2Front, BsFillPostcardFill } from 'react-icons/bs';
-import { TbBrandAppleArcade } from 'react-icons/tb';
+import { TbBrandAppleArcade, TbWriting } from 'react-icons/tb';
+import { BiEdit } from 'react-icons/bi';
 import { IoMdRestaurant } from 'react-icons/io';
+
 
 export const heroCategory = [
     {
@@ -168,6 +170,16 @@ export const adminNavItems = [
         to: "/dashboard/manage-restaurant",
         icon: <TbBrandAppleArcade className="text-2xl" />,
         label: "Manage Restaurant",
+    },
+    {
+        to: "/dashboard/manage-blogs",
+        icon: <TbWriting className="text-2xl" />,
+        label: "Manage Blogs",
+    },
+    {
+        to: "/dashboard/add-blogs",
+        icon: <BiEdit className="text-2xl" />,
+        label: "Add Blogs",
     },
     {
         to: "/dashboard/user-profile",

@@ -9,14 +9,15 @@ import useUserSecure from './useUserSecure';
 const useRestaurant = () => {
     const axios = useAxiosSecure();
     const [user] = useUserSecure();
-    const { data } = useQuery({
+    const { data, isLoading } = useQuery({
         queryKey: ['restaurant'],
         queryFn: async () => {
             const { data } = await axios.get(`/application/get/${user?._id}`);
             return data;
-        }
+        },
+        enabled: !!user?._id
     });
-    return data;
+    return [data, isLoading];
 }
 
 export default useRestaurant;
