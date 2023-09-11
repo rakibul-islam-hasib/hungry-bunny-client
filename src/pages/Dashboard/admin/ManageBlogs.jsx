@@ -20,7 +20,7 @@ function ManageBlogs() {
       .then(res => setTotalItem(res.data.total))
       .catch(err => console.log(err))
 
-    axios.get(`/blogs?limit=15&page=${page}`)
+    axios.get(`/blogs?limit=16&page=${page}`)
       .then(res => setBlogs(res.data))
       .catch(err => console.log(err))
     window.scrollTo(0, 0);
@@ -160,7 +160,7 @@ function ManageBlogs() {
       </div> */}
       <div className="grid md:grid-cols-1 lg:grid-cols-2">
       {
-        blogs.map((item, id) => <div key={item._id} className="border-2 border-orange-500 m-3 rounded-lg">
+        blogs.map((item, id) => <div key={item._id} className="border-2 border-orange-500 m-3 rounded-lg relative group hover:-translate-y-4 duration-500">
         <div className="p-2 flex justify-between mr-4">
         <div className="flex">
         <div className="">
