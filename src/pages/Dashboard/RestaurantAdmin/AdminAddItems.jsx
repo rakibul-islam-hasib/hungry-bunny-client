@@ -65,16 +65,16 @@ const AdminAddItems = () => {
   const handleFromSubmit = (event) => {
     event.preventDefault();
     const formData = new FormData();
-    formData.append("product-name", event.target.elements["product-name"].value);
+    formData.append("food_name", event.target.elements["product-name"].value);
     formData.append("category", event.target.elements["category"].value);
-    formData.append("product-details", event.target.elements["product-details"].value);
+    formData.append("description", event.target.elements["product-details"].value);
     const data = Object.fromEntries(formData);
     data.image = imageURL;
     data.submitted = new Date();
     data.status = "pending";
     data.restaurant = restaurant._id;
     data.price = parseInt(event.target.price.value);
-    data.quantity = parseInt(event.target.Quantity.value);
+    console.log(data);
     //* ------------------------- *//
     // console.log(formData.category);
     toast.promise(axios.post('/food/post/new', data), {
@@ -140,7 +140,7 @@ const AdminAddItems = () => {
                     }
                   </select>
             </div>
-            <div className="col-span-6 sm:col-span-3">
+            {/* <div className="col-span-6 sm:col-span-3">
               <label
                 name="brand"
                 className="text-sm font-medium text-gray-900 block mb-2"
@@ -155,7 +155,7 @@ const AdminAddItems = () => {
                 placeholder="01"
                 required=""
               />
-            </div>
+            </div> */}
             <div className="col-span-6 sm:col-span-3">
               <label
                 name="price"

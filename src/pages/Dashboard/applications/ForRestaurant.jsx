@@ -20,7 +20,10 @@ const ForRestaurant = () => {
         return acc;
     }, {});
 
+    
     const [user] = useUserSecure();
+
+    console.log(user);
     const axios = useAxiosSecure();
     const [submittedData, setSubmittedData] = useState({});
     const [loading, setLoading] = useState(false);
@@ -78,7 +81,7 @@ const ForRestaurant = () => {
                     transition={{ duration: 0.5 }}
                     className="bg-white p-8 rounded-lg shadow-md w-[60%]"
                 >
-                    <h2 className="text-2xl font-bold mb-4">Apply as a Restaurant</h2>
+                    <h2 className="text-2xl font-bold mb-4">Become a Restaurant Owner</h2>
                     <form onSubmit={onSubmit}>
                         <div className="mb-4">
                             <motion.label
@@ -89,14 +92,12 @@ const ForRestaurant = () => {
                                 className="text-primary block mb-1"
                                 htmlFor="name"
                             >
-                                Restaurant Admin Name
+                                Restaurant Name
                             </motion.label>
                             <div className="flex items-center">
                                 <FiUser className="text-primary" />
                                 <input
                                     defaultValue={user?.name}
-                                    disabled
-                                    readOnly
                                     className="ml-2 text-primary w-full border-b border-primary focus:border-secondary outline-none"
                                     type="text"
                                     name="name"

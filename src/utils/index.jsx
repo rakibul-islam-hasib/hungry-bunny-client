@@ -108,24 +108,17 @@ export const locationOptions = [
 ];
 export const categoryOptions = [
     { value: '', label: 'Select' },
-    { value: 'Bagerhat', label: 'Bagerhat' },
-    { value: 'Bandarban', label: 'Bandarban' },
-    { value: 'Barguna', label: 'Barguna' },
-    { value: 'Barishal', label: 'Barishal' },
-    { value: 'Bhola', label: 'Bhola' },
-    { value: 'Bogra', label: 'Bogra' },
-    { value: 'Brahmanbaria', label: 'Brahmanbaria' },
-    { value: 'Chandpur', label: 'Chandpur' },
-    { value: 'Chapainawabganj', label: 'Chapainawabganj' },
-    { value: 'Chattogram', label: 'Chattogram' },
-    { value: 'Chuadanga', label: 'Chuadanga' },
-    { value: "Cox's Bazar", label: "Cox's Bazar" },
-    { value: 'Cumilla', label: 'Cumilla' },
-    { value: 'Dhaka', label: 'Dhaka' },
-    { value: 'Dinajpur', label: 'Dinajpur' },
-    { value: 'Faridpur', label: 'Faridpur' },
-    { value: 'Feni', label: 'Feni' },
-    { value: 'Gaibandha', label: 'Gaibandha' },
+    { value: 'Pizza', label: 'Pizza' },
+    { value: 'Snacks', label: 'Snacks' },
+    { value: 'Burger', label: 'Burger' },
+    { value: 'Biryani', label: 'Biryani' },
+    { value: 'Sushi', label: 'Sushi' },
+    { value: 'Street_Food', label: 'Street_Food' },
+    { value: 'Fish', label: 'Fish' },
+    { value: 'Rice', label: 'Rice' },
+    { value: 'SeaFood', label: 'SeaFood' },
+    { value: 'SeaFood', label: 'SeaFood' },
+    
 ];
 
 export const districts = [
