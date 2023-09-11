@@ -14,7 +14,7 @@ import Temp from "../pages/temp/Temp";
 import Blog from "../pages/blog/Blog";
 import DashboardLayout from "../layout/DashboardLayout";
 
-import UserWelcome from "../pages/dashboard/WellComeDashboard/UserWelcome";
+// import UserWelcome from "../pages/dashboard/WellComeDashboard/UserWelcome";
 // import MultiStepForm from "../pages/auth/MultiStepForm";
 // import UserProfile from "../pages/dashboard/user/UserProfile";
 import RestaurantDetails from "../pages/Restaurant/RestaurantDetails";
@@ -51,6 +51,8 @@ import AboutTeam from "../pages/about/AboutTeam";
 
 import ManageApplications from "../pages/Dashboard/admin/ManageApplications";
 import AdminRoute from "./AdminRoute";
+import UserWelcome from "../pages/Dashboard/WellComeDashboard/UserWelcome";
+import PendingMenu from "../pages/Dashboard/admin/PendingMenu";
 
 
 export const router = createBrowserRouter([
@@ -103,7 +105,7 @@ export const router = createBrowserRouter([
         element: <Menu />
       },
       {
-        path: '/allfoods',
+        path: '/all-foods',
         element: <AllFoods />
       },
       {
@@ -174,7 +176,10 @@ export const router = createBrowserRouter([
         path: "add-blogs",
         element: <AddBlog />,
       },
-
+      {
+        path: "manage-pending-menu",
+        element: <PendingMenu />,
+      },
       /*------------------------------------------------------------
       -----------------Restaurant Owner Dashboard-------------------
       -------------------------------------------------------------*/
