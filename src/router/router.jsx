@@ -6,7 +6,7 @@ import About from "../pages/about/About";
 import Contact from "../pages/contact/Contact";
 import CommunityLayout from "../layout/CommunityLayout";
 import Community from "../pages/community/Community";
-import Error404 from "../layout/Error404";
+import Error404 from "../pages/errors/Error404";
 import Restaurant from "../pages/Restaurant/Restaurant";
 import Menu from "../pages/Menu/Menu";
 import Faq from "../pages/faq/Faq";
@@ -21,20 +21,37 @@ import RestaurantDetails from "../pages/Restaurant/RestaurantDetails";
 import RestaurantAdmin from "../pages/dashboard/RestaurantAdmin/RestaurantAdmin";
 import Register from "../pages/auth/Register";
 import BlogDetails from "../pages/blog/BlogDetails";
-// import UserAddress from "../pages/dashboard/Owner/UserAddress";
+
+
 import MultiStepForm from "../pages/auth/MultiStepForm";
-import TeamInfo from "./TeamInfo";
+import TeamInfo from "../pages/Team/TeamInfo";
 import AdminDashboard from "../pages/Dashboard/admin/AdminDashboard";
 import ManageUsers from "../pages/dashboard/admin/ManageUsers";
-import UserProfile from "../pages/dashboard/user/UserProfile";
+// import UserProfile from "../pages/dashboard/user/UserProfile";
 import UserAddress from "../pages/dashboard/user/UserAddress";
 import UserPayment from "../pages/dashboard/user/UserPayment";
 import UserSecurity from "../pages/dashboard/user/UserSecurity";
 
 import AdminOrder from "../pages/Dashboard/RestaurantAdmin/AdminOrder/AdminOrder";
-import AdminAddItems from "../pages/Dashboard/RestaurantAdmin/AdminAddItems/AdminAddItems";
 import AdminMenu from "../pages/Dashboard/RestaurantAdmin/AdminMenu/AdminMenu";
 import AdminCustomers from "../pages/Dashboard/RestaurantAdmin/AdminCustomers/AdminCustomers";
+import NormalProfile from "../pages/Dashboard/user/NormalProfile";
+import AllFoods from "../pages/allFoods/AllFoods";
+import UserProfile from "../pages/Dashboard/user/UserProfile";
+import AdminAddItems from "../pages/Dashboard/RestaurantAdmin/AdminAddItems";
+import ForRestaurant from "../pages/Dashboard/applications/ForRestaurant";
+import PrivateRoute from "./PrivateRoute";
+import ManageBlogs from "../pages/Dashboard/admin/ManageBlogs";
+import UpdateBlog from "../pages/Dashboard/admin/UpdateBlog";
+import AddBlog from "../pages/Dashboard/admin/AddBlog";
+
+
+import AboutTeam from "../pages/about/AboutTeam";
+
+
+import ManageApplications from "../pages/Dashboard/admin/ManageApplications";
+import AdminRoute from "./AdminRoute";
+
 
 export const router = createBrowserRouter([
   {
@@ -53,6 +70,10 @@ export const router = createBrowserRouter([
       {
         path: "/about",
         element: <About />,
+      },
+      {
+        path: "/team-info",
+        element: <AboutTeam />,
       },
       {
         path: "/contact",
@@ -74,11 +95,16 @@ export const router = createBrowserRouter([
         path: "/restaurant/:id",
         element: <RestaurantDetails />,
         loader: ({ params }) =>
+          // TODO : replace with base URL
           fetch(`https://hungry-bunny.vercel.app/restaurant/${params.id}`),
       },
       {
         path: '/menu',
         element: <Menu />
+      },
+      {
+        path: '/allfoods',
+        element: <AllFoods />
       },
       {
         path: '/faq',
@@ -91,7 +117,8 @@ export const router = createBrowserRouter([
       {
         path: '/blogs/:id',
         element: <BlogDetails />,
-        loader: ({ params }) => fetch(`http://localhost:5000/blogs/${params.id}`)
+        // TODO : replace with base URL https://hungry-bunny.vercel.app
+        loader: ({ params }) => fetch(`https://hungry-bunny.vercel.app/blogs/${params.id}`)
       },
       {
         path: "/temp",
@@ -133,10 +160,24 @@ export const router = createBrowserRouter([
         path: "manage-users",
         element: <ManageUsers />,
       },
+      {
+        path: "manage-blogs",
+        element: <ManageBlogs />,
+      },
+      {
+        path: "manage-blogs/:id",
+        element: <UpdateBlog />,
+        // TODO : replace with base URL https://hungry-bunny.vercel.app
+        loader: ({ params }) => fetch(`https://hungry-bunny.vercel.app/blogs/${params.id}`)
+      },
+      {
+        path: "add-blogs",
+        element: <AddBlog />,
+      },
 
       /*------------------------------------------------------------
------------------Restaurant Owner Dashboard-------------------
--------------------------------------------------------------*/
+      -----------------Restaurant Owner Dashboard-------------------
+      -------------------------------------------------------------*/
       {
         path: "restaurant-cp",
         element: <RestaurantAdmin />,
@@ -177,6 +218,18 @@ export const router = createBrowserRouter([
         path: 'user-security',
         element: <UserSecurity />
       },
+      {
+        path: 'profile',
+        element: <NormalProfile />
+      },
+      {
+        path: '/dashboard/application/for-restaurant',
+        element: <PrivateRoute><ForRestaurant /></PrivateRoute>,
+      },
+      {
+        path: 'manage-applications',
+        element: <PrivateRoute><AdminRoute><ManageApplications /></AdminRoute></PrivateRoute>,
+      }
 
     ],
   },

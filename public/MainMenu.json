@@ -1,0 +1,469 @@
+[
+    {
+        "id": 1,
+        "title": "Eggs Benedict",
+        "description": "A classic breakfast dish featuring poached eggs, ham, and hollandaise sauce atop toasted English muffins. Served with a side of roasted potatoes.",
+        "price": 200.99,
+        "image": "https://media.istockphoto.com/id/182161332/photo/eggs-benedict.webp?b=1&s=170667a&w=0&k=20&c=W7bYSNbBdU3EsNabn-i9iykByJFvavZWdDFMyWg_bwM=",
+        "category": "Snacks",
+        "restaurant": "SadherGhor",
+        "ingredients": [
+            "Eggs",
+            "English Muffin"
+        ],
+        "rating": 4.7
+    },
+    {
+        "id": 2,
+        "title": "Pancake Delight",
+        "description": "A delightful stack of fluffy pancakes served with maple syrup, whipped cream, and a choice of fresh berries or bananas.",
+        "price": 200.49,
+        "image": "https://media.istockphoto.com/id/1468515195/photo/breakfast-of-pancakes-with-chocolate.webp?b=1&s=170667a&w=0&k=20&c=6WZAFkPfEXRniDAEpoC5-wo_3Nck_ewWyjmM-fMmuWg=",
+        "category": "Snacks",
+        "restaurant": "MorningBites",
+        "ingredients": [
+            "Pancake Batter",
+            "Maple Syrup",
+            "Whipped Cream",
+            "Berries or Bananas"
+        ],
+        "rating": 4.5
+    },
+    {
+        "id": 3,
+        "title": "Greek Yogurt Parfait",
+        "description": "Layers of creamy Greek yogurt, crunchy granola, and a medley of fresh fruits, drizzled with honey for a healthy and satisfying breakfast.",
+        "price": 200.99,
+        "image": "https://media.istockphoto.com/id/639376412/photo/blueberry-raspberry-parfaits-in-mason-jars-still-life-against-wood.webp?b=1&s=170667a&w=0&k=20&c=19P8kxhp99CwUXKZ3aqpGqupaRR4rMxDA_R2NTihvPc=",
+        "category": "Snacks",
+        "restaurant": "HealthyBites",
+        "ingredients": [
+            "Greek Yogurt",
+            "Granola",
+            "Assorted Fruits",
+            "Honey"
+        ],
+        "rating": 4.8
+    },
+    {
+        "id": 4,
+        "title": "Veggie Breakfast Burrito",
+        "description": "A hearty breakfast burrito filled with scrambled eggs, black beans, sautéed bell peppers and onions, cheese, and a zesty salsa.",
+        "price": 200.25,
+        "image": "https://media.istockphoto.com/id/1036890322/photo/vegetarian-breakfast-burrito-with-eggs.jpg?s=612x612&w=0&k=20&c=NlEkC7qATfSPjpXxQgcDIAi8rywsYIjoEkFBFw4D0Ys=",
+        "category": "Snacks",
+        "restaurant": "SpiceFusion",
+        "ingredients": [
+            "Scrambled Eggs",
+            "Black Beans",
+            "Bell Peppers",
+            "Onions",
+            "Cheese",
+            "Salsa"
+        ],
+        "rating": 4.6
+    },
+    {
+        "id": 5,
+        "title": "Avocado Toast",
+        "description": "Slices of whole-grain toast topped with creamy avocado, a sprinkle of red pepper flakes, and a poached egg. Served with a side of mixed greens.",
+        "price": 200.99,
+        "image": "https://media.istockphoto.com/id/1311507085/photo/avocado-toast-with-eggs-and-roasted-tomatoes.webp?b=1&s=170667a&w=0&k=20&c=6ryzDPsyH7RSsu2d4GppMYga7yFl7JJLXPhfYsbk_lo=",
+        "category": "Snacks",
+        "restaurant": "GreenEats",
+        "ingredients": [
+            "Whole-Grain Bread",
+            "Avocado",
+            "Poached Egg",
+            "Red Pepper Flakes",
+            "Mixed Greens"
+        ],
+        "rating": 4.6
+    },
+    {
+        "id": 6,
+        "title": "Classic Omelette",
+        "description": "Fluffy three-egg omelette filled with diced ham, sautéed mushrooms, onions, and melted cheddar cheese. Served with hash browns.",
+        "price": 200.49,
+        "image": "https://media.istockphoto.com/id/466063332/photo/frittata-with-chicken-and-spinach-and-fresh-spinach.webp?b=1&s=170667a&w=0&k=20&c=yBhD-WVHGRXXr7Wsg5uyFlQhjp2vXljsLGZJ7Ja2Upk=",
+        "category": "Snacks",
+        "restaurant": "MexiCafe",
+        "ingredients": [
+            "Eggs",
+            "Ham",
+            "Mushrooms",
+            "Onions",
+            "Cheddar Cheese",
+            "Hash Browns"
+        ],
+        "rating": 4.7
+    },
+    {
+        "id": 7,
+        "title": "Belgian Waffles",
+        "description": "Golden-brown Belgian waffles topped with a dollop of whipped cream, fresh strawberries, and a dusting of powdered sugar. Served with warm maple syrup.",
+        "price": 2000.99,
+        "image": "https://media.istockphoto.com/id/185266029/photo/waffles-with-fruit-and-maple-syrup-on-a-marble-counter.webp?b=1&s=170667a&w=0&k=20&c=hH8dRj_eOW1mLiPuHIcAeHY76Y3LmyXWE9hTzokN5EY=",
+        "category": "Snacks",
+        "restaurant": "WaffleHaven",
+        "ingredients": [
+            "Waffle Batter",
+            "Whipped Cream",
+            "Strawberries",
+            "Powdered Sugar",
+            "Maple Syrup"
+        ],
+        "rating": 4.9
+    },
+    {
+        "id": 8,
+        "title": "Breakfast Quesadilla",
+        "description": "Flour tortilla filled with scrambled eggs, crispy bacon, diced tomatoes, green onions, and melted Monterey Jack cheese. Served with salsa.",
+        "price": 200.75,
+        "image": "https://media.istockphoto.com/id/518620806/photo/mexican-quesadillas-with-cheese-vegetables.webp?b=1&s=170667a&w=0&k=20&c=mqb3KGsY4NKz0n3oBpLv254RVSmt2k0S0EX13IvE27I=",
+        "category": "Snacks",
+        "restaurant": "MexiCafe",
+        "ingredients": [
+            "Flour Tortilla",
+            "Scrambled Eggs",
+            "Bacon",
+            "Tomatoes",
+            "Green Onions",
+            "Monterey Jack Cheese",
+            "Salsa"
+        ],
+        "rating": 4.5
+    },
+    {
+        "id": 52,
+        "title": "Margherita Pizza",
+        "description": "Classic pizza topped with fresh tomatoes, mozzarella cheese, basil, and olive oil.",
+        "price": 150.99,
+        "image": "https://media.istockphoto.com/id/1414575281/photo/a-delicious-and-tasty-italian-pizza-margherita-with-tomatoes-and-buffalo-mozzarella.jpg?s=612x612&w=0&k=20&c=v8mdiAa_5NaRYtIscClXe85lLzkx7loSd9_pJWt9G2o=",
+        "category": "Pizza",
+        "restaurant": "SadherGhor",
+        "ingredients": [
+            "Pizza Dough",
+            "Tomatoes",
+            "Mozzarella Cheese",
+            "Basil",
+            "Olive Oil"
+        ],
+        "rating": 4.7
+    },
+    {
+        "id": 56,
+        "title": "Pepperoni Feast Pizza",
+        "description": "A pizza loaded with pepperoni slices, melted cheese, and tangy tomato sauce.",
+        "price": 153.99,
+        "image": "https://media.istockphoto.com/id/111845282/photo/housewife-woman-holding-small-pepperoni-pizza-isolated-on-white-background.jpg?s=612x612&w=0&k=20&c=hNSs5tf425mqhdDPjye604mlPfk_m-Mf3QDCrLWSjLc=",
+        "category": "Pizza",
+        "restaurant": "SpiceFusion",
+        "ingredients": [
+            "Pizza Dough",
+            "Pepperoni",
+            "Cheese",
+            "Tomato Sauce"
+        ],
+        "rating": 4.9
+    },
+    {
+        "id": 61,
+        "title": "Mushroom Lovers Pizza",
+        "description": "Pizza topped with an assortment of sautéed mushrooms, cheese, and a garlic-infused olive oil.",
+        "price": 3002.99,
+        "image": "https://media.istockphoto.com/id/864768956/photo/gourmet-homemade-mushroom-pizza.jpg?s=612x612&w=0&k=20&c=0lxTUcy1LXsb1kPRgzv1D32H3kScpH-_oSqsA51xiYM=",
+        "category": "Pizza",
+        "restaurant": "SpiceFusion",
+        "ingredients": [
+            "Pizza Dough",
+            "Mushrooms",
+            "Cheese",
+            "Garlic Oil"
+        ],
+        "rating": 4.9
+    },
+    {
+        "id": 66,
+        "title": "Pesto and Sun-Dried Tomato Pizza",
+        "description": "Pizza topped with pesto sauce, sun-dried tomatoes, mozzarella cheese, and pine nuts.",
+        "price": 3002.99,
+        "image": "https://media.istockphoto.com/id/506496249/photo/pizza.jpg?s=612x612&w=0&k=20&c=kmdTFC8z52v9LnuFExTR8rSdZflM4KPhikrZ0RTGzd8=",
+        "category": "Pizza",
+        "restaurant": "SpiceFusion",
+        "ingredients": [
+            "Pizza Dough",
+            "Pesto Sauce",
+            "Sun-Dried Tomatoes",
+            "Mozzarella",
+            "Pine Nuts"
+        ],
+        "rating": 4.9
+    },
+    {
+        "id": 39,
+        "title": "Sushi Bowl",
+        "description": "Deconstructed sushi bowl with seasoned sushi rice, fresh sashimi-grade fish, avocado, cucumber, and a drizzle of soy sauce.",
+        "price": 154.25,
+        "image": "https://media.istockphoto.com/id/1354366250/photo/set-of-rainbow-uramaki-sushi-rolls-with-avocado.jpg?s=612x612&w=0&k=20&c=wgFUfdRVdtW976mlii4zK_Ziy7rqEcXWPHjGZ8dO5A0=",
+        "category": "Sushi",
+        "restaurant": "HealthyBites",
+        "ingredients": [
+            "Sushi Rice",
+            "Sashimi-Grade Fish",
+            "Avocado",
+            "Cucumber",
+            "Soy Sauce"
+        ],
+        "rating": 4.8
+    },
+    {
+        "id": 13,
+        "title": "Chicken Biryani",
+        "description": "A fragrant and flavorful rice dish made with tender chicken, basmati rice, aromatic spices, and garnished with fried onions and fresh cilantro.",
+        "price": 2002.99,
+        "image": "https://media.istockphoto.com/id/501137061/photo/chicken-biryani-1-4.jpg?s=612x612&w=0&k=20&c=4YH3uPuv2iNyNTemn5bTxCyst608o3WDZNyATnibDsg=",
+        "category": "Biryani",
+        "restaurant": "SpiceFusion",
+        "ingredients": [
+            "Chicken",
+            "Basmati Rice",
+            "Spices",
+            "Onions",
+            "Cilantro"
+        ],
+        "rating": 4.7
+    },
+    {
+        "id": 20,
+        "title": "Vegetable Biryani",
+        "description": "An aromatic rice dish made with fragrant basmati rice, mixed vegetables, and a blend of Indian spices. Garnished with fried onions and cilantro.",
+        "price": 300.99,
+        "image": "https://media.istockphoto.com/id/179085494/photo/indian-biryani.webp?b=1&s=170667a&w=0&k=20&c=9vWEBS53E4lFMFZvmps_K1o09812k2fWtfVpElSlZXE=",
+        "category": "Biryani",
+        "restaurant": "SpiceFusion",
+        "ingredients": [
+            "Basmati Rice",
+            "Mixed Vegetables",
+            "Spices",
+            "Onions",
+            "Cilantro"
+        ],
+        "rating": 4.7
+    },
+    {
+        "id": 37,
+        "title": "Veggie Biryani Bowl",
+        "description": "A bowl of fragrant basmati rice with a blend of aromatic spices and mixed vegetables, topped with fried onions and cilantro.",
+        "price": 200.99,
+        "image": "https://media.istockphoto.com/id/1039691852/photo/vegetable-fried-rice.jpg?s=612x612&w=0&k=20&c=ylOZDjkctSmrZIWP24DQkMf_XKpg2xFPA4KOolk3B_U=",
+        "category": "Biryani",
+        "restaurant": "SpiceFusion",
+        "ingredients": [
+            "Basmati Rice",
+            "Assorted Vegetables",
+            "Spices",
+            "Onions",
+            "Cilantro"
+        ],
+        "rating": 4.7
+    },
+    {
+        "id": 1,
+        "title": "Eggs Benedict",
+        "description": "A classic breakfast dish featuring poached eggs, ham, and hollandaise sauce atop toasted English muffins. Served with a side of roasted potatoes.",
+        "price": 8.99,
+        "image": "https://i.ibb.co/ccZyWng/breakfast1.png",
+        "type": "Breakfast",
+        "restaurant": "SadherGhor",
+        "ingredients": ["Eggs", "English Muffin"],
+        "rating": 4.7
+    },
+    {
+        "id": 2,
+        "title": "Breakfast Sandwich",
+        "description": "Start your day with a hearty breakfast sandwich made with freshly baked bread, scrambled eggs, cheddar cheese, and savory ham.",
+        "price": 9.99,
+        "image": "https://i.ibb.co/Bnz8Zv2/breakfast2.png",
+        "type": "Breakfast",
+        "restaurant": "SadherGhor",
+        "ingredients": ["Bread", "Ham"],
+        "rating": 4.5
+    },
+    {
+        "id": 3,
+        "title": "Baked Chicken",
+        "description": "Tender chicken pieces marinated in a blend of herbs and spices, then baked to perfection. Served with a side of seasonal vegetables.",
+        "price": 10.99,
+        "image": "https://i.ibb.co/mXYbPcv/breakfast3.png",
+        "type": "Breakfast",
+        "restaurant": "SadherGhor",
+        "ingredients": ["Chicken", "Herbs"],
+        "rating": 4.2
+    },
+    {
+        "id": 4,
+        "title": "Bagel and Cream Cheese",
+        "description": "A classic bagel toasted to a golden brown and spread with rich cream cheese. Perfect for a quick and satisfying breakfast.",
+        "price": 23.99,
+        "image": "https://i.ibb.co/87MwqqT/breakfast4.png",
+        "type": "Breakfast",
+        "restaurant": "SadherGhor",
+        "ingredients": ["Bagel", "Cream Cheese"],
+        "rating": 4.8
+    },
+    {
+        "id": 5,
+        "title": "Fried Egg Toast Brunch",
+        "description": "A delightful brunch option featuring sunny-side-up eggs served over toasted bread. Accompanied by a fresh salad and tangy vinaigrette.",
+        "price": 3.99,
+        "image": "https://i.ibb.co/92mtcwx/breakfast5.png",
+        "type": "Breakfast",
+        "restaurant": "SadherGhor",
+        "ingredients": ["Eggs", "Bread"],
+        "rating": 4.3
+    },
+    {
+        "id": 6,
+        "title": "Toast Croissant Fried Egg",
+        "description": "Indulge in a flaky croissant filled with a perfectly fried egg. Served with a side of mixed greens and balsamic dressing.",
+        "price": 19.99,
+        "image": "https://i.ibb.co/hHGc7sm/breakfast6.png",
+        "type": "Breakfast",
+        "restaurant": "SadherGhor",
+        "ingredients": ["Croissant", "Eggs"],
+        "rating": 4.6
+    },
+    {
+        "id": 7,
+        "title": "Beef Steak",
+        "description": "Savor the bold flavors of a juicy beef steak, seasoned and grilled to your preference. Served with garlic mashed potatoes and steamed vegetables.",
+        "price": 15.99,
+        "image": "https://i.ibb.co/RgrfxCH/lunch1.png",
+        "type": "Lunch",
+        "restaurant": "BlueSeaFood",
+        "ingredients": ["Beef", "Seasonings"],
+        "rating": 4.9
+    },
+    {
+        "id": 8,
+        "title": "Honey with Peppers",
+        "description": "A unique lunch option featuring tender strips of honey-glazed chicken served with sautéed bell peppers and a side of fluffy rice.",
+        "price": 7.99,
+        "image": "https://i.ibb.co/XsNF0PW/lunch2.png",
+        "type": "Lunch",
+        "restaurant": "BlueSeaFood",
+        "ingredients": ["Honey", "Peppers"],
+        "rating": 4.4
+    },
+    {
+        "id": 9,
+        "title": "Tarragon Rubbed Salmon",
+        "description": "Delight in a succulent salmon fillet rubbed with aromatic tarragon. Served with a medley of roasted vegetables and quinoa.",
+        "price": 7.99,
+        "image": "https://i.ibb.co/1MjBt1z/lunch3.png",
+        "type": "Lunch",
+        "restaurant": "BlueSeaFood",
+        "ingredients": ["Salmon", "Tarragon"],
+        "rating": 4.7
+    },
+    {
+        "id": 10,
+        "title": "Indian Lunch",
+        "description": "Experience the vibrant flavors of Indian cuisine with a delicious lunch spread, including fragrant spices, basmati rice, and flavorful curries.",
+        "price": 8.99,
+        "image": "https://i.ibb.co/G3Vq8Gt/lunch4.png",
+        "type": "Lunch",
+        "restaurant": "BlueSeaFood",
+        "ingredients": ["Spices", "Rice"],
+        "rating": 4.6
+    },
+    {
+        "id": 11,
+        "title": "Fried Chicken Bento",
+        "description": "Enjoy a Japanese-inspired bento box featuring crispy fried chicken, steamed rice, and a variety of fresh vegetables. Served with a zesty dipping sauce.",
+        "price": 13.99,
+        "image": "https://i.ibb.co/gF3dTJs/lunch5.png",
+        "type": "Lunch",
+        "restaurant": "BlueSeaFood",
+        "ingredients": ["Chicken", "Rice"],
+        "rating": 4.8
+    },
+    {
+        "id": 12,
+        "title": "Healthy Meal Plan",
+        "description": "Nourish your body with a well-balanced meal plan that includes a variety of nutrient-rich ingredients, such as colorful vegetables, lean proteins, and whole grains.",
+        "price": 83.99,
+        "image": "https://i.ibb.co/WGKYHcG/lunch6.png",
+        "type": "Lunch",
+        "restaurant": "BlueSeaFood",
+        "ingredients": ["Assorted Vegetables", "Grains"],
+        "rating": 4.5
+    },
+    {
+        "id": 13,
+        "title": "Baked Chicken",
+        "description": "Indulge in a hearty dinner featuring tender baked chicken infused with aromatic herbs. Served with roasted potatoes and a side of seasonal greens.",
+        "price": 66.99,
+        "image": "https://i.ibb.co/XLbqWqJ/dinner1.png",
+        "type": "Dinner",
+        "restaurant": "BanglarShad",
+        "ingredients": ["Chicken", "Herbs"],
+        "rating": 4.7
+    },
+    {
+        "id": 14,
+        "title": "Lemony Salmon Piccata",
+        "description": "Elevate your dinner experience with a zesty lemony salmon piccata, served with a flavorful caper sauce and a side of buttered asparagus.",
+        "price": 56.99,
+        "image": "https://i.ibb.co/N3rVPJD/dinner2.png",
+        "type": "Dinner",
+        "restaurant": "BanglarShad",
+        "ingredients": ["Salmon", "Lemon"],
+        "rating": 4.6
+    },
+    {
+        "id": 15,
+        "title": "Garlic Butter Baked Salmon",
+        "description": "Savor the melt-in-your-mouth goodness of garlic butter baked salmon, accompanied by a refreshing cucumber and tomato salad.",
+        "price": 3.99,
+        "image": "https://i.ibb.co/kyTLkW7/dinner3.png",
+        "type": "Dinner",
+        "restaurant": "BanglarShad",
+        "ingredients": ["Salmon", "Garlic"],
+        "rating": 4.3
+    },
+    {
+        "id": 16,
+        "title": "French Fries with Cheese",
+        "description": "Indulge in a comfort food classic – crispy French fries topped with melted cheddar cheese and served with a tangy dipping sauce.",
+        "price": 23.99,
+        "image": "https://i.ibb.co/SNxL4z3/dinner4.png",
+        "type": "Dinner",
+        "restaurant": "BanglarShad",
+        "ingredients": ["Potatoes", "Cheese"],
+        "rating": 4.4
+    },
+    {
+        "id": 17,
+        "title": "Pork Tenderloin",
+        "description": "Satisfy your cravings with a succulent pork tenderloin, seasoned to perfection and served with roasted root vegetables and a drizzle of savory gravy.",
+        "price": 12.99,
+        "image": "https://i.ibb.co/VJ0c4cw/dinner5.png",
+        "type": "Dinner",
+        "restaurant": "BanglarShad",
+        "ingredients": ["Pork", "Seasonings"],
+        "rating": 4.9
+    },
+    {
+        "id": 18,
+        "title": "Lentil Salad",
+        "description": "Enjoy a wholesome and protein-packed lentil salad, tossed with fresh vegetables and a zesty lemon vinaigrette. A perfect light dinner option.",
+        "price": 9.99,
+        "image": "https://i.ibb.co/xjvNzKp/dinner6.png",
+        "type": "Dinner",
+        "restaurant": "BanglarShad",
+        "ingredients": ["Lentils", "Vegetables"],
+        "rating": 4.7
+    }
+]

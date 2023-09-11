@@ -9,6 +9,7 @@ import { useAuth } from '../../hooks/useAuth';
 import logo from '../../assets/img/logo.png';
 import darkLogo from '../../assets/img/dark-logo.png';
 import NavMenu from './NavElement/NavMenu';
+
 const navLinks = [
     {
         id: 1,
@@ -25,6 +26,7 @@ const navLinks = [
         name: 'Contact',
         path: '/contact',
     },
+    
     {
         id: 4,
         name: 'Community',
@@ -40,12 +42,15 @@ const navLinks = [
         name: 'Menu',
         path: '/menu',
     },
-    // {
-    //     id: 7,
-    //     name: 'Team Info',
-    //     path: '/team-info',
-    // },
+    {
+        id: 8,
+        name: 'Team Info',
+        path: '/team-info',
+    },
 ];
+
+
+
 
 const NavBar = () => {
     const [showSidebar, setShowSidebar] = useState(false);

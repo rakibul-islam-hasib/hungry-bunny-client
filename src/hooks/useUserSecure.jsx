@@ -9,10 +9,10 @@ const useUserSecure = (email) => {
         {
             queryKey: ["user", email],
             queryFn: async () => {
-                const res = await axios.get(`/user-info/${email}`);
+                const res = await axios.get(`/user-info/${user?.email}`);
                 return res.data;
             },
-            enabled: !!user?.email && !!email && !!localStorage.getItem('token'),
+            enabled: !!user?.email && !!localStorage.getItem('token'),
         }
 
     );

@@ -1,14 +1,14 @@
 import { useEffect, useState } from 'react';
 
-const useFetch = () => {
+const useMenu = () => {
     const [foods, setFoods] = useState([])
 
     useEffect(() => {
-        fetch('foods.json')
+        fetch('MainMenu.json')
             .then(res => res.json())
             .then(data => setFoods(data))
     }, [])
     return [foods, setFoods]
 }
 
-export default useFetch
+export default useMenu

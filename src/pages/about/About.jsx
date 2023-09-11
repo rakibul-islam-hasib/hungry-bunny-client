@@ -1,4 +1,8 @@
 import React from 'react';
+import { BsStopwatch } from 'react-icons/bs';
+import { MdOutlineLocalOffer } from 'react-icons/md';
+import { PiBowlFood, PiVanDuotone } from 'react-icons/pi';
+import Subscribe from './Subscribe';
 
 
 const About = () => {
@@ -16,7 +20,7 @@ const About = () => {
       <div className='mt-10 md:w-[50%] pr-10'>
         <p className='text-4xl font-extrabold text-slate-800'>About Us</p>
         <p className='text-2xl mt-10 mb-6'>Discover culinary delights delivered to your door. We partner with local restaurants and chefs to bring you a diverse, delicious menu, ensuring satisfaction with every order.</p>
-        <button className="drop-shadow-lg border-orange-500 hover:text-orange-500 hover:bg-white mt-8 text-white bg-orange-500 border-2 font-bold py-2 px-4 rounded-full flex items-center">
+        <button className="drop-shadow-lg hover:transition hover:duration-400 border-orange-500 hover:text-orange-500 hover:bg-white mt-8 text-white bg-orange-500 border-2 font-bold py-2 px-4 rounded-full flex items-center">
             SEND EMAIL
           </button>
       </div>
@@ -25,19 +29,19 @@ const About = () => {
       </div>
       </div>
       <div className=' mb-10 sm:my-3 md:ml-10 sm:gap-x-3 grid sm:grid-cols-2 md:grid-cols-4 text-center'>
-        <div className='border-2 pt sm:mb-3 rounded-2xl md:mr-16 border-orange-400 pr-3 pl-3 pb-2 hover:bg-orange-500 hover:text-white '>
+        <div className='border-2 hover:transition hover:duration-400 pt sm:mb-3 rounded-2xl md:mr-16 border-orange-400 pr-3 pl-3 pb-2 hover:bg-orange-500 hover:text-white '>
           <p className='text-4xl'><span>5000</span> <span className='text-6xl'>+</span></p>
           <p className='text-2xl'>happy customer</p>
         </div>
-        <div className='border-2 sm:mb-3 rounded-2xl md:mr-16 border-orange-400 pr-3 pl-3 pb-2 hover:bg-orange-500 hover:text-white '>
+        <div className='border-2 hover:transition hover:duration-400 sm:mb-3 rounded-2xl md:mr-16 border-orange-400 pr-3 pl-3 pb-2 hover:bg-orange-500 hover:text-white '>
           <p className='text-4xl'><span>24/7</span> <span className='text-6xl'></span></p>
           <p className='text-2xl'>service</p>
         </div>
-        <div className='border-2 sm:mb-3 rounded-2xl md:mr-16 border-orange-400 pr-3 pl-3 pb-2 hover:bg-orange-500 hover:text-white '>
+        <div className='border-2 hover:transition hover:duration-400 sm:mb-3 rounded-2xl md:mr-16 border-orange-400 pr-3 pl-3 pb-2 hover:bg-orange-500 hover:text-white '>
           <p className='text-4xl'><span>50</span> <span className='text-6xl'>+</span></p>
           <p className='text-2xl'>restaurant</p>
         </div>
-        <div className='border-2 sm:mb-3 md:mr-14 rounded-2xl border-orange-400  pr-5 pl-5 pb-2 hover:bg-orange-500 hover:text-white '>
+        <div className='border-2 hover:transition hover:duration-400 sm:mb-3 md:mr-14 rounded-2xl border-orange-400  pr-5 pl-5 pb-2 hover:bg-orange-500 hover:text-white '>
           <p className='text-4xl'><span>100</span> <span className='text-6xl'>+</span></p>
           <p className='text-2xl'>delivery boy</p>
         </div>
@@ -56,17 +60,42 @@ const About = () => {
         <div className='mt-6 md:w-[50%] sm:my-4'>
           <h3 className='font-extrabold text-4xl'>Delivering Flavorful Moments to Your Doorstep</h3>
           <p className='mt-4 text-2xl'>Our dedicated team works tirelessly to ensure that your orders are delivered promptly and with utmost care. From sizzling pizzas to savory noodles, indulgent desserts to health-conscious choices, our diverse range of restaurant partners offers something for every palate</p>
-          <button className="drop-shadow-lg border-orange-500 hover:text-orange-500 hover:bg-white mt-8 text-white bg-orange-500 border-2 font-bold py-2 px-4 rounded-full flex items-center">
+          <button className="drop-shadow-lg hover:transition hover:duration-400 border-orange-500 hover:text-orange-500 hover:bg-white mt-8 text-white bg-orange-500 border-2 font-bold py-2 px-4 rounded-full flex items-center">
             Our Dedicated team
           </button>
         </div>
       </div>
+
+{/* add new section */}
+<div className='grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 mt-10 mb-10'>
+  <div className='p-7 bg-white hover:transition hover:duration-400 rounded-3xl drop-shadow-lg hover:text-white hover:bg-orange-500 dark:bg-black dark:text-white dark:border-2 dark:border-orange-500 dark:hover:bg-orange-500 hover:'>
+    <p className='text-7xl ml-3'><PiVanDuotone/> </p>
+    <h3 className='text-4xl font-bold'>Free Delivery</h3>
+    <p className='mt-4 mb-4'>Enjoy the added perk of FREE delivery! Savor your favorite dishes without the extra cost, making every meal a delightful and budget-friendly experience.</p>
+  </div>
+  <div className='p-7 bg-white hover:transition hover:duration-400 rounded-3xl drop-shadow-lg hover:text-white hover:bg-orange-500 dark:bg-black dark:text-white dark:border-2 dark:border-orange-500 dark:hover:bg-orange-500'>
+    <p className='text-7xl ml-3 hover:text-white'><BsStopwatch/> </p>
+    <h3 className='text-4xl font-bold'>Save your Time</h3>
+    <p className='mt-4 mb-4'>Save time with our swift food delivery service. Spend less time in the kitchen and more time enjoying your meals, all with just a few clicks.</p>
+  </div>
+  <div className='p-7 bg-white hover:transition hover:duration-400 rounded-3xl drop-shadow-lg hover:text-white hover:bg-orange-500 dark:bg-black dark:text-white dark:border-2 dark:border-orange-500 dark:hover:bg-orange-500'>
+    <p className='text-7xl ml-3 hover:text-white'><MdOutlineLocalOffer/> </p>
+    <h3 className='text-4xl font-bold'>Regular Discount</h3>
+    <p className='mt-4 mb-4'>Unlock regular discounts for loyal customers. Enjoy savings on your favorite dishes with our exclusive offers, making dining with us even more satisfying.</p>
+  </div>
+  <div className='p-7 bg-white hover:transition hover:duration-400 rounded-3xl drop-shadow-lg hover:text-white hover:bg-orange-500 dark:bg-black dark:text-white dark:border-2 dark:border-orange-500 dark:hover:bg-orange-500'>
+    <p className='text-7xl ml-3 hover:text-white'><PiBowlFood/> </p>
+    <h3 className='text-4xl font-bold'>Variety Foods</h3>
+    <p className='mt-4 mb-4'>Explore a world of diverse flavors. Our menu boasts a variety of cuisines, promising an exciting dining adventure with every order.</p>
+  </div>
+</div>
+
       {/* hero section partner */}
       <div className='mt-7 md:flex mb-4'>
         <div className='mt-6 md:w-[50%] mr-8 sm:my-4'>
           <h3 className='font-extrabold text-4xl'>Empowering Culinary Creativity, One Delivery at a Time</h3>
           <p className='mt-4 text-2xl'>Join our Your Food Delivery Partner Name family and embark on a journey that celebrates culinary excellence. As a trusted delivery partner, we bridge the gap between talented chefs and eager diners. From kitchen to doorstep, we ensure that every dish retains its essence and arrives with care. Discover a new dimension of flavors with Your Food Delivery Partner</p>
-          <button className="drop-shadow-lg border-orange-500 bg-orange-500 border-2 hover:text-orange-500 hover:bg-white mt-8 text-white font-bold py-2 px-4 rounded-full flex items-center">
+          <button className="drop-shadow-lg hover:transition hover:duration-400 border-orange-500 bg-orange-500 border-2 hover:text-orange-500 hover:bg-white mt-8 text-white font-bold py-2 px-4 rounded-full flex items-center">
             become a partner
           </button>
         </div>
@@ -82,7 +111,7 @@ const About = () => {
         <div className='mt-6 md:w-[50%] sm:my-4'>
           <h3 className='font-extrabold text-4xl'>Where Culinary Creativity Meets Your Cravings</h3>
           <p className='mt-4 text-2xl'>Indulge in a symphony of flavors at FlavorFusion Delights, where every dish is a masterpiece crafted with passion and innovation. Our menu, an amalgamation of global cuisines, takes your taste buds on an unforgettable journey. From sizzling street food to elegantly curated fine dining experiences, we cater to your every craving. Discover the perfect fusion of tradition and modernity in every bite.</p>
-          <button className="drop-shadow-lg border-orange-500 bg-orange-500 border-2 hover:text-orange-500 hover:bg-white mt-8 text-white font-bold py-2 px-4 rounded-full flex items-center">
+          <button className="drop-shadow-lg hover:transition hover:duration-400 border-orange-500 bg-orange-500 border-2 hover:text-orange-500 hover:bg-white mt-8 text-white font-bold py-2 px-4 rounded-full flex items-center">
             add your restaurant
           </button>
         </div>
@@ -92,7 +121,7 @@ const About = () => {
         <div className='mt-6 md:w-[50%] mr-8 sm:my-4'>
           <h3 className='font-extrabold text-4xl'>Delivering Delicious Moments, One Ride at a Time</h3>
           <p className='mt-4 text-2xl'>Join our dedicated team of food delivery riders and be the hero of every mealtime! At our service, we don&lsquo;t just deliver food; we deliver smiles, convenience, and the joy of sharing a hot meal. Whether it&lsquo;s a busy workday or a lazy weekend, our riders are always on the move, ensuring your favorite dishes reach your doorstep piping hot and right on time. </p>
-          <button className="drop-shadow-lg bg-orange-500 border-2 border-orange-500 hover:text-orange-500 hover:bg-white mt-8 text-white font-bold py-2 px-4 rounded-full flex items-center">
+          <button className="drop-shadow-lg hover:transition hover:duration-400 bg-orange-500 border-2 border-orange-500 hover:text-orange-500 hover:bg-white mt-8 text-white font-bold py-2 px-4 rounded-full flex items-center">
             become a rider
           </button>
 
@@ -101,6 +130,7 @@ const About = () => {
           <img style={{ height: 400 }} className='rounded-lg' src="https://images.pexels.com/photos/4392039/pexels-photo-4392039.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="" />
         </div>
       </div>
+      <Subscribe/>
     </div>
   );
 };

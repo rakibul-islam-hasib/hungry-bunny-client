@@ -22,7 +22,7 @@ const TopRestaurant = () => {
   const [allRestaurants, setAllRestaurants] = useState([])
   const [loading, setLoading] = useState(true)
   useEffect(() => {
-    axios.get('/restaurant')
+    axios.get('/restaurant?page=1&limit=10')
       .then(res => {
         setAllRestaurants(res.data)
       })

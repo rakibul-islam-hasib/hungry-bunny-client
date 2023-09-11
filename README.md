@@ -7,9 +7,21 @@
 #### Restaurant page:- User can see all restaurant. Location, rating, restaurant image, name and details button. Any user click details button user can see restaurant description, total recipe, dish item name, popular food name, image, rating, price, contact email, restaurant page use search field can user search any restaurant, restaurants page pagination use, every page show three restaurants.
 #### Menu page:- User can see popular menu items. Image, price, menu name, description and add to cart.
 #### Menu page:- User can see popular menu items and our menu items show using tab. Image, price, menu name, description and add to cart.
-#### Faq page:- User can see all faq questions and answers.
-#### Blog page:- User can see all blogs. Image, author name, reading time, publish date, see, blogs page use pagination, every page show ten blogs. click blog details btn show blog details .
-#### User Dashboard page:- User can manage his/her profile.  
+#### Login page:- Use multi steps login system. first name, second email address and lastly password.
+#### Register page:- User can email and password then login web site.
+#### Faq page:- User can see all faq questions and answers, user can give any suggestion.
+#### Blog page:- User can see all blogs. Image, author name, reading time, publish date, see, blogs page use pagination, every page show ten blogs. click blog details btn show blog details, user can do comments.
+
+#### User Dashboard page:- User can manage his/her profile all personal info give this web site, number of menu, number of delivery, number of contact, orders numbers, payments number, bookings number and reviews number .  
+#### User Dashboard Manage page:- New shipping address, city, apartment number.  
+#### User Dashboard Payment page:- user can give card number, expiration date, and card holder name.  
+#### User Dashboard Security page:- user can open two factor authentication, give new password, new password .  
+#### Restaurant owner Dashboard:- Restaurant owner can see his/her restaurant menu items, total seal, total customers, total orders. 
+#### Restaurant owner Dashboard add new items page:- Restaurant owner can add new items, select any criteria, name, image, price, short description.
+#### Restaurant owner Dashboard Menu page:- Restaurant owner can see his/her restaurant all menu. owner can delete any items.
+#### Admin Dashboard page:- Manage all user, admin can change user role, make admin and make restaurant owner. 
+
+
 
 ## CLient Site Use Technology.  
 ## Live site Link > [hungry-bunny](https://hungry-bunny-web.web.app)
