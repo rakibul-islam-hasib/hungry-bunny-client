@@ -6,6 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { toast as loaderPrompt, toast } from 'react-toastify';
 import useRestaurant from "../../../hooks/useRestaurant";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
+import {  categoryOptions } from "../../../utils";
 const AdminAddItems = () => {
   const [selectedFile, setSelectedFile] = useState(null);
   const [imagePreview, setImagePreview] = useState(null);
@@ -75,6 +76,7 @@ const AdminAddItems = () => {
     data.price = parseInt(event.target.price.value);
     data.quantity = parseInt(event.target.Quantity.value);
     //* ------------------------- *//
+    // console.log(formData.category);
     toast.promise(axios.post('/food/post/new', data), {
       pending: 'Adding Product...',
       success: 'Product Added Successfully',
@@ -109,7 +111,7 @@ const AdminAddItems = () => {
                 name="product-name"
                 className="text-sm font-medium text-gray-900 block mb-2"
               >
-                Product Name
+                Food Name
               </label>
               <input
                 type="text"
@@ -127,14 +129,16 @@ const AdminAddItems = () => {
               >
                 Category
               </label>
-              <input
-                type="text"
-                name="category"
-                id="category"
-                className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full p-2.5"
-                placeholder="Food"
-                required=""
-              />
+              <select
+                    name="category"
+                    className="input-field w-full"
+                  >
+                    {
+                      categoryOptions.map((location, index) => (
+                        <option key={index} value={location.value}>{location.label}</option>
+                      ))
+                    }
+                  </select>
             </div>
             <div className="col-span-6 sm:col-span-3">
               <label

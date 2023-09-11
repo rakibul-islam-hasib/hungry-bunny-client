@@ -82,7 +82,7 @@ const MenuCard = () => {
       </div>
 
       {/*  */}
-      <div className=" md:flex justify-between flex-wrap">
+      <div className=" md:flex justify-between flex-wrap  ">
         {
           MenuCategory.map((item, idx) => (loading ? <CategorySkeleton key={idx} /> :
 

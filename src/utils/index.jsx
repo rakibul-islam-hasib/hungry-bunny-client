@@ -106,6 +106,27 @@ export const locationOptions = [
     { value: 'Tangail', label: 'Tangail' },
     { value: 'Thakurgaon', label: 'Thakurgaon' }
 ];
+export const categoryOptions = [
+    { value: '', label: 'Select' },
+    { value: 'Bagerhat', label: 'Bagerhat' },
+    { value: 'Bandarban', label: 'Bandarban' },
+    { value: 'Barguna', label: 'Barguna' },
+    { value: 'Barishal', label: 'Barishal' },
+    { value: 'Bhola', label: 'Bhola' },
+    { value: 'Bogra', label: 'Bogra' },
+    { value: 'Brahmanbaria', label: 'Brahmanbaria' },
+    { value: 'Chandpur', label: 'Chandpur' },
+    { value: 'Chapainawabganj', label: 'Chapainawabganj' },
+    { value: 'Chattogram', label: 'Chattogram' },
+    { value: 'Chuadanga', label: 'Chuadanga' },
+    { value: "Cox's Bazar", label: "Cox's Bazar" },
+    { value: 'Cumilla', label: 'Cumilla' },
+    { value: 'Dhaka', label: 'Dhaka' },
+    { value: 'Dinajpur', label: 'Dinajpur' },
+    { value: 'Faridpur', label: 'Faridpur' },
+    { value: 'Feni', label: 'Feni' },
+    { value: 'Gaibandha', label: 'Gaibandha' },
+];
 
 export const districts = [
     {
