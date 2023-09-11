@@ -8,7 +8,7 @@ function AddBlog() {
     const { register, handleSubmit } = useForm()
 
     const onSubmit =(data) =>{
-        // console.log(data)
+        console.log(data)
         axios.post('/blogs', register)
         .then(data => {
             // console.log(data.data);
@@ -16,7 +16,7 @@ function AddBlog() {
                 Swal.fire({
                     position: 'top-end',
                     icon: 'success',
-                    title: 'Your work has been saved',
+                    title: 'Your blog added',
                     showConfirmButton: false,
                     timer: 1500
                   })
