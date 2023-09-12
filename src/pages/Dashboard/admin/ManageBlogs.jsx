@@ -186,8 +186,8 @@ function ManageBlogs() {
       }
       </div>
       {/* Pagination  */}
-      <div className="mt-10 mb-5 text-right text-4xl mx-auto sm:w-[40%] md:w-[20%]">
-        <Pagination className='text-right text-4xl font-bold pt-5 pb-5 pr-4 pl-4 rounded-2xl dark:bg-white' onChange={(e, vale) => setPage(vale)} count={totalPage} color="secondary" />
+      <div className="mt-10 mb-5 text-right text-2xl mx-auto sm:w-[40%] md:w-[20%]">
+        <Pagination className='text-right text-2xl font-bold pt-5 pb-5 pr-4 pl-4 rounded-2xl dark:bg-white' onChange={(e, vale) => setPage(vale)} count={totalPage} color="secondary" />
       </div>
       <ScrollRestoration />
     </div>
