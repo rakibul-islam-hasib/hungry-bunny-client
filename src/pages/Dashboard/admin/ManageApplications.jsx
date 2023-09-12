@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import useAxiosSecure from '../../../hooks/useAxiosSecure';
 import { toast } from 'react-toastify';
+
 const ManageApplications = () => {
 
     const axios = useAxiosSecure();
