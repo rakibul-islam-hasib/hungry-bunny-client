@@ -134,7 +134,7 @@ const NavBar = () => {
             <div
                 className={
                     isFixed
-                        ? 'fixed dark:text-white text-black top-0 z-[999] w-full duration-[1s] dark:bg-black bg-white dark:bg-opacity-60 backdrop-blur-xl bg-opacity-60'
+                        ? 'fixed dark:text-white text-black top-0 z-[99] w-full duration-[1s] dark:bg-black bg-white dark:bg-opacity-60 backdrop-blur-xl bg-opacity-60'
                         : 'static top-0 dark:text-black'
                 }
             >
@@ -178,7 +178,7 @@ const NavBar = () => {
                         <div className="search-and-others flex items-center space-x-2">
                             <div className="">
                                 <button
-                                    onClick={() => setShowSidebar(!showSidebar)}
+                                    onClick={() => setShowSidebar(true)}
                                     className="px-3 relative py-1 rounded-full"
                                 >
                                     <img className="w-9" src={cartImg} alt="" />
