@@ -5,6 +5,7 @@ import { Link, ScrollRestoration } from 'react-router-dom';
 import useAxiosFetch from '../../hooks/useAxiosFetch';
 import Pagination from '@mui/material/Pagination';
 import blog from '../../assets/img/blog.png'
+import { Helmet } from 'react-helmet-async';
 
 const Blog = () => {
   const [blogs, setBlogs] = useState([]);
@@ -27,6 +28,9 @@ const Blog = () => {
   // https://images.pexels.com/photos/5778895/pexels-photo-5778895.jpeg?auto=compress&cs=tinysrgb&w=1600
   return (
     <div className=''>
+      <Helmet>
+        <title>Hungry Bunny || blog</title>
+      </Helmet>
       {/* <div className="w-full bg-[url('https://images.pexels.com/photos/5778892/pexels-photo-5778892.jpeg?auto=compress&cs=tinysrgb&w=600')]">
       </div> */}
       <div className='md:flex w-full bg-gradient-to-r from-orange-100 p-5 rounded-2xl '>
