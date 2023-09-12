@@ -3,11 +3,14 @@ import { BsStopwatch } from 'react-icons/bs';
 import { MdOutlineLocalOffer } from 'react-icons/md';
 import { PiBowlFood, PiVanDuotone } from 'react-icons/pi';
 import Subscribe from './Subscribe';
-
+import { Helmet } from 'react-helmet-async';
 
 const About = () => {
   return (
     <div className='mx-auto font-sans justify-center items-center ml-5 dark:text-slate-300'>
+      <Helmet>
+        <title>Hungry Bunny || about</title>
+      </Helmet>
       {/* <div className="bg-fixed w-full bg-[url('https://images.pexels.com/photos/6646953/pexels-photo-6646953.jpeg?auto=compress&cs=tinysrgb&w=1600')]" style={{height:700}}>
         <img className="w-full rounded-2xl bg-fixed" src='' style={{ height: 800 }} alt="delivery picture" />
 <div className=' text-center mb-32'>
@@ -28,20 +31,20 @@ const About = () => {
         <img className='rounded-3xl' src="https://images.pexels.com/photos/6605268/pexels-photo-6605268.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="" />
       </div>
       </div>
-      <div className=' mb-10 sm:my-3 md:ml-10 sm:gap-x-3 grid sm:grid-cols-2 md:grid-cols-4 text-center'>
-        <div className='border-2 hover:transition hover:duration-400 pt sm:mb-3 rounded-2xl md:mr-16 border-orange-400 pr-3 pl-3 pb-2 hover:bg-orange-500 hover:text-white '>
+      <div className=' mb-10 font-bold sm:my-3 md:ml-10 sm:gap-x-3 grid sm:grid-cols-2 md:grid-cols-4 text-center'>
+        <div className='border-2 hover:transition hover:duration-400 pt sm:mb-3 rounded-2xl md:mr-16 border-orange-400 pr-2 pl-3 pb-2 hover:bg-orange-500 hover:text-white '>
           <p className='text-4xl'><span>5000</span> <span className='text-6xl'>+</span></p>
           <p className='text-2xl'>happy customer</p>
         </div>
-        <div className='border-2 hover:transition hover:duration-400 sm:mb-3 rounded-2xl md:mr-16 border-orange-400 pr-3 pl-3 pb-2 hover:bg-orange-500 hover:text-white '>
+        <div className='border-2 hover:transition hover:duration-400 sm:mb-3 rounded-2xl md:mr-16 border-orange-400 pr-2 pl-3 pb-2 hover:bg-orange-500 hover:text-white '>
           <p className='text-4xl'><span>24/7</span> <span className='text-6xl'></span></p>
           <p className='text-2xl'>service</p>
         </div>
-        <div className='border-2 hover:transition hover:duration-400 sm:mb-3 rounded-2xl md:mr-16 border-orange-400 pr-3 pl-3 pb-2 hover:bg-orange-500 hover:text-white '>
+        <div className='border-2 hover:transition hover:duration-400 sm:mb-3 rounded-2xl md:mr-16 border-orange-400 pr-2 pl-3 pb-2 hover:bg-orange-500 hover:text-white '>
           <p className='text-4xl'><span>50</span> <span className='text-6xl'>+</span></p>
           <p className='text-2xl'>restaurant</p>
         </div>
-        <div className='border-2 hover:transition hover:duration-400 sm:mb-3 md:mr-14 rounded-2xl border-orange-400  pr-5 pl-5 pb-2 hover:bg-orange-500 hover:text-white '>
+        <div className='border-2 hover:transition hover:duration-400 sm:mb-3 md:mr-14 rounded-2xl border-orange-400  pr-2 pl-5 pb-2 hover:bg-orange-500 hover:text-white '>
           <p className='text-4xl'><span>100</span> <span className='text-6xl'>+</span></p>
           <p className='text-2xl'>delivery boy</p>
         </div>

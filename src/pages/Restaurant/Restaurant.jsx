@@ -6,6 +6,7 @@ import '@smastrom/react-rating/style.css'
 import useAxiosFetch from '../../hooks/useAxiosFetch';
 import './restaurant.css'
 import { Pagination } from '@mui/material';
+import { Helmet } from 'react-helmet-async';
 
 const Restaurant = () => {
   const [searchQuery, setSearchQuery] = useState('')
@@ -50,6 +51,9 @@ const Restaurant = () => {
   // 
   return (
     <div>
+      <Helmet>
+        <title>Hungry Bunny || restaurant</title>
+      </Helmet>
       <div className=''>
         <div style={{height:600}} className="pb-8 mt-5 pt-8 bg-fixed bg-[url('http://gomoto.like-themes.com/wp-content/uploads/2019/06/INNER_header_02.jpg')] rounded-2xl ">
          <div className=''>
