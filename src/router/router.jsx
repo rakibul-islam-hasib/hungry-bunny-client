@@ -39,7 +39,7 @@ import NormalProfile from "../pages/Dashboard/user/NormalProfile";
 import AllFoods from "../pages/allFoods/AllFoods";
 import UserProfile from "../pages/Dashboard/user/UserProfile";
 import AdminAddItems from "../pages/Dashboard/RestaurantAdmin/AdminAddItems";
-import ForRestaurant from "../pages/Dashboard/applications/ForRestaurant";
+import ForRestaurant from "../pages/Dashboard/user/applications/ForRestaurant";
 import PrivateRoute from "./PrivateRoute";
 import ManageBlogs from "../pages/Dashboard/admin/ManageBlogs";
 import UpdateBlog from "../pages/Dashboard/admin/UpdateBlog";
