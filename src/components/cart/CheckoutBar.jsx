@@ -1,9 +1,13 @@
 import React, { useEffect } from 'react';
 import gsap from 'gsap';
 import { AiOutlineCloseSquare } from 'react-icons/ai';
+import useUtils from '../../hooks/useUtils';
+import { useDispatch } from 'react-redux';
+import { setCheckoutOpen } from '../../redux/slices/utilsSlice';
 
 const CheckoutBar = ({ visibleLeft, setVisibleLeft }) => {
-  console.log(setVisibleLeft)
+  const { isCheckoutOpen } = useUtils();
+  const dispatch = useDispatch();
   const openCheckoutBar = () => {
     const t1 = gsap.timeline();
     t1.to('#checkout-bar', {
@@ -23,12 +27,12 @@ const CheckoutBar = ({ visibleLeft, setVisibleLeft }) => {
   };
 
   useEffect(() => {
-    if (visibleLeft) {
+    if (isCheckoutOpen) {
       openCheckoutBar();
     } else {
       closeCheckoutBar();
     }
-  }, [visibleLeft]);
+  }, [isCheckoutOpen]);
 
 
   return (
@@ -37,7 +41,7 @@ const CheckoutBar = ({ visibleLeft, setVisibleLeft }) => {
       className='h-screen  fixed top-0 -right-[350px] z-[100] w-[350px] bg-white'>
       {/* Top */}
       <div className="">
-        <button onClick={() => setVisibleLeft(false)}>
+        <button onClick={() => dispatch(setCheckoutOpen(false))}>
           <AiOutlineCloseSquare />
         </button>
       </div>

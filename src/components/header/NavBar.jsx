@@ -9,6 +9,8 @@ import { useAuth } from '../../hooks/useAuth';
 import logo from '../../assets/img/logo.png';
 import darkLogo from '../../assets/img/dark-logo.png';
 import NavMenu from './NavElement/NavMenu';
+import { useDispatch } from 'react-redux';
+import { setCheckoutOpen } from '../../redux/slices/utilsSlice';
 
 const navLinks = [
     {
@@ -26,7 +28,7 @@ const navLinks = [
         name: 'Contact',
         path: '/contact',
     },
-    
+
     {
         id: 4,
         name: 'Community',
@@ -53,12 +55,12 @@ const navLinks = [
 
 
 const NavBar = () => {
-    const [showSidebar, setShowSidebar] = useState(false);
     const [showNav, setShowNav] = useState(false);
     const [scrollPosition, setScrollPosition] = useState(0);
     const [isFixed, setIsFixed] = useState(false);
     const location = useLocation();
     const navigate = useNavigate();
+    const dispatch = useDispatch();
     const [isDarkMode, setIsDarkMode] = useState(
         localStorage.getItem('isDarkMode') === 'true'
     );
@@ -178,7 +180,7 @@ const NavBar = () => {
                         <div className="search-and-others flex items-center space-x-2">
                             <div className="">
                                 <button
-                                    onClick={() => setShowSidebar(true)}
+                                    onClick={() => dispatch(setCheckoutOpen(true))}
                                     className="px-3 relative py-1 rounded-full"
                                 >
                                     <img className="w-9" src={cartImg} alt="" />
@@ -223,7 +225,7 @@ const NavBar = () => {
                     </div>
                 </nav>
             </div>
-            <CheckoutBar visibleLeft={showSidebar} setVisibleLeft={setShowSidebar} />
+            <CheckoutBar />
         </>
     );
 };
