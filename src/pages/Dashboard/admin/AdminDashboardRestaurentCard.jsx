@@ -2,7 +2,7 @@ import React from 'react';
 
 const AdminDashboardRestaurentCard = () => {
     return (
-     <div className="grid grid-cols-3 gap-8">
+     <div className="grid lg:grid-cols-3 gap-8">
            <div className="flex flex-col justify-center items-center bg-gray-100 ">
         <div className="bg-white rounded-lg shadow-lg overflow-hidden max-w-lg w-full">
           <img

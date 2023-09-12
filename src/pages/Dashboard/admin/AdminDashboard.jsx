@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import AdminDashboardRestaurentCard from './AdminDashboardRestaurentCard';
+import AdminMenuCard from './AdminMenuCard';
 
 const AdminDashboard = () => {
     const tabs = [
@@ -14,8 +15,8 @@ const AdminDashboard = () => {
         setActiveTab(tabId);
       };
     return (
-        <div className="w-full mx-auto text-center m-8">
-        <div className=" ">
+        <div className="w-full mx-auto text-center  m-8">
+        <div className=" sm:pt-8">
           {tabs.map((tab) => (
             <button
               key={tab.id}
@@ -234,7 +235,7 @@ const AdminDashboard = () => {
             activeTab === tabs[2].id ? 'block' : 'hidden'
           } tab-content`}
         >
-          Content for {tabs[2].label} tab (ID: {tabs[2].id}).
+          <AdminMenuCard/>
         </div>
       </div>
     
