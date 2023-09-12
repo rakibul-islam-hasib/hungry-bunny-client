@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import AdminDashboardRestaurentCard from './AdminDashboardRestaurentCard';
 
 const AdminDashboard = () => {
     const tabs = [
@@ -226,7 +227,7 @@ const AdminDashboard = () => {
             activeTab === tabs[1].id ? 'block' : 'hidden'
           } tab-content`}
         >
-          Content for {tabs[1].label} tab (ID: {tabs[1].id}).
+         <AdminDashboardRestaurentCard/>
         </div>
         <div
           className={`${
