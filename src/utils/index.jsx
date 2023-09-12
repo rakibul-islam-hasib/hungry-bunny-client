@@ -129,38 +129,38 @@ export const districts = [
     },
     {
         id: 2,
-        photo: 'https://i.ibb.co/qj7j53t/Downloader-la-64f216032482f.jpg',
+        photo: 'https://i.ibb.co/dQ43xtM/dhaka.jpg',
         name: 'Dhaka'
     },
     {
         id: 3,
         name: 'Rajshahi',
-        photo: 'https://i.ibb.co/gJSbwW1/Downloader-la-64f216032482f.jpg'
+        photo: 'https://i.ibb.co/9qKzBtS/raj.jpg'
     },
     {
         id: 4,
         name: 'Khulna',
-        photo: 'https://i.ibb.co/tbwYnr0/Downloader-la-64f217a7436c4.jpg',
+        photo: 'https://i.ibb.co/7NW3Y4z/khulna.jpg',
     },
     {
         id: 5,
         name: 'Barishal',
-        photo: 'https://i.ibb.co/Nj34d78/Downloader-la-64f21931a1b94.jpg',
+        photo: 'https://i.ibb.co/RPc70CV/borisal.jpg',
     },
     {
         id: 6,
-        name: 'Barishal',
-        photo: 'https://i.ibb.co/Nj34d78/Downloader-la-64f21931a1b94.jpg',
+        name: 'Rangpur',
+        photo: 'https://i.ibb.co/rGWZQHy/Rongpur2.jpg',
     },
     {
         id: 7,
-        name: 'Barishal',
-        photo: 'https://i.ibb.co/Nj34d78/Downloader-la-64f21931a1b94.jpg',
+        name: 'Chittagong',
+        photo: 'https://i.ibb.co/Zzxr29F/chittagong.jpg',
     },
     {
         id: 8,
-        name: 'Barishal',
-        photo: 'https://i.ibb.co/Nj34d78/Downloader-la-64f21931a1b94.jpg',
+        name: 'Mymenshingh',
+        photo: 'https://i.ibb.co/68FYdn3/mymenshing.jpg',
     },
 ]
 

@@ -1,4 +1,5 @@
 import { Rating } from "@mui/material";
+import { Helmet } from "react-helmet-async";
 import { FaArrowRight, FaReadme } from "react-icons/fa";
 import { useLoaderData } from "react-router-dom";
 
@@ -9,6 +10,9 @@ const BlogDetails = () => {
     console.log(blogs);
     return (
         <div className="md:flex mt-10 mx-auto dark:text-white">
+            <Helmet>
+        <title>Hungry Bunny || blog details</title>
+      </Helmet>
         <div className="md:w-[60%]">
             <h2 className="text-4xl ml-5 mb-7 font-extrabold mt-5">{blogs.blogHeading}</h2>
         <img className="rounded-2xl mb-10" src={blogs.blogImage} alt="food image" />
