@@ -1,6 +1,15 @@
 import React from 'react';
+import moment from 'moment';
+import en from 'javascript-time-ago/locale/en';
+import TimeAgo from 'javascript-time-ago';
 
 const ApplicationTable = ({ applications = [], handleApprove }) => {
+    TimeAgo.addLocale(en)
+    const timeAgo = new TimeAgo('en-US');
+
+
+
+
     return (
         <table className="min-w-full border-collapse block md:table">
             <thead className="block md:table-header-group">
@@ -28,7 +37,15 @@ const ApplicationTable = ({ applications = [], handleApprove }) => {
                             <span className="inline-block w-1/3 md:hidden font-bold">
                                 Email
                             </span>
-                            {application.userEmail}
+                            {
+                                moment(application.applicationDate || new Date()).format('DD/MM/YYYY') 
+                                
+                            }
+                            <span className='mx-2'>/</span>
+                            {
+                            timeAgo.format(new Date(application.applicationDate) , 'twitter') 
+                            }
+                            <span className='ml-2'>ago</span>
                         </td>
                         <td className="p-2 md:border md:border-grey-500 text-left block md:table-cell">
                             <span className="inline-block w-1/3 md:hidden font-bold">Status</span>
