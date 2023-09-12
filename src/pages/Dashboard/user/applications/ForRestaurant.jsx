@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import { FiUser, FiMail, FiBriefcase, FiSend, FiClock } from 'react-icons/fi';
 import { motion } from 'framer-motion';
-import useUserSecure from '../../../hooks/useUserSecure';
-import useAxiosSecure from '../../../hooks/useAxiosSecure';
+import useUserSecure from '../../../../hooks/useUserSecure';
+import useAxiosSecure from '../../../../hooks/useAxiosSecure';
 import { toast } from 'react-toastify';
+import { HiOutlineMail } from 'react-icons/hi';
+import { BiCurrentLocation, BiSolidRename } from 'react-icons/bi';
+
 const daysOfWeek = [
     'Monday',
     'Tuesday',
@@ -31,14 +34,16 @@ const ForRestaurant = () => {
     const [addingOpeningHours, setAddingOpeningHours] = useState(false);
     const [openingHours, setOpeningHours] = useState(initialOpeningHours);
     const [is24hOpen, setIs24hOpen] = useState(false);
+
+
+
     const onSubmit = (e) => {
         e.preventDefault();
         if (!user) return toast.error('Please login first');
         setLoading(true);
         const data = new FormData(e.target);
-        data.append('name', e.target.name.value);
-        data.append('email', e.target.email.value);
         const formValues = Object.fromEntries(data.entries());
+        console.log(formValues)
         //   add the opening hours to the form values
         formValues.openingHours = openingHours;
         formValues.status = 'pending';
@@ -82,8 +87,11 @@ const ForRestaurant = () => {
                     transition={{ duration: 0.5 }}
                     className="bg-white p-8 rounded-lg shadow-md w-[60%]"
                 >
-                    <h2 className="text-2xl font-bold mb-4">Become a Restaurant Owner</h2>
-                    <form onSubmit={onSubmit}>
+                    <h2 className="text-2xl font-bold mb-4">Apply as a Restaurant</h2>
+                    <form onSubmit={e => onSubmit(e)}>
+                        {/* 
+                        // Restaurant admin name 
+                        */}
                         <div className="mb-4">
                             <motion.label
                                 variants={inputVariants}
@@ -99,7 +107,9 @@ const ForRestaurant = () => {
                                 <FiUser className="text-primary" />
                                 <input
                                     defaultValue={user?.name}
-                                    className="ml-2 text-primary w-full border-b border-primary focus:border-secondary outline-none"
+                                    disabled
+                                    readOnly
+                                    className="ml-2 text-red-500 w-full border-b border-primary focus:border-secondary outline-none"
                                     type="text"
                                     name="name"
                                 />
@@ -118,7 +128,7 @@ const ForRestaurant = () => {
                                 Admin Email
                             </motion.label>
                             <div className="flex items-center">
-                                <FiUser className="text-primary" />
+                                <HiOutlineMail className="text-primary" />
                                 <input
                                     defaultValue={user?.email}
                                     disabled
@@ -129,6 +139,53 @@ const ForRestaurant = () => {
                                 />
                             </div>
                         </div>
+
+
+                        {/* 
+                        
+                        // Restaurant Name 
+                        */}
+                        <div className="mb-4">
+                            <motion.label
+                                variants={inputVariants}
+                                initial="hidden"
+                                animate="visible"
+                                transition={{ duration: 0.5 }}
+                                className="text-primary block mb-1"
+                                htmlFor="restaurant_name"
+                            >
+                                Restaurant Name
+                            </motion.label>
+                            <div className="flex items-center">
+                                <BiSolidRename className="text-primary" />
+                                <input
+                                    className="ml-2 text-gray-600 w-full border-b border-primary focus:border-secondary outline-none"
+                                    type="text"
+                                    name="restaurant_name"
+                                />
+                            </div>
+                        </div>
+                        <div className="mb-4">
+                            <motion.label
+                                variants={inputVariants}
+                                initial="hidden"
+                                animate="visible"
+                                transition={{ duration: 0.5 }}
+                                className="text-primary block mb-1"
+                                htmlFor="location"
+                            >
+                                Restaurant Location
+                            </motion.label>
+                            <div className="flex items-center">
+                                <BiCurrentLocation className="text-primary" />
+                                <input
+                                    className="ml-2 text-gray-600 w-full border-b border-primary focus:border-secondary outline-none"
+                                    type="text"
+                                    name="location"
+                                />
+                            </div>
+                        </div>
+
                         <div className="mb-4 flex items-center justify-between">
                             <label className="text-gray-700 block mb-1 md:flex items-center cursor-pointer">
                                 <input
