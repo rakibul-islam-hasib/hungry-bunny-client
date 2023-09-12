@@ -7,6 +7,7 @@ import { PiBowlFood } from 'react-icons/pi';
 import { BiLike } from 'react-icons/bi';
 import { useLoaderData } from 'react-router-dom';
 import Subscribe from '../about/Subscribe';
+import { Helmet } from 'react-helmet-async';
 
 function RestaurantDetails() {
     const restaurant = useLoaderData()
@@ -14,6 +15,9 @@ function RestaurantDetails() {
 
     return (
         <div className='sm:ml-5 dark:text-slate-200'>
+          <Helmet>
+        <title>Hungry Bunny || restaurant details</title>
+      </Helmet>
          <div className='mt-7 md:flex mb-4 sm:ml-5'>
         <div className='mt-4 md:w-[50%] md:mr-8'>
           <h3 className='font-extrabold text-4xl'>{restaurant.restaurantName}</h3>
@@ -54,23 +58,23 @@ function RestaurantDetails() {
         </div>
       </div>
       {/* add new section */}
-<div className='grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 mt-10 mb-10'>
-  <div className='p-7 bg-white relative group hover:-translate-y-4 hover:transition duration-400 rounded-3xl drop-shadow-lg hover:text-white hover:bg-orange-500 dark:bg-black dark:text-white dark:border-2 dark:border-orange-500 dark:hover:bg-orange-500 hover:'>
+<div className=' grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 mt-10 mb-10'>
+  <div className='p-7 bg-white relative group hover:-translate-y-4 hover:transition duration-400 rounded-3xl drop-shadow-lg hover:text-white hover:bg-orange-500 dark:bg-black dark:text-white dark:border-2 dark:border-orange-500 dark:hover:bg-orange-500'>
     <p className='text-7xl ml-3'><MdDirectionsBike/> </p>
     <h3 className='text-4xl font-bold'>Fast Delivery</h3>
     <p className='mt-4 mb-4'>Fast food delivery is the ultimate solution for those moments when you crave mouthwatering, convenient, and delicious meals without the hassle of cooking or leaving your home.</p>
   </div>
-  <div className='p-7 bg-white hover:transition duration-400 rounded-3xl drop-shadow-lg hover:text-white hover:bg-orange-500 dark:bg-black dark:text-white dark:border-2 dark:border-orange-500 dark:hover:bg-orange-500'>
+  <div className='p-7 bg-white relative group hover:-translate-y-4 hover:transition duration-400 rounded-3xl drop-shadow-lg hover:text-white hover:bg-orange-500 dark:bg-black dark:text-white dark:border-2 dark:border-orange-500 dark:hover:bg-orange-500'>
     <p className='text-7xl ml-3 hover:text-white'><BsStopwatch/> </p>
     <h3 className='text-4xl font-bold'>Save your Time</h3>
     <p className='mt-4 mb-4'>Save time with our swift food delivery service. Spend less time in the kitchen and more time enjoying your meals, all with just a few clicks.</p>
   </div>
-  <div className='p-7 bg-white hover:transition duration-400 rounded-3xl drop-shadow-lg hover:text-white hover:bg-orange-500 dark:bg-black dark:text-white dark:border-2 dark:border-orange-500 dark:hover:bg-orange-500'>
+  <div className='p-7 bg-white relative group hover:-translate-y-4 hover:transition duration-400 rounded-3xl drop-shadow-lg hover:text-white hover:bg-orange-500 dark:bg-black dark:text-white dark:border-2 dark:border-orange-500 dark:hover:bg-orange-500'>
     <p className='text-7xl ml-3 hover:text-white'><MdOutlineLocalOffer/> </p>
     <h3 className='text-4xl font-bold'>Regular Discount</h3>
     <p className='mt-4 mb-4'>Unlock regular discounts for loyal customers. Enjoy savings on your favorite dishes with our exclusive offers, making dining with us even more satisfying.</p>
   </div>
-  <div className='p-7 bg-white hover:transition duration-400 rounded-3xl drop-shadow-lg hover:text-white hover:bg-orange-500 dark:bg-black dark:text-white dark:border-2 dark:border-orange-500 dark:hover:bg-orange-500'>
+  <div className='p-7 bg-white relative group hover:-translate-y-4 hover:transition duration-400 rounded-3xl drop-shadow-lg hover:text-white hover:bg-orange-500 dark:bg-black dark:text-white dark:border-2 dark:border-orange-500 dark:hover:bg-orange-500'>
     <p className='text-7xl ml-3 hover:text-white'><PiBowlFood/> </p>
     <h3 className='text-4xl font-bold'>Variety Foods</h3>
     <p className='mt-4 mb-4'>Explore a world of diverse flavors. Our menu boasts a variety of cuisines, promising an exciting dining adventure with every order.</p>
@@ -83,7 +87,7 @@ function RestaurantDetails() {
 <div className="dark:text-slate-300">
 <div className="grid sm:grid-cols-2 md:grid-cols-3 md:gap-8 gap-3 lg:grid-cols-4 mb-14">
           {
-            restaurant.foodItems.map((items, idx) => <div key={items.idx} className='p-2 border overflow-hidden shadow-lg rounded-2xl'>
+            restaurant.foodItems.map((items, idx) => <div key={idx} className='p-2 border overflow-hidden shadow-lg rounded-2xl'>
             <img className="w-full h-60 object-cover rounded-lg" src={items.foodImage} alt="Food Image" />
             <div className='w-full relative group hover:-translate-y-4 duration-500'>
               <div className=''>
@@ -92,11 +96,11 @@ function RestaurantDetails() {
         value={items.foodRating}
         readOnly
       /></span> <span className='flex text-2xl items-center'><BiLike className='mr-2'/> 0 </span></p>
-            <div className="px-2 py-4">
+            <div className="px-2 py-2">
               <div className="mb-2">
                 <p className='font-extrabold text-2xl dark:text-slate-300'>Food Name {items.foodItem}</p>
               </div>
-                <p className='font-extrabold'>{items.description.slice(0, 50)}</p>
+                <p className='font-extrabold'>{items.description.slice(0, 60)}</p>
                 <div className='font-bold flex justify-between items-center mt-2'>
                 <p className='mr-2 text-2xl'>$ {items.price}</p>
                 <button className="drop-shadow-lg hover:transition duration-600 bg-orange-500 border-2 border-orange-500 hover:text-orange-500 hover:bg-white text-white font-bold py-1 px-3 rounded-full flex items-center">
