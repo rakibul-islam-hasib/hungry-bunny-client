@@ -39,7 +39,7 @@ function UpdateBlog() {
                         <input
                             type="text"
                             defaultValue={loadedBlog.blogHeading}
-                            className="text-2xl rounded-xl p-2 pl-3 w-full mt-2 mb-2"
+                            className="text-2xl rounded-xl p-2 pl-3 w-full mt-2 mb-2 border-2 border-orange-500"
                             id="headline" name="blogHeading" />
                     </div>
                 </div>
@@ -50,7 +50,7 @@ function UpdateBlog() {
                         <input
                             type="text"
                             defaultValue={loadedBlog?.blogImage}
-                            className="text-2xl rounded-xl p-2 pl-3 w-full mt-2 mb-2 mr-5"
+                            className="text-2xl rounded-xl p-2 pl-3 w-full mt-2 mb-2 mr-5 border-2 border-orange-500"
                             name="blogImage"
                         />
                     </div>
@@ -59,7 +59,7 @@ function UpdateBlog() {
                         <input
                             type="date"
                             defaultValue={loadedBlog?.date}
-                            className="text-2xl rounded-xl p-2 pl-3 w-full mt-2 mb-2 mr-5"
+                            className="text-2xl rounded-xl p-2 pl-3 w-full mt-2 mb-2 mr-5 border-2 border-orange-500"
                             name="date"
                         />
                     </div>
@@ -71,7 +71,7 @@ function UpdateBlog() {
                         <h1 className="text-1xl ">Author email</h1>
                         <input
                             type="email"
-                            defaultValue={loadedBlog?.email} className="text-2xl rounded-xl p-2 pl-3 w-full mt-2 mb-2 mr-5" id="email"
+                            defaultValue={loadedBlog?.email} className="text-2xl rounded-xl p-2 pl-3 w-full mt-2 mb-2 mr-5 border-2 border-orange-500" id="email"
                             name="email"
                         />
                     </div>
@@ -79,7 +79,7 @@ function UpdateBlog() {
                         <h1 className="text-1xl ">Blog Rating</h1>
                         <input
                             type="text"
-                            defaultValue={loadedBlog?.rating} className="text-2xl rounded-xl p-2 pl-3 w-full mt-2 mb-2 mr-5"
+                            defaultValue={loadedBlog?.rating} className="text-2xl rounded-xl p-2 pl-3 w-full mt-2 mb-2 mr-5 border-2 border-orange-500"
                             name="rating"
                         />
                     </div>
@@ -92,7 +92,7 @@ function UpdateBlog() {
                         <input
                             type="text"
                             defaultValue={loadedBlog?.authorName}
-                            className="text-2xl rounded-xl p-2 pl-3 w-full mt-2 mb-2 mr-5"
+                            className="text-2xl rounded-xl p-2 pl-3 w-full mt-2 mb-2 mr-5 border-2 border-orange-500"
                             name="authorName"
                         />
                     </div>
@@ -101,7 +101,7 @@ function UpdateBlog() {
                         <input
                             type="text"
                             defaultValue={loadedBlog?.authorImage}
-                            className="text-2xl rounded-xl p-2 pl-3 w-full mt-2 mb-2 mr-5"
+                            className="text-2xl rounded-xl p-2 pl-3 w-full mt-2 mb-2 mr-5 border-2 border-orange-500"
                             name="authorImage"
                         />
                     </div>
@@ -114,7 +114,7 @@ function UpdateBlog() {
                         <textarea
                             type="text"
                             defaultValue={loadedBlog?.description}
-                            className="text-1xl rounded-xl p-2 pl-3 w-full h-60 mt-2 mb-2"
+                            className="text-1xl rounded-xl p-2 pl-3 w-full h-60 mt-2 mb-2 border-2 border-orange-500"
                             id="headline"
                             name="description"
                         ></textarea>
