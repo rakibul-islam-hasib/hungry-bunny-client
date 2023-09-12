@@ -51,7 +51,7 @@ const ManageApplications = () => {
                                     <span className="inline-block w-1/3 md:hidden font-bold">
                                         Name
                                     </span>
-                                    {application.name}
+                                    {application.restaurant_name}
                                 </td>
 
                                 <td className="p-2 md:border md:border-grey-500 text-left block md:table-cell">

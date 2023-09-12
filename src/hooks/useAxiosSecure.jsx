@@ -11,7 +11,7 @@ const useAxiosSecure = () => {
     const navigate = useNavigate();
 
     const axiosSecure = axios.create({
-        baseURL: 'https://hungry-bunny.vercel.app',
+        baseURL: 'http://localhost:5000',
     });
 
     useEffect(() => {
