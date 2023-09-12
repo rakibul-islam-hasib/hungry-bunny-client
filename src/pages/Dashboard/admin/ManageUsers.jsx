@@ -9,7 +9,7 @@ const ManageUsers = () => {
 
     return (
         <div className=''>
-            <h1>Total User: {usersInfo.length}</h1>
+            <h1>Total User: {usersInfo?.length}</h1>
             <div className='flex justify-between my-5 mb-8'>
                 <h1>Manage Users</h1>
 
