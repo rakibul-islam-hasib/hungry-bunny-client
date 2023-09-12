@@ -5,7 +5,7 @@ import useUtils from '../../hooks/useUtils';
 import { useDispatch } from 'react-redux';
 import { setCheckoutOpen } from '../../redux/slices/utilsSlice';
 
-const CheckoutBar = ({ visibleLeft, setVisibleLeft }) => {
+const CheckoutBar = () => {
   const { isCheckoutOpen } = useUtils();
   const dispatch = useDispatch();
   const openCheckoutBar = () => {
@@ -38,13 +38,26 @@ const CheckoutBar = ({ visibleLeft, setVisibleLeft }) => {
   return (
     <div
       id='checkout-bar'
-      className='h-screen  fixed top-0 -right-[350px] z-[100] w-[350px] bg-white'>
+      className='h-screen flex flex-col   fixed top-0 -right-[350px] z-[100] w-[350px] bg-white'>
       {/* Top */}
-      <div className="">
-        <button onClick={() => dispatch(setCheckoutOpen(false))}>
-          <AiOutlineCloseSquare />
+      <div className="bg-primary w-full pr-3 py-2 flex justify-center relative items-center">
+        <div className="">
+          <h1 className="text-white text-xl font-semibold text-center">Checkout</h1>
+        </div>
+        <button onClick={() => dispatch(setCheckoutOpen(false))} className='absolute right-3'>
+          <AiOutlineCloseSquare className='text-3xl text-white ' />
         </button>
       </div>
+
+      <div className="body flex-1">
+    <h1>Hello</h1>
+      </div>
+      {/* Bottom */}
+      <div className="">
+        
+      </div>
+
+
     </div>
   );
 };
