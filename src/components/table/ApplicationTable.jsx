@@ -7,7 +7,7 @@ const ApplicationTable = ({ applications = [], handleApprove }) => {
     TimeAgo.addLocale(en)
     const timeAgo = new TimeAgo('en-US');
 
-
+    if (applications.length === 0) return <div>No applications found</div>
 
 
     return (
@@ -38,18 +38,21 @@ const ApplicationTable = ({ applications = [], handleApprove }) => {
                                 Email
                             </span>
                             {
-                                moment(application.applicationDate || new Date()).format('DD/MM/YYYY') 
-                                
+                                moment(application.applicationDate || new Date()).format('DD/MM/YYYY')
+
                             }
                             <span className='mx-2'>/</span>
                             {
-                            timeAgo.format(new Date(application.applicationDate) , 'twitter') 
+                                timeAgo.format(new Date(application.applicationDate), 'twitter')
                             }
                             <span className='ml-2'>ago</span>
                         </td>
                         <td className="p-2 md:border md:border-grey-500 text-left block md:table-cell">
                             <span className="inline-block w-1/3 md:hidden font-bold">Status</span>
-                            {application.status}
+                            <span
+                                className={`${application.status === 'pending' && 'text-red-500 border-2 border-red-500'} 
+                                ${application.status === 'approved' && 'text-green-500 border-2 border-green-500'}
+                                pt-1 px-2 rounded-lg uppercase cursor-pointer  font-bold`}>{application.status}</span>
                         </td>
                         <td className="p-2 md:border md:border-grey-500 text-left block md:table-cell">
                             <span className="inline-block w-1/3 md:hidden font-bold">Mobile</span>582-3X2-6233
