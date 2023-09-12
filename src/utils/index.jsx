@@ -162,9 +162,9 @@ export const adminNavItems = [
         label: "Manage Users",
     },
     {
-        to: "/dashboard/manage-riders",
+        to: "/dashboard/manage-pending-menu",
         icon: <BsFillPostcardFill className="text-2xl" />,
-        label: "Manage Riders",
+        label: "Pending Menu",
     },
     {
         to: "/dashboard/manage-restaurant",
