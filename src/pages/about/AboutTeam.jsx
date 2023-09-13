@@ -2,6 +2,7 @@ import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { AiOutlineMail, AiOutlinePhone, AiFillFacebook, AiFillInstagram, AiFillGithub } from "react-icons/ai";
+import { Link } from 'react-router-dom';
 
 const AboutTeam = () => {
   const [members, setMembers] = useState([])
@@ -36,9 +37,9 @@ const AboutTeam = () => {
             </p>
           </div>
           <div className="px-6 pt-4 pb-2 text-center">
-            <span className="inline-block rounded-full px-3 py-1 text-4xl font-semibold text-gray-700 mr-5 mb-2"> <AiFillFacebook /> </span>
-            <span className="inline-block  rounded-full px-3 py-1 text-4xl font-semibold text-gray-700 mr-5 mb-2"><AiFillGithub /></span>
-            <span className="inline-block  rounded-full px-3 py-1 text-4xl font-semibold text-gray-700 mr-5 mb-2"><AiFillInstagram /></span>
+            <Link className='inline-block rounded-full px-3 py-1 text-4xl font-semibold text-gray-700 mr-5 mb-2' to={member.facebook_url}><AiFillFacebook /></Link>
+            <Link className='inline-block  rounded-full px-3 py-1 text-4xl font-semibold text-gray-700 mr-5 mb-2' to={member.github_url}><AiFillGithub /> </Link>
+            <Link className='inline-block  rounded-full px-3 py-1 text-4xl font-semibold text-gray-700 mr-5 mb-2' to={member.instagram_url}><AiFillInstagram /> </Link>
           </div>
 
           <div className="px-6 pt-4 pb-2 text-center">
