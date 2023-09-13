@@ -1,7 +1,7 @@
 import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
-import { AiOutlineMail, AiOutlinePhone, AiFillFacebook, AiFillInstagram, AiFillGithub } from "react-icons/ai";
+import { AiOutlineMail, AiOutlinePhone, AiFillLinkedin, AiFillFacebook, AiFillInstagram, AiFillGithub } from "react-icons/ai";
 
 const AboutTeam = () => {
   const [members, setMembers] = useState([])
@@ -20,34 +20,38 @@ const AboutTeam = () => {
       <div className='grid md:grid-cols-2 md:gap-8 gap-3 lg:grid-cols-3 m-auto justify-center'>
 
         {
-          members.map((member, idx) =>
-
-            <div key={idx} className="max-w-[24rem] rounded rounded-t-full  overflow-hidden shadow-lg">
-              <div className='text-center flex justify-center '>
-                <img className="w-72 h-80 rounded-lg" src={member.photo_url} alt="Sunset in the mountains" />
-              </div>
-              <div className="px-6 py-4">
-                <div className="font-bold mb-2 text-center">
-                  <h1 className='text-xl'>Web Developer</h1>
-                  <h1 className='text-3xl mt-5'>{member.name}</h1>
-                </div>
-                <p className="text-gray-700 text-base">
-                  {member.description}
-                </p>
-              </div>
-              <div className="px-6 pt-4 pb-2 text-center">
-                <span className="inline-block rounded-full px-3 py-1 text-4xl font-semibold text-gray-700 mr-5 mb-2"> <AiFillFacebook /> </span>
-                <span className="inline-block  rounded-full px-3 py-1 text-4xl font-semibold text-gray-700 mr-5 mb-2"><AiFillGithub /></span>
-                <span className="inline-block  rounded-full px-3 py-1 text-4xl font-semibold text-gray-700 mr-5 mb-2"><AiFillInstagram /></span>
-              </div>
-
-              <div className="px-6 pt-4 pb-2 text-center">
-                <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#photography</span>
-                <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#travel</span>
-                <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#winter</span>
-              </div>
+          members.map((member,idx) =>
+            
+      <div key={idx} className="max-w-[24rem] rounded rounded-t-full  overflow-hidden shadow-lg">
+        <div className='text-center flex justify-center '>
+        <img className="w-72 h-80 rounded-lg" src={member.photo_url} alt="Sunset in the mountains" />
+        </div>
+          <div className="px-6 py-4">
+            <div className="font-bold mb-2 text-center">
+              <h1 className='text-xl'>Web Developer</h1>
+              <h1 className='text-3xl mt-5'>{member.name}</h1>
             </div>
-          )
+            <p className="text-gray-700 text-base">
+              {member.description}
+            </p>
+          </div>
+          <div className="px-6 pt-4 pb-2 text-center">
+            <a href={member.facebook_url} target='_blank' className='inline-block rounded-full px-3 py-1 text-4xl font-semibold text-gray-700 mr-5 mb-2' rel='noopener noreferrer'><AiFillFacebook /></a>
+            <a href={member.github_url} target='_blank' className='inline-block rounded-full px-3 py-1 text-4xl font-semibold text-gray-700 mr-5 mb-2' rel='noopener noreferrer'><AiFillGithub /></a>
+            <a href={member.linkedin_url} target='_blank' className='inline-block rounded-full px-3 py-1 text-4xl font-semibold text-gray-700 mr-5 mb-2' rel='noopener noreferrer'><AiFillLinkedin /></a>
+            
+            {/* <span className="inline-block rounded-full px-3 py-1 text-4xl font-semibold text-gray-700 mr-5 mb-2"> <AiFillFacebook /> </span> */}
+            {/* <span className="inline-block  rounded-full px-3 py-1 text-4xl font-semibold text-gray-700 mr-5 mb-2"><AiFillGithub /></span>
+            <span className="inline-block  rounded-full px-3 py-1 text-4xl font-semibold text-gray-700 mr-5 mb-2"><AiFillInstagram /></span> */}
+          </div>
+
+          <div className="px-6 pt-4 pb-2 text-center">
+            <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#coding</span>
+            <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#book reading</span>
+            <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#travaling</span>
+          </div>
+      </div>
+            )
         }
       </div>
     </div>
