@@ -69,20 +69,20 @@ const CheckoutBar = () => {
 
           <>
             <tr>
-              <td className=" py-2 px-4">Discount</td>
-              <td className=" py-2 px-4 text-right">-$5.00</td>
+              <td className=" px-4">Discount</td>
+              <td className=" px-4 text-right">-$5.00</td>
             </tr>
             <tr>
-              <td className=" py-2 px-4">Subtotal</td>
-              <td className=" py-2 px-4 text-right">$25.00</td>
+              <td className=" px-4">Subtotal</td>
+              <td className=" px-4 text-right">$25.00</td>
             </tr>
             <tr>
-              <td className=" py-2 px-4">Shipping Fee</td>
-              <td className=" py-2 px-4 text-right">$5.00</td>
+              <td className=" px-4">Shipping Fee</td>
+              <td className=" px-4 text-right">$5.00</td>
             </tr>
             <tr>
-              <td className=" py-2 px-4 font-bold">Total</td>
-              <td className=" py-2 px-4 text-right font-bold">$30.00</td>
+              <td className=" px-4 font-bold">Total</td>
+              <td className=" px-4 text-right font-bold">$30.00</td>
             </tr>
           </>
         </table>
