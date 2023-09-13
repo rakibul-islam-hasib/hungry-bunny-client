@@ -1,7 +1,7 @@
-import { useForm } from "react-hook-form";
 import { useLoaderData } from "react-router-dom";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 function UpdateBlog() {
     const loadedBlog = useLoaderData()
@@ -27,6 +27,9 @@ function UpdateBlog() {
     }
     return (
         <div className="mt-14 ml-4 mr-4 mb-10">
+            <Helmet>
+        <title>Hungry Bunny || admin || update blog</title>
+      </Helmet>
             <h2 className="text-3xl uppercase text-center mb-8 text-orange-500 font-bold">update blog information </h2>
             <form onSubmit={event => onFromSubmit(event)}>
                 {/* blog headline */}
@@ -36,7 +39,7 @@ function UpdateBlog() {
                         <input
                             type="text"
                             defaultValue={loadedBlog.blogHeading}
-                            className="text-2xl rounded-xl p-2 pl-3 w-full mt-2 mb-2"
+                            className="text-1xl rounded-xl p-2 pl-3 w-full mt-2 mb-2 border-2 border-orange-500"
                             id="headline" name="blogHeading" />
                     </div>
                 </div>
@@ -47,7 +50,7 @@ function UpdateBlog() {
                         <input
                             type="text"
                             defaultValue={loadedBlog?.blogImage}
-                            className="text-2xl rounded-xl p-2 pl-3 w-full mt-2 mb-2 mr-5"
+                            className="text-1xl rounded-xl p-2 pl-3 w-full mt-2 mb-2 mr-5 border-2 border-orange-500"
                             name="blogImage"
                         />
                     </div>
@@ -56,7 +59,7 @@ function UpdateBlog() {
                         <input
                             type="date"
                             defaultValue={loadedBlog?.date}
-                            className="text-2xl rounded-xl p-2 pl-3 w-full mt-2 mb-2 mr-5"
+                            className="text-1xl rounded-xl p-2 pl-3 w-full mt-2 mb-2 mr-5 border-2 border-orange-500"
                             name="date"
                         />
                     </div>
@@ -68,7 +71,7 @@ function UpdateBlog() {
                         <h1 className="text-1xl ">Author email</h1>
                         <input
                             type="email"
-                            defaultValue={loadedBlog?.email} className="text-2xl rounded-xl p-2 pl-3 w-full mt-2 mb-2 mr-5" id="email"
+                            defaultValue={loadedBlog?.email} className="text-1xl rounded-xl p-2 pl-3 w-full mt-2 mb-2 mr-5 border-2 border-orange-500" id="email"
                             name="email"
                         />
                     </div>
@@ -76,7 +79,7 @@ function UpdateBlog() {
                         <h1 className="text-1xl ">Blog Rating</h1>
                         <input
                             type="text"
-                            defaultValue={loadedBlog?.rating} className="text-2xl rounded-xl p-2 pl-3 w-full mt-2 mb-2 mr-5"
+                            defaultValue={loadedBlog?.rating} className="text-1xl rounded-xl p-2 pl-3 w-full mt-2 mb-2 mr-5 border-2 border-orange-500"
                             name="rating"
                         />
                     </div>
@@ -89,7 +92,7 @@ function UpdateBlog() {
                         <input
                             type="text"
                             defaultValue={loadedBlog?.authorName}
-                            className="text-2xl rounded-xl p-2 pl-3 w-full mt-2 mb-2 mr-5"
+                            className="text-1xl rounded-xl p-2 pl-3 w-full mt-2 mb-2 mr-5 border-2 border-orange-500"
                             name="authorName"
                         />
                     </div>
@@ -98,7 +101,7 @@ function UpdateBlog() {
                         <input
                             type="text"
                             defaultValue={loadedBlog?.authorImage}
-                            className="text-2xl rounded-xl p-2 pl-3 w-full mt-2 mb-2 mr-5"
+                            className="text-1xl rounded-xl p-2 pl-3 w-full mt-2 mb-2 mr-5 border-2 border-orange-500"
                             name="authorImage"
                         />
                     </div>
@@ -111,14 +114,14 @@ function UpdateBlog() {
                         <textarea
                             type="text"
                             defaultValue={loadedBlog?.description}
-                            className="text-1xl rounded-xl p-2 pl-3 w-full h-60 mt-2 mb-2"
+                            className="text-1xl rounded-xl p-2 pl-3 w-full h-60 mt-2 mb-2 border-2 border-orange-500"
                             id="headline"
                             name="description"
                         ></textarea>
 
                     </div>
                 </div>
-                <input type="submit" className="drop-shadow-lg uppercase text-center hover:transition hover:duration-400 bg-orange-500 border-2 border-orange-500 hover:text-orange-500 hover:bg-white mt-8 text-white font-bold py-2 text-2xl px-4 rounded-full w-full" value="Update Blog" />
+                <input type="submit" className="drop-shadow-lg uppercase text-center hover:transition hover:duration-400 bg-orange-500 border-2 border-orange-500 hover:text-orange-500 hover:bg-white mt-8 text-white font-bold py-2 text-1xl px-4 rounded-full w-full" value="Update Blog" />
             </form>
         </div>
     );

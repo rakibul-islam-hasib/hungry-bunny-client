@@ -2,26 +2,32 @@ import { useState } from "react";
 import useAxiosFetch from "../../../hooks/useAxiosFetch";
 import { useEffect } from "react";
 import { BiMessageAltDetail } from 'react-icons/bi';
-import { FaEdit, FaTrashRestoreAlt } from 'react-icons/fa';
+import { FaCalendarAlt, FaEdit, FaTrashRestoreAlt } from 'react-icons/fa';
 import { Link, ScrollRestoration } from "react-router-dom";
 import { Pagination } from "@mui/material";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 function ManageBlogs() {
   const [blogs, setBlogs] = useState([]);
+  const [ loading, setLoading ] = useState(true)
   const [page, setPage] = useState(1);
-  // console.log(page)
+  // console.log(blogs)
   const [totalItem, setTotalItem] = useState(1);
   const totalPage = Math.ceil(totalItem / 15);
   const axios = useAxiosFetch();
   useEffect(() => {
+    setBlogs(true)
     axios.get('/blogs/total/count')
       .then(res => setTotalItem(res.data.total))
       .catch(err => console.log(err))
 
-    axios.get(`/blogs?limit=15&page=${page}`)
+    axios.get(`/blogs?limit=16&page=${page}`)
       .then(res => setBlogs(res.data))
       .catch(err => console.log(err))
+      .finally(() =>{
+        setLoading(false)
+      })
     window.scrollTo(0, 0);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [page])
@@ -56,8 +62,13 @@ function ManageBlogs() {
 
   }
 
+  if (loading) return (<div>Loading...</div>)
+
   return (
     <div className="mt-20 ml-6 mr-6">
+      <Helmet>
+        <title>Hungry Bunny || admin || manage blogs</title>
+      </Helmet>
       <div className="flex justify-between items-center">
         <h2 className="text-4xl font-bold">Total Blogs: <span>{blogs.length}</span></h2>
         <form className='w-[40%]'>
@@ -99,7 +110,7 @@ function ManageBlogs() {
         </form>
       </div>
       <hr className="w-full h-1 mx-auto my-2 bg-black border-0 rounded dark:bg-gray-700"></hr>
-      <div>
+      {/* <div>
         <div className="relative overflow-x-auto">
           <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
             <thead className="text-xs text-gray-900 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
@@ -153,10 +164,37 @@ function ManageBlogs() {
             </tbody>
           </table>
         </div>
+      </div> */}
+      <div className="grid md:grid-cols-1 lg:grid-cols-2">
+      {
+        blogs.map((item, id) => <div key={item._id} className="border-2 border-orange-500 m-3 rounded-lg relative group hover:-translate-y-4 duration-500">
+        <div className="p-2 flex justify-between mr-4">
+        <div className="flex">
+        <div className="">
+        <img className="rounded-xl border-2 mr-3" style={{ height: 130 }} src={item.blogImage} alt="" />
+        </div>
+        <div className="ml-5">
+        <p className="text-2xl font-bold">{item.blogHeading}</p>
+        <p>{item.authorName}</p>
+        <p className="flex"><span className="mr-2"><FaCalendarAlt/> </span> <span>{item.date}</span></p>
+        </div>
+        <div className="ml-5 w-10">
+        <Link to={`/dashboard/manage-blogs/${item._id}`} type="button"
+                      className="text-white bg-orange-400 hover:bg-orange-500 focus:ring-4 focus:ring-orange-300 font-medium rounded-lg text-sm px-3 py-1 mb-1 dark:bg-orange-600 dark:hover:bg-orange-700 focus:outline-none dark:focus:ring-orange-800"> <FaEdit className="text-2xl" />
+                    </Link>
+                    <Link to={`/blogs/${item._id}`} type="button" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 mb-1 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"> <BiMessageAltDetail className="text-2xl" /> </Link>
+                    <button onClick={() => handleDelete(item._id)} type="button" className="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-3 py-2 dark:bg-red-600 dark:hover:bg-red-700 focus:outline-none dark:focus:ring-red-800"><FaTrashRestoreAlt className="text-2xl" /> </button>
+
+        </div>
+        </div>
+        </div>
+
+        </div>)
+      }
       </div>
       {/* Pagination  */}
-      <div className="mt-10 mb-5 text-right text-4xl mx-auto sm:w-[40%] md:w-[20%]">
-        <Pagination className='text-right text-4xl font-bold pt-5 pb-5 pr-4 pl-4 rounded-2xl dark:bg-white' onChange={(e, vale) => setPage(vale)} count={totalPage} color="secondary" />
+      <div className="mt-10 mb-5 text-right text-2xl mx-auto sm:w-[40%] md:w-[20%]">
+        <Pagination className='text-right text-2xl font-bold pt-5 pb-5 pr-4 pl-4 rounded-2xl dark:bg-white' onChange={(e, vale) => setPage(vale)} count={totalPage} color="secondary" />
       </div>
       <ScrollRestoration />
     </div>
