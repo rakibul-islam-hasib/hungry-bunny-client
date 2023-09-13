@@ -61,13 +61,37 @@ const CheckoutBar = () => {
 
 
       <div className="">
-        <div className="flex items-center gap-1 bg-orange-50 py-2 w-full px-4">
+        <div className="flex items-center gap-1 my-2 bg-orange-50 py-2 w-full px-4">
           <input type="text" placeholder='Promo Code' className='py-1 px-2 rounded-md bg-gray-200 w-full' />
           <button className='font-bold bg-primary px-2 py-1 text-white rounded-md'>Apply</button>
         </div>
-        
-      
+        <table className="float-right mr-4 border-collapse">
+          <tbody>
+            <tr>
+              <td className="px-4">Discount</td>
+              <td className="px-4 text-right">-$5.00</td>
+            </tr>
+            <tr>
+              <td className="px-4">Subtotal</td>
+              <td className="px-4 text-right">$25.00</td>
+            </tr>
+            <tr>
+              <td className="px-4">Shipping Fee</td>
+              <td className="px-4 text-right">$5.00</td>
+            </tr>
+            <tr>
+              <td className="px-4 font-bold">Total</td>
+              <td className="px-4 text-right font-bold">$30.00</td>
+            </tr>
+          </tbody>
+        </table>
 
+
+        <div className="">
+          <button className='w-full bg-primary text-xl font-bold text-red-100 py-2'>
+            Continue to Payment
+          </button>
+        </div>
       </div>
 
 
