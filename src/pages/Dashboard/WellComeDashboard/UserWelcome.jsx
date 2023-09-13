@@ -1,6 +1,6 @@
 import React from 'react';
-import { FaBook, FaCartPlus, FaWallet } from 'react-icons/fa';
-import { FcCollaboration, FcMenu } from 'react-icons/fc';
+import { FaPaypal, FaPhoneAlt, FaWallet } from 'react-icons/fa';
+import { MdFastfood } from 'react-icons/md';
 import { useAuth } from '../../../hooks/useAuth';
 import useUserSecure from '../../../hooks/useUserSecure';
 const UserWelcome = () => {
@@ -8,11 +8,11 @@ const UserWelcome = () => {
     const { user: firebaseUser } = useAuth()
 
     const [user] = useUserSecure()
-    console.log(firebaseUser)
-    console.log(user)
+    // console.log(firebaseUser)
+    // console.log(user)
     return (
         <div className="mr-10">
-            <div className='pt-8 pb-8 flex justify-between items-center'>
+            <div className='pt-8 pb-2 flex justify-between items-center'>
                 <div className='w-96'>
                 <form className='mt-10'>
       <label htmlFor="default-search" className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">
@@ -59,9 +59,22 @@ const UserWelcome = () => {
             </div>
       <hr className="w-full h-1 mx-auto my-2 bg-black border-0 rounded dark:bg-gray-700"></hr>
 
-            <div className='grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
-        <div className=''>
-
+            <div className='mt-8 gap-x-5 grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
+        <div className='text-center bg-white p-5 rounded-md'>
+        <p className='text-4xl font-bold flex justify-evenly'> <span className='text-black'> $ 00.00</span> <span><FaWallet/>  </span> </p>
+        <p className='text-gray-800'>your total cost</p>
+        </div>
+        <div className='text-center bg-white p-5 rounded-md'>
+        <p className='text-4xl font-bold flex justify-evenly'> <span className='text-black'> 00</span> <span><FaPaypal/>  </span> </p>
+        <p className='text-gray-800'>number of payments</p>
+        </div>
+        <div className='text-center bg-white p-5 rounded-md'>
+        <p className='text-4xl font-bold flex justify-evenly'> <span className='text-black'>00</span> <span><MdFastfood/>  </span> </p>
+        <p className='text-gray-800'>number of ordered foods</p>
+        </div>
+        <div className='text-center bg-white p-5 rounded-md'>
+        <p className='text-4xl font-bold flex justify-evenly'> <span className='text-black'>00</span> <span><FaPhoneAlt/> </span> </p>
+        <p className='text-gray-800'>your total contact</p>
         </div>
             </div>
         </div>
