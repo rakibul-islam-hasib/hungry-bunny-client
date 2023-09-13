@@ -112,8 +112,8 @@ const UserWelcome = () => {
         <p className='text-gray-800'>your total contact</p>
         </div> */}
             </div>
-       <div className='bg-white mt-16 '>
-        <h2 className='text-gray-800 font-bold ml-16 pt-10 pb-10 text-3xl drop-shadow-3xl'>your food ordered individual number</h2>
+       <div className='bg-white mt-10 '>
+        <h2 className='text-gray-600 font-bold ml-10 pt-10 pb-7 text-3xl drop-shadow-3xl font-sans'>your food ordered individual number</h2>
        <div style={{ width: '100%', height: 400 }}>
         <ResponsiveContainer>
           <AreaChart
@@ -133,6 +133,51 @@ const UserWelcome = () => {
           </AreaChart>
         </ResponsiveContainer>
       </div>
+       </div>
+       <div className='mt-10 bg-white'>
+        <h2 className='text-gray-600 font-bold ml-10 pt-10 pb-7 text-3xl drop-shadow-3xl font-sans'>your recent orders</h2>
+        <div className="overflow-x-auto shadow-md sm:rounded-lg">
+      <div className="inline-block min-w-full overflow-hidden">
+        <table className="min-w-full text-sm text-left text-gray-500 dark:text-gray-400">
+          <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+            <tr>
+              <th scope="col" className="px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-3 text-2xl md:text-4xl">
+                #
+              </th>
+              <th scope="col" className="hidden sm:table-cell px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-3">
+                Product image
+              </th>
+              <th scope="col" className="px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-3">
+                Product Name
+              </th>
+              <th scope="col" className="hidden sm:table-cell px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-3">
+                Status
+              </th>
+              <th scope="col" className="px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-3">
+                Price
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+              <td className="w-1/6 px-2 py-2 sm:px-4 sm:py-3 md:py-4">Number</td>
+              <td className="hidden sm:table-cell w-1/6 px-2 py-2 sm:px-4 sm:py-3 md:py-4">
+                <img
+                  className="rounded-lg"
+                  style={{ maxWidth: '90px' }}
+                  src="https://images.pexels.com/photos/4393021/pexels-photo-4393021.jpeg?auto=compress&cs=tinysrgb&w=600"
+                  alt="food image"
+                />
+              </td>
+              <td className="w-1/6 px-2 py-2 sm:px-4 sm:py-3 md:py-4">Pizza</td>
+              <td className="hidden sm:table-cell w-1/6 px-2 py-2 sm:px-4 sm:py-3 md:py-4">Pending</td>
+              <td className="w-1/6 px-2 py-2 sm:px-4 sm:py-3 md:py-4">$2999</td>
+            </tr>
+            {/* Add more table rows here */}
+          </tbody>
+        </table>
+      </div>
+    </div>
        </div>
         </div>
     );
