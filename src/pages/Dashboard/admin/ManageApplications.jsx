@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import useAxiosSecure from '../../../hooks/useAxiosSecure';
 import { toast } from 'react-toastify';
+import { useAuth } from '../../../hooks/useAuth';
+import useUserSecure from '../../../hooks/useUserSecure';
 const ManageApplications = () => {
 
     const axios = useAxiosSecure();
@@ -12,9 +14,10 @@ const ManageApplications = () => {
 
 
     const [loading, setLoading] = useState(true);
+    const [user] = useUserSecure()
 
-
-
+    const { user: firebaseUser } = useAuth()
+    console.log(firebaseUser);
     useEffect(() => {
         setLoading(true);
         axios.get('/application/get')
@@ -30,6 +33,8 @@ const ManageApplications = () => {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
     if (loading) return (<div>Loading...</div>)
+
+    console.log(applications);
     return (
         <>
 
@@ -38,9 +43,10 @@ const ManageApplications = () => {
                     <thead className="block md:table-header-group">
                         <tr className="border border-grey-500 md:border-none block md:table-row absolute -top-full md:top-auto -left-full md:left-auto md:relative">
                             <th className="bg-gray-600 p-2 text-white font-bold md:border md:border-grey-500 text-left block md:table-cell">Name</th>
-                            <th className="bg-gray-600 p-2 text-white font-bold md:border md:border-grey-500 text-left block md:table-cell">Email</th>
+                            <th className="bg-gray-600 p-2 text-white font-bold md:border md:border-grey-500 text-left block md:table-cell">Location</th>
                             <th className="bg-gray-600 p-2 text-white font-bold md:border md:border-grey-500 text-left block md:table-cell">Email Address</th>
                             <th className="bg-gray-600 p-2 text-white font-bold md:border md:border-grey-500 text-left block md:table-cell">Mobile</th>
+                            <th className="bg-gray-600 p-2 text-white font-bold md:border md:border-grey-500 text-left block md:table-cell">Role</th>
                             <th className="bg-gray-600 p-2 text-white font-bold md:border md:border-grey-500 text-left block md:table-cell">Actions</th>
                         </tr>
                     </thead>
@@ -56,15 +62,18 @@ const ManageApplications = () => {
 
                                 <td className="p-2 md:border md:border-grey-500 text-left block md:table-cell">
                                     <span className="inline-block w-1/3 md:hidden font-bold">
-                                        Email
+                                      Location
                                     </span>
-                                    {application.email}
+                                    {application.location}
                                 </td>
                                 <td className="p-2 md:border md:border-grey-500 text-left block md:table-cell">
-                                    <span className="inline-block w-1/3 md:hidden font-bold">Email Address</span>jrios@icloud.com
+                                    <span className="inline-block w-1/3 md:hidden font-bold">Email Address</span>{application?.userEmail}
                                 </td>
                                 <td className="p-2 md:border md:border-grey-500 text-left block md:table-cell">
-                                    <span className="inline-block w-1/3 md:hidden font-bold">Mobile</span>582-3X2-6233
+                                    <span className="inline-block w-1/3 md:hidden font-bold">Mobile</span>{application?.contact_number}
+                                </td>
+                                <td className="p-2 md:border md:border-grey-500 text-left block md:table-cell">
+                                    <span className="inline-block w-1/3 md:hidden font-bold">Mobile</span>{user?.role}
                                 </td>
                                 <td className="p-2 md:border md:border-grey-500 text-left block md:table-cell">
                                     <span className="inline-block w-1/3 md:hidden font-bold">Actions</span>

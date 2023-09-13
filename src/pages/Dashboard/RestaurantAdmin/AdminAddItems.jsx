@@ -6,7 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { toast as loaderPrompt, toast } from 'react-toastify';
 import useRestaurant from "../../../hooks/useRestaurant";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
-import {  categoryOptions } from "../../../utils";
+import { categoryOptions } from "../../../utils";
 const AdminAddItems = () => {
   const [selectedFile, setSelectedFile] = useState(null);
   const [imagePreview, setImagePreview] = useState(null);
@@ -48,7 +48,7 @@ const AdminAddItems = () => {
 
 
 
-
+  console.log(restaurant);
 
   const handleFileChange = (e) => {
     const file = e.target.files[0];
@@ -65,14 +65,16 @@ const AdminAddItems = () => {
   const handleFromSubmit = (event) => {
     event.preventDefault();
     const formData = new FormData();
-    formData.append("food_name", event.target.elements["product-name"].value);
+    formData.append("food_name", event.target.elements["food_name"].value);
     formData.append("category", event.target.elements["category"].value);
-    formData.append("description", event.target.elements["product-details"].value);
+    formData.append("description", event.target.elements["description"].value);
     const data = Object.fromEntries(formData);
     data.image = imageURL;
     data.submitted = new Date();
     data.status = "pending";
     data.restaurant = restaurant._id;
+    data.restaurant_name = restaurant.restaurant_name;
+    data.quantity = parseInt(event.target.Quantity.value);
     data.price = parseInt(event.target.price.value);
     console.log(data);
     //* ------------------------- *//
@@ -81,6 +83,7 @@ const AdminAddItems = () => {
       pending: 'Adding Product...',
       success: 'Product Added Successfully',
       error: 'Something went wrong , please try again later'
+
     })
       .then((res) => {
         console.log(res);
@@ -88,6 +91,7 @@ const AdminAddItems = () => {
       .catch((err) => {
         console.log(err);
       })
+      .finally((event.target.reset()))
 
 
   };
@@ -108,14 +112,14 @@ const AdminAddItems = () => {
           <div className="grid grid-cols-6 gap-6">
             <div className="col-span-6 sm:col-span-3">
               <label
-                name="product-name"
+                name="food_name"
                 className="text-sm font-medium text-gray-900 block mb-2"
               >
                 Food Name
               </label>
               <input
                 type="text"
-                name="product-name"
+                name="food_name"
                 id="product-name"
                 className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full p-2.5"
                 placeholder="Chicken Burger"
@@ -130,17 +134,17 @@ const AdminAddItems = () => {
                 Category
               </label>
               <select
-                    name="category"
-                    className="input-field w-full"
-                  >
-                    {
-                      categoryOptions.map((location, index) => (
-                        <option key={index} value={location.value}>{location.label}</option>
-                      ))
-                    }
-                  </select>
+                name="category"
+                className="input-field w-full"
+              >
+                {
+                  categoryOptions.map((location, index) => (
+                    <option key={index} value={location.value}>{location.label}</option>
+                  ))
+                }
+              </select>
             </div>
-            {/* <div className="col-span-6 sm:col-span-3">
+            <div className="col-span-6 sm:col-span-3">
               <label
                 name="brand"
                 className="text-sm font-medium text-gray-900 block mb-2"
@@ -155,7 +159,7 @@ const AdminAddItems = () => {
                 placeholder="01"
                 required=""
               />
-            </div> */}
+            </div>
             <div className="col-span-6 sm:col-span-3">
               <label
                 name="price"
@@ -180,9 +184,9 @@ const AdminAddItems = () => {
                 Product Details
               </label>
               <textarea
-                id="product-details"
+                id="description"
                 rows="6"
-                name="product-details"
+                name="description"
                 className="bg-gray-50 border resize-none outline-none border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full p-4"
                 placeholder="Details"
               ></textarea>

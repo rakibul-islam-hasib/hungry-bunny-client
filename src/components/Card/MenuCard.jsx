@@ -7,7 +7,6 @@ import sushi from '../../assets/icons/menu/icons8-sushi.svg';
 
 import React, { useEffect, useState } from "react";
 
-import useMenu from "../../hooks/useMenu";
 import MenuCardItem from './MenuCardItem';
 import MenuSkeleton from '../Skeletons/MenuSkeleton';
 import CategorySkeleton from '../Skeletons/CategorySkeleton';
@@ -50,6 +49,15 @@ const MenuCard = () => {
   
   const [menuTab, setMenuTab] = useState('Pizza')
   const [loading, setLoading] = useState(true)
+  const [menuItems, setMenuItems] = useState([])
+
+
+  useEffect(() => {
+      fetch('http://localhost:5000/food')
+          .then(res => res.json())
+          .then(data => setMenuItems(data))
+  }, [])
+
 
   //loading 
   useEffect(() => {
@@ -60,8 +68,8 @@ const MenuCard = () => {
   }, [])
 
 
+  
 
-  const [menuItems] = useMenu();
   const handleMenuTabs = (type) => {
     setMenuTab(type);
   }
@@ -87,7 +95,7 @@ const MenuCard = () => {
           MenuCategory.map((item, idx) => (loading ? <CategorySkeleton key={idx} /> :
 
 
-            <div key={item.idx}
+            <div key={idx}
               className={menuTab === `${item.name}` ? 'border rounded-2xl hover:border-primary hover:bg-primary hover:bg-opacity-5 border-orange-300 lg:px-20 py-2  transform transition duration-300 hover:scale-105' : 'border rounded-2xl hover:border-primary hover:bg-primary hover:bg-opacity-5 border-orange-300 lg:px-20 py-2  transform transition duration-300 hover:scale-105'} onClick={() => handleMenuTabs(item.name)}
             >
               <div className='text-center'>

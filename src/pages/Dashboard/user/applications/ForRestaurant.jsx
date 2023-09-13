@@ -6,6 +6,7 @@ import useAxiosSecure from '../../../../hooks/useAxiosSecure';
 import { toast } from 'react-toastify';
 import { HiOutlineMail } from 'react-icons/hi';
 import { BiCurrentLocation, BiSolidRename } from 'react-icons/bi';
+import { useAuth } from '../../../../hooks/useAuth';
 
 const daysOfWeek = [
     'Monday',
@@ -27,7 +28,7 @@ const ForRestaurant = () => {
     const [user] = useUserSecure();
 
     
-    console.log(user);
+    console.log(user); 
     const axios = useAxiosSecure();
     const [submittedData, setSubmittedData] = useState({});
     const [loading, setLoading] = useState(false);
@@ -50,12 +51,15 @@ const ForRestaurant = () => {
         formValues.applicationDate = new Date();
         formValues.applicationFor = 'restaurant';
         formValues.userId = user._id;
+        formValues.userEmail = user.email;
+
         console.log(formValues);
         setSubmittedData(formValues);
 
         axios.post('/application/apply', formValues).then((res) => {
             setLoading(false);
             console.log(res.data)
+            toast.success('Your Application Is Pending');
         });
 
     };
@@ -101,7 +105,7 @@ const ForRestaurant = () => {
                                 className="text-primary block mb-1"
                                 htmlFor="name"
                             >
-                                Restaurant Name
+                                Admin Name
                             </motion.label>
                             <div className="flex items-center">
                                 <FiUser className="text-primary" />
@@ -162,6 +166,26 @@ const ForRestaurant = () => {
                                     className="ml-2 text-gray-600 w-full border-b border-primary focus:border-secondary outline-none"
                                     type="text"
                                     name="restaurant_name"
+                                />
+                            </div>
+                        </div>
+                        <div className="mb-4">
+                            <motion.label
+                                variants={inputVariants}
+                                initial="hidden"
+                                animate="visible"
+                                transition={{ duration: 0.5 }}
+                                className="text-primary block mb-1"
+                                htmlFor="contact_number"
+                            >
+                                Contact Number
+                            </motion.label>
+                            <div className="flex items-center">
+                                <BiSolidRename className="text-primary" />
+                                <input
+                                    className="ml-2 text-gray-600 w-full border-b border-primary focus:border-secondary outline-none"
+                                    type="text"
+                                    name="contact_number"
                                 />
                             </div>
                         </div>
@@ -291,12 +315,12 @@ const ForRestaurant = () => {
                                 className="text-gray-700 block mb-1"
                                 htmlFor="experience"
                             >
-                                Experience
+                                Why Do You Want To Be a Restaurant
                             </motion.label>
                             <div className="flex items-center">
                                 <FiBriefcase className="text-gray-500" />
                                 <textarea
-                                    placeholder="Tell us about your experience..."
+                                    placeholder="Tell us ..."
                                     className="ml-2 rounded-lg px-2 placeholder:text-sm py-1 w-full border border-gray-300 focus:border-secondary outline-none resize-none"
                                     id="experience"
                                     name="experience"
