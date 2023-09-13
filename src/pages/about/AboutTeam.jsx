@@ -52,9 +52,6 @@ const AboutTeam = () => {
 
 
 
-
-
-
       {/* <div className="max-w-sm rounded rounded-t-full  overflow-hidden shadow-lg">
         <div className='text-center'>
         <img className="w-50 rounded-full" src="https://www.w3schools.com/w3images/avatar2.png" alt="Sunset in the mountains" />
