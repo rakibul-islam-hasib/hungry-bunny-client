@@ -25,14 +25,15 @@ const AboutTeam = () => {
             
       <div key={idx} className="max-w-[24rem] rounded rounded-t-full  overflow-hidden shadow-lg">
         <div className='text-center flex justify-center '>
-        <img className="w-72 h-80 rounded-lg" src={member.photo_url} alt="Sunset in the mountains" />
+        <img className="w-80 h-96 rounded-full" src={member.photo_url} alt="Sunset in the mountains" />
         </div>
           <div className="px-6 py-4">
             <div className="font-bold mb-2 text-center">
-              <h1 className='text-xl'>Web Developer</h1>
-              <h1 className='text-3xl mt-5'>{member.name}</h1>
+              <h1 className='text-xl '>{member.roll}</h1>
+              <h1 className='text-3xl mt-5 text-primary'>{member.name}</h1>
+              {/* <h1>{member.roll}</h1> */}
             </div>
-            <p className="text-gray-700 text-base">
+            <p className="text-gray-700 text-base text-center">
               {member.description}
             </p>
           </div>
