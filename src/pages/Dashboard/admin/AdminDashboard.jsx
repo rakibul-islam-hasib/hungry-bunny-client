@@ -1,245 +1,63 @@
 import React, { useState } from 'react';
-import AdminDashboardRestaurentCard from './AdminDashboardRestaurentCard';
-import AdminMenuCard from './AdminMenuCard';
+import AdminCart from '../RestaurantAdmin/AdminCart';
+import AdminDashboardReviews from './AdminDashboardReviews';
+
 
 const AdminDashboard = () => {
-    const tabs = [
-        { id: 1, label: 'Users' },
-        { id: 2, label: 'Resturent' },
-        { id: 3, label: 'Menus' },
-      ];
-
-      const [activeTab, setActiveTab] = useState(tabs[0].id);
-
-      const handleTabClick = (tabId) => {
-        setActiveTab(tabId);
-      };
-    return (
-        <div className="w-full mx-auto text-center  m-8">
-        <div className=" sm:pt-8">
-          {tabs.map((tab) => (
-            <button
-              key={tab.id}
-              onClick={() => handleTabClick(tab.id)}
-              className={`${
-                activeTab === tab.id
-                  ? 'bg-primary text-white rounded-full'
-                  : 'bg-gray-200 text-gray-700'
-              } py-2 px-4 border-r`}
-            >
-              {tab.label}
-            </button>
-          ))}
-        </div>
-        {/* Dynamic  */}
-        {/* <div className="p-4">
-          {tabs.map((tab) => (
-            <div
-              key={tab.id}
-              className={`${
-                activeTab === tab.id ? 'block' : 'hidden'
-              } tab-content`}
-            >
-              Content for {tab.label} tab (ID: {tab.id}).
-            </div>
-          ))}
-        </div> */}
-
-
-        {/* static */}
-           <div className="p-4 ">
-        <div
-          className={`${
-            activeTab === tabs[0].id ? 'block' : 'hidden'
-          } tab-content`}
-        >
-          {/* User table */}
-          <table className="min-w-full divide-y divide-gray-200 overflow-x-auto">
-      <thead className="bg-gray-50">
-        <tr>
-          <th
-            scope="col"
-            className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-          >
-            Name
-          </th>
-          <th
-            scope="col"
-            className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-          >
-            Title
-          </th>
-         
-          <th
-            scope="col"
-            className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-          >
-            Role
-          </th>
-          <th
-            scope="col"
-            className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-          >
-            Email
-          </th>
-          <th
-            scope="col"
-            className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-          >
-            Actions
-          </th>
-        </tr>
-      </thead>
-      <tbody className="bg-white divide-y divide-gray-200">
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap">
-            <div className="flex items-center">
-              <div className="flex-shrink-0 h-10 w-10">
-                <img
-                  className="h-10 w-10 rounded-full"
-                  src="https://i.pravatar.cc/150?img=1"
-                  alt=""
-                />
-              </div>
-              <div className="ml-4">
-                <div className="text-sm font-medium text-gray-900">
-                  Jane Cooper
-                </div>
-                <div className="text-sm text-gray-500">
-                  jane.cooper@example.com
-                </div>
-              </div>
-            </div>
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap">
-            <div className="text-sm text-gray-900">
-              Regional Paradigm Technician
-            </div>
-            <div className="text-sm text-gray-500">Optimization</div>
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap">
-            <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-              Active
-            </span>
-          </td>
-          
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            jane.cooper@example.com
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
-           
-            <a href="#" className="ml-2 text-red-600 hover:text-red-900">
-              Delete
-            </a>
-          </td>
-        </tr>
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap">
-            <div className="flex items-center">
-              <div className="flex-shrink-0 h-10 w-10">
-                <img
-                  className="h-10 w-10 rounded-full"
-                  src="https://i.pravatar.cc/150?img=1"
-                  alt=""
-                />
-              </div>
-              <div className="ml-4">
-                <div className="text-sm font-medium text-gray-900">
-                  Jane Cooper
-                </div>
-                <div className="text-sm text-gray-500">
-                  jane.cooper@example.com
-                </div>
-              </div>
-            </div>
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap">
-            <div className="text-sm text-gray-900">
-              Regional Paradigm Technician
-            </div>
-            <div className="text-sm text-gray-500">Optimization</div>
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap">
-            <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-              Active
-            </span>
-          </td>
-          
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            jane.cooper@example.com
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
-           
-            <a href="#" className="ml-2 text-red-600 hover:text-red-900">
-              Delete
-            </a>
-          </td>
-        </tr>
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap">
-            <div className="flex items-center">
-              <div className="flex-shrink-0 h-10 w-10">
-                <img
-                  className="h-10 w-10 rounded-full"
-                  src="https://i.pravatar.cc/150?img=1"
-                  alt=""
-                />
-              </div>
-              <div className="ml-4">
-                <div className="text-sm font-medium text-gray-900">
-                  Mickeel Clark
-                </div>
-                <div className="text-sm text-gray-500">
-                  clark@example.com
-                </div>
-              </div>
-            </div>
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap">
-            <div className="text-sm text-gray-900">
-              Regional Paradigm Technician
-            </div>
-            <div className="text-sm text-gray-500">Optimization</div>
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap">
-            <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-              Active
-            </span>
-          </td>
-          
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            jane.cooper@example.com
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
-           
-            <a href="#" className="ml-2 text-red-600 hover:text-red-900">
-              Delete
-            </a>
-          </td>
-        </tr>
-
-        {/* More rows... */}
-
-      </tbody>
-    </table>
-        </div>
-        <div
-          className={`${
-            activeTab === tabs[1].id ? 'block' : 'hidden'
-          } tab-content`}
-        >
-         <AdminDashboardRestaurentCard/>
-        </div>
-        <div
-          className={`${
-            activeTab === tabs[2].id ? 'block' : 'hidden'
-          } tab-content`}
-        >
-          <AdminMenuCard/>
-        </div>
-      </div>
     
-      </div>
+    return (
+        <div className='mt-10'>
+          <h3 className='text-center text-4xl font-bold '>Restaurent States</h3>
+          <div className="mx-auto max-w-6xl px-4 py-4 sm:px-6 md:px-24 md:py-16 lg:px-8 lg:py-20">
+    <div className="row-gap-8 grid grid-cols-2 md:grid-cols-4">
+
+        <div className="mb-12 text-center md:mb-0 md:border-r-2 dark:md:border-slate-500">
+            <div className="font-heading text-[2.6rem] font-bold dark:text-white lg:text-5xl xl:text-6xl">
+                733+
+            </div>
+            <p className="text-sm font-medium uppercase tracking-widest text-gray-800 dark:text-slate-400 lg:text-base">
+                Total Users
+            </p>
+        </div>
+
+        <div className="mb-12 text-center md:mb-0 md:border-r-2 dark:md:border-slate-500">
+            <div className="font-heading text-[2.6rem] font-bold dark:text-white lg:text-5xl xl:text-6xl">
+                25+
+            </div>
+            <p className="text-sm font-medium uppercase tracking-widest text-gray-800 dark:text-slate-400 lg:text-base">
+               Restaurents
+            </p>
+        </div>
+
+        <div className="mb-12 text-center md:mb-0 md:border-r-2 dark:md:border-slate-500">
+            <div className="font-heading text-[2.6rem] font-bold dark:text-white lg:text-5xl xl:text-6xl">
+                1K+
+            </div>
+            <p className="text-sm font-medium uppercase tracking-widest text-gray-800 dark:text-slate-400 lg:text-base">
+                Menus
+            </p>
+        </div>
+
+       
+
+    </div>
+
+</div>
+
+<div className="grid lg:grid-cols-2 gap-8" >
+<div>
+<h3 className='text-center text-2xl font-bold py-4'>Users States</h3>
+
+<AdminCart/>
+</div>
+
+<AdminDashboardReviews/>
+</div>
+{/* Recent reviews */}
+
+
+        </div>
+
     );
 };
 
