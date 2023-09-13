@@ -3,6 +3,7 @@ import MenuCard from '../../components/Card/MenuCard';
 import useAxiosFetch from '../../hooks/useAxiosFetch';
 import { AiOutlineLoading3Quarters } from 'react-icons/ai';
 import FoodCard from '../../components/Card/FoodCard';
+import { ToastContainer } from 'react-toastify';
 
 const Menu = () => {
     const axios = useAxiosFetch();
@@ -36,6 +37,7 @@ const Menu = () => {
                     menu.map((item) => <FoodCard key={item._id} product={item} />)
                 }
             </div>
+            <ToastContainer />
         </div>
     );
 };
