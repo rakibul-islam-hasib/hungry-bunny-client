@@ -29,6 +29,7 @@ const Menu = () => {
 
     return (
         <div>
+            <MenuCard/>
         </div>
     );
 };
