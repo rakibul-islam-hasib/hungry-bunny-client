@@ -6,11 +6,12 @@ import { useDispatch } from 'react-redux';
 import { setCheckoutOpen } from '../../redux/slices/utilsSlice';
 import { useFoodCart } from '../../hooks/userFoodCart';
 import FoodCart from './FoodCart';
+import useAxiosFetch from '../../hooks/useAxiosFetch';
+import { useQuery } from '@tanstack/react-query';
 
 const CheckoutBar = () => {
   const { isCheckoutOpen } = useUtils();
   const dispatch = useDispatch();
-
 
 
   // const [foodCart, isLoading, refetch] = useFoodCart()
@@ -66,9 +67,7 @@ const CheckoutBar = () => {
         <div>
           <h1>Hello</h1>
         </div>
-        {/* {
-          foodCart.map((cart, idx) => <FoodCart key={idx} cart={cart} />)
-        } */}
+        
       </div>
 
 

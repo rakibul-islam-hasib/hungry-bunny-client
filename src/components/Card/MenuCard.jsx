@@ -11,7 +11,7 @@ import MenuCardItem from './MenuCardItem';
 import MenuSkeleton from '../Skeletons/MenuSkeleton';
 import CategorySkeleton from '../Skeletons/CategorySkeleton';
 import useAxiosFetch from '../../hooks/useAxiosFetch';
-
+import { AiOutlineLoading3Quarters } from 'react-icons/ai';
 
 
 
@@ -49,22 +49,24 @@ const MenuCard = () => {
 
   const axios = useAxiosFetch();
   const [menuTab, setMenuTab] = useState('Pizza')
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(true);
+  const [dataLoading, setDataLoading] = useState(true);
   const [menuItems, setMenuItems] = useState([])
 
 
   useEffect(() => {
     axios.get('/food/get/all')
-    .then((res) => {
+      .then((res) => {
         setMenuItems(res.data);
         // console.log(res.data)
-    })
-    .catch((err) => {
+      })
+      .catch((err) => {
         console.log(err);
-    })
-    .finally(() => {
-        setLoading(false);
-    })
+      })
+      .finally(() => {
+        setDataLoading(false);
+      })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
 
@@ -77,20 +79,18 @@ const MenuCard = () => {
   }, [])
 
 
-  
+
 
   const handleMenuTabs = (type) => {
     setMenuTab(type);
   }
 
+  if (dataLoading) return <div className="h-screen w-full flex justify-center items-center">
+  <AiOutlineLoading3Quarters className='text-5xl text-primary animate-spin' />
+</div>
+
   return (
-
-
     <div>
-
-
-
-
       <div className="text-center lg:w-[70%] w-full sm:w-[90%] md:w-[80%] mx-auto">
         <h3 className="font-semibold text-4xl mx-auto ">Our Menu</h3>
         <p className="font-semibold mt-2">
@@ -129,7 +129,7 @@ const MenuCard = () => {
         </div>
       </div>
 
-      
+
     </div>
   );
 };
