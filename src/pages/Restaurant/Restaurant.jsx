@@ -61,7 +61,50 @@ const Restaurant = () => {
             <h2 className='text-6xl font-extrabold mb-6 uppercase text-white'>see available restaurant</h2>
             <h2 className='text-2xl text-white font-bold mb-4'> Rediscovering Traditional Flavors with a Modern Twist</h2>
           </div>
-          <div className='flex items-center mx-auto mb-10'>
+          <div className='w-1/2 mx-auto'>
+                <form className='mt-10'>
+      <label htmlFor="default-search" className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">
+        Search
+      </label>
+      <div className="relative">
+        <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+          <svg
+            className="w-4 h-4 text-gray-500 dark:text-gray-400"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 20 20"
+          >
+            <path
+              stroke="currentColor"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
+            />
+          </svg>
+        </div>
+        <input
+        value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)}
+        onClick={() => setFieldClicked(true)}
+        onBlur={() => setFieldClicked(false)}
+        type="search"
+          id="default-search"
+          className="block w-full p-3 pl-10 text-xl text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-orange-500 focus:border-orange-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-orange-500 dark:focus:border-orange-500"
+          placeholder="Search blogs "
+          required
+        />
+        <button
+        onClick={handleSearch}
+          type="submit"
+          className="text-white absolute right-2.5 bottom-2.5 bg-black duration-500 hover:bg-orange-500 focus:ring-4 focus:outline-none focus:ring-orange-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-orange-600 dark:hover:bg-orange-700 dark:focus:ring-orange-800"
+        >
+          Search
+        </button>
+      </div>
+    </form>
+                </div>
+          {/* <div className='flex items-center mx-auto mb-10'>
           <div className="relative max-w-sm mx-auto mt-7 flex">
             <input value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)}
                 className={`w-full py-3 px-5 text-4xl rounded-full ${
@@ -89,12 +132,8 @@ const Restaurant = () => {
                 </svg>
             </button>
         </div>
-            {/* <input type="text" name='search-data' value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} className='rounded-3xl w-[40%] md:ml-80 pt-4 pb-4 border-0 text-2xl dark:text-black pl-5' placeholder='search restaurant' />
-            <button onClick={handleSearch} className='bg-blue-500 text-white pl-7 pr-7 pt-3 pb-3 text-4xl rounded-3xl ml-2'><FaLocationArrow /> </button> */}
-
-            {/* <input type="text" name="" className='w-full lg:w-[300px] dark:bg-gray-200 py-3 pl-4 text-black rounded-lg' id="" />
-            <button className='class="absolute bg-black text-white font-bold py-2 rounded-lg px-2 right-1 top-1"'>search</button> */}
-          </div>
+            
+          </div> */}
           <div className='p-10 md:w-[90%] -mb-36 border-4 border-orange-400 dark:bg-black dark:text-white mt-10 bottom-10 rounded-3xl bg-white mx-auto grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
             <div className=''>
               <p className='flex items-center'><span className='text-4xl font-extrabold'> 30</span> <span className='text-4xl font-extrabold'>+</span></p>
