@@ -7,7 +7,7 @@ import { FaPlus, FaCommentAlt, FaPhoneAlt, FaLink, FaLinkedin } from "react-icon
 import { AiOutlineMail, AiOutlinePhone, AiFillFacebook, AiFillInstagram, AiFillGithub } from "react-icons/ai";
 import useUserSecure from '../../../hooks/useUserSecure';
 import { useAuth } from '../../../hooks/useAuth';
-import background from '../../../assets/img/district/dashProfile.jpg';
+import background from '../../../assets/img/district/dashProfile2.jpg';
 import { Link } from 'react-router-dom';
 // import '../css/NormalProfile.css';
 
