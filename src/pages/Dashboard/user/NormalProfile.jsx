@@ -1,4 +1,6 @@
 import React from 'react';
+import { useEffect } from 'react';
+import { useState } from 'react';
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { FaMapMarkedAlt } from "react-icons/fa";
 import { FaPlus } from "react-icons/fa";
@@ -14,6 +16,7 @@ const NormalProfile = () => {
     console.log(user)
 
 
+
     return (
         <>
             {/* New Profile */}
@@ -24,76 +27,75 @@ const NormalProfile = () => {
 
                 {/* new start*/}
                 <div
-                    className="relative overflow-hidden rounded-lg  bg-no-repeat p-12 text-center "
+                    className="relative overflow-hidden rounded-lg  bg-no-repeat p-12 text-center bg-cover h-full shadow-md"
                     style={{
                         backgroundImage: `url(${background})`,
-                        height: '430px',
-                       
-                        
-                    }}>
-                    <div
-                        className="absolute inset-0 z-10 bg-center bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden"
-                        style={{ 
-                            backgroundColor: 'rgba(0, 0, 0, 0.37)' ,
-                            position: 'absolute',
-                            top: 0,
-                            left: 0,
-                            width: '100%',
-                            height: '100%',
-                            
-                            
-                            }}>
-                        <div className='relative z-0'>
-                            <h1 className='text-center text- font-bold text-3xl p-5'>Personal Information</h1>
-                            <div className="flex justify-between w-full rounded-xl  bg-clip-border text-gray-700 shadow-md ">
-                                <div className=" w-50 shrink-0 overflow-hidden rounded-2xl text-start bg-clip-border text-gray-700 flex justify-between">
-                                    <img className='h-[180px] w-[180px] rounded-full  text-start  p-2' src={user?.photo} alt="" />
+                        height: '400px',
 
-                                    <div className="p-6 max-w-[25rem]">
-                                        <h6 className="mb-4 border-b-4 border-black block font-sans text-3xl font-bold uppercase leading-relaxed tracking-normal text-white antialiased">
-                                            {user?.name}
-                                        </h6>
-                                        <h6 className="mb-4 border-b-4 border-black block font-sans text-lg font-bold leading-relaxed tracking-normal text-white antialiased">
-                                            Web developer (Mern-stack)
-                                        </h6>
-                                        <div className='flex justify-between max-w-3xl '>
-                                            <div className="flex items-center ">
-                                                <FaMapMarkedAlt className='text-lg text-white mr-2 mb-3 font-bold' />
-                                                <h6 className="mb-4 font-sans text-md font-bold leading-relaxed tracking-normal text-white antialiased">
-                                                    Address
+
+                    }}>
+                    
+                            <div
+                                className="absolute inset-0 z-10 bg-center bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden  "
+                                style={{
+                                    // backgroundColor: 'rgba(0, 0, 0, 0.3)',
+                                    position: 'absolute',
+                                    top: 0,
+                                    left: 0,
+                                    width: '100%',
+                                    height: '100%',
+
+
+                                }}>
+                                <div className='relative z-0'>
+                                    <h1 className='text-center text- font-bold text-3xl p-5'>Personal Information</h1>
+                                    <div className="flex justify-between w-full rounded-xl  bg-clip-border text-gray-700 ">
+                                        <div className=" w-50 shrink-0 overflow-hidden rounded-2xl text-start bg-clip-border text-gray-700 flex justify-between">
+                                            <img className='h-[180px] w-[180px] rounded-full  text-start  p-2' src={user?.photo} alt="" />
+
+                                            <div className="p-6 max-w-[25rem]">
+                                                <h6 className="mb-4 border-b-2 border-black block font-sans text-3xl font-bold uppercase leading-relaxed tracking-normal text-black antialiased">
+                                                    {user?.name}
                                                 </h6>
-                                            </div>
-                                            <div className="flex items-center">
-                                                <FaMapMarkerAlt className='text-lg text-white mr-2 mb-3' />
-                                                <h6 className="mb-4 font-sans text-md font-bold leading-relaxed tracking-normal text-white antialiased">
-                                                    Location
+                                                <h6 className="mb-4 border-b-2 border-black block font-sans text-lg font-bold leading-relaxed tracking-normal text-neutral-500 antialiased">
+                                                    UX/UI designer
                                                 </h6>
+                                                <div className='flex justify-between max-w-3xl '>
+                                                    <div className="flex items-center ">
+                                                        <FaMapMarkedAlt className='text-lg text-neutral-500 mr-2 mb-3 font-bold' />
+                                                        <h6 className="mb-4 font-sans text-md font-bold leading-relaxed tracking-normal text-black antialiased">
+                                                            Address
+                                                        </h6>
+                                                    </div>
+                                                    <div className="flex items-center">
+                                                        <FaMapMarkerAlt className='text-lg text-neutral-500 mr-2 mb-3' />
+                                                        <h6 className="mb-4 font-sans text-md font-bold leading-relaxed tracking-normal text-black antialiased">
+                                                            Location
+                                                        </h6>
+                                                    </div>
+                                                    
+                                                </div>
+                                                <div className='flex justify-between max-w-3xl mt-10'>
+                                                    <div className="flex items-center ">
+                                                        <button className='bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded p-2 ms-2 flex items-center'><FaPlus className='text-md mr-2' /> Message</button>
+                                                    </div>
+                                                    <div className="flex items-center">
+                                                    <button className='bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded p-2 ms-2 flex items-center'><FaPlus className='text-md mr-2' /> Call</button>
+                                                    </div>
+
+                                                </div>
+                                                
                                             </div>
+
                                         </div>
-                                        <div className='flex justify-evenly font-bold text-white'>
-                                            <span className='text-center '>
-                                                <h1 className='text-3xl mt-16'>113</h1> <br />
-                                                <p className='text-md'>Projects</p>
-                                            </span>
-                                            <span className='text-center'>
-                                                <h1 className='text-3xl mt-16'>12.2k</h1> <br />
-                                                <p className='text-md'>Followers</p>
-                                            </span>
-                                            <span className='text-center'>
-                                                <h1 className='text-3xl mt-16'>128</h1> <br />
-                                                <p className='text-md'>Following</p>
-                                            </span>
+                                        <div className='p-5'>
+
+                                            
                                         </div>
                                     </div>
-
-                                </div>
-                                <div className='p-5'>
-
-                                    <button className='bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded p-2 ms-2 flex items-center'><FaPlus className='text-md mr-2' />  Follow</button>
                                 </div>
                             </div>
-                        </div>
-                    </div>
+                     
                 </div>
                 {/* new end*/}
 
