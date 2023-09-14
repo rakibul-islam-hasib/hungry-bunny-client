@@ -7,14 +7,14 @@ import downloadApp from '../../../assets/svg/DownloadApp.svg';
 import { GrLocation } from 'react-icons/gr';
 import { FiPhoneCall } from 'react-icons/fi';
 import { HiOutlineMail } from 'react-icons/hi';
-import norton from '../../../assets/svg/norton.svg';
-import trustWave from '../../../assets/svg/trust-wave.svg';
-import trust from '../../../assets/svg/trust.svg';
 import visa from '../../../assets/svg/visa.svg';
 import masterCard from '../../../assets/svg/mastercard.svg';
 import paypal from '../../../assets/svg/paypal.svg';
 import amex from '../../../assets/svg/amex.svg';
 import { Link } from 'react-router-dom';
+import deliveroo from '../../../assets/img/Logos/Deliveroo-Logo.wine.png';
+import eat from '../../../assets/img/Logos/Just_Eat-Logo.wine.png';
+import panda from '../../../assets/img/Logos/Foodpanda-Logo.wine.png';
 
 
 
@@ -116,9 +116,10 @@ const MainFooter = () => {
                     <div className="">
                         <h1 className='text-xl font-bold mb-4'>Trusted by</h1>
                         <div className="sm:flex items-center gap-5">
-                            <img className='w-[120px]' src={norton} alt="" />
-                            <img className='w-[120px]' src={trustWave} alt="" />
-                            <img className='w-[120px]' src={trust} alt="" />
+                            <img className='w-[120px]' src={deliveroo} alt="" />
+                            <img className='w-[120px]' src={panda} alt="" />
+                            <img className='w-[120px]' src={eat} alt="" />
+                            
                         </div>
                     </div>
                 </div>
