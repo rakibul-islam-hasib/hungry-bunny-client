@@ -111,70 +111,82 @@ const NormalProfile = () => {
                         </h1>
                     </div>
                 </div>
-                <div className='my-10 flex justify-between'>
+
+                <div className='flex justify-between'>
+
+                    {/* contact-info */}
+
                     <div>
-                        <h1><span className='text-xl font-bold text-primary'>Email : </span> <span className='text-lg font-bold '> nowshinakteremu005@gmail.com</span></h1>
-                        <h1 className='text-lg font-bold ms-20 '>nowshinakteremu003@gmail.com</h1>
-                    </div>
-                    <div className='mt-3'>
-                        <button className='bg-orange-500 hover:bg-orange-700 text-white  font-bold py-2 px-4 rounded p-2 ms-2 flex items-center text-center'> Primary</button>
-                    </div>
-                </div>
-                <div className='my-10'>
-                    <h1><span className='text-2xl font-bold text-primary'>Links :</span>
+                        <div className='my-10 flex justify-between'>
+                            <div>
+                                <h1><span className='text-2xl font-bold text-primary'>Contact Information :</span> <br />
 
-                    </h1>
-                    <div className='mt-3 font-bold'>
-                    <div className="flex items-center ">
-                                                <FaLink className='text-lg text-neutral-500 mr-2 mb-3 font-bold' />
-                                                <Link className=' px-3 py-1 text-lg mb-3 text-gray-700' to="">Portfolio : https://nowshin-akter.netlify.app</Link>
-                                            </div>
-                    
-                        
-                    </div>
-                </div>
-                <div className='my-10 flex justify-between'>
-                    <div>
-                        <h1><span className='text-2xl font-bold text-primary'>Contact Information :</span> <br />
+                                </h1>
+                                <div className="flex items-center mt-3">
+                                    <AiOutlineMail className='text-xl mr-2 mb-3' />
+                                    <h6 className="mb-4 font-sans text-md font-semibold leading-relaxed tracking-normal text-black antialiased">
+                                        hanryrobart@gmail.com
+                                    </h6>
+                                </div>
+                                <div className="flex items-center">
+                                    <AiOutlinePhone className='text-xl mr-2 mb-3' />
+                                    <h6 className="mb-4 font-sans text-md font-semibold leading-relaxed tracking-normal text-black antialiased">
+                                        +(555) 555-1234
+                                    </h6>
+                                </div>
+                                <div className="flex items-center">
+                                    <FaMapMarkerAlt className='text-xl mr-2 mb-3' />
+                                    <h6 className="mb-4 font-sans text-md font-semibold leading-relaxed tracking-normal text-black antialiased">
+                                        Gazipur,Dhaka
+                                    </h6>
+                                </div>
 
-                        </h1>
-                        <div className="flex items-center mt-3">
-                            <AiOutlineMail className='text-xl mr-2 mb-3' />
-                            <h6 className="mb-4 font-sans text-md font-semibold leading-relaxed tracking-normal text-black antialiased">
-                                hanryrobart@gmail.com
-                            </h6>
+                            </div>
                         </div>
-                        <div className="flex items-center">
-                            <AiOutlinePhone className='text-xl mr-2 mb-3' />
-                            <h6 className="mb-4 font-sans text-md font-semibold leading-relaxed tracking-normal text-black antialiased">
-                                +(555) 555-1234
-                            </h6>
+                        <div className='my-10'>
+                            <h1><span className='text-2xl font-bold text-primary'>Social Networks :</span>
+
+                            </h1>
+                            <div className='flex justify-evenly max-w-[14rem] my-5'>
+
+                                <span><AiFillFacebook className='text-3xl' /></span>
+                                <span><AiFillGithub className='text-3xl' /></span>
+                                <span><AiFillInstagram className='text-3xl' /></span>
+                                <span><FaLinkedin className='text-3xl' /></span>
+                            </div>
+
                         </div>
-                        <div className="flex items-center">
-                            <FaMapMarkerAlt className='text-xl mr-2 mb-3' />
-                            <h6 className="mb-4 font-sans text-md font-semibold leading-relaxed tracking-normal text-black antialiased">
-                                Gazipur,Dhaka
-                            </h6>
+                    </div>
+
+                    {/* links */}
+
+                    <div className='me-10'>
+                        <div className='my-10 flex justify-between'>
+                            <div>
+                                <h1><span className='text-xl font-bold text-primary'>Email : </span> <span className='text-lg font-bold '> nowshinakteremu005@gmail.com</span></h1>
+                                <h1 className='text-lg font-bold ms-20 '>nowshinakteremu003@gmail.com</h1>
+                            </div>
+                            
                         </div>
 
-                    </div>
-                    <div className='mt-3'>
-                        <button className='bg-orange-500 hover:bg-orange-700 text-white  font-bold py-2 px-4 rounded p-2 ms-2 flex items-center text-center'> Primary</button>
+                        <div className='my-10'>
+                            <h1><span className='text-xl font-bold text-primary'>Links :</span>
+
+                            </h1>
+                            <div className='mt-3 font-bold'>
+                                <div className="flex items-center ">
+                                    <FaLink className='text-lg text-neutral-500 mr-2 mb-3 font-bold' />
+                                    <Link className=' px-3 py-1 text-lg mb-3 text-gray-700' to="">Portfolio : https://nowshin-akter.netlify.app</Link>
+                                </div>
+
+
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div className='my-10'>
-                <h1><span className='text-2xl font-bold text-primary'>Social Networks :</span>
 
-</h1>
-                    <div className='flex justify-evenly max-w-[14rem] my-5'>
-                    
-                        <span><AiFillFacebook className='text-3xl' /></span>
-                        <span><AiFillGithub className='text-3xl' /></span>
-                        <span><AiFillInstagram className='text-3xl' /></span>
-                        <span><FaLinkedin className='text-3xl' /></span>
-                    </div>
 
-                </div>
+
             </div>
 
         </>
