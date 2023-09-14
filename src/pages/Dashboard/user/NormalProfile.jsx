@@ -3,11 +3,12 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { FaMapMarkedAlt } from "react-icons/fa";
-import { FaPlus, FaCommentAlt, FaPhoneAlt } from "react-icons/fa";
+import { FaPlus, FaCommentAlt, FaPhoneAlt, FaLink, FaLinkedin } from "react-icons/fa";
 import { AiOutlineMail, AiOutlinePhone, AiFillFacebook, AiFillInstagram, AiFillGithub } from "react-icons/ai";
 import useUserSecure from '../../../hooks/useUserSecure';
 import { useAuth } from '../../../hooks/useAuth';
 import background from '../../../assets/img/district/dashProfile.jpg';
+import { Link } from 'react-router-dom';
 // import '../css/NormalProfile.css';
 
 const NormalProfile = () => {
@@ -124,8 +125,12 @@ const NormalProfile = () => {
 
                     </h1>
                     <div className='mt-3 font-bold'>
-                        <a target='_blank' href="https://hungry-bunny-web.web.app/" rel="noreferrer">https://hungry-bunny-web.web.app</a> <br />
-                        <a target='_blank' href="https://hungry-bunny-web.web.app/" rel="noreferrer">https://hungry-bunny-web.web.app</a>
+                    <div className="flex items-center ">
+                                                <FaLink className='text-lg text-neutral-500 mr-2 mb-3 font-bold' />
+                                                <Link className=' px-3 py-1 text-lg mb-3 text-gray-700' to="">Portfolio : https://nowshin-akter.netlify.app</Link>
+                                            </div>
+                    
+                        
                     </div>
                 </div>
                 <div className='my-10 flex justify-between'>
@@ -134,21 +139,21 @@ const NormalProfile = () => {
 
                         </h1>
                         <div className="flex items-center mt-3">
-                            <AiOutlineMail className='text-md mr-2 mb-3' />
+                            <AiOutlineMail className='text-xl mr-2 mb-3' />
                             <h6 className="mb-4 font-sans text-md font-semibold leading-relaxed tracking-normal text-black antialiased">
                                 hanryrobart@gmail.com
                             </h6>
                         </div>
                         <div className="flex items-center">
-                            <AiOutlinePhone className='text-lg mr-2 mb-3' />
+                            <AiOutlinePhone className='text-xl mr-2 mb-3' />
                             <h6 className="mb-4 font-sans text-md font-semibold leading-relaxed tracking-normal text-black antialiased">
                                 +(555) 555-1234
                             </h6>
                         </div>
                         <div className="flex items-center">
-                            <FaMapMarkerAlt className='text-lg mr-2 mb-3' />
+                            <FaMapMarkerAlt className='text-xl mr-2 mb-3' />
                             <h6 className="mb-4 font-sans text-md font-semibold leading-relaxed tracking-normal text-black antialiased">
-                                Location
+                                Gazipur,Dhaka
                             </h6>
                         </div>
 
@@ -158,13 +163,15 @@ const NormalProfile = () => {
                     </div>
                 </div>
                 <div className='my-10'>
-                    <h1><span className='text-2xl font-bold text-primary'>Social Networks :</span>
+                <h1><span className='text-2xl font-bold text-primary'>Social Networks :</span>
 
-                    </h1>
-                    <div className='flex justify-evenly max-w-[10rem] my-5'>
-                        <span><AiFillFacebook className='text-2xl' /></span>
-                        <span><AiFillGithub className='text-2xl' /></span>
-                        <span><AiFillInstagram className='text-2xl' /></span>
+</h1>
+                    <div className='flex justify-evenly max-w-[14rem] my-5'>
+                    
+                        <span><AiFillFacebook className='text-3xl' /></span>
+                        <span><AiFillGithub className='text-3xl' /></span>
+                        <span><AiFillInstagram className='text-3xl' /></span>
+                        <span><FaLinkedin className='text-3xl' /></span>
                     </div>
 
                 </div>
