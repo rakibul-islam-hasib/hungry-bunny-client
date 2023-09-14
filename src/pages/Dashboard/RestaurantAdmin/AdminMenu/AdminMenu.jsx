@@ -3,16 +3,19 @@ import { setLoading } from "../../../../redux/slices/authSlice";
 import SingleAdminMenu from "./SingleAdminMenu";
 import useMenuByRestaurant from "../../../../hooks/useMenuByRestaurant";
 import MenuSkeleton from "../../../../components/Skeletons/MenuSkeleton";
+import { useAuth } from "../../../../hooks/useAuth";
 
 const AdminMenu = () => {
   // const [menus, setMenu] = useState([]);
-  // const [loading, setLoading] = useState([true]);
+  // const [isLoading, setIsLoading] = useState([true]);
+
+  // const { user } = useAuth();
   // useEffect(() => {
-  //   fetch("/foods.json")
+  //   fetch(`http://localhost:5000/food/${user?.email}`)
   //     .then((res) => res.json())
   //     .then((data) => {
   //       setMenu(data);
-  //       setLoading(false);
+  //       setIsLoading(false);
   //     });
   // }, []);
 

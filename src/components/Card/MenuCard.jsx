@@ -10,6 +10,7 @@ import React, { useEffect, useState } from "react";
 import MenuCardItem from './MenuCardItem';
 import MenuSkeleton from '../Skeletons/MenuSkeleton';
 import CategorySkeleton from '../Skeletons/CategorySkeleton';
+import useAxiosFetch from '../../hooks/useAxiosFetch';
 
 
 
@@ -46,16 +47,24 @@ const MenuCard = () => {
     }
   ]
 
-  
+  const axios = useAxiosFetch();
   const [menuTab, setMenuTab] = useState('Pizza')
   const [loading, setLoading] = useState(true)
   const [menuItems, setMenuItems] = useState([])
 
 
   useEffect(() => {
-      fetch('http://localhost:5000/food')
-          .then(res => res.json())
-          .then(data => setMenuItems(data))
+    axios.get('/food/get/all')
+    .then((res) => {
+        setMenuItems(res.data);
+        // console.log(res.data)
+    })
+    .catch((err) => {
+        console.log(err);
+    })
+    .finally(() => {
+        setLoading(false);
+    })
   }, [])
 
 
@@ -119,6 +128,8 @@ const MenuCard = () => {
           ))}
         </div>
       </div>
+
+      
     </div>
   );
 };
