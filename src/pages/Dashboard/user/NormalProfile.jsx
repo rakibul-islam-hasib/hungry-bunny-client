@@ -112,7 +112,7 @@ const NormalProfile = () => {
                     </div>
                 </div>
 
-                <div className='flex justify-between'>
+                <div className='lg:flex md:flex justify-between'>
 
                     {/* contact-info */}
 
