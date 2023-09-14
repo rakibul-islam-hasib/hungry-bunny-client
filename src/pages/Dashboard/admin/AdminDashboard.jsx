@@ -1,59 +1,48 @@
 import React, { useState } from 'react';
 import AdminCart from '../RestaurantAdmin/AdminCart';
-import AdminDashboardReviews from './AdminDashboardReviews';
+import AdminDashboardChart from './AdminDashboardChart';
+import AdminDashboardPieChart from './AdminDashboardPieChart';
+import AdmonDashboardProgress from './AdmonDashboardProgress';
+import AdminDashBoardList from './AdminDashBoardList';
+
 
 
 const AdminDashboard = () => {
     
     return (
         <div className='mt-10'>
-          <h3 className='text-center text-4xl font-bold '>Restaurent States</h3>
-          <div className="mx-auto max-w-6xl px-4 py-4 sm:px-6 md:px-24 md:py-16 lg:px-8 lg:py-20">
-    <div className="row-gap-8 grid grid-cols-2 md:grid-cols-4">
-
-        <div className="mb-12 text-center md:mb-0 md:border-r-2 dark:md:border-slate-500">
-            <div className="font-heading text-[2.6rem] font-bold dark:text-white lg:text-5xl xl:text-6xl">
-                733+
+          <h3 className='text-center text-4xl font-bold py-5 '>Customers States</h3>
+          <AdminDashboardChart/>
+          {/* <AdminDashboardPieChart/> */}
+          <h3 className='text-center text-4xl font-bold py-5 mt-10'>Restaurant States</h3>
+          <div className="grid grid-cols-4 gap-4 mt-20">
+            <div className='px-4 py-10 bg-orange-200 rounded-lg'>
+                <h3 className='text-center text-2xl font-semibold'>Total Restaurant</h3>
+                <h1 className='text-center text-4xl font-semibold'>48</h1>
             </div>
-            <p className="text-sm font-medium uppercase tracking-widest text-gray-800 dark:text-slate-400 lg:text-base">
-                Total Users
-            </p>
-        </div>
-
-        <div className="mb-12 text-center md:mb-0 md:border-r-2 dark:md:border-slate-500">
-            <div className="font-heading text-[2.6rem] font-bold dark:text-white lg:text-5xl xl:text-6xl">
-                25+
+         
+            <div className='px-4 py-10 bg-orange-200 rounded-lg'>
+                <h3 className='text-center text-2xl font-semibold'>Total Employess</h3>
+                <h1 className='text-center text-4xl font-semibold'>200</h1>
             </div>
-            <p className="text-sm font-medium uppercase tracking-widest text-gray-800 dark:text-slate-400 lg:text-base">
-               Restaurents
-            </p>
-        </div>
-
-        <div className="mb-12 text-center md:mb-0 md:border-r-2 dark:md:border-slate-500">
-            <div className="font-heading text-[2.6rem] font-bold dark:text-white lg:text-5xl xl:text-6xl">
-                1K+
+         
+            <div className='px-4 py-10 bg-orange-200 rounded-lg'>
+                <h3 className='text-center text-2xl font-semibold'>Total Users</h3>
+                <h1 className='text-center text-4xl font-semibold'>1148</h1>
             </div>
-            <p className="text-sm font-medium uppercase tracking-widest text-gray-800 dark:text-slate-400 lg:text-base">
-                Menus
-            </p>
-        </div>
+         
+            <div className='px-4 py-10 bg-orange-200 rounded-lg'>
+                <h3 className='text-center text-2xl font-semibold'>Total Menus</h3>
+                <h1 className='text-center text-4xl font-semibold'>536</h1>
+            </div>
+         
+          </div>
 
-       
-
-    </div>
-
-</div>
-
-<div className="grid lg:grid-cols-2 gap-8" >
-<div>
-<h3 className='text-center text-2xl font-bold py-4'>Users States</h3>
-
-<AdminCart/>
-</div>
-
-<AdminDashboardReviews/>
-</div>
-{/* Recent reviews */}
+          <div className="grid grid-cols-2">
+            <AdmonDashboardProgress/>
+            <AdminDashBoardList/>
+          </div>
+   
 
 
         </div>
