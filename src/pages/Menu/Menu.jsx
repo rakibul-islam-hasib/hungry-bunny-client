@@ -38,6 +38,9 @@ const Menu = () => {
                 }
             </div>
             <ToastContainer />
+
+            {/* <MenuCard/> */}
+
         </div>
     );
 };

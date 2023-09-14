@@ -4,6 +4,7 @@ import { toast } from 'react-toastify';
 import ApplicationTable from '../../../components/table/ApplicationTable';
 import { Tab } from '@headlessui/react';
 import { useTitle } from '../../../hooks/useTitle';
+import useUserSecure from '../../../hooks/useUserSecure';
 
 const ManageApplications = () => {
     useTitle('Manage Applications');
@@ -11,6 +12,7 @@ const ManageApplications = () => {
 
     const [applications, setApplications] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [user] = useUserSecure()
 
     useEffect(() => {
         setLoading(true);
