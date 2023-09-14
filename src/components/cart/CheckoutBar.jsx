@@ -13,10 +13,10 @@ const CheckoutBar = () => {
 
 
 
-  const [foodCart, isLoading, refetch] = useFoodCart()
+  // const [foodCart, isLoading, refetch] = useFoodCart()
 
 
-  console.log(foodCart);
+  // console.log(foodCart);
 
 
   const openCheckoutBar = () => {
