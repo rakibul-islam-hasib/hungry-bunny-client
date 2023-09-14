@@ -49,7 +49,7 @@ const CheckoutBar = () => {
         </button>
       </div>
 
-      <div className="body flex-1">
+      <div className=" flex-1">
         <h1>Hello</h1>
       </div>
 
@@ -60,7 +60,7 @@ const CheckoutBar = () => {
 
 
 
-      <div className="">
+      <div className="mt-auto">
         <div className="flex items-center gap-1 my-2 bg-orange-50 py-2 w-full px-4">
           <input type="text" placeholder='Promo Code' className='py-1 px-2 rounded-md bg-gray-200 w-full' />
           <button className='font-bold bg-primary px-2 py-1 text-white rounded-md'>Apply</button>
