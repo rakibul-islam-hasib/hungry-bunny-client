@@ -1,91 +1,102 @@
-import React from 'react';
-import { Sidebar } from 'primereact/sidebar';
-import { AiOutlinePlus } from 'react-icons/ai';
-import { GrSubtract, GrClose } from 'react-icons/gr';
+import React, { useEffect } from 'react';
+import gsap from 'gsap';
+import { AiOutlineCloseSquare } from 'react-icons/ai';
+import useUtils from '../../hooks/useUtils';
+import { useDispatch } from 'react-redux';
+import { setCheckoutOpen } from '../../redux/slices/utilsSlice';
 
-const CheckoutBar = ({ visibleLeft, setVisibleLeft }) => {
-    return (
-        <Sidebar visible={visibleLeft} className='bg-white px-3 py-6' position="right" onHide={() => setVisibleLeft(false)}>
-          <Sidebar visible={visibleLeft} className='bg-white px-3 py-6' position="right" onHide={() => setVisibleLeft(false)}>
-         <div className="max-w-md mx-auto bg-white shadow-lg rounded-lg overflow-hidden mt-16">
-      <div className="px-4 py-2">
-        <h1 className="text-gray-800 font-bold text-2xl uppercase">Total item 5</h1>
+const CheckoutBar = () => {
+  const { isCheckoutOpen } = useUtils();
+  const dispatch = useDispatch();
+  const openCheckoutBar = () => {
+    const t1 = gsap.timeline();
+    t1.to('#checkout-bar', {
+      duration: 0.5,
+      right: 0,
+      ease: 'power4.out',
+    });
+  };
+
+  const closeCheckoutBar = () => {
+    const t1 = gsap.timeline();
+    t1.to('#checkout-bar', {
+      duration: 0.5,
+      right: '-350px',
+      ease: 'power4.out',
+    });
+  };
+
+  useEffect(() => {
+    if (isCheckoutOpen) {
+      openCheckoutBar();
+    } else {
+      closeCheckoutBar();
+    }
+  }, [isCheckoutOpen]);
+
+
+  return (
+    <div
+      id='checkout-bar'
+      className='h-screen flex flex-col   fixed top-0 -right-[350px] z-[100] w-[350px] bg-white'>
+      {/* Top */}
+      <div className="bg-primary w-full pr-3 py-2 flex justify-center relative items-center">
+        <div className="">
+          <h1 className="text-white text-xl font-semibold text-center">Checkout</h1>
+        </div>
+        <button onClick={() => dispatch(setCheckoutOpen(false))} className='absolute right-3'>
+          <AiOutlineCloseSquare className='text-3xl text-white ' />
+        </button>
       </div>
-     
-      <ul className="divide-y divide-gray-200 px-4">
-        <li className="py-4">
-          <div className="flex items-center">
-            <input id="todo1" name="todo1" type="checkbox"
-              className="h-4 w-4 text-teal-600 focus:ring-teal-500 border-gray-300 rounded"
-            />
-            <label htmlFor="todo1" className="ml-3 block text-gray-900">
-              <span className="text-lg font-medium">Chicken Burger</span>
-              <span className="text-sm font-light text-gray-500 pl-4">3x</span>
-            </label>
-          </div>
-        </li>
-        <li className="py-4">
-          <div className="flex items-center">
-            <input id="todo1" name="todo1" type="checkbox"
-              className="h-4 w-4 text-teal-600 focus:ring-teal-500 border-gray-300 rounded"
-            />
-            <label htmlFor="todo1" className="ml-3 block text-gray-900">
-              <span className="text-lg font-medium">Chicken Burger</span>
-              <span className="text-sm font-light text-gray-500 pl-4">3x</span>
-            </label>
-          </div>
-        </li>
-        <li className="py-4">
-          <div className="flex items-center">
-            <input id="todo1" name="todo1" type="checkbox"
-              className="h-4 w-4 text-teal-600 focus:ring-teal-500 border-gray-300 rounded"
-            />
-            <label htmlFor="todo1" className="ml-3 block text-gray-900">
-              <span className="text-lg font-medium">Chicken Burger</span>
-              <span className="text-sm font-light text-gray-500 pl-4">3x</span>
-            </label>
-          </div>
-        </li>
-        <li className="py-4">
-          <div className="flex items-center">
-            <input id="todo1" name="todo1" type="checkbox"
-              className="h-4 w-4 text-teal-600 focus:ring-teal-500 border-gray-300 rounded"
-            />
-            <label htmlFor="todo1" className="ml-3 block text-gray-900">
-              <span className="text-lg font-medium">Chicken Burger</span>
-              <span className="text-sm font-light text-gray-500 pl-4">3x</span>
-            </label>
-          </div>
-        </li>
-        <li className="py-4">
-          <div className="flex items-center">
-            <input id="todo1" name="todo1" type="checkbox"
-              className="h-4 w-4 text-teal-600 focus:ring-teal-500 border-gray-300 rounded"
-            />
-            <label htmlFor="todo1" className="ml-3 block text-gray-900">
-              <span className="text-lg font-medium">Chicken Burger</span>
-              <span className="text-sm font-light text-gray-500 pl-4">3x</span>
-            </label>
-          </div>
-        </li>
-       
-      </ul>
-      <div className="flex gap-6">
 
-   <a className="inline-block px-8 py-3 text-sm rounded-full font-medium text-white bg-primary border border-violet-600  active:text-violet-500 hover:bg-transparent hover:text-violet-600 focus:outline-none focus:ring" href="/download">
-     Checkout
-   </a>
-   
-   <a className="inline-block px-8 py-3 text-sm font-medium text-violet-600 border border-violet-600 rounded-full hover:bg-violet-600 hover:text-white active:bg-indigo-500 focus:outline-none focus:ring" href="/download">
-     Clear
-   </a>
+      <div className="body flex-1">
+        <h1>Hello</h1>
+      </div>
 
-</div>
+
+
+      {/* Bottom */}
+
+
+
+
+      <div className="">
+        <div className="flex items-center gap-1 my-2 bg-orange-50 py-2 w-full px-4">
+          <input type="text" placeholder='Promo Code' className='py-1 px-2 rounded-md bg-gray-200 w-full' />
+          <button className='font-bold bg-primary px-2 py-1 text-white rounded-md'>Apply</button>
+        </div>
+        <table className="float-right mr-4 border-collapse">
+          <tbody>
+            <tr>
+              <td className="px-4">Discount</td>
+              <td className="px-4 text-right">-$5.00</td>
+            </tr>
+            <tr>
+              <td className="px-4">Subtotal</td>
+              <td className="px-4 text-right">$25.00</td>
+            </tr>
+            <tr>
+              <td className="px-4">Shipping Fee</td>
+              <td className="px-4 text-right">$5.00</td>
+            </tr>
+            <tr>
+              <td className="px-4 font-bold">Total</td>
+              <td className="px-4 text-right font-bold">$30.00</td>
+            </tr>
+          </tbody>
+        </table>
+
+
+        <div className="">
+          <button className='w-full bg-primary text-xl font-bold text-red-100 py-2'>
+            Continue to Payment
+          </button>
+        </div>
+      </div>
+
+
     </div>
-        </Sidebar>
-        </Sidebar>
-
-    );
+  );
 };
 
 export default CheckoutBar;

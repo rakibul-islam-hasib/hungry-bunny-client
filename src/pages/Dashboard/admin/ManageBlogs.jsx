@@ -10,12 +10,14 @@ import { Helmet } from "react-helmet-async";
 
 function ManageBlogs() {
   const [blogs, setBlogs] = useState([]);
+  const [ loading, setLoading ] = useState(true)
   const [page, setPage] = useState(1);
   // console.log(blogs)
   const [totalItem, setTotalItem] = useState(1);
   const totalPage = Math.ceil(totalItem / 15);
   const axios = useAxiosFetch();
   useEffect(() => {
+    setBlogs(true)
     axios.get('/blogs/total/count')
       .then(res => setTotalItem(res.data.total))
       .catch(err => console.log(err))
@@ -23,6 +25,9 @@ function ManageBlogs() {
     axios.get(`/blogs?limit=16&page=${page}`)
       .then(res => setBlogs(res.data))
       .catch(err => console.log(err))
+      .finally(() =>{
+        setLoading(false)
+      })
     window.scrollTo(0, 0);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [page])
@@ -56,6 +61,8 @@ function ManageBlogs() {
     })
 
   }
+
+  if (loading) return (<div>Loading...</div>)
 
   return (
     <div className="mt-20 ml-6 mr-6">
@@ -186,8 +193,8 @@ function ManageBlogs() {
       }
       </div>
       {/* Pagination  */}
-      <div className="mt-10 mb-5 text-right text-4xl mx-auto sm:w-[40%] md:w-[20%]">
-        <Pagination className='text-right text-4xl font-bold pt-5 pb-5 pr-4 pl-4 rounded-2xl dark:bg-white' onChange={(e, vale) => setPage(vale)} count={totalPage} color="secondary" />
+      <div className="mt-10 mb-5 text-right text-2xl mx-auto sm:w-[40%] md:w-[20%]">
+        <Pagination className='text-right text-2xl font-bold pt-5 pb-5 pr-4 pl-4 rounded-2xl dark:bg-white' onChange={(e, vale) => setPage(vale)} count={totalPage} color="secondary" />
       </div>
       <ScrollRestoration />
     </div>

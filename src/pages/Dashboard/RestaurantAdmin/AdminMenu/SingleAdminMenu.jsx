@@ -1,22 +1,23 @@
 import React from "react";
 
-const SingleAdminMenu = ({ menu }) => {
-  const { id, image, title, description } = menu;
+const SingleAdminMenu = ({menu}) => {
+  const { id, food_name, image, description, price } = menu
+
   return (
-    <div className="max-w-xs mx-auto overflow-hidden bg-white rounded-lg shadow-md">
-      <div className="relative">
-        <img className="w-full h-64 object-cover" src={image} alt="Image" />
-        <div className="absolute top-0 right-0">
-          <div className="w-32 h-8 absolute top-4 -right-8">
-            <div className="h-full w-full bg-red-500 text-white text-center leading-8 font-semibold transform rotate-45">
-              SALE
-            </div>
-          </div>
-        </div>
+    <div key={id} className={` border overflow-hidden shadow-lg rounded-md ${id === 1 ? 'w-full' : ''}`}>
+      <div>
+        <img className="w-full h-64 object-cover transition transform duration-200  hover:-translate-y-2 rounded-lg relative" src={image} alt="Food Image" />
       </div>
-      <div className="p-4">
-        <h3 className="text-xl font-semibold mb-2">{title}</h3>
-        <p className="text-gray-700 text-base">{description}</p>
+      <div className=" py-4">
+        <div className="font-semibold text-xl mb-2">{food_name}</div>
+        <p className="text-gray-700 text-base h-10">{description.slice(0, 70)}</p>
+        <div className="flex justify-between items-center  h-14">
+          <span className="text-gray-600 font-semibold text-lg">{price} Taka</span>
+          <button className="  ">
+            {/* <FaRegBookmar className="text-2xl transform transition duration-300 hover:scale-125" /> */}
+
+          </button>
+        </div>
       </div>
     </div>
   );

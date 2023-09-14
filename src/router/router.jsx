@@ -14,7 +14,7 @@ import Temp from "../pages/temp/Temp";
 import Blog from "../pages/blog/Blog";
 import DashboardLayout from "../layout/DashboardLayout";
 
-import UserWelcome from "../pages/dashboard/WellComeDashboard/UserWelcome";
+// import UserWelcome from "../pages/dashboard/WellComeDashboard/UserWelcome";
 // import MultiStepForm from "../pages/auth/MultiStepForm";
 // import UserProfile from "../pages/dashboard/user/UserProfile";
 import RestaurantDetails from "../pages/Restaurant/RestaurantDetails";
@@ -39,7 +39,7 @@ import NormalProfile from "../pages/Dashboard/user/NormalProfile";
 import AllFoods from "../pages/allFoods/AllFoods";
 import UserProfile from "../pages/Dashboard/user/UserProfile";
 import AdminAddItems from "../pages/Dashboard/RestaurantAdmin/AdminAddItems";
-import ForRestaurant from "../pages/Dashboard/applications/ForRestaurant";
+import ForRestaurant from "../pages/Dashboard/user/applications/ForRestaurant";
 import PrivateRoute from "./PrivateRoute";
 import ManageBlogs from "../pages/Dashboard/admin/ManageBlogs";
 import UpdateBlog from "../pages/Dashboard/admin/UpdateBlog";
@@ -51,6 +51,8 @@ import AboutTeam from "../pages/about/AboutTeam";
 
 import ManageApplications from "../pages/Dashboard/admin/ManageApplications";
 import AdminRoute from "./AdminRoute";
+import UserWelcome from "../pages/Dashboard/WellComeDashboard/UserWelcome";
+import PendingMenu from "../pages/Dashboard/admin/PendingMenu";
 
 
 export const router = createBrowserRouter([
@@ -96,14 +98,14 @@ export const router = createBrowserRouter([
         element: <RestaurantDetails />,
         loader: ({ params }) =>
           // TODO : replace with base URL
-          fetch(`https://hungry-bunny.vercel.app/restaurant/${params.id}`),
+          fetch(`http://localhost:5000/restaurant/${params.id}`),
       },
       {
         path: '/menu',
         element: <Menu />
       },
       {
-        path: '/allfoods',
+        path: '/all-foods',
         element: <AllFoods />
       },
       {
@@ -117,8 +119,8 @@ export const router = createBrowserRouter([
       {
         path: '/blogs/:id',
         element: <BlogDetails />,
-        // TODO : replace with base URL https://hungry-bunny.vercel.app
-        loader: ({ params }) => fetch(`https://hungry-bunny.vercel.app/blogs/${params.id}`)
+        // TODO : replace with base URL http://localhost:5000
+        loader: ({ params }) => fetch(`http://localhost:5000/blogs/${params.id}`)
       },
       {
         path: "/temp",
@@ -167,14 +169,17 @@ export const router = createBrowserRouter([
       {
         path: "manage-blogs/:id",
         element: <UpdateBlog />,
-        // TODO : replace with base URL https://hungry-bunny.vercel.app
-        loader: ({ params }) => fetch(`https://hungry-bunny.vercel.app/blogs/${params.id}`)
+        // TODO : replace with base URL http://localhost:5000
+        loader: ({ params }) => fetch(`http://localhost:5000/blogs/${params.id}`)
       },
       {
         path: "add-blogs",
         element: <AddBlog />,
       },
-
+      {
+        path: "manage-pending-menu",
+        element: <PendingMenu />,
+      },
       /*------------------------------------------------------------
       -----------------Restaurant Owner Dashboard-------------------
       -------------------------------------------------------------*/

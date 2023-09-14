@@ -7,7 +7,7 @@
 body {
   font-family: 'Josefin Sans', sans-serif;
   /* background-color: #f7fafc; */
-  @apply bg-[#f1ecea] dark:bg-black;
+  @apply bg-[#f1ecea] dark:bg-black scroll-smooth;
 }
 
 .p-sidebar-close {
@@ -26,10 +26,12 @@ input {
   width: 7px;
   /* Adjust the width as needed */
 }
+
 .dashboard-scroll::-webkit-scrollbar-track {
   background: #f1f1f1;
   /* Change background color as needed */
 }
+
 .dashboard-scroll::-webkit-scrollbar-thumb {
   background-color: #888;
   /* Change color as needed */
@@ -46,6 +48,23 @@ input {
   background-color: rgba(255, 255, 255, 0.6);
   pointer-events: none;
 }
+
+/* Style the scroll bar  */
+/* Customize the scrollbar track */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 6px;
+  @apply bg-gray-300;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+
 
 /* Ripple Animation */
 @keyframes ripple {

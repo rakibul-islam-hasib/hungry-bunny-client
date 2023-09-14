@@ -13,7 +13,7 @@ const ManageUsers = () => {
             <div className='flex justify-between my-5 mb-8'>
                 <h1>Manage Users</h1>
 
-                <div className=''>
+                <div className='relative'>
                     <input
                         type="text"
                         placeholder="Search User here"
