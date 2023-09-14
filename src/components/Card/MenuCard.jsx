@@ -57,6 +57,7 @@ const MenuCard = () => {
     axios.get('/food/get/all')
     .then((res) => {
         setMenuItems(res.data);
+        // setMenuTab(res.data)
         // console.log(res.data)
     })
     .catch((err) => {
