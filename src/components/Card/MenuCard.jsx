@@ -7,10 +7,10 @@ import sushi from '../../assets/icons/menu/icons8-sushi.svg';
 
 import React, { useEffect, useState } from "react";
 
-import useMenu from "../../hooks/useMenu";
 import MenuCardItem from './MenuCardItem';
 import MenuSkeleton from '../Skeletons/MenuSkeleton';
 import CategorySkeleton from '../Skeletons/CategorySkeleton';
+import useAxiosFetch from '../../hooks/useAxiosFetch';
 
 
 
@@ -47,9 +47,26 @@ const MenuCard = () => {
     }
   ]
 
-  
+  const axios = useAxiosFetch();
   const [menuTab, setMenuTab] = useState('Pizza')
   const [loading, setLoading] = useState(true)
+  const [menuItems, setMenuItems] = useState([])
+
+
+  useEffect(() => {
+    axios.get('/food/get/all')
+    .then((res) => {
+        setMenuItems(res.data);
+        // console.log(res.data)
+    })
+    .catch((err) => {
+        console.log(err);
+    })
+    .finally(() => {
+        setLoading(false);
+    })
+  }, [])
+
 
   //loading 
   useEffect(() => {
@@ -60,8 +77,8 @@ const MenuCard = () => {
   }, [])
 
 
+  
 
-  const [menuItems] = useMenu();
   const handleMenuTabs = (type) => {
     setMenuTab(type);
   }
@@ -82,12 +99,12 @@ const MenuCard = () => {
       </div>
 
       {/*  */}
-      <div className=" md:flex justify-between flex-wrap">
+      <div className=" md:flex justify-between flex-wrap  ">
         {
           MenuCategory.map((item, idx) => (loading ? <CategorySkeleton key={idx} /> :
 
 
-            <div key={item.idx}
+            <div key={idx}
               className={menuTab === `${item.name}` ? 'border rounded-2xl hover:border-primary hover:bg-primary hover:bg-opacity-5 border-orange-300 lg:px-20 py-2  transform transition duration-300 hover:scale-105' : 'border rounded-2xl hover:border-primary hover:bg-primary hover:bg-opacity-5 border-orange-300 lg:px-20 py-2  transform transition duration-300 hover:scale-105'} onClick={() => handleMenuTabs(item.name)}
             >
               <div className='text-center'>
@@ -111,6 +128,8 @@ const MenuCard = () => {
           ))}
         </div>
       </div>
+
+      
     </div>
   );
 };

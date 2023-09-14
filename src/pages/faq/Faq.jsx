@@ -62,12 +62,14 @@ const Faq = () => {
                 </div>
             <div className='md:w-[60%]'>
             {
-                allQuestions.map((item) =>  <div key={item._id} className="card my-2">
+                allQuestions.map((item) =>  
+                <div key={item._id} className="card my-2">
                 <details className='text-2xl font-bold'>
                     <summary className='hover:bg-orange-400 hover:transition hover:duration-700 hover:text-white drop-shadow-xl rounded-xl p-2'>{item.question}</summary>
                     <p className='my-3 p-3'>{item.answers}</p>
                 </details>
-            </div>)
+            </div>
+            )
             }
             </div>
             </div>

@@ -7,7 +7,7 @@ import { useQuery } from "@tanstack/react-query";
 //     const [users, setusers] = useState([]);
 //     const [loading, setLoading] = useState(true)
 //     useEffect(() => {
-//         fetch("http://localhost:5000/user-info")
+//         fetch("https://hungry-bunny.vercel.app/user-info")
 //             .then((res) => res.json())
 //             .then((data) => {
 //                 setusers(data);

@@ -1,13 +1,24 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import gsap from 'gsap';
 import { AiOutlineCloseSquare } from 'react-icons/ai';
 import useUtils from '../../hooks/useUtils';
 import { useDispatch } from 'react-redux';
 import { setCheckoutOpen } from '../../redux/slices/utilsSlice';
+import { useFoodCart } from '../../hooks/userFoodCart';
+import FoodCart from './FoodCart';
 
 const CheckoutBar = () => {
   const { isCheckoutOpen } = useUtils();
   const dispatch = useDispatch();
+
+
+
+  // const [foodCart, isLoading, refetch] = useFoodCart()
+
+
+  // console.log(foodCart);
+
+
   const openCheckoutBar = () => {
     const t1 = gsap.timeline();
     t1.to('#checkout-bar', {
@@ -34,6 +45,8 @@ const CheckoutBar = () => {
     }
   }, [isCheckoutOpen]);
 
+  // if (isLoading) return <div>Loading...</div>;
+
 
   return (
     <div
@@ -49,8 +62,13 @@ const CheckoutBar = () => {
         </button>
       </div>
 
-      <div className=" flex-1">
-        <h1>Hello</h1>
+      <div >
+        <div>
+          <h1>Hello</h1>
+        </div>
+        {/* {
+          foodCart.map((cart, idx) => <FoodCart key={idx} cart={cart} />)
+        } */}
       </div>
 
 
