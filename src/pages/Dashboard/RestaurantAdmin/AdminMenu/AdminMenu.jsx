@@ -11,7 +11,7 @@ const AdminMenu = () => {
 
   // const { user } = useAuth();
   // useEffect(() => {
-  //   fetch(`http://localhost:5000/food/${user?.email}`)
+  //   fetch(`https://hungry-bunny.vercel.app/food/${user?.email}`)
   //     .then((res) => res.json())
   //     .then((data) => {
   //       setMenu(data);
