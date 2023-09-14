@@ -106,6 +106,20 @@ export const locationOptions = [
     { value: 'Tangail', label: 'Tangail' },
     { value: 'Thakurgaon', label: 'Thakurgaon' }
 ];
+export const categoryOptions = [
+    { value: '', label: 'Select' },
+    { value: 'Pizza', label: 'Pizza' },
+    { value: 'Snacks', label: 'Snacks' },
+    { value: 'Burger', label: 'Burger' },
+    { value: 'Biryani', label: 'Biryani' },
+    { value: 'Sushi', label: 'Sushi' },
+    { value: 'Street_Food', label: 'Street_Food' },
+    { value: 'Fish', label: 'Fish' },
+    { value: 'Rice', label: 'Rice' },
+    { value: 'SeaFood', label: 'SeaFood' },
+    { value: 'SeaFood', label: 'SeaFood' },
+    
+];
 
 export const districts = [
     {
