@@ -55,17 +55,17 @@ const MenuCard = () => {
 
   useEffect(() => {
     axios.get('/food/get/all')
-    .then((res) => {
+      .then((res) => {
         setMenuItems(res.data);
         // setMenuTab(res.data)
         // console.log(res.data)
-    })
-    .catch((err) => {
+      })
+      .catch((err) => {
         console.log(err);
-    })
-    .finally(() => {
+      })
+      .finally(() => {
         setLoading(false);
-    })
+      })
   }, [])
 
 
@@ -78,7 +78,7 @@ const MenuCard = () => {
   }, [])
 
 
-  
+
 
   const handleMenuTabs = (type) => {
     setMenuTab(type);
@@ -118,6 +118,14 @@ const MenuCard = () => {
         }
       </div>
 
+      <div className=' w-2/4 items-end '>
+        <input
+          type="text"
+          placeholder="Search User here"
+          className="border border-red-400  focus:border-pink-400 focus:outline-none  px-10 mx-auto py-2 rounded-full" />
+        <button className='pl-5'>Search  </button>
+      </div>
+
       <div className="mx-auto md:px-20 px-6 mt-10">
 
         <div className="grid md:grid-cols-2 md:gap-8 gap-3 lg:grid-cols-3 mt-10 mx-auto">
@@ -130,7 +138,7 @@ const MenuCard = () => {
         </div>
       </div>
 
-      
+
     </div>
   );
 };
