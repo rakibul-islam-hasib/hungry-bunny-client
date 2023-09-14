@@ -37,16 +37,10 @@ const AboutTeam = () => {
               {member.description}
             </p>
           </div>
-          <div className="px-6 pt-4 pb-2 text-center">
+          <div className="px-6 pt-4 pb-2 text-center border-b-2 border-primary">
             <Link className='inline-block rounded-full px-3 py-1 text-4xl font-semibold text-gray-700 mr-5 mb-2' to={member.facebook_url}><AiFillFacebook /></Link>
             <Link className='inline-block  rounded-full px-3 py-1 text-4xl font-semibold text-gray-700 mr-5 mb-2' to={member.github_url}><AiFillGithub /> </Link>
             <Link className='inline-block  rounded-full px-3 py-1 text-4xl font-semibold text-gray-700 mr-5 mb-2' to={member.instagram_url}><AiFillInstagram /> </Link>
-          </div>
-
-          <div className="px-6 pt-4 pb-2 text-center">
-            <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#photography</span>
-            <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#travel</span>
-            <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#winter</span>
           </div>
       </div>
             )
