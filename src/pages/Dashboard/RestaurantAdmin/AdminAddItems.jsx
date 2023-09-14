@@ -83,7 +83,6 @@ const AdminAddItems = () => {
       pending: 'Adding Product...',
       success: 'Product Added Successfully',
       error: 'Something went wrong , please try again later'
-
     })
       .then((res) => {
         console.log(res);

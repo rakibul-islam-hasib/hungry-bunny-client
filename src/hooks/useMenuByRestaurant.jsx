@@ -6,11 +6,12 @@ import { useAuth } from './useAuth';
 const useMenuByRestaurant = () => {
     const axios = useAxiosFetch();
     const { user } = useAuth();
-    console.log(user);
+    console.log(user.email);
     const { data: menu, isLoading, refetch } = useQuery({
         queryKey: ['restaurant-menu'],
         queryFn: async () => {
-            const res = await axios.get(`/food/${user?.email}`);
+            // const res = await axios.get(`/food/${user?.email}`);
+            const res = await axios.get('/food');
             return res.data;
         }
     })
