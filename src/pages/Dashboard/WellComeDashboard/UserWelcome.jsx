@@ -70,7 +70,7 @@ const UserWelcome = () => {
     </form>
                 </div>
             <div className='flex items-center'>
-            <h1 className='text-4xl font-bold text-orange-400 mr-6'>Welcome , {firebaseUser?.displayName}</h1>
+            <h1 className='text-4xl font-bold text-orange-400 mr-6'>Welcome {firebaseUser?.displayName}</h1>
             <img className='w-20 rounded-full' src="https://images.generated.photos/P2tzhpRdA_aiFi3kf2sPjw-vYJXi7hQE349GFBGi2ds/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/OTY4MjM4LmpwZw.jpg" alt="user image" />
             </div>
             </div>
