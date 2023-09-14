@@ -63,13 +63,13 @@ const NormalProfile = () => {
                                         </h6>
                                         <div className='flex justify-between max-w-3xl '>
                                             <div className="flex items-center ">
-                                                <FaMapMarkedAlt className='text-lg text-neutral-500 mr-2 mb-3 font-bold' />
+                                                <FaMapMarkedAlt className='text-2xl text-neutral-500 mr-2 mb-3 font-bold' />
                                                 <h6 className="mb-4 font-sans text-md font-bold leading-relaxed tracking-normal text-black antialiased">
                                                     Address
                                                 </h6>
                                             </div>
                                             <div className="flex items-center">
-                                                <FaMapMarkerAlt className='text-lg text-neutral-500 mr-2 mb-3' />
+                                                <FaMapMarkerAlt className='text-2xl text-neutral-500 mr-2 mb-3' />
                                                 <h6 className="mb-4 font-sans text-md font-bold leading-relaxed tracking-normal text-black antialiased">
                                                     Location
                                                 </h6>
