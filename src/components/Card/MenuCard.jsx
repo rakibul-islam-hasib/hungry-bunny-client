@@ -69,7 +69,7 @@ const MenuCard = () => {
       .finally(() => {
         setLoading(false);
       })
-  }, [axios])
+  }, [])
 
 
   //loading 
