@@ -53,6 +53,7 @@ import ManageApplications from "../pages/Dashboard/admin/ManageApplications";
 import AdminRoute from "./AdminRoute";
 import UserWelcome from "../pages/Dashboard/WellComeDashboard/UserWelcome";
 import PendingMenu from "../pages/Dashboard/admin/PendingMenu";
+import Checkout from "../pages/checkout/Checkout";
 
 
 export const router = createBrowserRouter([
@@ -129,6 +130,10 @@ export const router = createBrowserRouter([
       {
         path: '/team-info',
         element: <TeamInfo />
+      },
+      {
+        path: '/shop/next/checkout',
+        element: <PrivateRoute><Checkout /></PrivateRoute>
       }
     ],
   },

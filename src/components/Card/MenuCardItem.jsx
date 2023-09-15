@@ -2,23 +2,36 @@ import React, { useState } from 'react';
 import { FaRegBookmark } from 'react-icons/fa';
 import { toast } from 'react-toastify';
 import useUserSecure from '../../hooks/useUserSecure';
+import useAxiosSecure from '../../hooks/useAxiosSecure';
+import { useFoodCart } from '../../hooks/userFoodCart';
 
 const MenuCardItem = (menu) => {
   const { _id, food_name, category, description, restaurant_name, price, image } = menu
 
   const [loading, setLoading] = useState(false);
-
+  const axios = useAxiosSecure();
   const [user] = useUserSecure();
-
+  const [, , refetch] = useFoodCart();
   const cartHandler = (itemId, restaurant_id) => {
     if (!user) return toast.error('Please Login First');
-    const data = { 
+    const data = {
       itemId,
       restaurant_id,
       userId: user._id,
       quantity: 1,
     }
-    console.log(data)
+    toast.promise(axios.post('/cart/new', data), {
+      pending: 'Adding to cart...',
+      success: 'Added to cart',
+      error: 'Something went wrong'
+    })
+      .then((data) => {
+        console.log(data.data)
+        refetch();
+      })
+      .catch((err) => {
+        console.log(err)
+      })
 
   };
 
