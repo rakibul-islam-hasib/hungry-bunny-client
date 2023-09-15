@@ -89,9 +89,6 @@ const MenuCard = () => {
     setMenuTab(type);
   }
 
-  if (dataLoading) return <div className="h-screen w-full flex justify-center items-center">
-  <AiOutlineLoading3Quarters className='text-5xl text-primary animate-spin' />
-</div>
 
   return (
     <div>
