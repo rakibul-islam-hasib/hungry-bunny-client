@@ -4,7 +4,20 @@ import { toast } from 'react-toastify';
 import useUserSecure from '../../hooks/useUserSecure';
 import useAxiosSecure from '../../hooks/useAxiosSecure';
 import { useFoodCart } from '../../hooks/userFoodCart';
-
+import { Box, Modal } from '@mui/material';
+const style = {
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  width: 400,
+  bgcolor: 'background.paper',
+  border: '2px solid #000',
+  boxShadow: 24,
+  pt: 2,
+  px: 4,
+  pb: 3,
+};
 const MenuCardItem = (menu) => {
   const { _id, food_name, category, description, restaurant_name, price, image } = menu
 
@@ -35,6 +48,15 @@ const MenuCardItem = (menu) => {
 
   };
 
+
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => {
+    setOpen(true);
+  };
+  const handleClose = () => {
+    setOpen(false);
+  };
+
   return (
     <div>
 
@@ -42,7 +64,7 @@ const MenuCardItem = (menu) => {
 
 
       <div key={_id} className={` border px-3 py-2 overflow-hidden shadow-lg rounded-md ${_id === 1 ? 'w-full' : ''}`}>
-        <div>
+        <div onClick={handleOpen}>
 
           <img className="w-full h-64 object-cover transition transform duration-200  hover:-translate-y-2 rounded-lg relative    peer  top-0 right-0" src={image} alt="Food Image" />
 
@@ -66,6 +88,41 @@ const MenuCardItem = (menu) => {
           </div>
         </div>
       </div>
+
+
+      <section>
+
+
+        <Modal
+          open={open}
+          onClose={handleClose}
+          aria-labelledby="parent-modal-title"
+          aria-describedby="parent-modal-description"
+        >
+          <Box sx={{ ...style, width: 450, height: 450, border: 'none', borderRadius: '20px', }}>
+            <img className="w-full mx-auto transform transition duration-300 hover:scale-105" src={image} alt="" />
+            <div className='py-5'>
+              {/* <h2 id="parent-modal-title " className='text-sm font-bold text-primary'>By {restaurant_name}</h2> */}
+              <div className="flex items-center gap-2">
+                <p>
+                  <span className="text-sm font-bold text-primary">{category}</span>
+                </p>
+                <p >By</p>
+                <p className="text-sm font-bold text-slate-900">{restaurant_name}</p>
+              </div>
+              <p id="parent-modal-description">
+                description: {description}
+              </p>
+            </div>
+
+            {/* <div>
+                            <p>Ingredients</p>
+                            <li className='text-thin'>{category}</li>
+                            <li className='text-thin'>{}</li>
+                        </div> */}
+          </Box>
+        </Modal>
+      </section>
 
 
     </div>
