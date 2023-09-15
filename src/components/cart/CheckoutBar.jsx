@@ -1,17 +1,21 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect,  useRef, useMemo } from 'react';
 import gsap from 'gsap';
 import { AiOutlineCloseSquare } from 'react-icons/ai';
 import useUtils from '../../hooks/useUtils';
 import { useDispatch } from 'react-redux';
 import { setCheckoutOpen } from '../../redux/slices/utilsSlice';
 import { useFoodCart } from '../../hooks/userFoodCart';
+import { FaTrash } from 'react-icons/fa';
 
 const CheckoutBar = () => {
   const { isCheckoutOpen } = useUtils();
   const dispatch = useDispatch();
 
   const [cart = []] = useFoodCart();
-  console.log(cart)
+
+  const sortedCart = useMemo(() => {
+    return cart.sort((a, b) => b.quantity - a.quantity);
+  }, [cart]);
 
   const renderCount = useRef(0);
 
@@ -32,7 +36,7 @@ const CheckoutBar = () => {
       ease: 'power4.out',
     });
   };
-  console.log(renderCount)
+
   useEffect(() => {
     renderCount.current++;
     if (isCheckoutOpen) {
@@ -42,7 +46,10 @@ const CheckoutBar = () => {
     }
   }, [isCheckoutOpen]);
 
-  // if (isLoading) return <div>Loading...</div>;
+  const onDelete = (id) => {
+    console.log(id);
+  }
+
 
   return (
     <div
@@ -62,7 +69,7 @@ const CheckoutBar = () => {
         <div>
 
           {
-            cart.map((item) => <div
+            sortedCart.map((item) => <div
               key={item._id}
               className="flex items-center gap-2 border-b py-2 px-4 duration-200 hover:bg-gray-100"
             >
@@ -70,12 +77,20 @@ const CheckoutBar = () => {
                 <img className='w-[100px] h-[90px]' src={item.foodDetails.image} alt="" />
               </div>
               {/* Details */}
-              <div className="">
+              <div className="flex-1">
                 <h1 className="text-xl font-semibold">{item.foodDetails.food_name}</h1>
                 <p className='text-primary text-xs'>Price : <span className='text-purple-700 font-bold'>{item.foodDetails.price}৳</span>
                   <span className='text-[14px] ml-2 text-gray-500'>x {item.quantity}</span>
                 </p>
                 <p className='text-red-500 font-bold'><span className='text-black font-normal'>Total</span> : {(item.foodDetails.price * item.quantity).toFixed(2)}</p>
+              </div>
+              <div className="">
+                <button
+                  onClick={() => onDelete(item._id)}
+                  className="text-red-500 hover:text-red-700"
+                >
+                  <FaTrash />
+                </button>
               </div>
             </div>)
           }
