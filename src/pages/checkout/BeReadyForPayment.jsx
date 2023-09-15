@@ -1,11 +1,15 @@
 import React from 'react';
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import './Payment.css'
+import { useAuth } from '../../hooks/useAuth';
+import { toast } from 'react-toastify';
+import useUtils from '../../hooks/useUtils';
 const BeReadyForPayment = ({ intent }) => {
-    console.log(intent)
+
+    const { user } = useAuth();
     const stripe = useStripe();
     const elements = useElements();
-
+    
     const handleSubmit = async (event) => {
         event.preventDefault();
         if (!stripe || !elements) {
@@ -20,10 +24,10 @@ const BeReadyForPayment = ({ intent }) => {
 
         });
         if (error) {
-            console.log('[error]', error);
+            console.log('[error] : ', error);
         }
         else {
-            console.log('[PaymentMethod]', paymentMethod);
+            // console.log('[PaymentMethod]', paymentMethod);
         }
 
         //  confirm payment
@@ -33,8 +37,8 @@ const BeReadyForPayment = ({ intent }) => {
                 payment_method: {
                     card: cardElement,
                     billing_details: {
-                        name: 'Anonymous',
-                        email: 'test@test.com',
+                        name: user.displayName || 'Anonymous',
+                        email: user.email || 'test@test.com',
                     },
                 },
             },
@@ -45,7 +49,12 @@ const BeReadyForPayment = ({ intent }) => {
         else {
             console.log('[PaymentMethod]', paymentIntent);
         }
-
+        if (paymentIntent.id) {
+            toast.success('Payment Successful')
+            setTimeout(() => {
+                window.location.replace('/')
+            }, 2000);
+        }
     };
     return (
         <form id='payment-form' onSubmit={handleSubmit}>

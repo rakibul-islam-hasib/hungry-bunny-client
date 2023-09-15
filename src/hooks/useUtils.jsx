@@ -1,13 +1,13 @@
 import { useSelector } from "react-redux";
 
 const useUtils = () => {
-    const { isFooter, isHero, isCheckoutOpen, totalPrice, paymentIntent } = useSelector(state => state.utils);
+    const { isFooter, isHero, isCheckoutOpen, totalPrice, paymentInfo } = useSelector(state => state.utils);
     const returnObj = {
         isFooter,
         isHero,
         isCheckoutOpen,
         totalPrice,
-        paymentIntent
+        paymentInfo
     };
     return returnObj;
 };
