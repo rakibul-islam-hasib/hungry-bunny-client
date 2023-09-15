@@ -54,6 +54,7 @@ import AdminRoute from "./AdminRoute";
 import UserWelcome from "../pages/Dashboard/WellComeDashboard/UserWelcome";
 import PendingMenu from "../pages/Dashboard/admin/PendingMenu";
 import Checkout from "../pages/checkout/Checkout";
+import Payment from "../pages/checkout/Payment";
 
 
 export const router = createBrowserRouter([
@@ -134,6 +135,10 @@ export const router = createBrowserRouter([
       {
         path: '/shop/next/checkout',
         element: <PrivateRoute><Checkout /></PrivateRoute>
+      },
+      {
+        path: '/next/payment', 
+        element: <PrivateRoute><Payment /></PrivateRoute>
       }
     ],
   },
