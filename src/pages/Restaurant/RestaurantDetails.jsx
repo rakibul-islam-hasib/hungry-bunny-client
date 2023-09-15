@@ -1,6 +1,6 @@
 import { Rating } from '@smastrom/react-rating';
 import React from 'react';
-import { FaArrowRight, FaMailBulk, FaShoppingCart, FaUserAstronaut } from 'react-icons/fa';
+import { FaArrowRight, FaMailBulk, FaPlusSquare, FaShoppingCart, FaUserAstronaut } from 'react-icons/fa';
 import { BsStopwatch } from 'react-icons/bs';
 import { MdOutlineLocalOffer, MdDirectionsBike } from 'react-icons/md';
 import { PiBowlFood } from 'react-icons/pi';
@@ -11,7 +11,7 @@ import { Helmet } from 'react-helmet-async';
 
 function RestaurantDetails() {
     const restaurant = useLoaderData()
-    console.log(restaurant.restaurantName);
+    console.log(restaurant);
 
     return (
         <div className='sm:ml-5 dark:text-slate-200'>
@@ -85,34 +85,67 @@ function RestaurantDetails() {
 
     {/* food restaurant card */}
 <div className="dark:text-slate-300">
-<div className="grid sm:grid-cols-2 md:grid-cols-3 md:gap-8 gap-3 lg:grid-cols-4 mb-14">
+<div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-8 gap-3 mb-14">
           {
-            restaurant.foodItems.map((items, idx) => <div key={idx} className='p-2 border overflow-hidden shadow-lg rounded-2xl'>
-            <img className="w-full h-60 object-cover rounded-lg" src={items.foodImage} alt="Food Image" />
-            <div className='w-full relative group hover:-translate-y-4 duration-500'>
-              <div className=''>
-              <p className='font-bold flex justify-between mt-2'><span><Rating
+            restaurant.foodItems.map((items, idx) => 
+      //       <div key={idx} className='p-2 border overflow-hidden shadow-lg rounded-2xl'>
+      //       <img className="w-full h-60 object-cover rounded-lg" src={items.foodImage} alt="Food Image" />
+      //       <div className='w-full relative group hover:-translate-y-4 duration-500'>
+      //         <div className=''>
+      //         <p className='font-bold flex justify-between mt-2'><span><Rating
+      //   style={{ maxWidth: 100 }}
+      //   value={items.foodRating}
+      //   readOnly
+      // /></span> <span className='flex text-2xl items-center'><BiLike className='mr-2'/> 0 </span></p>
+      //       <div className="px-2 py-2">
+      //         <div className="mb-2">
+      //           <p className='font-extrabold text-2xl dark:text-slate-300'>Food Name {items.foodItem}</p>
+      //         </div>
+      //           <p className='font-extrabold'>{items.description.slice(0, 60)}</p>
+      //           <div className='font-bold flex justify-between items-center mt-2'>
+      //           <p className='mr-2 text-2xl'>$ {items.price}</p>
+      //           <button className="drop-shadow-lg hover:transition duration-600 bg-orange-500 border-2 border-orange-500 hover:text-orange-500 hover:bg-white text-white font-bold py-1 px-3 rounded-full flex items-center">
+      //             <span>add to cart</span> <span className='ml-2'><FaShoppingCart/> </span>
+      //           </button>
+      //           </div>
+                
+      //       </div>
+      //         </div>
+      //       </div>
+      //     </div>
+          <div key={items?._id} className={` border overflow-hidden shadow-lg rounded-md ${items?._id === 1 ? 'w-full' : ''}`}>
+          <div>
+  
+            <img className="w-full h-64 object-cover transition transform duration-200  hover:-translate-y-2 rounded-lg relative    peer absolute top-0 right-0" src={items?.foodImage} alt="Food Image" />
+            <svg className="pointer-events-none absolute inset-x-0 bottom-5 mx-auto text-3xl text-white  transition-opacity group-hover:animate-ping group-hover:opacity-30 peer-hover:opacity-0" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32">
+              <path fill="currentColor" d="M2 10a4 4 0 0 1 4-4h20a4 4 0 0 1 4 4v10a4 4 0 0 1-2.328 3.635a2.996 2.996 0 0 0-.55-.756l-8-8A3 3 0 0 0 14 17v7H6a4 4 0 0 1-4-4V10Zm14 19a1 1 0 0 0 1.8.6l2.7-3.6H25a1 1 0 0 0 .707-1.707l-8-8A1 1 0 0 0 16 17v12Z" />
+            </svg>
+          </div>
+          <div className=" py-4">
+            <div className="font-semibold text-xl mb-2 flex justify-between"><span>{items?.foodItem}</span><span><Rating
         style={{ maxWidth: 100 }}
         value={items.foodRating}
         readOnly
-      /></span> <span className='flex text-2xl items-center'><BiLike className='mr-2'/> 0 </span></p>
-            <div className="px-2 py-2">
-              <div className="mb-2">
-                <p className='font-extrabold text-2xl dark:text-slate-300'>Food Name {items.foodItem}</p>
-              </div>
-                <p className='font-extrabold'>{items.description.slice(0, 60)}</p>
-                <div className='font-bold flex justify-between items-center mt-2'>
-                <p className='mr-2 text-2xl'>$ {items.price}</p>
-                <button className="drop-shadow-lg hover:transition duration-600 bg-orange-500 border-2 border-orange-500 hover:text-orange-500 hover:bg-white text-white font-bold py-1 px-3 rounded-full flex items-center">
-                  <span>add to cart</span> <span className='ml-2'><FaShoppingCart/> </span>
-                </button>
-                </div>
-                
+      /></span></div>
+            <p className="text-sm text-gray-500 flex justify-between"><span>{items?.description.slice(0, 80)}</span> </p>
+            <div className="flex items-center gap-2">
+              <p>
+                <span className="text-sm font-bold text-primary">{items?.category}</span>
+              </p>
+              <p className='text-sm text-gray-400 font-bold'>By</p>
+              <p className="text-sm font-bold text-slate-900">{restaurant.restaurantName}</p>
             </div>
-              </div>
+            <div className="flex justify-between items-center  h-14">
+              <span className="text-gray-600 font-semibold text-lg">{items?.price} Taka</span>
+              <button className=" text-orange-500 bg-white text-4xl">
+                <FaPlusSquare/>
+                {/* <FaRegBookmark onClick={() => cartHandler(menu)} className="text-2xl transform transition duration-300 hover:scale-125" /> */}
+  
+              </button>
             </div>
-          </div>)
-          }
+          </div>
+        </div>
+          )}
       </div>
 <Subscribe/>
       {/* <div className='md:w-[25%]'>

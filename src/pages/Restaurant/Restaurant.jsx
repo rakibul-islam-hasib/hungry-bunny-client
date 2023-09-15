@@ -178,6 +178,7 @@ const Restaurant = () => {
               </div>
             </div>
           </div>
+          
         ))}
       </div>
       {/* Pagination  */}
