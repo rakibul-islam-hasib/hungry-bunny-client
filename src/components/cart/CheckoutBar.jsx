@@ -6,11 +6,12 @@ import { useDispatch } from 'react-redux';
 import { setCheckoutOpen } from '../../redux/slices/utilsSlice';
 import { useFoodCart } from '../../hooks/userFoodCart';
 import FoodCart from './FoodCart';
+import useAxiosFetch from '../../hooks/useAxiosFetch';
+import { useQuery } from '@tanstack/react-query';
 
 const CheckoutBar = () => {
   const { isCheckoutOpen } = useUtils();
   const dispatch = useDispatch();
-
 
 
   // const [foodCart, isLoading, refetch] = useFoodCart()
@@ -66,9 +67,7 @@ const CheckoutBar = () => {
         <div>
           <h1>Hello</h1>
         </div>
-        {/* {
-          foodCart.map((cart, idx) => <FoodCart key={idx} cart={cart} />)
-        } */}
+        
       </div>
 
 
@@ -78,7 +77,7 @@ const CheckoutBar = () => {
 
 
 
-      <div className="">
+      <div className="mt-auto">
         <div className="flex items-center gap-1 my-2 bg-orange-50 py-2 w-full px-4">
           <input type="text" placeholder='Promo Code' className='py-1 px-2 rounded-md bg-gray-200 w-full' />
           <button className='font-bold bg-primary px-2 py-1 text-white rounded-md'>Apply</button>

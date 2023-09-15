@@ -4,6 +4,7 @@ import NavBar from '../components/header/NavBar';
 import Footer from '../components/footer/Footer';
 import Loader from '../components/loader/Loader';
 import { useSelector } from 'react-redux';
+import { ToastContainer } from 'react-toastify';
 
 const MainLayout = () => {
     const { loading } = useSelector(state => state.auth);
@@ -18,6 +19,7 @@ const MainLayout = () => {
                 <Footer />
             </main>
             <ScrollRestoration />
+            <ToastContainer />
         </>
     );
 };
