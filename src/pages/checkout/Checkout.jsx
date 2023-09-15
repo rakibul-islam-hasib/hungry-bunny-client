@@ -21,7 +21,7 @@ const Checkout = () => {
         axios.put(`/cart/update/${randomItem}`, { quantity: condition })
             .then(res => {
                 console.log(res.data)
-                refetch()
+                refetch() // refetch the cart when quantity is updated /-HASIB-/ 
             })
             .catch(err => console.log(err))
     };
