@@ -2,6 +2,10 @@ import React, { useEffect, useState } from 'react';
 import useUtils from '../../hooks/useUtils';
 import useAxiosSecure from '../../hooks/useAxiosSecure';
 import { AiOutlineLoading3Quarters } from 'react-icons/ai';
+import BeReadyForPayment from './BeReadyForPayment';
+import { loadStripe } from '@stripe/stripe-js';
+import { Elements } from '@stripe/react-stripe-js';
+const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLIC_KEY)
 
 const Payment = () => {
     const [intent, setIntent] = useState(null);
@@ -29,6 +33,9 @@ const Payment = () => {
     return (
         <div>
             <h1>Payment JSX</h1>
+            <Elements stripe={stripePromise}>
+                <BeReadyForPayment />
+            </Elements>
         </div>
     );
 };
