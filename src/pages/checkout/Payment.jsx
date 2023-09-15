@@ -8,7 +8,7 @@ import { Elements } from '@stripe/react-stripe-js';
 const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLIC_KEY)
 
 const Payment = () => {
-    const [intent, setIntent] = useState(null);
+    const [intent, setIntent] = useState({});
     const [loader, setLoader] = useState(false)
     const { totalPrice } = useUtils();
     console.log(totalPrice)
@@ -34,7 +34,7 @@ const Payment = () => {
         <div>
             <h1>Payment JSX</h1>
             <Elements stripe={stripePromise}>
-                <BeReadyForPayment />
+                <BeReadyForPayment intent={intent.clientSecret} />
             </Elements>
         </div>
     );
