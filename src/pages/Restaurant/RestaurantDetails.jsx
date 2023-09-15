@@ -4,7 +4,7 @@ import { FaArrowRight, FaMailBulk, FaPlusSquare, FaShoppingCart, FaUserAstronaut
 import { BsStopwatch } from 'react-icons/bs';
 import { MdOutlineLocalOffer, MdDirectionsBike } from 'react-icons/md';
 import { PiBowlFood } from 'react-icons/pi';
-import { BiLike } from 'react-icons/bi';
+import { AiOutlinePlus } from 'react-icons/ai';
 import { useLoaderData } from 'react-router-dom';
 import Subscribe from '../about/Subscribe';
 import { Helmet } from 'react-helmet-async';
@@ -138,7 +138,7 @@ function RestaurantDetails() {
             <div className="flex justify-between items-center  h-14">
               <span className="text-gray-600 font-semibold text-lg">{items?.price} Taka</span>
               <button className=" text-orange-500 bg-white text-4xl">
-                <FaPlusSquare/>
+                <AiOutlinePlus className='shadow-xl'/>
                 {/* <FaRegBookmark onClick={() => cartHandler(menu)} className="text-2xl transform transition duration-300 hover:scale-125" /> */}
   
               </button>
