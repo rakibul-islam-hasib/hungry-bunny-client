@@ -6,7 +6,7 @@ import { useAuth } from './useAuth';
 const useMenuByRestaurant = () => {
     const axios = useAxiosFetch();
     const { user } = useAuth();
-    console.log(user.email);
+    console.log(user);
     const { data: menu, isLoading, refetch } = useQuery({
         queryKey: ['restaurant-menu'],
         queryFn: async () => {
