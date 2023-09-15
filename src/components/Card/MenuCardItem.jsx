@@ -12,10 +12,13 @@ const MenuCardItem = (menu) => {
 
   const cartHandler = (itemId, restaurant_id) => {
     if (!user) return toast.error('Please Login First');
-    
-    console.log(itemId, restaurant_id, user._id)
-
-
+    const data = { 
+      itemId,
+      restaurant_id,
+      userId: user._id,
+      quantity: 1,
+    }
+    console.log(data)
 
   };
 
