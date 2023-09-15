@@ -3,19 +3,21 @@ import CustomersProgress from "./CustomersProgress";
 import CustomerStatus from "./CustomerStatus";
 
 const AdminCustomers = () => {
+
   return (
     <div className="mt-10">
-      <div className="flex">
-        <div className="w-4/6 h-72 ">
-          <h3 className="text-center font-semibold text-3xl">
-            Customers Order
+
+      <div className="md:flex">
+        <div className="md:w-4/6 h-72 ">
+          <h3 className="text-center -mb-10 font-semibold text-3xl">
+            Total Orders
           </h3>
-          <p className="text-center">Based on Countries</p>
+          {/* <p className="text-center">Based on Countries</p> */}
           <CustomersProgress />
         </div>
 
         {/* Top Customer */}
-        <div className="w-2/6">
+        <div className="md:w-2/6">
           <div className="block w-full overflow-x-auto max-w-xl border rounded-md bg-orange-100">
             <table className="items-center w-full bg-transparent border-collapse">
               <thead>
