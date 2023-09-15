@@ -5,19 +5,13 @@ import useUtils from '../../hooks/useUtils';
 import { useDispatch } from 'react-redux';
 import { setCheckoutOpen } from '../../redux/slices/utilsSlice';
 import { useFoodCart } from '../../hooks/userFoodCart';
-import FoodCart from './FoodCart';
-import useAxiosFetch from '../../hooks/useAxiosFetch';
-import { useQuery } from '@tanstack/react-query';
 
 const CheckoutBar = () => {
   const { isCheckoutOpen } = useUtils();
   const dispatch = useDispatch();
 
-
-  // const [foodCart, isLoading, refetch] = useFoodCart()
-
-
-  // console.log(foodCart);
+  const [cart] = useFoodCart();
+  console.log(cart)
 
 
   const openCheckoutBar = () => {
@@ -63,11 +57,30 @@ const CheckoutBar = () => {
         </button>
       </div>
 
-      <div >
+      <div className='overflow-y-auto'>
         <div>
-          <h1>Hello</h1>
+
+          {
+            cart?.map((item) => <div
+              key={item._id}
+              className="flex items-center gap-2 border-b py-2 px-4 hover:bg-gray-100"
+            >
+              <div className="">
+                <img className='w-[100px] h-[90px]' src={item.foodDetails.image} alt="" />
+              </div>
+              {/* Details */}
+              <div className="">
+                <h1 className="text-xl font-semibold">{item.foodDetails.food_name}</h1>
+                <p className='text-primary text-xs'>Price : <span className='text-purple-700 font-bold'>{item.foodDetails.price}৳</span> </p>
+              </div>
+            </div>)
+          }
+
+
+
+
         </div>
-        
+
       </div>
 
 
