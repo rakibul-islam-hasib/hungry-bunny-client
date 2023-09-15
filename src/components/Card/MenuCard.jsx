@@ -52,6 +52,9 @@ const MenuCard = () => {
   const [loading, setLoading] = useState(true)
   const [menuItems, setMenuItems] = useState([])
 
+  const [searchMenu, setSearchMenu] = useState('')
+
+
 
   useEffect(() => {
     axios.get('/food/get/all')
@@ -66,7 +69,7 @@ const MenuCard = () => {
       .finally(() => {
         setLoading(false);
       })
-  }, [])
+  }, [axios])
 
 
   //loading 
@@ -83,6 +86,19 @@ const MenuCard = () => {
   const handleMenuTabs = (type) => {
     setMenuTab(type);
   }
+
+
+  // const handleSearchMenu = () => {
+  //   axios.get(`http://localhost:5000/food/menu-search/${searchMenu}`)
+  //     // .then(res => setMenuTab(res.data))
+  //     .then(res => {
+        
+  //        console.log(res.data)
+  //       setMenuTab(res.data)}
+  //       )
+  //     .catch(error => console.log(error))
+  // }
+
 
   return (
 
@@ -118,13 +134,14 @@ const MenuCard = () => {
         }
       </div>
 
-      <div className=' w-2/4 items-end '>
+      {/* <div className='relative text-end mt-8'>
         <input
           type="text"
-          placeholder="Search User here"
-          className="border border-red-400  focus:border-pink-400 focus:outline-none  px-10 mx-auto py-2 rounded-full" />
-        <button className='pl-5'>Search  </button>
-      </div>
+          placeholder="Search Menu here"
+          onChange={(e) => setSearchMenu(e.target.value)}
+          className="border border-red-400  focus:border-pink-400 focus:outline-none px-20  py-2 rounded-lg" />
+        <button onClick={handleSearchMenu} className='absolute right-5 mt-2'>Search  </button>
+      </div> */}
 
       <div className="mx-auto md:px-20 px-6 mt-10">
 
