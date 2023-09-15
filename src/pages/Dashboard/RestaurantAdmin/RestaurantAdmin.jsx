@@ -7,11 +7,15 @@ import { AiFillSignal } from "react-icons/ai";
 import { FaClipboardList } from "react-icons/fa";
 import { PiBowlFood } from "react-icons/pi";
 import { MdPendingActions } from "react-icons/md";
+import { Helmet } from "react-helmet-async";
 
 const RestaurantAdmin = () => {
   const { user: firebaseUser } = useAuth()
   return (
     <div className="mt-4">
+      <Helmet>
+        <title>Hungry Bunny || restaurant || owner</title>
+      </Helmet>
             <div className='pb-2 mb-6 flex justify-between items-center'>
                 <div className='w-1/3'>
                 <form className='mt-10'>

@@ -5,6 +5,7 @@ import { TbCurrencyTaka } from 'react-icons/tb';
 import { MdFastfood } from 'react-icons/md';
 import { useAuth } from '../../../hooks/useAuth';
 import useUserSecure from '../../../hooks/useUserSecure';
+import { Helmet } from 'react-helmet-async';
 const UserWelcome = () => {
 
     const { user: firebaseUser } = useAuth()
@@ -29,6 +30,9 @@ const UserWelcome = () => {
     // console.log(user)
     return (
         <div className="mr-10">
+            <Helmet>
+        <title>Hungry Bunny || dashboard || user</title>
+      </Helmet>
             <div className='pt-8 pb-2 flex justify-between items-center'>
                 <div className='w-96'>
                 <form className='mt-10'>

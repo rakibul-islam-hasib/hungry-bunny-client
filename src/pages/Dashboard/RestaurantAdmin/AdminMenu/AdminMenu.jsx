@@ -4,6 +4,7 @@ import SingleAdminMenu from "./SingleAdminMenu";
 import useMenuByRestaurant from "../../../../hooks/useMenuByRestaurant";
 import MenuSkeleton from "../../../../components/Skeletons/MenuSkeleton";
 import { useAuth } from "../../../../hooks/useAuth";
+import { Helmet } from "react-helmet-async";
 
 const AdminMenu = () => {
   const { user: firebaseUser } = useAuth()
@@ -27,6 +28,9 @@ const AdminMenu = () => {
   return (
 
     <div>
+      <Helmet>
+        <title>Hungry Bunny || restaurant owner || add item</title>
+      </Helmet>
 <div className='pb-2 mb-2 flex justify-between items-center'>
 <div>
         <h1 className="text-2xl mt-8 font-bold">Total Menu: <span className="text-orange-600">{menus.length}</span></h1>
