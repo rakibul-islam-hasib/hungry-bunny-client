@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import gsap from 'gsap';
 import { AiOutlineCloseSquare } from 'react-icons/ai';
 import useUtils from '../../hooks/useUtils';
@@ -10,9 +10,10 @@ const CheckoutBar = () => {
   const { isCheckoutOpen } = useUtils();
   const dispatch = useDispatch();
 
-  const [cart] = useFoodCart();
+  const [cart = []] = useFoodCart();
   console.log(cart)
 
+  const renderCount = useRef(0);
 
   const openCheckoutBar = () => {
     const t1 = gsap.timeline();
@@ -31,8 +32,9 @@ const CheckoutBar = () => {
       ease: 'power4.out',
     });
   };
-
+  console.log(renderCount)
   useEffect(() => {
+    renderCount.current++;
     if (isCheckoutOpen) {
       openCheckoutBar();
     } else {
@@ -41,7 +43,6 @@ const CheckoutBar = () => {
   }, [isCheckoutOpen]);
 
   // if (isLoading) return <div>Loading...</div>;
-
 
   return (
     <div
@@ -61,9 +62,9 @@ const CheckoutBar = () => {
         <div>
 
           {
-            cart?.map((item) => <div
+            cart.map((item) => <div
               key={item._id}
-              className="flex items-center gap-2 border-b py-2 px-4 hover:bg-gray-100"
+              className="flex items-center gap-2 border-b py-2 px-4 duration-200 hover:bg-gray-100"
             >
               <div className="">
                 <img className='w-[100px] h-[90px]' src={item.foodDetails.image} alt="" />
@@ -71,24 +72,19 @@ const CheckoutBar = () => {
               {/* Details */}
               <div className="">
                 <h1 className="text-xl font-semibold">{item.foodDetails.food_name}</h1>
-                <p className='text-primary text-xs'>Price : <span className='text-purple-700 font-bold'>{item.foodDetails.price}৳</span> </p>
+                <p className='text-primary text-xs'>Price : <span className='text-purple-700 font-bold'>{item.foodDetails.price}৳</span>
+                  <span className='text-[14px] ml-2 text-gray-500'>x {item.quantity}</span>
+                </p>
+                <p className='text-red-500 font-bold'><span className='text-black font-normal'>Total</span> : {(item.foodDetails.price * item.quantity).toFixed(2)}</p>
               </div>
             </div>)
           }
-
-
-
 
         </div>
 
       </div>
 
-
-
       {/* Bottom */}
-
-
-
 
       <div className="mt-auto">
         <div className="flex items-center gap-1 my-2 bg-orange-50 py-2 w-full px-4">
@@ -116,7 +112,6 @@ const CheckoutBar = () => {
           </tbody>
         </table>
 
-
         <div className="">
           <button className='w-full bg-primary text-xl font-bold text-red-100 py-2'>
             Continue to Payment
@@ -124,6 +119,9 @@ const CheckoutBar = () => {
         </div>
       </div>
 
+      <div className="text-center text-gray-500 text-xs mt-2">
+        Render count: {renderCount.current}
+      </div>
 
     </div>
   );
