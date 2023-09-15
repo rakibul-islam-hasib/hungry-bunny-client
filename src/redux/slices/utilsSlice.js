@@ -4,6 +4,8 @@ const initialState = {
     isFooter: false,
     isHero: false,
     isCheckoutOpen: false,
+    totalPrice: 0,
+    paymentIntent: null,
 };
 
 const utilsSlice = createSlice({
@@ -19,8 +21,14 @@ const utilsSlice = createSlice({
         setCheckoutOpen: (state, action) => {
             state.isCheckoutOpen = action.payload;
         },
+        setTotalPrice: (state, action) => {
+            state.totalPrice = action.payload;
+        },
+        setPaymentIntent: (state, action) => {
+            state.paymentIntent = action.payload;
+        },
     }
 });
 
-export const { setFooter, setHero, setCheckoutOpen } = utilsSlice.actions;
+export const { setFooter, setHero, setCheckoutOpen, setTotalPrice, setPaymentIntent } = utilsSlice.actions;
 export default utilsSlice.reducer;
