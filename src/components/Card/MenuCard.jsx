@@ -53,11 +53,15 @@ const MenuCard = () => {
   const [dataLoading, setDataLoading] = useState(true);
   const [menuItems, setMenuItems] = useState([])
 
+  const [searchMenu, setSearchMenu] = useState('')
+
+
 
   useEffect(() => {
     axios.get('/food/get/all')
       .then((res) => {
         setMenuItems(res.data);
+        // setMenuTab(res.data)
         // console.log(res.data)
       })
       .catch((err) => {
@@ -85,9 +89,6 @@ const MenuCard = () => {
     setMenuTab(type);
   }
 
-  if (dataLoading) return <div className="h-screen w-full flex justify-center items-center">
-  <AiOutlineLoading3Quarters className='text-5xl text-primary animate-spin' />
-</div>
 
   return (
     <div>
@@ -116,6 +117,15 @@ const MenuCard = () => {
           ))
         }
       </div>
+
+      {/* <div className='relative text-end mt-8'>
+        <input
+          type="text"
+          placeholder="Search Menu here"
+          onChange={(e) => setSearchMenu(e.target.value)}
+          className="border border-red-400  focus:border-pink-400 focus:outline-none px-20  py-2 rounded-lg" />
+        <button onClick={handleSearchMenu} className='absolute right-5 mt-2'>Search  </button>
+      </div> */}
 
       <div className="mx-auto md:px-20 px-6 mt-10">
 
