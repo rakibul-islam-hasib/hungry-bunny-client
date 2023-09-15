@@ -4,12 +4,15 @@ import './Payment.css'
 import { useAuth } from '../../hooks/useAuth';
 import { toast } from 'react-toastify';
 import useUtils from '../../hooks/useUtils';
+import { useDispatch } from 'react-redux';
+import { setPaymentInfo } from '../../redux/slices/utilsSlice';
 const BeReadyForPayment = ({ intent }) => {
 
     const { user } = useAuth();
     const stripe = useStripe();
     const elements = useElements();
-    
+    const dispatch = useDispatch();
+
     const handleSubmit = async (event) => {
         event.preventDefault();
         if (!stripe || !elements) {
@@ -47,13 +50,12 @@ const BeReadyForPayment = ({ intent }) => {
             console.log('[error]', confirmError);
         }
         else {
-            console.log('[PaymentMethod]', paymentIntent);
-        }
-        if (paymentIntent.id) {
-            toast.success('Payment Successful')
-            setTimeout(() => {
-                window.location.replace('/')
-            }, 2000);
+            // console.log('[PaymentMethod]', paymentIntent);
+            if (paymentIntent.id) {
+                toast.success('Payment Successful')
+                dispatch(setPaymentInfo(paymentIntent))
+               
+            }
         }
     };
     return (

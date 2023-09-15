@@ -11,7 +11,7 @@ const Payment = () => {
     const [intent, setIntent] = useState({});
     const [loader, setLoader] = useState(false)
     const { totalPrice } = useUtils();
-    console.log(totalPrice)
+
     const axios = useAxiosSecure();
     useEffect(() => {
         setLoader(true)

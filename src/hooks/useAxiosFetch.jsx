@@ -5,7 +5,7 @@ import axios from 'axios';
 // Localhost: http://localhost:5000/
 const useAxiosFetch = () => {
     const axiosInstance = axios.create({
-        baseURL:import.meta.env.VITE_SERVER, // TODO : Replace with base URL
+        baseURL: 'https://hungry-bunny.vercel.app', // TODO : Replace with base URL
     });
 
     useEffect(() => {
