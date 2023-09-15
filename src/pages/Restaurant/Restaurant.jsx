@@ -28,7 +28,11 @@ const Restaurant = () => {
       .catch(err => console.log(err))
 
     axios.get(`/restaurant?limit=6&page=${page}`)
-      .then(res => setAllRestaurants(res.data))
+      .then(res => {
+        // const restaurants = res.data.filter(item => item.status === 'approved')
+        setAllRestaurants(res.data)
+        // console.log(restaurants);
+      })
       .catch(err => console.log(err))
     window.scrollTo(0, 0);
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -61,7 +65,50 @@ const Restaurant = () => {
             <h2 className='text-6xl font-extrabold mb-6 uppercase text-white'>see available restaurant</h2>
             <h2 className='text-2xl text-white font-bold mb-4'> Rediscovering Traditional Flavors with a Modern Twist</h2>
           </div>
-          <div className='flex items-center mx-auto mb-10'>
+          <div className='w-1/2 mx-auto'>
+                <form className='mt-10'>
+      <label htmlFor="default-search" className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">
+        Search
+      </label>
+      <div className="relative">
+        <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+          <svg
+            className="w-4 h-4 text-gray-500 dark:text-gray-400"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 20 20"
+          >
+            <path
+              stroke="currentColor"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
+            />
+          </svg>
+        </div>
+        <input
+        value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)}
+        onClick={() => setFieldClicked(true)}
+        onBlur={() => setFieldClicked(false)}
+        type="search"
+          id="default-search"
+          className="block w-full p-3 pl-10 text-xl text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-orange-500 focus:border-orange-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-orange-500 dark:focus:border-orange-500"
+          placeholder="Search blogs "
+          required
+        />
+        <button
+        onClick={handleSearch}
+          type="submit"
+          className="text-white absolute right-2.5 bottom-2.5 bg-black duration-500 hover:bg-orange-500 focus:ring-4 focus:outline-none focus:ring-orange-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-orange-600 dark:hover:bg-orange-700 dark:focus:ring-orange-800"
+        >
+          Search
+        </button>
+      </div>
+    </form>
+                </div>
+          {/* <div className='flex items-center mx-auto mb-10'>
           <div className="relative max-w-sm mx-auto mt-7 flex">
             <input value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)}
                 className={`w-full py-3 px-5 text-4xl rounded-full ${
@@ -89,12 +136,8 @@ const Restaurant = () => {
                 </svg>
             </button>
         </div>
-            {/* <input type="text" name='search-data' value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} className='rounded-3xl w-[40%] md:ml-80 pt-4 pb-4 border-0 text-2xl dark:text-black pl-5' placeholder='search restaurant' />
-            <button onClick={handleSearch} className='bg-blue-500 text-white pl-7 pr-7 pt-3 pb-3 text-4xl rounded-3xl ml-2'><FaLocationArrow /> </button> */}
-
-            {/* <input type="text" name="" className='w-full lg:w-[300px] dark:bg-gray-200 py-3 pl-4 text-black rounded-lg' id="" />
-            <button className='class="absolute bg-black text-white font-bold py-2 rounded-lg px-2 right-1 top-1"'>search</button> */}
-          </div>
+            
+          </div> */}
           <div className='p-10 md:w-[90%] -mb-36 border-4 border-orange-400 dark:bg-black dark:text-white mt-10 bottom-10 rounded-3xl bg-white mx-auto grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
             <div className=''>
               <p className='flex items-center'><span className='text-4xl font-extrabold'> 30</span> <span className='text-4xl font-extrabold'>+</span></p>
@@ -135,35 +178,7 @@ const Restaurant = () => {
               </div>
             </div>
           </div>
-
-//       <div key={item._id} className='group relative items-center justify-center overflow-hidden cursor-pointer hover:shadow-xl hover:shadow-black/30 transition-shadow'>
-// <div className='h-96 w-96 '>
-//   <img className='h-full w-full object-cover group-hover:rotate-3 group-hover:scale-125 transition-transform duration-500' src={item.restaurantImage} alt="" />
-// </div>
-// <div className="absolute insert-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70"></div>
-// <div className='absolute inset-0 items-center text-center px-9 translate-y-[60%] group-hover:translate-x-0 transition-all'>
-//  <h3> tufael</h3>
-//  <p className='text-lg italic text-white mb-5 opacity-0 group-hover:opacity-100 transition-opacity duration-300'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, at!</p>
-//   <button className='rounded-full shadow shadow-black/60 bg-neutral-900 py-2 px-3.5  '>read more</button>
-//   </div>
-//       </div>
           
-
-          // <div key={item._id} className=" bg-white mt-36 dark:drop-shadow-lg shadow-lg dark:border-2 dark:border-orange-300 dark:bg-black dark:text-white rounded-lg overflow-hidden my-5">
-          //   <img className="w-full h-60 object-cover rounded-lg" src={item.restaurantImage} alt="Food Image" />
-          //   <div className="px-4 py-2">
-          //     <h1 className="text-gray-900 dark:text-white font-bold text-2xl uppercase mt-3 mb-2">{item.restaurantName}</h1>
-          //     <p className="text-gray-600 dark:text-white text-sm mt-1">{item.descriptionFirst.slice(0, 150)}</p>
-          //   </div>
-          //   <div className="flex items-center justify-between px-4 py-2 ">
-          //     <h1 className=" font-bold text-xl">{item.place}</h1>
-          //     <Link to={`/restaurant/${item._id}`} className="bg-orange-500 hover:bg-orange-600 hover:transition hover:duration-400 text-white font-bold py-2 px-4 rounded-full flex items-center">
-          //       Details
-          //     </Link >
-
-          //   </div>
-          // </div>
-
         ))}
       </div>
       {/* Pagination  */}
