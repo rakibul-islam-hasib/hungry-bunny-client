@@ -1,12 +1,17 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useFoodCart } from '../../hooks/userFoodCart';
 import { AiOutlineLoading3Quarters } from 'react-icons/ai';
 import { FaMinus, FaPlus, FaTrash } from 'react-icons/fa';
 import useAxiosSecure from '../../hooks/useAxiosSecure';
+import { useDispatch } from 'react-redux';
+import { setTotalPrice } from '../../redux/slices/utilsSlice';
+import { useNavigate } from 'react-router-dom';
 
 const Checkout = () => {
-    const [cart, isLoading, refetch] = useFoodCart();
+    const [cart = [], isLoading, refetch] = useFoodCart();
     const axios = useAxiosSecure();
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
     const handleQuantityChange = (condition, item = []) => {
         console.log(item)
         // Get a random item from items array
@@ -24,6 +29,14 @@ const Checkout = () => {
     const onRemove = (item) => {
         // Implement remove item logic
     };
+
+
+    const getTotalPrice = cart.reduce((acc, item) => acc + (item.foodDetails.price * item.quantity), 0).toFixed(2);
+    useEffect(() => {
+        dispatch(setTotalPrice(getTotalPrice))
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [cart, getTotalPrice])
+
 
     if (isLoading)
         return (
@@ -105,6 +118,15 @@ const Checkout = () => {
                     </tbody>
                 </table>
             }
+            <div className="">
+                <h1 className="text-2xl font-bold text-center">Total: ৳{cart.reduce((acc, item) => acc + (item.foodDetails.price * item.quantity), 0).toFixed(2)}</h1>
+                {/* Pay btn */}
+                <div className="flex justify-center mt-4">
+                    <button onClick={() => navigate('/next/payment')} disabled={getTotalPrice <= 0} className="bg-primary text-white px-4 py-2 rounded-md hover:bg-primary-dark">
+                        Pay
+                    </button>
+                </div>
+            </div>
         </div>
     );
 };

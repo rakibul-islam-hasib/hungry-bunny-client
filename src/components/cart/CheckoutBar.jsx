@@ -156,7 +156,12 @@ const CheckoutBar = () => {
         </table>
 
         <div className="">
-          <button onClick={() => navigate('/shop/next/checkout')} className='w-full bg-primary text-xl font-bold text-red-100 py-2'>
+          <button onClick={
+            () => {
+              navigate('/shop/next/checkout')
+              dispatch(setCheckoutOpen(false))
+            }
+          } className='w-full bg-primary text-xl font-bold text-red-100 py-2'>
             Continue to Payment
           </button>
         </div>
