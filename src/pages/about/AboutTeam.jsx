@@ -3,6 +3,8 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import { AiOutlineMail, AiOutlinePhone, AiFillFacebook, AiFillInstagram, AiFillGithub, AiFillLinkedin } from "react-icons/ai";
 import { Link } from 'react-router-dom';
+import FacebookSvg from '../../assets/svg/FacebookSvg';
+import InstagramSvg from '../../assets/svg/InstagramSvg';
 
 const AboutTeam = () => {
   const [members, setMembers] = useState([])
@@ -31,18 +33,20 @@ const AboutTeam = () => {
                 <div className="font-bold mb-2 ">
                   <h1 className='text-3xl mt-5 text-primary'>{member.name}</h1>
                   <h1 className='text-normal'>{member.roll}</h1>
-                  
+
                 </div>
                 <p className="text-gray-700 h-24 ">
                   {member.description.slice(0, 170)}
                 </p>
               </div>
+              <Link to={member.portfolio} className='text-primary font-semibold '> Portfolio:<span className='ml-2 '> {member.name}</span></Link>
               <div className="pt-8 flex justify-center gap-4 pb-2">
-                
-                <Link className='' to={member.facebook_url}><AiFillFacebook className='text-2xl mx-auto' />Facebook</Link>
-                <Link className='' to={member.facebook_url}><AiFillLinkedin className='text-2xl mx-auto' />Linkedin</Link>
-                <Link className='' to={member.facebook_url}><AiFillGithub className='text-2xl mx-auto' />Github</Link>
-                <Link className='' to={member.facebook_url}><AiFillInstagram className='text-2xl mx-auto' />Instagram</Link>
+
+
+                <Link className='' to={member.facebook_url}> <FacebookSvg className='mx-auto h-10 ' />Facebook</Link>
+                <Link className='' to={member.instagram_url}> <InstagramSvg className='mx-auto h-10 ' />Instagram</Link>
+                <Link className='' to={member.facebook_url}> <FacebookSvg className='mx-auto h-10 ' />Facebook</Link>
+                <Link className='' to={member.instagram_url}> <InstagramSvg className='mx-auto h-10 ' />Instagram</Link>
 
               </div>
             </div>
