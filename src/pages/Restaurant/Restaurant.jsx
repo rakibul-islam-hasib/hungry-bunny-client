@@ -28,7 +28,11 @@ const Restaurant = () => {
       .catch(err => console.log(err))
 
     axios.get(`/restaurant?limit=6&page=${page}`)
-      .then(res => setAllRestaurants(res.data))
+      .then(res => {
+        // const restaurants = res.data.filter(item => item.status === 'approved')
+        setAllRestaurants(res.data)
+        // console.log(restaurants);
+      })
       .catch(err => console.log(err))
     window.scrollTo(0, 0);
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -174,35 +178,6 @@ const Restaurant = () => {
               </div>
             </div>
           </div>
-
-//       <div key={item._id} className='group relative items-center justify-center overflow-hidden cursor-pointer hover:shadow-xl hover:shadow-black/30 transition-shadow'>
-// <div className='h-96 w-96 '>
-//   <img className='h-full w-full object-cover group-hover:rotate-3 group-hover:scale-125 transition-transform duration-500' src={item.restaurantImage} alt="" />
-// </div>
-// <div className="absolute insert-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70"></div>
-// <div className='absolute inset-0 items-center text-center px-9 translate-y-[60%] group-hover:translate-x-0 transition-all'>
-//  <h3> tufael</h3>
-//  <p className='text-lg italic text-white mb-5 opacity-0 group-hover:opacity-100 transition-opacity duration-300'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, at!</p>
-//   <button className='rounded-full shadow shadow-black/60 bg-neutral-900 py-2 px-3.5  '>read more</button>
-//   </div>
-//       </div>
-          
-
-          // <div key={item._id} className=" bg-white mt-36 dark:drop-shadow-lg shadow-lg dark:border-2 dark:border-orange-300 dark:bg-black dark:text-white rounded-lg overflow-hidden my-5">
-          //   <img className="w-full h-60 object-cover rounded-lg" src={item.restaurantImage} alt="Food Image" />
-          //   <div className="px-4 py-2">
-          //     <h1 className="text-gray-900 dark:text-white font-bold text-2xl uppercase mt-3 mb-2">{item.restaurantName}</h1>
-          //     <p className="text-gray-600 dark:text-white text-sm mt-1">{item.descriptionFirst.slice(0, 150)}</p>
-          //   </div>
-          //   <div className="flex items-center justify-between px-4 py-2 ">
-          //     <h1 className=" font-bold text-xl">{item.place}</h1>
-          //     <Link to={`/restaurant/${item._id}`} className="bg-orange-500 hover:bg-orange-600 hover:transition hover:duration-400 text-white font-bold py-2 px-4 rounded-full flex items-center">
-          //       Details
-          //     </Link >
-
-          //   </div>
-          // </div>
-
         ))}
       </div>
       {/* Pagination  */}

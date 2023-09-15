@@ -69,8 +69,8 @@ const UserWelcome = () => {
       </div>
     </form>
                 </div>
-            <div className='flex items-center'>
-            <h1 className='text-4xl font-bold text-orange-400 mr-6'>Welcome {firebaseUser?.displayName}</h1>
+            <div className='flex items-center -mb-5'>
+            <h1 className='text-4xl -mb-4 font-bold text-orange-400 mr-6'>Welcome {firebaseUser?.displayName}</h1>
             <img className='w-20 rounded-full' src="https://images.generated.photos/P2tzhpRdA_aiFi3kf2sPjw-vYJXi7hQE349GFBGi2ds/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/OTY4MjM4LmpwZw.jpg" alt="user image" />
             </div>
             </div>
@@ -80,28 +80,28 @@ const UserWelcome = () => {
         <div className='text-center bg-cyan-500 text-white p-5 rounded-md drop-shadow-lg flex justify-between items-center'>
         <div>
         <p className='text-4xl font-bold flex'>  <span className='font-extrabold'><TbCurrencyTaka/> </span> <span>00.00</span></p>
-        <p className='text-gray-800'>your total cost</p>
+        <p className='text-gray-800 text-2xl'>your total cost</p>
         </div>
         <div className='text-6xl'><FaWallet/> </div>
         </div>
         <div className='text-center bg-purple-500 text-white p-5 rounded-md drop-shadow-lg flex justify-between items-center'>
         <div>
         <p className='text-4xl font-bold text-left'>  00</p>
-        <p className='text-gray-800'>number of payments</p>
+        <p className='text-gray-800 text-1xl'>number of payments</p>
         </div>
         <div className='text-6xl'><FaPaypal/>  </div>
         </div>
         <div className='text-center bg-pink-500 text-white p-5 rounded-md drop-shadow-lg flex justify-between items-center'>
         <div>
         <p className='text-4xl font-bold text-left'>  00</p>
-        <p className='text-gray-800'>number of ordered foods</p>
+        <p className='text-gray-800 text-1xl'>number of ordered foods</p>
         </div>
         <div className='text-6xl'><MdFastfood/> </div>
         </div>
         <div className='text-center bg-yellow-500 text-white p-5 rounded-md drop-shadow-lg flex justify-between items-center'>
         <div>
         <p className='text-4xl font-bold text-left'>  00</p>
-        <p className='text-gray-800'>total contact</p>
+        <p className='text-gray-800 text-2xl'>total contact</p>
         </div>
         <div className='text-6xl'><FaPhoneAlt/> </div>
         </div>
