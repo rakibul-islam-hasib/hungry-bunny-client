@@ -2,6 +2,10 @@ import React from "react";
 import CustomersProgress from "./CustomersProgress";
 import CustomerStatus from "./CustomerStatus";
 import { useAuth } from "../../../../hooks/useAuth";
+import { AiFillSignal } from "react-icons/ai";
+import { FaClipboardList } from "react-icons/fa";
+import { PiBowlFood } from "react-icons/pi";
+import { MdPendingActions } from "react-icons/md";
 
 const AdminCustomers = () => {
   const { user: firebaseUser } = useAuth()
@@ -95,7 +99,36 @@ const AdminCustomers = () => {
   </div> 
            </div>
             </div>
-
+<div className="mb-9 gap-x-5 grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+  <div className="flex justify-between p-4 bg-gradient-to-r from-orange-600 to-orange-400 rounded-md">
+    <div className="text-white">
+    <p className="text-4xl font-bold">$ 00.00</p>
+    <h2 className="text-2xl">total revenue</h2>
+    </div>
+    <AiFillSignal className="text-5xl text-white"/>
+  </div>
+  <div className="flex justify-between p-4 bg-gradient-to-r from-cyan-600 to-cyan-400 rounded-md">
+    <div className="text-white">
+    <p className="text-4xl font-bold"> 00</p>
+    <h2 className="text-2xl">total orders</h2>
+    </div>
+    <FaClipboardList className="text-5xl text-white"/>
+  </div>
+  <div className="flex justify-between p-4 bg-gradient-to-r from-blue-600 to-blue-400 rounded-md">
+    <div className="text-white">
+    <p className="text-4xl font-bold"> 00</p>
+    <h2 className="text-2xl">total foods</h2>
+    </div>
+    <PiBowlFood className="text-5xl text-white"/>
+  </div>
+  <div className="flex justify-between p-4 bg-gradient-to-r from-yellow-600 to-yellow-400 rounded-md">
+    <div className="text-white">
+    <p className="text-4xl font-bold"> 00</p>
+    <h2 className="text-2xl">Pending orders</h2>
+    </div>
+    <MdPendingActions className="text-5xl text-white"/>
+  </div>
+</div>
       <div className="flex">
         <div className="w-4/6 h-72 ">
           <h3 className="text-center -mb-10 font-semibold text-3xl">
