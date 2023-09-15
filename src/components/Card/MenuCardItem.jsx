@@ -3,6 +3,7 @@ import { FaRegBookmark } from 'react-icons/fa';
 import { toast } from 'react-toastify';
 import useUserSecure from '../../hooks/useUserSecure';
 import useAxiosSecure from '../../hooks/useAxiosSecure';
+import { useFoodCart } from '../../hooks/userFoodCart';
 
 const MenuCardItem = (menu) => {
   const { _id, food_name, category, description, restaurant_name, price, image } = menu
@@ -10,7 +11,7 @@ const MenuCardItem = (menu) => {
   const [loading, setLoading] = useState(false);
   const axios = useAxiosSecure();
   const [user] = useUserSecure();
-
+  const [, , refetch] = useFoodCart();
   const cartHandler = (itemId, restaurant_id) => {
     if (!user) return toast.error('Please Login First');
     const data = {
@@ -26,6 +27,7 @@ const MenuCardItem = (menu) => {
     })
       .then((data) => {
         console.log(data.data)
+        refetch();
       })
       .catch((err) => {
         console.log(err)

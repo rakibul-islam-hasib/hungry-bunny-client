@@ -1,4 +1,4 @@
-import React, { useEffect,  useRef, useMemo } from 'react';
+import React, { useEffect, useRef, useMemo } from 'react';
 import gsap from 'gsap';
 import { AiOutlineCloseSquare } from 'react-icons/ai';
 import useUtils from '../../hooks/useUtils';
@@ -6,13 +6,16 @@ import { useDispatch } from 'react-redux';
 import { setCheckoutOpen } from '../../redux/slices/utilsSlice';
 import { useFoodCart } from '../../hooks/userFoodCart';
 import { FaTrash } from 'react-icons/fa';
+import useAxiosSecure from '../../hooks/useAxiosSecure';
+import { toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
 
 const CheckoutBar = () => {
   const { isCheckoutOpen } = useUtils();
   const dispatch = useDispatch();
-
-  const [cart = []] = useFoodCart();
-
+  const axios = useAxiosSecure();
+  const [cart = [], , refetch] = useFoodCart();
+  const navigate = useNavigate();
   const sortedCart = useMemo(() => {
     return cart.sort((a, b) => b.quantity - a.quantity);
   }, [cart]);
@@ -46,9 +49,34 @@ const CheckoutBar = () => {
     }
   }, [isCheckoutOpen]);
 
-  const onDelete = (id) => {
-    console.log(id);
+  const onDelete = (cartIds) => {
+    console.log(cartIds)
+    // Get a random id from the cartIds array
+    toast.promise(axios.delete(`/cart/delete/`, { data: { cartIds } }), {
+      pending: 'Deleting...',
+      success: 'Deleted',
+      error: 'Something went wrong'
+    })
+      .then((res) => {
+        console.log(res.data);
+        refetch();
+      })
+      .catch((err) => {
+        console.log(err);
+      })
   }
+
+  // 10% discount 
+  const discount = (sortedCart.reduce((acc, item) => acc + (item.foodDetails.price * item.quantity), 0) * 0.05).toFixed(2);
+  // Subtotal with discount
+  const subtotal = (sortedCart.reduce((acc, item) => acc + (item.foodDetails.price * item.quantity), 0) - discount).toFixed(2);
+
+  // 0.2% shipping fee
+  const shippingFee = (sortedCart.reduce((acc, item) => acc + (item.foodDetails.price * item.quantity), 0) * 0.002).toFixed(2);
+
+  // Total
+  const total = (Number(subtotal) + Number(shippingFee)).toFixed(2);
+
 
 
   return (
@@ -86,7 +114,7 @@ const CheckoutBar = () => {
               </div>
               <div className="">
                 <button
-                  onClick={() => onDelete(item._id)}
+                  onClick={() => onDelete(item.cartIds)}
                   className="text-red-500 hover:text-red-700"
                 >
                   <FaTrash />
@@ -110,25 +138,25 @@ const CheckoutBar = () => {
           <tbody>
             <tr>
               <td className="px-4">Discount</td>
-              <td className="px-4 text-right">-$5.00</td>
+              <td className="px-4 text-right">-${discount}</td>
             </tr>
             <tr>
               <td className="px-4">Subtotal</td>
-              <td className="px-4 text-right">$25.00</td>
+              <td className="px-4 text-right">${subtotal}</td>
             </tr>
             <tr>
               <td className="px-4">Shipping Fee</td>
-              <td className="px-4 text-right">$5.00</td>
+              <td className="px-4 text-right">${shippingFee}</td>
             </tr>
             <tr>
               <td className="px-4 font-bold">Total</td>
-              <td className="px-4 text-right font-bold">$30.00</td>
+              <td className="px-4 text-right font-bold">${total}</td>
             </tr>
           </tbody>
         </table>
 
         <div className="">
-          <button className='w-full bg-primary text-xl font-bold text-red-100 py-2'>
+          <button onClick={() => navigate('/shop/next/checkout')} className='w-full bg-primary text-xl font-bold text-red-100 py-2'>
             Continue to Payment
           </button>
         </div>
