@@ -6,6 +6,7 @@ import BeReadyForPayment from './BeReadyForPayment';
 import { loadStripe } from '@stripe/stripe-js';
 import { Elements } from '@stripe/react-stripe-js';
 import { Navigate } from 'react-router-dom';
+import { useFoodCart } from '../../hooks/userFoodCart';
 const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLIC_KEY)
 
 const Payment = () => {
@@ -13,6 +14,7 @@ const Payment = () => {
     const [loader, setLoader] = useState(false)
     const { totalPrice } = useUtils();
     const axios = useAxiosSecure();
+    const [cart = [], isLoading] = useFoodCart();
     useEffect(() => {
         setLoader(true)
         axios.post('/payment/create-payment-intent', { price: totalPrice })
@@ -25,8 +27,16 @@ const Payment = () => {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [totalPrice])
 
+    const cartIds = cart.map(item => item.cartIds)
+    const flattenCartIds = cartIds.flat()
+    const uniqueCartIds = [...new Set(flattenCartIds)]
+
+
+
+
+
     if (intent.error) return <Navigate to="/shop/next/checkout" />
-    if (loader) return <div className="h-screen w-full flex justify-center items-center">
+    if (loader || isLoading) return <div className="h-screen w-full flex justify-center items-center">
         <AiOutlineLoading3Quarters className="text-5xl text-primary animate-spin" />
     </div>
 
@@ -34,7 +44,7 @@ const Payment = () => {
         <div>
             <h1>Payment JSX</h1>
             <Elements stripe={stripePromise}>
-                <BeReadyForPayment intent={intent.clientSecret} />
+                <BeReadyForPayment cartIds={uniqueCartIds} intent={intent.clientSecret} />
             </Elements>
         </div>
     );

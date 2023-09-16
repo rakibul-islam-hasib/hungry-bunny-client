@@ -8,7 +8,8 @@ import { setPaymentInfo } from '../../redux/slices/utilsSlice';
 import useAxiosSecure from '../../hooks/useAxiosSecure';
 import { AiOutlineLoading3Quarters } from 'react-icons/ai';
 import useAxiosFetch from '../../hooks/useAxiosFetch';
-const BeReadyForPayment = ({ intent }) => {
+const BeReadyForPayment = ({ intent, cartIds }) => {
+    console.log(cartIds)
     const [loading, setLoading] = useState(false);
     const [message, setMessage] = useState('');
     const { user } = useAuth();
@@ -16,6 +17,7 @@ const BeReadyForPayment = ({ intent }) => {
     const elements = useElements();
     const dispatch = useDispatch();
     const axios = useAxiosFetch();
+    const axiosS = useAxiosSecure();
     const handleSubmit = async (event) => {
         setMessage('');
         setLoading(true);
@@ -64,7 +66,7 @@ const BeReadyForPayment = ({ intent }) => {
                 dispatch(setPaymentInfo(paymentIntent))
                 const paymentData = {
                     paymentId: paymentIntent.id,
-                    paymentAmount: paymentIntent.amount,
+                    paymentAmount: paymentIntent.amount / 100,
                     paymentStatus: paymentIntent.status,
                     paymentMethod: paymentIntent.payment_method_types[0],
                     paymentDate: paymentIntent.created,
@@ -76,10 +78,24 @@ const BeReadyForPayment = ({ intent }) => {
                     .then(res => {
                         console.log(res.data)
                         setMessage(paymentIntent.status === 'succeeded' ? 'Payment Successful' : 'Payment Failed')
+                        // TODO : replace this with base url
+                        fetch(`http://localhost:5000/payment/delete-cart-items`, {
+                            method: 'DELETE',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({ cartItems: cartIds })
+                        })
+                            .then(res => {
+                                console.log(res.data, 'cart items deleted')
+                            })
+                            .catch(err => console.log(err))
                     })
                     .catch(err => console.log(err))
                     .finally(() => setLoading(false))
+
             }
+
         }
     };
     return (

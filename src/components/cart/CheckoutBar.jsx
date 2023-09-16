@@ -166,11 +166,6 @@ const CheckoutBar = () => {
           </button>
         </div>
       </div>
-
-      <div className="text-center text-gray-500 text-xs mt-2">
-        Render count: {renderCount.current}
-      </div>
-
     </div>
   );
 };
