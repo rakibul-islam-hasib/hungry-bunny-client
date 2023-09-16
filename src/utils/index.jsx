@@ -120,6 +120,17 @@ export const categoryOptions = [
     { value: 'SeaFood', label: 'SeaFood' },
     
 ];
+export const division = [
+    { value: '', label: 'Select Division' },
+    { value: 'Dhaka', label: 'Dhaka Division' },
+    { value: 'Chittagong', label: 'Chittagong Division' },
+    { value: 'Khulna', label: 'Khulna Division' },
+    { value: 'Mymensingh', label: 'Mymensingh Division' },
+    { value: 'Rajshahi', label: 'Rajshahi Division' },
+    { value: 'Rangpur', label: 'Rangpur Division' },
+    { value: 'Sylhet', label: 'Sylhet Division' },
+    
+];
 
 export const districts = [
     {

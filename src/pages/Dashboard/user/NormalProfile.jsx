@@ -112,78 +112,61 @@ const NormalProfile = () => {
                     </div>
                 </div>
 
-                <div className='lg:flex md:flex justify-between'>
 
-                    {/* contact-info */}
-
-                    <div>
-                        <div className='my-10 flex justify-between'>
-                            <div>
-                                <h1><span className='text-2xl font-bold text-primary'>Contact Information :</span> <br />
-
-                                </h1>
-                                <div className="flex items-center mt-3">
-                                    <AiOutlineMail className='text-xl mr-2 mb-3' />
-                                    <h6 className="mb-4 font-sans text-md font-semibold leading-relaxed tracking-normal text-black antialiased">
-                                        hanryrobart@gmail.com
-                                    </h6>
-                                </div>
-                                <div className="flex items-center">
-                                    <AiOutlinePhone className='text-xl mr-2 mb-3' />
-                                    <h6 className="mb-4 font-sans text-md font-semibold leading-relaxed tracking-normal text-black antialiased">
-                                        +(555) 555-1234
-                                    </h6>
-                                </div>
-                                <div className="flex items-center">
-                                    <FaMapMarkerAlt className='text-xl mr-2 mb-3' />
-                                    <h6 className="mb-4 font-sans text-md font-semibold leading-relaxed tracking-normal text-black antialiased">
-                                        Gazipur,Dhaka
-                                    </h6>
-                                </div>
-
-                            </div>
+                <div className='flex justify-between'>
+                    <div className='space-y-2'>
+                        <h1 className='mb-5 text-2xl font-bold text-primary'>Address Information</h1>
+                        <div className='flex gap-2'>
+                            <h1>{user?.location?.union},</h1>
+                            <h1>{user?.location?.upazila}</h1>
                         </div>
-                        <div className='my-10'>
-                            <h1><span className='text-2xl font-bold text-primary'>Social Networks :</span>
-
-                            </h1>
-                            <div className='flex justify-evenly max-w-[14rem] my-5'>
-
-                                <span><AiFillFacebook className='text-3xl' /></span>
-                                <span><AiFillGithub className='text-3xl' /></span>
-                                <span><AiFillInstagram className='text-3xl' /></span>
-                                <span><FaLinkedin className='text-3xl' /></span>
-                            </div>
-
+                        <div className='flex gap-2'>
+                            <h1>{user?.location?.city}</h1>
+                            <h1>{user?.location?.division}</h1>
+                            <h1>{user?.location?.country}</h1>
                         </div>
+
                     </div>
-
-                    {/* links */}
-
-                    <div className='me-10'>
-                        <div className='my-10 flex justify-between'>
-                            <div>
-                                <h1><span className='text-xl font-bold text-primary'>Email : </span> <span className='text-lg font-bold '> nowshinakteremu005@gmail.com</span></h1>
-                                <h1 className='text-lg font-bold ms-20 '>nowshinakteremu003@gmail.com</h1>
-                            </div>
-                            
+                    <div>
+                        <h1 className='mb-5 text-2xl font-bold text-primary'>Contact Information</h1>
+                        <div className=' '>
+                            <h1 className='flex gap-2 items-center'><AiOutlineMail className='text-xl ' /><span >{user?.email}</span></h1>
+                            <h1 className='flex gap-2 items-center'><AiOutlinePhone className='text-xl ' /><span >{user?.email}</span></h1>
+                            <h1 className='flex gap-2 items-center'><FaMapMarkerAlt className='text-xl ' /><span >{user?.email}</span></h1>
                         </div>
 
-                        <div className='my-10'>
-                            <h1><span className='text-xl font-bold text-primary'>Links :</span>
-
-                            </h1>
-                            <div className='mt-3 font-bold'>
-                                <div className="flex items-center ">
-                                    <FaLink className='text-lg text-neutral-500 mr-2 mb-3 font-bold' />
-                                    <Link className=' px-3 py-1 text-lg mb-3 text-gray-700' to="">Portfolio : https://nowshin-akter.netlify.app</Link>
-                                </div>
-
-
-                            </div>
-                        </div>
                     </div>
                 </div>
+                <div className='w-2/3 h-64  mx-auto'>
+                    <h1 className='mb-5 text-2xl font-bold text-primary'>Billing Information</h1>
+                    <div className="w-full space-y-6  flex-row rounded-xl bg-white bg-clip-border text-gray-700 shadow-md  mb-10 me-7">
+
+                        <div className="p-4">
+                            <h6 className="mb-1 block font-sans text-lg font-bold uppercase leading-relaxed tracking-normal text-pink-500 antialiased">
+                                **** **** **** 4696
+                            </h6>
+                            <h4 className="mb-2 block font-sans text-sm font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
+                                12/25
+                            </h4>
+                            <div className='flex lg:flex md:flex justify-between sm:flex'>
+                                <span>
+                                    <p className="mb-2 pb-2 block font-sans text-base font-normal leading-relaxed text-gray-700 antialiased">
+                                       {user?.name}
+                                    </p>
+                                </span>
+                                <span>
+                                    <h1 className="mb-2 pb-2 block font-sans text-base font-normal leading-relaxed text-gray-700 antialiased">VISA</h1>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+
+
 
 
 

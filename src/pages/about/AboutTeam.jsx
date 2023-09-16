@@ -27,7 +27,7 @@ const AboutTeam = () => {
 
             <div key={idx} title={member.name} className="  rounded-t-full  overflow-hidden shadow-lg   hover:border-primary hover:bg-primary hover:bg-opacity-5 border-orange-300  transform transition duration-300 hover:scale-105">
               <div className='text-center flex justify-center '>
-                <img className="w-80 h-80 rounded-lg" src={member.photo_url} alt="Sunset in the mountains" />
+                <img className="w-80 h-80 rounded-lg" src={member.photo_url} alt={member.name}/>
               </div>
               <div className="text-start">
                 <div className="font-bold mb-2 ">

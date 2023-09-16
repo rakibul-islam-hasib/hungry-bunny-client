@@ -38,7 +38,6 @@ const UserProfile = () => {
             .catch((err) => {
                 console.log(err);
             })
-
     };
 
     if (isLoading) return <Loader />
@@ -172,7 +171,7 @@ const UserProfile = () => {
 
                         <div className='gap-2'>
                             <input type="submit" value="Discard changes" className="bg-slate-200 hover:bg-slate-300 font-bold py-2 px-4 rounded text-black" />
-                            <input type="submit" value="Save changes" className=" bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded p-2 ms-2" />
+                            <input type="submit" value="Save changes" className=" bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded p-2 ms-2 " />
 
                         </div>
                     </div>
