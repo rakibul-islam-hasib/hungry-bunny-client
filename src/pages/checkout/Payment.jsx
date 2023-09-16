@@ -14,7 +14,7 @@ const Payment = () => {
     const [loader, setLoader] = useState(false)
     const { totalPrice } = useUtils();
     const axios = useAxiosSecure();
-    const [cart = [], isLoading] = useFoodCart();
+    const [cart = [], isLoading, refetch] = useFoodCart();
     useEffect(() => {
         setLoader(true)
         axios.post('/payment/create-payment-intent', { price: totalPrice })
@@ -44,7 +44,7 @@ const Payment = () => {
         <div>
             <h1>Payment JSX</h1>
             <Elements stripe={stripePromise}>
-                <BeReadyForPayment cartIds={uniqueCartIds} intent={intent.clientSecret} />
+                <BeReadyForPayment refetch={refetch} cartIds={uniqueCartIds} intent={intent.clientSecret} />
             </Elements>
         </div>
     );

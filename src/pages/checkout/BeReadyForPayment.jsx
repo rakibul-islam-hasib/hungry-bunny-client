@@ -5,11 +5,9 @@ import { useAuth } from '../../hooks/useAuth';
 import { toast } from 'react-toastify';
 import { useDispatch } from 'react-redux';
 import { setPaymentInfo } from '../../redux/slices/utilsSlice';
-import useAxiosSecure from '../../hooks/useAxiosSecure';
 import { AiOutlineLoading3Quarters } from 'react-icons/ai';
 import useAxiosFetch from '../../hooks/useAxiosFetch';
-const BeReadyForPayment = ({ intent, cartIds }) => {
-    console.log(cartIds)
+const BeReadyForPayment = ({ intent, cartIds , refetch }) => {
     const [loading, setLoading] = useState(false);
     const [message, setMessage] = useState('');
     const { user } = useAuth();
@@ -17,7 +15,6 @@ const BeReadyForPayment = ({ intent, cartIds }) => {
     const elements = useElements();
     const dispatch = useDispatch();
     const axios = useAxiosFetch();
-    const axiosS = useAxiosSecure();
     const handleSubmit = async (event) => {
         setMessage('');
         setLoading(true);
@@ -86,8 +83,12 @@ const BeReadyForPayment = ({ intent, cartIds }) => {
                             },
                             body: JSON.stringify({ cartItems: cartIds })
                         })
+                            .then(res => res.json())
                             .then(res => {
-                                console.log(res.data, 'cart items deleted')
+                                console.log(res, 'cart items deleted')
+                                if (res.deletedCount > 0) { 
+                                    refetch()
+                                }
                             })
                             .catch(err => console.log(err))
                     })
