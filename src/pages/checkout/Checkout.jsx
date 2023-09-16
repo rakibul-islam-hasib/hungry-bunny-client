@@ -6,12 +6,14 @@ import useAxiosSecure from '../../hooks/useAxiosSecure';
 import { useDispatch } from 'react-redux';
 import { setTotalPrice } from '../../redux/slices/utilsSlice';
 import { useNavigate } from 'react-router-dom';
+import useUtils from '../../hooks/useUtils';
 
 const Checkout = () => {
     const [cart = [], isLoading, refetch] = useFoodCart();
     const axios = useAxiosSecure();
     const dispatch = useDispatch();
     const navigate = useNavigate();
+    const { paymentInfo } = useUtils();
     const handleQuantityChange = (condition, item = []) => {
         console.log(item)
         // Get a random item from items array
@@ -36,6 +38,13 @@ const Checkout = () => {
         dispatch(setTotalPrice(getTotalPrice))
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [cart, getTotalPrice])
+
+    useEffect(() => {
+        if (paymentInfo) {
+            console.log(paymentInfo)
+        }
+
+    }, [paymentInfo])
 
 
     if (isLoading)
