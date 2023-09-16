@@ -7,9 +7,11 @@ import { loadStripe } from '@stripe/stripe-js';
 import { Elements } from '@stripe/react-stripe-js';
 import { Navigate } from 'react-router-dom';
 import { useFoodCart } from '../../hooks/userFoodCart';
+import { useTitle } from '../../hooks/useTitle';
 const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLIC_KEY)
 
 const Payment = () => {
+    useTitle('Payment')
     const [intent, setIntent] = useState({});
     const [loader, setLoader] = useState(false)
     const { totalPrice } = useUtils();
@@ -31,8 +33,13 @@ const Payment = () => {
     const flattenCartIds = cartIds.flat()
     const uniqueCartIds = [...new Set(flattenCartIds)]
 
-
-
+    // Ordered Item And quantity
+    const orderedItem = cart.map(item => {
+        return {
+            foodId: item.foodDetails._id,
+            quantity: item.quantity
+        }
+    })
 
 
     if (intent.error) return <Navigate to="/shop/next/checkout" />

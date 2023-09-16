@@ -7,13 +7,15 @@ import { useDispatch } from 'react-redux';
 import { setPaymentInfo } from '../../redux/slices/utilsSlice';
 import { AiOutlineLoading3Quarters } from 'react-icons/ai';
 import useAxiosFetch from '../../hooks/useAxiosFetch';
-const BeReadyForPayment = ({ intent, cartIds , refetch }) => {
+import useUserSecure from '../../hooks/useUserSecure';
+const BeReadyForPayment = ({ intent, cartIds, refetch }) => {
     const [loading, setLoading] = useState(false);
     const [message, setMessage] = useState('');
     const { user } = useAuth();
     const stripe = useStripe();
     const elements = useElements();
     const dispatch = useDispatch();
+    const [secureUser, isUserLoading] = useUserSecure();
     const axios = useAxiosFetch();
     const handleSubmit = async (event) => {
         setMessage('');
@@ -69,7 +71,9 @@ const BeReadyForPayment = ({ intent, cartIds , refetch }) => {
                     paymentDate: paymentIntent.created,
                     paymentCurrency: paymentIntent.currency,
                     userName: user.displayName || 'Anonymous',
-                    userEmail: user.email
+                    userEmail: user.email,
+                    userId: secureUser._id,
+                    totalItems: cartIds.length,
                 }
                 axios.post('/payment/post-payment-info', paymentData)
                     .then(res => {
@@ -86,7 +90,7 @@ const BeReadyForPayment = ({ intent, cartIds , refetch }) => {
                             .then(res => res.json())
                             .then(res => {
                                 console.log(res, 'cart items deleted')
-                                if (res.deletedCount > 0) { 
+                                if (res.deletedCount > 0) {
                                     refetch()
                                 }
                             })
@@ -119,9 +123,9 @@ const BeReadyForPayment = ({ intent, cartIds , refetch }) => {
                     },
                 }}
             />
-            <button type="submit" disabled={!stripe | !intent}>
+            <button type="submit" disabled={!stripe | !intent | isUserLoading | loading}>
                 {
-                    loading ? <div className="">
+                    loading ? <div className="px-2">
                         <AiOutlineLoading3Quarters className="animate-spin" />
                     </div> : 'Pay'
                 }
