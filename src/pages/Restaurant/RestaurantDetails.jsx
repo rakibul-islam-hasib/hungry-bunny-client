@@ -116,7 +116,7 @@ function RestaurantDetails() {
           <div key={items?._id} className={` border overflow-hidden shadow-lg rounded-md ${items?._id === 1 ? 'w-full' : ''}`}>
           <div>
   
-            <img className="w-full h-64 object-cover transition transform duration-200  hover:-translate-y-2 rounded-lg relative    peer absolute top-0 right-0" src={items?.foodImage} alt="Food Image" />
+            <img className="w-full h-64 object-cover transition transform duration-200  hover:-translate-y-2 rounded-lg relative    peer  top-0 right-0" src={items?.foodImage} alt="Food Image" />
             <svg className="pointer-events-none absolute inset-x-0 bottom-5 mx-auto text-3xl text-white  transition-opacity group-hover:animate-ping group-hover:opacity-30 peer-hover:opacity-0" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32">
               <path fill="currentColor" d="M2 10a4 4 0 0 1 4-4h20a4 4 0 0 1 4 4v10a4 4 0 0 1-2.328 3.635a2.996 2.996 0 0 0-.55-.756l-8-8A3 3 0 0 0 14 17v7H6a4 4 0 0 1-4-4V10Zm14 19a1 1 0 0 0 1.8.6l2.7-3.6H25a1 1 0 0 0 .707-1.707l-8-8A1 1 0 0 0 16 17v12Z" />
             </svg>
