@@ -5,19 +5,18 @@ import { AiOutlineLoading3Quarters } from 'react-icons/ai';
 import BeReadyForPayment from './BeReadyForPayment';
 import { loadStripe } from '@stripe/stripe-js';
 import { Elements } from '@stripe/react-stripe-js';
+import { Navigate } from 'react-router-dom';
 const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLIC_KEY)
 
 const Payment = () => {
     const [intent, setIntent] = useState({});
     const [loader, setLoader] = useState(false)
     const { totalPrice } = useUtils();
-
     const axios = useAxiosSecure();
     useEffect(() => {
         setLoader(true)
         axios.post('/payment/create-payment-intent', { price: totalPrice })
             .then(res => {
-                console.log(res.data)
                 setIntent(res.data)
             })
             .catch(err => console.log(err))
@@ -26,6 +25,7 @@ const Payment = () => {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [totalPrice])
 
+    if (intent.error) return <Navigate to="/shop/next/checkout" />
     if (loader) return <div className="h-screen w-full flex justify-center items-center">
         <AiOutlineLoading3Quarters className="text-5xl text-primary animate-spin" />
     </div>

@@ -1,19 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import './Payment.css'
 import { useAuth } from '../../hooks/useAuth';
 import { toast } from 'react-toastify';
-import useUtils from '../../hooks/useUtils';
 import { useDispatch } from 'react-redux';
 import { setPaymentInfo } from '../../redux/slices/utilsSlice';
+import useAxiosSecure from '../../hooks/useAxiosSecure';
+import { AiOutlineLoading3Quarters } from 'react-icons/ai';
+import useAxiosFetch from '../../hooks/useAxiosFetch';
 const BeReadyForPayment = ({ intent }) => {
-
+    const [loading, setLoading] = useState(false);
+    const [message, setMessage] = useState('');
     const { user } = useAuth();
     const stripe = useStripe();
     const elements = useElements();
     const dispatch = useDispatch();
-
+    const axios = useAxiosFetch();
     const handleSubmit = async (event) => {
+        setMessage('');
+        setLoading(true);
         event.preventDefault();
         if (!stripe || !elements) {
             return;
@@ -28,6 +33,7 @@ const BeReadyForPayment = ({ intent }) => {
         });
         if (error) {
             console.log('[error] : ', error);
+            toast.error(error.message);
         }
         else {
             // console.log('[PaymentMethod]', paymentMethod);
@@ -47,19 +53,39 @@ const BeReadyForPayment = ({ intent }) => {
             },
         );
         if (confirmError) {
-            console.log('[error]', confirmError);
+            toast.error(confirmError.message)
+            setMessage(confirmError.message);
+            setLoading(false);
         }
         else {
             // console.log('[PaymentMethod]', paymentIntent);
-            if (paymentIntent.id) {
-                toast.success('Payment Successful')
+            if (paymentIntent.status === 'succeeded') {
+                toast.success('Payment Successful');
                 dispatch(setPaymentInfo(paymentIntent))
-               
+                const paymentData = {
+                    paymentId: paymentIntent.id,
+                    paymentAmount: paymentIntent.amount,
+                    paymentStatus: paymentIntent.status,
+                    paymentMethod: paymentIntent.payment_method_types[0],
+                    paymentDate: paymentIntent.created,
+                    paymentCurrency: paymentIntent.currency,
+                    userName: user.displayName || 'Anonymous',
+                    userEmail: user.email
+                }
+                axios.post('/payment/post-payment-info', paymentData)
+                    .then(res => {
+                        console.log(res.data)
+                        setMessage(paymentIntent.status === 'succeeded' ? 'Payment Successful' : 'Payment Failed')
+                    })
+                    .catch(err => console.log(err))
+                    .finally(() => setLoading(false))
             }
         }
     };
     return (
         <form id='payment-form' onSubmit={handleSubmit}>
+            <h3>Payment Details</h3>
+            <p className='text-red-600'>{message}</p>
             <CardElement
                 options={{
                     style: {
@@ -77,7 +103,11 @@ const BeReadyForPayment = ({ intent }) => {
                 }}
             />
             <button type="submit" disabled={!stripe | !intent}>
-                Pay
+                {
+                    loading ? <div className="">
+                        <AiOutlineLoading3Quarters className="animate-spin" />
+                    </div> : 'Pay'
+                }
             </button>
         </form>
     );
