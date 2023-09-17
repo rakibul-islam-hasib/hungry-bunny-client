@@ -5,16 +5,17 @@ import { useAuth } from '../../hooks/useAuth';
 import { toast } from 'react-toastify';
 import { useDispatch } from 'react-redux';
 import { setPaymentInfo } from '../../redux/slices/utilsSlice';
-import useAxiosSecure from '../../hooks/useAxiosSecure';
 import { AiOutlineLoading3Quarters } from 'react-icons/ai';
 import useAxiosFetch from '../../hooks/useAxiosFetch';
-const BeReadyForPayment = ({ intent }) => {
+import useUserSecure from '../../hooks/useUserSecure';
+const BeReadyForPayment = ({ intent, cartIds, refetch }) => {
     const [loading, setLoading] = useState(false);
     const [message, setMessage] = useState('');
     const { user } = useAuth();
     const stripe = useStripe();
     const elements = useElements();
     const dispatch = useDispatch();
+    const [secureUser, isUserLoading] = useUserSecure();
     const axios = useAxiosFetch();
     const handleSubmit = async (event) => {
         setMessage('');
@@ -64,22 +65,42 @@ const BeReadyForPayment = ({ intent }) => {
                 dispatch(setPaymentInfo(paymentIntent))
                 const paymentData = {
                     paymentId: paymentIntent.id,
-                    paymentAmount: paymentIntent.amount,
+                    paymentAmount: paymentIntent.amount / 100,
                     paymentStatus: paymentIntent.status,
                     paymentMethod: paymentIntent.payment_method_types[0],
                     paymentDate: paymentIntent.created,
                     paymentCurrency: paymentIntent.currency,
                     userName: user.displayName || 'Anonymous',
-                    userEmail: user.email
+                    userEmail: user.email,
+                    userId: secureUser._id,
+                    totalItems: cartIds.length,
                 }
                 axios.post('/payment/post-payment-info', paymentData)
                     .then(res => {
                         console.log(res.data)
                         setMessage(paymentIntent.status === 'succeeded' ? 'Payment Successful' : 'Payment Failed')
+                        // TODO : replace this with base url
+                        fetch(`http://localhost:5000/payment/delete-cart-items`, {
+                            method: 'DELETE',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({ cartItems: cartIds })
+                        })
+                            .then(res => res.json())
+                            .then(res => {
+                                console.log(res, 'cart items deleted')
+                                if (res.deletedCount > 0) {
+                                    refetch()
+                                }
+                            })
+                            .catch(err => console.log(err))
                     })
                     .catch(err => console.log(err))
                     .finally(() => setLoading(false))
+
             }
+
         }
     };
     return (
@@ -102,9 +123,9 @@ const BeReadyForPayment = ({ intent }) => {
                     },
                 }}
             />
-            <button type="submit" disabled={!stripe | !intent}>
+            <button type="submit" disabled={!stripe | !intent | isUserLoading | loading}>
                 {
-                    loading ? <div className="">
+                    loading ? <div className="px-2">
                         <AiOutlineLoading3Quarters className="animate-spin" />
                     </div> : 'Pay'
                 }
