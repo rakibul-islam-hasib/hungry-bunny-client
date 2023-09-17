@@ -37,10 +37,11 @@ const Payment = () => {
     const orderedItem = cart.map(item => {
         return {
             foodId: item.foodDetails._id,
-            quantity: item.quantity
+            quantity: item.quantity,
+            restaurantId: item.foodDetails.restaurant_id
         }
     })
-
+    console.log(orderedItem , cart)
 
     if (intent.error) return <Navigate to="/shop/next/checkout" />
     if (loader || isLoading) return <div className="h-screen w-full flex justify-center items-center">
