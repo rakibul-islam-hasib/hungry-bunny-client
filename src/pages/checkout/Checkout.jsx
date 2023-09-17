@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { useFoodCart } from '../../hooks/userFoodCart';
 import { AiOutlineLoading3Quarters } from 'react-icons/ai';
 import { FaMinus, FaPlus, FaTrash } from 'react-icons/fa';
@@ -34,6 +34,14 @@ const Checkout = () => {
 
 
     const getTotalPrice = cart.reduce((acc, item) => acc + (item.foodDetails.price * item.quantity), 0).toFixed(2);
+
+    // Sort the cart items by quantity
+    const sortedCart = useMemo(() => {
+        return cart.sort((a, b) => b.quantity - a.quantity);
+    }, [cart]);
+
+
+
     useEffect(() => {
         dispatch(setTotalPrice(getTotalPrice))
         // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -77,7 +85,7 @@ const Checkout = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {cart.map((item) => (
+                        {sortedCart.map((item) => (
                             <tr key={item._id} className="hover:bg-gray-100">
                                 <td className="border p-2">
                                     <div className="flex items-center">
