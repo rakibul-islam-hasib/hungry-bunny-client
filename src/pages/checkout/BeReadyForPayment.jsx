@@ -8,9 +8,13 @@ import { setPaymentInfo } from '../../redux/slices/utilsSlice';
 import { AiOutlineLoading3Quarters } from 'react-icons/ai';
 import useAxiosFetch from '../../hooks/useAxiosFetch';
 import useUserSecure from '../../hooks/useUserSecure';
-const BeReadyForPayment = ({ intent, cartIds, refetch }) => {
+
+const BeReadyForPayment = ({ intent, cartIds, refetch, orderedItem }) => {
+
     const [loading, setLoading] = useState(false);
+
     const [message, setMessage] = useState('');
+
     const { user } = useAuth();
     const stripe = useStripe();
     const elements = useElements();
@@ -74,6 +78,7 @@ const BeReadyForPayment = ({ intent, cartIds, refetch }) => {
                     userEmail: user.email,
                     userId: secureUser._id,
                     totalItems: cartIds.length,
+                    orderedItem: orderedItem
                 }
                 axios.post('/payment/post-payment-info', paymentData)
                     .then(res => {

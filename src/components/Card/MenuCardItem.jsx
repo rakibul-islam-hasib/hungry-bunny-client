@@ -26,6 +26,7 @@ const MenuCardItem = (menu) => {
   const [user] = useUserSecure();
   const [, , refetch] = useFoodCart();
   const cartHandler = (itemId, restaurant_id) => {
+    // return console.log(itemId, restaurant_id)
     if (!user) return toast.error('Please Login First');
     const data = {
       itemId,
