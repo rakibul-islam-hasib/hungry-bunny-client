@@ -51,7 +51,7 @@ const Payment = () => {
         <div>
             <h1>Payment JSX</h1>
             <Elements stripe={stripePromise}>
-                <BeReadyForPayment refetch={refetch} cartIds={uniqueCartIds} intent={intent.clientSecret} />
+                <BeReadyForPayment refetch={refetch} orderedItem={orderedItem} cartIds={uniqueCartIds} intent={intent.clientSecret} />
             </Elements>
         </div>
     );
