@@ -54,7 +54,7 @@ const UserSecurity = () => {
     return (
         <>
         <Helmet>
-        <title>Hungry Bunny || Information security</title>
+        <title>Hungry Bunny || secure your Information</title>
       </Helmet>
             <div className='mt-20'>
                 <h1 className='text-2xl font-bold'>Security</h1>
