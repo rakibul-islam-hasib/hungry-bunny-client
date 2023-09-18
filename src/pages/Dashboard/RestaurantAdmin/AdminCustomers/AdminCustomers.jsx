@@ -1,12 +1,15 @@
 import React from "react";
 import CustomersProgress from "./CustomersProgress";
 import CustomerStatus from "./CustomerStatus";
+import { Helmet } from "react-helmet-async";
 
 const AdminCustomers = () => {
 
   return (
     <div className="mt-10">
-
+<Helmet>
+        <title>Hungry Bunny || restaurant owner || customers</title>
+      </Helmet>
       <div className="md:flex">
         <div className="md:w-4/6 h-72 ">
           <h3 className="text-center -mb-10 font-semibold text-3xl">

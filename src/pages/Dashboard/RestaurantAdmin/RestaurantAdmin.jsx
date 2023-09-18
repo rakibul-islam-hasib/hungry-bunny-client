@@ -7,6 +7,7 @@ import { AiFillSignal } from "react-icons/ai";
 import { FaClipboardList } from "react-icons/fa";
 import { PiBowlFood } from "react-icons/pi";
 import { MdPendingActions } from "react-icons/md";
+import { Helmet } from "react-helmet-async";
 
 const RestaurantAdmin = () => {
   const { user: firebaseUser } = useAuth()
