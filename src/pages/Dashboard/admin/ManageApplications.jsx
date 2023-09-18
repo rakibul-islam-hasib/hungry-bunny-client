@@ -5,6 +5,7 @@ import ApplicationTable from '../../../components/table/ApplicationTable';
 import { Tab } from '@headlessui/react';
 import { useTitle } from '../../../hooks/useTitle';
 import useUserSecure from '../../../hooks/useUserSecure';
+import { Helmet } from 'react-helmet-async';
 
 const ManageApplications = () => {
     useTitle('Manage Applications');
@@ -58,6 +59,9 @@ const ManageApplications = () => {
     if (loading) return <div>Loading...</div>;
     return (
         <>
+        <Helmet>
+        <title>Hungry Bunny || admin || manage application</title>
+      </Helmet>
             <div>
                 <div className="w-full my-10">
                     <h1 className="text-4xl font-bold text-center">Welcome to Application Management System</h1>
