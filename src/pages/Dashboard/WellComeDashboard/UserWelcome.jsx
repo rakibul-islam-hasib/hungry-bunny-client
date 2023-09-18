@@ -6,6 +6,7 @@ import { MdFastfood } from 'react-icons/md';
 import { useAuth } from '../../../hooks/useAuth';
 import useUserSecure from '../../../hooks/useUserSecure';
 import { Helmet } from 'react-helmet-async';
+
 const UserWelcome = () => {
 
     const { user: firebaseUser } = useAuth()
