@@ -23,7 +23,7 @@ const Restaurant = () => {
   // console.log(totalItem)
 
   useEffect(() => {
-    axios.get('/restaurant/total/count')
+    axios.get('/restaurant/total/count/')
       .then(res => setTotalItem(res.data.total))
       .catch(err => console.log(err))
 

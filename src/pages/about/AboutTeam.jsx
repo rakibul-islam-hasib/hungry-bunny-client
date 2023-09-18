@@ -1,15 +1,11 @@
 import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
-<<<<<<< HEAD
-import { Helmet } from 'react-helmet-async';
-import { AiOutlineMail, AiOutlinePhone, AiFillFacebook, AiFillInstagram, AiFillGithub } from "react-icons/ai";
-=======
 import { AiOutlineMail, AiOutlinePhone, AiFillFacebook, AiFillInstagram, AiFillGithub, AiFillLinkedin } from "react-icons/ai";
->>>>>>> 95549b230dbcf83afbacbcf589cf22abe73943b9
 import { Link } from 'react-router-dom';
 import FacebookSvg from '../../assets/svg/FacebookSvg';
 import InstagramSvg from '../../assets/svg/InstagramSvg';
+import { Helmet } from 'react-helmet-async';
 
 const AboutTeam = () => {
   const [members, setMembers] = useState([])
