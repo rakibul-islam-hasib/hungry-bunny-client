@@ -2,31 +2,36 @@ import React, { useEffect, useState } from 'react';
 import useAxiosFetch from '../../../hooks/useAxiosFetch';
 import { AiOutlineLoading3Quarters } from 'react-icons/ai';
 import { Disclosure } from '@headlessui/react';
-import { IoChevronDownCircleOutline, IoChevronUpCircleOutline } from 'react-icons/io5';
 import { BsChevronDown, BsChevronUp } from 'react-icons/bs';
+import { useTitle } from '../../../hooks/useTitle';
+import { useQuery } from '@tanstack/react-query'
+
 const ManageOrders = () => {
+    useTitle("Manage Orders");
     const axios = useAxiosFetch();
-    const [data, setData] = useState([]);
-    const [loader, setLoader] = useState(false);
+    const { data, isLoading: loader, refetch } = useQuery({
+        queryKey: ['orders'],
+        queryFn: async () => {
+            const res = await axios.get('/food-order/order/6506ac3d47e43188cdc250a9')
+            return res.data
+        }
+    })
 
 
-    useEffect(() => {
-        setLoader(true);
-        axios.get('/food-order/order/6506ac3d47e43188cdc250a9')
+    const handleCancelOrder = (id) => {
+
+    }
+    const handleProcessOrder = (id) => {
+        // Restaurant id 6506ac3d47e43188cdc250a9
+        axios.patch(`/food-order/order/6506ac3d47e43188cdc250a9/${id}`, { deliveryStatus: "Delivered" })
             .then(res => {
-                setData(res.data);
+                console.log(res.data);
+                refetch()
             })
             .catch(err => {
                 console.log(err);
             })
-            .finally(() => setLoader(false))
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [])
-
-    const handleCancelOrder = (id) => {
-        setLoader(true);
     }
-    const handleProcessOrder = (id) => { }
 
     // JSX
     if (loader) return <div className="h-screen flex justify-center items-center w-full">
