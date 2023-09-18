@@ -101,6 +101,7 @@ export const router = createBrowserRouter([
         element: <RestaurantDetails />,
         loader: ({ params }) =>
           // TODO : replace with base URL
+          // http://localhost:5000/application
           fetch(`https://hungry-bunny.vercel.app/restaurant/${params.id}`),
       },
       {
