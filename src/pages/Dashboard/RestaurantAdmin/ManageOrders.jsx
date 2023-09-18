@@ -5,7 +5,7 @@ import { Disclosure } from '@headlessui/react';
 import { BsChevronDown, BsChevronUp } from 'react-icons/bs';
 import { useTitle } from '../../../hooks/useTitle';
 import { useQuery } from '@tanstack/react-query'
-
+import { sort } from 'lodash';
 const ManageOrders = () => {
     useTitle("Manage Orders");
     const axios = useAxiosFetch();
@@ -16,7 +16,9 @@ const ManageOrders = () => {
             return res.data
         }
     })
-
+    const sortedData = Array.isArray(data)
+        ? [...data].sort((a, b) => a.orders.paymentDate - b.orders.paymentDate)
+        : [];
 
     const handleCancelOrder = (id) => {
 
@@ -42,7 +44,7 @@ const ManageOrders = () => {
     return (
         <div>
             <div className="space-y-4">
-                {data.map((order, index) => (
+                {sortedData.map((order, index) => (
                     <Disclosure key={index}>
                         {({ open }) => (
                             <>
