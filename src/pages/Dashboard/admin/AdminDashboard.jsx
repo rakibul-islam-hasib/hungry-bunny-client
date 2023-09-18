@@ -8,8 +8,8 @@ import { Helmet } from 'react-helmet-async';
 import { useAuth } from '../../../hooks/useAuth';
 import { HiUsers } from 'react-icons/hi';
 import {  MdOutlineRestaurant } from 'react-icons/md';
-import { FcManager } from 'react-icons/fc';
 import { PiBowlFoodThin } from 'react-icons/pi';
+import { FaUserAlt } from 'react-icons/fa';
 
 
 
@@ -131,7 +131,7 @@ const AdminDashboard = () => {
             <p className="text-4xl font-bold"> 50</p>
             <h2 className="text-2xl">total Employee</h2>
           </div>
-          <FcManager className="text-5xl text-white" />
+          <FaUserAlt className="text-5xl text-white" />
         </div>
         <div className="flex justify-between p-4 bg-gradient-to-r from-pink-600 to-pink-400 rounded-md">
           <div className="text-white">
