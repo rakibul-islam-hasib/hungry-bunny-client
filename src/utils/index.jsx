@@ -260,7 +260,7 @@ export const restaurantNavItems = [
         label: "Owner Dashboard",
     },
     {
-        to: "/dashboard/restaurant-orders",
+        to: "/dashboard/manage-orders",
         icon: <FaUsers className="text-2xl" />,
         label: "Orders",
     },
