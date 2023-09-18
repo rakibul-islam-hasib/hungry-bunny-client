@@ -6,12 +6,12 @@ import { logoutUser } from '../redux/slices/authThunks';
 
 const useAxiosSecure = () => {
     //  Base URL: https://hungry-bunny.vercel.app
-    // Localhost: https://hungry-bunny.vercel.app
+    // Localhost: http://localhost:5000
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
     const axiosSecure = axios.create({
-        baseURL: 'https://hungry-bunny.vercel.app',
+        baseURL: 'http://localhost:5000',
     });
 
     useEffect(() => {

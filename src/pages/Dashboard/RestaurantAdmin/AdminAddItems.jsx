@@ -7,13 +7,15 @@ import { toast as loaderPrompt, toast } from 'react-toastify';
 import useRestaurant from "../../../hooks/useRestaurant";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import { categoryOptions } from "../../../utils";
+import useUserSecure from "../../../hooks/useUserSecure";
 const AdminAddItems = () => {
   const [selectedFile, setSelectedFile] = useState(null);
   const [imagePreview, setImagePreview] = useState(null);
   const axios = useAxiosSecure();
   const [isLoading, setIsLoading] = useState(false);
   const [imageURL, setImageURL] = useState(null);
-  const [restaurant, restaurantLoader] = useRestaurant();
+  const [user, isLoadingUser] = useUserSecure();
+  const [restaurant, restaurantLoader] = useRestaurant(user?._id);
   console.log(restaurant);
   const uploadMenuPic = (file) => {
     setIsLoading(true);
@@ -72,7 +74,7 @@ const AdminAddItems = () => {
     data.image = imageURL;
     data.submitted = new Date();
     data.status = "pending";
-    data.restaurant = restaurant._id;
+    data.restaurant_id = restaurant._id;
     data.restaurant_name = restaurant.restaurant_name;
     data.quantity = parseInt(event.target.Quantity.value);
     data.price = parseInt(event.target.price.value);
@@ -96,7 +98,7 @@ const AdminAddItems = () => {
   };
 
 
-  if (restaurantLoader) return <div>Loading...</div>
+  if (restaurantLoader || isLoadingUser) return <div>Loading...</div>
 
 
   return (

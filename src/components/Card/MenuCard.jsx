@@ -11,7 +11,7 @@ import MenuCardItem from './MenuCardItem';
 import MenuSkeleton from '../Skeletons/MenuSkeleton';
 import CategorySkeleton from '../Skeletons/CategorySkeleton';
 import useAxiosFetch from '../../hooks/useAxiosFetch';
-
+import { AiOutlineLoading3Quarters } from 'react-icons/ai';
 
 
 
@@ -49,22 +49,28 @@ const MenuCard = () => {
 
   const axios = useAxiosFetch();
   const [menuTab, setMenuTab] = useState('Pizza')
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(true);
+  const [dataLoading, setDataLoading] = useState(true);
   const [menuItems, setMenuItems] = useState([])
+
+  const [searchMenu, setSearchMenu] = useState('')
+
 
 
   useEffect(() => {
     axios.get('/food/get/all')
-    .then((res) => {
+      .then((res) => {
         setMenuItems(res.data);
+        // setMenuTab(res.data)
         // console.log(res.data)
-    })
-    .catch((err) => {
+      })
+      .catch((err) => {
         console.log(err);
-    })
-    .finally(() => {
-        setLoading(false);
-    })
+      })
+      .finally(() => {
+        setDataLoading(false);
+      })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
 
@@ -77,20 +83,15 @@ const MenuCard = () => {
   }, [])
 
 
-  
+
 
   const handleMenuTabs = (type) => {
     setMenuTab(type);
   }
 
+
   return (
-
-
     <div>
-
-
-
-
       <div className="text-center lg:w-[70%] w-full sm:w-[90%] md:w-[80%] mx-auto">
         <h3 className="font-semibold text-4xl mx-auto ">Our Menu</h3>
         <p className="font-semibold mt-2">
@@ -117,6 +118,15 @@ const MenuCard = () => {
         }
       </div>
 
+      {/* <div className='relative text-end mt-8'>
+        <input
+          type="text"
+          placeholder="Search Menu here"
+          onChange={(e) => setSearchMenu(e.target.value)}
+          className="border border-red-400  focus:border-pink-400 focus:outline-none px-20  py-2 rounded-lg" />
+        <button onClick={handleSearchMenu} className='absolute right-5 mt-2'>Search  </button>
+      </div> */}
+
       <div className="mx-auto md:px-20 px-6 mt-10">
 
         <div className="grid md:grid-cols-2 md:gap-8 gap-3 lg:grid-cols-3 mt-10 mx-auto">
@@ -129,7 +139,7 @@ const MenuCard = () => {
         </div>
       </div>
 
-      
+
     </div>
   );
 };

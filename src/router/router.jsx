@@ -53,6 +53,9 @@ import ManageApplications from "../pages/Dashboard/admin/ManageApplications";
 import AdminRoute from "./AdminRoute";
 import UserWelcome from "../pages/Dashboard/WellComeDashboard/UserWelcome";
 import PendingMenu from "../pages/Dashboard/admin/PendingMenu";
+import Checkout from "../pages/checkout/Checkout";
+import Payment from "../pages/checkout/Payment";
+import ManageOrders from "../pages/Dashboard/RestaurantAdmin/ManageOrders";
 
 
 export const router = createBrowserRouter([
@@ -129,6 +132,14 @@ export const router = createBrowserRouter([
       {
         path: '/team-info',
         element: <TeamInfo />
+      },
+      {
+        path: '/shop/next/checkout',
+        element: <PrivateRoute><Checkout /></PrivateRoute>
+      },
+      {
+        path: '/next/payment',
+        element: <PrivateRoute><Payment /></PrivateRoute>
       }
     ],
   },
@@ -202,6 +213,10 @@ export const router = createBrowserRouter([
       {
         path: "/dashboard/restaurant-customers",
         element: <AdminCustomers />,
+      },
+      {
+        path: "/dashboard/manage-orders",
+        element: <ManageOrders />,
       },
 
       /*------------------------------------------------------------
