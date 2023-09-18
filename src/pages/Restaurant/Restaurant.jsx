@@ -27,7 +27,7 @@ const Restaurant = () => {
       .then(res => setTotalItem(res.data.total))
       .catch(err => console.log(err))
 
-    axios.get(`/restaurant?limit=6&page=${page}`)
+    axios.get(`/restaurant/all`)
       .then(res => {
         // const restaurants = res.data.filter(item => item.status === 'approved')
         setAllRestaurants(res.data)
@@ -165,14 +165,14 @@ const Restaurant = () => {
             <img className="w-full  h-64 object-cover rounded-lg" src={item.restaurantImage} alt="Food Image" />
             <div className="px-6 py-4">
               <div className="mb-2 dark:text-gray-200">
-                <p className='flex justify-between items-center font-extrabold text-2xl'> <span>{item.restaurantName}</span> <span><Rating
+                <p className='flex justify-between items-center font-extrabold text-2xl'> <span>{item.restaurant_name}</span> <span><Rating
         style={{ maxWidth: 100 }}
         value={item.rating}
         readOnly
       /></span></p>
               </div>
               <div className='flex justify-between dark:text-gray-200'>
-                <p className='font-bold flex'><span className='mr-2'><FaMapMarkerAlt className='text-orange-500 text-2xl'></FaMapMarkerAlt></span> <span>{item.place}</span></p>
+                <p className='font-bold flex'><span className='mr-2'><FaMapMarkerAlt className='text-orange-500 text-2xl'></FaMapMarkerAlt></span> <span>{item.location}</span></p>
                 
                 <Link to={`/restaurant/${item._id}`} className='bg-orange-500 border-2 border-orange-500 hover:bg-white hover:text-orange-500 hover:transition hover:duration-400 text-white font-bold py-2 px-4 rounded-2xl flex items-center'><span>read more</span> <span className="ml-3"><FaArrowRight/></span></Link>
               </div>

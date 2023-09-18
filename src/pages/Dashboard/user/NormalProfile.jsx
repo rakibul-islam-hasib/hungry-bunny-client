@@ -13,7 +13,7 @@ import { Link } from 'react-router-dom';
 
 const NormalProfile = () => {
     const { user: firebaseUser } = useAuth();
-    const [user] = useUserSecure(firebaseUser?.email);
+    const [user,refetch] = useUserSecure(firebaseUser?.email);
     console.log(user)
 
 
@@ -151,7 +151,7 @@ const NormalProfile = () => {
                             <div className='flex lg:flex md:flex justify-between sm:flex'>
                                 <span>
                                     <p className="mb-2 pb-2 block font-sans text-base font-normal leading-relaxed text-gray-700 antialiased">
-                                       {user?.name}
+                                        {user?.name}
                                     </p>
                                 </span>
                                 <span>

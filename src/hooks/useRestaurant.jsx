@@ -7,6 +7,7 @@ import useAxiosSecure from './useAxiosSecure';
 import { useQuery } from '@tanstack/react-query';
 import useUserSecure from './useUserSecure';
 import useAxiosFetch from './useAxiosFetch';
+
 const useRestaurant = ({ id }) => {
     console.log(id)
     const axios = useAxiosFetch();
