@@ -29,11 +29,11 @@ const ForRestaurant = () => {
         return acc;
     }, {});
 
-    
+
     const [user] = useUserSecure();
 
-    
-    console.log(user); 
+
+    console.log(user);
     const axios = useAxiosSecure();
     const [submittedData, setSubmittedData] = useState({});
     const [loading, setLoading] = useState(false);
@@ -266,6 +266,27 @@ const ForRestaurant = () => {
                                 />
                             </div>
                         </div>
+                        <div className="mb-4">
+                            <motion.label
+                                variants={inputVariants}
+                                initial="hidden"
+                                animate="visible"
+                                transition={{ duration: 0.5 }}
+                                className="text-primary block mb-1"
+                                htmlFor="location"
+                            >
+                                Payment Method of Your Restaurant (TODO:----)
+                                {/* TODO:  */}
+                            </motion.label>
+                            <div className="flex items-center">
+                                <BiCurrentLocation className="text-primary" />
+                                <input
+                                    className="ml-2 text-gray-600 w-full border-b border-primary focus:border-secondary outline-none"
+                                    type="text"
+                                    name="location"
+                                />
+                            </div>
+                        </div>
 
                         <div className="mb-4 flex items-center justify-between">
                             <label className="text-gray-700 block mb-1 md:flex items-center cursor-pointer">
@@ -362,8 +383,8 @@ const ForRestaurant = () => {
                         }
 
 
- {/* Image Preview */}
- {imagePreview && (
+                        {/* Image Preview */}
+                        {imagePreview && (
                             <div className="mb-4">
                                 <label className="text-gray-700 block mb-1">Image Preview</label>
                                 <img src={imagePreview} alt="Image Preview" className="max-w-xs" />
