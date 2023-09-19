@@ -20,7 +20,8 @@ const ManageOrders = () => {
         ? [...data].sort((a, b) => a.orders.paymentDate - b.orders.paymentDate)
         : [];
 
-    const handleCancelOrder = (id) => {
+    const handleCancelOrder = () => {
+        // console.log(id);
 
     }
     const handleProcessOrder = (id) => {

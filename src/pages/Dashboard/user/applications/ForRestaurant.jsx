@@ -315,7 +315,7 @@ const ForRestaurant = () => {
                                 className="text-gray-700 block mb-1"
                                 htmlFor="experience"
                             >
-                                Why Do You Want To Be a Restaurant
+                                Why Do You Want To Be a Restaurant 
                             </motion.label>
                             <div className="flex items-center">
                                 <FiBriefcase className="text-gray-500" />
