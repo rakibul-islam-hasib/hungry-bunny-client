@@ -128,10 +128,6 @@ const BeReadyForPayment = ({ intent, cartIds, refetch, orderedItem }) => {
                             return;
                         }
                         if (res.data) {
-                            // console.log(res.data, 'payment info saved')
-                            // console.log(res.data.result)
-                            // setId(res.data.result.insertedId)
-                            // console.log(id)
                             paymentId(res.data.result.insertedId)
                         }
                         setMessage(paymentIntent.status === 'succeeded' ? 'Payment Successful' : 'Payment Failed')
