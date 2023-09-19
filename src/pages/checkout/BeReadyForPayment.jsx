@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import './Payment.css'
 import { useAuth } from '../../hooks/useAuth';
@@ -15,12 +15,51 @@ const BeReadyForPayment = ({ intent, cartIds, refetch, orderedItem }) => {
 
     const [message, setMessage] = useState('');
 
+    const [downloadLink, setDownloadLink] = useState('');
+    const [id, setId] = useState('');
     const { user } = useAuth();
     const stripe = useStripe();
     const elements = useElements();
     const dispatch = useDispatch();
     const [secureUser, isUserLoading] = useUserSecure();
     const axios = useAxiosFetch();
+
+
+
+    useEffect(() => {
+
+
+        // Check if id has been set and then trigger the download
+        if (id) {
+            // handleDownload();
+        }
+    }, [id]);
+
+    const paymentId = pId => {
+        console.log(pId)
+        const handleDownload = async () => {
+            try {
+                // Fetch the blob data containing the invoice PDF using the updated id
+                const response = await fetch(`http://localhost:5000/payment/food-item/${pId}`);
+                const blob = await response.blob();
+
+                // Create a URL for the blob and set it as the download link
+                const url = window.URL.createObjectURL(blob);
+                setDownloadLink(url);
+
+                // Trigger the download
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'invoice.pdf';
+                a.click();
+            } catch (error) {
+                console.error(error);
+            }
+        };
+        handleDownload();
+        console.log(downloadLink)
+    }
+
     const handleSubmit = async (event) => {
         setMessage('');
         setLoading(true);
@@ -82,7 +121,19 @@ const BeReadyForPayment = ({ intent, cartIds, refetch, orderedItem }) => {
                 }
                 axios.post('/payment/post-payment-info', paymentData)
                     .then(res => {
-                        console.log(res.data)
+                        // console.log(res.data, 'payment info saved')
+                        if (res.data.error) {
+                            toast.error(res.data.error)
+                            console.log(res.data.error)
+                            return;
+                        }
+                        if (res.data) {
+                            // console.log(res.data, 'payment info saved')
+                            // console.log(res.data.result)
+                            // setId(res.data.result.insertedId)
+                            // console.log(id)
+                            paymentId(res.data.result.insertedId)
+                        }
                         setMessage(paymentIntent.status === 'succeeded' ? 'Payment Successful' : 'Payment Failed')
                         // TODO : replace this with base url
                         fetch(`http://localhost:5000/payment/delete-cart-items`, {
@@ -96,7 +147,8 @@ const BeReadyForPayment = ({ intent, cartIds, refetch, orderedItem }) => {
                             .then(res => {
                                 console.log(res, 'cart items deleted')
                                 if (res.deletedCount > 0) {
-                                    refetch()
+                                    console.log(id)
+                                    refetch();
                                 }
                             })
                             .catch(err => console.log(err))
