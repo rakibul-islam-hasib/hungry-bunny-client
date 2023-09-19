@@ -1,9 +1,14 @@
 import React, { useState } from 'react';
 import { FiUser, FiMail, FiBriefcase, FiSend, FiClock } from 'react-icons/fi';
 import { motion } from 'framer-motion';
+import { toast } from 'react-toastify';
+import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
+
+import { storage } from '../../../../config/firebase/firebase.config';
+import { v4 } from 'uuid';
+
 import useUserSecure from '../../../../hooks/useUserSecure';
 import useAxiosSecure from '../../../../hooks/useAxiosSecure';
-import { toast } from 'react-toastify';
 import { HiOutlineMail } from 'react-icons/hi';
 import { BiCurrentLocation, BiSolidRename } from 'react-icons/bi';
 import { useAuth } from '../../../../hooks/useAuth';
@@ -81,6 +86,58 @@ const ForRestaurant = () => {
             [day]: { ...prevHours[day], [field]: value },
         }));
     };
+
+    const [selectedFile, setSelectedFile] = useState(null);
+    const [imagePreview, setImagePreview] = useState(null);
+    const [imageURL, setImageURL] = useState(null);
+    const [isLoading, setIsLoading] = useState(false);
+
+    const handleFileChange = (e) => {
+        const file = e.target.files[0];
+        if (file && file.size < 2 * 1024 * 1024) {
+            setSelectedFile(file);
+            const selectedUrl = URL.createObjectURL(file);
+            setImagePreview(selectedUrl);
+        } else {
+            setSelectedFile(null);
+            setImagePreview(null);
+            toast.error('Please select a file smaller than 2MB');
+        }
+    };
+
+    const uploadMenuPic = (file) => {
+        setIsLoading(true);
+        const imgId = v4().slice(0, 10);
+        const imagesRef = ref(
+            storage,
+            `application-image/${imgId + selectedFile?.name}`
+        );
+
+        const uploadingPromise = uploadBytes(imagesRef, file);
+
+        toast
+            .promise(uploadingPromise, {
+                pending: 'Uploading...',
+                success: 'Image Uploaded Successfully',
+                error: 'Something went wrong, please try again later',
+            })
+            .then(() => {
+                getDownloadURL(ref(storage, `application-image/${imgId + selectedFile?.name}`))
+                    .then((url) => {
+                        console.log(url);
+                        if (url) {
+                            setImageURL(url);
+                            setIsLoading(false);
+                        } else {
+                            setIsLoading(false);
+                        }
+                    })
+                    .catch((err) => {
+                        setIsLoading(false);
+                    });
+            });
+    };
+
     return (
         <>
             <div className=" min-h-screen flex justify-center items-center">
@@ -304,26 +361,78 @@ const ForRestaurant = () => {
                             ) : null
                         }
 
+
+ {/* Image Preview */}
+ {imagePreview && (
+                            <div className="mb-4">
+                                <label className="text-gray-700 block mb-1">Image Preview</label>
+                                <img src={imagePreview} alt="Image Preview" className="max-w-xs" />
+                            </div>
+                        )}
+
+                        {/* File Input */}
+                        <div className="">
+                            <label
+                                className="text-gray-700 block mb-1"
+                                htmlFor="image"
+                            >
+                                Image
+                            </label>
+                            <div className="flex items-center">
+                                <FiBriefcase className="text-gray-500" />
+                                <input
+                                    onChange={handleFileChange}
+                                    className="ml-2 rounded-lg px-2 placeholder:text-sm py-1 w-full border border-gray-300 focus:border-secondary outline-none resize-none"
+                                    id="image"
+                                    name="image"
+                                    type="file"
+                                />
+                            </div>
+                        </div>
+
+                        {/* Upload Button */}
+                        {selectedFile && (
+                            <div className="mt-4">
+                                <button
+                                    onClick={() => uploadMenuPic(selectedFile)}
+                                    className="px-4 py-2 bg-primary text-white rounded-md focus:outline-none"
+                                    disabled={isLoading}
+                                >
+                                    {isLoading ? 'Uploading...' : 'Upload Image'}
+                                </button>
+                            </div>
+                        )}
+
+                        {/* Display Image URL */}
+                        {imageURL && (
+                            <div className="my-2">
+                                <p className="text-green-500">Your Image Uploaded SuccesFully</p>
+                            </div>
+                        )}
+
+
+
+
                         {/* Add more fields like Cuisine Type, Restaurant Description, etc. here */}
 
-                        <div className="mb-4">
+                        <div className="my-4">
                             <motion.label
                                 variants={inputVariants}
                                 initial="hidden"
                                 animate="visible"
                                 transition={{ duration: 0.5, delay: 0.3 }}
                                 className="text-gray-700 block mb-1"
-                                htmlFor="experience"
+                                htmlFor="description"
                             >
-                                Why Do You Want To Be a Restaurant 
+                                Please Write Description About Your Restaurant
                             </motion.label>
                             <div className="flex items-center">
                                 <FiBriefcase className="text-gray-500" />
                                 <textarea
-                                    placeholder="Tell us ..."
+                                    placeholder="Write Description About your Restaurant Here ..."
                                     className="ml-2 rounded-lg px-2 placeholder:text-sm py-1 w-full border border-gray-300 focus:border-secondary outline-none resize-none"
-                                    id="experience"
-                                    name="experience"
+                                    id="description"
+                                    name="description"
                                 ></textarea>
                             </div>
                         </div>
@@ -342,7 +451,7 @@ const ForRestaurant = () => {
                                 className="flex items-center px-4 py-2 bg-primary text-white rounded-md focus:outline-none"
                             >
                                 <FiSend className="mr-2" />
-                                Submit
+                                Apply
                             </motion.button>
                         </div>
                     </form>

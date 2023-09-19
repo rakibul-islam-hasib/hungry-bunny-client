@@ -41,6 +41,7 @@
     "lottie-web": "^5.12.2",
     "match-sorter": "^6.3.1",
     "moment": "^2.29.4",
+    "node-cron": "^3.0.2",
     "primereact": "^9.6.1",
     "react": "^18.2.0",
     "react-awesome-reveal": "^4.2.5",
