@@ -10,8 +10,8 @@ const useMenuByRestaurant = () => {
     const { data: menu, isLoading, refetch } = useQuery({
         queryKey: ['restaurant-menu'],
         queryFn: async () => {
-            // const res = await axios.get(`/food/${user?.email}`);
-            const res = await axios.get('/food');
+            const res = await axios.get(`/food/${user?.email}`);
+            // const res = await axios.get('/food');
             return res.data;
         }
     })
