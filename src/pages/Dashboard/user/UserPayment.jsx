@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 
 const UserPayment = () => {
 
@@ -30,6 +31,9 @@ const UserPayment = () => {
     }
     return (
         <>
+        <Helmet>
+        <title>Hungry Bunny || user payment</title>
+      </Helmet>
             <div className='mt-20'>
                 <h1 className='text-2xl font-bold'>Payment method</h1>
             </div>

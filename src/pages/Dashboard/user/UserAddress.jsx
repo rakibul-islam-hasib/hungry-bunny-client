@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 
 const UserAddress = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -29,6 +30,9 @@ const UserAddress = () => {
     
     return (
         <>
+        <Helmet>
+        <title>Hungry Bunny || user address </title>
+      </Helmet>
             <div className='mt-20'>
                 <h1 className='text-2xl font-bold'>Address</h1>
             </div>

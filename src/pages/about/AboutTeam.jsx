@@ -5,6 +5,7 @@ import { AiOutlineMail, AiOutlinePhone, AiFillFacebook, AiFillInstagram, AiFillG
 import { Link } from 'react-router-dom';
 import FacebookSvg from '../../assets/svg/FacebookSvg';
 import InstagramSvg from '../../assets/svg/InstagramSvg';
+import { Helmet } from 'react-helmet-async';
 
 const AboutTeam = () => {
   const [members, setMembers] = useState([])
@@ -18,6 +19,9 @@ const AboutTeam = () => {
 
   return (
     <div className='my-10'>
+      <Helmet>
+        <title>Hungry Bunny || team info</title>
+      </Helmet>
       <h1 className='text-4xl font-bold text-center my-10'>Lets Meet Our <span className='text-primary'>Team Members </span> </h1>
 
       <div className='grid md:grid-cols-2 md:gap-8 gap-3 lg:grid-cols-3 m-auto justify-center'>

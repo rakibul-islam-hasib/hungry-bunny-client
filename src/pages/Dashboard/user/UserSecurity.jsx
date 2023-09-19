@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 
 const UserSecurity = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -52,6 +53,9 @@ const UserSecurity = () => {
     }
     return (
         <>
+        <Helmet>
+        <title>Hungry Bunny || secure your Information</title>
+      </Helmet>
             <div className='mt-20'>
                 <h1 className='text-2xl font-bold'>Security</h1>
             </div>

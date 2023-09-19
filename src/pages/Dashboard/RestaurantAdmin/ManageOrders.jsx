@@ -1,32 +1,60 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import useAxiosFetch from '../../../hooks/useAxiosFetch';
 import { AiOutlineLoading3Quarters } from 'react-icons/ai';
 import { Disclosure } from '@headlessui/react';
-import { IoChevronDownCircleOutline, IoChevronUpCircleOutline } from 'react-icons/io5';
 import { BsChevronDown, BsChevronUp } from 'react-icons/bs';
+import { useTitle } from '../../../hooks/useTitle';
+import { useQuery } from '@tanstack/react-query'
 const ManageOrders = () => {
+    useTitle("Manage Orders");
     const axios = useAxiosFetch();
-    const [data, setData] = useState([]);
-    const [loader, setLoader] = useState(false);
+
+    const [orders, setOrders] = useState([]);
+
+    const { data, isLoading: loader, refetch } = useQuery({
+        queryKey: ['orders'],
+        queryFn: async () => {
+            const res = await axios.get('/food-order/order/6506ac3d47e43188cdc250a9')
+            return res.data
+        }
+    })
+    const sortedData = useMemo(() => {
+        return Array.isArray(data)
+            ? [...data].sort((a, b) => a.orders.paymentDate - b.orders.paymentDate)
+            : [];
+    }, [data]);
 
 
     useEffect(() => {
-        setLoader(true);
-        axios.get('/food-order/order/6506ac3d47e43188cdc250a9')
+        const RestaurantOrderedItem = sortedData.flatMap(order => {
+            const matchingItems = order.orders.orderedItem.filter(item => item.restaurantId === "6506ac3d47e43188cdc250a9");
+            return matchingItems.map(matchingItem => ({
+                ...order,
+                orders: {
+                    ...order.orders,
+                    orderedItem: [matchingItem]
+                }
+            }));
+        });
+        setOrders(RestaurantOrderedItem);
+    }, [sortedData]);
+
+
+
+    const handleCancelOrder = (id) => {
+
+    }
+    const handleProcessOrder = (id) => {
+        // Restaurant id 6506ac3d47e43188cdc250a9
+        axios.patch(`/food-order/order/6506ac3d47e43188cdc250a9/${id}`, { deliveryStatus: "Delivered" })
             .then(res => {
-                setData(res.data);
+                console.log(res.data);
+                refetch()
             })
             .catch(err => {
                 console.log(err);
             })
-            .finally(() => setLoader(false))
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [])
-
-    const handleCancelOrder = (id) => {
-        setLoader(true);
     }
-    const handleProcessOrder = (id) => { }
 
     // JSX
     if (loader) return <div className="h-screen flex justify-center items-center w-full">
@@ -37,13 +65,13 @@ const ManageOrders = () => {
     return (
         <div>
             <div className="space-y-4">
-                {data.map((order, index) => (
+                {orders.map((order, index) => (
                     <Disclosure key={index}>
                         {({ open }) => (
                             <>
                                 <Disclosure.Button className="flex justify-between w-full p-4 bg-gray-100 text-gray-800 hover:bg-gray-200">
                                     <div className="flex items-center">
-                                        <div className="w-8 h-8 bg-gray-300 rounded-full mr-2">
+                                        <div className="w-8 h-8 bg-orange-300 rounded-full mr-2">
                                             <img
                                                 src={order.food[0]?.image} // Use the first food item's image, add error handling
                                                 alt="Food"
@@ -51,7 +79,7 @@ const ManageOrders = () => {
                                             />
                                         </div>
                                         <div>
-                                            Order #{index + 1} - {order.orders.paymentStatus}
+                                            Order #{index + 1} - {order.orders.deliveryStatus}
                                         </div>
                                     </div>
                                     {open ? (
@@ -60,7 +88,7 @@ const ManageOrders = () => {
                                         <BsChevronDown className="w-6 h-6" />
                                     )}
                                 </Disclosure.Button>
-                                <Disclosure.Panel className="p-4 bg-gray-200">
+                                <Disclosure.Panel className="p-4 bg-gray-50">
                                     <div className="mb-4">
                                         <h2 className="text-xl font-semibold">Order Details</h2>
                                         <p>Payment ID: {order.orders.paymentId}</p>
