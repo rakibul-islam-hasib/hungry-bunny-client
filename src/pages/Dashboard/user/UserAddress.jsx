@@ -3,6 +3,7 @@ import { division } from '../../../utils';
 import useAxiosSecure from '../../../hooks/useAxiosSecure';
 import { toast } from 'react-toastify';
 import { useAuth } from '../../../hooks/useAuth';
+import { Helmet } from 'react-helmet-async';
 
 const UserAddress = () => {
     const axios = useAxiosSecure();
@@ -27,6 +28,9 @@ const UserAddress = () => {
 
     return (
         <>
+        <Helmet>
+        <title>Hungry Bunny || user address </title>
+      </Helmet>
             <div className='mt-20'>
                 <h1 className='text-2xl font-bold'>Address</h1>
             </div>

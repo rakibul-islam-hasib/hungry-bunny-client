@@ -9,8 +9,8 @@ import { Pagination } from '@mui/material';
 import { Helmet } from 'react-helmet-async';
 
 const Restaurant = () => {
-  const [searchQuery, setSearchQuery] = useState('')
-  const [isFieldClicked, setFieldClicked] = useState(false);
+  // const [searchQuery, setSearchQuery] = useState('')
+  // const [isFieldClicked, setFieldClicked] = useState(false);
 
   const [allRestaurants, setAllRestaurants] = useState([]);
 
@@ -23,34 +23,39 @@ const Restaurant = () => {
   // console.log(totalItem)
 
   useEffect(() => {
-    axios.get('/restaurant/total/count')
-      .then(res => setTotalItem(res.data.total))
+    axios.get('/application/total/count/')
+      .then(res => {
+        const restaurants = res.data.total.filter(item => item.status === 'approved')
+        // setAllRestaurants(restaurants)
+        setTotalItem(restaurants)
+      })
       .catch(err => console.log(err))
 
-    axios.get(`/restaurant/all`)
+    axios.get(`/application?limit=6&page=${page}`)
       .then(res => {
-        // const restaurants = res.data.filter(item => item.status === 'approved')
-        setAllRestaurants(res.data)
+        const restaurants = res.data.filter(item => item.status === 'approved')
+        setAllRestaurants(restaurants)
+        console.log(restaurants)
         // console.log(restaurants);
       })
       .catch(err => console.log(err))
     window.scrollTo(0, 0);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [page])
-  useEffect(() => {
-    axios.get(`/restaurant/search/query?name=${searchQuery}`)
-      .then(res => {
-        setAllRestaurants(res.data)
-        setTotalItem(res.data.length)
-      })
-      .catch(error => console.log(error))
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [searchQuery])
-  const handleSearch = () => {
-    axios.get(`/restaurant/search?query=${searchQuery}`)
-      .then(res => setAllRestaurants(res.data))
-      .catch(error => console.log(error))
-  }
+  // useEffect(() => {
+  //   axios.get(`/restaurant/search/query?name=${searchQuery}`)
+  //     .then(res => {
+  //       setAllRestaurants(res.data)
+  //       setTotalItem(res.data.length)
+  //     })
+  //     .catch(error => console.log(error))
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, [searchQuery])
+  // const handleSearch = () => {
+  //   axios.get(`/restaurant/search?query=${searchQuery}`)
+  //     .then(res => setAllRestaurants(res.data))
+  //     .catch(error => console.log(error))
+  // }
 
   // 
   return (
@@ -65,7 +70,7 @@ const Restaurant = () => {
             <h2 className='text-6xl font-extrabold mb-6 uppercase text-white'>see available restaurant</h2>
             <h2 className='text-2xl text-white font-bold mb-4'> Rediscovering Traditional Flavors with a Modern Twist</h2>
           </div>
-          <div className='w-1/2 mx-auto'>
+          {/* <div className='w-1/2 mx-auto'>
                 <form className='mt-10'>
       <label htmlFor="default-search" className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">
         Search
@@ -107,7 +112,7 @@ const Restaurant = () => {
         </button>
       </div>
     </form>
-                </div>
+                </div> */}
           {/* <div className='flex items-center mx-auto mb-10'>
           <div className="relative max-w-sm mx-auto mt-7 flex">
             <input value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)}
@@ -174,7 +179,7 @@ const Restaurant = () => {
               <div className='flex justify-between dark:text-gray-200'>
                 <p className='font-bold flex'><span className='mr-2'><FaMapMarkerAlt className='text-orange-500 text-2xl'></FaMapMarkerAlt></span> <span>{item.location}</span></p>
                 
-                <Link to={`/restaurant/${item._id}`} className='bg-orange-500 border-2 border-orange-500 hover:bg-white hover:text-orange-500 hover:transition hover:duration-400 text-white font-bold py-2 px-4 rounded-2xl flex items-center'><span>read more</span> <span className="ml-3"><FaArrowRight/></span></Link>
+                <Link to={`/application/${item._id}`} className='bg-orange-500 border-2 border-orange-500 hover:bg-white hover:text-orange-500 hover:transition hover:duration-400 text-white font-bold py-2 px-4 rounded-2xl flex items-center'><span>read more</span> <span className="ml-3"><FaArrowRight/></span></Link>
               </div>
             </div>
           </div>
@@ -182,10 +187,10 @@ const Restaurant = () => {
         ))}
       </div>
       {/* Pagination  */}
-      <div className="mt-10 mb-5 text-4xl mx-auto sm:w-[40%] md:w-[20%]">
+      {/* <div className="mt-10 mb-5 text-4xl mx-auto sm:w-[40%] md:w-[20%]">
         <Pagination className='text-4xl font-bold pt-5 pb-5 pr-4 pl-4 rounded-2xl dark:bg-white' onChange={(e, vale) => setPage(vale)} count={totalPage} color="secondary" />
       </div>
-      <ScrollRestoration />
+      <ScrollRestoration /> */}
     </div>
   );
 };

@@ -8,6 +8,7 @@ import { toast } from 'react-hot-toast';
 import { Tooltip } from '@mui/material';
 import { useDispatch } from 'react-redux';
 import LogoutPopup from '../../../components/popup/LogoutPopup';
+import { Helmet } from 'react-helmet-async';
 
 
 const UserProfile = () => {
@@ -44,6 +45,9 @@ const UserProfile = () => {
 
     return (
         <>
+        <Helmet>
+        <title>Hungry Bunny || user profile</title>
+      </Helmet>
             <div className='mt-20'>
                 <h1 className='text-2xl font-bold'>Account</h1>
             </div>
