@@ -121,6 +121,19 @@ export const categoryOptions = [
     { value: 'SeaFood', label: 'SeaFood' },
 
 ];
+
+export const paymentOptions = [
+    { value: '', label: 'Select' },
+    { value: 'bkash', label: 'Bkash' },
+    { value: 'nagad', label: 'Nagad' },
+    { value: 'visa', label: 'Visa' },
+    { value: 'mastercard', label: 'Mastercard' },
+    { value: 'paypal', label: 'Paypal' },
+    { value: 'upay', label: 'Upay' },
+    { value: 'gpay', label: 'G pay' }
+    
+];
+
 export const division = [
     { value: '', label: 'Select Division' },
     { value: 'Dhaka', label: 'Dhaka Division' },

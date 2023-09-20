@@ -12,6 +12,7 @@ import useAxiosSecure from '../../../../hooks/useAxiosSecure';
 import { HiOutlineMail } from 'react-icons/hi';
 import { BiCurrentLocation, BiMoney, BiSolidRename } from 'react-icons/bi';
 import { useAuth } from '../../../../hooks/useAuth';
+import { categoryOptions, paymentOptions } from '../../../../utils';
 
 const daysOfWeek = [
     'Monday',
@@ -65,7 +66,11 @@ const ForRestaurant = () => {
             setLoading(false);
             console.log(res.data)
             toast.success('Your Application Is Pending');
-        });
+        })
+        .catch((err) => {
+            console.log(err);
+          })
+          .finally((event.target.reset()))
 
     };
 
@@ -217,7 +222,7 @@ const ForRestaurant = () => {
                                     >
                                         Restaurant Name
                                     </motion.label>
-                                        {/* <small>This will be your Restaurant name </small> */}
+                                    {/* <small>This will be your Restaurant name </small> */}
                                     <div className="flex items-center">
                                         <BiSolidRename className="text-primary" />
                                         <input
@@ -287,12 +292,16 @@ const ForRestaurant = () => {
                                     </motion.label>
                                     <div className="flex items-center">
                                         <BiMoney className="text-primary" />
-                                        <input
-                                            className="ml-2 text-gray-600 w-full border-b border-primary focus:border-secondary outline-none"
-                                            type="text"
-                                            placeholder='Payment Method of Your Restaurant (TODO:----)'
-                                            name="location"
-                                        />
+                                        <select
+                                            name="payment_method"
+                                            className="input-field w-full ml-2"
+                                        >
+                                            {
+                                                paymentOptions.map((location, index) => (
+                                                    <option key={index} value={location.value}>{location.label}</option>
+                                                ))
+                                            }
+                                        </select>
                                     </div>
                                 </div>
                             </div>
