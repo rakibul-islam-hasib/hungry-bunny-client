@@ -4,6 +4,8 @@ import { MdOutlineLocalOffer } from 'react-icons/md';
 import { PiBowlFood, PiVanDuotone } from 'react-icons/pi';
 import Subscribe from './Subscribe';
 import { useTitle } from '../../hooks/useTitle';
+import { Helmet } from 'react-helmet-async';
+import CountUp from 'react-countup';
 
 const About = () => {
   useTitle('About')
@@ -32,19 +34,19 @@ const About = () => {
       </div>
       <div className=' mb-10 font-bold sm:my-3 md:ml-10 sm:gap-x-3 grid sm:grid-cols-2 md:grid-cols-4 text-center'>
         <div className='border-2 hover:transition hover:duration-400 pt sm:mb-3 rounded-2xl md:mr-16 border-orange-400 pr-2 pl-3 pb-2 hover:bg-orange-500 hover:text-white '>
-          <p className='text-4xl'><span>5000</span> <span className='text-6xl'>+</span></p>
+          <p className='text-4xl'><span><CountUp end={500} /></span> <span className='text-6xl'>+</span></p>
           <p className='text-2xl'>happy customer</p>
         </div>
         <div className='border-2 hover:transition hover:duration-400 sm:mb-3 rounded-2xl md:mr-16 border-orange-400 pr-2 pl-3 pb-2 hover:bg-orange-500 hover:text-white '>
-          <p className='text-4xl'><span>24/7</span> <span className='text-6xl'></span></p>
+          <p className='text-4xl'><span><CountUp end={24}  /></span>/<span><CountUp end={7} /></span> <span className='text-6xl'></span></p>
           <p className='text-2xl'>service</p>
         </div>
         <div className='border-2 hover:transition hover:duration-400 sm:mb-3 rounded-2xl md:mr-16 border-orange-400 pr-2 pl-3 pb-2 hover:bg-orange-500 hover:text-white '>
-          <p className='text-4xl'><span>50</span> <span className='text-6xl'>+</span></p>
+          <p className='text-4xl'><span><CountUp end={50} /></span> <span className='text-6xl'>+</span></p>
           <p className='text-2xl'>restaurant</p>
         </div>
         <div className='border-2 hover:transition hover:duration-400 sm:mb-3 md:mr-14 rounded-2xl border-orange-400  pr-2 pl-5 pb-2 hover:bg-orange-500 hover:text-white '>
-          <p className='text-4xl'><span>100</span> <span className='text-6xl'>+</span></p>
+          <p className='text-4xl'><span><CountUp end={100} /></span> <span className='text-6xl'>+</span></p>
           <p className='text-2xl'>delivery boy</p>
         </div>
       </div>
