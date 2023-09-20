@@ -10,7 +10,7 @@ import { v4 } from 'uuid';
 import useUserSecure from '../../../../hooks/useUserSecure';
 import useAxiosSecure from '../../../../hooks/useAxiosSecure';
 import { HiOutlineMail } from 'react-icons/hi';
-import { BiCurrentLocation, BiSolidRename } from 'react-icons/bi';
+import { BiCurrentLocation, BiMoney, BiSolidRename } from 'react-icons/bi';
 import { useAuth } from '../../../../hooks/useAuth';
 
 const daysOfWeek = [
@@ -140,151 +140,161 @@ const ForRestaurant = () => {
 
     return (
         <>
-            <div className=" min-h-screen flex justify-center items-center">
+            <div className="  flex justify-center items-center w-3/4 mx-auto">
                 <motion.div
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0, scale: 0.8 }}
                     transition={{ duration: 0.5 }}
-                    className="bg-white p-8 rounded-lg shadow-md w-[60%]"
+                    className="bg-white p-8 rounded-lg  shadow-md w-[100%]"
                 >
                     <h2 className="text-2xl font-bold mb-4">Apply as a Restaurant</h2>
                     <form onSubmit={e => onSubmit(e)}>
                         {/* 
                         // Restaurant admin name 
                         */}
-                        <div className="mb-4">
-                            <motion.label
-                                variants={inputVariants}
-                                initial="hidden"
-                                animate="visible"
-                                transition={{ duration: 0.5 }}
-                                className="text-primary block mb-1"
-                                htmlFor="name"
-                            >
-                                Admin Name
-                            </motion.label>
-                            <div className="flex items-center">
-                                <FiUser className="text-primary" />
-                                <input
-                                    defaultValue={user?.name}
-                                    disabled
-                                    readOnly
-                                    className="ml-2 text-red-500 w-full border-b border-primary focus:border-secondary outline-none"
-                                    type="text"
-                                    name="name"
-                                />
-                            </div>
-                        </div>
-
-                        <div className="mb-4">
-                            <motion.label
-                                variants={inputVariants}
-                                initial="hidden"
-                                animate="visible"
-                                transition={{ duration: 0.5 }}
-                                className="text-primary block mb-1"
-                                htmlFor="name"
-                            >
-                                Admin Email
-                            </motion.label>
-                            <div className="flex items-center">
-                                <HiOutlineMail className="text-primary" />
-                                <input
-                                    defaultValue={user?.email}
-                                    disabled
-                                    readOnly
-                                    className="ml-2 text-primary w-full border-b border-primary focus:border-secondary outline-none"
-                                    type="email"
-                                    name="email"
-                                />
-                            </div>
-                        </div>
+                        <div className='space-y-3  '>
 
 
-                        {/* 
-                        
-                        // Restaurant Name 
-                        */}
-                        <div className="mb-4">
-                            <motion.label
-                                variants={inputVariants}
-                                initial="hidden"
-                                animate="visible"
-                                transition={{ duration: 0.5 }}
-                                className="text-primary block mb-1"
-                                htmlFor="restaurant_name"
-                            >
-                                Restaurant Name
-                            </motion.label>
-                            <div className="flex items-center">
-                                <BiSolidRename className="text-primary" />
-                                <input
-                                    className="ml-2 text-gray-600 w-full border-b border-primary focus:border-secondary outline-none"
-                                    type="text"
-                                    name="restaurant_name"
-                                />
+                            <div className='flex justify-between w-full'>
+                                <div className="mb-4 w-1/2">
+                                    <motion.label
+                                        variants={inputVariants}
+                                        initial="hidden"
+                                        animate="visible"
+                                        transition={{ duration: 0.5 }}
+                                        className="text-primary block mb-1  font-semibold text-2xl"
+                                        htmlFor="name"
+                                    >
+                                        Admin Name
+                                    </motion.label>
+                                    <div className="flex items-center">
+                                        <FiUser className="text-primary" />
+                                        <input
+                                            defaultValue={user?.name}
+                                            disabled
+                                            readOnly
+                                            className="ml-2 text-red-500 w-full border-b border-primary focus:border-secondary outline-none"
+                                            type="text"
+                                            name="name"
+                                        />
+                                    </div>
+                                </div>
+                                <div className="mb-4 w-1/2">
+                                    <motion.label
+                                        variants={inputVariants}
+                                        initial="hidden"
+                                        animate="visible"
+                                        transition={{ duration: 0.5 }}
+                                        className="text-primary block mb-1 font-semibold text-2xl"
+                                        htmlFor="name"
+                                    >
+                                        Admin Email
+                                    </motion.label>
+                                    <div className="flex items-center">
+                                        <HiOutlineMail className="text-primary" />
+                                        <input
+                                            defaultValue={user?.email}
+                                            disabled
+                                            readOnly
+                                            className="ml-2 text-primary w-full border-b border-primary focus:border-secondary outline-none"
+                                            type="email"
+                                            name="email"
+                                        />
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div className="mb-4">
-                            <motion.label
-                                variants={inputVariants}
-                                initial="hidden"
-                                animate="visible"
-                                transition={{ duration: 0.5 }}
-                                className="text-primary block mb-1"
-                                htmlFor="contact_number"
-                            >
-                                Contact Number
-                            </motion.label>
-                            <div className="flex items-center">
-                                <BiSolidRename className="text-primary" />
-                                <input
-                                    className="ml-2 text-gray-600 w-full border-b border-primary focus:border-secondary outline-none"
-                                    type="text"
-                                    name="contact_number"
-                                />
+
+                            <div className='flex justify-between w-full'>
+                                <div className="mb-4 w-1/2">
+                                    <motion.label
+                                        variants={inputVariants}
+                                        initial="hidden"
+                                        animate="visible"
+                                        transition={{ duration: 0.5 }}
+                                        className="text-primary block mb-1 font-semibold text-2xl"
+                                        htmlFor="restaurant_name"
+                                    >
+                                        Restaurant Name
+                                    </motion.label>
+                                        {/* <small>This will be your Restaurant name </small> */}
+                                    <div className="flex items-center">
+                                        <BiSolidRename className="text-primary" />
+                                        <input
+                                            className="ml-2 text-gray-600 w-full border-b border-primary focus:border-secondary outline-none"
+                                            type="text"
+                                            placeholder='Enter Your Restaurant Name'
+                                            name="restaurant_name"
+                                        />
+                                    </div>
+                                </div>
+                                <div className="mb-4 w-1/2">
+                                    <motion.label
+                                        variants={inputVariants}
+                                        initial="hidden"
+                                        animate="visible"
+                                        transition={{ duration: 0.5 }}
+                                        className="text-primary block mb-1 font-semibold text-2xl"
+                                        htmlFor="contact_number"
+                                    >
+                                        Contact Number
+                                    </motion.label>
+                                    <div className="flex items-center">
+                                        <BiSolidRename className="text-primary" />
+                                        <input
+                                            className="ml-2 text-gray-600 w-full border-b border-primary focus:border-secondary outline-none"
+                                            type="text"
+                                            placeholder='Restaurant Phone Number'
+                                            name="contact_number"
+                                        />
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div className="mb-4">
-                            <motion.label
-                                variants={inputVariants}
-                                initial="hidden"
-                                animate="visible"
-                                transition={{ duration: 0.5 }}
-                                className="text-primary block mb-1"
-                                htmlFor="location"
-                            >
-                                Restaurant Location
-                            </motion.label>
-                            <div className="flex items-center">
-                                <BiCurrentLocation className="text-primary" />
-                                <input
-                                    className="ml-2 text-gray-600 w-full border-b border-primary focus:border-secondary outline-none"
-                                    type="text"
-                                    name="location"
-                                />
-                            </div>
-                        </div>
-                        <div className="mb-4">
-                            <motion.label
-                                variants={inputVariants}
-                                initial="hidden"
-                                animate="visible"
-                                transition={{ duration: 0.5 }}
-                                className="text-primary block mb-1"
-                                htmlFor="location"
-                            >
-                                Payment Method of Your Restaurant (TODO:----)
-                                {/* TODO:  */}
-                            </motion.label>
-                            <div className="flex items-center">
-                                <BiCurrentLocation className="text-primary" />
-                                <input
-                                    className="ml-2 text-gray-600 w-full border-b border-primary focus:border-secondary outline-none"
-                                    type="text"
-                                    name="location"
-                                />
+
+                            <div className='flex  justify-between w-full'>
+                                <div className="mb-4 w-1/2">
+                                    <motion.label
+                                        variants={inputVariants}
+                                        initial="hidden"
+                                        animate="visible"
+                                        transition={{ duration: 0.5 }}
+                                        className="text-primary block mb-1 font-semibold text-2xl"
+                                        htmlFor="location"
+                                    >
+                                        Restaurant Location
+                                    </motion.label>
+                                    <div className="flex items-center">
+                                        <BiCurrentLocation className="text-primary" />
+                                        <input
+                                            className="ml-2 text-gray-600 w-full border-b border-primary focus:border-secondary outline-none"
+                                            type="text"
+                                            placeholder='Your Restaurant Location'
+                                            name="location"
+                                        />
+                                    </div>
+                                </div>
+                                <div className="mb-4 w-1/2">
+                                    <motion.label
+                                        variants={inputVariants}
+                                        initial="hidden"
+                                        animate="visible"
+                                        transition={{ duration: 0.5 }}
+                                        className="text-primary block mb-1 font-semibold text-2xl"
+                                        htmlFor="location"
+                                    >
+                                        Payment Method
+                                        {/* TODO:  */}
+                                    </motion.label>
+                                    <div className="flex items-center">
+                                        <BiMoney className="text-primary" />
+                                        <input
+                                            className="ml-2 text-gray-600 w-full border-b border-primary focus:border-secondary outline-none"
+                                            type="text"
+                                            placeholder='Payment Method of Your Restaurant (TODO:----)'
+                                            name="location"
+                                        />
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
@@ -340,7 +350,7 @@ const ForRestaurant = () => {
                                             initial="hidden"
                                             animate="visible"
                                             transition={{ duration: 0.5, delay: 0.3 }}
-                                            className="text-gray-700 block mb-1"
+                                            className="text-gray-700 block mb- font-semibold text-2xl1"
                                         >
                                             {day} Opening Hours
                                         </motion.label>
@@ -442,7 +452,7 @@ const ForRestaurant = () => {
                                 initial="hidden"
                                 animate="visible"
                                 transition={{ duration: 0.5, delay: 0.3 }}
-                                className="text-gray-700 block mb-1"
+                                className="text-gray-700 block mb- font-semibold text-2xl1"
                                 htmlFor="description"
                             >
                                 Please Write Description About Your Restaurant
