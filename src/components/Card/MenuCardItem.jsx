@@ -5,6 +5,7 @@ import useAxiosSecure from '../../hooks/useAxiosSecure';
 import { useFoodCart } from '../../hooks/userFoodCart';
 import { Box, Modal } from '@mui/material';
 import { BsCartPlus } from 'react-icons/bs';
+import cartSound from '../../assets/audio/cart-success.mp3';
 const style = {
   position: 'absolute',
   top: '50%',
@@ -20,8 +21,7 @@ const style = {
 };
 const MenuCardItem = (menu) => {
   const { _id, food_name, category, description, restaurant_name, price, image } = menu
-
-  const [loading, setLoading] = useState(false);
+  const cartAudio = new Audio(cartSound);
   const axios = useAxiosSecure();
   const [user] = useUserSecure();
   const [, , refetch] = useFoodCart();
@@ -41,7 +41,10 @@ const MenuCardItem = (menu) => {
     })
       .then((data) => {
         console.log(data.data)
-        refetch();
+        if (data.data.insertedId) {
+          cartAudio.play();
+          refetch();
+        }
       })
       .catch((err) => {
         console.log(err)
