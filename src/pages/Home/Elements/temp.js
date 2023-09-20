@@ -22,4 +22,9 @@ const newArr = arr.flat();
 // console.log(newArr);
 // Get unique values from array
 const uniqueArr = [...new Set(newArr)];
-console.log(uniqueArr);
+// console.log(uniqueArr);
+
+
+const options = [true , false];
+const random = Math.floor(Math.random() * options.length);
+// console.log(options[random]);
