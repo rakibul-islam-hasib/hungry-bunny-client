@@ -18,7 +18,7 @@ const style = {
   px: 4,
   pb: 3,
 };
-const MenuCardItem = (menu) => {
+const MenuCardItem = ({menu}) => {
   const { _id, food_name, category, description, restaurant_name, price, image } = menu
 
   const [loading, setLoading] = useState(false);
