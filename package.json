@@ -38,7 +38,6 @@
     "gsap": "^3.12.2",
     "javascript-time-ago": "^2.5.9",
     "localforage": "^1.10.0",
-    "lodash": "^4.17.21",
     "lottie-react": "^2.4.0",
     "lottie-web": "^5.12.2",
     "match-sorter": "^6.3.1",
