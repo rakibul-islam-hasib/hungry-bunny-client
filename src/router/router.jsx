@@ -56,6 +56,7 @@ import PendingMenu from "../pages/Dashboard/admin/PendingMenu";
 import Checkout from "../pages/checkout/Checkout";
 import Payment from "../pages/checkout/Payment";
 import ManageOrders from "../pages/Dashboard/RestaurantAdmin/ManageOrders";
+import PaymentHistory from "../pages/payments/PaymentHistory";
 
 
 export const router = createBrowserRouter([
@@ -250,6 +251,10 @@ export const router = createBrowserRouter([
       {
         path: 'manage-applications',
         element: <PrivateRoute><AdminRoute><ManageApplications /></AdminRoute></PrivateRoute>,
+      },
+      {
+        path: 'payment-history',
+        element: <PaymentHistory />
       }
 
     ],
