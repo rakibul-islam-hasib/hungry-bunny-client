@@ -7,6 +7,7 @@ import useAxiosFetch from '../../hooks/useAxiosFetch';
 import './restaurant.css'
 import { Pagination } from '@mui/material';
 import { Helmet } from 'react-helmet-async';
+import CountUp from 'react-countup';
 
 const Restaurant = () => {
   // const [searchQuery, setSearchQuery] = useState('')
@@ -145,19 +146,19 @@ const Restaurant = () => {
           </div> */}
           <div className='p-10 md:w-[90%] -mb-36 border-4 border-orange-400 dark:bg-black dark:text-white mt-10 bottom-10 rounded-3xl bg-white mx-auto grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
             <div className=''>
-              <p className='flex items-center'><span className='text-4xl font-extrabold'> 30</span> <span className='text-4xl font-extrabold'>+</span></p>
+              <p className='flex items-center'><span className='text-4xl font-extrabold'> <CountUp end={30} /></span> <span className='text-4xl font-extrabold'>+</span></p>
               <p className='text-2xl'>Food Vendors</p>
             </div>
             <div className=''>
-              <p className='flex items-center'><span className='text-4xl font-extrabold'>300</span> <span className='text-4xl font-extrabold'>+</span></p>
+              <p className='flex items-center'><span className='text-4xl font-extrabold'><CountUp end={300} /></span> <span className='text-4xl font-extrabold'>+</span></p>
               <p className='text-2xl'>Food items</p>
             </div>
             <div className=''>
-              <p className='flex items-center'><span className='text-4xl font-extrabold'>30</span> <span className='text-4xl font-extrabold'>%</span></p>
+              <p className='flex items-center'><span className='text-4xl font-extrabold'><CountUp end={30} /></span> <span className='text-4xl font-extrabold'>%</span></p>
               <p className='text-2xl'>Birthday Specials</p>
             </div>
             <div className=''>
-              <p className='flex items-center'><span className='text-4xl font-extrabold'>25</span> <span className='text-4xl font-extrabold'>%</span></p>
+              <p className='flex items-center'><span className='text-4xl font-extrabold'><CountUp end={25} /></span> <span className='text-4xl font-extrabold'>%</span></p>
               <p className='text-2xl'>Exclusive Membership</p>
             </div>
           </div>
