@@ -9,6 +9,7 @@ import { BsCreditCard2Front, BsFillPostcardFill } from 'react-icons/bs';
 import { TbBrandAppleArcade, TbWriting } from 'react-icons/tb';
 import { BiEdit } from 'react-icons/bi';
 import { IoMdRestaurant } from 'react-icons/io';
+import { RiSecurePaymentLine } from 'react-icons/ri';
 
 
 export const heroCategory = [
@@ -118,6 +119,17 @@ export const categoryOptions = [
     { value: 'Rice', label: 'Rice' },
     { value: 'SeaFood', label: 'SeaFood' },
     { value: 'SeaFood', label: 'SeaFood' },
+
+];
+export const division = [
+    { value: '', label: 'Select Division' },
+    { value: 'Dhaka', label: 'Dhaka Division' },
+    { value: 'Chittagong', label: 'Chittagong Division' },
+    { value: 'Khulna', label: 'Khulna Division' },
+    { value: 'Mymensingh', label: 'Mymensingh Division' },
+    { value: 'Rajshahi', label: 'Rajshahi Division' },
+    { value: 'Rangpur', label: 'Rangpur Division' },
+    { value: 'Sylhet', label: 'Sylhet Division' },
     
 ];
 
@@ -227,6 +239,11 @@ export const userNavItems = [
         to: "/dashboard/user-payment",
         icon: <BsFillPostcardFill className="text-2xl" />,
         label: "Payment Method",
+    },
+    {
+        to: "/dashboard/payment-history",
+        icon: <RiSecurePaymentLine className="text-2xl" />,
+        label: "Payment History",
     },
     {
         to: "/dashboard/user-security",

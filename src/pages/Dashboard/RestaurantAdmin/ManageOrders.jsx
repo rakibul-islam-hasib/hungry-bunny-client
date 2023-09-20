@@ -41,7 +41,8 @@ const ManageOrders = () => {
 
 
 
-    const handleCancelOrder = (id) => {
+    const handleCancelOrder = () => {
+        // console.log(id);
 
     }
     const handleProcessOrder = (id) => {

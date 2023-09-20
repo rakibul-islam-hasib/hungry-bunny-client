@@ -8,6 +8,7 @@ import { setPaymentInfo } from '../../redux/slices/utilsSlice';
 import { AiOutlineLoading3Quarters } from 'react-icons/ai';
 import useAxiosFetch from '../../hooks/useAxiosFetch';
 import useUserSecure from '../../hooks/useUserSecure';
+import { fireConfetti } from '../../utils/confetti';
 
 const BeReadyForPayment = ({ intent, cartIds, refetch, orderedItem }) => {
 
@@ -128,10 +129,6 @@ const BeReadyForPayment = ({ intent, cartIds, refetch, orderedItem }) => {
                             return;
                         }
                         if (res.data) {
-                            // console.log(res.data, 'payment info saved')
-                            // console.log(res.data.result)
-                            // setId(res.data.result.insertedId)
-                            // console.log(id)
                             paymentId(res.data.result.insertedId)
                         }
                         setMessage(paymentIntent.status === 'succeeded' ? 'Payment Successful' : 'Payment Failed')
@@ -147,7 +144,7 @@ const BeReadyForPayment = ({ intent, cartIds, refetch, orderedItem }) => {
                             .then(res => {
                                 console.log(res, 'cart items deleted')
                                 if (res.deletedCount > 0) {
-                                    console.log(id)
+                                    fireConfetti();
                                     refetch();
                                 }
                             })

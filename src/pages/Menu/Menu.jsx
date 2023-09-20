@@ -1,17 +1,15 @@
 import React from 'react';
 import MenuCard from '../../components/Card/MenuCard';
-import { Helmet } from 'react-helmet-async';
+import { useTitle } from '../../hooks/useTitle';
 
 const Menu = () => {
-    
+
+    useTitle('Menu');
 
     return (
         <div className=''>
-           <Helmet>
-        <title>Hungry Bunny || all menu</title>
-      </Helmet>
 
-            <MenuCard/>
+            <MenuCard />
 
         </div>
     );

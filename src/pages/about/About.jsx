@@ -3,14 +3,14 @@ import { BsStopwatch } from 'react-icons/bs';
 import { MdOutlineLocalOffer } from 'react-icons/md';
 import { PiBowlFood, PiVanDuotone } from 'react-icons/pi';
 import Subscribe from './Subscribe';
-import { Helmet } from 'react-helmet-async';
+import { useTitle } from '../../hooks/useTitle';
+import CountUp from 'react-countup';
 
 const About = () => {
+  useTitle('About')
   return (
     <div className='mx-auto font-sans justify-center items-center ml-5 dark:text-slate-300'>
-      <Helmet>
-        <title>Hungry Bunny || about</title>
-      </Helmet>
+
       {/* <div className="bg-fixed w-full bg-[url('https://images.pexels.com/photos/6646953/pexels-photo-6646953.jpeg?auto=compress&cs=tinysrgb&w=1600')]" style={{height:700}}>
         <img className="w-full rounded-2xl bg-fixed" src='' style={{ height: 800 }} alt="delivery picture" />
 <div className=' text-center mb-32'>
@@ -20,32 +20,32 @@ const About = () => {
 </div>
       </div> */}
       <div className='md:flex mb-10'>
-      <div className='mt-10 md:w-[50%] pr-10'>
-        <p className='text-4xl font-extrabold text-slate-800'>About Us</p>
-        <p className='text-2xl mt-10 mb-6'>Discover culinary delights delivered to your door. We partner with local restaurants and chefs to bring you a diverse, delicious menu, ensuring satisfaction with every order.</p>
-        <button className="drop-shadow-lg hover:transition hover:duration-400 border-orange-500 hover:text-orange-500 hover:bg-white mt-8 text-white bg-orange-500 border-2 font-bold py-2 px-4 rounded-full flex items-center">
+        <div className='mt-10 md:w-[50%] pr-10'>
+          <p className='text-4xl font-extrabold text-slate-800'>About Us</p>
+          <p className='text-2xl mt-10 mb-6'>Discover culinary delights delivered to your door. We partner with local restaurants and chefs to bring you a diverse, delicious menu, ensuring satisfaction with every order.</p>
+          <button className="drop-shadow-lg hover:transition hover:duration-400 border-orange-500 hover:text-orange-500 hover:bg-white mt-8 text-white bg-orange-500 border-2 font-bold py-2 px-4 rounded-full flex items-center">
             SEND EMAIL
           </button>
-      </div>
-      <div className='md:w-[50%]'>
-        <img className='rounded-3xl' src="https://images.pexels.com/photos/6605268/pexels-photo-6605268.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="" />
-      </div>
+        </div>
+        <div className='md:w-[50%]'>
+          <img className='rounded-3xl' src="https://images.pexels.com/photos/6605268/pexels-photo-6605268.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="" />
+        </div>
       </div>
       <div className=' mb-10 font-bold sm:my-3 md:ml-10 sm:gap-x-3 grid sm:grid-cols-2 md:grid-cols-4 text-center'>
         <div className='border-2 hover:transition hover:duration-400 pt sm:mb-3 rounded-2xl md:mr-16 border-orange-400 pr-2 pl-3 pb-2 hover:bg-orange-500 hover:text-white '>
-          <p className='text-4xl'><span>5000</span> <span className='text-6xl'>+</span></p>
+          <p className='text-4xl'><span><CountUp end={500} /></span> <span className='text-6xl'>+</span></p>
           <p className='text-2xl'>happy customer</p>
         </div>
         <div className='border-2 hover:transition hover:duration-400 sm:mb-3 rounded-2xl md:mr-16 border-orange-400 pr-2 pl-3 pb-2 hover:bg-orange-500 hover:text-white '>
-          <p className='text-4xl'><span>24/7</span> <span className='text-6xl'></span></p>
+          <p className='text-4xl'><span><CountUp end={24}  /></span>/<span><CountUp end={7} /></span> <span className='text-6xl'></span></p>
           <p className='text-2xl'>service</p>
         </div>
         <div className='border-2 hover:transition hover:duration-400 sm:mb-3 rounded-2xl md:mr-16 border-orange-400 pr-2 pl-3 pb-2 hover:bg-orange-500 hover:text-white '>
-          <p className='text-4xl'><span>50</span> <span className='text-6xl'>+</span></p>
+          <p className='text-4xl'><span><CountUp end={50} /></span> <span className='text-6xl'>+</span></p>
           <p className='text-2xl'>restaurant</p>
         </div>
         <div className='border-2 hover:transition hover:duration-400 sm:mb-3 md:mr-14 rounded-2xl border-orange-400  pr-2 pl-5 pb-2 hover:bg-orange-500 hover:text-white '>
-          <p className='text-4xl'><span>100</span> <span className='text-6xl'>+</span></p>
+          <p className='text-4xl'><span><CountUp end={100} /></span> <span className='text-6xl'>+</span></p>
           <p className='text-2xl'>delivery boy</p>
         </div>
       </div>
@@ -69,29 +69,29 @@ const About = () => {
         </div>
       </div>
 
-{/* add new section */}
-<div className='grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 mt-10 mb-10'>
-  <div className='p-7 bg-white hover:transition hover:duration-400 rounded-3xl drop-shadow-lg hover:text-white hover:bg-orange-500 dark:bg-black dark:text-white dark:border-2 dark:border-orange-500 dark:hover:bg-orange-500 hover:'>
-    <p className='text-7xl ml-3'><PiVanDuotone/> </p>
-    <h3 className='text-4xl font-bold'>Free Delivery</h3>
-    <p className='mt-4 mb-4'>Enjoy the added perk of FREE delivery! Savor your favorite dishes without the extra cost, making every meal a delightful and budget-friendly experience.</p>
-  </div>
-  <div className='p-7 bg-white hover:transition hover:duration-400 rounded-3xl drop-shadow-lg hover:text-white hover:bg-orange-500 dark:bg-black dark:text-white dark:border-2 dark:border-orange-500 dark:hover:bg-orange-500'>
-    <p className='text-7xl ml-3 hover:text-white'><BsStopwatch/> </p>
-    <h3 className='text-4xl font-bold'>Save your Time</h3>
-    <p className='mt-4 mb-4'>Save time with our swift food delivery service. Spend less time in the kitchen and more time enjoying your meals, all with just a few clicks.</p>
-  </div>
-  <div className='p-7 bg-white hover:transition hover:duration-400 rounded-3xl drop-shadow-lg hover:text-white hover:bg-orange-500 dark:bg-black dark:text-white dark:border-2 dark:border-orange-500 dark:hover:bg-orange-500'>
-    <p className='text-7xl ml-3 hover:text-white'><MdOutlineLocalOffer/> </p>
-    <h3 className='text-4xl font-bold'>Regular Discount</h3>
-    <p className='mt-4 mb-4'>Unlock regular discounts for loyal customers. Enjoy savings on your favorite dishes with our exclusive offers, making dining with us even more satisfying.</p>
-  </div>
-  <div className='p-7 bg-white hover:transition hover:duration-400 rounded-3xl drop-shadow-lg hover:text-white hover:bg-orange-500 dark:bg-black dark:text-white dark:border-2 dark:border-orange-500 dark:hover:bg-orange-500'>
-    <p className='text-7xl ml-3 hover:text-white'><PiBowlFood/> </p>
-    <h3 className='text-4xl font-bold'>Variety Foods</h3>
-    <p className='mt-4 mb-4'>Explore a world of diverse flavors. Our menu boasts a variety of cuisines, promising an exciting dining adventure with every order.</p>
-  </div>
-</div>
+      {/* add new section */}
+      <div className='grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 mt-10 mb-10'>
+        <div className='p-7 bg-white hover:transition hover:duration-400 rounded-3xl drop-shadow-lg hover:text-white hover:bg-orange-500 dark:bg-black dark:text-white dark:border-2 dark:border-orange-500 dark:hover:bg-orange-500 hover:'>
+          <p className='text-7xl ml-3'><PiVanDuotone /> </p>
+          <h3 className='text-4xl font-bold'>Free Delivery</h3>
+          <p className='mt-4 mb-4'>Enjoy the added perk of FREE delivery! Savor your favorite dishes without the extra cost, making every meal a delightful and budget-friendly experience.</p>
+        </div>
+        <div className='p-7 bg-white hover:transition hover:duration-400 rounded-3xl drop-shadow-lg hover:text-white hover:bg-orange-500 dark:bg-black dark:text-white dark:border-2 dark:border-orange-500 dark:hover:bg-orange-500'>
+          <p className='text-7xl ml-3 hover:text-white'><BsStopwatch /> </p>
+          <h3 className='text-4xl font-bold'>Save your Time</h3>
+          <p className='mt-4 mb-4'>Save time with our swift food delivery service. Spend less time in the kitchen and more time enjoying your meals, all with just a few clicks.</p>
+        </div>
+        <div className='p-7 bg-white hover:transition hover:duration-400 rounded-3xl drop-shadow-lg hover:text-white hover:bg-orange-500 dark:bg-black dark:text-white dark:border-2 dark:border-orange-500 dark:hover:bg-orange-500'>
+          <p className='text-7xl ml-3 hover:text-white'><MdOutlineLocalOffer /> </p>
+          <h3 className='text-4xl font-bold'>Regular Discount</h3>
+          <p className='mt-4 mb-4'>Unlock regular discounts for loyal customers. Enjoy savings on your favorite dishes with our exclusive offers, making dining with us even more satisfying.</p>
+        </div>
+        <div className='p-7 bg-white hover:transition hover:duration-400 rounded-3xl drop-shadow-lg hover:text-white hover:bg-orange-500 dark:bg-black dark:text-white dark:border-2 dark:border-orange-500 dark:hover:bg-orange-500'>
+          <p className='text-7xl ml-3 hover:text-white'><PiBowlFood /> </p>
+          <h3 className='text-4xl font-bold'>Variety Foods</h3>
+          <p className='mt-4 mb-4'>Explore a world of diverse flavors. Our menu boasts a variety of cuisines, promising an exciting dining adventure with every order.</p>
+        </div>
+      </div>
 
       {/* hero section partner */}
       <div className='mt-7 md:flex mb-4'>
@@ -133,7 +133,7 @@ const About = () => {
           <img style={{ height: 400 }} className='rounded-lg' src="https://images.pexels.com/photos/4392039/pexels-photo-4392039.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="" />
         </div>
       </div>
-      <Subscribe/>
+      <Subscribe />
     </div>
   );
 };
