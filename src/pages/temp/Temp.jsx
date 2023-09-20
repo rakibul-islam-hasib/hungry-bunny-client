@@ -1,5 +1,6 @@
 import React from 'react';
 import moment from 'moment';
+import { fireConfetti } from '../../utils/confetti';
 const Temp = () => {
 
 
@@ -11,6 +12,10 @@ const Temp = () => {
   return (
     <div>
       <h1>{formattedDate}</h1>
+    <button className='bg-black text-white'  onClick={()=>fireConfetti()} >Fire</button>
+
+
+
     </div>
   );
 };
