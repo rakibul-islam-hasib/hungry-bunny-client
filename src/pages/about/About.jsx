@@ -4,7 +4,6 @@ import { MdOutlineLocalOffer } from 'react-icons/md';
 import { PiBowlFood, PiVanDuotone } from 'react-icons/pi';
 import Subscribe from './Subscribe';
 import { useTitle } from '../../hooks/useTitle';
-import { Helmet } from 'react-helmet-async';
 import CountUp from 'react-countup';
 
 const About = () => {
