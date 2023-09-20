@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { FaRegBookmark } from 'react-icons/fa';
 import { toast } from 'react-toastify';
 import useUserSecure from '../../hooks/useUserSecure';
 import useAxiosSecure from '../../hooks/useAxiosSecure';
 import { useFoodCart } from '../../hooks/userFoodCart';
 import { Box, Modal } from '@mui/material';
+import { BsCartPlus } from 'react-icons/bs';
 const style = {
   position: 'absolute',
   top: '50%',
@@ -83,7 +83,7 @@ const MenuCardItem = (menu) => {
           <div className="flex justify-between items-center  h-14">
             <span className="text-gray-600 font-semibold text-lg">{price} Taka</span>
             <button className=" ">
-              <FaRegBookmark onClick={() => cartHandler(menu._id, menu.restaurant_id)} className="text-2xl transform transition duration-300 hover:scale-125" />
+              <BsCartPlus onClick={() => cartHandler(menu._id, menu.restaurant_id)} className="text-2xl transform transition duration-300 hover:text-primary hover:scale-110" />
 
             </button>
           </div>
