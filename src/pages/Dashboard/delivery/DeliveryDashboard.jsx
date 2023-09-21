@@ -149,6 +149,8 @@ function DeliveryDashboard() {
           <BiBarChart className="text-5xl text-white" />
         </div>
       </div>
+      <div className="mt-6">
+<h2 className="ml-6 text-3xl">Rider Last year summary</h2>
       <ResponsiveContainer width="100%" height="100%">
         <BarChart
           width={500}
@@ -162,14 +164,60 @@ function DeliveryDashboard() {
           }}
           barSize={20}
         >
-          <XAxis dataKey="name" scale="point" padding={{ left: 10, right: 10 }} />
+          <XAxis dataKey="month" scale="point" padding={{ left: 10, right: 10 }} />
           <YAxis />
           <Tooltip />
           <Legend />
           <CartesianGrid strokeDasharray="3 3" />
-          <Bar dataKey="month" fill="#8884d8" background={{ fill: '#eee' }} />
+          <Bar dataKey="deliveryNumber" fill="#8884d8" background={{ fill: '#eee' }} />
         </BarChart>
       </ResponsiveContainer>
+      </div>
+      <div className='mt-10 bg-white'>
+        <h2 className='text-gray-600 font-bold ml-10 pt-10 pb-7 text-3xl drop-shadow-3xl font-sans'>Top Reviews</h2>
+        <div className="overflow-x-auto shadow-md sm:rounded-lg">
+      <div className="inline-block min-w-full overflow-hidden">
+        <table className="min-w-full text-sm text-left text-gray-500 dark:text-gray-400">
+          <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+            <tr>
+              <th scope="col" className="px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-3 text-2xl md:text-4xl">
+                #
+              </th>
+              <th scope="col" className="hidden sm:table-cell px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-3">
+                Customer image
+              </th>
+              <th scope="col" className="px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-3">
+                Customer Name
+              </th>
+              <th scope="col" className="hidden sm:table-cell px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-3">
+                Customer Area
+              </th>
+              <th scope="col" className="px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-3">
+                Date
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+              <td className="w-1/6 px-2 py-2 sm:px-4 sm:py-3 md:py-4">Number</td>
+              <td className="hidden sm:table-cell w-1/6 px-2 py-2 sm:px-4 sm:py-3 md:py-4">
+                <img
+                  className="rounded-lg"
+                  style={{ maxWidth: '90px' }}
+                  src="https://images.pexels.com/photos/4393021/pexels-photo-4393021.jpeg?auto=compress&cs=tinysrgb&w=600"
+                  alt="food image"
+                />
+              </td>
+              <td className="w-1/6 px-2 py-2 sm:px-4 sm:py-3 md:py-4">Pizza</td>
+              <td className="hidden sm:table-cell w-1/6 px-2 py-2 sm:px-4 sm:py-3 md:py-4">Pending</td>
+              <td className="w-1/6 px-2 py-2 sm:px-4 sm:py-3 md:py-4">$2999</td>
+            </tr>
+            {/* Add more table rows here */}
+          </tbody>
+        </table>
+      </div>
+    </div>
+       </div>
         </div>
     );
 }
