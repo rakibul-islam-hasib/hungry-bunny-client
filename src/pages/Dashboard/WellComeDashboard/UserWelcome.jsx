@@ -84,28 +84,28 @@ const UserWelcome = () => {
             <div className='mt-8 gap-x-5 grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
         <div className='text-center bg-cyan-500 text-white p-5 rounded-md drop-shadow-lg flex justify-between items-center'>
         <div>
-        <p className='text-4xl font-bold flex'>  <span className='font-extrabold'><TbCurrencyTaka/> </span> <span>00.00</span></p>
+        <p className='text-4xl font-bold flex'>  <span className='font-extrabold'><TbCurrencyTaka/> </span> <span>22540.00</span></p>
         <p className='text-gray-800 text-2xl'>your total cost</p>
         </div>
         <div className='text-6xl'><FaWallet/> </div>
         </div>
         <div className='text-center bg-purple-500 text-white p-5 rounded-md drop-shadow-lg flex justify-between items-center'>
         <div>
-        <p className='text-4xl font-bold text-left'>  00</p>
+        <p className='text-4xl font-bold text-left'>  05</p>
         <p className='text-gray-800 text-1xl'>number of payments</p>
         </div>
         <div className='text-6xl'><FaPaypal/>  </div>
         </div>
         <div className='text-center bg-pink-500 text-white p-5 rounded-md drop-shadow-lg flex justify-between items-center'>
         <div>
-        <p className='text-4xl font-bold text-left'>  00</p>
+        <p className='text-4xl font-bold text-left'>  100</p>
         <p className='text-gray-800 text-1xl'>number of ordered foods</p>
         </div>
         <div className='text-6xl'><MdFastfood/> </div>
         </div>
         <div className='text-center bg-yellow-500 text-white p-5 rounded-md drop-shadow-lg flex justify-between items-center'>
         <div>
-        <p className='text-4xl font-bold text-left'>  00</p>
+        <p className='text-4xl font-bold text-left'>  03</p>
         <p className='text-gray-800 text-2xl'>total contact</p>
         </div>
         <div className='text-6xl'><FaPhoneAlt/> </div>
