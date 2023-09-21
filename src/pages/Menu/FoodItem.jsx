@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom';
 // Modal Start
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
+import { Fade } from 'react-awesome-reveal';
 const style = {
     position: 'absolute',
     top: '50%',
@@ -40,7 +41,9 @@ const FoodItem = ({ image, food_name, description, price, type, restaurant, ingr
         setOpen(false);
     };
     return (
-        <div className="#F4ECE1 #FCFBF7 border border-gray-100 transition transform duration-200  hover:-translate-y-2 p-4 rounded-lg relative">
+
+        <Fade bottom>
+          <div className="#F4ECE1 #FCFBF7 border border-gray-100 transition transform duration-200  hover:-translate-y-2 p-4 rounded-lg relative">
             <span className="bg-red-100  rounded-full text-primary text-sm poppins px-4 py-1 inline-block mb-4 ">{type}</span>
             <div onClick={handleOpen}>
 
@@ -81,6 +84,8 @@ const FoodItem = ({ image, food_name, description, price, type, restaurant, ingr
                 </Modal>
             </section>
         </div>
+        </Fade>
+        
     )
 }
 
