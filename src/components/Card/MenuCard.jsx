@@ -58,7 +58,7 @@ const MenuCard = () => {
 
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/food/allMenu/${menuTab}`)
+    axios.get(`/food/allMenu/${menuTab}`)
       .then((res) => {
         setMenuItems(res.data);
         // setMenuTab(res.data)
@@ -66,8 +66,6 @@ const MenuCard = () => {
       })
       .catch((err) => {
         console.log(err);
-      })
-      .finally(() => {
       })
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [menuTab])
@@ -88,8 +86,17 @@ const MenuCard = () => {
     setMenuTab(type);
   }
 
-  const handleSearchMenu =(e )=>{
-    console.log(e.target);
+  const handleSearchMenu =( )=>{
+    
+    axios.get(`/food/menu-Search/${searchMenu}`)
+    .then((res) => {
+      setMenuItems(res.data);
+      // setMenuTab(res.data)
+      // console.log(res.data)
+    })
+    .catch((err) => {
+      console.log(err);
+    })
   }
 
 
