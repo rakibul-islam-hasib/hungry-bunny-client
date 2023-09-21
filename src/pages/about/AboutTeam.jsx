@@ -45,8 +45,8 @@ const AboutTeam = () => {
 
                 <Link className='' to={member.facebook_url}> <FacebookSvg className='mx-auto h-10 ' />Facebook</Link>
                 <Link className='' to={member.instagram_url}> <InstagramSvg className='mx-auto h-10 ' />Instagram</Link>
-                <Link className='' to={member.facebook_url}> <FacebookSvg className='mx-auto h-10 ' />Facebook</Link>
-                <Link className='' to={member.instagram_url}> <InstagramSvg className='mx-auto h-10 ' />Instagram</Link>
+                <Link className='' to={member.facebook_url}> <FacebookSvg className='mx-auto h-10 ' />Github</Link>
+                <Link className='' to={member.instagram_url}> <InstagramSvg className='mx-auto h-10 ' />LinkedIn</Link>
 
               </div>
             </div>

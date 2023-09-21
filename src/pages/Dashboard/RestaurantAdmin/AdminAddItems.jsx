@@ -16,7 +16,7 @@ const AdminAddItems = () => {
   const [imageURL, setImageURL] = useState(null);
   const [user, isLoadingUser] = useUserSecure();
   const [restaurant, restaurantLoader] = useRestaurant(user?._id);
-  console.log(restaurant);
+  // console.log(restaurant);
   const uploadMenuPic = (file) => {
     setIsLoading(true);
     const imgId = v4().slice(0, 10);
@@ -75,6 +75,7 @@ const AdminAddItems = () => {
     data.submitted = new Date();
     data.status = "pending";
     data.restaurant_id = restaurant._id;
+    data.restaurant_email = restaurant.userEmail;
     data.restaurant_name = restaurant.restaurant_name;
     data.quantity = parseInt(event.target.Quantity.value);
     data.price = parseInt(event.target.price.value);

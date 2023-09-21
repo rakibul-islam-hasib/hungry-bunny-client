@@ -19,8 +19,8 @@ const style = {
   px: 4,
   pb: 3,
 };
-const MenuCardItem = ({menu}) => {
-  const { _id, food_name, category, description, restaurant_name, price, image } = menu
+const MenuCardItem = ({ menu }) => {
+  const { _id, food_name, category, description, quantity, restaurant_name, price, image } = menu
   const cartAudio = new Audio(cartSound);
   const axios = useAxiosSecure();
   const [user] = useUserSecure();
@@ -28,6 +28,7 @@ const MenuCardItem = ({menu}) => {
   const cartHandler = (itemId, restaurant_id) => {
     // return console.log(itemId, restaurant_id)
     if (!user) return toast.error('Please Login First');
+    if (quantity === 0) return toast.error('This Menu is Not in Stock Now');
     const data = {
       itemId,
       restaurant_id,
@@ -75,13 +76,16 @@ const MenuCardItem = ({menu}) => {
         </div>
         <div className=" py-4">
           <div className="font-semibold text-xl mb-2">{food_name}</div>
-          <p className="text-sm text-gray-500">{description.slice(0, 70)}</p>
-          <div className="flex items-center gap-2">
-            <p>
-              <span className="text-sm font-bold text-primary">{category}</span>
-            </p>
-            <p className='text-sm text-gray-400 font-bold'>By</p>
-            <p className="text-sm font-bold text-slate-900">{restaurant_name}</p>
+          <p className="text-sm text-gray-500 h-[60px]">{description.slice(0, 120)}</p>
+          <div className='flex justify-between'>
+            <div className="flex items-center gap-2">
+              <p>
+                <span className="text-sm font-bold text-primary">{category}</span>
+              </p>
+              <p className='text-sm text-gray-400 font-bold'>By</p>
+              <p className="text-sm font-bold text-slate-900">{restaurant_name}</p>
+            </div>
+            {quantity === 0 ? <p className='text-red-600'>Stock out</p> : <p>In Stock</p>}
           </div>
           <div className="flex justify-between items-center  h-14">
             <span className="text-gray-600 font-semibold text-lg">{price} Taka</span>
