@@ -103,7 +103,7 @@ export const router = createBrowserRouter([
         loader: ({ params }) =>
           // TODO : replace with base URL
           // http://localhost:5000/application
-          fetch(`http://localhost:5000/restaurant/${params.id}`),
+          fetch(`http://localhost:5000/application/${params.id}`),
       },
       {
         path: '/menu',

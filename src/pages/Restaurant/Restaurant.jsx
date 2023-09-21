@@ -176,11 +176,12 @@ const Restaurant = () => {
         value={item.rating}
         readOnly
       /></span></p>
+      <p>{item?.description.slice(0,70)}</p>
               </div>
               <div className='flex justify-between dark:text-gray-200'>
                 <p className='font-bold flex'><span className='mr-2'><FaMapMarkerAlt className='text-orange-500 text-2xl'></FaMapMarkerAlt></span> <span>{item.location}</span></p>
                 
-                <Link to={`/application/${item._id}`} className='bg-orange-500 border-2 border-orange-500 hover:bg-white hover:text-orange-500 hover:transition hover:duration-400 text-white font-bold py-2 px-4 rounded-2xl flex items-center'><span>details</span> <span className="ml-3"><FaArrowRight/></span></Link>
+                <Link to={`/application/${item?._id}`} className='bg-orange-500 border-2 border-orange-500 hover:bg-white hover:text-orange-500 hover:transition hover:duration-400 text-white font-bold py-2 px-4 rounded-2xl flex items-center'><span>details</span> <span className="ml-3"><FaArrowRight/></span></Link>
               </div>
             </div>
           </div>
@@ -188,10 +189,10 @@ const Restaurant = () => {
         ))}
       </div>
       {/* Pagination  */}
-      {/* <div className="mt-10 mb-5 text-4xl mx-auto sm:w-[40%] md:w-[20%]">
+      <div className="mt-10 mb-5 text-4xl mx-auto sm:w-[40%] md:w-[20%]">
         <Pagination className='text-4xl font-bold pt-5 pb-5 pr-4 pl-4 rounded-2xl dark:bg-white' onChange={(e, vale) => setPage(vale)} count={totalPage} color="secondary" />
       </div>
-      <ScrollRestoration /> */}
+      <ScrollRestoration />
     </div>
   );
 };

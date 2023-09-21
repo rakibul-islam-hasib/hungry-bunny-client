@@ -20,9 +20,7 @@ function RestaurantDetails() {
       </Helmet>
          <div className='mt-7 md:flex mb-4 sm:ml-5'>
         <div className='mt-4 md:w-[50%] md:mr-8'>
-          <h3 className='font-extrabold text-4xl'>{restaurant.restaurantName}</h3>
-          <p className='mt-3 md:mr-7'> {restaurant.descriptionFirst}</p>
-          <p className='mt-3 md:mr-7'> {restaurant.descriptionSecond}</p>
+          <h3 className='font-extrabold text-4xl'>{restaurant?.restaurantName}</h3>
          <div className='flex'>
          <button className="drop-shadow-lg mr-10 hover:transition hover:duration-600 bg-orange-500 border-2 border-white hover:text-orange-500 hover:bg-white mt-8 text-white font-bold py-2 px-4 uppercase text-2xl rounded-full items-center">
             order now
@@ -31,30 +29,10 @@ function RestaurantDetails() {
             follow
           </button>
          </div>
-          {/* <div className='mt-3 mb-3 flex text-center'>
-        <div className='border-2 sm:w-[50%] md:w-[40%] hover:transition hover:duration-400 rounded-2xl mr-16 border-orange-400 pr-4 pl-4 hover:bg-orange-500 hover:text-white '>
-          <p className='text-4xl'><span>5000</span> <span className='text-6xl'>+</span></p>
-          <p className='text-2xl'>happy customer</p>
-        </div>
-        <div className='border-2 sm:w-[50%] md:w-[40%] hover:transition hover:duration-400 rounded-2xl mr-16 border-orange-400 pr-4 pl-4 hover:bg-orange-500 hover:text-slate-200 '>
-          <p className='text-4xl'><span>115</span> <span className='text-6xl'>+</span></p>
-          <p className='text-2xl'>recipe</p>
-        </div>
-        
-      </div> */}
-          {/* <div className='flex justify-evenly restaurants-center mt-7 mb-5'>
-          <button className="bg-orange-500 hover:transition hover:duration-400 hover:bg-orange-600 text-slate-200 font-bold py-2 px-4 rounded-full flex restaurants-center">
-            become a partner
-          </button>
-          <Rating
-      style={{ maxWidth: 140 }}
-      value={restaurant.rating}
-      readOnly
-    />
-          </div> */}
+
         </div>
         <div className='md:w-[50%]'>
-          <img src={restaurant.restaurantImage} className='w-full sm:m-5 rounded-2xl' alt="" />
+          <img src={restaurant?.restaurantImage} className='w-full sm:m-5 rounded-2xl' alt="" />
         </div>
       </div>
       {/* add new section */}
@@ -87,7 +65,7 @@ function RestaurantDetails() {
 <div className="dark:text-slate-300">
 <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-8 gap-3 mb-14">
           {
-            restaurant.foodItems.map((items, idx) => 
+            restaurant?.foodItems?.map((items, idx) => 
       //       <div key={idx} className='p-2 border overflow-hidden shadow-lg rounded-2xl'>
       //       <img className="w-full h-60 object-cover rounded-lg" src={items.foodImage} alt="Food Image" />
       //       <div className='w-full relative group hover:-translate-y-4 duration-500'>
