@@ -181,7 +181,7 @@ const Restaurant = () => {
               <div className='flex justify-between dark:text-gray-200'>
                 <p className='font-bold flex'><span className='mr-2'><FaMapMarkerAlt className='text-orange-500 text-2xl'></FaMapMarkerAlt></span> <span>{item.location}</span></p>
                 
-                <Link to={`/application/${item._id}`} className='bg-orange-500 border-2 border-orange-500 hover:bg-white hover:text-orange-500 hover:transition hover:duration-400 text-white font-bold py-2 px-4 rounded-2xl flex items-center'><span>details</span> <span className="ml-3"><FaArrowRight/></span></Link>
+                <Link to={`/application/${item?._id}`} className='bg-orange-500 border-2 border-orange-500 hover:bg-white hover:text-orange-500 hover:transition hover:duration-400 text-white font-bold py-2 px-4 rounded-2xl flex items-center'><span>details</span> <span className="ml-3"><FaArrowRight/></span></Link>
               </div>
             </div>
           </div>
