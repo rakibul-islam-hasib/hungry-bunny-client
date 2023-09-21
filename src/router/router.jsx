@@ -93,11 +93,11 @@ export const router = createBrowserRouter([
         element: <MultiStepForm />,
       },
       {
-        path: "/restaurant",
+        path: "/application",
         element: <Restaurant />,
       },
       {
-        path: "/restaurant/:id",
+        path: "/application/:id",
         element: <RestaurantDetails />,
         loader: ({ params }) =>
           // TODO : replace with base URL

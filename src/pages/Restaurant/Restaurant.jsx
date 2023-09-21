@@ -143,7 +143,7 @@ const Restaurant = () => {
         </div>
             
           </div> */}
-          <div className='p-10 md:w-[90%] -mb-36 border-4 border-orange-400 dark:bg-black dark:text-white mt-10 bottom-10 rounded-3xl bg-white mx-auto grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
+          <div className='p-10 md:w-[90%] -mb-24 border-4 border-orange-400 dark:bg-black dark:text-white mt-10 bottom-10 rounded-3xl bg-white mx-auto grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
             <div className=''>
               <p className='flex items-center'><span className='text-4xl font-extrabold'> 30</span> <span className='text-4xl font-extrabold'>+</span></p>
               <p className='text-2xl'>Food Vendors</p>
@@ -179,7 +179,7 @@ const Restaurant = () => {
               <div className='flex justify-between dark:text-gray-200'>
                 <p className='font-bold flex'><span className='mr-2'><FaMapMarkerAlt className='text-orange-500 text-2xl'></FaMapMarkerAlt></span> <span>{item.location}</span></p>
                 
-                <Link to={`/restaurant/${item._id}`} className='bg-orange-500 border-2 border-orange-500 hover:bg-white hover:text-orange-500 hover:transition hover:duration-400 text-white font-bold py-2 px-4 rounded-2xl flex items-center'><span>details</span> <span className="ml-3"><FaArrowRight/></span></Link>
+                <Link to={`/application/${item._id}`} className='bg-orange-500 border-2 border-orange-500 hover:bg-white hover:text-orange-500 hover:transition hover:duration-400 text-white font-bold py-2 px-4 rounded-2xl flex items-center'><span>details</span> <span className="ml-3"><FaArrowRight/></span></Link>
               </div>
             </div>
           </div>
