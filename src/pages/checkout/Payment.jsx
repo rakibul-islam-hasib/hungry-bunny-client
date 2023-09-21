@@ -11,9 +11,9 @@ import { useTitle } from '../../hooks/useTitle';
 const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLIC_KEY)
 
 const Payment = () => {
-    useTitle('Payment')
+    useTitle('Payment');
     const [intent, setIntent] = useState({});
-    const [loader, setLoader] = useState(false)
+    const [loader, setLoader] = useState(false);
     const { totalPrice } = useUtils();
     const axios = useAxiosSecure();
     const [cart = [], isLoading, refetch] = useFoodCart();
@@ -41,7 +41,10 @@ const Payment = () => {
             restaurantId: item.foodDetails.restaurant_id
         }
     })
-    console.log(orderedItem , cart)
+
+    
+
+
 
     if (intent.error) return <Navigate to="/shop/next/checkout" />
     if (loader || isLoading) return <div className="h-screen w-full flex justify-center items-center">

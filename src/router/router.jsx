@@ -56,6 +56,7 @@ import PendingMenu from "../pages/Dashboard/admin/PendingMenu";
 import Checkout from "../pages/checkout/Checkout";
 import Payment from "../pages/checkout/Payment";
 import ManageOrders from "../pages/Dashboard/RestaurantAdmin/ManageOrders";
+import PaymentHistory from "../pages/payments/PaymentHistory";
 
 
 export const router = createBrowserRouter([
@@ -93,16 +94,16 @@ export const router = createBrowserRouter([
         element: <MultiStepForm />,
       },
       {
-        path: "/restaurant",
+        path: "/application",
         element: <Restaurant />,
       },
       {
-        path: "/restaurant/:id",
+        path: "/application/:id",
         element: <RestaurantDetails />,
         loader: ({ params }) =>
           // TODO : replace with base URL
           // http://localhost:5000/application
-          fetch(`https://hungry-bunny.vercel.app/restaurant/${params.id}`),
+          fetch(`http://localhost:5000/application/${params.id}`),
       },
       {
         path: '/menu',
@@ -123,8 +124,8 @@ export const router = createBrowserRouter([
       {
         path: '/blogs/:id',
         element: <BlogDetails />,
-        // TODO : replace with base URL https://hungry-bunny.vercel.app
-        loader: ({ params }) => fetch(`https://hungry-bunny.vercel.app/blogs/${params.id}`)
+        // TODO : replace with base URL http://localhost:5000
+        loader: ({ params }) => fetch(`http://localhost:5000/blogs/${params.id}`)
       },
       {
         path: "/temp",
@@ -181,8 +182,8 @@ export const router = createBrowserRouter([
       {
         path: "manage-blogs/:id",
         element: <UpdateBlog />,
-        // TODO : replace with base URL https://hungry-bunny.vercel.app
-        loader: ({ params }) => fetch(`https://hungry-bunny.vercel.app/blogs/${params.id}`)
+        // TODO : replace with base URL http://localhost:5000
+        loader: ({ params }) => fetch(`http://localhost:5000/blogs/${params.id}`)
       },
       {
         path: "add-blogs",
@@ -250,6 +251,10 @@ export const router = createBrowserRouter([
       {
         path: 'manage-applications',
         element: <PrivateRoute><AdminRoute><ManageApplications /></AdminRoute></PrivateRoute>,
+      },
+      {
+        path: 'payment-history',
+        element: <PaymentHistory />
       }
 
     ],

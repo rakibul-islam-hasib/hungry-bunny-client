@@ -1,15 +1,14 @@
 import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
-import { AiOutlineMail, AiOutlinePhone, AiFillFacebook, AiFillInstagram, AiFillGithub, AiFillLinkedin } from "react-icons/ai";
 import { Link } from 'react-router-dom';
 import FacebookSvg from '../../assets/svg/FacebookSvg';
 import InstagramSvg from '../../assets/svg/InstagramSvg';
-import { Helmet } from 'react-helmet-async';
+import { useTitle } from '../../hooks/useTitle';
 
 const AboutTeam = () => {
   const [members, setMembers] = useState([])
-
+  useTitle('About Team')
   useEffect(() => {
     fetch('aboutTeam.json')
       .then(res => res.json())
@@ -19,9 +18,6 @@ const AboutTeam = () => {
 
   return (
     <div className='my-10'>
-      <Helmet>
-        <title>Hungry Bunny || team info</title>
-      </Helmet>
       <h1 className='text-4xl font-bold text-center my-10'>Lets Meet Our <span className='text-primary'>Team Members </span> </h1>
 
       <div className='grid md:grid-cols-2 md:gap-8 gap-3 lg:grid-cols-3 m-auto justify-center'>
@@ -31,7 +27,7 @@ const AboutTeam = () => {
 
             <div key={idx} title={member.name} className="  rounded-t-full  overflow-hidden shadow-lg   hover:border-primary hover:bg-primary hover:bg-opacity-5 border-orange-300  transform transition duration-300 hover:scale-105">
               <div className='text-center flex justify-center '>
-                <img className="w-80 h-80 rounded-lg" src={member.photo_url} alt="Sunset in the mountains" />
+                <img className="w-80 h-80 rounded-lg" src={member.photo_url} alt={member.name}/>
               </div>
               <div className="text-start">
                 <div className="font-bold mb-2 ">

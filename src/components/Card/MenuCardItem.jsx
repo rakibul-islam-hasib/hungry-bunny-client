@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { FaRegBookmark } from 'react-icons/fa';
 import { toast } from 'react-toastify';
 import useUserSecure from '../../hooks/useUserSecure';
 import useAxiosSecure from '../../hooks/useAxiosSecure';
 import { useFoodCart } from '../../hooks/userFoodCart';
 import { Box, Modal } from '@mui/material';
+import { BsCartPlus } from 'react-icons/bs';
+import cartSound from '../../assets/audio/cart-success.mp3';
 const style = {
   position: 'absolute',
   top: '50%',
@@ -18,10 +19,9 @@ const style = {
   px: 4,
   pb: 3,
 };
-const MenuCardItem = (menu) => {
+const MenuCardItem = ({menu}) => {
   const { _id, food_name, category, description, restaurant_name, price, image } = menu
-
-  const [loading, setLoading] = useState(false);
+  const cartAudio = new Audio(cartSound);
   const axios = useAxiosSecure();
   const [user] = useUserSecure();
   const [, , refetch] = useFoodCart();
@@ -41,7 +41,10 @@ const MenuCardItem = (menu) => {
     })
       .then((data) => {
         console.log(data.data)
-        refetch();
+        if (data.data.insertedId) {
+          cartAudio.play();
+          refetch();
+        }
       })
       .catch((err) => {
         console.log(err)
@@ -83,7 +86,7 @@ const MenuCardItem = (menu) => {
           <div className="flex justify-between items-center  h-14">
             <span className="text-gray-600 font-semibold text-lg">{price} Taka</span>
             <button className=" ">
-              <FaRegBookmark onClick={() => cartHandler(menu._id, menu.restaurant_id)} className="text-2xl transform transition duration-300 hover:scale-125" />
+              <BsCartPlus onClick={() => cartHandler(menu._id, menu.restaurant_id)} className="text-2xl transform transition duration-300 hover:text-primary hover:scale-110" />
 
             </button>
           </div>

@@ -37,7 +37,7 @@ const navLinks = [
     {
         id: 5,
         name: 'Restaurants',
-        path: '/restaurant',
+        path: '/application',
     },
     {
         id: 7,
