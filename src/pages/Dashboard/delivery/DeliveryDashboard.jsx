@@ -1,23 +1,34 @@
-import AdminDashboardChart from './AdminDashboardChart';
-import AdminDashboardPieChart from './AdminDashboardPieChart';
-import AdmonDashboardProgress from './AdmonDashboardProgress';
-import AdminDashBoardList from './AdminDashBoardList';
-import { Helmet } from 'react-helmet-async';
-import { useAuth } from '../../../hooks/useAuth';
-import { HiUsers } from 'react-icons/hi';
-import {  MdOutlineRestaurant } from 'react-icons/md';
-import { PiBowlFoodThin } from 'react-icons/pi';
-import { FaUserAlt } from 'react-icons/fa';
+import { Helmet } from "react-helmet-async";
+import { useAuth } from "../../../hooks/useAuth";
+import { MdIncompleteCircle } from "react-icons/md";
+import { RiPassPendingLine } from "react-icons/ri";
+import { TbAdjustmentsCancel } from "react-icons/tb";
+import { BiBarChart } from "react-icons/bi";
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
-
-
-const AdminDashboard = () => {
+function DeliveryDashboard() {
   const { user: firebaseUser } = useAuth()
 
+  const data = [
+    { "_id": 1, "month": "January", "deliveryNumber": 120 },
+    { "_id": 2, "month": "February", "deliveryNumber": 110 },
+    { "_id": 3, "month": "March", "deliveryNumber": 130 },
+    { "_id": 4, "month": "April", "deliveryNumber": 105 },
+    { "_id": 5, "month": "May", "deliveryNumber": 140 },
+    { "_id": 6, "month": "June", "deliveryNumber": 125 },
+    { "_id": 7, "month": "July", "deliveryNumber": 115 },
+    { "_id": 8, "month": "August", "deliveryNumber": 135 },
+    { "_id": 9, "month": "September", "deliveryNumber": 125 },
+    { "_id": 10, "month": "October", "deliveryNumber": 130 },
+    { "_id": 11, "month": "November", "deliveryNumber": 110 },
+    { "_id": 12, "month": "December", "deliveryNumber": 145 }
+]
+
+  
     return (
-        <div className='mt-2'>
-           <Helmet>
-        <title>Hungry Bunny || admin dashboard </title>
+        <div className="mt-5">
+    <Helmet>
+        <title>Hungry Bunny || delivery dashboard </title>
       </Helmet>
       <div className='pb-2 mb-2 flex justify-between items-center'>
         <div className='w-1/3'>
@@ -102,82 +113,113 @@ const AdminDashboard = () => {
           <img className='w-20 rounded-full' src="https://images.generated.photos/P2tzhpRdA_aiFi3kf2sPjw-vYJXi7hQE349GFBGi2ds/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/OTY4MjM4LmpwZw.jpg" alt="user image" />
           <div className="ml-3">
             <h1 className='font-bold text-1xl text-gray-800 mr-6'>{firebaseUser?.displayName}</h1>
-            <h1 className='font-bold text-gray-600 mr-6'>admin</h1>
+            <h1 className='font-bold text-gray-600 mr-6'>rider</h1>
 
           </div>
         </div>
       </div>
       <hr className="w-full h-1 mx-auto my-2 bg-black border-0 rounded dark:bg-gray-700"></hr>
-
       <div className="mb-9 gap-x-5 grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-        <div className="flex justify-between p-4 bg-gradient-to-r from-purple-600 to-purple-400 rounded-md">
+        <div className="flex justify-between p-4 bg-gradient-to-r from-sky-600 to-sky-400 rounded-md">
           <div className="text-white">
-            <p className="text-4xl font-bold">100</p>
-            <h2 className="text-2xl">total restaurant</h2>
+            <p className="text-4xl font-bold">110</p>
+            <h2 className="text-2xl">food delivery complete</h2>
           </div>
-          <MdOutlineRestaurant className="text-5xl text-white" />
+          <MdIncompleteCircle className="text-5xl text-white" />
         </div>
-        <div className="flex justify-between p-4 bg-gradient-to-r from-teal-600 to-teal-400 rounded-md">
+        <div className="flex justify-between p-4 bg-gradient-to-r from-orange-600 to-orange-400 rounded-md">
           <div className="text-white">
-            <p className="text-4xl font-bold"> 1050</p>
-            <h2 className="text-2xl">total users</h2>
+            <p className="text-4xl font-bold"> 10</p>
+            <h2 className="text-2xl">pending delivery</h2>
           </div>
-          <HiUsers className="text-5xl text-white" />
+          <RiPassPendingLine className="text-5xl text-white" />
         </div>
-        <div className="flex justify-between p-4 bg-gradient-to-r from-indigo-600 to-indigo-400 rounded-md">
+        <div className="flex justify-between p-4 bg-gradient-to-r from-violet-600 to-violet-400 rounded-md">
           <div className="text-white">
             <p className="text-4xl font-bold"> 50</p>
-            <h2 className="text-2xl">total Employee</h2>
+            <h2 className="text-2xl">cancel delivery</h2>
           </div>
-          <FaUserAlt className="text-5xl text-white" />
+          <TbAdjustmentsCancel className="text-5xl text-white" />
         </div>
         <div className="flex justify-between p-4 bg-gradient-to-r from-pink-600 to-pink-400 rounded-md">
           <div className="text-white">
-            <p className="text-4xl font-bold"> 5000</p>
-            <h2 className="text-2xl">total menu</h2>
+            <p className="text-4xl font-bold"> 500</p>
+            <h2 className="text-2xl">Customer Reviews</h2>
           </div>
-          <PiBowlFoodThin className="text-5xl text-white" />
+          <BiBarChart className="text-5xl text-white" />
         </div>
       </div>
-
-          {/* <div className="grid lg:grid-cols-4 gap-6 mt-5">
-            <div className='px-4 py-10 bg-orange-200 rounded-lg'>
-                <h3 className='text-center text-2xl font-semibold'>Total Restaurant</h3>
-                <h1 className='text-center text-6xl font-semibold'>48</h1>
-            </div>
-         
-            <div className='px-4 py-10 bg-orange-200 rounded-lg'>
-                <h3 className='text-center text-2xl font-semibold'>Total Employess</h3>
-                <h1 className='text-center text-6xl font-semibold'>200</h1>
-            </div>
-         
-            <div className='px-4 py-10 bg-orange-200 rounded-lg'>
-                <h3 className='text-center text-2xl font-semibold'>Total Users</h3>
-                <h1 className='text-center text-6xl font-semibold'>1148</h1>
-            </div>
-         
-            <div className='px-4 py-10 bg-orange-200 rounded-lg'>
-                <h3 className='text-center text-2xl font-semibold'>Total Menus</h3>
-                <h1 className='text-center text-6xl font-semibold'>536</h1>
-            </div>
-         
-          </div> */}
-          <h3 className='text-center text-4xl font-bold py-5 '>Restaurant States</h3>
-          <AdminDashboardChart/>
-          {/* <AdminDashboardPieChart/> */}
-        
-
-          <div className="grid lg:grid-cols-3">
-            <AdmonDashboardProgress/>
-            <AdminDashboardPieChart/>
-            <AdminDashBoardList/>
-          </div>
-   
-
-
+      <div className="mt-6">
+<h2 className="ml-6 text-3xl">Rider Last year summary</h2>
+      <ResponsiveContainer width="100%" height="100%">
+        <BarChart
+          width={500}
+          height={300}
+          data={data}
+          margin={{
+            top: 5,
+            right: 30,
+            left: 20,
+            bottom: 5,
+          }}
+          barSize={20}
+        >
+          <XAxis dataKey="month" scale="point" padding={{ left: 10, right: 10 }} />
+          <YAxis />
+          <Tooltip />
+          <Legend />
+          <CartesianGrid strokeDasharray="3 3" />
+          <Bar dataKey="deliveryNumber" fill="#8884d8" background={{ fill: '#eee' }} />
+        </BarChart>
+      </ResponsiveContainer>
+      </div>
+      <div className='mt-10 bg-white'>
+        <h2 className='text-gray-600 font-bold ml-10 pt-10 pb-7 text-3xl drop-shadow-3xl font-sans'>Top Reviews</h2>
+        <div className="overflow-x-auto shadow-md sm:rounded-lg">
+      <div className="inline-block min-w-full overflow-hidden">
+        <table className="min-w-full text-sm text-left text-gray-500 dark:text-gray-400">
+          <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+            <tr>
+              <th scope="col" className="px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-3 text-2xl md:text-4xl">
+                #
+              </th>
+              <th scope="col" className="hidden sm:table-cell px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-3">
+                Customer image
+              </th>
+              <th scope="col" className="px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-3">
+                Customer Name
+              </th>
+              <th scope="col" className="hidden sm:table-cell px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-3">
+                Customer Area
+              </th>
+              <th scope="col" className="px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-3">
+                Date
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+              <td className="w-1/6 px-2 py-2 sm:px-4 sm:py-3 md:py-4">Number</td>
+              <td className="hidden sm:table-cell w-1/6 px-2 py-2 sm:px-4 sm:py-3 md:py-4">
+                <img
+                  className="rounded-lg"
+                  style={{ maxWidth: '90px' }}
+                  src="https://images.pexels.com/photos/4393021/pexels-photo-4393021.jpeg?auto=compress&cs=tinysrgb&w=600"
+                  alt="food image"
+                />
+              </td>
+              <td className="w-1/6 px-2 py-2 sm:px-4 sm:py-3 md:py-4">Pizza</td>
+              <td className="hidden sm:table-cell w-1/6 px-2 py-2 sm:px-4 sm:py-3 md:py-4">Pending</td>
+              <td className="w-1/6 px-2 py-2 sm:px-4 sm:py-3 md:py-4">$2999</td>
+            </tr>
+            {/* Add more table rows here */}
+          </tbody>
+        </table>
+      </div>
+    </div>
+       </div>
         </div>
-
     );
-};
+}
 
-export default AdminDashboard;
+export default DeliveryDashboard;
