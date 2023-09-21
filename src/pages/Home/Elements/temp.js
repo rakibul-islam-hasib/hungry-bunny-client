@@ -27,4 +27,4 @@ const uniqueArr = [...new Set(newArr)];
 
 const options = [true , false];
 const random = Math.floor(Math.random() * options.length);
-// console.log(options[random]);
+console.log(options[random]);

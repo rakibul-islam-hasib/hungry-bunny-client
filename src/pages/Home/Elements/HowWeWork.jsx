@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import 'aos/dist/aos.css'; // Import AOS CSS
 import illustration from '../../../assets/img/work/illustration-1.png';
 import illustration2 from '../../../assets/img/work/illustration-2.png';
 import illustration3 from '../../../assets/img/work/illustration-3.png';
+import Aos from 'aos';
 
 const steps = [
   {
@@ -10,7 +12,8 @@ const steps = [
     image: illustration,
     title: 'Select Restaurant',
     description:
-      'First Select yor favorite restaurant . Make sure you are sign in with your account in our website . Then our intellisense is suggest you your nearby restaurants',
+      'First Select your favorite restaurant. Make sure you are signed in with your account on our website. Then our intelligent system will suggest nearby restaurants.',
+    animation: 'fade-up', // First animation type
   },
   {
     id: 2,
@@ -18,19 +21,28 @@ const steps = [
     image: illustration2,
     title: 'Select Menu',
     description:
-      'After successfully choosing your favorite restaurant . Then you need to select your favorite food . Then select your favorite payment method for payment . Now follow the next step',
+      'After successfully choosing your favorite restaurant, select your favorite food. Then choose your preferred payment method for payment. Now follow the next step.',
+    animation: 'fade-left', // Second animation type
   },
   {
     id: 3,
     step: '03',
     image: illustration3,
-    title: 'Wait for delivery',
+    title: 'Wait for Delivery',
     description:
-      'Ok , great you have successfully place your first order. Now just waite for 30 minute . Our delivery team will be meet you within 30 minute with your awesome food',
+      'Okay, great! You have successfully placed your first order. Now, just wait for 30 minutes. Our delivery team will meet you within 30 minutes with your awesome food.',
+    animation: 'fade-right', // Third animation type
   },
 ];
 
 const HowWeWork = () => {
+  useEffect(() => {
+    // Initialize AOS when the component mounts
+    Aos.init({
+      duration: 1000,
+    });
+  }, []);
+
   return (
     <div className='my-24'>
       <h1 className='text-center mb-9 text-5xl font-bold'>
@@ -42,6 +54,7 @@ const HowWeWork = () => {
           <div
             key={step.id}
             className='flex w-full md:w-[300px] flex-col justify-center items-center text-center mb-10 md:mb-0'
+            data-aos={step.animation} // Specify the AOS animation here
           >
             <img src={step.image} alt='' />
             <div className='flex items-end mt-3'>
