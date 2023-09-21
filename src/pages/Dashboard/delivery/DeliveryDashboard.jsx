@@ -149,6 +149,7 @@ function DeliveryDashboard() {
           <BiBarChart className="text-5xl text-white" />
         </div>
       </div>
+      {/* charts about monthly complete ride */}
       <div className="mt-6">
 <h2 className="ml-6 text-3xl">Rider Last year summary</h2>
       <ResponsiveContainer width="100%" height="100%">
@@ -173,6 +174,7 @@ function DeliveryDashboard() {
         </BarChart>
       </ResponsiveContainer>
       </div>
+      {/* table recent complete food ride */}
       <div className='mt-10 bg-white'>
         <h2 className='text-gray-600 font-bold ml-10 pt-10 pb-7 text-3xl drop-shadow-3xl font-sans'>Top Reviews</h2>
         <div className="overflow-x-auto shadow-md sm:rounded-lg">
