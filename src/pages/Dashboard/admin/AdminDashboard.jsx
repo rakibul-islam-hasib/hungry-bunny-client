@@ -1,5 +1,3 @@
-import React, { useState } from 'react';
-import AdminCart from '../RestaurantAdmin/AdminCart';
 import AdminDashboardChart from './AdminDashboardChart';
 import AdminDashboardPieChart from './AdminDashboardPieChart';
 import AdmonDashboardProgress from './AdmonDashboardProgress';

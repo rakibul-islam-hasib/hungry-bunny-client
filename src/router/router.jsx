@@ -94,16 +94,16 @@ export const router = createBrowserRouter([
         element: <MultiStepForm />,
       },
       {
-        path: "/restaurant",
+        path: "/application",
         element: <Restaurant />,
       },
       {
-        path: "/restaurant/:id",
+        path: "/application/:id",
         element: <RestaurantDetails />,
         loader: ({ params }) =>
           // TODO : replace with base URL
           // http://localhost:5000/application
-          fetch(`http://localhost:5000/restaurant/${params.id}`),
+          fetch(`http://localhost:5000/application/${params.id}`),
       },
       {
         path: '/menu',

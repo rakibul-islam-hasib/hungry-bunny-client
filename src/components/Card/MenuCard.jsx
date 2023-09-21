@@ -48,17 +48,17 @@ const MenuCard = () => {
   ]
 
   const axios = useAxiosFetch();
-  const [menuTab, setMenuTab] = useState('Pizza')
+  const [menuTab, setMenuTab] = useState('asd')
   const [loading, setLoading] = useState(true);
-  const [dataLoading, setDataLoading] = useState(true);
   const [menuItems, setMenuItems] = useState([])
 
+  console.log(menuItems);
   const [searchMenu, setSearchMenu] = useState('')
 
 
 
   useEffect(() => {
-    axios.get('/food/get/all')
+    axios.get(`/food/allMenu/${menuTab}`)
       .then((res) => {
         setMenuItems(res.data);
         // setMenuTab(res.data)
@@ -67,11 +67,8 @@ const MenuCard = () => {
       .catch((err) => {
         console.log(err);
       })
-      .finally(() => {
-        setDataLoading(false);
-      })
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  }, [menuTab])
 
 
   //loading 
@@ -88,6 +85,20 @@ const MenuCard = () => {
   const handleMenuTabs = (type) => {
     setMenuTab(type);
   }
+
+  const handleSearchMenu =( )=>{
+    
+    axios.get(`/food/menu-Search/${searchMenu}`)
+    .then((res) => {
+      setMenuItems(res.data);
+      // setMenuTab(res.data)
+      // console.log(res.data)
+    })
+    .catch((err) => {
+      console.log(err);
+    })
+  }
+
 
 
   return (
@@ -118,14 +129,14 @@ const MenuCard = () => {
         }
       </div>
 
-      {/* <div className='relative text-end mt-8'>
+      <div className='relative text-end mt-8'>
         <input
           type="text"
           placeholder="Search Menu here"
           onChange={(e) => setSearchMenu(e.target.value)}
           className="border border-red-400  focus:border-pink-400 focus:outline-none px-20  py-2 rounded-lg" />
         <button onClick={handleSearchMenu} className='absolute right-5 mt-2'>Search  </button>
-      </div> */}
+      </div>
 
       <div className="mx-auto md:px-20 px-6 mt-10">
 
@@ -133,9 +144,12 @@ const MenuCard = () => {
 
 
 
-          {menuItems.filter((menu, idx) => menuTab === menu.category).map((menu, idx) => (
-            loading ? <MenuSkeleton key={idx} /> : <MenuCardItem key={idx} {...menu} />
-          ))}
+          {/* {menuItems.map((menu, idx) => menuTab === menu.category).filter((menu, idx) => (
+            loading ? <MenuSkeleton key={idx} /> : <MenuCardItem key={idx} menu={menu} />
+          ))} */}
+          {
+            menuItems.map((menu,idx)=> loading ? <MenuSkeleton key={idx}/> :<MenuCardItem key={idx} menu={menu}/>)
+          }
         </div>
       </div>
 
