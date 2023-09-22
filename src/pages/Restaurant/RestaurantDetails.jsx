@@ -1,5 +1,5 @@
 import { Rating } from '@smastrom/react-rating';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { FaArrowRight, FaMailBulk, FaPlusSquare, FaShoppingCart, FaUserAstronaut } from 'react-icons/fa';
 import { BsStopwatch } from 'react-icons/bs';
 import { MdOutlineLocalOffer, MdDirectionsBike } from 'react-icons/md';
@@ -11,7 +11,14 @@ import { Helmet } from 'react-helmet-async';
 
 function RestaurantDetails() {
     const restaurant = useLoaderData()
-    console.log(restaurant);
+    console.log(restaurant.restaurant_name);
+
+    // const url = `http://localhost:5000/application/restaurant-food?restaurant_name=${restaurant?.restaurant_name}`
+    useEffect(() => {
+      fetch(`http://localhost:5000/application/restaurant-food?restaurant_name=${restaurant?.restaurant_name}`)
+      .then(res => res.json())
+      .then(data => console.log(data))
+    },[restaurant])
 
     return (
         <div className='sm:ml-5 dark:text-slate-200'>
