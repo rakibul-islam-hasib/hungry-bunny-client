@@ -33,14 +33,23 @@ function UpdateBlog() {
             <h2 className="text-3xl uppercase text-center mb-8 text-orange-500 font-bold">update blog information </h2>
             <form onSubmit={event => onFromSubmit(event)}>
                 {/* blog headline */}
-                <div className="mb-4">
-                    <div>
+                <div className="mb-4 md:flex gap-x-8">
+                    <div className="md:w-1/2">
                         <h1 className="text-1xl ">Blog Heading</h1>
                         <input
                             type="text"
                             defaultValue={loadedBlog.blogHeading}
                             className="text-1xl rounded-xl p-2 pl-3 w-full mt-2 mb-2 border-2 border-orange-500"
                             id="headline" name="blogHeading" />
+                    </div>
+                    <div className="md:w-1/2">
+                        <h1 className="text-1xl ">Reading time</h1>
+                        <input
+                            type="text"
+                            defaultValue={loadedBlog?.time}
+                            className="text-1xl rounded-xl p-2 pl-3 w-full mt-2 mb-2 mr-5 border-2 border-orange-500"
+                            name="time"
+                        />
                     </div>
                 </div>
                 {/* blog image and date */}

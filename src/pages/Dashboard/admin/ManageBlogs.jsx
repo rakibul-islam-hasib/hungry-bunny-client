@@ -33,7 +33,7 @@ function ManageBlogs() {
   }, [page])
 
   const handleDelete = _id => {
-    console.log(_id);
+    // console.log(_id);
     Swal.fire({
       title: 'Are you sure?',
       text: "You won't be able to revert this!",
@@ -167,7 +167,7 @@ function ManageBlogs() {
       </div> */}
       <div className="grid md:grid-cols-1 lg:grid-cols-2">
       {
-        blogs.map((item, id) => <div key={item._id} className="border-2 border-orange-500 m-3 rounded-lg relative group hover:-translate-y-4 duration-500">
+        blogs?.map((item, id) => <div key={item._id} className="border-2 border-orange-500 m-3 rounded-lg relative group hover:-translate-y-4 duration-500">
         <div className="p-2 flex justify-between mr-4">
         <div className="flex">
         <div className="">
