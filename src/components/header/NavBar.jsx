@@ -222,6 +222,38 @@ const NavBar = () => {
                                 />
                             </div>
                         </div>
+
+                        <div className="flex flex-col items-center justify-center h-full">
+                            <ul className="space-y-5">
+                                {navLinks.map((link) => (
+                                    <li key={link.id}>
+                                        <NavLink
+                                            to={link.path}
+                                            onClick={() => setShowNav(false)}
+                                            className={({ isActive }) =>
+                                                isActive ? 'active-link' : ''
+                                            }
+                                        >
+                                            {link.name}
+                                        </NavLink>
+                                    </li>
+                                ))}
+                                <li>
+                                    {
+                                        user ? (
+                                            ''
+                                        ) : (
+                                            <NavLink to='/login' onClick={() => setShowNav(false)} className={location.pathname === '/login' ? 'active-link' : ''}>Login</NavLink>
+                                        )
+                                    }
+
+                                </li>
+                            </ul>
+
+
+                        </div>
+
+
                     </div>
                 </nav>
             </div>
