@@ -7,7 +7,7 @@ import { useLoaderData } from "react-router-dom";
 const BlogDetails = () => {
     const blogs = useLoaderData([])
 
-    console.log(blogs);
+    
     return (
         <div className="md:flex mt-10 mx-auto dark:text-white">
             <Helmet>
@@ -50,6 +50,7 @@ const BlogDetails = () => {
            <input type="submit" value="send" className="text-center hover:transition hover:duration-400 rounded-3xl drop-shadow-lg pt-2 pb-2 font-bold text-3xl bg-orange-500 w-full text-white border-2 border-orange-500 hover:text-orange-500 hover:bg-white" />
         </div>
         </div>
+        {/* recent blogs */}
         <div className="md:w-[40%] mt-7 md:ml-10">
             <h2 className="text-4xl text-center font-bold mb-10">Recent Blogs</h2>
             <div className="flex">
