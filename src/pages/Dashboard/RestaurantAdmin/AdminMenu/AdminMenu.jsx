@@ -8,18 +8,7 @@ import { Helmet } from "react-helmet-async";
 
 const AdminMenu = () => {
   const { user: firebaseUser } = useAuth()
-  // const [menus, setMenu] = useState([]);
-  // const [isLoading, setIsLoading] = useState([true]);
-
-  // const { user } = useAuth();
-  // useEffect(() => {
-  //   fetch(`http://localhost:5000/food/${user?.email}`)
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       setMenu(data);
-  //       setIsLoading(false);
-  //     });
-  // }, []);
+  
 
   const [menus, isLoading] = useMenuByRestaurant()
   console.log(menus);

@@ -12,7 +12,7 @@ import useAxiosFetch from '../../../hooks/useAxiosFetch';
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FaMapMarkerAlt } from 'react-icons/fa';
-import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai';
+import { AiOutlineArrowLeft, AiOutlineArrowRight, AiOutlineLoading3Quarters } from 'react-icons/ai';
 
 
 const TopRestaurant = () => {
@@ -35,7 +35,9 @@ const TopRestaurant = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-
+  if (loading) return <div className="h-[300px] flex justify-center items-center w-full">
+    <AiOutlineLoading3Quarters className="text-5xl text-primary animate-spin" />
+  </div>
 
   return (
     <div>
