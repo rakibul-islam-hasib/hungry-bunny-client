@@ -22,9 +22,11 @@ const TopRestaurant = () => {
   const [allRestaurants, setAllRestaurants] = useState([])
   const [loading, setLoading] = useState(true)
   useEffect(() => {
-    axios.get('/restaurant?page=1&limit=10')
+    axios.get('/application/get/approved/6')
       .then(res => {
         setAllRestaurants(res.data)
+        console.log(res.data)
+
       })
       .catch(error => {
         console.log(error);
@@ -67,7 +69,7 @@ const TopRestaurant = () => {
           clickable: true,
           el: '.mySwiper .swiper-pagination'
         }}
-       
+
         modules={[Pagination, Autoplay, Navigation]}
         className="mySwiper swiper-container"
       >
@@ -85,16 +87,16 @@ const TopRestaurant = () => {
 
                 <div className="relative  px-2 flex items-center justify-center">
                   <Link to={`/restaurant/${item._id}`} >
-                    <img className='h-60 rounded-lg transition duration-300 ease-in-out hover:scale-110 ' src={item.restaurantImage} alt="" />
+                    <img className='h-60 rounded-lg transition duration-300 ease-in-out hover:scale-110 ' src={item.image} alt="" />
                   </Link>
                 </div>
                 <div className="relative text-black px-6 pb-6 mt-6">
                   <small className='flex items-center gap-2 poppins text-normal'>
                     <span className=''><FaMapMarkerAlt className='text-orange-500'></FaMapMarkerAlt></span>
-                    <span className="block opacity-75 -mb-1">{item.place}</span>
+                    <span className="block opacity-75 -mb-1">{item.location}</span>
                   </small>
                   <div className="flex justify-between">
-                    <span className="block font-semibold text-xl">{item.restaurantName}</span>
+                    <span className="block font-semibold text-xl">{item.restaurant_name}</span>
                     {/* <span className="block bg-white rounded-full text-orange-500 text-xs font-bold px-3 py-2 leading-none flex items-center">$36.00</span> */}
                   </div>
                 </div>

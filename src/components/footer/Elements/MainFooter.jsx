@@ -15,12 +15,12 @@ import { Link } from 'react-router-dom';
 import deliveroo from '../../../assets/img/Logos/Deliveroo-Logo.wine.png';
 import eat from '../../../assets/img/Logos/Just_Eat-Logo.wine.png';
 import panda from '../../../assets/img/Logos/Foodpanda-Logo.wine.png';
-
+// import logo2 from '../../../assets/img/Logos/'
 
 
 const MainFooter = () => {
     return (
-        <div className='bg-orange-100 py-11'>
+        <div className='bg-orange-100 dark:bg-black py-11'>
             <div className="w-[90%] mx-auto">
                 <div className="w-full border-b border-gray-400 pb-9 h-full gap-6 grid grid-cols-1 md:grid-cols-3 sm:grid-cols-2 lg:grid-cols-5">
                     <div className="space-y-3">
@@ -119,7 +119,7 @@ const MainFooter = () => {
                             <img className='w-[120px]' src={deliveroo} alt="" />
                             <img className='w-[120px]' src={panda} alt="" />
                             <img className='w-[120px]' src={eat} alt="" />
-                            
+
                         </div>
                     </div>
                 </div>
