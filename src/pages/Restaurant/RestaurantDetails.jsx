@@ -1,5 +1,5 @@
 import { Rating } from '@smastrom/react-rating';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { FaArrowRight, FaMailBulk, FaPlusSquare, FaShoppingCart, FaUserAstronaut } from 'react-icons/fa';
 import { BsStopwatch } from 'react-icons/bs';
 import { MdOutlineLocalOffer, MdDirectionsBike } from 'react-icons/md';
@@ -8,17 +8,25 @@ import { AiOutlinePlus } from 'react-icons/ai';
 import { useLoaderData } from 'react-router-dom';
 import Subscribe from '../about/Subscribe';
 import { Helmet } from 'react-helmet-async';
+import useAxiosFetch from '../../hooks/useAxiosFetch';
 
 function RestaurantDetails() {
     const restaurant = useLoaderData()
-    console.log(restaurant.restaurant_name);
+    const axios = useAxiosFetch()
+    const [foods, setFoods] = useState([])
+    console.log(restaurant._id);
 
     // const url = `http://localhost:5000/application/restaurant-food?restaurant_name=${restaurant?.restaurant_name}`
     useEffect(() => {
-      fetch(`http://localhost:5000/application/restaurant-food?restaurant_name=${restaurant?.restaurant_name}`)
-      .then(res => res.json())
-      .then(data => console.log(data))
-    },[restaurant])
+      axios.get(`/food/get/${restaurant?._id}`)
+      .then(res => {
+        setFoods(res.data);
+        console.log(res.data);
+      })
+      
+    },[])
+
+    
 
     return (
         <div className='sm:ml-5 dark:text-slate-200'>
@@ -27,19 +35,20 @@ function RestaurantDetails() {
       </Helmet>
          <div className='mt-7 md:flex mb-4 sm:ml-5'>
         <div className='mt-4 md:w-[50%] md:mr-8'>
-          <h3 className='font-extrabold text-4xl'>{restaurant?.restaurantName}</h3>
+          <h3 className='font-extrabold text-4xl mb-7'>{restaurant?.restaurant_name}</h3>
+          <h3 className='text-2xl'>{restaurant?.description}</h3>
          <div className='flex'>
-         <button className="drop-shadow-lg mr-10 hover:transition hover:duration-600 bg-orange-500 border-2 border-white hover:text-orange-500 hover:bg-white mt-8 text-white font-bold py-2 px-4 uppercase text-2xl rounded-full items-center">
+         <button className="drop-shadow-lg mr-10 hover:transition hover:duration-600 bg-orange-500 border-2 border-white hover:text-orange-500 hover:bg-white mt-8 text-white font-bold py-2 px-4 pt-3 uppercase text-2xl rounded-full items-center">
             order now
           </button>
-          <button className="drop-shadow-lg hover:transition hover:duration-600 bg-white border-2 border-orange-500 hover:text-white hover:bg-orange-500 mt-8 text-orange-500 font-bold py-2 px-4 uppercase text-2xl rounded-full items-center">
+          <button className="drop-shadow-lg hover:transition hover:duration-600 bg-white border-2 border-orange-500 hover:text-white hover:bg-orange-500 mt-8 text-orange-500 font-bold py-2 px-4 pt-3 uppercase text-2xl rounded-full items-center">
             follow
           </button>
          </div>
 
         </div>
         <div className='md:w-[50%]'>
-          <img src={restaurant?.restaurantImage} className='w-full sm:m-5 rounded-2xl' alt="" />
+          <img src={restaurant?.image} className='w-full sm:m-5 rounded-2xl' alt="" />
         </div>
       </div>
       {/* add new section */}
@@ -65,14 +74,12 @@ function RestaurantDetails() {
     <p className='mt-4 mb-4'>Explore a world of diverse flavors. Our menu boasts a variety of cuisines, promising an exciting dining adventure with every order.</p>
   </div>
 </div>
-
-      
-
+     
     {/* food restaurant card */}
 <div className="dark:text-slate-300">
 <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-8 gap-3 mb-14">
           {
-            restaurant?.foodItems?.map((items, idx) => 
+            foods.map((items) => 
       //       <div key={idx} className='p-2 border overflow-hidden shadow-lg rounded-2xl'>
       //       <img className="w-full h-60 object-cover rounded-lg" src={items.foodImage} alt="Food Image" />
       //       <div className='w-full relative group hover:-translate-y-4 duration-500'>
@@ -101,29 +108,19 @@ function RestaurantDetails() {
           <div key={items?._id} className={` border overflow-hidden shadow-lg rounded-md ${items?._id === 1 ? 'w-full' : ''}`}>
           <div>
   
-            <img className="w-full h-64 object-cover transition transform duration-200  hover:-translate-y-2 rounded-lg relative    peer  top-0 right-0" src={items?.foodImage} alt="Food Image" />
+            <img className="w-full h-64 object-cover transition transform duration-200  hover:-translate-y-2 rounded-lg relative    peer  top-0 right-0" src={items?.image} alt="Food Image" />
             <svg className="pointer-events-none absolute inset-x-0 bottom-5 mx-auto text-3xl text-white  transition-opacity group-hover:animate-ping group-hover:opacity-30 peer-hover:opacity-0" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32">
               <path fill="currentColor" d="M2 10a4 4 0 0 1 4-4h20a4 4 0 0 1 4 4v10a4 4 0 0 1-2.328 3.635a2.996 2.996 0 0 0-.55-.756l-8-8A3 3 0 0 0 14 17v7H6a4 4 0 0 1-4-4V10Zm14 19a1 1 0 0 0 1.8.6l2.7-3.6H25a1 1 0 0 0 .707-1.707l-8-8A1 1 0 0 0 16 17v12Z" />
             </svg>
           </div>
-          <div className=" py-4">
-            <div className="font-semibold text-xl mb-2 flex justify-between"><span>{items?.foodItem}</span><span><Rating
-        style={{ maxWidth: 100 }}
-        value={items.foodRating}
-        readOnly
-      /></span></div>
-            <p className="text-sm text-gray-500 flex justify-between"><span>{items?.description.slice(0, 80)}</span> </p>
-            <div className="flex items-center gap-2">
-              <p>
-                <span className="text-sm font-bold text-primary">{items?.category}</span>
-              </p>
-              <p className='text-sm text-gray-400 font-bold'>By</p>
-              <p className="text-sm font-bold text-slate-900">{restaurant.restaurantName}</p>
-            </div>
+          <div className="p-4">
+            <div className="font-semibold text-xl mb-2 flex justify-between"><span>{items?.food_name}</span><span></span></div>
+            <p className="text-sm text-gray-800 flex hover:text-2xl justify-between duration-500"><span>{items?.description.slice(0, 100)}</span> </p>
+            
             <div className="flex justify-between items-center  h-14">
-              <span className="text-gray-600 font-semibold text-lg">{items?.price} Taka</span>
-              <button className=" text-orange-500 bg-white text-4xl">
-                <AiOutlinePlus className='shadow-xl'/>
+              <span className="text-orange-500 font-semibold text-3xl">{items?.price} Taka</span>
+              <button className=" text-orange-500 text-4xl hover:text-6xl duration-500">
+                <span><FaShoppingCart/></span>
                 {/* <FaRegBookmark onClick={() => cartHandler(menu)} className="text-2xl transform transition duration-300 hover:scale-125" /> */}
   
               </button>
