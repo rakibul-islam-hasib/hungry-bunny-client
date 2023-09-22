@@ -154,7 +154,7 @@ function RestaurantDetails() {
           </div>
           <div className="p-4">
             <div className="font-semibold text-xl mb-2 flex justify-between"><span>{items?.food_name}</span><span></span></div>
-            <p className="text-sm text-gray-800 flex hover:text-2xl dark:text-gray-300 justify-between duration-500"><span>{items?.description.slice(0, 100)}</span> </p>
+            <p className="text-sm text-gray-800 flex dark:text-gray-300 justify-between duration-500"><span>{items?.description.slice(0, 100)}</span> </p>
             
             <div className="flex justify-between items-center  h-14">
               <span className="text-orange-500 font-semibold text-2xl">{items?.price} Taka</span>

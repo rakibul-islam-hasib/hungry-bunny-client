@@ -35,22 +35,22 @@ function AddBlog() {
             <div className="mb-4 md:flex gap-x-8">
                 <div className="md:w-1/2"> 
                     <label htmlFor="Blog Heading">Blog Heading</label>
-                <input type="text" placeholder="write blog heading" className="text-2xl rounded-xl p-2 pl-3 w-full mt-2 mb-2 border-2 border-orange-500" id="headline" {...register('blogHeading', {required: true})} />
+                <input type="text" required placeholder="write blog heading" className="text-2xl rounded-xl p-2 pl-3 w-full mt-2 mb-2 border-2 border-orange-500" id="headline" {...register('blogHeading', {required: true})} />
                 </div>
                 <div className="md:w-1/2">
                 <label htmlFor="Reading time">Time</label>
-                <input type="text" placeholder="Reading time" className="text-2xl rounded-xl p-2 pl-3 w-full mt-2 mb-2 mr-5  border-2 border-orange-500" id="time" {...register('time', {required: true})} />
+                <input type="text" required placeholder="Reading time" className="text-2xl rounded-xl p-2 pl-3 w-full mt-2 mb-2 mr-5  border-2 border-orange-500" id="time" {...register('time', {required: true})} />
                 </div>
             </div>
             {/* blog image and date */}
             <div className="mb-4 md:flex gap-x-8">
                 <div className="md:w-1/2">
                 <label htmlFor="Blog Image">Blog Image</label>
-                <input type="text" placeholder="give blog Image" className="text-2xl rounded-xl p-2 pl-3 w-full mt-2 mb-2 mr-5  border-2 border-orange-500" id="blogImage" {...register('blogImage', {required: true})} />
+                <input type="text" required placeholder="give blog Image" className="text-2xl rounded-xl p-2 pl-3 w-full mt-2 mb-2 mr-5  border-2 border-orange-500" id="blogImage" {...register('blogImage', {required: true})} />
                 </div>
                 <div className="md:w-1/2">
                 <label htmlFor="Blog Date">Blog Date</label>
-                <input type="date"  placeholder="choice the date" className="text-2xl rounded-xl p-2 pl-3 w-full mt-2 mb-2 mr-5 border-2 border-orange-500" id="date" {...register('date', {required: true})} />
+                <input type="date" required placeholder="choice the date" className="text-2xl rounded-xl p-2 pl-3 w-full mt-2 mb-2 mr-5 border-2 border-orange-500" id="date" {...register('date', {required: true})} />
                 </div>
                 
             </div>
@@ -58,11 +58,11 @@ function AddBlog() {
             <div className="mb-4 md:flex gap-x-8">
                 <div className="md:w-1/2">
                 <label htmlFor="author email">author email</label>
-                <input type="email" placeholder="write author email" className="text-2xl rounded-xl p-2 pl-3 w-full mt-2 mb-2 mr-5 border-2 border-orange-500" id="email" {...register('email', {required: true})} />
+                <input type="email" required placeholder="write author email" className="text-2xl rounded-xl p-2 pl-3 w-full mt-2 mb-2 mr-5 border-2 border-orange-500" id="email" {...register('email', {required: true})} />
                 </div>
                 <div className="md:w-1/2">
                 <label htmlFor="Blog Rating">Blog Rating</label>
-                <input type="text" placeholder="write blog rating number" className="text-2xl rounded-xl p-2 pl-3 w-full mt-2 mb-2 mr-5 border-2 border-orange-500" id="rating" {...register('rating', {required: true})} />
+                <input type="text" required placeholder="write blog rating number" className="text-2xl rounded-xl p-2 pl-3 w-full mt-2 mb-2 mr-5 border-2 border-orange-500" id="rating" {...register('rating', {required: true})} />
                 </div>
                 
             </div>
@@ -70,19 +70,19 @@ function AddBlog() {
             <div className="mb-4 md:flex gap-x-8">
                 <div className="md:w-1/2">
                 <label htmlFor="Author Name">Author Name</label>
-                <input type="text" placeholder="write author name" className="text-2xl rounded-xl p-2 pl-3 w-full mt-2 mb-2 mr-5 border-2 border-orange-500" id="email" {...register('authorName', {required: true})} />
+                <input type="text" required placeholder="write author name" className="text-2xl rounded-xl p-2 pl-3 w-full mt-2 mb-2 mr-5 border-2 border-orange-500" id="email" {...register('authorName', {required: true})} />
                 </div>
                 <div className="md:w-1/2">
                 <label htmlFor="Author Image">Author Image</label>
-                <input type="text" placeholder="give author image url" className="text-2xl rounded-xl p-2 pl-3 w-full mt-2 mb-2 mr-5 border-2 border-orange-500" id="rating" {...register('authorImage', {required: true})} />
+                <input type="text" required placeholder="give author image url" className="text-2xl rounded-xl p-2 pl-3 w-full mt-2 mb-2 mr-5 border-2 border-orange-500" id="rating" {...register('authorImage', {required: true})} />
                 </div>
                 
             </div>
-           {/* blog headline */}
+           {/* blog description */}
            <div className="mb-4">
                 <div>
                 <label htmlFor="Blog Description">Blog Description</label>
-            <textarea type="text" placeholder="write blog description" className="text-1xl rounded-xl p-2 pl-3 w-full h-60 mt-2 mb-2 border-2 border-orange-500" id="headline" {...register('description', {required: true})} ></textarea>
+            <textarea type="text" required placeholder="write blog description" className="text-1xl rounded-xl p-2 pl-3 w-full h-60 mt-2 mb-2 border-2 border-orange-500" id="headline" {...register('description', {required: true})} ></textarea>
                 
                     </div>
             </div>

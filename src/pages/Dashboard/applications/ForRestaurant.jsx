@@ -142,7 +142,7 @@ const ForRestaurant = () => {
                                 className="text-primary block mb-1"
                                 htmlFor="name"
                             >
-                                Restaurant Namead
+                                Restaurant Name
                             </motion.label>
                             <div className="flex items-center">
                                 <FiUser className="text-primary" />
@@ -151,6 +151,7 @@ const ForRestaurant = () => {
                                     className="ml-2 text-primary w-full border-b border-primary focus:border-secondary outline-none"
                                     type="text"
                                     name="name"
+                                    required
                                 />
                             </div>
                         </div>
@@ -170,11 +171,11 @@ const ForRestaurant = () => {
                                 <FiUser className="text-primary" />
                                 <input
                                     defaultValue={user?.email}
-                                    disabled
                                     readOnly
                                     className="ml-2 text-primary w-full border-b border-primary focus:border-secondary outline-none"
                                     type="email"
                                     name="email"
+                                    required
                                 />
                             </div>
                         </div>
@@ -184,6 +185,7 @@ const ForRestaurant = () => {
                             <label className="text-gray-700 block mb-1 md:flex items-center cursor-pointer">
                                 <input
                                     type="radio"
+                                    required
                                     id="addOpeningHours"
                                     name="openingHoursOption"
                                     value="addOpeningHours"
@@ -199,6 +201,7 @@ const ForRestaurant = () => {
                                 <input
                                     type="radio"
                                     id="24h"
+                                    required
                                     name="openingHoursOption"
                                     value="24h"
                                     checked={is24hOpen}
@@ -292,6 +295,7 @@ const ForRestaurant = () => {
                                     id="image"
                                     name="image"
                                     type="file"
+                                    required
                                 />
                             </div>
                         </div>
