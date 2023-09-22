@@ -31,11 +31,15 @@ function AddBlog() {
       </Helmet>
         <h2 className="text-3xl uppercase text-center mb-5 text-orange-500 font-bold">create new blog</h2>
         <form onSubmit={handleSubmit(onSubmit)}>
-            {/* blog headline */}
-            <div className="mb-4">
-                <div> 
+            {/* blog headline  and time*/}
+            <div className="mb-4 md:flex gap-x-8">
+                <div className="md:w-1/2"> 
                     <label htmlFor="Blog Heading">Blog Heading</label>
                 <input type="text" placeholder="write blog heading" className="text-2xl rounded-xl p-2 pl-3 w-full mt-2 mb-2 border-2 border-orange-500" id="headline" {...register('blogHeading', {required: true})} />
+                </div>
+                <div className="md:w-1/2">
+                <label htmlFor="Reading time">Time</label>
+                <input type="text" placeholder="Reading time" className="text-2xl rounded-xl p-2 pl-3 w-full mt-2 mb-2 mr-5  border-2 border-orange-500" id="time" {...register('time', {required: true})} />
                 </div>
             </div>
             {/* blog image and date */}
