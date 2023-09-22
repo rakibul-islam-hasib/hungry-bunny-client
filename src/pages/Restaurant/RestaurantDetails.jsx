@@ -53,22 +53,22 @@ function RestaurantDetails() {
       </div>
       {/* add new section */}
 <div className=' grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 mt-10 mb-10'>
-  <div className='p-7 bg-white relative group hover:-translate-y-4 hover:transition duration-400 rounded-3xl drop-shadow-lg hover:text-white hover:bg-orange-500 dark:bg-black dark:text-white dark:border-2 dark:border-orange-500 dark:hover:bg-orange-500'>
+  <div className='p-7 bg-white relative group hover:-translate-y-4 hover:transition duration-500 rounded-3xl drop-shadow-lg hover:text-white hover:bg-orange-500 dark:bg-black dark:text-white dark:border-2 dark:border-orange-500 dark:hover:bg-orange-500'>
     <p className='text-7xl ml-3'><MdDirectionsBike/> </p>
     <h3 className='text-4xl font-bold'>Fast Delivery</h3>
     <p className='mt-4 mb-4'>Fast food delivery is the ultimate solution for those moments when you crave mouthwatering, convenient, and delicious meals without the hassle of cooking or leaving your home.</p>
   </div>
-  <div className='p-7 bg-white relative group hover:-translate-y-4 hover:transition duration-400 rounded-3xl drop-shadow-lg hover:text-white hover:bg-orange-500 dark:bg-black dark:text-white dark:border-2 dark:border-orange-500 dark:hover:bg-orange-500'>
+  <div className='p-7 bg-white relative group hover:-translate-y-4 hover:transition duration-500 rounded-3xl drop-shadow-lg hover:text-white hover:bg-orange-500 dark:bg-black dark:text-white dark:border-2 dark:border-orange-500 dark:hover:bg-orange-500'>
     <p className='text-7xl ml-3 hover:text-white'><BsStopwatch/> </p>
     <h3 className='text-4xl font-bold'>Save your Time</h3>
     <p className='mt-4 mb-4'>Save time with our swift food delivery service. Spend less time in the kitchen and more time enjoying your meals, all with just a few clicks.</p>
   </div>
-  <div className='p-7 bg-white relative group hover:-translate-y-4 hover:transition duration-400 rounded-3xl drop-shadow-lg hover:text-white hover:bg-orange-500 dark:bg-black dark:text-white dark:border-2 dark:border-orange-500 dark:hover:bg-orange-500'>
+  <div className='p-7 bg-white relative group hover:-translate-y-4 hover:transition duration-500 rounded-3xl drop-shadow-lg hover:text-white hover:bg-orange-500 dark:bg-black dark:text-white dark:border-2 dark:border-orange-500 dark:hover:bg-orange-500'>
     <p className='text-7xl ml-3 hover:text-white'><MdOutlineLocalOffer/> </p>
     <h3 className='text-4xl font-bold'>Regular Discount</h3>
     <p className='mt-4 mb-4'>Unlock regular discounts for loyal customers. Enjoy savings on your favorite dishes with our exclusive offers, making dining with us even more satisfying.</p>
   </div>
-  <div className='p-7 bg-white relative group hover:-translate-y-4 hover:transition duration-400 rounded-3xl drop-shadow-lg hover:text-white hover:bg-orange-500 dark:bg-black dark:text-white dark:border-2 dark:border-orange-500 dark:hover:bg-orange-500'>
+  <div className='p-7 bg-white relative group hover:-translate-y-4 hover:transition duration-500 rounded-3xl drop-shadow-lg hover:text-white hover:bg-orange-500 dark:bg-black dark:text-white dark:border-2 dark:border-orange-500 dark:hover:bg-orange-500'>
     <p className='text-7xl ml-3 hover:text-white'><PiBowlFood/> </p>
     <h3 className='text-4xl font-bold'>Variety Foods</h3>
     <p className='mt-4 mb-4'>Explore a world of diverse flavors. Our menu boasts a variety of cuisines, promising an exciting dining adventure with every order.</p>
@@ -109,16 +109,16 @@ function RestaurantDetails() {
           <div>
   
             <img className="w-full h-64 object-cover transition transform duration-200  hover:-translate-y-2 rounded-lg relative    peer  top-0 right-0" src={items?.image} alt="Food Image" />
-            <svg className="pointer-events-none absolute inset-x-0 bottom-5 mx-auto text-3xl text-white  transition-opacity group-hover:animate-ping group-hover:opacity-30 peer-hover:opacity-0" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32">
+            {/* <svg className="pointer-events-none absolute inset-x-0 bottom-5 mx-auto text-3xl text-white  transition-opacity group-hover:animate-ping group-hover:opacity-30 peer-hover:opacity-0" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32">
               <path fill="currentColor" d="M2 10a4 4 0 0 1 4-4h20a4 4 0 0 1 4 4v10a4 4 0 0 1-2.328 3.635a2.996 2.996 0 0 0-.55-.756l-8-8A3 3 0 0 0 14 17v7H6a4 4 0 0 1-4-4V10Zm14 19a1 1 0 0 0 1.8.6l2.7-3.6H25a1 1 0 0 0 .707-1.707l-8-8A1 1 0 0 0 16 17v12Z" />
-            </svg>
+            </svg> */}
           </div>
           <div className="p-4">
             <div className="font-semibold text-xl mb-2 flex justify-between"><span>{items?.food_name}</span><span></span></div>
-            <p className="text-sm text-gray-800 flex hover:text-2xl justify-between duration-500"><span>{items?.description.slice(0, 100)}</span> </p>
+            <p className="text-sm text-gray-800 flex hover:text-2xl dark:text-gray-300 justify-between duration-500"><span>{items?.description.slice(0, 100)}</span> </p>
             
             <div className="flex justify-between items-center  h-14">
-              <span className="text-orange-500 font-semibold text-3xl">{items?.price} Taka</span>
+              <span className="text-orange-500 font-bold text-3xl">{items?.price} Taka</span>
               <button className=" text-orange-500 text-4xl hover:text-6xl duration-500">
                 <span><FaShoppingCart/></span>
                 {/* <FaRegBookmark onClick={() => cartHandler(menu)} className="text-2xl transform transition duration-300 hover:scale-125" /> */}
