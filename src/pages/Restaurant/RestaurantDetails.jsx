@@ -118,7 +118,7 @@ function RestaurantDetails() {
             <p className="text-sm text-gray-800 flex hover:text-2xl dark:text-gray-300 justify-between duration-500"><span>{items?.description.slice(0, 100)}</span> </p>
             
             <div className="flex justify-between items-center  h-14">
-              <span className="text-orange-500 font-bold text-3xl">{items?.price} Taka</span>
+              <span className="text-orange-500 font-semibold text-2xl">{items?.price} Taka</span>
               <button className=" text-orange-500 text-4xl hover:text-6xl duration-500">
                 <span><FaShoppingCart/></span>
                 {/* <FaRegBookmark onClick={() => cartHandler(menu)} className="text-2xl transform transition duration-300 hover:scale-125" /> */}

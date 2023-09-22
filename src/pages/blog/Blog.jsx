@@ -4,7 +4,6 @@ import { BiCalendar } from 'react-icons/bi';
 import { Link, ScrollRestoration } from 'react-router-dom';
 import useAxiosFetch from '../../hooks/useAxiosFetch';
 import Pagination from '@mui/material/Pagination';
-import blog from '../../assets/img/blog.png'
 import { Helmet } from 'react-helmet-async';
 
 const Blog = () => {
