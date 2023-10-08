@@ -133,7 +133,7 @@ const BeReadyForPayment = ({ intent, cartIds, refetch, orderedItem }) => {
                         }
                         setMessage(paymentIntent.status === 'succeeded' ? 'Payment Successful' : 'Payment Failed')
                         // TODO : replace this with base url
-                        fetch(`http://localhost:5000/payment/delete-cart-items`, {
+                        fetch(`https://hungry-bunny.vercel.app/payment/delete-cart-items`, {
                             method: 'DELETE',
                             headers: {
                                 'Content-Type': 'application/json'

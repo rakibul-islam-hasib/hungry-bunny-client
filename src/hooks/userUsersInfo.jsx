@@ -2,23 +2,7 @@ import { useEffect, useState } from "react";
 import useAxiosFetch from "./useAxiosFetch";
 import { useQuery } from "@tanstack/react-query";
 
-// const useAllUsers = () => {
 
-//     const [users, setusers] = useState([]);
-//     const [loading, setLoading] = useState(true)
-//     useEffect(() => {
-//         fetch("http://localhost:5000/user-info")
-//             .then((res) => res.json())
-//             .then((data) => {
-//                 setusers(data);
-//                 setLoading(false)
-//             });
-//     }, []);
-//     return [users, loading]
-
-// }
-
-// export default useAllUsers;
 
 
 export const useUsersInfo = () => {

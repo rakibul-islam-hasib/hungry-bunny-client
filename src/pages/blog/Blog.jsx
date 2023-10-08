@@ -4,7 +4,6 @@ import { BiCalendar } from 'react-icons/bi';
 import { Link, ScrollRestoration } from 'react-router-dom';
 import useAxiosFetch from '../../hooks/useAxiosFetch';
 import Pagination from '@mui/material/Pagination';
-import blog from '../../assets/img/blog.png'
 import { Helmet } from 'react-helmet-async';
 
 const Blog = () => {
@@ -33,7 +32,7 @@ const Blog = () => {
       </Helmet>
       {/* <div className="w-full bg-[url('https://images.pexels.com/photos/5778892/pexels-photo-5778892.jpeg?auto=compress&cs=tinysrgb&w=600')]">
       </div> */}
-      <div className='md:flex w-full bg-gradient-to-r from-orange-100 p-5 rounded-2xl '>
+      <div className='md:flex w-full p-5 rounded-2xl '>
         <div className='md:w-1/2 mt-10'>
           <h1 className='text-4xl text-slate-700 font-bold'>Exploring Global Flavors: A Culinary Journey from East to West</h1>
           <h1 className='text-2xl mt-6 font-sans'> Embark on a virtual voyage of taste as we uncover the rich tapestry of global cuisines, right at your doorstep. From the aromatic spices of Asia to the comforting classics of Europe and the bold flavors of the Americas.</h1>
@@ -76,14 +75,14 @@ const Blog = () => {
     </form>
         </div>
         <div className='md:w-1/2 mx-auto'>
-          <img className='bg-orange-400 rounded-3xl  ml-10' style={{height:400}} src={blog} alt="" />
+          <img className='rounded-3xl  ml-10' style={{height:400}} src="https://media.istockphoto.com/id/1476897744/photo/closeup-of-business-woman-hand-typing-and-working-on-laptop-computer-searching-the.webp?b=1&s=612x612&w=0&k=20&c=5lrZN8DhZnCBqMkxZ6vyoRR6hlW7ht4IVTeTbr16G1o=" alt="" />
         </div>
       </div>
       <div>
       <div className="grid md:grid-cols-2 md:gap-8 gap-3 lg:grid-cols-3 mt-10 mx-auto">
         {blogs.map((item) => (
           <div key={item._id} className='p-2 border overflow-hidden shadow-lg rounded-2xl dark:drop-shadow-md'>
-            <img className="w-full h-48 object-cover rounded-lg" src={item.blogImage} alt="Food Image" />
+            <img className="w-full h-48 object-cover transition transform duration-200  hover:-translate-y-2 rounded-lg relative peer top-0 right-0" src={item.blogImage} alt="Food Image" />
             <div className='flex justify-between mt-3 dark:text-slate-200'>
               <p className='flex ml-2'> <span className='mr-2'><BiCalendar/> </span><span>{item.date}</span></p>
               <p className='flex items-center'><span className='mr-2'>{item.time} min read</span><span><FaReadme></FaReadme></span> </p>

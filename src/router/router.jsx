@@ -103,7 +103,7 @@ export const router = createBrowserRouter([
         loader: ({ params }) =>
           // TODO : replace with base URL
           // http://localhost:5000/application
-          fetch(`http://localhost:5000/application/${params.id}`),
+          fetch(`https://hungry-bunny.vercel.app/application/${params.id}`),
       },
       {
         path: '/menu',
@@ -125,7 +125,7 @@ export const router = createBrowserRouter([
         path: '/blogs/:id',
         element: <BlogDetails />,
         // TODO : replace with base URL http://localhost:5000
-        loader: ({ params }) => fetch(`http://localhost:5000/blogs/${params.id}`)
+        loader: ({ params }) => fetch(`https://hungry-bunny.vercel.app/blogs/${params.id}`)
       },
       {
         path: "/temp",
@@ -183,7 +183,7 @@ export const router = createBrowserRouter([
         path: "manage-blogs/:id",
         element: <UpdateBlog />,
         // TODO : replace with base URL http://localhost:5000
-        loader: ({ params }) => fetch(`http://localhost:5000/blogs/${params.id}`)
+        loader: ({ params }) => fetch(`https://hungry-bunny.vercel.app/blogs/${params.id}`)
       },
       {
         path: "add-blogs",
