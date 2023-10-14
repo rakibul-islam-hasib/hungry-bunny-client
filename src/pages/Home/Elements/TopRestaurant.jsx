@@ -85,14 +85,14 @@ const TopRestaurant = () => {
 
             <div className="pb-6 flex flex-wrap items-center justify-center">
 
-              <div className="flex-shrink-0 m-6 relative overflow-hidden border border-red-400  rounded-lg max-w-xs shadow-lg">
+              <div className="flex-shrink-0 m-6 relative overflow-hidden border border-red-400 dark:border-gray-500 rounded-lg max-w-xs shadow-lg">
 
                 <div className="relative  px-2 flex items-center justify-center">
-                  <Link to={`/restaurant/${item._id}`} >
+                  <Link to={`/application/${item._id}`} >
                     <img className='h-60 rounded-lg transition duration-300 ease-in-out hover:scale-110 ' src={item.image} alt="" />
                   </Link>
                 </div>
-                <div className="relative text-black px-6 pb-6 mt-6">
+                <div className="relative dark:text-white text-black px-6 pb-6 mt-6">
                   <small className='flex items-center gap-2 poppins text-normal'>
                     <span className=''><FaMapMarkerAlt className='text-orange-500'></FaMapMarkerAlt></span>
                     <span className="block opacity-75 -mb-1">{item.location}</span>

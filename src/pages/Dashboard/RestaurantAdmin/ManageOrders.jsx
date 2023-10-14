@@ -131,10 +131,13 @@ const ManageOrders = () => {
                                     </div>
                                     <div className="mt-4 flex justify-end">
                                         <button
+                                            disabled={order.orders.deliveryStatus === 'Delivered'}
                                             className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600"
                                             onClick={() => handleProcessOrder(order.orders.paymentId)}
                                         >
-                                            Process Order
+                                            {
+                                                order.orders.deliveryStatus === 'Delivered' ? 'Delivered' : 'Process Order'
+                                            }
                                         </button>
                                         <button
                                             className="ml-4 px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600"

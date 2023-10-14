@@ -17,12 +17,13 @@ const PaymentHistory = () => {
     const [invoiceLoading, setInvoiceLoading] = useState(false);
     const [loading, setLoading] = useState(false);
     const axios = useAxiosSecure();
-    const [user] = useUserSecure();
+    const [user, isLoading] = useUserSecure();
 
 
     useEffect(() => {
         setLoading(true);
         axios.get(`/payment/user-payment/${user?._id}`)
+            // fetch(`https://hungry-bunny.vercel.app/payment/user-payment/${user?._id}`)
             .then((res) => {
                 console.log(res.data);
                 // setPaymentHistory(res.data);
@@ -50,10 +51,10 @@ const PaymentHistory = () => {
     const totalItems = paymentHistory.reduce((acc, item) => acc + item.totalItems, 0);
     const totalAmount = paymentHistory.reduce((acc, item) => acc + item.paymentAmount, 0);
 
-    
-    
 
-    if (loading) return <div className="h-screen w-full flex justify-center items-center">
+
+
+    if (loading || isLoading) return <div className="h-screen w-full flex justify-center items-center">
         <AiOutlineLoading3Quarters className="text-5xl text-primary animate-spin" />
     </div>
 
@@ -70,7 +71,7 @@ const PaymentHistory = () => {
 
                 </div>
             </div>
-    
+
             <div className="overflow-x-auto">
                 <table className="min-w-full divide-y divide-gray-200 shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
                     <thead className="bg-gray-50">

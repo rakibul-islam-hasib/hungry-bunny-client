@@ -1,15 +1,15 @@
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 import { useState } from "react";
-
+import axios from "axios";
 const InvoiceButton = ({ paymentId }) => {
     const [invoiceLoading, setInvoiceLoading] = useState(false);
-    const axios = useAxiosSecure();
+    // const axios = useAxiosSecure();
 
     const downloadInvoice = async () => {
         setInvoiceLoading(true);
         try {
-            const response = await axios.get(`payment/food-item/${paymentId}`, { responseType: 'blob' });
+            const response = await axios.get(`http://localhost:5000/payment/food-item/${paymentId}`, { responseType: 'blob' });
             const pdfBlob = new Blob([response.data], { type: 'application/pdf' });
             const pdfUrl = URL.createObjectURL(pdfBlob);
             const link = document.createElement('a');

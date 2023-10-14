@@ -5,9 +5,10 @@ import { Outlet, ScrollRestoration } from 'react-router-dom';
 import CSideBar from '../components/sidebar/CSideBar';
 import { useAuth } from '../hooks/useAuth';
 import Loader from '../components/loader/Loader';
+import { useTitle } from '../hooks/useTitle';
 const CommunityLayout = () => {
     const { loading } = useAuth();
-
+    useTitle('Community');
     if (loading) return <Loader />
     return (
         <>

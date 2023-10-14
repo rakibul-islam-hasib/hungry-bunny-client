@@ -86,17 +86,19 @@ const MenuCard = () => {
     setMenuTab(type);
   }
 
-  const handleSearchMenu =( )=>{
-    
+  const handleSearchMenu = () => {
+
     axios.get(`/food/menu-Search/${searchMenu}`)
-    .then((res) => {
-      setMenuItems(res.data);
-      // setMenuTab(res.data)
-      // console.log(res.data)
-    })
-    .catch((err) => {
-      console.log(err);
-    })
+      .then((res) => {
+        // setMenuItems(res.data);
+        // setMenuTab(res.data)
+        console.log(res.data)
+        // Set Menu item via filter using res.data.quantity
+        setMenuItems(menuItems.filter((item) => item.quantity > 0))
+      })
+      .catch((err) => {
+        console.log(err);
+      })
   }
 
 
@@ -148,7 +150,7 @@ const MenuCard = () => {
             loading ? <MenuSkeleton key={idx} /> : <MenuCardItem key={idx} menu={menu} />
           ))} */}
           {
-            menuItems.map((menu,idx)=> loading ? <MenuSkeleton key={idx}/> :<MenuCardItem key={idx} menu={menu}/>)
+            menuItems.map((menu, idx) => loading ? <MenuSkeleton key={idx} /> : <MenuCardItem key={idx} menu={menu} />)
           }
         </div>
       </div>
